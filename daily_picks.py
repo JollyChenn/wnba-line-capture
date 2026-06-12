@@ -41,7 +41,10 @@ FAIR_P = {   # per market — PRA combos run slightly lower than PTS (gauntlet-m
     "pra": {"shrink+cold+stingy": 0.66, "shrink+cold": 0.641, "shrink+stingy": 0.620, "cold+stingy": 0.621},
 }
 FAIR_DEFAULT = 0.60              # any-2-of-3 floor (both markets ~61.7%, shaded for safety)
-CASCADE_FAIR_P = 0.57            # star-out cascade rank3-6 PRA OVER
+CASCADE_FAIR_P = 0.57           # star-out cascade rank3-6 PRA OVER
+# HOT-streak OVER on PRA (only over-market that passed the gauntlet): hot+expanding+leaky
+OVER_FAIR_P = {"hot+leaky": 0.62, "hot+expand+leaky": 0.62, "hot+expand": 0.55}
+OVER_DEFAULT = 0.58             # PRA hot any-2-of-3 = 58.7%
 
 
 def fair_odds(p):
@@ -247,6 +250,7 @@ def main():
     da["dt"] = pd.to_datetime(da.date.astype(str), format="%Y%m%d")
     dmap = {t: d.sort_values("dt").allowed.tail(10).mean() for t, d in da.groupby("team")}
     stingy_thr = np.nanpercentile(list(dmap.values()), 25)
+    leaky_thr = np.nanpercentile(list(dmap.values()), 75)   # top-quartile defense = LEAKY (for hot-overs)
 
     today = datetime.date.today()
     lines_md = [f"# WNBA core picks — {today}",
@@ -299,12 +303,12 @@ def main():
             shown = d["opts"][:3]                      # top-3 by priority (keeps it readable)
             parts = []
             for i, (label, ln, tg, fp, fo, mkt) in enumerate(shown):
-                sd_m = r[f"sd_{mkt}"]
+                sd_m = r[f"sd_{mkt}"]; med = r[f"med_{mkt}"]
                 mu = ln - sd_m * _nppf(fp)             # our forward projection (≈ where the book centers)
-                if i == 0:                             # primary: projection + fair ladder ABOVE it (the value zone)
+                if i == 0:                             # primary: median + projection + fair ladder (value zone)
                     c = round(mu * 2) / 2
                     lad = " ".join(f"{c+off:.1f}={round(1/max(_ncdf((c+off-mu)/max(sd_m,1)),0.01),2)}" for off in (0, 1, 2))
-                    parts.append(f"{label} proj~{mu:.1f} fair[{lad}]")
+                    parts.append(f"{label} median~{med:.0f}→proj~{mu:.1f} fair[{lad}]")
                 else:
                     parts.append(f"{label} proj~{mu:.1f}")
             opts = " · ".join(parts)
@@ -312,12 +316,36 @@ def main():
             warn = " ⚠VERIFY (last game anomaly — skip if blowout/garbage time)" if r.disrupted and not r.declining else ""
             lines_md.append(f"- **{player}** ({NAME(r.team)}, {NAME(a)} @ {NAME(h)}): {opts} "
                             f"· [{tg0}] · last5 mins [{r.recent_min}] oppDef {r.opp_def:.0f}{warn} "
-                            f"· BET UNDER only if book line > proj AND book under-price > fair at that line")
+                            f"· UNDER value zone = book line between proj and median (MAX edge near median=book naive, NONE near proj=book moved)")
             for label, ln, tg, fp, fo, mkt in d["opts"]:
                 mu = round(ln - r[f"sd_{mkt}"] * _nppf(fp), 1)     # our projection (for CLV grading)
                 log_rows.append([str(today), gm_["game_id"], player, NAME(r.team), NAME(opp_of[r.team]),
                                  f"{mkt}_under", ln, tg, round(fp, 3), fo, mu])
             core_picks.append(f"• **{player}** ({NAME(r.team)}) — {opts}")
+            n_unders += 1
+
+        # HOT-streak OVER on PRA (the one over-market that cleared the gauntlet, 58.7%)
+        sub["leaky"] = sub.opp_def >= leaky_thr
+        for idx, r in sub[sub.med_pra >= 13.5].iterrows():
+            if r.player in pm:                          # hot & cold are mutually exclusive — skip dupes
+                continue
+            hot = bool(r.t3_pra >= r.med_pra + 4); exp = bool(r.trend >= 3); lk = bool(r.leaky)
+            if (int(hot) + int(exp) + int(lk)) < 2:
+                continue
+            tg = "+".join(t for t, on in [("hot", hot), ("expand", exp), ("leaky", lk)] if on)
+            fp = OVER_FAIR_P.get(tg, OVER_DEFAULT); fo = fair_odds(fp)
+            med = r.med_pra; sd_m = r.sd_pra
+            mu = med + sd_m * _nppf(fp)                  # over projection (ABOVE the median)
+            c = round(mu * 2) / 2
+            lad = " ".join(f"{c-off:.1f}={round(1/max(_ncdf((mu-(c-off))/max(sd_m,1)),0.01),2)}" for off in (0, 1, 2))
+            ln = float(np.floor(med - 0.001) + 0.5)
+            lines_md.append(f"- **{r.player}** ({NAME(r.team)}, {NAME(a)} @ {NAME(h)}): **PRA OVER** "
+                            f"median~{med:.0f}→proj~{mu:.1f} fair[{lad}] · [{tg}] · "
+                            f"last5 mins [{r.recent_min}] oppDef {r.opp_def:.0f} "
+                            f"· OVER value zone = book line between median and proj (MAX edge near median)")
+            log_rows.append([str(today), gm_["game_id"], r.player, NAME(r.team), NAME(opp_of[r.team]),
+                             "pra_over", ln, tg, round(fp, 3), fo, round(mu, 1)])
+            core_picks.append(f"• **{r.player}** ({NAME(r.team)}) — PRA OVER median~{med:.0f}→proj~{mu:.1f} [{tg}]")
             n_unders += 1
     if not n_unders:
         lines_md.append("_(no 2-signal core unders today — do NOT reach for singles)_")
