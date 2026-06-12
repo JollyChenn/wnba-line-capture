@@ -39,16 +39,16 @@ def notify_discord(date, core_picks, cascade_lines):
     if not DISCORD_WEBHOOK:
         print("discord: no webhook set, skipping ping")
         return
-    head = f"🏀 **WNBA Core Picks — {date}**"
+    head = f"🏀 **WNBA — {date}**"
     if core_picks:
-        body = f"\n\n**▶ CORE UNDERS — bet 1u each ({len(core_picks)}):**\n" + "\n".join(core_picks)
+        body = (f"\n\n✅ **BET NOW — {len(core_picks)} core UNDER(s), 1u each:**\n" + "\n".join(core_picks)
+                + "\n_Bet at 1xbet only if its line ≥ the number shown._")
     else:
-        body = "\n\n**▶ No 2-signal core unders today** — do NOT reach for singles."
-    casc = ""
-    if cascade_lines:
-        casc = (f"\n\n**▶ CASCADE WATCH — fire ONLY if the named starter is OUT ({len(cascade_lines)}):**\n"
-                + "\n".join(cascade_lines))
-    foot = "\n\n_1xbet only where line ≥ anchor (under). Flat 1u. Never Clark. Grade vs Pinnacle close._"
+        body = "\n\n😴 **No core bet today.** Sit out — do NOT reach for singles."
+    # cascade is a CONTINGENCY, not a bet — one-line pointer only, full list in PICKS.md
+    casc = (f"\n\n_(+{len(cascade_lines)} cascade contingencies in PICKS.md — only if a star is scratched)_"
+            if cascade_lines else "")
+    foot = "\n_Flat 1u. Never Clark. Graded vs Pinnacle close._"
     msg = head + body + casc + foot
     if len(msg) > 1900:
         msg = msg[:1880] + "\n…(truncated — see PICKS.md)"
