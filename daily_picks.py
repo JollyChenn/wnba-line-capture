@@ -36,14 +36,12 @@ DISCORD_WEBHOOK = os.environ.get("DISCORD_WEBHOOK", "")    # set as a GitHub sec
 # Historical hit rate vs the median-anchor line = the fair win probability.
 # fair (no-vig) decimal odds = 1 / P. BET ONLY when 1xbet's price EXCEEDS fair (that gap
 # is the captured edge). These are historical, so demand a real margin, not a razor-thin beat.
-FAIR_P = {
-    "shrink+cold+stingy": 0.70,   # backtest 76% (n=38) shaded down for the tiny sample
-    "shrink+cold":        0.684,
-    "shrink+stingy":      0.642,
-    "cold+stingy":        0.620,
-    "shrink":             0.594, "cold": 0.588, "stingy": 0.560,
+FAIR_P = {   # per market — PRA combos run slightly lower than PTS (gauntlet-measured)
+    "pts": {"shrink+cold+stingy": 0.70, "shrink+cold": 0.684, "shrink+stingy": 0.642, "cold+stingy": 0.626},
+    "pra": {"shrink+cold+stingy": 0.66, "shrink+cold": 0.641, "shrink+stingy": 0.620, "cold+stingy": 0.621},
 }
-CASCADE_FAIR_P = 0.57             # star-out cascade rank3-6 PRA OVER
+FAIR_DEFAULT = 0.60              # any-2-of-3 floor (both markets ~61.7%, shaded for safety)
+CASCADE_FAIR_P = 0.57            # star-out cascade rank3-6 PRA OVER
 
 
 def fair_odds(p):
@@ -197,7 +195,7 @@ def main():
         feats.append({
             "aid": aid, "player": grp.player.iloc[-1], "team": grp.team.iloc[-1],
             "med_pts": last.pts.median(), "med_pra": last.pra.median(),
-            "t3_pts": grp.pts.tail(3).mean(),
+            "t3_pts": grp.pts.tail(3).mean(), "t3_pra": grp.pra.tail(3).mean(),
             "t5_min": grp["min"].tail(5).mean(), "t10_min": last["min"].mean(),
             "usg": grp.usg_raw.tail(5).mean(),
         })
@@ -229,21 +227,30 @@ def main():
             continue
         sub["opp_def"] = sub.team.map(lambda t: dmap.get(opp_of.get(t), np.nan))
         sub["shrink"] = sub.trend <= -3
-        sub["cold"] = sub.t3_pts <= sub.med_pts - 4
         sub["stingy"] = sub.opp_def <= stingy_thr
-        sub["nsig"] = sub[["shrink", "cold", "stingy"]].sum(axis=1)
-        core = sub[(sub.nsig >= 2) & (sub.med_pts >= 8.5)]
-        for _, r in core.iterrows():
-            tags = "+".join(t for t, on in [("shrink", r.shrink), ("cold", r.cold), ("stingy", r.stingy)] if on)
-            p = FAIR_P.get(tags, 0.58)
+        # PTS + PRA both deployable (passed cluster + shading). ONE pick per player —
+        # prefer PRA when both fire (bigger line = more shade-robust, and pts/pra on the
+        # same player are correlated; don't double-stake the same outcome).
+        picks = {}
+        for mkt, floor_, label in [("pts", 8.5, "points"), ("pra", 13.5, "PRA")]:
+            cold = sub[f"t3_{mkt}"] <= sub[f"med_{mkt}"] - 4
+            nsig = sub.shrink.astype(int) + cold.astype(int) + sub.stingy.astype(int)
+            qual = sub[(nsig >= 2) & (sub[f"med_{mkt}"] >= floor_)]
+            for idx, r in qual.iterrows():
+                tg = "+".join(t for t, on in [("shrink", bool(r.shrink)),
+                              ("cold", bool(cold[idx])), ("stingy", bool(r.stingy))] if on)
+                if r.player not in picks or mkt == "pra":
+                    picks[r.player] = (mkt, label, r, tg)
+        for player, (mkt, label, r, tg) in picks.items():
+            p = FAIR_P[mkt].get(tg, FAIR_DEFAULT)
             fo = fair_odds(p)
-            pts_line = float(np.floor(r.med_pts - 0.001) + 0.5)   # exact backtested line (the fair % is measured here)
-            lines_md.append(f"- **UNDER {r.player} {pts_line:.1f} points** ({NAME(r.team)}, {NAME(a)} @ {NAME(h)}) — "
-                            f"[{tags}] · fair **{p*100:.0f}%** = **{fo}** → BET if 1xbet under > {fo} · "
+            ln = float(np.floor(r[f"med_{mkt}"] - 0.001) + 0.5)
+            lines_md.append(f"- **UNDER {r.player} {ln:.1f} {label}** ({NAME(r.team)}, {NAME(a)} @ {NAME(h)}) — "
+                            f"[{tg}] · fair **{p*100:.0f}%** = **{fo}** → BET if 1xbet under > {fo} · "
                             f"mins {r.t5_min:.0f} trend {r.trend:+.1f} oppDef {r.opp_def:.0f}")
-            log_rows.append([str(today), gm_["game_id"], r.player, NAME(r.team), NAME(opp_of[r.team]),
-                             "pts_under", pts_line, tags, round(p, 3), fo])
-            core_picks.append(f"• **{r.player}** ({NAME(r.team)}) — UNDER **{pts_line:.1f} points** · {tags} · fair **{fo}**")
+            log_rows.append([str(today), gm_["game_id"], player, NAME(r.team), NAME(opp_of[r.team]),
+                             f"{mkt}_under", ln, tg, round(p, 3), fo])
+            core_picks.append(f"• **{player}** ({NAME(r.team)}) — UNDER **{ln:.1f} {label}** · {tg} · fair **{fo}**")
             n_unders += 1
     if not n_unders:
         lines_md.append("_(no 2-signal core unders today — do NOT reach for singles)_")

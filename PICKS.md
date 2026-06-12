@@ -4,7 +4,9 @@ _Stingy-D threshold (trailing-10 allowed, bottom quartile): 81_
 
 ## REAL-MONEY CORE — UNDER pts (need >=2 signals, flat 1u)
 
-- **UNDER Chennedy Carter 17.5 points** (Las Vegas Aces, Minnesota Lynx @ Las Vegas Aces) — [cold+stingy] · fair **62%** = **1.61** → BET if 1xbet under > 1.61 · mins 17 trend -2.2 oppDef 76
+- **UNDER Kiki Iriafen 25.5 PRA** (Washington Mystics, Toronto Tempo @ Washington Mystics) — [shrink+cold] · fair **64%** = **1.56** → BET if 1xbet under > 1.56 · mins 23 trend -3.1 oppDef 93
+- **UNDER Dominique Malonga 23.5 PRA** (Seattle Storm, Golden State Valkyries @ Seattle Storm) — [cold+stingy] · fair **62%** = **1.61** → BET if 1xbet under > 1.61 · mins 21 trend -1.3 oppDef 81
+- **UNDER Chennedy Carter 19.5 PRA** (Las Vegas Aces, Minnesota Lynx @ Las Vegas Aces) — [cold+stingy] · fair **62%** = **1.61** → BET if 1xbet under > 1.61 · mins 17 trend -2.2 oppDef 76
 
 ## CASCADE contingencies — fire ONLY on scratch news (PRA OVER rank-3-6, flat 1u)
 
