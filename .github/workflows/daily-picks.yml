@@ -1,0 +1,33 @@
+name: daily-picks
+on:
+  schedule:
+    - cron: '0 14 * * *'      # 14:00 UTC daily = hours before earliest WNBA tip (~22:30 UTC)
+  workflow_dispatch: {}
+permissions:
+  contents: write
+concurrency:
+  group: daily-picks
+  cancel-in-progress: false
+jobs:
+  picks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install deps
+        run: pip install --quiet pandas requests numpy
+      - name: Generate core picks (any-2-of-3 unders + cascade lists)
+        run: python daily_picks.py
+      - name: Commit picks + data cache
+        run: |
+          git config user.name "wnba-picks-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add PICKS.md picks_log.csv data/*.csv 2>/dev/null || true
+          if git diff --staged --quiet; then
+            echo "nothing new"
+          else
+            git commit -m "picks $(date -u +%F)"
+            git push
+          fi

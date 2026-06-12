@@ -1,8 +1,20 @@
 # wnba-line-capture
 
-24/7 **WNBA player-prop line capture** on free GitHub Actions — builds a
-closing-line-value (CLV) history against **Pinnacle** (the sharp benchmark)
-without your laptop on. Ported from the NBA line-capture repo.
+Two cloud jobs on free GitHub Actions — the full WNBA betting loop, laptop off:
+
+| Workflow | Schedule | What it does |
+|----------|----------|--------------|
+| `capture-wnba-lines` | hourly | snapshots Pinnacle/EU WNBA prop lines near tip → `line_snapshots.csv` (the CLV benchmark) |
+| `daily-picks` | 14:00 UTC daily | pulls fresh ESPN data, generates **core-only** picks → `PICKS.md` + `picks_log.csv` |
+
+## REAL-MONEY RULES (core only, validated 11-season backtest)
+- Bet ONLY what `PICKS.md` lists: **any-2-of-3 UNDERs** (61.6%, ~3/wk) and
+  **CASCADE overs** when the named starter is actually ruled out (57.0%, ~2/wk).
+- Flat 1u stakes (1-2% of bankroll). No singles, no parlays, never Clark props.
+- Bet at 1xbet only when its line is AT/ABOVE the listed anchor (unders) or
+  AT/BELOW (cascade overs) — that's the book being slow, which IS the edge.
+- Grade weekly: `picks_log.csv` vs `line_snapshots.csv` closes (CLV). Two weeks
+  of positive CLV = scale up; negative = stop and reassess.
 
 ## Why
 The role-lag backtest showed a real signal (PRA/PTS under when minutes shrink,
