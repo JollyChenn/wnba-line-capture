@@ -4,9 +4,9 @@ _Stingy-D threshold (trailing-10 allowed, bottom quartile): 81_
 
 ## REAL-MONEY CORE — UNDER pts (need >=2 signals, flat 1u)
 
-- **Kiki Iriafen** (Washington Mystics, Toronto Tempo @ Washington Mystics): U25.5 PRA (1.56) / U23.5 PR (1.69) / U10.5 RA (1.64) · [shrink+cold] · mins 23 trend -3.1 oppDef 93 · BET ONE 1xbet offers (must beat the fair odds in brackets)
-- **Dominique Malonga** (Seattle Storm, Golden State Valkyries @ Seattle Storm): U23.5 PRA (1.61) / U22.5 PR (1.69) · [cold+stingy] · mins 21 trend -1.3 oppDef 81 · BET ONE 1xbet offers (must beat the fair odds in brackets)
-- **Chennedy Carter** (Las Vegas Aces, Minnesota Lynx @ Las Vegas Aces): U19.5 PRA (1.61) / U18.5 PA (1.64) / U18.5 PR (1.69) · [cold+stingy] · mins 17 trend -2.2 oppDef 76 · BET ONE 1xbet offers (must beat the fair odds in brackets)
+- **Kiki Iriafen** (Washington Mystics, Toronto Tempo @ Washington Mystics): U25.5 PRA (1.67) / U23.5 PR (1.69) / U10.5 RA (1.64) · [disrupted+cold] · last5 mins [24 27 27 27 8] oppDef 93 ⚠VERIFY (last game anomaly — skip if it was blowout/garbage time) · BET ONE 1xbet offers (must beat the fair odds in brackets)
+- **Dominique Malonga** (Seattle Storm, Golden State Valkyries @ Seattle Storm): U23.5 PRA (1.61) / U22.5 PR (1.69) · [cold+stingy] · last5 mins [20 32 14 17 24] oppDef 81 · BET ONE 1xbet offers (must beat the fair odds in brackets)
+- **Chennedy Carter** (Las Vegas Aces, Minnesota Lynx @ Las Vegas Aces): U19.5 PRA (1.61) / U18.5 PA (1.64) / U18.5 PR (1.69) · [cold+stingy] · last5 mins [21 26 19 9 8] oppDef 76 ⚠VERIFY (last game anomaly — skip if it was blowout/garbage time) · BET ONE 1xbet offers (must beat the fair odds in brackets)
 
 ## CASCADE contingencies — fire ONLY on scratch news (PRA OVER rank-3-6, flat 1u)
 

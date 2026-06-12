@@ -200,6 +200,9 @@ def main():
             "med_pa": (last.pts + last.ast).median(), "t3_pa": (grp.pts + grp.ast).tail(3).mean(),
             "med_ra": (last.reb + last.ast).median(), "t3_ra": (grp.reb + grp.ast).tail(3).mean(),
             "t5_min": grp["min"].tail(5).mean(), "t10_min": last["min"].mean(),
+            "med5_min": grp["min"].tail(5).median(), "med10_min": last["min"].median(),
+            "last_min": grp["min"].iloc[-1],
+            "recent_min": " ".join(f"{m:.0f}" for m in grp["min"].tail(5)),
             "usg": grp.usg_raw.tail(5).mean(),
         })
     f = pd.DataFrame(feats)
@@ -229,8 +232,12 @@ def main():
         if sub.empty:
             continue
         sub["opp_def"] = sub.team.map(lambda t: dmap.get(opp_of.get(t), np.nan))
-        sub["shrink"] = sub.trend <= -3
+        sub["shrink"] = sub.trend <= -3                       # validated trigger (mean) — keep
         sub["stingy"] = sub.opp_def <= stingy_thr
+        # HONEST sub-labels for WHY minutes look down (the mean trigger gets fooled by a
+        # single anomaly game; median tells us if it's a real consistent decline):
+        sub["declining"] = sub.med5_min <= sub.med10_min - 2          # consistent role cut
+        sub["disrupted"] = sub.last_min < 0.6 * sub.med10_min         # one anomalous low game
         # All deployable markets (passed cluster + shading). Priority order = robustness +
         # availability. A player shows every market they independently qualify for; you bet
         # the first one 1xbet offers (they're correlated — ONE bet per player).
@@ -244,11 +251,15 @@ def main():
             ok = ((sub.shrink.astype(int) + cold.astype(int) + sub.stingy.astype(int)) >= 2) if use_st \
                  else (sub.shrink & cold)
             for idx, r in sub[ok & (sub[f"med_{mkt}"] >= floor_)].iterrows():
-                flags = [("shrink", bool(r.shrink)), ("cold", bool(cold[idx]))]
+                slab = "declining" if r.declining else ("disrupted" if r.disrupted else "mins-dip")
+                flags = [(slab, bool(r.shrink)), ("cold", bool(cold[idx]))]
                 if use_st:
                     flags.append(("stingy", bool(r.stingy)))
                 tg = "+".join(t for t, on in flags if on)
-                fp = FAIR_P.get(mkt, {}).get(tg, fdef); fo = fair_odds(fp)
+                # consistent declines get the validated combo rate; noisy "disrupted"/dip
+                # one-offs fall to the conservative default (they're a weaker signal).
+                fair_key = tg.replace("declining", "shrink")
+                fp = FAIR_P.get(mkt, {}).get(fair_key, fdef); fo = fair_odds(fp)
                 ln = float(np.floor(r[f"med_{mkt}"] - 0.001) + 0.5)
                 pm.setdefault(r.player, {"r": r, "opts": []})
                 pm[r.player]["opts"].append((label, ln, tg, fp, fo, mkt))
@@ -257,8 +268,9 @@ def main():
             shown = d["opts"][:3]                      # top-3 by priority (keeps it readable)
             opts = " / ".join(f"U{ln:.1f} {label} ({fo})" for label, ln, tg, fp, fo, mkt in shown)
             tg0 = shown[0][2]
+            warn = " ⚠VERIFY (last game anomaly — skip if it was blowout/garbage time)" if r.disrupted and not r.declining else ""
             lines_md.append(f"- **{player}** ({NAME(r.team)}, {NAME(a)} @ {NAME(h)}): {opts} "
-                            f"· [{tg0}] · mins {r.t5_min:.0f} trend {r.trend:+.1f} oppDef {r.opp_def:.0f} "
+                            f"· [{tg0}] · last5 mins [{r.recent_min}] oppDef {r.opp_def:.0f}{warn} "
                             f"· BET ONE 1xbet offers (must beat the fair odds in brackets)")
             for label, ln, tg, fp, fo, mkt in d["opts"]:
                 log_rows.append([str(today), gm_["game_id"], player, NAME(r.team), NAME(opp_of[r.team]),
