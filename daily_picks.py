@@ -48,6 +48,34 @@ def fair_odds(p):
     return round(1.0 / p, 2)
 
 
+import math
+def _ncdf(x):
+    return 0.5 * (1 + math.erf(x / math.sqrt(2)))
+def _nppf(p):
+    # Acklam inverse-normal approximation (no scipy needed in CI)
+    p = min(max(p, 1e-6), 1 - 1e-6)
+    a = [-3.969683028665376e1, 2.209460984245205e2, -2.759285104469687e2, 1.38357751867269e2, -3.066479806614716e1, 2.506628277459239]
+    b = [-5.447609879822406e1, 1.615858368580409e2, -1.556989798598866e2, 6.680131188771972e1, -1.328068155288572e1]
+    c = [-7.784894002430293e-3, -3.223964580411365e-1, -2.400758277161838, -2.549732539343734, 4.374664141464968, 2.938163982698783]
+    d = [7.784695709041462e-3, 3.224671290700398e-1, 2.445134137142996, 3.754408661907416]
+    pl = 0.02425
+    if p < pl:
+        q = math.sqrt(-2 * math.log(p)); return (((((c[0]*q+c[1])*q+c[2])*q+c[3])*q+c[4])*q+c[5]) / ((((d[0]*q+d[1])*q+d[2])*q+d[3])*q+1)
+    if p <= 1 - pl:
+        q = p - 0.5; r = q*q; return (((((a[0]*r+a[1])*r+a[2])*r+a[3])*r+a[4])*r+a[5])*q / (((((b[0]*r+b[1])*r+b[2])*r+b[3])*r+b[4])*r+1)
+    q = math.sqrt(-2 * math.log(1-p)); return -(((((c[0]*q+c[1])*q+c[2])*q+c[3])*q+c[4])*q+c[5]) / ((((d[0]*q+d[1])*q+d[2])*q+d[3])*q+1)
+
+def fair_ladder(our_line, p, sd, offsets=(-1, 0, 1)):
+    """Fair UNDER odds at our_line+offset, given hit-rate p at our_line and spread sd.
+    mu implied so P(under our_line)=p; extrapolate with a Normal(mu, sd)."""
+    zp = _nppf(p)
+    out = []
+    for off in offsets:
+        pu = _ncdf(zp + off / max(sd, 1.0))      # P(under our_line+off)
+        out.append((our_line + off, round(1.0 / max(pu, 0.01), 2)))
+    return out
+
+
 # ESPN team code -> full name (2026 WNBA, 15 teams + historical aliases)
 TEAM_NAMES = {
     "ATL": "Atlanta Dream", "CHI": "Chicago Sky", "CON": "Connecticut Sun",
@@ -200,6 +228,9 @@ def main():
             "med_pa": (last.pts + last.ast).median(), "t3_pa": (grp.pts + grp.ast).tail(3).mean(),
             "med_ra": (last.reb + last.ast).median(), "t3_ra": (grp.reb + grp.ast).tail(3).mean(),
             "t5_min": grp["min"].tail(5).mean(), "t10_min": last["min"].mean(),
+            "sd_pts": max(last.pts.std(), 3.0), "sd_pra": max(last.pra.std(), 4.0),
+            "sd_pr": max((last.pts + last.reb).std(), 3.5), "sd_pa": max((last.pts + last.ast).std(), 3.5),
+            "sd_ra": max((last.reb + last.ast).std(), 2.5),
             "med5_min": grp["min"].tail(5).median(), "med10_min": last["min"].median(),
             "last_min": grp["min"].iloc[-1],
             "recent_min": " ".join(f"{m:.0f}" for m in grp["min"].tail(5)),
@@ -266,12 +297,19 @@ def main():
         for player, d in pm.items():
             r = d["r"]
             shown = d["opts"][:3]                      # top-3 by priority (keeps it readable)
-            opts = " / ".join(f"U{ln:.1f} {label} ({fo})" for label, ln, tg, fp, fo, mkt in shown)
+            parts = []
+            for i, (label, ln, tg, fp, fo, mkt) in enumerate(shown):
+                if i == 0:                             # primary market: full fair-odds-by-line ladder
+                    lad = " ".join(f"{fl:.1f}={fo2}" for fl, fo2 in fair_ladder(ln, fp, r[f"sd_{mkt}"]))
+                    parts.append(f"{label} U fair[{lad}]")
+                else:                                  # alternatives: anchor fair only
+                    parts.append(f"{label} U{ln:.1f}({fo})")
+            opts = " · ".join(parts)
             tg0 = shown[0][2]
             warn = " ⚠VERIFY (last game anomaly — skip if it was blowout/garbage time)" if r.disrupted and not r.declining else ""
             lines_md.append(f"- **{player}** ({NAME(r.team)}, {NAME(a)} @ {NAME(h)}): {opts} "
                             f"· [{tg0}] · last5 mins [{r.recent_min}] oppDef {r.opp_def:.0f}{warn} "
-                            f"· BET ONE 1xbet offers (must beat the fair odds in brackets)")
+                            f"· match the book's line in fair[ ]; BET if book under-price > fair there")
             for label, ln, tg, fp, fo, mkt in d["opts"]:
                 log_rows.append([str(today), gm_["game_id"], player, NAME(r.team), NAME(opp_of[r.team]),
                                  f"{mkt}_under", ln, tg, round(fp, 3), fo])
