@@ -234,6 +234,8 @@ def main():
             "sd_pts": max(last.pts.std(), 3.0), "sd_pra": max(last.pra.std(), 4.0),
             "sd_pr": max((last.pts + last.reb).std(), 3.5), "sd_pa": max((last.pts + last.ast).std(), 3.5),
             "sd_ra": max((last.reb + last.ast).std(), 2.5),
+            "med_reb": last.reb.median(), "t3_reb": grp.reb.tail(3).mean(), "sd_reb": max(last.reb.std(), 2.0),
+            "med_ast": last.ast.median(), "t3_ast": grp.ast.tail(3).mean(), "sd_ast": max(last.ast.std(), 1.5),
             "med5_min": grp["min"].tail(5).median(), "med10_min": last["min"].median(),
             "last_min": grp["min"].iloc[-1],
             "recent_min": " ".join(f"{m:.0f}" for m in grp["min"].tail(5)),
@@ -279,7 +281,9 @@ def main():
         #   (key, floor, cold_thr, uses_stingy, label, fair_default)
         MKTS = [("pra", 13.5, 4, True, "PRA", 0.60), ("pa", 11.5, 4, True, "PA", 0.61),
                 ("pr", 11.5, 4, True, "PR", 0.59), ("pts", 8.5, 4, True, "points", 0.60),
-                ("ra", 6.5, 3, False, "RA", 0.61)]
+                ("ra", 6.5, 3, False, "RA", 0.61),
+                ("reb", 3.5, 2, False, "reb", 0.58), ("ast", 2.5, 2, False, "ast", 0.58)]  # singles: fragile
+        FRAGILE = {"reb", "ast"}                          # real edge but die on a 1pt shade — book-line-near-median only
         pm = {}
         for mkt, floor_, cthr, use_st, label, fdef in MKTS:
             cold = sub[f"t3_{mkt}"] <= sub[f"med_{mkt}"] - cthr
@@ -300,17 +304,18 @@ def main():
                 pm[r.player]["opts"].append((label, ln, tg, fp, fo, mkt))
         for player, d in pm.items():
             r = d["r"]
-            shown = d["opts"][:3]                      # top-3 by priority (keeps it readable)
+            shown = d["opts"][:5]                      # FULL menu (PRA is star-only on books — list every option)
             parts = []
             for i, (label, ln, tg, fp, fo, mkt) in enumerate(shown):
                 sd_m = r[f"sd_{mkt}"]; med = r[f"med_{mkt}"]
                 mu = ln - sd_m * _nppf(fp)             # our forward projection (≈ where the book centers)
+                frag = "⚠frag" if mkt in FRAGILE else ""
                 if i == 0:                             # primary: median + projection + fair ladder (value zone)
                     c = round(mu * 2) / 2
                     lad = " ".join(f"{c+off:.1f}={round(1/max(_ncdf((c+off-mu)/max(sd_m,1)),0.01),2)}" for off in (0, 1, 2))
                     parts.append(f"{label} median~{med:.0f}→proj~{mu:.1f} fair[{lad}]")
                 else:
-                    parts.append(f"{label} proj~{mu:.1f}")
+                    parts.append(f"{label}{frag} {med:.0f}→{mu:.1f}")
             opts = " · ".join(parts)
             tg0 = shown[0][2]
             warn = " ⚠VERIFY (last game anomaly — skip if blowout/garbage time)" if r.disrupted and not r.declining else ""
