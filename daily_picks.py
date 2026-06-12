@@ -279,9 +279,13 @@ def main():
         # availability. A player shows every market they independently qualify for; you bet
         # the first one 1xbet offers (they're correlated — ONE bet per player).
         #   (key, floor, cold_thr, uses_stingy, label, fair_default)
-        MKTS = [("pra", 13.5, 4, True, "PRA", 0.60), ("pa", 11.5, 4, True, "PA", 0.61),
-                ("pr", 11.5, 4, True, "PR", 0.59), ("pts", 8.5, 4, True, "points", 0.60),
-                ("ra", 6.5, 3, False, "RA", 0.61),
+        # ORDER = AVAILABILITY on the book (NOT robustness). PRA is STAR-ONLY on 1xbet/melbet,
+        # so it goes LAST — lead with POINTS (offered for everyone), then the 2-way combos.
+        # Edge is nearly identical (pts any-2 61.8% vs PRA 61.7%), so leading with points costs
+        # ~nothing and means the headline market is one you can actually bet.
+        MKTS = [("pts", 8.5, 4, True, "points", 0.60), ("pr", 11.5, 4, True, "PR", 0.59),
+                ("pa", 11.5, 4, True, "PA", 0.61), ("ra", 6.5, 3, False, "RA", 0.61),
+                ("pra", 13.5, 4, True, "PRA", 0.60),
                 ("reb", 3.5, 2, False, "reb", 0.58), ("ast", 2.5, 2, False, "ast", 0.58)]  # singles: fragile
         FRAGILE = {"reb", "ast"}                          # real edge but die on a 1pt shade — book-line-near-median only
         pm = {}
