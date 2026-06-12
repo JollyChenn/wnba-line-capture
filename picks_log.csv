@@ -1,10 +1,10 @@
-pick_date,game_id,player,team,opp,market,anchor,signals,fair_p,fair_odds
-2026-06-12,401856984,Kiki Iriafen,Washington Mystics,Toronto Tempo,pra_under,25.5,disrupted+cold,0.6,1.67
-2026-06-12,401856984,Kiki Iriafen,Washington Mystics,Toronto Tempo,pr_under,23.5,disrupted+cold,0.59,1.69
-2026-06-12,401856984,Kiki Iriafen,Washington Mystics,Toronto Tempo,ra_under,10.5,disrupted+cold,0.61,1.64
-2026-06-12,401856985,Dominique Malonga,Seattle Storm,Golden State Valkyries,pra_under,23.5,cold+stingy,0.621,1.61
-2026-06-12,401856985,Dominique Malonga,Seattle Storm,Golden State Valkyries,pr_under,22.5,cold+stingy,0.59,1.69
-2026-06-12,401856987,Chennedy Carter,Las Vegas Aces,Minnesota Lynx,pra_under,19.5,cold+stingy,0.621,1.61
-2026-06-12,401856987,Chennedy Carter,Las Vegas Aces,Minnesota Lynx,pa_under,18.5,cold+stingy,0.61,1.64
-2026-06-12,401856987,Chennedy Carter,Las Vegas Aces,Minnesota Lynx,pr_under,18.5,cold+stingy,0.59,1.69
-2026-06-12,401856987,Chennedy Carter,Las Vegas Aces,Minnesota Lynx,pts_under,17.5,cold+stingy,0.626,1.6
+pick_date,game_id,player,team,opp,market,anchor,signals,fair_p,fair_odds,proj
+2026-06-12,401856984,Kiki Iriafen,Washington Mystics,Toronto Tempo,pra_under,25.5,disrupted+cold,0.6,1.67,23.0
+2026-06-12,401856984,Kiki Iriafen,Washington Mystics,Toronto Tempo,pr_under,23.5,disrupted+cold,0.59,1.69,21.4
+2026-06-12,401856984,Kiki Iriafen,Washington Mystics,Toronto Tempo,ra_under,10.5,disrupted+cold,0.61,1.64,9.1
+2026-06-12,401856985,Dominique Malonga,Seattle Storm,Golden State Valkyries,pra_under,23.5,cold+stingy,0.621,1.61,20.9
+2026-06-12,401856985,Dominique Malonga,Seattle Storm,Golden State Valkyries,pr_under,22.5,cold+stingy,0.59,1.69,20.6
+2026-06-12,401856987,Chennedy Carter,Las Vegas Aces,Minnesota Lynx,pra_under,19.5,cold+stingy,0.621,1.61,15.9
+2026-06-12,401856987,Chennedy Carter,Las Vegas Aces,Minnesota Lynx,pa_under,18.5,cold+stingy,0.61,1.64,15.7
+2026-06-12,401856987,Chennedy Carter,Las Vegas Aces,Minnesota Lynx,pr_under,18.5,cold+stingy,0.59,1.69,16.1
+2026-06-12,401856987,Chennedy Carter,Las Vegas Aces,Minnesota Lynx,pts_under,17.5,cold+stingy,0.626,1.6,14.7

@@ -1,0 +1,30 @@
+name: cascade-watch
+on:
+  schedule:
+    - cron: '*/20 0-3,19-23 * * *'   # every 20 min during WNBA game hours (UTC)
+  workflow_dispatch: {}
+permissions:
+  contents: write
+concurrency:
+  group: cascade-watch
+  cancel-in-progress: false
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install deps
+        run: pip install --quiet pandas requests numpy
+      - name: Poll injuries, ping cascade scratches
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        run: python cascade_watch.py
+      - name: Persist ping state
+        run: |
+          git config user.name "cascade-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add cascade_pinged.json 2>/dev/null || true
+          if git diff --staged --quiet; then echo "no new state"; else git commit -m "cascade state $(date -u +%FT%TZ)"; git push; fi

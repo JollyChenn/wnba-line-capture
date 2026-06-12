@@ -314,8 +314,9 @@ def main():
                             f"· [{tg0}] · last5 mins [{r.recent_min}] oppDef {r.opp_def:.0f}{warn} "
                             f"· BET UNDER only if book line > proj AND book under-price > fair at that line")
             for label, ln, tg, fp, fo, mkt in d["opts"]:
+                mu = round(ln - r[f"sd_{mkt}"] * _nppf(fp), 1)     # our projection (for CLV grading)
                 log_rows.append([str(today), gm_["game_id"], player, NAME(r.team), NAME(opp_of[r.team]),
-                                 f"{mkt}_under", ln, tg, round(fp, 3), fo])
+                                 f"{mkt}_under", ln, tg, round(fp, 3), fo, mu])
             core_picks.append(f"• **{player}** ({NAME(r.team)}) — {opts}")
             n_unders += 1
     if not n_unders:
@@ -343,7 +344,7 @@ def main():
 
     # IDEMPOTENT write: re-running the same day REPLACES today's rows (never stacks
     # duplicates — that's the counting-artifact bug we refuse to reintroduce).
-    cols = ["pick_date", "game_id", "player", "team", "opp", "market", "anchor", "signals", "fair_p", "fair_odds"]
+    cols = ["pick_date", "game_id", "player", "team", "opp", "market", "anchor", "signals", "fair_p", "fair_odds", "proj"]
     new_df = pd.DataFrame(log_rows, columns=cols)
     if os.path.exists(LOG_CSV):
         old = pd.read_csv(LOG_CSV, dtype=str)
