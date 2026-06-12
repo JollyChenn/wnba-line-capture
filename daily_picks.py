@@ -72,15 +72,11 @@ def notify_discord(date, core_picks, cascade_lines):
         return
     head = f"🏀 **WNBA — {date}**"
     if core_picks:
-        body = (f"\n\n✅ **BET NOW — {len(core_picks)} core UNDER(s), 1u each:**\n" + "\n".join(core_picks)
-                + "\n_Bet at 1xbet only if its line ≥ the number shown._")
+        body = "\n\n✅ **BET 1u** _(only if 1xbet beats the fair odds)_\n" + "\n".join(core_picks)
     else:
-        body = "\n\n😴 **No core bet today.** Sit out — do NOT reach for singles."
-    # cascade is a CONTINGENCY, not a bet — one-line pointer only, full list in PICKS.md
-    casc = (f"\n\n_(+{len(cascade_lines)} cascade contingencies in PICKS.md — only if a star is scratched)_"
-            if cascade_lines else "")
-    foot = "\n_Flat 1u. Never Clark. Graded vs Pinnacle close._"
-    msg = head + body + casc + foot
+        body = "\n\n😴 No core bet today."
+    casc = f"\n_+{len(cascade_lines)} cascade watches in PICKS.md_" if cascade_lines else ""
+    msg = head + body + casc
     if len(msg) > 1900:
         msg = msg[:1880] + "\n…(truncated — see PICKS.md)"
     try:
@@ -246,8 +242,7 @@ def main():
                             f"→ BET if 1xbet under > {fo} · mins {r.t5_min:.0f} trend {r.trend:+.1f} oppDef {r.opp_def:.0f}")
             log_rows.append([str(today), gm_["game_id"], r.player, NAME(r.team), NAME(opp_of[r.team]),
                              "pts_under", round(r.med_pts, 1), tags, round(p, 3), fo])
-            core_picks.append(f"• UNDER **{r.player}** ({NAME(r.team)}) pts ~{r.med_pts:.1f} — "
-                              f"fair **{fo}** _(bet only if 1xbet > {fo})_")
+            core_picks.append(f"• **{r.player}** ({NAME(r.team)}) — UNDER pts · {tags} · fair **{fo}**")
             n_unders += 1
     if not n_unders:
         lines_md.append("_(no 2-signal core unders today — do NOT reach for singles)_")
