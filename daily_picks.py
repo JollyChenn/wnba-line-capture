@@ -19,6 +19,20 @@ import requests
 import pandas as pd
 import numpy as np
 
+# Anchor the slate to the US sports day, NOT the local (Malaysia) clock. After midnight
+# MYT, datetime.date.today() rolls to tomorrow and silently skips tonight's US games
+# (the timezone bug from NBA_HANDOFF §5.2). The cloud runs UTC so it was fine; this makes
+# a local run match. Pacific = latest US tipoffs all land on one calendar day.
+try:
+    from zoneinfo import ZoneInfo
+    _SLATE_TZ = ZoneInfo("America/Los_Angeles")
+except Exception:
+    _SLATE_TZ = datetime.timezone(datetime.timedelta(hours=-7))   # PDT fallback (WNBA season is always DST)
+
+
+def _slate_today():
+    return datetime.datetime.now(_SLATE_TZ).date()
+
 _H = {"User-Agent": "Mozilla/5.0"}
 SB = "https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard"
 SUMMARY = "https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/summary"
@@ -45,6 +59,8 @@ CASCADE_FAIR_P = 0.57           # star-out cascade rank3-6 PRA OVER
 # HOT-streak OVER on PRA (only over-market that passed the gauntlet): hot+expanding+leaky
 OVER_FAIR_P = {"hot+leaky": 0.62, "hot+expand+leaky": 0.62, "hot+expand": 0.55}
 OVER_DEFAULT = 0.58             # PRA hot any-2-of-3 = 58.7%
+STAR_PRA_MIN = 22.0            # PRA is STAR-ONLY on 1xbet -> only PING overs for high-PRA stars
+#                               (role-player PRA-overs you can't actually bet stay in PICKS.md, not the ping)
 
 
 def fair_odds(p):
@@ -177,7 +193,7 @@ def refresh():
     games = pd.read_csv(GAMES_CSV, dtype={"game_id": str}) if os.path.exists(GAMES_CSV) else pd.DataFrame()
     box = pd.read_csv(BOX_CSV, dtype={"game_id": str}) if os.path.exists(BOX_CSV) else pd.DataFrame()
     have = set(games.game_id) if len(games) else set()
-    today = datetime.date.today()
+    today = _slate_today()
     fin_all, upcoming = [], []
     d = SEASON_START
     while d <= today + datetime.timedelta(days=1):
@@ -254,7 +270,7 @@ def main():
     stingy_thr = np.nanpercentile(list(dmap.values()), 25)
     leaky_thr = np.nanpercentile(list(dmap.values()), 75)   # top-quartile defense = LEAKY (for hot-overs)
 
-    today = datetime.date.today()
+    today = _slate_today()
     lines_md = [f"# WNBA core picks — {today}",
                 "", f"_Stingy-D threshold (trailing-10 allowed, bottom quartile): {stingy_thr:.0f}_",
                 "", "## REAL-MONEY CORE — UNDER pts (need >=2 signals, flat 1u)", ""]
@@ -330,7 +346,8 @@ def main():
                 mu = round(ln - r[f"sd_{mkt}"] * _nppf(fp), 1)     # our projection (for CLV grading)
                 log_rows.append([str(today), gm_["game_id"], player, NAME(r.team), NAME(opp_of[r.team]),
                                  f"{mkt}_under", ln, tg, round(fp, 3), fo, mu])
-            core_picks.append(f"• **{player}** ({NAME(r.team)}) — {opts}")
+            if not (r.disrupted and not r.declining):     # don't PING one-game minute anomalies (still listed in PICKS.md w/ ⚠VERIFY)
+                core_picks.append(f"• **{player}** ({NAME(r.team)}) — {opts}")
             n_unders += 1
 
         # HOT-streak OVER on PRA (the one over-market that cleared the gauntlet, 58.7%)
@@ -354,7 +371,8 @@ def main():
                             f"· OVER value zone = book line between median and proj (MAX edge near median)")
             log_rows.append([str(today), gm_["game_id"], r.player, NAME(r.team), NAME(opp_of[r.team]),
                              "pra_over", ln, tg, round(fp, 3), fo, round(mu, 1)])
-            core_picks.append(f"• **{r.player}** ({NAME(r.team)}) — PRA OVER median~{med:.0f}→proj~{mu:.1f} [{tg}]")
+            if med >= STAR_PRA_MIN:     # PRA star-only on 1xbet -> only PING star overs (role overs stay in PICKS.md)
+                core_picks.append(f"• **{r.player}** ({NAME(r.team)}) — PRA OVER median~{med:.0f}→proj~{mu:.1f} [{tg}]")
             n_unders += 1
     if not n_unders:
         lines_md.append("_(no 2-signal core unders today — do NOT reach for singles)_")
