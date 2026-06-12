@@ -19,6 +19,8 @@ jobs:
       - name: Install deps
         run: pip install --quiet pandas requests numpy
       - name: Generate core picks (any-2-of-3 unders + cascade lists)
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         run: python daily_picks.py
       - name: Commit picks + data cache
         run: |

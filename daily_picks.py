@@ -30,6 +30,33 @@ PICKS_MD = "PICKS.md"
 LOG_CSV = "picks_log.csv"
 IDX = {"min": 0, "pts": 1, "fg": 2, "tp": 3, "ft": 4, "reb": 5, "ast": 6,
        "to": 7, "stl": 8, "blk": 9, "oreb": 10, "dreb": 11, "pf": 12, "pm": 13}
+DISCORD_WEBHOOK = os.environ.get("DISCORD_WEBHOOK", "")    # set as a GitHub secret; never hardcode
+
+
+def notify_discord(date, core_picks, cascade_lines):
+    """Ping Discord with the day's core signal. Heartbeat even on quiet days so
+    you know the cron is alive. Webhook comes from env (DISCORD_WEBHOOK), not code."""
+    if not DISCORD_WEBHOOK:
+        print("discord: no webhook set, skipping ping")
+        return
+    head = f"🏀 **WNBA Core Picks — {date}**"
+    if core_picks:
+        body = f"\n\n**▶ CORE UNDERS — bet 1u each ({len(core_picks)}):**\n" + "\n".join(core_picks)
+    else:
+        body = "\n\n**▶ No 2-signal core unders today** — do NOT reach for singles."
+    casc = ""
+    if cascade_lines:
+        casc = (f"\n\n**▶ CASCADE WATCH — fire ONLY if the named starter is OUT ({len(cascade_lines)}):**\n"
+                + "\n".join(cascade_lines))
+    foot = "\n\n_1xbet only where line ≥ anchor (under). Flat 1u. Never Clark. Grade vs Pinnacle close._"
+    msg = head + body + casc + foot
+    if len(msg) > 1900:
+        msg = msg[:1880] + "\n…(truncated — see PICKS.md)"
+    try:
+        r = requests.post(DISCORD_WEBHOOK, json={"content": msg}, timeout=15)
+        print(f"discord ping: HTTP {r.status_code}")
+    except Exception as e:
+        print(f"discord notify failed: {e}")
 
 
 def _f(x):
@@ -164,6 +191,8 @@ def main():
                 "", f"_Stingy-D threshold (trailing-10 allowed, bottom quartile): {stingy_thr:.0f}_",
                 "", "## REAL-MONEY CORE — UNDER pts (need >=2 signals, flat 1u)", ""]
     log_rows = []
+    core_picks = []          # compact lines for the Discord ping
+    cascade_lines = []
     n_unders = 0
     for gm_ in upcoming:
         a, h = gm_["away"], gm_["home"]
@@ -183,6 +212,7 @@ def main():
                             f"[{tags}] mins {r.t5_min:.0f} trend {r.trend:+.1f} oppDef {r.opp_def:.0f}")
             log_rows.append([str(today), gm_["game_id"], r.player, r.team, opp_of[r.team],
                              "pts_under", round(r.med_pts, 1), tags])
+            core_picks.append(f"• UNDER {r.player} ({r.team}) pts {r.med_pts:.1f} [{tags}]")
             n_unders += 1
     if not n_unders:
         lines_md.append("_(no 2-signal core unders today — do NOT reach for singles)_")
@@ -198,18 +228,24 @@ def main():
             ben = tt.iloc[2:6]
             names = ", ".join(f"{b.player} (pra {b.med_pra:.0f})" for _, b in ben.iterrows())
             lines_md.append(f"- {tm}: if **{star.player}** OUT -> PRA OVER: {names}")
+            top2 = ", ".join(b.player.split()[-1] for _, b in ben.head(2).iterrows())
+            cascade_lines.append(f"• {tm}: {star.player} OUT → {top2}…")
 
     lines_md += ["", "---", "_Rules: flat 1u stakes. Bet 1xbet only where its line >= anchor (under) or",
                  "<= anchor (cascade over). Skip Clark props. Grade vs Pinnacle close (line_snapshots.csv)._"]
     open(PICKS_MD, "w", encoding="utf-8").write("\n".join(lines_md) + "\n")
 
-    new = not os.path.exists(LOG_CSV)
-    with open(LOG_CSV, "a", newline="", encoding="utf-8") as fh:
-        w = csv.writer(fh)
-        if new:
-            w.writerow(["pick_date", "game_id", "player", "team", "opp", "market", "anchor", "signals"])
-        w.writerows(log_rows)
+    # IDEMPOTENT write: re-running the same day REPLACES today's rows (never stacks
+    # duplicates — that's the counting-artifact bug we refuse to reintroduce).
+    cols = ["pick_date", "game_id", "player", "team", "opp", "market", "anchor", "signals"]
+    new_df = pd.DataFrame(log_rows, columns=cols)
+    if os.path.exists(LOG_CSV):
+        old = pd.read_csv(LOG_CSV, dtype=str)
+        old = old[old.pick_date != str(today)]
+        new_df = pd.concat([old, new_df], ignore_index=True)
+    new_df.to_csv(LOG_CSV, index=False)
     print(f"PICKS.md written: {n_unders} core unders + cascade lists. log rows: {len(log_rows)}")
+    notify_discord(today, core_picks, cascade_lines)
 
 
 if __name__ == "__main__":
