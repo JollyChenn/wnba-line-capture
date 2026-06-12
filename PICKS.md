@@ -4,22 +4,22 @@ _Stingy-D threshold (trailing-10 allowed, bottom quartile): 81_
 
 ## REAL-MONEY CORE — UNDER pts (need >=2 signals, flat 1u)
 
-- **UNDER Chennedy Carter** (Las Vegas Aces, Minnesota Lynx @ Las Vegas Aces) — pts line ~**18.0** [cold+stingy] · fair **62%** = **1.61** dec → BET if 1xbet under > 1.61 · mins 17 trend -2.2 oppDef 76
+- **UNDER Chennedy Carter 17.5 points** (Las Vegas Aces, Minnesota Lynx @ Las Vegas Aces) — [cold+stingy] · fair **62%** = **1.61** → BET if 1xbet under > 1.61 · mins 17 trend -2.2 oppDef 76
 
 ## CASCADE contingencies — fire ONLY on scratch news (PRA OVER rank-3-6, flat 1u)
 
-- Toronto Tempo: if **Brittney Sykes** OUT -> PRA OVER (fair 1.75, bet if 1xbet over > 1.75): Kiki Rice (pra 22), Nyara Sabally (pra 18), Laura Juskaite (pra 15), Maria Conde (pra 12)
-- Washington Mystics: if **Shakira Austin** OUT -> PRA OVER (fair 1.75, bet if 1xbet over > 1.75): Kiki Iriafen (pra 26), Michaela Onyenwere (pra 14), Cotie McMahon (pra 9), Angela Dugalic (pra 10)
-- Golden State Valkyries: if **Gabby Williams** OUT -> PRA OVER (fair 1.75, bet if 1xbet over > 1.75): Janelle Salaun (pra 18), Kayla Thornton (pra 16), Cecilia Zandalasini (pra 11), Tiffany Hayes (pra 11)
-- Seattle Storm: if **Flau'jae Johnson** OUT -> PRA OVER (fair 1.75, bet if 1xbet over > 1.75): Dominique Malonga (pra 24), Awa Fam (pra 14), Jordan Horston (pra 12), Zia Cooke (pra 8)
-- Indiana Fever: if **Aliyah Boston** OUT -> PRA OVER (fair 1.75, bet if 1xbet over > 1.75): Kelsey Mitchell (pra 22), Sophie Cunningham (pra 12), Myisha Hines-Allen (pra 12), Lexie Hull (pra 12)
-- Connecticut Sun: if **Aneesah Morrow** OUT -> PRA OVER (fair 1.75, bet if 1xbet over > 1.75): Diamond Miller (pra 13), Brittney Griner (pra 22), Aaliyah Edwards (pra 16), Kennedy Burke (pra 10)
-- Minnesota Lynx: if **Courtney Williams** OUT -> PRA OVER (fair 1.75, bet if 1xbet over > 1.75): Natasha Howard (pra 31), Kayla McBride (pra 20), Nia Coffey (pra 16), Maya Caldwell (pra 8)
-- Las Vegas Aces: if **A'ja Wilson** OUT -> PRA OVER (fair 1.75, bet if 1xbet over > 1.75): Chelsea Gray (pra 24), NaLyssa Smith (pra 20), Chennedy Carter (pra 20), Jewell Loyd (pra 12)
-- Dallas Wings: if **Paige Bueckers** OUT -> PRA OVER (fair 1.75, bet if 1xbet over > 1.75): Jessica Shepard (pra 30), Azzi Fudd (pra 14), Aziaha James (pra 9), Maddy Siegrist (pra 12)
-- Portland Fire: if **Carla Leite** OUT -> PRA OVER (fair 1.75, bet if 1xbet over > 1.75): Megan Gustafson (pra 17), Bridget Carleton (pra 18), Emily Engstler (pra 14), Teja Oblak (pra 14)
-- Los Angeles Sparks: if **Kelsey Plum** OUT -> PRA OVER (fair 1.75, bet if 1xbet over > 1.75): Ariel Atkins (pra 16), Rae Burrell (pra 14), Dearica Hamby (pra 28), Erica Wheeler (pra 14)
-- Phoenix Mercury: if **Kahleah Copper** OUT -> PRA OVER (fair 1.75, bet if 1xbet over > 1.75): Monique Akoa Makani (pra 17), DeWanna Bonner (pra 10), Natasha Mack (pra 20), Noemie Brochant (pra 9)
+- Toronto Tempo: if **Brittney Sykes** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Kiki Rice OVER 22.5 PRA, Nyara Sabally OVER 17.5 PRA, Laura Juskaite OVER 14.5 PRA, Maria Conde OVER 11.5 PRA
+- Washington Mystics: if **Shakira Austin** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Kiki Iriafen OVER 25.5 PRA, Michaela Onyenwere OVER 13.5 PRA, Cotie McMahon OVER 8.5 PRA, Angela Dugalic OVER 9.5 PRA
+- Golden State Valkyries: if **Gabby Williams** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Janelle Salaun OVER 17.5 PRA, Kayla Thornton OVER 15.5 PRA, Cecilia Zandalasini OVER 10.5 PRA, Tiffany Hayes OVER 10.5 PRA
+- Seattle Storm: if **Flau'jae Johnson** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Dominique Malonga OVER 23.5 PRA, Awa Fam OVER 14.5 PRA, Jordan Horston OVER 11.5 PRA, Zia Cooke OVER 7.5 PRA
+- Indiana Fever: if **Aliyah Boston** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Kelsey Mitchell OVER 22.5 PRA, Sophie Cunningham OVER 12.5 PRA, Myisha Hines-Allen OVER 11.5 PRA, Lexie Hull OVER 12.5 PRA
+- Connecticut Sun: if **Aneesah Morrow** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Diamond Miller OVER 12.5 PRA, Brittney Griner OVER 21.5 PRA, Aaliyah Edwards OVER 16.5 PRA, Kennedy Burke OVER 9.5 PRA
+- Minnesota Lynx: if **Courtney Williams** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Natasha Howard OVER 30.5 PRA, Kayla McBride OVER 19.5 PRA, Nia Coffey OVER 15.5 PRA, Maya Caldwell OVER 7.5 PRA
+- Las Vegas Aces: if **A'ja Wilson** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Chelsea Gray OVER 24.5 PRA, NaLyssa Smith OVER 20.5 PRA, Chennedy Carter OVER 19.5 PRA, Jewell Loyd OVER 11.5 PRA
+- Dallas Wings: if **Paige Bueckers** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Jessica Shepard OVER 30.5 PRA, Azzi Fudd OVER 13.5 PRA, Aziaha James OVER 8.5 PRA, Maddy Siegrist OVER 12.5 PRA
+- Portland Fire: if **Carla Leite** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Megan Gustafson OVER 16.5 PRA, Bridget Carleton OVER 17.5 PRA, Emily Engstler OVER 13.5 PRA, Teja Oblak OVER 13.5 PRA
+- Los Angeles Sparks: if **Kelsey Plum** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Ariel Atkins OVER 15.5 PRA, Rae Burrell OVER 13.5 PRA, Dearica Hamby OVER 27.5 PRA, Erica Wheeler OVER 13.5 PRA
+- Phoenix Mercury: if **Kahleah Copper** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Monique Akoa Makani OVER 16.5 PRA, DeWanna Bonner OVER 10.5 PRA, Natasha Mack OVER 20.5 PRA, Noemie Brochant OVER 8.5 PRA
 
 ---
 _Rules: flat 1u stakes. Bet 1xbet only where its line >= anchor (under) or

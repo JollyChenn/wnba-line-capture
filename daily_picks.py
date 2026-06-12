@@ -237,12 +237,13 @@ def main():
             tags = "+".join(t for t, on in [("shrink", r.shrink), ("cold", r.cold), ("stingy", r.stingy)] if on)
             p = FAIR_P.get(tags, 0.58)
             fo = fair_odds(p)
-            lines_md.append(f"- **UNDER {r.player}** ({NAME(r.team)}, {NAME(a)} @ {NAME(h)}) — "
-                            f"pts line ~**{r.med_pts:.1f}** [{tags}] · fair **{p*100:.0f}%** = **{fo}** dec "
-                            f"→ BET if 1xbet under > {fo} · mins {r.t5_min:.0f} trend {r.trend:+.1f} oppDef {r.opp_def:.0f}")
+            pts_line = float(np.floor(r.med_pts - 0.001) + 0.5)   # exact backtested line (the fair % is measured here)
+            lines_md.append(f"- **UNDER {r.player} {pts_line:.1f} points** ({NAME(r.team)}, {NAME(a)} @ {NAME(h)}) — "
+                            f"[{tags}] · fair **{p*100:.0f}%** = **{fo}** → BET if 1xbet under > {fo} · "
+                            f"mins {r.t5_min:.0f} trend {r.trend:+.1f} oppDef {r.opp_def:.0f}")
             log_rows.append([str(today), gm_["game_id"], r.player, NAME(r.team), NAME(opp_of[r.team]),
-                             "pts_under", round(r.med_pts, 1), tags, round(p, 3), fo])
-            core_picks.append(f"• **{r.player}** ({NAME(r.team)}) — UNDER pts · {tags} · fair **{fo}**")
+                             "pts_under", pts_line, tags, round(p, 3), fo])
+            core_picks.append(f"• **{r.player}** ({NAME(r.team)}) — UNDER **{pts_line:.1f} points** · {tags} · fair **{fo}**")
             n_unders += 1
     if not n_unders:
         lines_md.append("_(no 2-signal core unders today — do NOT reach for singles)_")
@@ -256,9 +257,10 @@ def main():
                 continue
             star = tt.iloc[0]
             ben = tt.iloc[2:6]
-            names = ", ".join(f"{b.player} (pra {b.med_pra:.0f})" for _, b in ben.iterrows())
-            lines_md.append(f"- {NAME(tm)}: if **{star.player}** OUT -> PRA OVER (fair {fair_odds(CASCADE_FAIR_P)}, "
-                            f"bet if 1xbet over > {fair_odds(CASCADE_FAIR_P)}): {names}")
+            names = ", ".join(f"{b.player} OVER {np.floor(b.med_pra - 0.001) + 0.5:.1f} PRA"
+                              for _, b in ben.iterrows())
+            lines_md.append(f"- {NAME(tm)}: if **{star.player}** OUT -> (fair {fair_odds(CASCADE_FAIR_P)}, "
+                            f"bet if 1xbet over > {fair_odds(CASCADE_FAIR_P)}) {names}")
             top2 = ", ".join(b.player.split()[-1] for _, b in ben.head(2).iterrows())
             cascade_lines.append(f"• {tm}: {star.player} OUT → {top2}…")
 
