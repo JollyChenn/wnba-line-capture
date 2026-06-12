@@ -299,17 +299,20 @@ def main():
             shown = d["opts"][:3]                      # top-3 by priority (keeps it readable)
             parts = []
             for i, (label, ln, tg, fp, fo, mkt) in enumerate(shown):
-                if i == 0:                             # primary market: full fair-odds-by-line ladder
-                    lad = " ".join(f"{fl:.1f}={fo2}" for fl, fo2 in fair_ladder(ln, fp, r[f"sd_{mkt}"]))
-                    parts.append(f"{label} U fair[{lad}]")
-                else:                                  # alternatives: anchor fair only
-                    parts.append(f"{label} U{ln:.1f}({fo})")
+                sd_m = r[f"sd_{mkt}"]
+                mu = ln - sd_m * _nppf(fp)             # our forward projection (≈ where the book centers)
+                if i == 0:                             # primary: projection + fair ladder ABOVE it (the value zone)
+                    c = round(mu * 2) / 2
+                    lad = " ".join(f"{c+off:.1f}={round(1/max(_ncdf((c+off-mu)/max(sd_m,1)),0.01),2)}" for off in (0, 1, 2))
+                    parts.append(f"{label} proj~{mu:.1f} fair[{lad}]")
+                else:
+                    parts.append(f"{label} proj~{mu:.1f}")
             opts = " · ".join(parts)
             tg0 = shown[0][2]
-            warn = " ⚠VERIFY (last game anomaly — skip if it was blowout/garbage time)" if r.disrupted and not r.declining else ""
+            warn = " ⚠VERIFY (last game anomaly — skip if blowout/garbage time)" if r.disrupted and not r.declining else ""
             lines_md.append(f"- **{player}** ({NAME(r.team)}, {NAME(a)} @ {NAME(h)}): {opts} "
                             f"· [{tg0}] · last5 mins [{r.recent_min}] oppDef {r.opp_def:.0f}{warn} "
-                            f"· match the book's line in fair[ ]; BET if book under-price > fair there")
+                            f"· BET UNDER only if book line > proj AND book under-price > fair at that line")
             for label, ln, tg, fp, fo, mkt in d["opts"]:
                 log_rows.append([str(today), gm_["game_id"], player, NAME(r.team), NAME(opp_of[r.team]),
                                  f"{mkt}_under", ln, tg, round(fp, 3), fo])

@@ -4,9 +4,9 @@ _Stingy-D threshold (trailing-10 allowed, bottom quartile): 81_
 
 ## REAL-MONEY CORE — UNDER pts (need >=2 signals, flat 1u)
 
-- **Kiki Iriafen** (Washington Mystics, Toronto Tempo @ Washington Mystics): PRA U fair[24.5=1.78 25.5=1.67 26.5=1.57] · PR U23.5(1.69) · RA U10.5(1.64) · [disrupted+cold] · last5 mins [24 27 27 27 8] oppDef 93 ⚠VERIFY (last game anomaly — skip if it was blowout/garbage time) · match the book's line in fair[ ]; BET if book under-price > fair there
-- **Dominique Malonga** (Seattle Storm, Golden State Valkyries @ Seattle Storm): PRA U fair[22.5=1.74 23.5=1.61 24.5=1.5] · PR U22.5(1.69) · [cold+stingy] · last5 mins [20 32 14 17 24] oppDef 81 · match the book's line in fair[ ]; BET if book under-price > fair there
-- **Chennedy Carter** (Las Vegas Aces, Minnesota Lynx @ Las Vegas Aces): PRA U fair[18.5=1.7 19.5=1.61 20.5=1.53] · PA U18.5(1.64) · PR U18.5(1.69) · [cold+stingy] · last5 mins [21 26 19 9 8] oppDef 76 ⚠VERIFY (last game anomaly — skip if it was blowout/garbage time) · match the book's line in fair[ ]; BET if book under-price > fair there
+- **Kiki Iriafen** (Washington Mystics, Toronto Tempo @ Washington Mystics): PRA proj~23.0 fair[23.0=2.0 24.0=1.85 25.0=1.72] · PR proj~21.4 · RA proj~9.1 · [disrupted+cold] · last5 mins [24 27 27 27 8] oppDef 93 ⚠VERIFY (last game anomaly — skip if blowout/garbage time) · BET UNDER only if book line > proj AND book under-price > fair at that line
+- **Dominique Malonga** (Seattle Storm, Golden State Valkyries @ Seattle Storm): PRA proj~20.9 fair[21.0=1.98 22.0=1.81 23.0=1.67] · PR proj~20.6 · [cold+stingy] · last5 mins [20 32 14 17 24] oppDef 81 · BET UNDER only if book line > proj AND book under-price > fair at that line
+- **Chennedy Carter** (Las Vegas Aces, Minnesota Lynx @ Las Vegas Aces): PRA proj~15.9 fair[16.0=1.98 17.0=1.86 18.0=1.75] · PA proj~15.7 · PR proj~16.1 · [cold+stingy] · last5 mins [21 26 19 9 8] oppDef 76 ⚠VERIFY (last game anomaly — skip if blowout/garbage time) · BET UNDER only if book line > proj AND book under-price > fair at that line
 
 ## CASCADE contingencies — fire ONLY on scratch news (PRA OVER rank-3-6, flat 1u)
 
