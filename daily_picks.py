@@ -32,6 +32,23 @@ IDX = {"min": 0, "pts": 1, "fg": 2, "tp": 3, "ft": 4, "reb": 5, "ast": 6,
        "to": 7, "stl": 8, "blk": 9, "oreb": 10, "dreb": 11, "pf": 12, "pm": 13}
 DISCORD_WEBHOOK = os.environ.get("DISCORD_WEBHOOK", "")    # set as a GitHub secret; never hardcode
 
+# Fair P(win) by signal combo, from the corrected 11-season backtest (final_backtest.py).
+# Historical hit rate vs the median-anchor line = the fair win probability.
+# fair (no-vig) decimal odds = 1 / P. BET ONLY when 1xbet's price EXCEEDS fair (that gap
+# is the captured edge). These are historical, so demand a real margin, not a razor-thin beat.
+FAIR_P = {
+    "shrink+cold+stingy": 0.70,   # backtest 76% (n=38) shaded down for the tiny sample
+    "shrink+cold":        0.684,
+    "shrink+stingy":      0.642,
+    "cold+stingy":        0.620,
+    "shrink":             0.594, "cold": 0.588, "stingy": 0.560,
+}
+CASCADE_FAIR_P = 0.57             # star-out cascade rank3-6 PRA OVER
+
+
+def fair_odds(p):
+    return round(1.0 / p, 2)
+
 
 def notify_discord(date, core_picks, cascade_lines):
     """Ping Discord with the day's core signal. Heartbeat even on quiet days so
@@ -208,11 +225,15 @@ def main():
         core = sub[(sub.nsig >= 2) & (sub.med_pts >= 8.5)]
         for _, r in core.iterrows():
             tags = "+".join(t for t, on in [("shrink", r.shrink), ("cold", r.cold), ("stingy", r.stingy)] if on)
-            lines_md.append(f"- **UNDER {r.player}** ({r.team}, {a}@{h}) — pts anchor **{r.med_pts:.1f}** "
-                            f"[{tags}] mins {r.t5_min:.0f} trend {r.trend:+.1f} oppDef {r.opp_def:.0f}")
+            p = FAIR_P.get(tags, 0.58)
+            fo = fair_odds(p)
+            lines_md.append(f"- **UNDER {r.player}** ({r.team}, {a}@{h}) — pts line ~**{r.med_pts:.1f}** "
+                            f"[{tags}] · fair **{p*100:.0f}%** = **{fo}** dec → BET if 1xbet under > {fo} · "
+                            f"mins {r.t5_min:.0f} trend {r.trend:+.1f} oppDef {r.opp_def:.0f}")
             log_rows.append([str(today), gm_["game_id"], r.player, r.team, opp_of[r.team],
-                             "pts_under", round(r.med_pts, 1), tags])
-            core_picks.append(f"• UNDER {r.player} ({r.team}) pts {r.med_pts:.1f} [{tags}]")
+                             "pts_under", round(r.med_pts, 1), tags, round(p, 3), fo])
+            core_picks.append(f"• UNDER **{r.player}** ({r.team}) pts ~{r.med_pts:.1f} — "
+                              f"fair **{fo}** _(bet only if 1xbet > {fo})_")
             n_unders += 1
     if not n_unders:
         lines_md.append("_(no 2-signal core unders today — do NOT reach for singles)_")
@@ -227,7 +248,8 @@ def main():
             star = tt.iloc[0]
             ben = tt.iloc[2:6]
             names = ", ".join(f"{b.player} (pra {b.med_pra:.0f})" for _, b in ben.iterrows())
-            lines_md.append(f"- {tm}: if **{star.player}** OUT -> PRA OVER: {names}")
+            lines_md.append(f"- {tm}: if **{star.player}** OUT -> PRA OVER (fair {fair_odds(CASCADE_FAIR_P)}, "
+                            f"bet if 1xbet over > {fair_odds(CASCADE_FAIR_P)}): {names}")
             top2 = ", ".join(b.player.split()[-1] for _, b in ben.head(2).iterrows())
             cascade_lines.append(f"• {tm}: {star.player} OUT → {top2}…")
 
@@ -237,7 +259,7 @@ def main():
 
     # IDEMPOTENT write: re-running the same day REPLACES today's rows (never stacks
     # duplicates — that's the counting-artifact bug we refuse to reintroduce).
-    cols = ["pick_date", "game_id", "player", "team", "opp", "market", "anchor", "signals"]
+    cols = ["pick_date", "game_id", "player", "team", "opp", "market", "anchor", "signals", "fair_p", "fair_odds"]
     new_df = pd.DataFrame(log_rows, columns=cols)
     if os.path.exists(LOG_CSV):
         old = pd.read_csv(LOG_CSV, dtype=str)
