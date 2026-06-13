@@ -93,10 +93,12 @@ def injuries():
 
 def status_of(player, inj):
     s = inj.get(player.lower(), "")
-    if not s:
-        sn = player.lower().split()[-1]
+    if not s:                                  # first-initial + surname (avoid surname-only collisions, e.g. two "Jones")
+        p = player.lower().split()
+        key = (p[0][0] + " " + p[-1]) if len(p) >= 2 else player.lower()
         for k, v in inj.items():
-            if k.split()[-1] == sn:
+            kp = k.split()
+            if len(kp) >= 2 and kp[0][0] + " " + kp[-1] == key:
                 s = v; break
     return "OUT" if s in SCRATCH else "HOLD" if s in HOLD else "OK"
 
