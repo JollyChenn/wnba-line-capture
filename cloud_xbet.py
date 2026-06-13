@@ -6,6 +6,7 @@
 # ============================================================================
 import os, sys, csv, json, time, math, datetime, urllib.request
 from collections import defaultdict
+from zoneinfo import ZoneInfo
 from curl_cffi import requests as creq
 import pandas as pd, numpy as np
 try:
@@ -18,6 +19,7 @@ ESPN = "https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard
 INJ = "https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/injuries"
 CHAMP = "2874802"
 WINDOW = int(os.environ.get("XBET_WINDOW_MIN", "180"))
+_SLATE_TZ = ZoneInfo("America/Los_Angeles")   # picks are filed under the US slate date (matches daily_picks)
 TIP_FALLBACK = int(os.environ.get("XBET_TIP_FALLBACK_MIN", "35"))   # within this many min of tip + no bet -> ping anyway
 PICKS, SNAP = "picks_log.csv", "xbet_snapshots.csv"
 WEBHOOK = os.environ.get("DISCORD_WEBHOOK", "")
@@ -147,7 +149,7 @@ def load_picks():
     picks = defaultdict(list)
     if not os.path.exists(PICKS):
         return picks
-    today = datetime.datetime.now(datetime.timezone.utc).date().isoformat()
+    today = datetime.datetime.now(_SLATE_TZ).date().isoformat()    # LA slate date, NOT UTC (else late West-coast games go blind 00:00-07:00 UTC)
     for r in csv.DictReader(open(PICKS, encoding="utf-8")):
         if r.get("pick_date") != today:
             continue
