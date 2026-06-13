@@ -175,16 +175,23 @@ def ping(msg):
         print("discord:", e)
 
 
-def proj_msg():
+def proj_msg(inj=None):
     picks = load_picks()
     if not picks:
         return "_(no model picks logged today)_"
-    out = []
+    out, benched = [], []
     for player, pks in picks.items():
+        st = status_of(player, inj) if inj else "OK"
+        if st == "OUT":
+            benched.append(player); continue                        # never suggest an OUT player
         pk = sorted(pks, key=lambda x: {"pra": 0, "pr": 1, "pa": 2, "pts": 3, "ra": 4}.get(x["base"], 9))[0]
         zone = f"line≥{pk['anchor']-1:.1f}" if pk["side"] == "Under" else f"line≤{pk['anchor']+1:.1f}"
-        out.append(f"• {player} {pk['base'].upper()} {pk['side']} — bet if 1xbet {zone} & odds>{pk['fair']} (proj {pk['proj']:.1f})")
-    return "\n".join(out)
+        flag = " ⏳unconfirmed-injury" if st == "HOLD" else ""
+        out.append(f"• {player} {pk['base'].upper()} {pk['side']} — bet if 1xbet {zone} & odds>{pk['fair']} (proj {pk['proj']:.1f}){flag}")
+    msg = "\n".join(out) if out else "_(all candidates are OUT)_"
+    if benched:
+        msg += "\n❌ OUT (skip): " + ", ".join(benched)
+    return msg
 
 
 def pra_line(props, player):
@@ -204,10 +211,11 @@ def main():
     teams = set(t for a, h, _ in near for t in (a, h) if t)
     print(f"{len(near)} game(s) near tip -> probing 1xbet")
     nearkw = [TEAMKW.get(t, [t.lower()]) for t in teams]
+    inj = injuries()                                  # ESPN injury report (works even when 1xbet is blocked)
 
     disc = get(f"{BASE}/LineFeed/Get1x2_VZip?sports=3&champs={CHAMP}&count=40&lng=en&mode=4&country=115&getEmpty=true&virtualSports=true")
     if not disc:
-        ping(f"⚠️ **1xbet scrape BLOCKED (Cloudflare) — {now.strftime('%H:%M')} UTC**\nCheck these on 1xbet yourself:\n" + proj_msg())
+        ping(f"⚠️ **1xbet scrape BLOCKED (Cloudflare) — {now.strftime('%H:%M')} UTC**\nCheck these on 1xbet yourself:\n" + proj_msg(inj))
         return
 
     games = [e for e in disc.get("Value", []) if isinstance(e, dict) and e.get("O1") and e.get("I")]
@@ -232,7 +240,6 @@ def main():
         walk(val)
     print(f"players on boards: {len(props)}")
 
-    inj = injuries()
     picks = load_picks()
     stamp = now.isoformat(timespec="seconds")
     rows, bets, holds, drops = [], [], [], []
@@ -273,6 +280,8 @@ def main():
             continue
         legs = []
         for ben, med in w["ben"]:
+            if status_of(ben, inj) == "OUT":          # a beneficiary who is also out can't carry the cascade
+                continue
             live = pra_line(props, ben)
             if live and live[0] <= med + 1 and live[1] > CASC_FAIR:        # value zone + beats cascade-fair
                 legs.append(f"{ben} O{live[0]}@{live[1]}")
@@ -305,7 +314,7 @@ def main():
         if min_mins <= TIP_FALLBACK:                 # near tip + nothing actionable -> ping anyway (don't go dark)
             ping(f"⏰ **1xbet — tip in ~{int(min_mins)} min, no +EV line found**\n"
                  "(props may be unposted, or the posted price isn't in value). Model picks to check on 1xbet by hand:\n"
-                 + proj_msg())
+                 + proj_msg(inj))
         else:
             print(f"no +EV bet yet; nearest tip in {int(min_mins)} min (> {TIP_FALLBACK}) — holding the ping")
 
