@@ -1,12 +1,13 @@
 # ============================================================================
 # cloud_xbet.py — CLOUD 1xbet capture via 1x-bet.com (laptop-off, no browser).
-# ANTI-FLAG: ESPN pre-gate (FREE) decides if a game is near tip; we touch 1x-bet.com
-# ONLY then. If Cloudflare blocks the scrape -> ping the model PROJECTIONS so you can
-# check 1xbet manually. Each scheduled run is usually a fresh GitHub IP (rotation).
+# ESPN pre-gate (only touch 1xbet near tip) + LINEUP GATE (drop OUT, hold Day-To-Day)
+# + STAR-OUT CASCADE (top-usage star scratched -> rank-3-6 teammates' PRA over, with
+# live lines). If Cloudflare blocks the scrape -> ping model projections to check by hand.
 # ============================================================================
 import os, sys, csv, json, time, datetime, urllib.request
 from collections import defaultdict
 from curl_cffi import requests as creq
+import pandas as pd, numpy as np
 try:
     sys.stdout.reconfigure(encoding="utf-8")
 except Exception:
@@ -14,6 +15,7 @@ except Exception:
 
 BASE = "https://1x-bet.com/service-api"
 ESPN = "https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard"
+INJ = "https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/injuries"
 CHAMP = "2874802"
 WINDOW = int(os.environ.get("XBET_WINDOW_MIN", "180"))
 PICKS, SNAP = "picks_log.csv", "xbet_snapshots.csv"
@@ -25,6 +27,9 @@ STAT_T = {"pts": (1807, 1806), "pr": (5671, 5672), "pa": (5673, 5674),
 T2S = {}
 for _s, (_o, _u) in STAT_T.items():
     T2S[_o] = (_s, "Over"); T2S[_u] = (_s, "Under")
+SCRATCH = {"out", "doubtful"}
+HOLD = {"day-to-day", "questionable", "game-time decision"}
+CASC_FAIR = 1.75
 TEAMKW = {"SEA": ["seattle", "storm"], "GS": ["golden state", "valkyr"], "TOR": ["toronto", "tempo"],
           "WSH": ["washington", "mystic"], "NY": ["new york", "liberty"], "CON": ["connecticut", "sun"],
           "IND": ["indiana", "fever"], "ATL": ["atlanta", "dream"], "CHI": ["chicago", "sky"],
@@ -51,7 +56,6 @@ def gz(g):
 
 
 def espn_near(window):
-    """FREE pre-gate: ESPN games within `window` min of tip (and not past). -> [(away,home)]"""
     out, now = [], datetime.datetime.now(datetime.timezone.utc)
     for d in (now.strftime("%Y%m%d"), (now + datetime.timedelta(days=1)).strftime("%Y%m%d")):
         try:
@@ -71,6 +75,65 @@ def espn_near(window):
                 h = next((x for x in cs if x.get("homeAway") == "home"), {})
                 out.append(((a.get("team") or {}).get("abbreviation"), (h.get("team") or {}).get("abbreviation")))
     return out
+
+
+def injuries():
+    out = {}
+    try:
+        d = json.load(urllib.request.urlopen(urllib.request.Request(INJ, headers={"User-Agent": UA}), timeout=20))
+    except Exception:
+        return out
+    for tm in d.get("injuries", []):
+        for it in tm.get("injuries", []):
+            a = (it.get("athlete") or {}).get("displayName")
+            if a:
+                out[a.lower()] = (it.get("status") or "").lower()
+    return out
+
+
+def status_of(player, inj):
+    s = inj.get(player.lower(), "")
+    if not s:
+        sn = player.lower().split()[-1]
+        for k, v in inj.items():
+            if k.split()[-1] == sn:
+                s = v; break
+    return "OUT" if s in SCRATCH else "HOLD" if s in HOLD else "OK"
+
+
+def watchlist(teams):
+    """Per team in `teams`: top-usage star (>=24 min) + rank-3-6 PRA-beneficiaries, from box_2026.csv."""
+    if not (os.path.exists("data/box_2026.csv") and os.path.exists("data/games_2026.csv")):
+        return {}
+    try:
+        box = pd.read_csv("data/box_2026.csv", dtype={"game_id": str})
+        g = pd.read_csv("data/games_2026.csv", dtype={"game_id": str})
+        box = box.join(g.set_index("game_id")[["date"]], on="game_id")
+        for c in ["pts", "reb", "ast", "fga", "fta", "to", "min"]:
+            box[c] = pd.to_numeric(box[c], errors="coerce")
+        box["pra"] = box.pts + box.reb + box.ast
+        box["usg"] = box.fga + 0.44 * box.fta + box.to
+        box["dt"] = pd.to_datetime(box.date.astype(str), format="%Y%m%d", errors="coerce")
+        box = box.sort_values(["aid", "dt"])
+    except Exception as e:
+        print("watchlist load err", e); return {}
+    feats = []
+    for (aid, team), grp in box.groupby(["aid", "team"]):
+        if len(grp) < 5:
+            continue
+        feats.append({"player": grp.player.iloc[-1], "team": team, "usg": grp.usg.tail(5).mean(),
+                      "med_pra": grp.pra.tail(10).median(), "mins": grp["min"].tail(5).mean()})
+    f = pd.DataFrame(feats)
+    wl = {}
+    for team, tt in f.groupby("team"):
+        if team not in teams:
+            continue
+        tt = tt.sort_values("usg", ascending=False)
+        if len(tt) < 5 or tt.iloc[0].mins < 24:
+            continue
+        wl[team] = {"star": tt.iloc[0].player,
+                    "ben": [(b.player, float(b.med_pra)) for _, b in tt.iloc[2:6].iterrows()]}
+    return wl
 
 
 def load_picks():
@@ -116,16 +179,26 @@ def proj_msg():
     return "\n".join(out)
 
 
+def pra_line(props, player):
+    """A player's live 1xbet PRA over (line, odds) if posted."""
+    pp = props.get(player.lower())
+    if not pp:
+        return None
+    outs = pp.get(("pra", "Over"))
+    return min(outs, key=lambda t: t[0]) if outs else None
+
+
 def main():
     now = datetime.datetime.now(datetime.timezone.utc)
     near = espn_near(WINDOW)
     if not near:
         print(f"ESPN pre-gate: no game within {WINDOW} min of tip; 0 calls to 1xbet."); return
+    teams = set(t for ab in near for t in ab if t)
     print(f"{len(near)} game(s) near tip -> probing 1xbet")
-    nearkw = [TEAMKW.get(t, [t.lower()]) for ab in near for t in ab if t]
+    nearkw = [TEAMKW.get(t, [t.lower()]) for t in teams]
 
     disc = get(f"{BASE}/LineFeed/Get1x2_VZip?sports=3&champs={CHAMP}&count=40&lng=en&mode=4&country=115&getEmpty=true&virtualSports=true")
-    if not disc:                                    # Cloudflare blocked us -> projections fallback
+    if not disc:
         ping(f"⚠️ **1xbet scrape BLOCKED (Cloudflare) — {now.strftime('%H:%M')} UTC**\nCheck these on 1xbet yourself:\n" + proj_msg())
         return
 
@@ -151,13 +224,17 @@ def main():
         walk(val)
     print(f"players on boards: {len(props)}")
 
+    inj = injuries()
     picks = load_picks()
     stamp = now.isoformat(timespec="seconds")
-    rows, bets = [], []
+    rows, bets, holds, drops = [], [], [], []
     for player, pks in picks.items():
         pp = props.get(player.lower())
         if not pp:
             continue
+        st = status_of(player, inj)
+        if st == "OUT":
+            drops.append(player); continue
         side = pks[0]["side"]; cands = []
         for pk in pks:
             outs = pp.get((pk["base"], pk["side"]))
@@ -171,7 +248,23 @@ def main():
                 cands.append((1 if strong else 0, pk["base"], line, odds))
         if cands:
             best = max(cands, key=lambda c: c[0])
-            bets.append(f"• **{player}** {best[1].upper()} {side} **{best[2]} @ {best[3]}** [{'STRONG' if best[0] else 'marginal'}]")
+            txt = f"• **{player}** {best[1].upper()} {side} **{best[2]} @ {best[3]}** [{'STRONG' if best[0] else 'marginal'}]"
+            (holds if st == "HOLD" else bets).append(txt + (" ⏳unconfirmed" if st == "HOLD" else ""))
+
+    # ---- STAR-OUT CASCADE ----
+    casc = []
+    for team, w in watchlist(teams).items():
+        if status_of(w["star"], inj) != "OUT":
+            continue
+        legs = []
+        for ben, med in w["ben"]:
+            live = pra_line(props, ben)
+            if live and live[0] <= med + 1 and live[1] > CASC_FAIR:        # value zone + beats cascade-fair
+                legs.append(f"{ben} O{live[0]}@{live[1]}")
+            else:
+                legs.append(f"{ben} O{np.floor(med-0.001)+0.5:.1f} PRA (check)")
+        casc.append(f"🚨 **{team}: {w['star']} OUT** → cascade PRA OVER: " + ", ".join(legs))
+
     if rows:
         new = not os.path.exists(SNAP)
         with open(SNAP, "a", newline="", encoding="utf-8") as f:
@@ -180,10 +273,20 @@ def main():
                 w.writerow(["captured_utc", "player", "market", "side", "line", "odds"])
             w.writerows(rows)
         print(f"logged {len(rows)} xbet snapshot rows")
-    if bets:
-        ping(f"🏀 **1xbet (cloud) — {now.strftime('%H:%M')} UTC**\n" + "\n".join(bets))
+
+    if bets or casc:
+        parts = []
+        if bets:
+            parts.append("\n".join(bets))
+        if casc:
+            parts.append("\n".join(casc))
+        if holds:
+            parts.append("⏳ HOLD (unconfirmed): " + ", ".join(h.split("**")[1] for h in holds))
+        if drops:
+            parts.append("❌ OUT (dropped): " + ", ".join(drops))
+        ping(f"🏀 **1xbet (cloud) — {now.strftime('%H:%M')} UTC**\n" + "\n".join(parts))
     else:
-        print("no +EV bet in zone (lines may not be posted yet) — no ping")
+        print("no +EV bet / cascade right now — no ping")
 
 
 if __name__ == "__main__":
