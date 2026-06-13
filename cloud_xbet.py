@@ -18,6 +18,7 @@ ESPN = "https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard
 INJ = "https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/injuries"
 CHAMP = "2874802"
 WINDOW = int(os.environ.get("XBET_WINDOW_MIN", "180"))
+TIP_FALLBACK = int(os.environ.get("XBET_TIP_FALLBACK_MIN", "35"))   # within this many min of tip + no bet -> ping anyway
 PICKS, SNAP = "picks_log.csv", "xbet_snapshots.csv"
 WEBHOOK = os.environ.get("DISCORD_WEBHOOK", "")
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -77,7 +78,7 @@ def espn_near(window):
                 cs = (ev.get("competitions") or [{}])[0].get("competitors", [])
                 a = next((x for x in cs if x.get("homeAway") == "away"), {})
                 h = next((x for x in cs if x.get("homeAway") == "home"), {})
-                out.append(((a.get("team") or {}).get("abbreviation"), (h.get("team") or {}).get("abbreviation")))
+                out.append(((a.get("team") or {}).get("abbreviation"), (h.get("team") or {}).get("abbreviation"), mins))
     return out
 
 
@@ -200,7 +201,7 @@ def main():
     near = espn_near(WINDOW)
     if not near:
         print(f"ESPN pre-gate: no game within {WINDOW} min of tip; 0 calls to 1xbet."); return
-    teams = set(t for ab in near for t in ab if t)
+    teams = set(t for a, h, _ in near for t in (a, h) if t)
     print(f"{len(near)} game(s) near tip -> probing 1xbet")
     nearkw = [TEAMKW.get(t, [t.lower()]) for t in teams]
 
@@ -300,7 +301,13 @@ def main():
             parts.append("❌ OUT (dropped): " + ", ".join(drops))
         ping(f"🏀 **1xbet (cloud) — {now.strftime('%H:%M')} UTC**\n" + "\n".join(parts))
     else:
-        print("no +EV bet / cascade right now — no ping")
+        min_mins = min(t[2] for t in near)
+        if min_mins <= TIP_FALLBACK:                 # near tip + nothing actionable -> ping anyway (don't go dark)
+            ping(f"⏰ **1xbet — tip in ~{int(min_mins)} min, no +EV line found**\n"
+                 "(props may be unposted, or the posted price isn't in value). Model picks to check on 1xbet by hand:\n"
+                 + proj_msg())
+        else:
+            print(f"no +EV bet yet; nearest tip in {int(min_mins)} min (> {TIP_FALLBACK}) — holding the ping")
 
 
 if __name__ == "__main__":
