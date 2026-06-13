@@ -1,7 +1,7 @@
 name: capture-xbet
 on:
   schedule:
-    - cron: '*/30 * * * *'        # every 30 min; self-gates to games within 180 min of tip
+    - cron: '*/15 * * * *'        # every 15 min so a run reliably lands ~30 min before each tip (captures always; pings only near tip)
   workflow_dispatch: {}
 permissions:
   contents: write

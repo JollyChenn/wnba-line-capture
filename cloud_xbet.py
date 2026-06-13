@@ -20,7 +20,7 @@ INJ = "https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/injuries"
 CHAMP = "2874802"
 WINDOW = int(os.environ.get("XBET_WINDOW_MIN", "180"))
 _SLATE_TZ = ZoneInfo("America/Los_Angeles")   # picks are filed under the US slate date (matches daily_picks)
-TIP_FALLBACK = int(os.environ.get("XBET_TIP_FALLBACK_MIN", "35"))   # within this many min of tip + no bet -> ping anyway
+PING_MAX = int(os.environ.get("XBET_PING_MAX_MIN", "40"))   # only PING within this many min of tip (the ~30-min-before alert); capture still runs every cycle
 PICKS, SNAP = "picks_log.csv", "xbet_snapshots.csv"
 WEBHOOK = os.environ.get("DISCORD_WEBHOOK", "")
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -300,7 +300,10 @@ def main():
             w.writerows(rows)
         print(f"logged {len(rows)} xbet snapshot rows")
 
-    if bets or casc:
+    min_mins = min(t[2] for t in near)
+    if min_mins > PING_MAX:                          # captured for CLV, but hold the ping until ~30 min before tip
+        print(f"captured {len(rows)} rows for CLV; nearest tip {int(min_mins)} min (> {PING_MAX}) — ping holds till close")
+    elif bets or casc:
         parts = []
         if bets:
             parts.append("\n".join(bets))
@@ -310,15 +313,11 @@ def main():
             parts.append("⏳ HOLD (unconfirmed): " + ", ".join(h.split("**")[1] for h in holds))
         if drops:
             parts.append("❌ OUT (dropped): " + ", ".join(drops))
-        ping(f"🏀 **1xbet (cloud) — {now.strftime('%H:%M')} UTC**\n" + "\n".join(parts))
-    else:
-        min_mins = min(t[2] for t in near)
-        if min_mins <= TIP_FALLBACK:                 # near tip + nothing actionable -> ping anyway (don't go dark)
-            ping(f"⏰ **1xbet — tip in ~{int(min_mins)} min, no +EV line found**\n"
-                 "(props may be unposted, or the posted price isn't in value). Model picks to check on 1xbet by hand:\n"
-                 + proj_msg(inj))
-        else:
-            print(f"no +EV bet yet; nearest tip in {int(min_mins)} min (> {TIP_FALLBACK}) — holding the ping")
+        ping(f"🏀 **1xbet — ~{int(min_mins)} min to tip**\n" + "\n".join(parts))
+    else:                                            # close to tip + no +EV line -> fallback (don't go dark)
+        ping(f"⏰ **1xbet — tip in ~{int(min_mins)} min, no +EV line found**\n"
+             "(props may be unposted, or the posted price isn't in value). Model picks to check on 1xbet by hand:\n"
+             + proj_msg(inj))
 
 
 if __name__ == "__main__":
