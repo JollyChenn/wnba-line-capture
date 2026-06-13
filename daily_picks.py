@@ -345,7 +345,7 @@ def main():
             for label, ln, tg, fp, fo, mkt in d["opts"]:
                 mu = round(ln - r[f"sd_{mkt}"] * _nppf(fp), 1)     # our projection (for CLV grading)
                 log_rows.append([str(today), gm_["game_id"], player, NAME(r.team), NAME(opp_of[r.team]),
-                                 f"{mkt}_under", ln, tg, round(fp, 3), fo, mu])
+                                 f"{mkt}_under", ln, tg, round(fp, 3), fo, mu, round(r[f"sd_{mkt}"], 2)])
             if not (r.disrupted and not r.declining):     # don't PING one-game minute anomalies (still listed in PICKS.md w/ ⚠VERIFY)
                 core_picks.append(f"• **{player}** ({NAME(r.team)}) — {opts}")
             n_unders += 1
@@ -370,7 +370,7 @@ def main():
                             f"last5 mins [{r.recent_min}] oppDef {r.opp_def:.0f} "
                             f"· OVER value zone = book line between median and proj (MAX edge near median)")
             log_rows.append([str(today), gm_["game_id"], r.player, NAME(r.team), NAME(opp_of[r.team]),
-                             "pra_over", ln, tg, round(fp, 3), fo, round(mu, 1)])
+                             "pra_over", ln, tg, round(fp, 3), fo, round(mu, 1), round(r.sd_pra, 2)])
             if med >= STAR_PRA_MIN:     # PRA star-only on 1xbet -> only PING star overs (role overs stay in PICKS.md)
                 core_picks.append(f"• **{r.player}** ({NAME(r.team)}) — PRA OVER median~{med:.0f}→proj~{mu:.1f} [{tg}]")
             n_unders += 1
@@ -399,7 +399,7 @@ def main():
 
     # IDEMPOTENT write: re-running the same day REPLACES today's rows (never stacks
     # duplicates — that's the counting-artifact bug we refuse to reintroduce).
-    cols = ["pick_date", "game_id", "player", "team", "opp", "market", "anchor", "signals", "fair_p", "fair_odds", "proj"]
+    cols = ["pick_date", "game_id", "player", "team", "opp", "market", "anchor", "signals", "fair_p", "fair_odds", "proj", "sd"]
     new_df = pd.DataFrame(log_rows, columns=cols)
     if os.path.exists(LOG_CSV):
         old = pd.read_csv(LOG_CSV, dtype=str)

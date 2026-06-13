@@ -4,7 +4,7 @@
 # + STAR-OUT CASCADE (top-usage star scratched -> rank-3-6 teammates' PRA over, with
 # live lines). If Cloudflare blocks the scrape -> ping model projections to check by hand.
 # ============================================================================
-import os, sys, csv, json, time, datetime, urllib.request
+import os, sys, csv, json, time, math, datetime, urllib.request
 from collections import defaultdict
 from curl_cffi import requests as creq
 import pandas as pd, numpy as np
@@ -35,6 +35,10 @@ TEAMKW = {"SEA": ["seattle", "storm"], "GS": ["golden state", "valkyr"], "TOR": 
           "IND": ["indiana", "fever"], "ATL": ["atlanta", "dream"], "CHI": ["chicago", "sky"],
           "DAL": ["dallas", "wings"], "LV": ["las vegas", "aces"], "MIN": ["minnesota", "lynx"],
           "PHX": ["phoenix", "mercury"], "LA": ["los angeles", "sparks"], "POR": ["portland", "fire"]}
+
+
+def _ncdf(x):
+    return 0.5 * (1 + math.erf(x / math.sqrt(2)))
 
 
 def get(url, tries=2):
@@ -153,7 +157,8 @@ def load_picks():
         if side == "Over" and base != "pra":
             continue
         picks[r["player"]].append({"base": base, "side": side, "anchor": float(r["anchor"]),
-                                   "proj": float(r["proj"]), "fair": float(r["fair_odds"])})
+                                   "proj": float(r["proj"]), "fair": float(r["fair_odds"]),
+                                   "sd": float(r.get("sd") or 0)})
     return picks
 
 
@@ -246,7 +251,14 @@ def main():
             rows.append([stamp, player, pk["base"], side, line, odds])
             zone = (line >= pk["anchor"] - 1) if side == "Under" else (line <= pk["anchor"] + 1)
             strong = (line >= pk["anchor"]) if side == "Under" else (line <= pk["anchor"])
-            if odds > pk["fair"] and zone:
+            # fair recomputed at the ACTUAL 1xbet line (precise) when sd is logged; else anchor-fair
+            if pk.get("sd"):
+                ph = _ncdf((line - pk["proj"]) / pk["sd"])
+                ph = ph if side == "Under" else 1 - ph
+                fairL = 1 / max(ph, 0.02)
+            else:
+                fairL = pk["fair"]
+            if odds > fairL and zone:
                 cands.append((1 if strong else 0, pk["base"], line, odds))
         if cands:
             best = max(cands, key=lambda c: c[0])
