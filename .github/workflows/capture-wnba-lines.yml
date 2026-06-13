@@ -21,7 +21,7 @@ jobs:
           ODDS_API_KEYS: ${{ secrets.ODDS_API_KEYS }}
           CAPTURE_MARKETS: player_points,player_points_rebounds_assists
           CAPTURE_REGIONS: eu
-          CAPTURE_WINDOW_MIN: '90'
+          CAPTURE_WINDOW_MIN: '180'
           MAX_GAMES: '5'
         run: python cloud_capture.py
       - name: Commit any new snapshots
