@@ -1,15 +1,36 @@
-pick_date,game_id,player,team,opp,market,anchor,signals,fair_p,fair_odds,proj
-2026-06-12,401856984,Kiki Iriafen,Washington Mystics,Toronto Tempo,pr_under,23.5,disrupted+cold,0.59,1.69,21.4
-2026-06-12,401856984,Kiki Iriafen,Washington Mystics,Toronto Tempo,ra_under,10.5,disrupted+cold,0.61,1.64,9.1
-2026-06-12,401856984,Kiki Iriafen,Washington Mystics,Toronto Tempo,pra_under,25.5,disrupted+cold,0.6,1.67,23.0
-2026-06-12,401856984,Kiki Iriafen,Washington Mystics,Toronto Tempo,reb_under,9.5,disrupted+cold,0.58,1.72,8.6
-2026-06-12,401856984,Laura Juskaite,Toronto Tempo,Washington Mystics,pra_over,14.5,hot+leaky,0.62,1.61,16.9
-2026-06-12,401856985,Dominique Malonga,Seattle Storm,Golden State Valkyries,pr_under,22.5,cold+stingy,0.59,1.69,20.6
-2026-06-12,401856985,Dominique Malonga,Seattle Storm,Golden State Valkyries,pra_under,23.5,cold+stingy,0.621,1.61,20.9
-2026-06-12,401856986,Saniya Rivers,Connecticut Sun,Indiana Fever,pra_over,13.5,hot+expand,0.55,1.82,14.3
-2026-06-12,401856986,Aneesah Morrow,Connecticut Sun,Indiana Fever,pra_over,26.5,hot+expand,0.55,1.82,28.1
-2026-06-12,401856987,Chennedy Carter,Las Vegas Aces,Minnesota Lynx,pts_under,17.5,cold+stingy,0.626,1.6,14.7
-2026-06-12,401856987,Chennedy Carter,Las Vegas Aces,Minnesota Lynx,pr_under,18.5,cold+stingy,0.59,1.69,16.1
-2026-06-12,401856987,Chennedy Carter,Las Vegas Aces,Minnesota Lynx,pa_under,18.5,cold+stingy,0.61,1.64,15.7
-2026-06-12,401856987,Chennedy Carter,Las Vegas Aces,Minnesota Lynx,pra_under,19.5,cold+stingy,0.621,1.61,15.9
-2026-06-12,401856987,Jackie Young,Las Vegas Aces,Minnesota Lynx,pra_over,26.5,hot+expand,0.55,1.82,28.4
+pick_date,game_id,player,team,opp,market,anchor,signals,fair_p,fair_odds,proj,sd
+2026-06-12,401856984,Kiki Iriafen,Washington Mystics,Toronto Tempo,pr_under,23.5,disrupted+cold,0.59,1.69,21.4,
+2026-06-12,401856984,Kiki Iriafen,Washington Mystics,Toronto Tempo,ra_under,10.5,disrupted+cold,0.61,1.64,9.1,
+2026-06-12,401856984,Kiki Iriafen,Washington Mystics,Toronto Tempo,pra_under,25.5,disrupted+cold,0.6,1.67,23.0,
+2026-06-12,401856984,Kiki Iriafen,Washington Mystics,Toronto Tempo,reb_under,9.5,disrupted+cold,0.58,1.72,8.6,
+2026-06-12,401856984,Laura Juskaite,Toronto Tempo,Washington Mystics,pra_over,14.5,hot+leaky,0.62,1.61,16.9,
+2026-06-12,401856985,Dominique Malonga,Seattle Storm,Golden State Valkyries,pr_under,22.5,cold+stingy,0.59,1.69,20.6,
+2026-06-12,401856985,Dominique Malonga,Seattle Storm,Golden State Valkyries,pra_under,23.5,cold+stingy,0.621,1.61,20.9,
+2026-06-12,401856986,Saniya Rivers,Connecticut Sun,Indiana Fever,pra_over,13.5,hot+expand,0.55,1.82,14.3,
+2026-06-12,401856986,Aneesah Morrow,Connecticut Sun,Indiana Fever,pra_over,26.5,hot+expand,0.55,1.82,28.1,
+2026-06-12,401856987,Chennedy Carter,Las Vegas Aces,Minnesota Lynx,pts_under,17.5,cold+stingy,0.626,1.6,14.7,
+2026-06-12,401856987,Chennedy Carter,Las Vegas Aces,Minnesota Lynx,pr_under,18.5,cold+stingy,0.59,1.69,16.1,
+2026-06-12,401856987,Chennedy Carter,Las Vegas Aces,Minnesota Lynx,pa_under,18.5,cold+stingy,0.61,1.64,15.7,
+2026-06-12,401856987,Chennedy Carter,Las Vegas Aces,Minnesota Lynx,pra_under,19.5,cold+stingy,0.621,1.61,15.9,
+2026-06-12,401856987,Jackie Young,Las Vegas Aces,Minnesota Lynx,pra_over,26.5,hot+expand,0.55,1.82,28.4,
+2026-06-13,401856986,Saniya Rivers,Connecticut Sun,Indiana Fever,pra_over,13.5,hot+expand,0.55,1.82,14.3,6.66
+2026-06-13,401856986,Aneesah Morrow,Connecticut Sun,Indiana Fever,pra_over,26.5,hot+expand,0.55,1.82,28.1,9.06
+2026-06-13,401856987,Chennedy Carter,Las Vegas Aces,Minnesota Lynx,pts_under,17.5,cold+stingy,0.626,1.6,14.7,8.8
+2026-06-13,401856987,Chennedy Carter,Las Vegas Aces,Minnesota Lynx,pr_under,18.5,cold+stingy,0.59,1.69,16.1,10.51
+2026-06-13,401856987,Chennedy Carter,Las Vegas Aces,Minnesota Lynx,pa_under,18.5,cold+stingy,0.61,1.64,15.7,9.91
+2026-06-13,401856987,Chennedy Carter,Las Vegas Aces,Minnesota Lynx,pra_under,19.5,cold+stingy,0.621,1.61,15.9,11.72
+2026-06-13,401856987,Jackie Young,Las Vegas Aces,Minnesota Lynx,pra_over,26.5,hot+expand,0.55,1.82,28.4,11.5
+2026-06-13,401856990,Shakira Austin,Washington Mystics,New York Liberty,pts_under,16.5,cold+stingy,0.626,1.6,14.8,5.21
+2026-06-13,401856990,Shakira Austin,Washington Mystics,New York Liberty,pr_under,25.5,cold+stingy,0.59,1.69,23.8,7.54
+2026-06-13,401856990,Shakira Austin,Washington Mystics,New York Liberty,pa_under,18.5,cold+stingy,0.61,1.64,16.9,5.72
+2026-06-13,401856990,Shakira Austin,Washington Mystics,New York Liberty,pra_under,27.5,cold+stingy,0.621,1.61,24.9,8.3
+2026-06-13,401856990,Kiki Iriafen,Washington Mystics,New York Liberty,pts_under,12.5,disrupted+stingy,0.6,1.67,10.7,6.92
+2026-06-13,401856990,Kiki Iriafen,Washington Mystics,New York Liberty,pr_under,23.5,disrupted+cold+stingy,0.59,1.69,21.4,9.24
+2026-06-13,401856990,Kiki Iriafen,Washington Mystics,New York Liberty,pa_under,13.5,disrupted+stingy,0.61,1.64,11.4,7.54
+2026-06-13,401856990,Kiki Iriafen,Washington Mystics,New York Liberty,ra_under,10.5,disrupted+cold,0.61,1.64,9.1,5.02
+2026-06-13,401856990,Kiki Iriafen,Washington Mystics,New York Liberty,pra_under,25.5,disrupted+cold+stingy,0.6,1.67,23.0,9.87
+2026-06-13,401856990,Kiki Iriafen,Washington Mystics,New York Liberty,reb_under,9.5,disrupted+cold,0.58,1.72,8.6,4.58
+2026-06-13,401856990,Breanna Stewart,New York Liberty,Washington Mystics,pra_over,30.5,hot+leaky,0.62,1.61,33.1,6.96
+2026-06-13,401856990,Jonquel Jones,New York Liberty,Washington Mystics,pra_over,26.5,hot+leaky,0.62,1.61,29.0,6.69
+2026-06-13,401856990,Pauline Astier,New York Liberty,Washington Mystics,pra_over,14.5,hot+leaky,0.62,1.61,17.3,7.38
+2026-06-13,401856991,Angel Reese,Atlanta Dream,Toronto Tempo,pra_over,30.5,hot+leaky,0.62,1.61,32.4,6.37
