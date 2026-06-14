@@ -49,6 +49,14 @@ def _pkey(name):
     return (p[0][0] + " " + p[-1]) if len(p) >= 2 else name.lower()
 
 
+def _team_ab(name):
+    n = (name or "").lower()
+    for ab, kws in TEAMKW.items():
+        if any(w in n for w in kws):
+            return ab
+    return (name or "")[:3].upper()
+
+
 def pinnacle_lines():
     """Pinnacle WNBA single-stat prop lines (the sharp ~close) -> {player_key:{stat:line}}. Best-effort, for the CLV ref."""
     PB = "https://guest.api.arcadia.pinnacle.com/0.1"
@@ -187,7 +195,8 @@ def load_picks():
             continue
         picks[r["player"]].append({"base": base, "side": side, "anchor": float(r["anchor"]),
                                    "proj": float(r["proj"]), "fair": float(r["fair_odds"]),
-                                   "sd": float(r.get("sd") or 0)})
+                                   "sd": float(r.get("sd") or 0),
+                                   "team": r.get("team", ""), "sig": r.get("signals", "")})
     return picks
 
 
@@ -301,7 +310,8 @@ def main():
             best = max(cands, key=lambda c: c[0])
             pinref = pin.get(_pkey(player), {}).get(best[1])
             cstr = f" · Pinn {pinref}" if pinref is not None else ""
-            txt = f"• **{player}** {best[1].upper()} {side} **{best[2]} @ {best[3]}** [{'STRONG' if best[0] else 'marginal'}]{cstr}"
+            tmab = _team_ab(pks[0].get("team", "")); sig = pks[0].get("sig", "")
+            txt = f"• **{player}** ({tmab}) {best[1].upper()} {side} **{best[2]} @ {best[3]}** [{'STRONG' if best[0] else 'marginal'} · {sig}]{cstr}"
             (holds if st == "HOLD" else bets).append(txt + (" ⏳unconfirmed" if st == "HOLD" else ""))
 
     # ---- STAR-OUT CASCADE ----
@@ -317,7 +327,7 @@ def main():
             if live and live[0] <= med + 1 and live[1] > CASC_FAIR:        # value zone + beats cascade-fair
                 legs.append(f"{ben} O{live[0]}@{live[1]}")
             else:
-                legs.append(f"{ben} O{np.floor(med-0.001)+0.5:.1f} PRA (check)")
+                legs.append(f"{ben} O{np.floor(med-0.001)+0.5:.1f} PRA (1xbet? need >{CASC_FAIR})")
         casc.append(f"🚨 **{team}: {w['star']} OUT** → cascade PRA OVER: " + ", ".join(legs))
 
     if rows:
