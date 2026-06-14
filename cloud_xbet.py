@@ -4,7 +4,7 @@
 # + STAR-OUT CASCADE (top-usage star scratched -> rank-3-6 teammates' PRA over, with
 # live lines). If Cloudflare blocks the scrape -> ping model projections to check by hand.
 # ============================================================================
-import os, sys, csv, json, time, math, datetime, urllib.request
+import os, sys, csv, json, time, math, re, datetime, urllib.request
 from collections import defaultdict
 from zoneinfo import ZoneInfo
 from curl_cffi import requests as creq
@@ -42,6 +42,32 @@ TEAMKW = {"SEA": ["seattle", "storm"], "GS": ["golden state", "valkyr"], "TOR": 
 
 def _ncdf(x):
     return 0.5 * (1 + math.erf(x / math.sqrt(2)))
+
+
+def _pkey(name):
+    p = re.sub(r"[^a-z .'-]", "", name.lower()).replace(".", " ").split()
+    return (p[0][0] + " " + p[-1]) if len(p) >= 2 else name.lower()
+
+
+def pinnacle_lines():
+    """Pinnacle WNBA single-stat prop lines (the sharp ~close) -> {player_key:{stat:line}}. Best-effort, for the CLV ref."""
+    PB = "https://guest.api.arcadia.pinnacle.com/0.1"
+    HK = {"X-API-Key": "CmX2KcMrXuFmNg6YFbmTxE0y9CIrOi0R", "User-Agent": UA}
+    SMAP = {"Points": "pts", "Rebounds": "reb", "Assists": "ast"}
+    out = defaultdict(dict)
+    try:
+        mm = creq.get(PB + "/sports/4/matchups", impersonate="chrome", timeout=20, headers=HK).json()
+        mk = creq.get(PB + "/sports/4/markets/straight", impersonate="chrome", timeout=20, headers=HK).json()
+        mkt = {x["matchupId"]: x for x in mk if x.get("type") == "total" and x.get("prices")}
+        for m in mm:
+            if "wnba" not in json.dumps(m.get("league", {})).lower():
+                continue
+            mt = re.match(r"(.+?) Total (Points|Rebounds|Assists)\b", (m.get("special") or {}).get("description", ""))
+            if mt and m["id"] in mkt:
+                out[_pkey(mt.group(1))][SMAP[mt.group(2)]] = mkt[m["id"]]["prices"][0].get("points")
+    except Exception as e:
+        print("pinnacle ref unavailable:", str(e)[:40])
+    return out
 
 
 def get(url, tries=2):
@@ -241,6 +267,7 @@ def main():
                 for x in o: walk(x)
         walk(val)
     print(f"players on boards: {len(props)}")
+    pin = pinnacle_lines()   # sharp reference lines, shown next to each bet for live CLV
 
     picks = load_picks()
     stamp = now.isoformat(timespec="seconds")
@@ -272,7 +299,9 @@ def main():
                 cands.append((1 if strong else 0, pk["base"], line, odds))
         if cands:
             best = max(cands, key=lambda c: c[0])
-            txt = f"• **{player}** {best[1].upper()} {side} **{best[2]} @ {best[3]}** [{'STRONG' if best[0] else 'marginal'}]"
+            pinref = pin.get(_pkey(player), {}).get(best[1])
+            cstr = f" · Pinn {pinref}" if pinref is not None else ""
+            txt = f"• **{player}** {best[1].upper()} {side} **{best[2]} @ {best[3]}** [{'STRONG' if best[0] else 'marginal'}]{cstr}"
             (holds if st == "HOLD" else bets).append(txt + (" ⏳unconfirmed" if st == "HOLD" else ""))
 
     # ---- STAR-OUT CASCADE ----
@@ -306,13 +335,13 @@ def main():
     elif bets or casc:
         parts = []
         if bets:
-            parts.append("\n".join(bets))
+            parts.append("✅ **BETS** (our model · line@odds · Pinn = sharp close for CLV):\n" + "\n".join(bets))
         if casc:
-            parts.append("\n".join(casc))
+            parts.append("🧪 **EXPERIMENTAL** (star-out cascade — ~57% unproven, size small):\n" + "\n".join(casc))
         if holds:
-            parts.append("⏳ HOLD (unconfirmed): " + ", ".join(h.split("**")[1] for h in holds))
+            parts.append("⏳ HOLD (lineup unconfirmed): " + ", ".join(h.split("**")[1] for h in holds))
         if drops:
-            parts.append("❌ OUT (dropped): " + ", ".join(drops))
+            parts.append("❌ OUT (injury → dropped): " + ", ".join(drops))
         ping(f"🏀 **1xbet — ~{int(min_mins)} min to tip**\n" + "\n".join(parts))
     else:                                            # close to tip + no +EV line -> fallback (don't go dark)
         ping(f"⏰ **1xbet — tip in ~{int(min_mins)} min, no +EV line found**\n"
