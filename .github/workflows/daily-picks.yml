@@ -22,6 +22,8 @@ jobs:
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         run: python daily_picks.py
+      - name: Validate gathered data (freshness / range / dups / picks complete)
+        run: python validate_data.py || echo "::warning::data validation flagged issues (see log above)"
       - name: Commit picks + data cache
         run: |
           git config user.name "wnba-picks-bot"

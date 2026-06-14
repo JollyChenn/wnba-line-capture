@@ -1,7 +1,7 @@
 name: capture-xbet
 on:
   schedule:
-    - cron: '*/15 * * * *'        # every 15 min so a run reliably lands ~30 min before each tip (captures always; pings only near tip)
+    - cron: '0 */3 * * *'         # every 3h: GitHub honours sparse crons reliably — catches lines as they post AND lands within ~1.5h of any tip. Pings whenever a line is good; near-tip run is the "once more".
   workflow_dispatch: {}
 permissions:
   contents: write
@@ -20,6 +20,7 @@ jobs:
       - name: capture 1xbet via 1x-bet.com (datacenter-reachable)
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          XBET_WINDOW_MIN: '600'
         run: python cloud_xbet.py
       - name: commit snapshots
         run: |

@@ -340,9 +340,7 @@ def main():
         print(f"logged {len(rows)} xbet snapshot rows")
 
     min_mins = min(t[2] for t in near)
-    if min_mins > PING_MAX:                          # captured for CLV, but hold the ping until ~30 min before tip
-        print(f"captured {len(rows)} rows for CLV; nearest tip {int(min_mins)} min (> {PING_MAX}) — ping holds till close")
-    elif bets or casc:
+    if bets or casc:                                 # GOOD line(s) found -> ping now (6-hourly "ping if good" + near-tip "once more")
         parts = []
         if bets:
             parts.append("✅ **BETS** (our model · line@odds · Pinn = sharp close for CLV):\n" + "\n".join(bets))
@@ -353,10 +351,12 @@ def main():
         if drops:
             parts.append("❌ OUT (injury → dropped): " + ", ".join(drops))
         ping(f"🏀 **1xbet — ~{int(min_mins)} min to tip**\n" + "\n".join(parts))
-    else:                                            # close to tip + no +EV line -> fallback (don't go dark)
+    elif min_mins <= PING_MAX:                        # near tip + no +EV line -> fallback (don't go dark)
         ping(f"⏰ **1xbet — tip in ~{int(min_mins)} min, no +EV line found**\n"
              "(props may be unposted, or the posted price isn't in value). Model picks to check on 1xbet by hand:\n"
              + proj_msg(inj))
+    else:
+        print(f"captured {len(rows)} rows for CLV; nearest tip {int(min_mins)} min — no +EV line yet")
 
 
 if __name__ == "__main__":
