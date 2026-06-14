@@ -19,9 +19,7 @@ jobs:
       - name: Install deps
         run: pip install --quiet pandas requests numpy
       - name: Generate core picks (any-2-of-3 unders + cascade lists)
-        env:
-          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-        run: python daily_picks.py
+        run: python daily_picks.py          # no DISCORD_WEBHOOK -> NO slate ping; the 1xbet capture-xbet ping is the only one now
       - name: Validate gathered data (freshness / range / dups / picks complete)
         run: python validate_data.py || echo "::warning::data validation flagged issues (see log above)"
       - name: Commit picks + data cache
