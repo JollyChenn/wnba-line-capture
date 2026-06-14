@@ -265,10 +265,10 @@ def overshoot_overs(props, inj, picked):
             v = [pick[st](x) for x in g]
             if len(v) < 5:
                 continue
-            v10 = v[-10:]; med = statistics.median(v10)
-            if line > med - 3:                               # only DEEP overshoots
+            v10 = v[-10:]; med = statistics.median(v10); t3 = statistics.mean(v[-3:])
+            if line > med - 3 or t3 <= med - 3:              # DEEP overshoot only; skip COLD form (book is likely pricing a real decline = trap)
                 continue
-            proj = med + 0.25 * (statistics.mean(v[-3:]) - med)   # calibrated proj from the backtest
+            proj = med + 0.25 * (t3 - med)                   # calibrated proj from the backtest
             hit = 1 - _ncdf((line - proj) / (statistics.pstdev(v10) or 1)); ev = odds * hit - 1
             name = plow.title()
             if ev > 0 and status_of(name, inj) != "OUT":
