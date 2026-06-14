@@ -270,9 +270,9 @@ def overshoot_overs(props, inj, picked):
                 continue
             proj = med + 0.25 * (t3 - med)                   # calibrated proj from the backtest
             hit = 1 - _ncdf((line - proj) / (statistics.pstdev(v10) or 1)); ev = odds * hit - 1
-            name = plow.title()
-            if ev > 0 and status_of(name, inj) != "OUT":
-                out.append((hit, name, st, line, odds, ev, med))
+            name = plow.title(); stt = status_of(name, inj)
+            if ev > 0 and stt != "OUT":                      # OUT auto-dropped; day-to-day kept but flagged
+                out.append((hit, name, st, line, odds, ev, med, stt))
     return sorted(out, reverse=True)[:6]
 
 
@@ -382,9 +382,9 @@ def main():
     # ---- board-wide overshoot-overs (any player whose 1xbet over line is >=3 below their median) ----
     picked = {(p.lower(), pk["base"]) for p, pks in picks.items() for pk in pks}
     osc = overshoot_overs(props, inj, picked)
-    oso = [f"• **{n}** {st.upper()} Over **{ln} @ {od}** [🎯 hit {h*100:.0f}% · EV {ev*100:+.0f}% · med {med:.0f}]"
-           for h, n, st, ln, od, ev, med in osc]
-    for h, n, st, ln, od, ev, med in osc:
+    oso = [f"• **{n}** {st.upper()} Over **{ln} @ {od}** [🎯 hit {h*100:.0f}% · EV {ev*100:+.0f}% · med {med:.0f} · {'✓ active' if stt == 'OK' else '⏳ DAY-TO-DAY'}]"
+           for h, n, st, ln, od, ev, med, stt in osc]
+    for h, n, st, ln, od, ev, med, stt in osc:
         rows.append([stamp, n, st, "Over", ln, od])
 
     if rows:
@@ -402,7 +402,7 @@ def main():
         if bets:
             parts.append("✅ **BETS** (our model · line@odds · Pinn = sharp close for CLV):\n" + "\n".join(bets))
         if oso:
-            parts.append("🎯 **OVERSHOOT-OVERS** (book line ≥3 below median — +EV fade; verify no role/injury news):\n" + "\n".join(oso))
+            parts.append("🎯 **OVERSHOOT-OVERS** (book line ≥3 below median; ✓ active = injury auto-checked, just eyeball rotation):\n" + "\n".join(oso))
         if casc:
             parts.append("🧪 **EXPERIMENTAL** (star-out cascade — ~57% unproven, size small):\n" + "\n".join(casc))
         if holds:
