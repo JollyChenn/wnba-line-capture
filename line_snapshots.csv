@@ -49,3 +49,33 @@ captured_utc,game_id,tip,away,home,market,player,side,line,price,book
 2026-06-13T22:15:05+00:00,096d1159a4e6b505f8915f4435e42a4a,2026-06-14T00:30:00Z,Dallas Wings,Portland Fire,player_points,Carla Leite,Under,14.5,1.69,Pinnacle
 2026-06-13T22:15:05+00:00,096d1159a4e6b505f8915f4435e42a4a,2026-06-14T00:30:00Z,Dallas Wings,Portland Fire,player_points,Jessica Shepard,Over,12.5,1.83,Pinnacle
 2026-06-13T22:15:05+00:00,096d1159a4e6b505f8915f4435e42a4a,2026-06-14T00:30:00Z,Dallas Wings,Portland Fire,player_points,Jessica Shepard,Under,12.5,1.91,Pinnacle
+2026-06-14T00:18:25+00:00,096d1159a4e6b505f8915f4435e42a4a,2026-06-14T00:30:00Z,Dallas Wings,Portland Fire,player_points,Arike Ogunbowale,Over,15.5,1.76,Pinnacle
+2026-06-14T00:18:25+00:00,096d1159a4e6b505f8915f4435e42a4a,2026-06-14T00:30:00Z,Dallas Wings,Portland Fire,player_points,Arike Ogunbowale,Under,15.5,1.99,Pinnacle
+2026-06-14T00:18:25+00:00,096d1159a4e6b505f8915f4435e42a4a,2026-06-14T00:30:00Z,Dallas Wings,Portland Fire,player_points,Azzi Fudd,Over,14.5,1.95,Pinnacle
+2026-06-14T00:18:25+00:00,096d1159a4e6b505f8915f4435e42a4a,2026-06-14T00:30:00Z,Dallas Wings,Portland Fire,player_points,Azzi Fudd,Under,14.5,1.79,Pinnacle
+2026-06-14T00:18:25+00:00,096d1159a4e6b505f8915f4435e42a4a,2026-06-14T00:30:00Z,Dallas Wings,Portland Fire,player_points,Bridget Carleton,Over,12.5,1.87,Pinnacle
+2026-06-14T00:18:25+00:00,096d1159a4e6b505f8915f4435e42a4a,2026-06-14T00:30:00Z,Dallas Wings,Portland Fire,player_points,Bridget Carleton,Under,12.5,1.87,Pinnacle
+2026-06-14T00:18:25+00:00,096d1159a4e6b505f8915f4435e42a4a,2026-06-14T00:30:00Z,Dallas Wings,Portland Fire,player_points,Carla Leite,Over,14.5,2.09,Pinnacle
+2026-06-14T00:18:25+00:00,096d1159a4e6b505f8915f4435e42a4a,2026-06-14T00:30:00Z,Dallas Wings,Portland Fire,player_points,Carla Leite,Under,14.5,1.69,Pinnacle
+2026-06-14T00:18:25+00:00,096d1159a4e6b505f8915f4435e42a4a,2026-06-14T00:30:00Z,Dallas Wings,Portland Fire,player_points,Jessica Shepard,Over,12.5,1.81,Pinnacle
+2026-06-14T00:18:25+00:00,096d1159a4e6b505f8915f4435e42a4a,2026-06-14T00:30:00Z,Dallas Wings,Portland Fire,player_points,Jessica Shepard,Under,12.5,1.93,Pinnacle
+2026-06-14T00:18:25+00:00,2460c3f96c0544953ffbc6f0e4f0b2a0,2026-06-14T02:00:00Z,Los Angeles Sparks,Phoenix Mercury,player_points,Alyssa Thomas,Over,15.5,1.93,Pinnacle
+2026-06-14T00:18:25+00:00,2460c3f96c0544953ffbc6f0e4f0b2a0,2026-06-14T02:00:00Z,Los Angeles Sparks,Phoenix Mercury,player_points,Alyssa Thomas,Under,15.5,1.81,Pinnacle
+2026-06-14T00:18:25+00:00,2460c3f96c0544953ffbc6f0e4f0b2a0,2026-06-14T02:00:00Z,Los Angeles Sparks,Phoenix Mercury,player_points,Ariel Atkins,Over,9.5,1.9,Pinnacle
+2026-06-14T00:18:25+00:00,2460c3f96c0544953ffbc6f0e4f0b2a0,2026-06-14T02:00:00Z,Los Angeles Sparks,Phoenix Mercury,player_points,Ariel Atkins,Under,9.5,1.84,Pinnacle
+2026-06-14T00:18:25+00:00,2460c3f96c0544953ffbc6f0e4f0b2a0,2026-06-14T02:00:00Z,Los Angeles Sparks,Phoenix Mercury,player_points,DeWanna Bonner,Over,8.5,1.67,Pinnacle
+2026-06-14T00:18:25+00:00,2460c3f96c0544953ffbc6f0e4f0b2a0,2026-06-14T02:00:00Z,Los Angeles Sparks,Phoenix Mercury,player_points,DeWanna Bonner,Under,8.5,2.12,Pinnacle
+2026-06-14T00:18:25+00:00,2460c3f96c0544953ffbc6f0e4f0b2a0,2026-06-14T02:00:00Z,Los Angeles Sparks,Phoenix Mercury,player_points,Dearica Hamby,Over,14.5,1.92,Pinnacle
+2026-06-14T00:18:25+00:00,2460c3f96c0544953ffbc6f0e4f0b2a0,2026-06-14T02:00:00Z,Los Angeles Sparks,Phoenix Mercury,player_points,Dearica Hamby,Under,14.5,1.83,Pinnacle
+2026-06-14T00:18:25+00:00,2460c3f96c0544953ffbc6f0e4f0b2a0,2026-06-14T02:00:00Z,Los Angeles Sparks,Phoenix Mercury,player_points,Erica Wheeler,Over,8.5,1.76,Pinnacle
+2026-06-14T00:18:25+00:00,2460c3f96c0544953ffbc6f0e4f0b2a0,2026-06-14T02:00:00Z,Los Angeles Sparks,Phoenix Mercury,player_points,Erica Wheeler,Under,8.5,1.99,Pinnacle
+2026-06-14T00:18:25+00:00,2460c3f96c0544953ffbc6f0e4f0b2a0,2026-06-14T02:00:00Z,Los Angeles Sparks,Phoenix Mercury,player_points,Kahleah Copper,Over,17.5,1.69,Pinnacle
+2026-06-14T00:18:25+00:00,2460c3f96c0544953ffbc6f0e4f0b2a0,2026-06-14T02:00:00Z,Los Angeles Sparks,Phoenix Mercury,player_points,Kahleah Copper,Under,17.5,2.1,Pinnacle
+2026-06-14T00:18:25+00:00,2460c3f96c0544953ffbc6f0e4f0b2a0,2026-06-14T02:00:00Z,Los Angeles Sparks,Phoenix Mercury,player_points,Kelsey Plum,Over,20.5,1.75,Pinnacle
+2026-06-14T00:18:25+00:00,2460c3f96c0544953ffbc6f0e4f0b2a0,2026-06-14T02:00:00Z,Los Angeles Sparks,Phoenix Mercury,player_points,Kelsey Plum,Under,20.5,2.01,Pinnacle
+2026-06-14T00:18:25+00:00,2460c3f96c0544953ffbc6f0e4f0b2a0,2026-06-14T02:00:00Z,Los Angeles Sparks,Phoenix Mercury,player_points,Monique Akoa Makani,Over,9.5,1.79,Pinnacle
+2026-06-14T00:18:25+00:00,2460c3f96c0544953ffbc6f0e4f0b2a0,2026-06-14T02:00:00Z,Los Angeles Sparks,Phoenix Mercury,player_points,Monique Akoa Makani,Under,9.5,1.96,Pinnacle
+2026-06-14T00:18:25+00:00,2460c3f96c0544953ffbc6f0e4f0b2a0,2026-06-14T02:00:00Z,Los Angeles Sparks,Phoenix Mercury,player_points,Natasha Mack,Over,9.5,1.87,Pinnacle
+2026-06-14T00:18:25+00:00,2460c3f96c0544953ffbc6f0e4f0b2a0,2026-06-14T02:00:00Z,Los Angeles Sparks,Phoenix Mercury,player_points,Natasha Mack,Under,9.5,1.87,Pinnacle
+2026-06-14T00:18:25+00:00,2460c3f96c0544953ffbc6f0e4f0b2a0,2026-06-14T02:00:00Z,Los Angeles Sparks,Phoenix Mercury,player_points,Nneka Ogwumike,Over,14.5,1.61,Pinnacle
+2026-06-14T00:18:25+00:00,2460c3f96c0544953ffbc6f0e4f0b2a0,2026-06-14T02:00:00Z,Los Angeles Sparks,Phoenix Mercury,player_points,Nneka Ogwumike,Under,14.5,2.22,Pinnacle
