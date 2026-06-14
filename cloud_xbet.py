@@ -240,6 +240,42 @@ def pra_line(props, player):
     return min(outs, key=lambda t: t[0]) if outs else None
 
 
+def overshoot_overs(props, inj, picked):
+    """Board-wide deep overshoot-overs: ANY player (not just our signal-picks) whose 1xbet over line
+       sits >=3 below their trailing median. The soft book is lagging -> +EV over. Injury-gated; flagged
+       to verify no role/injury news (a line that low can also mean the book knows something)."""
+    import statistics
+    if not os.path.exists("data/box_2026.csv") or not os.path.exists("data/games_2026.csv"):
+        return []
+    gd = {r["game_id"]: r.get("date") for r in csv.DictReader(open("data/games_2026.csv", encoding="utf-8"))}
+    log = defaultdict(list)
+    for r in csv.DictReader(open("data/box_2026.csv", encoding="utf-8")):
+        try:
+            log[r["player"].lower()].append((gd.get(r["game_id"]), float(r["pts"]), float(r["reb"]), float(r["ast"])))
+        except (ValueError, TypeError):
+            pass
+    pick = {"pts": lambda x: x[1], "pr": lambda x: x[1] + x[2], "pa": lambda x: x[1] + x[3], "pra": lambda x: x[1] + x[2] + x[3]}
+    out = []
+    for plow, mk in props.items():
+        for (st, sd), outs in mk.items():
+            if sd != "Over" or st not in pick or (plow, st) in picked:
+                continue
+            line, odds = min(outs, key=lambda t: t[0])
+            g = sorted([x for x in log.get(plow, []) if x[0]], key=lambda t: t[0])
+            v = [pick[st](x) for x in g]
+            if len(v) < 5:
+                continue
+            v10 = v[-10:]; med = statistics.median(v10)
+            if line > med - 3:                               # only DEEP overshoots
+                continue
+            proj = med + 0.25 * (statistics.mean(v[-3:]) - med)   # calibrated proj from the backtest
+            hit = 1 - _ncdf((line - proj) / (statistics.pstdev(v10) or 1)); ev = odds * hit - 1
+            name = plow.title()
+            if ev > 0 and status_of(name, inj) != "OUT":
+                out.append((hit, name, st, line, odds, ev, med))
+    return sorted(out, reverse=True)[:6]
+
+
 def main():
     now = datetime.datetime.now(datetime.timezone.utc)
     near = espn_near(WINDOW)
@@ -281,6 +317,9 @@ def main():
     picks = load_picks()
     stamp = now.isoformat(timespec="seconds")
     rows, bets, holds, drops = [], [], [], []
+    def _tier(p):                                     # honest strength = the model's hit probability at the line
+        return "STRONG" if p >= 0.66 else "SOLID" if p >= 0.58 else "THIN"
+
     for player, pks in picks.items():
         pp = props.get(player.lower())
         if not pp:
@@ -290,28 +329,38 @@ def main():
             drops.append(player); continue
         side = pks[0]["side"]; cands = []
         for pk in pks:
+            # ---- the model's own side (an under, or a PRA over) ----
             outs = pp.get((pk["base"], pk["side"]))
-            if not outs:
-                continue
-            line, odds = min(outs, key=lambda t: abs(t[0] - pk["anchor"]))
-            rows.append([stamp, player, pk["base"], side, line, odds])
-            zone = (line >= pk["anchor"] - 1) if side == "Under" else (line <= pk["anchor"] + 1)
-            strong = (line >= pk["anchor"]) if side == "Under" else (line <= pk["anchor"])
-            # fair recomputed at the ACTUAL 1xbet line (precise) when sd is logged; else anchor-fair
-            if pk.get("sd"):
-                ph = _ncdf((line - pk["proj"]) / pk["sd"])
-                ph = ph if side == "Under" else 1 - ph
-                fairL = 1 / max(ph, 0.02)
-            else:
-                fairL = pk["fair"]
-            if odds > fairL and zone:
-                cands.append((1 if strong else 0, pk["base"], line, odds, odds / fairL - 1))
+            if outs:
+                line, odds = min(outs, key=lambda t: abs(t[0] - pk["anchor"]))
+                rows.append([stamp, player, pk["base"], pk["side"], line, odds])
+                zone = (line >= pk["anchor"] - 1) if side == "Under" else (line <= pk["anchor"] + 1)
+                if pk.get("sd"):
+                    # de-inflate the hot-over projection (backtest: actual regresses ~15% toward the median)
+                    proj = pk["proj"] if side == "Under" else pk["anchor"] + 0.85 * (pk["proj"] - pk["anchor"])
+                    ph = _ncdf((line - proj) / pk["sd"]); ph = ph if side == "Under" else 1 - ph
+                    fairL = 1 / max(ph, 0.02)
+                else:
+                    ph, fairL = 1 / pk["fair"], pk["fair"]
+                if odds > fairL and zone:
+                    cands.append((ph, pk["base"], side, line, odds, odds / fairL - 1))
+            # ---- overshoot FLIP: under-signal player whose 1xbet OVER line overshot below our projection ----
+            if side == "Under" and pk.get("sd"):
+                oo = pp.get((pk["base"], "Over"))
+                if oo:
+                    oline, oodds = min(oo, key=lambda t: t[0])               # most-overshot (lowest) over line
+                    if oline <= pk["anchor"] - 2 and oline < pk["proj"]:      # genuine overshoot, below our proj
+                        pov = 1 - _ncdf((oline - pk["proj"]) / pk["sd"]); ofair = 1 / max(pov, 0.02)
+                        if oodds > ofair:
+                            rows.append([stamp, player, pk["base"], "Over", oline, oodds])
+                            cands.append((pov, pk["base"], "Over", oline, oodds, oodds / ofair - 1))
         if cands:
-            best = max(cands, key=lambda c: (c[0], c[4]))
-            pinref = pin.get(_pkey(player), {}).get(best[1])
+            ph, base, bside, line, odds, ev = max(cands, key=lambda c: c[0])  # highest-confidence bet for this player
+            pinref = pin.get(_pkey(player), {}).get(base)
             cstr = f" · Pinn {pinref}" if pinref is not None else ""
             tmab = _team_ab(pks[0].get("team", "")); sig = pks[0].get("sig", "")
-            txt = f"• **{player}** ({tmab}) {best[1].upper()} {side} **{best[2]} @ {best[3]}** [{'STRONG' if best[0] else 'marginal'} · {sig} · EV {best[4]*100:+.0f}%]{cstr}"
+            flip = " 🎯FLIP" if (bside == "Over" and side == "Under") else ""
+            txt = f"• **{player}** ({tmab}) {base.upper()} {bside} **{line} @ {odds}** [{_tier(ph)}{flip} · {sig} · hit {ph*100:.0f}% · EV {ev*100:+.0f}%]{cstr}"
             (holds if st == "HOLD" else bets).append(txt + (" ⏳unconfirmed" if st == "HOLD" else ""))
 
     # ---- STAR-OUT CASCADE ----
@@ -330,6 +379,14 @@ def main():
                 legs.append(f"{ben} O{np.floor(med-0.001)+0.5:.1f} PRA (1xbet? need >{CASC_FAIR})")
         casc.append(f"🚨 **{team}: {w['star']} OUT** → cascade PRA OVER: " + ", ".join(legs))
 
+    # ---- board-wide overshoot-overs (any player whose 1xbet over line is >=3 below their median) ----
+    picked = {(p.lower(), pk["base"]) for p, pks in picks.items() for pk in pks}
+    osc = overshoot_overs(props, inj, picked)
+    oso = [f"• **{n}** {st.upper()} Over **{ln} @ {od}** [🎯 hit {h*100:.0f}% · EV {ev*100:+.0f}% · med {med:.0f}]"
+           for h, n, st, ln, od, ev, med in osc]
+    for h, n, st, ln, od, ev, med in osc:
+        rows.append([stamp, n, st, "Over", ln, od])
+
     if rows:
         new = not os.path.exists(SNAP)
         with open(SNAP, "a", newline="", encoding="utf-8") as f:
@@ -340,10 +397,12 @@ def main():
         print(f"logged {len(rows)} xbet snapshot rows")
 
     min_mins = min(t[2] for t in near)
-    if bets or casc:                                 # GOOD line(s) found -> ping now (6-hourly "ping if good" + near-tip "once more")
+    if bets or casc or oso:                          # GOOD line(s) found -> ping now (6-hourly "ping if good" + near-tip "once more")
         parts = []
         if bets:
             parts.append("✅ **BETS** (our model · line@odds · Pinn = sharp close for CLV):\n" + "\n".join(bets))
+        if oso:
+            parts.append("🎯 **OVERSHOOT-OVERS** (book line ≥3 below median — +EV fade; verify no role/injury news):\n" + "\n".join(oso))
         if casc:
             parts.append("🧪 **EXPERIMENTAL** (star-out cascade — ~57% unproven, size small):\n" + "\n".join(casc))
         if holds:
