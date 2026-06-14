@@ -305,13 +305,13 @@ def main():
             else:
                 fairL = pk["fair"]
             if odds > fairL and zone:
-                cands.append((1 if strong else 0, pk["base"], line, odds))
+                cands.append((1 if strong else 0, pk["base"], line, odds, odds / fairL - 1))
         if cands:
-            best = max(cands, key=lambda c: c[0])
+            best = max(cands, key=lambda c: (c[0], c[4]))
             pinref = pin.get(_pkey(player), {}).get(best[1])
             cstr = f" · Pinn {pinref}" if pinref is not None else ""
             tmab = _team_ab(pks[0].get("team", "")); sig = pks[0].get("sig", "")
-            txt = f"• **{player}** ({tmab}) {best[1].upper()} {side} **{best[2]} @ {best[3]}** [{'STRONG' if best[0] else 'marginal'} · {sig}]{cstr}"
+            txt = f"• **{player}** ({tmab}) {best[1].upper()} {side} **{best[2]} @ {best[3]}** [{'STRONG' if best[0] else 'marginal'} · {sig} · EV {best[4]*100:+.0f}%]{cstr}"
             (holds if st == "HOLD" else bets).append(txt + (" ⏳unconfirmed" if st == "HOLD" else ""))
 
     # ---- STAR-OUT CASCADE ----
