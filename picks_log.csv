@@ -46,13 +46,10 @@ pick_date,game_id,player,team,opp,market,anchor,signals,fair_p,fair_odds,proj,sd
 2026-06-14,401856990,Jonquel Jones,New York Liberty,Washington Mystics,pra_over,26.5,hot+leaky,0.62,1.61,29.0,6.69
 2026-06-14,401856990,Pauline Astier,New York Liberty,Washington Mystics,pra_over,14.5,hot+leaky,0.62,1.61,17.3,7.38
 2026-06-14,401856991,Angel Reese,Atlanta Dream,Toronto Tempo,pra_over,30.5,hot+leaky,0.62,1.61,32.4,6.37
-2026-06-14,401856992,Jackie Young,Las Vegas Aces,Dallas Wings,pra_over,26.5,hot+expand,0.55,1.82,28.4,11.5
-2026-06-14,401856993,Bridget Carleton,Portland Fire,Minnesota Lynx,pts_under,12.5,cold+stingy,0.626,1.6,11.3,3.83
-2026-06-14,401856993,Bridget Carleton,Portland Fire,Minnesota Lynx,pa_under,14.5,cold+stingy,0.61,1.64,13.4,4.1
-2026-06-14,401856994,Kelsey Plum,Los Angeles Sparks,Golden State Valkyries,pts_under,26.5,cold+stingy,0.626,1.6,24.3,6.96
-2026-06-14,401856994,Rae Burrell,Los Angeles Sparks,Golden State Valkyries,pts_under,9.5,cold+stingy,0.626,1.6,7.4,6.47
-2026-06-14,401856994,Rae Burrell,Los Angeles Sparks,Golden State Valkyries,pr_under,12.5,cold+stingy,0.59,1.69,11.0,6.75
-2026-06-14,401856994,Rae Burrell,Los Angeles Sparks,Golden State Valkyries,pra_under,13.5,cold+stingy,0.621,1.61,11.5,6.44
-2026-06-14,401856994,Dearica Hamby,Los Angeles Sparks,Golden State Valkyries,pa_under,20.5,cold+stingy,0.61,1.64,18.2,8.29
+2026-06-14,401856992,Chennedy Carter,Las Vegas Aces,Dallas Wings,pts_under,15.5,declining+cold,0.684,1.46,11.2,9.07
+2026-06-14,401856992,Chennedy Carter,Las Vegas Aces,Dallas Wings,pr_under,16.5,declining+cold,0.59,1.69,14.1,10.69
+2026-06-14,401856992,Chennedy Carter,Las Vegas Aces,Dallas Wings,pa_under,16.5,declining+cold,0.61,1.64,13.7,10.09
+2026-06-14,401856992,Chennedy Carter,Las Vegas Aces,Dallas Wings,pra_under,17.5,declining+cold,0.641,1.56,13.2,11.8
+2026-06-14,401856994,Dearica Hamby,Los Angeles Sparks,Golden State Valkyries,pa_under,17.5,cold+stingy,0.61,1.64,15.1,8.66
 2026-06-14,401856994,Gabby Williams,Golden State Valkyries,Los Angeles Sparks,pra_over,21.5,hot+leaky,0.62,1.61,24.6,8.63
 2026-06-14,401856994,Veronica Burton,Golden State Valkyries,Los Angeles Sparks,pra_over,22.5,hot+leaky,0.62,1.61,25.2,7.24
