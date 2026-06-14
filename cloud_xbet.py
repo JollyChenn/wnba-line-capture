@@ -357,8 +357,8 @@ def main():
                             cands.append((pov, pk["base"], "Over", oline, oodds, oodds / ofair - 1))
         if cands:
             ph, base, bside, line, odds, ev = max(cands, key=lambda c: c[0])  # highest-confidence bet for this player
-            if st == "OK":                            # log confirmed-active model bets for grading
-                betstruct.append([player, base, bside, line, odds, _tier(ph), round(ev, 3)])
+            if st == "OK":                            # log confirmed-active model bets for grading (+ Pinnacle line for sharp CLV)
+                betstruct.append([player, base, bside, line, odds, _tier(ph), round(ev, 3), pin.get(_pkey(player), {}).get(base, "")])
             pinref = pin.get(_pkey(player), {}).get(base)
             cstr = f" · Pinn {pinref}" if pinref is not None else ""
             tmab = _team_ab(pks[0].get("team", "")); sig = pks[0].get("sig", "")
@@ -402,8 +402,8 @@ def main():
     # injury-confidence: vague (day-to-day) overshoots stay hidden until the near-tip reconfirm
     osc_show = [x for x in osc if near_tip or x[7] == "OK"]
     for h, n, st, ln, od, ev, med, stt in osc_show:
-        if stt == "OK":                              # log confirmed-active overshoot bets for grading
-            betstruct.append([n, st, "Over", ln, od, _tier(h), round(ev, 3)])
+        if stt == "OK":                              # log confirmed-active overshoot bets for grading (+ Pinnacle line for sharp CLV)
+            betstruct.append([n, st, "Over", ln, od, _tier(h), round(ev, 3), pin.get(_pkey(n), {}).get(st, "")])
     oso = [f"• **{n}** {st.upper()} Over **{ln} @ {od}** [🎯 hit {h*100:.0f}% · EV {ev*100:+.0f}% · med {med:.0f} · {'✓ active' if stt == 'OK' else '⏳ DAY-TO-DAY'}]"
            for h, n, st, ln, od, ev, med, stt in osc_show]
     holds_show = holds if near_tip else []           # day-to-day model bets: hold them back until near tip
@@ -414,7 +414,7 @@ def main():
             with open("bets_log.csv", "a", newline="", encoding="utf-8") as bf:
                 wbl = csv.writer(bf)
                 if bnew:
-                    wbl.writerow(["captured_utc", "date", "player", "market", "side", "line", "odds", "tier", "ev"])
+                    wbl.writerow(["captured_utc", "date", "player", "market", "side", "line", "odds", "tier", "ev", "pinn"])
                 for b in betstruct:
                     wbl.writerow([stamp, la_today] + b)
         parts = []
