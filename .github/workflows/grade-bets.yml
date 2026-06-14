@@ -1,0 +1,34 @@
+name: grade-bets
+on:
+  schedule:
+    - cron: '0 15 * * *'      # 15:00 UTC — after the 14:00 daily-picks pulls last night's final box scores
+  workflow_dispatch: {}
+permissions:
+  contents: write
+concurrency:
+  group: grade-bets
+  cancel-in-progress: false
+jobs:
+  grade:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install deps + refresh box scores (last night's results)
+        run: pip install --quiet pandas requests numpy && python daily_picks.py || true
+      - name: Settle logged bets vs actual results
+        run: python grade_bets.py
+      - name: Commit track record
+        run: |
+          git config user.name "wnba-grade-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add graded_bets.csv data/*.csv 2>/dev/null || true
+          if git diff --staged --quiet; then
+            echo "nothing to commit"
+          else
+            git commit -m "grade $(date -u +%F)"
+            git pull --rebase --autostash origin main 2>&1 || true
+            git push 2>&1 || echo "PUSH FAILED"
+          fi

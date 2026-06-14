@@ -21,6 +21,7 @@ CHAMP = "2874802"
 WINDOW = int(os.environ.get("XBET_WINDOW_MIN", "180"))
 _SLATE_TZ = ZoneInfo("America/Los_Angeles")   # picks are filed under the US slate date (matches daily_picks)
 PING_MAX = int(os.environ.get("XBET_PING_MAX_MIN", "40"))   # only PING within this many min of tip (the ~30-min-before alert); capture still runs every cycle
+NEAR_TIP_MIN = int(os.environ.get("XBET_NEARTIP_MIN", "90"))  # reconfirm window: within this many min of tip, surface day-to-day players + re-show injury/odds
 PICKS, SNAP = "picks_log.csv", "xbet_snapshots.csv"
 WEBHOOK = os.environ.get("DISCORD_WEBHOOK", "")
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -316,7 +317,7 @@ def main():
 
     picks = load_picks()
     stamp = now.isoformat(timespec="seconds")
-    rows, bets, holds, drops = [], [], [], []
+    rows, bets, holds, drops, betstruct = [], [], [], [], []
     def _tier(p):                                     # honest strength = the model's hit probability at the line
         return "STRONG" if p >= 0.66 else "SOLID" if p >= 0.58 else "THIN"
 
@@ -356,6 +357,8 @@ def main():
                             cands.append((pov, pk["base"], "Over", oline, oodds, oodds / ofair - 1))
         if cands:
             ph, base, bside, line, odds, ev = max(cands, key=lambda c: c[0])  # highest-confidence bet for this player
+            if st == "OK":                            # log confirmed-active model bets for grading
+                betstruct.append([player, base, bside, line, odds, _tier(ph), round(ev, 3)])
             pinref = pin.get(_pkey(player), {}).get(base)
             cstr = f" · Pinn {pinref}" if pinref is not None else ""
             tmab = _team_ab(pks[0].get("team", "")); sig = pks[0].get("sig", "")
@@ -382,10 +385,8 @@ def main():
     # ---- board-wide overshoot-overs (any player whose 1xbet over line is >=3 below their median) ----
     picked = {(p.lower(), pk["base"]) for p, pks in picks.items() for pk in pks}
     osc = overshoot_overs(props, inj, picked)
-    oso = [f"• **{n}** {st.upper()} Over **{ln} @ {od}** [🎯 hit {h*100:.0f}% · EV {ev*100:+.0f}% · med {med:.0f} · {'✓ active' if stt == 'OK' else '⏳ DAY-TO-DAY'}]"
-           for h, n, st, ln, od, ev, med, stt in osc]
     for h, n, st, ln, od, ev, med, stt in osc:
-        rows.append([stamp, n, st, "Over", ln, od])
+        rows.append([stamp, n, st, "Over", ln, od])     # capture ALL overshoots for CLV (display filtered below)
 
     if rows:
         new = not os.path.exists(SNAP)
@@ -397,16 +398,36 @@ def main():
         print(f"logged {len(rows)} xbet snapshot rows")
 
     min_mins = min(t[2] for t in near)
-    if bets or casc or oso:                          # GOOD line(s) found -> ping now (6-hourly "ping if good" + near-tip "once more")
+    near_tip = min_mins <= NEAR_TIP_MIN              # reconfirm window: only this close to tip do we surface day-to-day players
+    # injury-confidence: vague (day-to-day) overshoots stay hidden until the near-tip reconfirm
+    osc_show = [x for x in osc if near_tip or x[7] == "OK"]
+    for h, n, st, ln, od, ev, med, stt in osc_show:
+        if stt == "OK":                              # log confirmed-active overshoot bets for grading
+            betstruct.append([n, st, "Over", ln, od, _tier(h), round(ev, 3)])
+    oso = [f"• **{n}** {st.upper()} Over **{ln} @ {od}** [🎯 hit {h*100:.0f}% · EV {ev*100:+.0f}% · med {med:.0f} · {'✓ active' if stt == 'OK' else '⏳ DAY-TO-DAY'}]"
+           for h, n, st, ln, od, ev, med, stt in osc_show]
+    holds_show = holds if near_tip else []           # day-to-day model bets: hold them back until near tip
+    if bets or casc or oso:                          # GOOD line(s) found -> ping now (every-3h "ping if good" + near-tip "once more")
+        if betstruct:                                # log the actual bets so grade_bets.py can settle them after games
+            la_today = datetime.datetime.now(_SLATE_TZ).date().isoformat()
+            bnew = not os.path.exists("bets_log.csv")
+            with open("bets_log.csv", "a", newline="", encoding="utf-8") as bf:
+                wbl = csv.writer(bf)
+                if bnew:
+                    wbl.writerow(["captured_utc", "date", "player", "market", "side", "line", "odds", "tier", "ev"])
+                for b in betstruct:
+                    wbl.writerow([stamp, la_today] + b)
         parts = []
+        if near_tip:
+            parts.append(f"🔔 **NEAR TIP (~{int(min_mins)} min) — injury list & odds RECONFIRMED**")
         if bets:
             parts.append("✅ **BETS** (our model · line@odds · Pinn = sharp close for CLV):\n" + "\n".join(bets))
         if oso:
             parts.append("🎯 **OVERSHOOT-OVERS** (book line ≥3 below median; ✓ active = injury auto-checked, just eyeball rotation):\n" + "\n".join(oso))
         if casc:
             parts.append("🧪 **EXPERIMENTAL** (star-out cascade — ~57% unproven, size small):\n" + "\n".join(casc))
-        if holds:
-            parts.append("⏳ HOLD (lineup unconfirmed): " + ", ".join(h.split("**")[1] for h in holds))
+        if holds_show:
+            parts.append("⏳ HOLD (still unconfirmed at tip): " + ", ".join(h.split("**")[1] for h in holds_show))
         if drops:
             parts.append("❌ OUT (injury → dropped): " + ", ".join(drops))
         ping(f"🏀 **1xbet — ~{int(min_mins)} min to tip**\n" + "\n".join(parts))
