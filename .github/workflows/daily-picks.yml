@@ -31,5 +31,6 @@ jobs:
             echo "nothing new"
           else
             git commit -m "picks $(date -u +%F)"
-            git push
+            git pull --rebase --autostash origin main 2>&1 || true
+            git push 2>&1 || echo "PUSH FAILED"
           fi

@@ -53,3 +53,12 @@ pick_date,game_id,player,team,opp,market,anchor,signals,fair_p,fair_odds,proj,sd
 2026-06-14,401856994,Dearica Hamby,Los Angeles Sparks,Golden State Valkyries,pa_under,17.5,cold+stingy,0.61,1.64,15.1,8.66
 2026-06-14,401856994,Gabby Williams,Golden State Valkyries,Los Angeles Sparks,pra_over,21.5,hot+leaky,0.62,1.61,24.6,8.63
 2026-06-14,401856994,Veronica Burton,Golden State Valkyries,Los Angeles Sparks,pra_over,22.5,hot+leaky,0.62,1.61,25.2,7.24
+2026-06-15,401856992,Chennedy Carter,Las Vegas Aces,Dallas Wings,pts_under,15.5,declining+cold,0.684,1.46,11.2,9.07
+2026-06-15,401856992,Chennedy Carter,Las Vegas Aces,Dallas Wings,pr_under,16.5,declining+cold,0.59,1.69,14.1,10.69
+2026-06-15,401856992,Chennedy Carter,Las Vegas Aces,Dallas Wings,pa_under,16.5,declining+cold,0.61,1.64,13.7,10.09
+2026-06-15,401856992,Chennedy Carter,Las Vegas Aces,Dallas Wings,pra_under,17.5,declining+cold,0.641,1.56,13.2,11.8
+2026-06-15,401856992,Paige Bueckers,Dallas Wings,Las Vegas Aces,pra_over,29.5,hot+leaky,0.62,1.61,32.3,7.45
+2026-06-15,401856994,Dearica Hamby,Los Angeles Sparks,Golden State Valkyries,pa_under,17.5,cold+stingy,0.61,1.64,15.1,8.66
+2026-06-15,401856994,Gabby Williams,Golden State Valkyries,Los Angeles Sparks,pra_over,21.5,hot+leaky,0.62,1.61,24.6,8.63
+2026-06-15,401856994,Veronica Burton,Golden State Valkyries,Los Angeles Sparks,pra_over,22.5,hot+leaky,0.62,1.61,25.2,7.24
+2026-06-15,401856995,Aliyah Boston,Indiana Fever,Toronto Tempo,pra_over,27.5,hot+leaky,0.62,1.61,30.5,9.66
