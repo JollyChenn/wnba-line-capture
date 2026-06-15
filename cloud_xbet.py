@@ -241,10 +241,12 @@ def pra_line(props, player):
     return min(outs, key=lambda t: t[0]) if outs else None
 
 
-def overshoot_overs(props, inj, picked):
-    """Board-wide deep overshoot-overs: ANY player (not just our signal-picks) whose 1xbet over line
-       sits >=3 below their trailing median. The soft book is lagging -> +EV over. Injury-gated; flagged
-       to verify no role/injury news (a line that low can also mean the book knows something)."""
+def overshoot_overs(props, inj, picked, pin):
+    """Board-wide deep overshoot-overs: a 1xbet over line >=3 below the player's trailing median.
+       Guarded against stale medians: INJURY-FIRST (confirmed-active only), TEAM-CHANGE (uses only
+       current-team games so a trade can't leave a blended median), MINUTES-SHRINK (declining minutes =
+       role cut = skip), COLD form skip, and PINNACLE confirm (if the sharp agrees with 1xbet's low line,
+       OUR median is the stale one -> drop). What's left is injury-proof and median-verified."""
     import statistics
     if not os.path.exists("data/box_2026.csv") or not os.path.exists("data/games_2026.csv"):
         return []
@@ -252,28 +254,52 @@ def overshoot_overs(props, inj, picked):
     log = defaultdict(list)
     for r in csv.DictReader(open("data/box_2026.csv", encoding="utf-8")):
         try:
-            log[r["player"].lower()].append((gd.get(r["game_id"]), float(r["pts"]), float(r["reb"]), float(r["ast"])))
+            log[r["player"].lower()].append((gd.get(r["game_id"]), float(r["pts"]), float(r["reb"]), float(r["ast"]), float(r["min"]), r.get("team", "")))
         except (ValueError, TypeError):
             pass
     pick = {"pts": lambda x: x[1], "pr": lambda x: x[1] + x[2], "pa": lambda x: x[1] + x[3], "pra": lambda x: x[1] + x[2] + x[3]}
+
+    def pinn(name, st):                                  # Pinnacle's value for this market (single stats + reconstructed combos)
+        p = pin.get(_pkey(name), {})
+        if st == "pts": return p.get("pts")
+        if st == "pr" and p.get("pts") and p.get("reb"): return p["pts"] + p["reb"]
+        if st == "pa" and p.get("pts") and p.get("ast"): return p["pts"] + p["ast"]
+        if st == "pra" and all(p.get(k) for k in ("pts", "reb", "ast")): return p["pts"] + p["reb"] + p["ast"]
+        return None
+
     out = []
     for plow, mk in props.items():
+        name = plow.title()
+        if status_of(name, inj) != "OK":                 # INJURY-FIRST: only confirmed-active players reach a recommendation
+            continue
+        g = sorted([x for x in log.get(plow, []) if x[0]], key=lambda t: t[0])
+        if not g:
+            continue
+        cur_team = g[-1][5]                               # TEAM-CHANGE guard: keep only current-team games (median reflects current role)
+        g = [x for x in g if x[5] == cur_team]
+        if len(g) < 5:                                    # too few games on the current team -> median unreliable -> skip
+            continue
+        mins = [x[4] for x in g]                          # MINUTES-SHRINK guard: declining minutes = role being cut = median stale-high
+        if statistics.mean(mins[-5:]) - statistics.mean(mins[-10:]) <= -3:
+            continue
         for (st, sd), outs in mk.items():
             if sd != "Over" or st not in pick or (plow, st) in picked:
                 continue
             line, odds = min(outs, key=lambda t: t[0])
-            g = sorted([x for x in log.get(plow, []) if x[0]], key=lambda t: t[0])
             v = [pick[st](x) for x in g]
-            if len(v) < 5:
-                continue
             v10 = v[-10:]; med = statistics.median(v10); t3 = statistics.mean(v[-3:])
-            if line > med - 3 or t3 <= med - 3:              # DEEP overshoot only; skip COLD form (book is likely pricing a real decline = trap)
+            if line > med - 3 or t3 <= med - 3:           # deep overshoot only; skip COLD form
                 continue
-            proj = med + 0.25 * (t3 - med)                   # calibrated proj from the backtest
+            pv = pinn(name, st); tag = ""                 # PINNACLE confirm: sharp ≈ 1xbet's low line => our median is stale => drop
+            if pv is not None:
+                if pv <= line + 1.5:
+                    continue
+                if pv >= med - 2:
+                    tag = " ✓sharp"                       # sharp agrees our median is right => 1xbet genuinely low
+            proj = med + 0.25 * (t3 - med)
             hit = 1 - _ncdf((line - proj) / (statistics.pstdev(v10) or 1)); ev = odds * hit - 1
-            name = plow.title(); stt = status_of(name, inj)
-            if ev > 0 and stt != "OUT":                      # OUT auto-dropped; day-to-day kept but flagged
-                out.append((hit, name, st, line, odds, ev, med, stt))
+            if ev > 0:
+                out.append((hit, name, st, line, odds, ev, med, tag))
     return sorted(out, reverse=True)[:6]
 
 
@@ -384,9 +410,9 @@ def main():
 
     # ---- board-wide overshoot-overs (any player whose 1xbet over line is >=3 below their median) ----
     picked = {(p.lower(), pk["base"]) for p, pks in picks.items() for pk in pks}
-    osc = overshoot_overs(props, inj, picked)
-    for h, n, st, ln, od, ev, med, stt in osc:
-        rows.append([stamp, n, st, "Over", ln, od])     # capture ALL overshoots for CLV (display filtered below)
+    osc = overshoot_overs(props, inj, picked, pin)
+    for h, n, st, ln, od, ev, med, tag in osc:
+        rows.append([stamp, n, st, "Over", ln, od])     # capture for CLV (all are confirmed-active & median-verified now)
 
     if rows:
         new = not os.path.exists(SNAP)
@@ -398,14 +424,12 @@ def main():
         print(f"logged {len(rows)} xbet snapshot rows")
 
     min_mins = min(t[2] for t in near)
-    near_tip = min_mins <= NEAR_TIP_MIN              # reconfirm window: only this close to tip do we surface day-to-day players
-    # injury-confidence: vague (day-to-day) overshoots stay hidden until the near-tip reconfirm
-    osc_show = [x for x in osc if near_tip or x[7] == "OK"]
-    for h, n, st, ln, od, ev, med, stt in osc_show:
-        if stt == "OK":                              # log confirmed-active overshoot bets for grading (+ Pinnacle line for sharp CLV)
-            betstruct.append([n, st, "Over", ln, od, _tier(h), round(ev, 3), pin.get(_pkey(n), {}).get(st, "")])
-    oso = [f"• **{n}** {st.upper()} Over **{ln} @ {od}** [🎯 hit {h*100:.0f}% · EV {ev*100:+.0f}% · med {med:.0f} · {'✓ active' if stt == 'OK' else '⏳ DAY-TO-DAY'}]"
-           for h, n, st, ln, od, ev, med, stt in osc_show]
+    near_tip = min_mins <= NEAR_TIP_MIN              # reconfirm window (used for the model holds + the 🔔 banner)
+    osc_show = osc                                    # overshoot_overs now returns injury-proof + median-verified only
+    for h, n, st, ln, od, ev, med, tag in osc_show:
+        betstruct.append([n, st, "Over", ln, od, _tier(h), round(ev, 3), pin.get(_pkey(n), {}).get(st, "")])
+    oso = [f"• **{n}** {st.upper()} Over **{ln} @ {od}** [🎯 hit {h*100:.0f}% · EV {ev*100:+.0f}% · med {med:.0f} · ✓ active{tag}]"
+           for h, n, st, ln, od, ev, med, tag in osc_show]
     holds_show = holds if near_tip else []           # day-to-day model bets: hold them back until near tip
     la_today = datetime.datetime.now(_SLATE_TZ).date().isoformat()
     seen_today = set()                               # bets already logged earlier today (read BEFORE this run's write)
@@ -429,7 +453,7 @@ def main():
         if bets:
             parts.append("✅ **BETS** (our model · line@odds · Pinn = sharp close for CLV):\n" + "\n".join(bets))
         if oso:
-            parts.append("🎯 **OVERSHOOT-OVERS** (book line ≥3 below median; ✓ active = injury auto-checked, just eyeball rotation):\n" + "\n".join(oso))
+            parts.append("🎯 **OVERSHOOT-OVERS** (line ≥3 below median; injury/team-change/minutes/cold auto-checked; ✓sharp = Pinnacle confirms):\n" + "\n".join(oso))
         if casc:
             parts.append("🧪 **EXPERIMENTAL** (star-out cascade — ~57% unproven, size small):\n" + "\n".join(casc))
         if holds_show:
