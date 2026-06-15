@@ -50,6 +50,18 @@ for r in sorted(rows, key=lambda r: (r["date"], r["player"])):
     oclv = f"{float(r['odds_clv']) * 100:+.0f}%" if r.get("odds_clv") not in ("", None) else "  --"
     print(f"  {r['date']:9}{r['player'][:17]:18}{(r['market'].upper() + ' ' + r['side'])[:14]:15}{r['result'][:4]:5}{oclv:>6}")
 
+# persist a human-readable history file (always current; graded_bets.csv = the raw append-only data)
+hist = ["# WNBA Bot — CLV & Track Record", "",
+        "_Auto-updated after each slate settles. Raw data: `graded_bets.csv`. CLV>0 = our price beat the close._", "", "```"]
+hist += [ln.replace("**", "") for ln in L]
+hist += ["```", "", "## Per-bet", "", "| date | player | bet | result | odds-CLV |", "|---|---|---|---|---|"]
+for r in sorted(rows, key=lambda x: (x["date"], x["player"])):
+    oc2 = f"{float(r['odds_clv']) * 100:+.0f}%" if r.get("odds_clv") not in ("", None) else "—"
+    hist.append(f"| {r['date']} | {r['player']} | {r['market'].upper()} {r['side']} {r['line']} @ {r['odds']} | {r['result']} | {oc2} |")
+with open("CLV_HISTORY.md", "w", encoding="utf-8") as f:
+    f.write("\n".join(hist) + "\n")
+print("\n  → wrote CLV_HISTORY.md (check it anytime, on GitHub or locally)")
+
 hook = os.environ.get("DISCORD_WEBHOOK", "")
 if hook:
     try:
