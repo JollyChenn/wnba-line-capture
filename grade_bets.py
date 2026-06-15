@@ -1,6 +1,6 @@
-# grade_bets.py — settle the actual logged bets (bets_log.csv) against box-score results.
-# Reports hit-rate, ROI, net units, a 1xbet line-move proxy, AND sharp CLV vs Pinnacle's close
-# (points only — Pinnacle has no combos). Appends settled bets to graded_bets.csv (deduped).
+# grade_bets.py — settle logged bets (bets_log.csv) vs box results, with PROPER CLV.
+# "Our bet" = the FIRST capture (earliest alert = take-on-sight). "Close" = the LAST capture (near tip).
+# Reports hit-rate, ROI, and THREE CLVs: odds-CLV (price moved our way), line-CLV, and sharp-CLV vs Pinnacle.
 import csv, os
 from collections import defaultdict
 
@@ -22,7 +22,7 @@ for r in csv.DictReader(open("data/box_2026.csv", encoding="utf-8")):
 
 caps = defaultdict(list)
 for b in csv.DictReader(open("bets_log.csv", encoding="utf-8")):
-    d = b["date"].replace("-", "")                 # bets_log writes 2026-06-14; the box uses 20260614
+    d = b["date"].replace("-", "")                 # bets_log 2026-06-14 -> box 20260614
     caps[(d, b["player"].lower(), b["market"], b["side"])].append(
         (b["captured_utc"], float(b["line"]), float(b["odds"]), b.get("tier", ""), b["player"], b.get("pinn", "")))
 
@@ -32,12 +32,11 @@ if os.path.exists("graded_bets.csv"):
         done.add((r["date"], r["player"].lower(), r["market"], r["side"]))
 
 
-def clv_vs(line, ref, side):
+def line_clv(our, ref, side):
     try:
-        ref = float(ref)
+        return round((our - float(ref)) if side == "Under" else (float(ref) - our), 1)   # >0 = better line than ref
     except (ValueError, TypeError):
         return ""
-    return round((line - ref) if side == "Under" else (ref - line), 1)   # >0 = our line beat that reference
 
 
 new_rows = []
@@ -46,25 +45,26 @@ for (d, plow, mk, side), cl in caps.items():
         continue
     act = actual.get((plow, d, mk))
     if act is None:
-        continue                                       # game not final / box not updated yet
+        continue
     cl.sort()
-    line, odds, tier, disp, pinn = cl[-1][1], cl[-1][2], cl[-1][3], cl[-1][4], cl[-1][5]
-    open_line = cl[0][1]
-    if act == line:
+    o_line, o_odds, tier, disp = cl[0][1], cl[0][2], cl[0][3], cl[0][4]      # OUR bet = first alert
+    c_line, c_odds, c_pinn = cl[-1][1], cl[-1][2], cl[-1][5]                 # CLOSE = last capture
+    if act == o_line:
         res, pnl = "push", 0.0
-    elif (act < line) == (side == "Under"):
-        res, pnl = "WIN", odds - 1
+    elif (act < o_line) == (side == "Under"):
+        res, pnl = "WIN", o_odds - 1
     else:
         res, pnl = "loss", -1.0
-    new_rows.append([d, disp, mk, side, line, odds, tier, act, res, round(pnl, 2),
-                     clv_vs(line, open_line, side), clv_vs(line, pinn, side)])
+    odds_clv = round(o_odds / c_odds - 1, 3) if c_odds else ""               # >0 = we got a longer price than the close
+    new_rows.append([d, disp, mk, side, o_line, o_odds, tier, act, res, round(pnl, 2),
+                     odds_clv, line_clv(o_line, c_line, side), line_clv(o_line, c_pinn, side)])
 
 if new_rows:
     fnew = not os.path.exists("graded_bets.csv")
     with open("graded_bets.csv", "a", newline="", encoding="utf-8") as f:
         wr = csv.writer(f)
         if fnew:
-            wr.writerow(["date", "player", "market", "side", "line", "odds", "tier", "actual", "result", "pnl", "line_move", "sharp_clv"])
+            wr.writerow(["date", "player", "market", "side", "line", "odds", "tier", "actual", "result", "pnl", "odds_clv", "line_clv", "sharp_clv"])
         wr.writerows(sorted(new_rows))
     print(f"settled {len(new_rows)} new bet(s)")
 else:
@@ -78,15 +78,13 @@ n = len(dec); w = sum(1 for g in dec if g["result"] == "WIN"); net = sum(float(g
 print(f"\n===== TRACK RECORD ({n} settled) =====")
 print(f"  hit-rate : {w}/{n} = {w / n * 100:.0f}%")
 print(f"  net P&L  : {net:+.2f}u  (ROI {net / n * 100:+.1f}%/bet)")
-moves = [float(g["line_move"]) for g in allg if g.get("line_move") not in ("", None)]
-sharps = [float(g["sharp_clv"]) for g in allg if g.get("sharp_clv") not in ("", None)]
-if moves:
-    print(f"  1xbet line-move (caught early): {sum(moves) / len(moves):+.2f} avg")
-if sharps:
-    beat = sum(1 for s in sharps if s > 0)
-    print(f"  SHARP CLV vs Pinnacle: {sum(sharps) / len(sharps):+.2f} avg | beat the close {beat}/{len(sharps)} ({beat / len(sharps) * 100:.0f}%)  <- THE real edge test")
-else:
-    print("  SHARP CLV vs Pinnacle: (no settled points bets with a Pinnacle line yet)")
+oc = [float(g["odds_clv"]) for g in allg if g.get("odds_clv") not in ("", None)]
+if oc:
+    beat = sum(1 for x in oc if x > 0)
+    print(f"  ODDS CLV : {sum(oc) / len(oc) * 100:+.1f}% avg | beat the close {beat}/{len(oc)} ({beat / len(oc) * 100:.0f}%)   <- THE edge signal")
+sc = [float(g["sharp_clv"]) for g in allg if g.get("sharp_clv") not in ("", None)]
+if sc:
+    print(f"  SHARP CLV vs Pinnacle (line): {sum(sc) / len(sc):+.2f} avg ({len(sc)} points bets)")
 for label, keyf in [("market/side", lambda g: f"{g['market']} {g['side']}"), ("tier", lambda g: g["tier"] or "?")]:
     by = defaultdict(lambda: [0, 0])
     for g in dec:

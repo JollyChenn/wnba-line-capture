@@ -407,16 +407,22 @@ def main():
     oso = [f"• **{n}** {st.upper()} Over **{ln} @ {od}** [🎯 hit {h*100:.0f}% · EV {ev*100:+.0f}% · med {med:.0f} · {'✓ active' if stt == 'OK' else '⏳ DAY-TO-DAY'}]"
            for h, n, st, ln, od, ev, med, stt in osc_show]
     holds_show = holds if near_tip else []           # day-to-day model bets: hold them back until near tip
-    if bets or casc or oso:                          # GOOD line(s) found -> ping now (every-3h "ping if good" + near-tip "once more")
-        if betstruct:                                # log the actual bets so grade_bets.py can settle them after games
-            la_today = datetime.datetime.now(_SLATE_TZ).date().isoformat()
-            bnew = not os.path.exists("bets_log.csv")
-            with open("bets_log.csv", "a", newline="", encoding="utf-8") as bf:
-                wbl = csv.writer(bf)
-                if bnew:
-                    wbl.writerow(["captured_utc", "date", "player", "market", "side", "line", "odds", "tier", "ev", "pinn"])
-                for b in betstruct:
-                    wbl.writerow([stamp, la_today] + b)
+    la_today = datetime.datetime.now(_SLATE_TZ).date().isoformat()
+    seen_today = set()                               # bets already logged earlier today (read BEFORE this run's write)
+    if os.path.exists("bets_log.csv"):
+        for r in csv.DictReader(open("bets_log.csv", encoding="utf-8")):
+            if r.get("date") == la_today:
+                seen_today.add((r["player"].lower(), r["market"], r["side"]))
+    if betstruct:                                    # log EVERY capture (incl. the near-tip close) so grade_bets tracks odds-CLV
+        bnew = not os.path.exists("bets_log.csv")
+        with open("bets_log.csv", "a", newline="", encoding="utf-8") as bf:
+            wbl = csv.writer(bf)
+            if bnew:
+                wbl.writerow(["captured_utc", "date", "player", "market", "side", "line", "odds", "tier", "ev", "pinn"])
+            for b in betstruct:
+                wbl.writerow([stamp, la_today] + b)
+    new_bets = {(b[0].lower(), b[1], b[2]) for b in betstruct} - seen_today   # bets not already pinged today
+    if (bets or casc or oso) and (new_bets or near_tip):   # ping on a NEW bet OR at near-tip reconfirm; dedup the middle runs
         parts = []
         if near_tip:
             parts.append(f"🔔 **NEAR TIP (~{int(min_mins)} min) — injury list & odds RECONFIRMED**")

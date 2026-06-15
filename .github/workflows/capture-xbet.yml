@@ -1,7 +1,8 @@
 name: capture-xbet
 on:
   schedule:
-    - cron: '0 */3 * * *'         # every 3h: GitHub honours sparse crons reliably — catches lines as they post AND lands within ~1.5h of any tip. Pings whenever a line is good; near-tip run is the "once more".
+    - cron: '0 */3 * * *'                            # every 3h baseline (early "line is good" ping)
+    - cron: '0 16,17,18,19,20,21,22,23,0,1,2 * * *'  # hourly through the WNBA tip window (16:00-02:00 UTC) so a run lands near tip; dedup stops the spam
   workflow_dispatch: {}
 permissions:
   contents: write
