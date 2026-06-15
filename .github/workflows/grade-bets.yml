@@ -20,7 +20,9 @@ jobs:
         run: pip install --quiet pandas requests numpy && python daily_picks.py || true
       - name: Settle logged bets vs actual results
         run: python grade_bets.py
-      - name: Update CLV history file (checkable anytime)
+      - name: Update CLV history + ping the verdict to Discord
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         run: python clv_reader.py || true
       - name: Commit track record
         run: |
