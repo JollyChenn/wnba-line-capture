@@ -22,7 +22,8 @@ for r in csv.DictReader(open("data/box_2026.csv", encoding="utf-8")):
 
 caps = defaultdict(list)
 for b in csv.DictReader(open("bets_log.csv", encoding="utf-8")):
-    caps[(b["date"], b["player"].lower(), b["market"], b["side"])].append(
+    d = b["date"].replace("-", "")                 # bets_log writes 2026-06-14; the box uses 20260614
+    caps[(d, b["player"].lower(), b["market"], b["side"])].append(
         (b["captured_utc"], float(b["line"]), float(b["odds"]), b.get("tier", ""), b["player"], b.get("pinn", "")))
 
 done = set()
