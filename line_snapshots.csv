@@ -105,3 +105,35 @@ captured_utc,game_id,tip,away,home,market,player,side,line,price,book
 2026-06-14T17:39:32+00:00,e46471a6dec6e2d9fe85e6b039a375fd,2026-06-14T19:00:00Z,Washington Mystics,New York Liberty,player_points,Shakira Austin,Under,15.5,1.88,Pinnacle
 2026-06-14T17:39:32+00:00,e46471a6dec6e2d9fe85e6b039a375fd,2026-06-14T19:00:00Z,Washington Mystics,New York Liberty,player_points,Sonia Citron,Over,16.5,2.12,Pinnacle
 2026-06-14T17:39:32+00:00,e46471a6dec6e2d9fe85e6b039a375fd,2026-06-14T19:00:00Z,Washington Mystics,New York Liberty,player_points,Sonia Citron,Under,16.5,1.68,Pinnacle
+2026-06-15T21:15:50+00:00,48a77a86231262a69de75394ce6a32b1,2026-06-16T00:00:00Z,Las Vegas Aces,Dallas Wings,player_points,A'ja Wilson,Over,25.5,1.84,Pinnacle
+2026-06-15T21:15:50+00:00,48a77a86231262a69de75394ce6a32b1,2026-06-16T00:00:00Z,Las Vegas Aces,Dallas Wings,player_points,A'ja Wilson,Under,25.5,1.9,Pinnacle
+2026-06-15T21:15:50+00:00,48a77a86231262a69de75394ce6a32b1,2026-06-16T00:00:00Z,Las Vegas Aces,Dallas Wings,player_points,Arike Ogunbowale,Over,14.5,1.76,Pinnacle
+2026-06-15T21:15:50+00:00,48a77a86231262a69de75394ce6a32b1,2026-06-16T00:00:00Z,Las Vegas Aces,Dallas Wings,player_points,Arike Ogunbowale,Under,14.5,1.99,Pinnacle
+2026-06-15T21:15:50+00:00,48a77a86231262a69de75394ce6a32b1,2026-06-16T00:00:00Z,Las Vegas Aces,Dallas Wings,player_points,Azzi Fudd,Over,13.5,1.79,Pinnacle
+2026-06-15T21:15:50+00:00,48a77a86231262a69de75394ce6a32b1,2026-06-16T00:00:00Z,Las Vegas Aces,Dallas Wings,player_points,Azzi Fudd,Under,13.5,1.95,Pinnacle
+2026-06-15T21:15:50+00:00,48a77a86231262a69de75394ce6a32b1,2026-06-16T00:00:00Z,Las Vegas Aces,Dallas Wings,player_points,Chelsea Gray,Over,11.5,1.75,Pinnacle
+2026-06-15T21:15:50+00:00,48a77a86231262a69de75394ce6a32b1,2026-06-16T00:00:00Z,Las Vegas Aces,Dallas Wings,player_points,Chelsea Gray,Under,11.5,2.0,Pinnacle
+2026-06-15T21:15:50+00:00,48a77a86231262a69de75394ce6a32b1,2026-06-16T00:00:00Z,Las Vegas Aces,Dallas Wings,player_points,Jackie Young,Over,16.5,1.9,Pinnacle
+2026-06-15T21:15:50+00:00,48a77a86231262a69de75394ce6a32b1,2026-06-16T00:00:00Z,Las Vegas Aces,Dallas Wings,player_points,Jackie Young,Under,16.5,1.84,Pinnacle
+2026-06-15T21:15:50+00:00,48a77a86231262a69de75394ce6a32b1,2026-06-16T00:00:00Z,Las Vegas Aces,Dallas Wings,player_points,Jessica Shepard,Over,12.5,2.07,Pinnacle
+2026-06-15T21:15:50+00:00,48a77a86231262a69de75394ce6a32b1,2026-06-16T00:00:00Z,Las Vegas Aces,Dallas Wings,player_points,Jessica Shepard,Under,12.5,1.7,Pinnacle
+2026-06-15T21:15:50+00:00,48a77a86231262a69de75394ce6a32b1,2026-06-16T00:00:00Z,Las Vegas Aces,Dallas Wings,player_points,Jewell Loyd,Over,7.5,1.78,Pinnacle
+2026-06-15T21:15:50+00:00,48a77a86231262a69de75394ce6a32b1,2026-06-16T00:00:00Z,Las Vegas Aces,Dallas Wings,player_points,Jewell Loyd,Under,7.5,1.98,Pinnacle
+2026-06-15T21:15:50+00:00,48a77a86231262a69de75394ce6a32b1,2026-06-16T00:00:00Z,Las Vegas Aces,Dallas Wings,player_points,NaLyssa Smith,Over,10.5,1.97,Pinnacle
+2026-06-15T21:15:50+00:00,48a77a86231262a69de75394ce6a32b1,2026-06-16T00:00:00Z,Las Vegas Aces,Dallas Wings,player_points,NaLyssa Smith,Under,10.5,1.78,Pinnacle
+2026-06-15T21:15:50+00:00,48a77a86231262a69de75394ce6a32b1,2026-06-16T00:00:00Z,Las Vegas Aces,Dallas Wings,player_points,Paige Bueckers,Over,19.5,1.99,Pinnacle
+2026-06-15T21:15:50+00:00,48a77a86231262a69de75394ce6a32b1,2026-06-16T00:00:00Z,Las Vegas Aces,Dallas Wings,player_points,Paige Bueckers,Under,19.5,1.76,Pinnacle
+2026-06-15T21:15:50+00:00,98f03fd7c10f0659cf6e9a6934569117,2026-06-16T00:00:00Z,Portland Fire,Minnesota Lynx,player_points,Bridget Carleton,Over,12.5,1.87,Pinnacle
+2026-06-15T21:15:50+00:00,98f03fd7c10f0659cf6e9a6934569117,2026-06-16T00:00:00Z,Portland Fire,Minnesota Lynx,player_points,Bridget Carleton,Under,12.5,1.87,Pinnacle
+2026-06-15T21:15:50+00:00,98f03fd7c10f0659cf6e9a6934569117,2026-06-16T00:00:00Z,Portland Fire,Minnesota Lynx,player_points,Carla Leite,Over,13.5,1.97,Pinnacle
+2026-06-15T21:15:50+00:00,98f03fd7c10f0659cf6e9a6934569117,2026-06-16T00:00:00Z,Portland Fire,Minnesota Lynx,player_points,Carla Leite,Under,13.5,1.78,Pinnacle
+2026-06-15T21:15:50+00:00,98f03fd7c10f0659cf6e9a6934569117,2026-06-16T00:00:00Z,Portland Fire,Minnesota Lynx,player_points,Courtney Williams,Over,16.5,2.01,Pinnacle
+2026-06-15T21:15:50+00:00,98f03fd7c10f0659cf6e9a6934569117,2026-06-16T00:00:00Z,Portland Fire,Minnesota Lynx,player_points,Courtney Williams,Under,16.5,1.75,Pinnacle
+2026-06-15T21:15:50+00:00,98f03fd7c10f0659cf6e9a6934569117,2026-06-16T00:00:00Z,Portland Fire,Minnesota Lynx,player_points,Kayla McBride,Over,14.5,1.92,Pinnacle
+2026-06-15T21:15:50+00:00,98f03fd7c10f0659cf6e9a6934569117,2026-06-16T00:00:00Z,Portland Fire,Minnesota Lynx,player_points,Kayla McBride,Under,14.5,1.82,Pinnacle
+2026-06-15T21:15:50+00:00,98f03fd7c10f0659cf6e9a6934569117,2026-06-16T00:00:00Z,Portland Fire,Minnesota Lynx,player_points,Natasha Howard,Over,16.5,1.87,Pinnacle
+2026-06-15T21:15:50+00:00,98f03fd7c10f0659cf6e9a6934569117,2026-06-16T00:00:00Z,Portland Fire,Minnesota Lynx,player_points,Natasha Howard,Under,16.5,1.87,Pinnacle
+2026-06-15T21:15:50+00:00,98f03fd7c10f0659cf6e9a6934569117,2026-06-16T00:00:00Z,Portland Fire,Minnesota Lynx,player_points,Nia Coffey,Over,7.5,1.74,Pinnacle
+2026-06-15T21:15:50+00:00,98f03fd7c10f0659cf6e9a6934569117,2026-06-16T00:00:00Z,Portland Fire,Minnesota Lynx,player_points,Nia Coffey,Under,7.5,2.02,Pinnacle
+2026-06-15T21:15:50+00:00,98f03fd7c10f0659cf6e9a6934569117,2026-06-16T00:00:00Z,Portland Fire,Minnesota Lynx,player_points,Olivia Miles,Over,17.5,2.1,Pinnacle
+2026-06-15T21:15:50+00:00,98f03fd7c10f0659cf6e9a6934569117,2026-06-16T00:00:00Z,Portland Fire,Minnesota Lynx,player_points,Olivia Miles,Under,17.5,1.68,Pinnacle
