@@ -135,13 +135,16 @@ def injuries():
 
 def status_of(player, inj):
     s = inj.get(player.lower(), "")
-    if not s:                                  # first-initial + surname (avoid surname-only collisions, e.g. two "Jones")
+    if not s:                                  # first-initial + surname fallback (handles "K. Plum" vs "Kelsey Plum")
         p = player.lower().split()
         key = (p[0][0] + " " + p[-1]) if len(p) >= 2 else player.lower()
-        for k, v in inj.items():
-            kp = k.split()
-            if len(kp) >= 2 and kp[0][0] + " " + kp[-1] == key:
-                s = v; break
+        matches = [v for k, v in inj.items()
+                   if len(k.split()) >= 2 and k.split()[0][0] + " " + k.split()[-1] == key]
+        if any(v in SCRATCH for v in matches):  # ambiguous namesakes (e.g. two "A. Wilson") -> take the MOST severe so we never bet a hurt player
+            return "OUT"
+        if any(v in HOLD for v in matches):
+            return "HOLD"
+        s = matches[0] if matches else ""
     return "OUT" if s in SCRATCH else "HOLD" if s in HOLD else "OK"
 
 
@@ -280,7 +283,8 @@ def overshoot_overs(props, inj, picked, pin):
         if len(g) < 5:                                    # too few games on the current team -> median unreliable -> skip
             continue
         mins = [x[4] for x in g]                          # MINUTES-SHRINK guard: declining minutes = role being cut = median stale-high
-        if statistics.mean(mins[-5:]) - statistics.mean(mins[-10:]) <= -3:
+        r5, prev5 = mins[-5:], mins[-10:-5]               # DISJOINT windows (last-5 vs the prior-5) — overlapping windows cancel out for <10-game players
+        if len(prev5) >= 3 and statistics.mean(r5) - statistics.mean(prev5) <= -3:
             continue
         for (st, sd), outs in mk.items():
             if sd != "Over" or st not in pick or (plow, st) in picked:
@@ -354,25 +358,26 @@ def main():
         st = status_of(player, inj)
         if st == "OUT":
             drops.append(player); continue
-        side = pks[0]["side"]; cands = []
+        cands = []
         for pk in pks:
+            psd = pk["side"]                                 # this pick's OWN side — a player can hold both an under and a PRA over; never use a shared side
             # ---- the model's own side (an under, or a PRA over) ----
-            outs = pp.get((pk["base"], pk["side"]))
+            outs = pp.get((pk["base"], psd))
             if outs:
                 line, odds = min(outs, key=lambda t: abs(t[0] - pk["anchor"]))
-                rows.append([stamp, player, pk["base"], pk["side"], line, odds])
-                zone = (line >= pk["anchor"] - 1) if side == "Under" else (line <= pk["anchor"] + 1)
+                rows.append([stamp, player, pk["base"], psd, line, odds])
+                zone = (line >= pk["anchor"] - 1) if psd == "Under" else (line <= pk["anchor"] + 1)
                 if pk.get("sd"):
                     # de-inflate the hot-over projection (backtest: actual regresses ~15% toward the median)
-                    proj = pk["proj"] if side == "Under" else pk["anchor"] + 0.85 * (pk["proj"] - pk["anchor"])
-                    ph = _ncdf((line - proj) / pk["sd"]); ph = ph if side == "Under" else 1 - ph
+                    proj = pk["proj"] if psd == "Under" else pk["anchor"] + 0.85 * (pk["proj"] - pk["anchor"])
+                    ph = _ncdf((line - proj) / pk["sd"]); ph = ph if psd == "Under" else 1 - ph
                     fairL = 1 / max(ph, 0.02)
                 else:
                     ph, fairL = 1 / pk["fair"], pk["fair"]
                 if odds > fairL and zone:
-                    cands.append((ph, pk["base"], side, line, odds, odds / fairL - 1))
+                    cands.append((ph, pk["base"], psd, line, odds, odds / fairL - 1, False))
             # ---- overshoot FLIP: under-signal player whose 1xbet OVER line overshot below our projection ----
-            if side == "Under" and pk.get("sd"):
+            if psd == "Under" and pk.get("sd"):
                 oo = pp.get((pk["base"], "Over"))
                 if oo:
                     oline, oodds = min(oo, key=lambda t: t[0])               # most-overshot (lowest) over line
@@ -380,15 +385,15 @@ def main():
                         pov = 1 - _ncdf((oline - pk["proj"]) / pk["sd"]); ofair = 1 / max(pov, 0.02)
                         if oodds > ofair:
                             rows.append([stamp, player, pk["base"], "Over", oline, oodds])
-                            cands.append((pov, pk["base"], "Over", oline, oodds, oodds / ofair - 1))
+                            cands.append((pov, pk["base"], "Over", oline, oodds, oodds / ofair - 1, True))
         if cands:
-            ph, base, bside, line, odds, ev = max(cands, key=lambda c: c[0])  # highest-confidence bet for this player
+            ph, base, bside, line, odds, ev, is_flip = max(cands, key=lambda c: c[0])  # highest-confidence bet for this player
             if st == "OK":                            # log confirmed-active model bets for grading (+ Pinnacle line for sharp CLV)
                 betstruct.append([player, base, bside, line, odds, _tier(ph), round(ev, 3), pin.get(_pkey(player), {}).get(base, "")])
             pinref = pin.get(_pkey(player), {}).get(base)
             cstr = f" · Pinn {pinref}" if pinref is not None else ""
             tmab = _team_ab(pks[0].get("team", "")); sig = pks[0].get("sig", "")
-            flip = " 🎯FLIP" if (bside == "Over" and side == "Under") else ""
+            flip = " 🎯FLIP" if is_flip else ""
             txt = f"• **{player}** ({tmab}) {base.upper()} {bside} **{line} @ {odds}** [{_tier(ph)}{flip} · {sig} · hit {ph*100:.0f}% · EV {ev*100:+.0f}%]{cstr}"
             (holds if st == "HOLD" else bets).append(txt + (" ⏳unconfirmed" if st == "HOLD" else ""))
 

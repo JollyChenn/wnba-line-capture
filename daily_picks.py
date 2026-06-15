@@ -202,19 +202,21 @@ def refresh():
         if d >= today:
             upcoming += up
         d += datetime.timedelta(days=1)
-    newbox = []
+    newbox, ok_games = [], []                       # only record a game once its box is safely fetched (a failed box must be RETRIED, not lost forever)
     for g in fin_all:
         try:
-            newbox += fetch_box(g["game_id"])
+            b = fetch_box(g["game_id"])
         except Exception as e:
-            print(f"  box {g['game_id']} failed: {e}")
-    if fin_all:
-        games = pd.concat([games, pd.DataFrame(fin_all)], ignore_index=True)
-        games.to_csv(GAMES_CSV, index=False)
-    if newbox:
-        box = pd.concat([box, pd.DataFrame(newbox)], ignore_index=True)
+            print(f"  box {g['game_id']} failed (will retry next run): {e}"); continue
+        if b:
+            newbox += b; ok_games.append(g)
+    if newbox:                                      # write BOX first, then games, so a mid-write crash can't leave a game recorded with no box
+        box = pd.concat([box, pd.DataFrame(newbox)], ignore_index=True).drop_duplicates(["game_id", "aid"], keep="last")
         box.to_csv(BOX_CSV, index=False)
-    print(f"games: {len(games)} (+{len(fin_all)} new) | box rows: {len(box)} | upcoming: {len(upcoming)}")
+    if ok_games:
+        games = pd.concat([games, pd.DataFrame(ok_games)], ignore_index=True).drop_duplicates("game_id", keep="last")
+        games.to_csv(GAMES_CSV, index=False)
+    print(f"games: {len(games)} (+{len(ok_games)} new) | box rows: {len(box)} | upcoming: {len(upcoming)}")
     return games, box, upcoming
 
 

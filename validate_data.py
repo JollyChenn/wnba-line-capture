@@ -43,8 +43,11 @@ slate = max((r["pick_date"] for r in rows), default=None)
 tdy = [r for r in rows if r["pick_date"] == slate]
 if not tdy:
     issues.append("NO picks for the latest slate")
-elif sum(1 for r in tdy if r.get("sd")) < len(tdy) * 0.9:
-    issues.append("sd missing on >10% of picks")
+else:
+    if slate != today.isoformat():            # daily_picks runs with `|| true`; if it silently failed, the newest slate is yesterday's
+        issues.append(f"STALE PICKS: newest slate {slate} is not today ({today.isoformat()}) — daily_picks may have failed")
+    if sum(1 for r in tdy if r.get("sd")) < len(tdy) * 0.9:
+        issues.append("sd missing on >10% of picks")
 
 print(f"DATA VALIDATION — box: {len(box)} player-games (newest {latest}) | picks slate: {slate} ({len(tdy)} picks)")
 if issues:

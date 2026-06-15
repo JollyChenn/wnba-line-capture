@@ -49,15 +49,17 @@ for (d, plow, mk, side), cl in caps.items():
     cl.sort()
     o_line, o_odds, tier, disp = cl[0][1], cl[0][2], cl[0][3], cl[0][4]      # OUR bet = first alert
     c_line, c_odds, c_pinn = cl[-1][1], cl[-1][2], cl[-1][5]                 # CLOSE = last capture
+    has_close = len(cl) >= 2                                                 # only ONE capture -> no measured close -> CLV is UNKNOWN (blank), NOT a real 0
     if act == o_line:
         res, pnl = "push", 0.0
     elif (act < o_line) == (side == "Under"):
         res, pnl = "WIN", o_odds - 1
     else:
         res, pnl = "loss", -1.0
-    odds_clv = round(o_odds / c_odds - 1, 3) if c_odds else ""               # >0 = we got a longer price than the close
+    odds_clv = round(o_odds / c_odds - 1, 3) if (c_odds and has_close) else ""   # >0 = we got a longer price than the close
+    line_self = line_clv(o_line, c_line, side) if has_close else ""              # our line vs our OWN close (needs 2+ captures)
     new_rows.append([d, disp, mk, side, o_line, o_odds, tier, act, res, round(pnl, 2),
-                     odds_clv, line_clv(o_line, c_line, side), line_clv(o_line, c_pinn, side)])
+                     odds_clv, line_self, line_clv(o_line, c_pinn, side)])      # sharp_clv (vs Pinnacle) stays valid with 1 capture
 
 if new_rows:
     fnew = not os.path.exists("graded_bets.csv")
