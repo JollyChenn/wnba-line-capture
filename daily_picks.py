@@ -140,7 +140,7 @@ def notify_discord(date, core_picks, cascade_lines):
     if len(msg) > 1900:
         msg = msg[:1880] + "\n…(truncated — see PICKS.md)"
     try:
-        r = requests.post(DISCORD_WEBHOOK, json={"content": msg}, timeout=15)
+        r = requests.post(DISCORD_WEBHOOK, json={"content": msg}, headers={"User-Agent": "Mozilla/5.0"}, timeout=15)
         print(f"discord ping: HTTP {r.status_code}")
     except Exception as e:
         print(f"discord notify failed: {e}")

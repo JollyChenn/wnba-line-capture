@@ -40,7 +40,7 @@ if not dec:
     if hook:
         try:
             urllib.request.urlopen(urllib.request.Request(hook, data=json.dumps({"content": "\n".join(L0)[:1900]}).encode(),
-                                   headers={"Content-Type": "application/json"}), timeout=15)
+                                   headers={"Content-Type": "application/json", "User-Agent": "Mozilla/5.0"}), timeout=15)
         except Exception as e:
             print("discord:", e)
     raise SystemExit
@@ -107,7 +107,7 @@ hook = os.environ.get("DISCORD_WEBHOOK", "")
 if hook:
     try:
         urllib.request.urlopen(urllib.request.Request(hook, data=json.dumps({"content": "\n".join(L)[:1900]}).encode(),
-                               headers={"Content-Type": "application/json"}), timeout=15)
+                               headers={"Content-Type": "application/json", "User-Agent": "Mozilla/5.0"}), timeout=15)
         print("\n  (pinged Discord)")
     except Exception as e:
         print("\n  discord:", e)
