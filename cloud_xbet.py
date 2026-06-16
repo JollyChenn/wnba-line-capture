@@ -555,8 +555,8 @@ def main():
                 wbl.writerow(["captured_utc", "date", "player", "market", "side", "line", "odds", "tier", "ev", "pinn", "src"])
             for b in betstruct:
                 wbl.writerow([stamp, la_today] + b)
-    new_bets = {(b[0].lower(), b[1], b[2]) for b in betstruct} - seen_today   # bets not already pinged today
-    if (bets or casc or oso or forward) and (new_bets or near_tip):   # ping on a NEW bet OR at near-tip reconfirm; dedup the middle runs
+    new_bets = {(b[0].lower(), b[1], b[2]) for b in betstruct} - seen_today   # (kept for context; no longer gates the ping)
+    if (bets or casc or oso or forward):   # REMIND every cycle a bet qualifies (hourly), not just once/near-tip
         parts = []
         if near_tip:
             parts.append(f"🔔 **NEAR TIP (~{int(min_mins)} min) — injury list & odds RECONFIRMED**")
