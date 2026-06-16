@@ -27,7 +27,11 @@ WEBHOOK = os.environ.get("DISCORD_WEBHOOK", "")
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36")
 STAT_T = {"pts": (1807, 1806), "pr": (5671, 5672), "pa": (5673, 5674),
-          "ra": (7141, 7142), "pra": (16427, 16428)}
+          "ra": (7141, 7142), "pra": (16427, 16428),
+          "ast": (1491, 1492), "reb": (1489, 1490)}   # standalone ASSISTS/REBOUNDS (odd=Over even=Under).
+#   Disambiguated 2026-06-16 via live market discovery: 1491/2 ast (Clark 8.5 / Boston 2.5 / Mabrey 2.5),
+#   1489/0 reb (Clark 4.5 / Boston 8.5 / Mabrey 3.5) — both match the screenshot lines exactly. Assists are
+#   TOTAL-IMMUNE (the cold+shrink assist-under is the cleanest market); now captured for CLV like the rest.
 T2S = {}
 for _s, (_o, _u) in STAT_T.items():
     T2S[_o] = (_s, "Over"); T2S[_u] = (_s, "Under")
@@ -294,15 +298,18 @@ def overshoot_overs(props, inj, picked, pin, ptot=None):
             log[r["player"].lower()].append((gd.get(r["game_id"]), float(r["pts"]), float(r["reb"]), float(r["ast"]), float(r["min"]), r.get("team", "")))
         except (ValueError, TypeError):
             pass
-    # ra (reb+ast) added: it's the MOST game-total-immune market (rebounds rise on misses, assists flat).
+    # standalone ast/reb + ra (reb+ast) added: the MOST game-total-immune markets (rebounds rise on misses, assists flat).
     pick = {"pts": lambda x: x[1], "pr": lambda x: x[1] + x[2], "pa": lambda x: x[1] + x[3],
-            "ra": lambda x: x[2] + x[3], "pra": lambda x: x[1] + x[2] + x[3]}
+            "ra": lambda x: x[2] + x[3], "pra": lambda x: x[1] + x[2] + x[3],
+            "ast": lambda x: x[3], "reb": lambda x: x[2]}
     TOTAL_TRAP = {"pts", "pra"}                           # points-heavy -> cratered in low-total games
-    TOTAL_SAFE = {"pa", "ra"}                             # assist/rebound-heavy -> immune to game total
+    TOTAL_SAFE = {"pa", "ra", "ast", "reb"}              # assist/rebound-heavy -> immune to game total
 
     def pinn(name, st):                                  # Pinnacle's value for this market (single stats + reconstructed combos)
         p = pin.get(_pkey(name), {})
         if st == "pts": return p.get("pts")
+        if st == "ast": return p.get("ast")
+        if st == "reb": return p.get("reb")
         if st == "pr" and p.get("pts") and p.get("reb"): return p["pts"] + p["reb"]
         if st == "pa" and p.get("pts") and p.get("ast"): return p["pts"] + p["ast"]
         if st == "ra" and p.get("reb") and p.get("ast"): return p["reb"] + p["ast"]
