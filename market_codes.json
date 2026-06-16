@@ -1,0 +1,337 @@
+{
+ "game": "Indiana Fever (Women) v Toronto Tempo (Women)",
+ "groups": [
+  {
+   "TG": "",
+   "codes": {}
+  },
+  {
+   "TG": "",
+   "codes": {}
+  },
+  {
+   "TG": "",
+   "codes": {}
+  },
+  {
+   "TG": "",
+   "codes": {}
+  },
+  {
+   "TG": "",
+   "codes": {}
+  },
+  {
+   "TG": "",
+   "codes": {}
+  },
+  {
+   "TG": "Fouls",
+   "codes": {}
+  },
+  {
+   "TG": "Free Throws Scored",
+   "codes": {}
+  },
+  {
+   "TG": "Two-Point Field Goals Scored",
+   "codes": {}
+  },
+  {
+   "TG": "Three-Point Field Goals Scored",
+   "codes": {}
+  },
+  {
+   "TG": "Rebounds",
+   "codes": {}
+  },
+  {
+   "TG": "Assists",
+   "codes": {}
+  },
+  {
+   "TG": "Players' stats",
+   "codes": {
+    "1807": [
+     "Brittney Sykes=19.5",
+     "Julie Allemand=6.5",
+     "Isabelle Harrison=10.5",
+     "Marina Mabrey=18.5",
+     "Caitlin Clark=21.5",
+     "Sophie Cunningham=7.5",
+     "Aliyah Boston=16.5",
+     "Laura Juskaite=9.5"
+    ],
+    "1806": [
+     "Brittney Sykes=19.5",
+     "Julie Allemand=6.5",
+     "Isabelle Harrison=10.5",
+     "Marina Mabrey=18.5",
+     "Caitlin Clark=21.5",
+     "Sophie Cunningham=7.5",
+     "Aliyah Boston=16.5",
+     "Laura Juskaite=9.5"
+    ],
+    "4649": [
+     "Kelsey Mitchell=10",
+     "Kelsey Mitchell=15",
+     "Kelsey Mitchell=20",
+     "Kelsey Mitchell=25",
+     "Kelsey Mitchell=30",
+     "Kelsey Mitchell=35",
+     "Kelsey Mitchell=40",
+     "Kelsey Mitchell=45",
+     "Brittney Sykes=10",
+     "Brittney Sykes=15",
+     "Brittney Sykes=20",
+     "Brittney Sykes=25",
+     "Brittney Sykes=30",
+     "Brittney Sykes=35"
+    ],
+    "1495": [
+     "Kelsey Mitchell=2.5",
+     "Brittney Sykes=1.5",
+     "Marina Mabrey=2.5",
+     "Caitlin Clark=2.5",
+     "Sophie Cunningham=1.5",
+     "Aliyah Boston=0.5"
+    ],
+    "1496": [
+     "Kelsey Mitchell=2.5",
+     "Brittney Sykes=1.5",
+     "Marina Mabrey=2.5",
+     "Caitlin Clark=2.5",
+     "Sophie Cunningham=1.5",
+     "Aliyah Boston=0.5"
+    ],
+    "15979": [
+     "Kelsey Mitchell=1",
+     "Kelsey Mitchell=2",
+     "Kelsey Mitchell=3",
+     "Kelsey Mitchell=4",
+     "Kelsey Mitchell=5",
+     "Kelsey Mitchell=6",
+     "Kelsey Mitchell=7",
+     "Kelsey Mitchell=8",
+     "Brittney Sykes=1",
+     "Brittney Sykes=2",
+     "Brittney Sykes=3",
+     "Brittney Sykes=4",
+     "Brittney Sykes=5",
+     "Marina Mabrey=1"
+    ],
+    "5671": [
+     "Kelsey Mitchell=21.5",
+     "Brittney Sykes=23.5",
+     "Julie Allemand=9.5",
+     "Isabelle Harrison=15.5",
+     "Marina Mabrey=21.5",
+     "Caitlin Clark=24.5",
+     "Aliyah Boston=25.5",
+     "Laura Juskaite=13.5"
+    ],
+    "5672": [
+     "Kelsey Mitchell=21.5",
+     "Brittney Sykes=23.5",
+     "Julie Allemand=9.5",
+     "Isabelle Harrison=15.5",
+     "Marina Mabrey=21.5",
+     "Caitlin Clark=24.5",
+     "Aliyah Boston=25.5",
+     "Laura Juskaite=13.5"
+    ],
+    "5673": [
+     "Kelsey Mitchell=22.5",
+     "Brittney Sykes=22.5",
+     "Brittney Sykes=23.5",
+     "Marina Mabrey=20.5",
+     "Marina Mabrey=21.5",
+     "Caitlin Clark=28.5",
+     "Aliyah Boston=18.5",
+     "Aliyah Boston=19.5"
+    ],
+    "5674": [
+     "Kelsey Mitchell=22.5",
+     "Brittney Sykes=22.5",
+     "Brittney Sykes=23.5",
+     "Marina Mabrey=20.5",
+     "Marina Mabrey=21.5",
+     "Caitlin Clark=28.5",
+     "Aliyah Boston=18.5",
+     "Aliyah Boston=19.5"
+    ],
+    "7141": [
+     "Kelsey Mitchell=4.5",
+     "Brittney Sykes=6.5",
+     "Brittney Sykes=7.5",
+     "Marina Mabrey=6.5",
+     "Caitlin Clark=13.5",
+     "Aliyah Boston=11.5",
+     "Aliyah Boston=12.5"
+    ],
+    "7142": [
+     "Kelsey Mitchell=4.5",
+     "Brittney Sykes=6.5",
+     "Brittney Sykes=7.5",
+     "Marina Mabrey=6.5",
+     "Caitlin Clark=13.5",
+     "Aliyah Boston=11.5",
+     "Aliyah Boston=12.5"
+    ],
+    "1489": [
+     "Kelsey Mitchell=2.5",
+     "Brittney Sykes=3.5",
+     "Julie Allemand=3.5",
+     "Isabelle Harrison=5.5",
+     "Marina Mabrey=3.5",
+     "Caitlin Clark=4.5",
+     "Aliyah Boston=8.5",
+     "Laura Juskaite=3.5"
+    ],
+    "1490": [
+     "Kelsey Mitchell=2.5",
+     "Brittney Sykes=3.5",
+     "Julie Allemand=3.5",
+     "Isabelle Harrison=5.5",
+     "Marina Mabrey=3.5",
+     "Caitlin Clark=4.5",
+     "Aliyah Boston=8.5",
+     "Laura Juskaite=3.5"
+    ],
+    "1491": [
+     "Kelsey Mitchell=2.5",
+     "Brittney Sykes=3.5",
+     "Marina Mabrey=2.5",
+     "Caitlin Clark=8.5",
+     "Aliyah Boston=2.5"
+    ],
+    "1492": [
+     "Kelsey Mitchell=2.5",
+     "Brittney Sykes=3.5",
+     "Marina Mabrey=2.5",
+     "Caitlin Clark=8.5",
+     "Aliyah Boston=2.5"
+    ],
+    "3096": [
+     "Kelsey Mitchell/Marina Mabrey=-1.5",
+     "Aliyah Boston/Marina Mabrey=2.5",
+     "Caitlin Clark/Marina Mabrey=-1.5",
+     "Brittney Sykes/Marina Mabrey=-1.5",
+     "Kelsey Mitchell/Aliyah Boston=-3.5",
+     "Kelsey Mitchell/Caitlin Clark=0.5",
+     "Caitlin Clark/Aliyah Boston=-4.5",
+     "Aliyah Boston/Brittney Sykes=4.5",
+     "Caitlin Clark/Brittney Sykes=-0.5",
+     "Kelsey Mitchell/Brittney Sykes=0.5"
+    ],
+    "3097": [
+     "Kelsey Mitchell/Marina Mabrey=1.5",
+     "Aliyah Boston/Marina Mabrey=-2.5",
+     "Caitlin Clark/Marina Mabrey=1.5",
+     "Brittney Sykes/Marina Mabrey=1.5",
+     "Kelsey Mitchell/Aliyah Boston=3.5",
+     "Kelsey Mitchell/Caitlin Clark=-0.5",
+     "Caitlin Clark/Aliyah Boston=4.5",
+     "Aliyah Boston/Brittney Sykes=-4.5",
+     "Caitlin Clark/Brittney Sykes=0.5",
+     "Kelsey Mitchell/Brittney Sykes=-0.5"
+    ],
+    "3450": [
+     "Caitlin Clark/Aliyah Boston=35.5",
+     "Kelsey Mitchell/Caitlin Clark=39.5",
+     "Aliyah Boston/Brittney Sykes=35.5",
+     "Caitlin Clark/Marina Mabrey=38.5",
+     "Kelsey Mitchell/Brittney Sykes=39.5",
+     "Kelsey Mitchell/Aliyah Boston=35.5",
+     "Brittney Sykes/Marina Mabrey=38.5",
+     "Aliyah Boston/Marina Mabrey=34.5",
+     "Kelsey Mitchell/Marina Mabrey=38.5",
+     "Caitlin Clark/Brittney Sykes=40.5"
+    ],
+    "3451": [
+     "Caitlin Clark/Aliyah Boston=35.5",
+     "Kelsey Mitchell/Caitlin Clark=39.5",
+     "Aliyah Boston/Brittney Sykes=35.5",
+     "Caitlin Clark/Marina Mabrey=38.5",
+     "Kelsey Mitchell/Brittney Sykes=39.5",
+     "Kelsey Mitchell/Aliyah Boston=35.5",
+     "Brittney Sykes/Marina Mabrey=38.5",
+     "Aliyah Boston/Marina Mabrey=34.5",
+     "Caitlin Clark/Brittney Sykes=40.5",
+     "Kelsey Mitchell/Marina Mabrey=38.5"
+    ],
+    "16413": [
+     "Brittney Sykes=3",
+     "Marina Mabrey=3",
+     "Aliyah Boston=3",
+     "Kelsey Mitchell=3",
+     "Caitlin Clark=5",
+     "Marina Mabrey=5",
+     "Brittney Sykes=5",
+     "Aliyah Boston=5",
+     "Kelsey Mitchell=5",
+     "Caitlin Clark=7",
+     "Brittney Sykes=7",
+     "Marina Mabrey=7",
+     "Aliyah Boston=7",
+     "Kelsey Mitchell=7"
+    ],
+    "16414": [
+     "Isabelle Harrison=3",
+     "Caitlin Clark=3",
+     "Brittney Sykes=3",
+     "Marina Mabrey=3",
+     "Julie Allemand=3",
+     "Kelsey Mitchell=3",
+     "Aliyah Boston=5",
+     "Isabelle Harrison=5",
+     "Caitlin Clark=5",
+     "Brittney Sykes=5",
+     "Marina Mabrey=5",
+     "Julie Allemand=5",
+     "Kelsey Mitchell=5",
+     "Aliyah Boston=7"
+    ],
+    "16427": [
+     "Isabelle Harrison=17.5",
+     "Kelsey Mitchell=24.5",
+     "Marina Mabrey=24.5",
+     "Marina Mabrey=25.5",
+     "Brittney Sykes=26.5",
+     "Brittney Sykes=27.5",
+     "Aliyah Boston=28.5",
+     "Caitlin Clark=33.5"
+    ],
+    "16428": [
+     "Isabelle Harrison=17.5",
+     "Marina Mabrey=24.5",
+     "Kelsey Mitchell=24.5",
+     "Marina Mabrey=25.5",
+     "Brittney Sykes=26.5",
+     "Brittney Sykes=27.5",
+     "Aliyah Boston=28.5",
+     "Caitlin Clark=33.5"
+    ]
+   }
+  },
+  {
+   "TG": "Players' stats",
+   "codes": {
+    "1807": [
+     "Kelsey Mitchell=5.5",
+     "Brittney Sykes=4.5",
+     "Marina Mabrey=4.5",
+     "Caitlin Clark=5.5",
+     "Aliyah Boston=3.5"
+    ],
+    "1806": [
+     "Kelsey Mitchell=5.5",
+     "Brittney Sykes=4.5",
+     "Marina Mabrey=4.5",
+     "Caitlin Clark=5.5",
+     "Aliyah Boston=3.5"
+    ]
+   }
+  }
+ ]
+}
