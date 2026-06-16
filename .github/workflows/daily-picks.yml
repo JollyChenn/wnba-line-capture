@@ -19,9 +19,7 @@ jobs:
       - name: Install deps
         run: pip install --quiet pandas requests numpy
       - name: Generate core picks (any-2-of-3 unders + cascade lists)
-        env:
-          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}   # re-enabled: guaranteed DAILY slate ping (heartbeat) so you always know the bot is alive + the webhook works; near-tip 1xbet ping still fires separately
-        run: python daily_picks.py
+        run: python daily_picks.py   # NO DISCORD_WEBHOOK -> no slate ping. The capture bot (cloud_xbet) does ALL pinging now: live-line bets (hit%/EV/team) + per-cycle heartbeat. (The old median/proj slate preview is disabled.)
       - name: Validate gathered data (freshness / range / dups / picks complete)
         run: python validate_data.py || echo "::warning::data validation flagged issues (see log above)"
       - name: Commit picks + data cache
