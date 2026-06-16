@@ -388,8 +388,12 @@ def main():
                             cands.append((pov, pk["base"], "Over", oline, oodds, oodds / ofair - 1, True))
         if cands:
             ph, base, bside, line, odds, ev, is_flip = max(cands, key=lambda c: c[0])  # highest-confidence bet for this player
+            # src tags the SIGNAL so grade_bets/clv_reader keep the PROVEN record (cold+shrink under + flip)
+            # separate from the UNPROVEN overs (hot-PRA-over, board overshoot). model=under, flip=cratered-line over,
+            # hotover=model hot-PRA-over (EVs inflated, not measured), overshoot logged below.
+            src = "flip" if is_flip else ("model" if bside == "Under" else "hotover")
             if st == "OK":                            # log confirmed-active model bets for grading (+ Pinnacle line for sharp CLV)
-                betstruct.append([player, base, bside, line, odds, _tier(ph), round(ev, 3), pin.get(_pkey(player), {}).get(base, "")])
+                betstruct.append([player, base, bside, line, odds, _tier(ph), round(ev, 3), pin.get(_pkey(player), {}).get(base, ""), src])
             pinref = pin.get(_pkey(player), {}).get(base)
             cstr = f" · Pinn {pinref}" if pinref is not None else ""
             tmab = _team_ab(pks[0].get("team", "")); sig = pks[0].get("sig", "")
@@ -432,7 +436,7 @@ def main():
     near_tip = min_mins <= NEAR_TIP_MIN              # reconfirm window (used for the model holds + the 🔔 banner)
     osc_show = osc                                    # overshoot_overs now returns injury-proof + median-verified only
     for h, n, st, ln, od, ev, med, tag in osc_show:
-        betstruct.append([n, st, "Over", ln, od, _tier(h), round(ev, 3), pin.get(_pkey(n), {}).get(st, "")])
+        betstruct.append([n, st, "Over", ln, od, _tier(h), round(ev, 3), pin.get(_pkey(n), {}).get(st, ""), "overshoot"])
     oso = [f"• **{n}** {st.upper()} Over **{ln} @ {od}** [🎯 hit {h*100:.0f}% · EV {ev*100:+.0f}% · med {med:.0f} · ✓ active{tag}]"
            for h, n, st, ln, od, ev, med, tag in osc_show]
     holds_show = holds if near_tip else []           # day-to-day model bets: hold them back until near tip
@@ -447,7 +451,7 @@ def main():
         with open("bets_log.csv", "a", newline="", encoding="utf-8") as bf:
             wbl = csv.writer(bf)
             if bnew:
-                wbl.writerow(["captured_utc", "date", "player", "market", "side", "line", "odds", "tier", "ev", "pinn"])
+                wbl.writerow(["captured_utc", "date", "player", "market", "side", "line", "odds", "tier", "ev", "pinn", "src"])
             for b in betstruct:
                 wbl.writerow([stamp, la_today] + b)
     new_bets = {(b[0].lower(), b[1], b[2]) for b in betstruct} - seen_today   # bets not already pinged today

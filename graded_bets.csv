@@ -1,5 +1,10 @@
-date,player,market,side,line,odds,tier,actual,result,pnl,odds_clv,line_clv,sharp_clv
-20260614,Angel Reese,pra,Over,30.5,1.91,SOLID,33.0,WIN,0.91,0.044,0.0,
-20260614,Jonquel Jones,pra,Over,24.5,1.73,STRONG,25.0,WIN,0.73,-0.039,0.0,
-20260614,Michaela Onyenwere,pts,Over,9.5,1.909,STRONG,17.0,WIN,0.91,0.123,0.0,
-20260614,Shakira Austin,pts,Under,15.5,1.9,STRONG,8.0,WIN,0.9,0.0,0.0,
+date,player,market,side,line,odds,tier,actual,result,pnl,odds_clv,line_clv,sharp_clv,src
+20260614,Angel Reese,pra,Over,30.5,1.91,SOLID,33.0,WIN,0.91,0.044,0.0,,hotover
+20260614,Jonquel Jones,pra,Over,24.5,1.73,STRONG,25.0,WIN,0.73,-0.039,0.0,,hotover
+20260614,Michaela Onyenwere,pts,Over,9.5,1.909,STRONG,17.0,WIN,0.91,0.123,0.0,,overshoot
+20260614,Shakira Austin,pts,Under,15.5,1.9,STRONG,8.0,WIN,0.9,0.0,0.0,,model
+20260615,Chelsea Gray,pra,Over,22.5,1.833,STRONG,13.0,loss,-1.0,-0.061,0.0,,overshoot
+20260615,Nalyssa Smith,pr,Over,16.5,1.73,STRONG,15.0,loss,-1.0,,,,overshoot
+20260615,Natasha Howard,pa,Over,19.5,1.87,STRONG,19.0,loss,-1.0,0.0,0.0,,overshoot
+20260615,Natasha Howard,pra,Over,27.5,1.87,STRONG,25.0,loss,-1.0,0.0,0.0,,overshoot
+20260615,Paige Bueckers,pra,Over,28.5,1.909,STRONG,22.0,loss,-1.0,0.0,0.0,,overshoot

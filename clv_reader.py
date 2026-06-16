@@ -6,22 +6,61 @@ from collections import defaultdict
 if not os.path.exists("graded_bets.csv"):
     print("no graded bets yet — track record starts after the first slate settles"); raise SystemExit
 rows = list(csv.DictReader(open("graded_bets.csv", encoding="utf-8")))
-dec = [r for r in rows if r["result"] in ("WIN", "loss")]
+
+
+def _src(r):                                          # legacy graded rows (no src col): under=model, over=overshoot
+    return r.get("src", "") or ("model" if r["side"] == "Under" else "overshoot")
+
+
+PROVEN = {"model", "flip"}                            # headline = proven signals (cold+shrink under / cratered-line flip)
+proven = [r for r in rows if _src(r) in PROVEN]       # speculative overs (hotover/overshoot) NEVER touch the headline
+exper = [r for r in rows if _src(r) not in PROVEN]
+dec = [r for r in proven if r["result"] in ("WIN", "loss")]
+
+# experimental (unproven) overs — surfaced separately so a hot/overshoot streak never poses as the bot's record
+exp_dec = [r for r in exper if r["result"] in ("WIN", "loss")]
+
+
+def _bucket(rs):
+    by = defaultdict(lambda: [0, 0, 0.0])
+    for r in rs:
+        by[_src(r)][0] += 1; by[_src(r)][1] += r["result"] == "WIN"; by[_src(r)][2] += float(r["pnl"])
+    return by
+
+
 if not dec:
-    print("no settled bets yet (only pushes/pending)"); raise SystemExit
+    L0 = ["📊 **WNBA BOT — TRACK RECORD**",
+          "  PROVEN signals (cold+shrink under / flip): _none settled yet — headline starts when one does._"]
+    if exp_dec:
+        b = _bucket(exp_dec)
+        L0.append("  Experimental overs (UNPROVEN): " + " · ".join(
+            f"{k} {ww}/{t} ({p:+.1f}u)" for k, (t, ww, p) in sorted(b.items())))
+    print("\n".join(L0))
+    hook = os.environ.get("DISCORD_WEBHOOK", "")
+    if hook:
+        try:
+            urllib.request.urlopen(urllib.request.Request(hook, data=json.dumps({"content": "\n".join(L0)[:1900]}).encode(),
+                                   headers={"Content-Type": "application/json"}), timeout=15)
+        except Exception as e:
+            print("discord:", e)
+    raise SystemExit
 
 n = len(dec); w = sum(1 for r in dec if r["result"] == "WIN"); net = sum(float(r["pnl"]) for r in dec)
-oc = [float(r["odds_clv"]) for r in rows if r.get("odds_clv") not in ("", None)]
+oc = [float(r["odds_clv"]) for r in proven if r.get("odds_clv") not in ("", None)]   # CLV: proven only
 avg_clv = sum(oc) / len(oc) if oc else 0.0
 beat = sum(1 for x in oc if x > 0)
 beat_pct = beat / len(oc) if oc else 0
 
 L = []
-L.append(f"📊 **WNBA BOT — TRACK RECORD** ({n} settled)")
+L.append(f"📊 **WNBA BOT — TRACK RECORD** ({n} settled · PROVEN signals only)")
 L.append(f"  Record  : {w}-{n - w}  ({w / n * 100:.0f}% hit)")
 L.append(f"  Net P&L : {net:+.2f}u  (ROI {net / n * 100:+.1f}%/bet)")
 if oc:
     L.append(f"  ODDS-CLV: {avg_clv * 100:+.1f}% avg | beat close {beat}/{len(oc)} ({beat_pct * 100:.0f}%)  ← the edge signal")
+if exp_dec:                                           # the unproven overs, clearly walled off from the headline
+    b = _bucket(exp_dec)
+    L.append("  ⚗️ Experimental overs (UNPROVEN, NOT the record): " + " · ".join(
+        f"{k} {ww}/{t} ({p:+.1f}u)" for k, (t, ww, p) in sorted(b.items())))
 
 # VERDICT — CLV is the proof; hit-rate at small n is noise
 if n < 20:
@@ -44,20 +83,22 @@ for label, key in [("tier", "tier"), ("market", None)]:
     L.append(f"  by {label}: " + " · ".join(f"{k} {ww}/{t} ({p:+.1f}u)" for k, (t, ww, p) in sorted(agg.items())))
 
 print("\n".join(L))
-print("\n  PER-BET (CLV>0 = our price beat the close):")
-print(f"  {'date':9}{'player':18}{'bet':15}{'res':5}{'CLV':>6}")
+print("\n  PER-BET (CLV>0 = our price beat the close · src: model/flip=proven, hotover/overshoot=experimental):")
+print(f"  {'date':9}{'player':18}{'bet':15}{'src':10}{'res':5}{'CLV':>6}")
 for r in sorted(rows, key=lambda r: (r["date"], r["player"])):
     oclv = f"{float(r['odds_clv']) * 100:+.0f}%" if r.get("odds_clv") not in ("", None) else "  --"
-    print(f"  {r['date']:9}{r['player'][:17]:18}{(r['market'].upper() + ' ' + r['side'])[:14]:15}{r['result'][:4]:5}{oclv:>6}")
+    print(f"  {r['date']:9}{r['player'][:17]:18}{(r['market'].upper() + ' ' + r['side'])[:14]:15}{_src(r):10}{r['result'][:4]:5}{oclv:>6}")
 
 # persist a human-readable history file (always current; graded_bets.csv = the raw append-only data)
 hist = ["# WNBA Bot — CLV & Track Record", "",
         "_Auto-updated after each slate settles. Raw data: `graded_bets.csv`. CLV>0 = our price beat the close._", "", "```"]
 hist += [ln.replace("**", "") for ln in L]
-hist += ["```", "", "## Per-bet", "", "| date | player | bet | result | odds-CLV |", "|---|---|---|---|---|"]
+hist += ["```", "", "## Per-bet", "",
+         "_src: **model/flip** = proven (headline) · **hotover/overshoot** = experimental (not in record)_", "",
+         "| date | player | bet | src | result | odds-CLV |", "|---|---|---|---|---|---|"]
 for r in sorted(rows, key=lambda x: (x["date"], x["player"])):
     oc2 = f"{float(r['odds_clv']) * 100:+.0f}%" if r.get("odds_clv") not in ("", None) else "—"
-    hist.append(f"| {r['date']} | {r['player']} | {r['market'].upper()} {r['side']} {r['line']} @ {r['odds']} | {r['result']} | {oc2} |")
+    hist.append(f"| {r['date']} | {r['player']} | {r['market'].upper()} {r['side']} {r['line']} @ {r['odds']} | {_src(r)} | {r['result']} | {oc2} |")
 with open("CLV_HISTORY.md", "w", encoding="utf-8") as f:
     f.write("\n".join(hist) + "\n")
 print("\n  → wrote CLV_HISTORY.md (check it anytime, on GitHub or locally)")

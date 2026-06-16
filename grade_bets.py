@@ -23,8 +23,11 @@ for r in csv.DictReader(open("data/box_2026.csv", encoding="utf-8")):
 caps = defaultdict(list)
 for b in csv.DictReader(open("bets_log.csv", encoding="utf-8")):
     d = b["date"].replace("-", "")                 # bets_log 2026-06-14 -> box 20260614
+    # src (model/flip = proven; hotover/overshoot = unproven overs) flows through to graded_bets so the
+    # headline track record + CLV verdict only count the PROVEN signals, never speculative captured overs.
+    src = b.get("src", "") or ("model" if b["side"] == "Under" else "overshoot")   # legacy rows: under=model, over=overshoot
     caps[(d, b["player"].lower(), b["market"], b["side"])].append(
-        (b["captured_utc"], float(b["line"]), float(b["odds"]), b.get("tier", ""), b["player"], b.get("pinn", "")))
+        (b["captured_utc"], float(b["line"]), float(b["odds"]), b.get("tier", ""), b["player"], b.get("pinn", ""), src))
 
 done = set()
 if os.path.exists("graded_bets.csv"):
@@ -49,6 +52,7 @@ for (d, plow, mk, side), cl in caps.items():
     cl.sort()
     o_line, o_odds, tier, disp = cl[0][1], cl[0][2], cl[0][3], cl[0][4]      # OUR bet = first alert
     c_line, c_odds, c_pinn = cl[-1][1], cl[-1][2], cl[-1][5]                 # CLOSE = last capture
+    o_src = cl[0][6]                                                          # signal source of OUR (first) capture
     has_close = len(cl) >= 2                                                 # only ONE capture -> no measured close -> CLV is UNKNOWN (blank), NOT a real 0
     if act == o_line:
         res, pnl = "push", 0.0
@@ -59,32 +63,44 @@ for (d, plow, mk, side), cl in caps.items():
     odds_clv = round(o_odds / c_odds - 1, 3) if (c_odds and has_close) else ""   # >0 = we got a longer price than the close
     line_self = line_clv(o_line, c_line, side) if has_close else ""              # our line vs our OWN close (needs 2+ captures)
     new_rows.append([d, disp, mk, side, o_line, o_odds, tier, act, res, round(pnl, 2),
-                     odds_clv, line_self, line_clv(o_line, c_pinn, side)])      # sharp_clv (vs Pinnacle) stays valid with 1 capture
+                     odds_clv, line_self, line_clv(o_line, c_pinn, side), o_src])   # sharp_clv valid w/1 capture; src for honest split
 
 if new_rows:
     fnew = not os.path.exists("graded_bets.csv")
     with open("graded_bets.csv", "a", newline="", encoding="utf-8") as f:
         wr = csv.writer(f)
         if fnew:
-            wr.writerow(["date", "player", "market", "side", "line", "odds", "tier", "actual", "result", "pnl", "odds_clv", "line_clv", "sharp_clv"])
+            wr.writerow(["date", "player", "market", "side", "line", "odds", "tier", "actual", "result", "pnl", "odds_clv", "line_clv", "sharp_clv", "src"])
         wr.writerows(sorted(new_rows))
     print(f"settled {len(new_rows)} new bet(s)")
 else:
     print("no new bets to settle (games not final yet)")
 
 allg = list(csv.DictReader(open("graded_bets.csv", encoding="utf-8"))) if os.path.exists("graded_bets.csv") else []
-dec = [g for g in allg if g["result"] in ("WIN", "loss")]
+def _src(g):                                          # legacy graded rows (no src col): under=model, over=overshoot
+    return g.get("src", "") or ("model" if g["side"] == "Under" else "overshoot")
+PROVEN = {"model", "flip"}                            # the headline track record = proven signals ONLY
+decided = [g for g in allg if g["result"] in ("WIN", "loss")]
+dec = [g for g in decided if _src(g) in PROVEN]       # speculative overs (hotover/overshoot) are reported SEPARATELY
+exp = [g for g in decided if _src(g) not in PROVEN]
+if exp:                                               # always surface the unproven overs, but NEVER in the headline
+    by = defaultdict(lambda: [0, 0, 0.0])
+    for g in exp:
+        by[_src(g)][0] += 1; by[_src(g)][1] += g["result"] == "WIN"; by[_src(g)][2] += float(g["pnl"])
+    print("  EXPERIMENTAL overs (UNPROVEN, not in headline): "
+          + " · ".join(f"{k} {ww}/{t} ({p:+.1f}u)" for k, (t, ww, p) in sorted(by.items())))
 if not dec:
-    print("no settled bets yet — track record starts after tonight's games"); raise SystemExit
+    print("no PROVEN-signal bets settled yet — headline track record starts when a cold+shrink under/flip settles"); raise SystemExit
 n = len(dec); w = sum(1 for g in dec if g["result"] == "WIN"); net = sum(float(g["pnl"]) for g in dec)
-print(f"\n===== TRACK RECORD ({n} settled) =====")
+print(f"\n===== TRACK RECORD — PROVEN signals only ({n} settled) =====")
 print(f"  hit-rate : {w}/{n} = {w / n * 100:.0f}%")
 print(f"  net P&L  : {net:+.2f}u  (ROI {net / n * 100:+.1f}%/bet)")
-oc = [float(g["odds_clv"]) for g in allg if g.get("odds_clv") not in ("", None)]
+proven_rows = [g for g in allg if _src(g) in PROVEN]   # CLV headline also restricted to proven signals
+oc = [float(g["odds_clv"]) for g in proven_rows if g.get("odds_clv") not in ("", None)]
 if oc:
     beat = sum(1 for x in oc if x > 0)
     print(f"  ODDS CLV : {sum(oc) / len(oc) * 100:+.1f}% avg | beat the close {beat}/{len(oc)} ({beat / len(oc) * 100:.0f}%)   <- THE edge signal")
-sc = [float(g["sharp_clv"]) for g in allg if g.get("sharp_clv") not in ("", None)]
+sc = [float(g["sharp_clv"]) for g in proven_rows if g.get("sharp_clv") not in ("", None)]
 if sc:
     print(f"  SHARP CLV vs Pinnacle (line): {sum(sc) / len(sc):+.2f} avg ({len(sc)} points bets)")
 for label, keyf in [("market/side", lambda g: f"{g['market']} {g['side']}"), ("tier", lambda g: g["tier"] or "?")]:
