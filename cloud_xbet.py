@@ -387,6 +387,36 @@ def main():
                 for x in o: walk(x)
         walk(val)
     print(f"players on boards: {len(props)}")
+
+    # ---- ONE-TIME MARKET DISCOVERY: 1xbet posts standalone Assists/Rebounds + RA/PA + handicaps
+    # (screenshot-confirmed) but we only know the type-codes for pts/pr/pa/ra/pra. Dump every market
+    # group's T-codes once so we can map the assist/rebound markets into STAT_T. Bounded to 1 game,
+    # runs only until market_codes.json exists, wrapped so it can never break a capture run. ----
+    if target and not os.path.exists("market_codes.json"):
+        try:
+            e0 = target[0]
+            sg0 = ((get(gz(e0["I"])) or {}).get("Value", {}) or {}).get("SG", [])
+            disc = {"game": f"{e0.get('O1','')} v {e0.get('O2','')}", "groups": []}
+            for s in sg0:
+                tg = str(s.get("TG", "")); grp = {"TG": tg, "codes": {}}
+                if any(w in tg.lower() for w in ("stat", "assist", "rebound", "point", "total")):
+                    def collect(o):
+                        if isinstance(o, dict):
+                            pl, T = o.get("PL"), o.get("T")
+                            if isinstance(pl, dict) and T is not None and o.get("P") is not None:
+                                grp["codes"].setdefault(str(T), f"{pl.get('N','?')} line={o.get('P')}")
+                            for x in o.values(): collect(x)
+                        elif isinstance(o, list):
+                            for x in o: collect(x)
+                    collect((get(gz(s["I"])) or {}).get("Value", {}) or {})
+                disc["groups"].append(grp)
+            with open("market_codes.json", "w", encoding="utf-8") as f:
+                json.dump(disc, f, indent=1, ensure_ascii=False)
+            print("MARKET DISCOVERY -> market_codes.json:",
+                  {g["TG"]: list(g["codes"]) for g in disc["groups"] if g["codes"]})
+        except Exception as ex:
+            print("market discovery skipped:", str(ex)[:60])
+
     pin = pinnacle_lines()   # sharp reference lines, shown next to each bet for live CLV
 
     picks = load_picks()

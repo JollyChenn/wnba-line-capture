@@ -28,7 +28,7 @@ jobs:
           git config user.name "xbet-cloud-bot"
           git config user.email "actions@users.noreply.github.com"
           echo "snapshot file:"; ls -la xbet_snapshots.csv 2>&1 || echo "(none written this run)"
-          git add -f xbet_snapshots.csv bets_log.csv 2>&1 || true
+          git add -f xbet_snapshots.csv bets_log.csv market_codes.json 2>&1 || true
           git status --short
           if git diff --staged --quiet; then
             echo "nothing staged this run"
