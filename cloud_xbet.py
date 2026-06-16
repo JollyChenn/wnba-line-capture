@@ -34,6 +34,9 @@ for _s, (_o, _u) in STAT_T.items():
 SCRATCH = {"out", "doubtful"}
 HOLD = {"day-to-day", "questionable", "game-time decision"}
 CASC_FAIR = 1.75
+LOW_TOTAL = int(os.environ.get("XBET_LOW_TOTAL", "160"))   # proj game-total <= this => low-scoring game:
+#   POINTS crater (so pts/PRA overshoot-overs are TRAPS, the June-15 lesson), but ASSISTS/REBOUNDS are
+#   total-immune (assist overshoot moved 3.5pp vs total vs 20pp for points) -> keep pa/pr/ra, drop pts/pra.
 TEAMKW = {"SEA": ["seattle", "storm"], "GS": ["golden state", "valkyr"], "TOR": ["toronto", "tempo"],
           "WSH": ["washington", "mystic"], "NY": ["new york", "liberty"], "CON": ["connecticut", "sun"],
           "IND": ["indiana", "fever"], "ATL": ["atlanta", "dream"], "CHI": ["chicago", "sky"],
@@ -244,12 +247,43 @@ def pra_line(props, player):
     return min(outs, key=lambda t: t[0]) if outs else None
 
 
-def overshoot_overs(props, inj, picked, pin):
+def proj_total_map(near):
+    """{team -> projected game total} for upcoming matchups, from data/games_2026.csv trailing-5 scores:
+    Sigma both teams [0.5*team trailing-5 points-for + 0.5*opp trailing-5 points-allowed]. Pace-proxy stand-in
+    for the (uncaptured) book total — used to flag low-scoring games where points/PRA overs are traps."""
+    if not os.path.exists("data/games_2026.csv"):
+        return {}
+    import statistics
+    tl = defaultdict(list)                               # team -> [(date, scored, allowed)]
+    for r in csv.DictReader(open("data/games_2026.csv", encoding="utf-8")):
+        try:
+            d, h, a = r.get("date"), r.get("home"), r.get("away")
+            hs, as_ = float(r["home_score"]), float(r["away_score"])
+        except (ValueError, KeyError, TypeError):
+            continue
+        if d and h and a:
+            tl[h].append((d, hs, as_)); tl[a].append((d, as_, hs))
+    for t in tl:
+        tl[t].sort()
+    def t5(team):
+        g = tl.get(team, [])
+        return (statistics.mean(x[1] for x in g[-5:]), statistics.mean(x[2] for x in g[-5:])) if len(g) >= 5 else (None, None)
+    out = {}
+    for a, h, _ in near:
+        apf, apa = t5(a); hpf, hpa = t5(h)
+        if None not in (apf, apa, hpf, hpa):
+            out[a] = out[h] = 0.5 * (apf + hpa) + 0.5 * (hpf + apa)
+    return out
+
+
+def overshoot_overs(props, inj, picked, pin, ptot=None):
     """Board-wide deep overshoot-overs: a 1xbet over line >=3 below the player's trailing median.
        Guarded against stale medians: INJURY-FIRST (confirmed-active only), TEAM-CHANGE (uses only
        current-team games so a trade can't leave a blended median), MINUTES-SHRINK (declining minutes =
-       role cut = skip), COLD form skip, and PINNACLE confirm (if the sharp agrees with 1xbet's low line,
-       OUR median is the stale one -> drop). What's left is injury-proof and median-verified."""
+       role cut = skip), COLD form skip, PINNACLE confirm (if the sharp agrees with 1xbet's low line,
+       OUR median is the stale one -> drop), and GAME-TOTAL trap (low-scoring game -> drop pts/PRA overs,
+       keep total-immune assist/rebound markets pa/pr/ra). What's left is injury-proof and median-verified."""
+    ptot = ptot or {}
     import statistics
     if not os.path.exists("data/box_2026.csv") or not os.path.exists("data/games_2026.csv"):
         return []
@@ -260,13 +294,18 @@ def overshoot_overs(props, inj, picked, pin):
             log[r["player"].lower()].append((gd.get(r["game_id"]), float(r["pts"]), float(r["reb"]), float(r["ast"]), float(r["min"]), r.get("team", "")))
         except (ValueError, TypeError):
             pass
-    pick = {"pts": lambda x: x[1], "pr": lambda x: x[1] + x[2], "pa": lambda x: x[1] + x[3], "pra": lambda x: x[1] + x[2] + x[3]}
+    # ra (reb+ast) added: it's the MOST game-total-immune market (rebounds rise on misses, assists flat).
+    pick = {"pts": lambda x: x[1], "pr": lambda x: x[1] + x[2], "pa": lambda x: x[1] + x[3],
+            "ra": lambda x: x[2] + x[3], "pra": lambda x: x[1] + x[2] + x[3]}
+    TOTAL_TRAP = {"pts", "pra"}                           # points-heavy -> cratered in low-total games
+    TOTAL_SAFE = {"pa", "ra"}                             # assist/rebound-heavy -> immune to game total
 
     def pinn(name, st):                                  # Pinnacle's value for this market (single stats + reconstructed combos)
         p = pin.get(_pkey(name), {})
         if st == "pts": return p.get("pts")
         if st == "pr" and p.get("pts") and p.get("reb"): return p["pts"] + p["reb"]
         if st == "pa" and p.get("pts") and p.get("ast"): return p["pts"] + p["ast"]
+        if st == "ra" and p.get("reb") and p.get("ast"): return p["reb"] + p["ast"]
         if st == "pra" and all(p.get(k) for k in ("pts", "reb", "ast")): return p["pts"] + p["reb"] + p["ast"]
         return None
 
@@ -294,12 +333,17 @@ def overshoot_overs(props, inj, picked, pin):
             v10 = v[-10:]; med = statistics.median(v10); t3 = statistics.mean(v[-3:])
             if line > med - 3 or t3 <= med - 3:           # deep overshoot only; skip COLD form
                 continue
+            tot = ptot.get(cur_team)                       # GAME-TOTAL trap: a low-scoring game craters POINTS,
+            if st in TOTAL_TRAP and tot is not None and tot <= LOW_TOTAL:   # so pts/PRA overshoot-overs are traps
+                continue                                   # there (June-15); assists/rebounds are immune -> keep pa/pr/ra
             pv = pinn(name, st); tag = ""                 # PINNACLE confirm: sharp ≈ 1xbet's low line => our median is stale => drop
             if pv is not None:
                 if pv <= line + 1.5:
                     continue
                 if pv >= med - 2:
                     tag = " ✓sharp"                       # sharp agrees our median is right => 1xbet genuinely low
+            if st in TOTAL_SAFE:
+                tag += f" ⚡tot-safe{('/low' + str(int(tot)) if tot is not None and tot <= LOW_TOTAL else '')}"
             proj = med + 0.25 * (t3 - med)
             hit = 1 - _ncdf((line - proj) / (statistics.pstdev(v10) or 1)); ev = odds * hit - 1
             if ev > 0:
@@ -427,8 +471,10 @@ def main():
         casc.append(f"🚨 **{team}: {w['star']} OUT** → cascade PRA OVER: " + ", ".join(legs))
 
     # ---- board-wide overshoot-overs (any player whose 1xbet over line is >=3 below their median) ----
+    # GAME-TOTAL aware: in low-scoring games drop pts/PRA overs (points cratered) & keep total-immune pa/ra.
     picked = {(p.lower(), pk["base"]) for p, pks in picks.items() for pk in pks}
-    osc = overshoot_overs(props, inj, picked, pin)
+    ptot = proj_total_map(near)
+    osc = overshoot_overs(props, inj, picked, pin, ptot)
     for h, n, st, ln, od, ev, med, tag in osc:
         rows.append([stamp, n, st, "Over", ln, od])     # capture for CLV (all are confirmed-active & median-verified now)
 
