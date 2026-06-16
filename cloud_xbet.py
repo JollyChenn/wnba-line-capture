@@ -355,7 +355,14 @@ def overshoot_overs(props, inj, picked, pin, ptot=None):
             hit = 1 - _ncdf((line - proj) / (statistics.pstdev(v10) or 1)); ev = odds * hit - 1
             if ev > 0:
                 out.append((hit, name, st, line, odds, ev, med, tag))
-    return sorted(out, reverse=True)[:6]
+    # ONE BET PER PLAYER: never stack PRA+PR+PA on the same player (that's how Plum became 4 "bets").
+    # Keep only the single highest-hit market per player (out is (hit,name,...); sorted desc by hit).
+    seen, dedup = set(), []
+    for item in sorted(out, reverse=True):
+        if item[1] in seen:
+            continue
+        seen.add(item[1]); dedup.append(item)
+    return dedup[:6]
 
 
 def main():
