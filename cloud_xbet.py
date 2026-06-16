@@ -439,6 +439,7 @@ def main():
     stamp = now.isoformat(timespec="seconds")
     rows, bets, holds, drops, betstruct = [], [], [], [], []
     forward = []                                     # 🧪 forward-test (newunder) picks — captured for CLV, PAPER-only
+    claimed_players = set()                          # players the model loop already placed (real/paper/hold) -> the overshoot scan skips them entirely (HARD one-line-per-player, across sections)
     def _tier(p):                                     # honest strength = the model's hit probability at the line
         return "STRONG" if p >= 0.66 else "SOLID" if p >= 0.58 else "THIN"
 
@@ -494,6 +495,7 @@ def main():
             paper = is_new or src == "hotover"        # hot-PRA-over is the downgraded/weak signal -> PAPER, never a BET ping
             flip = " 🎯FLIP" if is_flip else (" 🧪PAPER" if paper else "")
             txt = f"• **{player}** ({tmab}) {base.upper()} {bside} **{line} @ {odds}** [{_tier(ph)}{flip} · {sig} · hit {ph*100:.0f}% · EV {ev*100:+.0f}%]{cstr}"
+            claimed_players.add(player.lower())       # model has a line on this player now -> overshoot scan must not add a 2nd line for them
             if st == "HOLD":
                 holds.append(txt + " ⏳unconfirmed")
             elif paper:
@@ -522,6 +524,7 @@ def main():
     picked = {(p.lower(), pk["base"]) for p, pks in picks.items() for pk in pks}
     ptot = proj_total_map(near)
     osc = overshoot_overs(props, inj, picked, pin, ptot)
+    osc = [r for r in osc if r[1].lower() not in claimed_players]   # HARD one-line-per-player: drop overshoots on any player the model already placed (real/paper/hold), even a different market (Shepard PTS-bet won't also show PR-overshoot)
     for h, n, st, ln, od, ev, med, tag in osc:
         rows.append([stamp, n, st, "Over", ln, od])     # capture for CLV (all are confirmed-active & median-verified now)
 
