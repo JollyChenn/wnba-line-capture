@@ -22,7 +22,7 @@ jobs:
       - name: capture 1xbet via 1x-bet.com (datacenter-reachable)
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-          XBET_WINDOW_MIN: '1440'   # 24h: capture 1xbet from ~24h out (1xbet leads Pinnacle ~4-5h) -> full open->close odds-CLV at 24h/16h/8h/4h/near-tip
+          XBET_WINDOW_MIN: '2880'   # 48h: capture 1xbet from ~48h out (the every-3h cron -> snapshots ~48/40/30/24h..near-tip) so we grab the line AS IT'S SET for full open->close odds-CLV. (Reminder ping still gated to the final 24h.)
         run: python cloud_xbet.py
       - name: commit snapshots
         run: |

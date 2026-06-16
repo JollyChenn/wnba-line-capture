@@ -557,9 +557,10 @@ def main():
             for b in betstruct:
                 wbl.writerow([stamp, la_today] + b)
     new_alert = {(b[0].lower(), b[1], b[2]) for b in betstruct} - seen_today   # picks not yet pinged today
-    # REAL bets (proven) remind you EVERY cycle (hourly); paper/experimental (forward/overshoot/cascade) ping
-    # only when NEW or near-tip — so a weak hot-over doesn't spam hourly, but a genuine bet keeps reminding.
-    if bets or ((forward or oso or casc) and (new_alert or near_tip)):
+    within_24h = min_mins <= 1440             # hourly reminder only in the final 24h; the 48-24h window just CAPTURES + alerts a new bet once
+    # REAL bets remind you EVERY cycle (hourly) within 24h; beyond 24h (and paper/overshoot/cascade) they ping
+    # only when NEW or near-tip — so a 48h-early line is snapshotted for CLV without spamming 48 reminders.
+    if (bets and within_24h) or ((bets or forward or oso or casc) and (new_alert or near_tip)):
         parts = []
         if near_tip:
             parts.append(f"🔔 **NEAR TIP (~{int(min_mins)} min) — injury list & odds RECONFIRMED**")
