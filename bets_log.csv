@@ -42,3 +42,19 @@ captured_utc,date,player,market,side,line,odds,tier,ev,pinn,src
 2026-06-15T22:59:20+00:00,2026-06-15,Natasha Howard,pra,Over,27.5,1.87,STRONG,0.28,,overshoot
 2026-06-16T10:59:12+00:00,2026-06-16,Aliyah Boston,pra,Over,28.5,1.87,THIN,0.054,,hotover
 2026-06-16T16:30:52+00:00,2026-06-16,Aliyah Boston,pra,Over,28.5,1.87,THIN,0.054,,hotover
+2026-06-16T21:35:49+00:00,2026-06-16,Aliyah Boston,pra,Over,28.5,1.87,THIN,0.054,,hotover
+2026-06-16T21:35:49+00:00,2026-06-16,Gabriela Jaquez,pts,Under,8.5,1.84,THIN,0.038,,model
+2026-06-16T21:35:49+00:00,2026-06-16,Kamilla Cardoso,pra,Under,23.5,1.714,STRONG,0.143,,model
+2026-06-16T21:35:49+00:00,2026-06-16,Arike Ogunbowale,pa,Over,17.5,1.91,THIN,0.047,,flip
+2026-06-16T21:35:49+00:00,2026-06-16,Jessica Shepard,pts,Over,11.5,1.82,SOLID,0.059,,flip
+2026-06-16T21:35:49+00:00,2026-06-16,Azzi Fudd,pts,Over,12.5,1.92,THIN,0.032,,flip
+2026-06-16T21:35:49+00:00,2026-06-16,Dearica Hamby,pra,Under,22.5,1.909,STRONG,0.318,,model
+2026-06-16T21:35:49+00:00,2026-06-16,Kayla McBride,pts,Under,14.5,1.81,STRONG,0.362,,newunder
+2026-06-16T21:35:49+00:00,2026-06-16,Courtney Williams,pts,Under,16.5,1.76,SOLID,0.031,,newunder
+2026-06-16T21:35:49+00:00,2026-06-16,Kahleah Copper,pra,Over,23.5,1.87,SOLID,0.089,,hotover
+2026-06-16T21:35:49+00:00,2026-06-16,Sarah Ashlee Barker,pts,Under,10.5,1.78,STRONG,0.354,,newunder
+2026-06-16T21:35:49+00:00,2026-06-16,Michaela Onyenwere,pts,Over,9.5,1.8,STRONG,0.462,,overshoot
+2026-06-16T21:35:49+00:00,2026-06-16,Natisha Hiedeman,pr,Over,15.5,1.833,STRONG,0.403,,overshoot
+2026-06-16T21:35:49+00:00,2026-06-16,Nalyssa Smith,pr,Over,16.5,1.87,STRONG,0.418,,overshoot
+2026-06-16T21:35:49+00:00,2026-06-16,Natasha Howard,pts,Over,16.5,1.82,STRONG,0.307,,overshoot
+2026-06-16T21:35:49+00:00,2026-06-16,Kelsey Plum,pts,Over,20.5,1.77,STRONG,0.224,,overshoot
