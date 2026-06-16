@@ -577,8 +577,10 @@ def main():
         ping(f"⏰ **1xbet — tip in ~{int(min_mins)} min, no +EV line found**\n"
              "(props may be unposted, or the posted price isn't in value). Model picks to check on 1xbet by hand:\n"
              + proj_msg(inj))
-    else:
-        print(f"captured {len(rows)} rows for CLV; nearest tip {int(min_mins)} min — no +EV line yet")
+    else:                                             # EVERY cycle reports in — never go dark (user wants explicit "no bet")
+        live = bool(bets or oso or forward or casc)
+        status = f"{len(betstruct)} pick(s) live (already alerted today)" if live else "NO qualifying bet this cycle"
+        ping(f"🟢 **1xbet alive — {now.strftime('%H:%M')} UTC** · {status} · {len(props)} players scanned · nearest tip ~{int(min_mins)} min")
 
 
 if __name__ == "__main__":
