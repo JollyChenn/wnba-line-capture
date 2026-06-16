@@ -1,8 +1,9 @@
 name: capture-xbet
 on:
   schedule:
-    - cron: '0 */3 * * *'                            # every 3h baseline (early "line is good" ping)
-    - cron: '0 16,17,18,19,20,21,22,23,0,1,2 * * *'  # hourly through the WNBA tip window (16:00-02:00 UTC) so a run lands near tip; dedup stops the spam
+    - cron: '0 */3 * * *'                            # every 3h baseline -> snapshots at ~24h/21h/18h.. for open->close odds-CLV
+    - cron: '0 16,17,18,19,20,21,22,23,0,1,2 * * *'  # hourly through the WNBA tip window (16:00-02:00 UTC) so a run lands near tip
+    - cron: '30 22,23,0,1,2 * * *'                   # HALF-hourly in the core tip window -> a capture within ~30m of tip = the CLOSE for closing-CLV
   workflow_dispatch: {}
 permissions:
   contents: write
@@ -21,7 +22,7 @@ jobs:
       - name: capture 1xbet via 1x-bet.com (datacenter-reachable)
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-          XBET_WINDOW_MIN: '1080'
+          XBET_WINDOW_MIN: '1440'   # 24h: capture 1xbet from ~24h out (1xbet leads Pinnacle ~4-5h) -> full open->close odds-CLV at 24h/16h/8h/4h/near-tip
         run: python cloud_xbet.py
       - name: commit snapshots
         run: |

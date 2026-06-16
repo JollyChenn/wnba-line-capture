@@ -21,7 +21,7 @@ jobs:
           ODDS_API_KEYS: ${{ secrets.ODDS_API_KEYS }}
           CAPTURE_MARKETS: player_points,player_points_rebounds_assists
           CAPTURE_REGIONS: eu
-          CAPTURE_WINDOW_MIN: '180'
+          CAPTURE_WINDOW_MIN: '540'   # 9h (was 3h): Pinnacle OPENS ~8h pre-tip, so 3h MISSED the open. 9h captures the OPENING line for sharp opening-CLV, through to the close. (Odds-API quota: ~3x more calls near a slate; cloud_capture is quota-aware + ODDS_API_KEYS rotates.)
           MAX_GAMES: '5'
         run: python cloud_capture.py
       - name: Commit any new snapshots
