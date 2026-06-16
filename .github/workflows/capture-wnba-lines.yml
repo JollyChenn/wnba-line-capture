@@ -1,8 +1,12 @@
 name: capture-wnba-lines
 on:
-  schedule:
-    - cron: '5 * * * *'        # hourly; most runs are FREE (no game near tip)
-  workflow_dispatch: {}         # manual "Run workflow" button for testing
+  # SCHEDULE DISABLED 2026-06-16 — Pinnacle sharp ref now comes from the FREE guest API
+  # (guest.api.arcadia.pinnacle.com via cloud_xbet.pinnacle_lines -> bets_log pinn -> grade_bets sharp_clv).
+  # This Odds-API path (the-odds-api.com -> line_snapshots.csv) was a redundant duplicate that burned the
+  # shared 500-req/month quota. Guest API verified live (returns WNBA pts/reb/ast). Kept for manual runs only.
+  # schedule:
+  #   - cron: '5 * * * *'
+  workflow_dispatch: {}         # manual "Run workflow" button only (no auto-schedule, no quota burn)
 permissions:
   contents: write
 concurrency:
