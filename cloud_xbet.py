@@ -491,12 +491,13 @@ def main():
             pinref = pin.get(_pkey(player), {}).get(base)
             cstr = f" · Pinn {pinref}" if pinref is not None else ""
             tmab = _team_ab(pks[0].get("team", ""))
-            flip = " 🎯FLIP" if is_flip else (" 🧪PAPER" if is_new else "")
+            paper = is_new or src == "hotover"        # hot-PRA-over is the downgraded/weak signal -> PAPER, never a BET ping
+            flip = " 🎯FLIP" if is_flip else (" 🧪PAPER" if paper else "")
             txt = f"• **{player}** ({tmab}) {base.upper()} {bside} **{line} @ {odds}** [{_tier(ph)}{flip} · {sig} · hit {ph*100:.0f}% · EV {ev*100:+.0f}%]{cstr}"
             if st == "HOLD":
                 holds.append(txt + " ⏳unconfirmed")
-            elif is_new:
-                forward.append(txt)                   # 🧪 forward-test: logged for CLV, NOT a real-money BET ping
+            elif paper:
+                forward.append(txt)                   # 🧪 forward-test + hot-overs: logged for CLV, NOT a real-money BET ping
             else:
                 bets.append(txt)
 
@@ -555,8 +556,10 @@ def main():
                 wbl.writerow(["captured_utc", "date", "player", "market", "side", "line", "odds", "tier", "ev", "pinn", "src"])
             for b in betstruct:
                 wbl.writerow([stamp, la_today] + b)
-    new_bets = {(b[0].lower(), b[1], b[2]) for b in betstruct} - seen_today   # (kept for context; no longer gates the ping)
-    if (bets or casc or oso or forward):   # REMIND every cycle a bet qualifies (hourly), not just once/near-tip
+    new_alert = {(b[0].lower(), b[1], b[2]) for b in betstruct} - seen_today   # picks not yet pinged today
+    # REAL bets (proven) remind you EVERY cycle (hourly); paper/experimental (forward/overshoot/cascade) ping
+    # only when NEW or near-tip — so a weak hot-over doesn't spam hourly, but a genuine bet keeps reminding.
+    if bets or ((forward or oso or casc) and (new_alert or near_tip)):
         parts = []
         if near_tip:
             parts.append(f"🔔 **NEAR TIP (~{int(min_mins)} min) — injury list & odds RECONFIRMED**")
