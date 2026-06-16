@@ -404,7 +404,9 @@ def main():
                         if isinstance(o, dict):
                             pl, T = o.get("PL"), o.get("T")
                             if isinstance(pl, dict) and T is not None and o.get("P") is not None:
-                                grp["codes"].setdefault(str(T), f"{pl.get('N','?')} line={o.get('P')}")
+                                lst = grp["codes"].setdefault(str(T), [])   # MULTIPLE samples per code so a
+                                if len(lst) < 14:                            # player w/ distinct lines (Clark 8.5a/4.5r)
+                                    lst.append(f"{pl.get('N','?')}={o.get('P')}")   # disambiguates assists vs rebounds
                             for x in o.values(): collect(x)
                         elif isinstance(o, list):
                             for x in o: collect(x)
