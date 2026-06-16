@@ -95,6 +95,21 @@ def fair_ladder(our_line, p, sd, offsets=(-1, 0, 1)):
     return out
 
 
+def _over_consec(pts_list):
+    """Count consecutive MOST-RECENT games where pts beat that game's own prior-10 median.
+    A 3+ run = the player has been running hot/over -> due to mean-revert DOWN (steady+streak under)."""
+    cnt = 0
+    for i in range(len(pts_list) - 1, -1, -1):
+        prior = pts_list[max(0, i - 10):i]
+        if len(prior) < 5:
+            break
+        if pts_list[i] > float(np.median(prior)):
+            cnt += 1
+        else:
+            break
+    return cnt
+
+
 # ESPN team code -> full name (2026 WNBA, 15 teams + historical aliases)
 TEAM_NAMES = {
     "ATL": "Atlanta Dream", "CHI": "Chicago Sky", "CON": "Connecticut Sun",
@@ -258,6 +273,13 @@ def main():
             "last_min": grp["min"].iloc[-1],
             "recent_min": " ".join(f"{m:.0f}" for m in grp["min"].tail(5)),
             "usg": grp.usg_raw.tail(5).mean(),
+            # --- NEW volume-brute-force UNDER atoms (forward-test, computable from box_2026 cols only) ---
+            "fta_t6": grp.fta.tail(6).mean(),                                   # ft_volume_drought: not getting to the line
+            "pps_t8": grp.pts.tail(8).sum() / max(grp.fga.tail(8).sum(), 1),    # points-per-shot (efficiency -> regress)
+            "fga_t8": grp.fga.tail(8).mean(),
+            "cv_pts": last.pts.std() / max(last.pts.mean(), 1.0),              # scoring volatility
+            "pts_mean10": last.pts.mean(),
+            "over_consec": _over_consec(grp.pts.tolist()),                      # consecutive over-median games (hot run)
         })
     f = pd.DataFrame(feats)
     f["trend"] = f.t5_min - f.t10_min
@@ -279,6 +301,7 @@ def main():
     log_rows = []
     core_picks = []          # compact lines for the Discord ping
     cascade_lines = []
+    exp_lines = []           # 🧪 forward-test signals (paper only, never in the BET ping)
     n_unders = 0
     for gm_ in upcoming:
         a, h = gm_["away"], gm_["home"]
@@ -376,6 +399,32 @@ def main():
             if med >= STAR_PRA_MIN:     # PRA star-only on 1xbet -> only PING star overs (role overs stay in PICKS.md)
                 core_picks.append(f"• **{r.player}** ({NAME(r.team)}) — PRA OVER median~{med:.0f}→proj~{mu:.1f} [{tg}]")
             n_unders += 1
+
+        # ---- 🧪 EXPERIMENTAL forward-test UNDER signals (volume brute-force winners, UNPROVEN) ----
+        # ft_volume_drought (fta_t6<=1.0): 58.9% OOS n=474 — the high-volume workhorse (player not getting to the line).
+        # steady+streak (cv<=0.45, mean10>=10, 3+ consec overs): 58.6% OOS n=297 — hot run mean-reverts DOWN.
+        # PAPER ONLY: emitted to picks_log so the capture/grade pipeline logs forward CLV, but walled off from the
+        # proven record (cloud_xbet tags these src=newunder) and NEVER added to the BET ping. Bet POINTS, not PRA.
+        for idx, r in sub.iterrows():
+            if r.player in pm or r.med_pts < 8.5:        # a proven cold+shrink under takes precedence
+                continue
+            eft = r.get("fta_t6"); ecv = r.get("cv_pts"); em10 = r.get("pts_mean10"); eoc = r.get("over_consec")
+            esig = None
+            if pd.notna(eft) and eft <= 1.0:
+                esig = "ftdrought"
+            elif (pd.notna(ecv) and ecv <= 0.45 and pd.notna(em10) and em10 >= 10 and pd.notna(eoc) and eoc >= 3):
+                esig = "steady+streak"
+            if not esig:
+                continue
+            efp = 0.589 if esig == "ftdrought" else 0.586     # OOS test hit-rate (vs SYNTHETIC line — side-predict only)
+            efo = fair_odds(efp)
+            emed = r.med_pts; esd = r.sd_pts
+            eln = float(np.floor(emed - 0.001) + 0.5)
+            emu = round(eln - esd * _nppf(efp), 1)
+            exp_lines.append(f"- **{r.player}** ({NAME(r.team)}, {NAME(a)} @ {NAME(h)}): PTS UNDER ~{eln:.1f} "
+                             f"[{esig} · PAPER] median~{emed:.0f}→proj~{emu:.1f} · last5 mins [{r.recent_min}]")
+            log_rows.append([str(today), gm_["game_id"], r.player, NAME(r.team), NAME(opp_of[r.team]),
+                             "pts_under", eln, esig, round(efp, 3), efo, emu, round(esd, 2)])
     if not n_unders:
         lines_md.append("_(no 2-signal core unders today — do NOT reach for singles)_")
 
@@ -394,6 +443,10 @@ def main():
                             f"bet if 1xbet over > {fair_odds(CASCADE_FAIR_P)}) {names}")
             top2 = ", ".join(b.player.split()[-1] for _, b in ben.head(2).iterrows())
             cascade_lines.append(f"• {tm}: {star.player} OUT → {top2}…")
+
+    if exp_lines:
+        lines_md += ["", "## 🧪 EXPERIMENTAL forward-test — PAPER ONLY (volume brute-force winners; log CLV, do NOT bet real until +CLV)",
+                     "_ft_volume_drought 58.9% / steady+streak 58.6% OOS vs a synthetic line — proves the side, NOT that it beats 1xbet. Tracked separately until forward CLV confirms._", ""] + exp_lines
 
     lines_md += ["", "---", "_Rules: flat 1u stakes. Bet 1xbet only where its line >= anchor (under) or",
                  "<= anchor (cascade over). Skip Clark props. Grade vs Pinnacle close (line_snapshots.csv)._"]

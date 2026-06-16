@@ -348,6 +348,7 @@ def main():
     picks = load_picks()
     stamp = now.isoformat(timespec="seconds")
     rows, bets, holds, drops, betstruct = [], [], [], [], []
+    forward = []                                     # 🧪 forward-test (newunder) picks — captured for CLV, PAPER-only
     def _tier(p):                                     # honest strength = the model's hit probability at the line
         return "STRONG" if p >= 0.66 else "SOLID" if p >= 0.58 else "THIN"
 
@@ -388,18 +389,26 @@ def main():
                             cands.append((pov, pk["base"], "Over", oline, oodds, oodds / ofair - 1, True))
         if cands:
             ph, base, bside, line, odds, ev, is_flip = max(cands, key=lambda c: c[0])  # highest-confidence bet for this player
+            sig = pks[0].get("sig", "")               # the pick's signal label (drives src + ping routing)
             # src tags the SIGNAL so grade_bets/clv_reader keep the PROVEN record (cold+shrink under + flip)
-            # separate from the UNPROVEN overs (hot-PRA-over, board overshoot). model=under, flip=cratered-line over,
-            # hotover=model hot-PRA-over (EVs inflated, not measured), overshoot logged below.
-            src = "flip" if is_flip else ("model" if bside == "Under" else "hotover")
-            if st == "OK":                            # log confirmed-active model bets for grading (+ Pinnacle line for sharp CLV)
+            # separate from the UNPROVEN ones. newunder = volume-brute-force forward-test (ftdrought/steady+streak):
+            # captured for CLV but PAPER-only. model=cold+shrink under, flip=cratered over, hotover=hot-PRA-over.
+            NEW_SIGS = ("ftdrought", "steady", "streak", "ppseff")
+            is_new = bside == "Under" and any(s in sig for s in NEW_SIGS)
+            src = "flip" if is_flip else ("newunder" if is_new else ("model" if bside == "Under" else "hotover"))
+            if st == "OK":                            # log confirmed-active bets for grading (+ Pinnacle line for sharp CLV)
                 betstruct.append([player, base, bside, line, odds, _tier(ph), round(ev, 3), pin.get(_pkey(player), {}).get(base, ""), src])
             pinref = pin.get(_pkey(player), {}).get(base)
             cstr = f" · Pinn {pinref}" if pinref is not None else ""
-            tmab = _team_ab(pks[0].get("team", "")); sig = pks[0].get("sig", "")
-            flip = " 🎯FLIP" if is_flip else ""
+            tmab = _team_ab(pks[0].get("team", ""))
+            flip = " 🎯FLIP" if is_flip else (" 🧪PAPER" if is_new else "")
             txt = f"• **{player}** ({tmab}) {base.upper()} {bside} **{line} @ {odds}** [{_tier(ph)}{flip} · {sig} · hit {ph*100:.0f}% · EV {ev*100:+.0f}%]{cstr}"
-            (holds if st == "HOLD" else bets).append(txt + (" ⏳unconfirmed" if st == "HOLD" else ""))
+            if st == "HOLD":
+                holds.append(txt + " ⏳unconfirmed")
+            elif is_new:
+                forward.append(txt)                   # 🧪 forward-test: logged for CLV, NOT a real-money BET ping
+            else:
+                bets.append(txt)
 
     # ---- STAR-OUT CASCADE ----
     casc = []
@@ -455,12 +464,14 @@ def main():
             for b in betstruct:
                 wbl.writerow([stamp, la_today] + b)
     new_bets = {(b[0].lower(), b[1], b[2]) for b in betstruct} - seen_today   # bets not already pinged today
-    if (bets or casc or oso) and (new_bets or near_tip):   # ping on a NEW bet OR at near-tip reconfirm; dedup the middle runs
+    if (bets or casc or oso or forward) and (new_bets or near_tip):   # ping on a NEW bet OR at near-tip reconfirm; dedup the middle runs
         parts = []
         if near_tip:
             parts.append(f"🔔 **NEAR TIP (~{int(min_mins)} min) — injury list & odds RECONFIRMED**")
         if bets:
             parts.append("✅ **BETS** (our model · line@odds · Pinn = sharp close for CLV):\n" + "\n".join(bets))
+        if forward:
+            parts.append("🧪 **FORWARD-TEST (PAPER — log CLV, do NOT bet real until +CLV)**:\n" + "\n".join(forward))
         if oso:
             parts.append("🎯 **OVERSHOOT-OVERS** (line ≥3 below median; injury/team-change/minutes/cold auto-checked; ✓sharp = Pinnacle confirms):\n" + "\n".join(oso))
         if casc:
