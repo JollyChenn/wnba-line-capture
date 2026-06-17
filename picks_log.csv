@@ -88,3 +88,36 @@ pick_date,game_id,player,team,opp,market,anchor,signals,fair_p,fair_odds,proj,sd
 2026-06-16,401857000,Kahleah Copper,Phoenix Mercury,Las Vegas Aces,pra_over,22.5,hot+leaky,0.62,1.61,26.2,10.35
 2026-06-16,401857001,Awa Fam,Seattle Storm,Portland Fire,pra_over,14.5,hot+expand,0.55,1.82,15.7,5.22
 2026-06-16,401857001,Sarah Ashlee Barker,Portland Fire,Seattle Storm,pts_under,8.5,ftdrought,0.589,1.7,7.6,4.09
+2026-06-17,401856996,Kiki Iriafen,Washington Mystics,Connecticut Sun,pr_under,23.5,disrupted+cold,0.59,1.69,21.4,9.24
+2026-06-17,401856996,Kiki Iriafen,Washington Mystics,Connecticut Sun,ra_under,10.5,disrupted+cold,0.61,1.64,9.1,5.02
+2026-06-17,401856996,Kiki Iriafen,Washington Mystics,Connecticut Sun,pra_under,25.5,disrupted+cold,0.6,1.67,23.0,9.87
+2026-06-17,401856996,Kiki Iriafen,Washington Mystics,Connecticut Sun,reb_under,9.5,disrupted+cold,0.58,1.72,8.6,4.58
+2026-06-17,401856996,Aaliyah Edwards,Connecticut Sun,Washington Mystics,pra_over,13.5,hot+leaky,0.62,1.61,16.3,7.52
+2026-06-17,401856996,Saniya Rivers,Connecticut Sun,Washington Mystics,pra_over,13.5,hot+expand+leaky,0.62,1.61,15.5,6.55
+2026-06-17,401856996,Aneesah Morrow,Connecticut Sun,Washington Mystics,pra_over,24.5,expand+leaky,0.58,1.72,26.9,9.42
+2026-06-17,401856996,Leila Lacan,Connecticut Sun,Washington Mystics,pra_over,17.5,hot+leaky,0.62,1.61,20.1,8.45
+2026-06-17,401856997,Gabriela Jaquez,Chicago Sky,New York Liberty,pts_under,9.5,declining+stingy,0.642,1.56,7.7,4.96
+2026-06-17,401856997,Gabriela Jaquez,Chicago Sky,New York Liberty,pr_under,13.5,declining+cold+stingy,0.59,1.69,12.1,6.27
+2026-06-17,401856997,Gabriela Jaquez,Chicago Sky,New York Liberty,pa_under,11.5,declining+cold+stingy,0.61,1.64,10.1,5.18
+2026-06-17,401856997,Gabriela Jaquez,Chicago Sky,New York Liberty,pra_under,14.5,declining+cold+stingy,0.66,1.52,11.8,6.56
+2026-06-17,401856997,Kamilla Cardoso,Chicago Sky,New York Liberty,pr_under,20.5,cold+stingy,0.59,1.69,18.7,7.76
+2026-06-17,401856997,Kamilla Cardoso,Chicago Sky,New York Liberty,pra_under,22.5,cold+stingy,0.621,1.61,19.9,8.34
+2026-06-17,401856998,Arike Ogunbowale,Dallas Wings,Golden State Valkyries,pa_under,22.5,cold+stingy,0.61,1.64,19.0,12.42
+2026-06-17,401856998,Laeticia Amihere,Golden State Valkyries,Dallas Wings,reb_under,3.5,declining+cold,0.58,1.72,3.0,2.59
+2026-06-17,401856998,Jessica Shepard,Dallas Wings,Golden State Valkyries,pts_under,13.5,steady+streak,0.586,1.71,12.5,4.83
+2026-06-17,401856998,Azzi Fudd,Dallas Wings,Golden State Valkyries,pts_under,14.5,ftdrought,0.589,1.7,13.1,6.35
+2026-06-17,401856999,Dearica Hamby,Los Angeles Sparks,Minnesota Lynx,pts_under,12.5,cold+stingy,0.626,1.6,10.0,7.73
+2026-06-17,401856999,Dearica Hamby,Los Angeles Sparks,Minnesota Lynx,pa_under,14.5,cold+stingy,0.61,1.64,12.1,8.53
+2026-06-17,401856999,Dearica Hamby,Los Angeles Sparks,Minnesota Lynx,pra_under,20.5,cold+stingy,0.621,1.61,17.3,10.46
+2026-06-17,401856999,Kayla McBride,Minnesota Lynx,Los Angeles Sparks,pts_under,12.5,steady+streak,0.586,1.71,11.5,4.4
+2026-06-17,401856999,Courtney Williams,Minnesota Lynx,Los Angeles Sparks,pts_under,16.5,ftdrought,0.589,1.7,15.2,5.99
+2026-06-17,401857000,Chennedy Carter,Las Vegas Aces,Phoenix Mercury,pts_under,15.5,declining+cold,0.684,1.46,11.2,9.07
+2026-06-17,401857000,Chennedy Carter,Las Vegas Aces,Phoenix Mercury,pr_under,16.5,declining+cold,0.59,1.69,14.1,10.69
+2026-06-17,401857000,Chennedy Carter,Las Vegas Aces,Phoenix Mercury,pa_under,16.5,declining+cold,0.61,1.64,13.7,10.09
+2026-06-17,401857000,Chennedy Carter,Las Vegas Aces,Phoenix Mercury,pra_under,17.5,declining+cold,0.641,1.56,13.2,11.8
+2026-06-17,401857000,Kahleah Copper,Phoenix Mercury,Las Vegas Aces,pra_over,22.5,hot+leaky,0.62,1.61,26.2,10.35
+2026-06-17,401857001,Awa Fam,Seattle Storm,Portland Fire,pra_over,14.5,hot+expand,0.55,1.82,15.7,5.22
+2026-06-17,401857001,Sarah Ashlee Barker,Portland Fire,Seattle Storm,pts_under,8.5,ftdrought,0.589,1.7,7.6,4.09
+2026-06-17,401857002,Caitlin Clark,Indiana Fever,Atlanta Dream,pra_over,32.5,hot+expand,0.55,1.82,33.7,9.5
+2026-06-17,401857002,Rhyne Howard,Atlanta Dream,Indiana Fever,pts_under,19.5,steady+streak,0.586,1.71,17.7,8.19
+2026-06-17,401857002,Caitlin Clark,Indiana Fever,Atlanta Dream,pts_under,19.5,steady+streak,0.586,1.71,17.9,7.34
