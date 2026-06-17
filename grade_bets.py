@@ -1,7 +1,7 @@
 # grade_bets.py — settle logged bets (bets_log.csv) vs box results, with PROPER CLV.
 # "Our bet" = the FIRST capture (earliest alert = take-on-sight). "Close" = the LAST capture (near tip).
 # Reports hit-rate, ROI, and THREE CLVs: odds-CLV (price moved our way), line-CLV, and sharp-CLV vs Pinnacle.
-import csv, os
+import csv, os, datetime
 from collections import defaultdict
 
 if not os.path.exists("bets_log.csv"):
@@ -32,6 +32,28 @@ for b in csv.DictReader(open("bets_log.csv", encoding="utf-8")):
         ev = 0.0
     caps[(d, b["player"].lower(), b["market"], b["side"])].append(
         (b["captured_utc"], float(b["line"]), float(b["odds"]), b.get("tier", ""), b["player"], b.get("pinn", ""), src, ev))
+
+# RESOLVE TO THE REAL GAME DATE so EVERY capture of a bet is counted (every odds, full open->close CLV).
+# A bet's "date" is the CAPTURE slate date (LA). A game tipping late (West-coast evening = next UTC day),
+# captured the evening before, lands a day BEFORE the box-score game date -> those early "open" captures (the
+# whole reason we capture 48h out) would orphan into a date group that never matches a result: no settlement,
+# truncated CLV. Re-key each capture to the EARLIEST game the player has on/after the capture date, so all
+# captures of one bet merge into a single open->close group.
+player_dates = defaultdict(set)                        # (player, market) -> {dates the player has a FINAL box result}
+for (plow, dd, mk) in actual:
+    player_dates[(plow, mk)].add(dd)
+
+
+def game_date(plow, mk, slate):
+    later = sorted(x for x in player_dates.get((plow, mk), ()) if x >= slate)
+    return later[0] if later else slate                # earliest game on/after capture; else slate (still pending)
+
+
+merged = defaultdict(list)                              # collapse cross-midnight captures of the SAME bet
+for (d, plow, mk, side), cl in caps.items():
+    merged[(game_date(plow, mk, d), plow, mk, side)].extend(cl)
+caps = merged                                          # everything downstream now groups by GAME date
+
 
 def line_clv(our, ref, side):
     try:
