@@ -26,14 +26,12 @@ for b in csv.DictReader(open("bets_log.csv", encoding="utf-8")):
     # src (model/flip = proven; hotover/overshoot = unproven overs) flows through to graded_bets so the
     # headline track record + CLV verdict only count the PROVEN signals, never speculative captured overs.
     src = b.get("src", "") or ("model" if b["side"] == "Under" else "overshoot")   # legacy rows: under=model, over=overshoot
+    try:
+        ev = float(b.get("ev", "") or 0)               # EV drives the one-bet-per-player dedup (keep the player's top-EV market)
+    except (ValueError, TypeError):
+        ev = 0.0
     caps[(d, b["player"].lower(), b["market"], b["side"])].append(
-        (b["captured_utc"], float(b["line"]), float(b["odds"]), b.get("tier", ""), b["player"], b.get("pinn", ""), src))
-
-done = set()
-if os.path.exists("graded_bets.csv"):
-    for r in csv.DictReader(open("graded_bets.csv", encoding="utf-8")):
-        done.add((r["date"], r["player"].lower(), r["market"], r["side"]))
-
+        (b["captured_utc"], float(b["line"]), float(b["odds"]), b.get("tier", ""), b["player"], b.get("pinn", ""), src, ev))
 
 def line_clv(our, ref, side):
     try:
@@ -42,13 +40,25 @@ def line_clv(our, ref, side):
         return ""
 
 
-new_rows = []
+# ONE BET PER PLAYER PER DAY: among a player's markets on a date, keep only the single highest-EV one.
+# Mirrors the live bot's one-line-per-player rule so the graded RECORD isn't inflated by the same player's
+# PRA/PR/PA/PTS all being counted (Plum x4 / Howard x2 were re-inflating the experimental overshoot loss tally
+# to a fake 1/10 every time this re-ran). EV is the tiebreak (the bet the bot would actually have placed).
+best = {}                                              # (date, player) -> (market, side, ev) of the top-EV bet that day
 for (d, plow, mk, side), cl in caps.items():
-    if (d, plow, mk, side) in done:
-        continue
+    ev = max(x[7] for x in cl)
+    if (d, plow) not in best or ev > best[(d, plow)][2]:
+        best[(d, plow)] = (mk, side, ev)
+
+# Full REBUILD each run (idempotent): graded_bets is derived from bets_log + box, so regrading from scratch
+# is safe, always applies the dedup, and never leaves stale duplicate rows from older append-only runs.
+rows = []
+for (d, plow, mk, side), cl in caps.items():
+    if (mk, side) != best[(d, plow)][:2]:
+        continue                                       # not this player's top-EV market that day -> drop (one bet per player)
     act = actual.get((plow, d, mk))
     if act is None:
-        continue
+        continue                                       # game not final yet -> pending
     cl.sort()
     o_line, o_odds, tier, disp = cl[0][1], cl[0][2], cl[0][3], cl[0][4]      # OUR bet = first alert
     c_line, c_odds, c_pinn = cl[-1][1], cl[-1][2], cl[-1][5]                 # CLOSE = last capture
@@ -62,19 +72,14 @@ for (d, plow, mk, side), cl in caps.items():
         res, pnl = "loss", -1.0
     odds_clv = round(o_odds / c_odds - 1, 3) if (c_odds and has_close) else ""   # >0 = we got a longer price than the close
     line_self = line_clv(o_line, c_line, side) if has_close else ""              # our line vs our OWN close (needs 2+ captures)
-    new_rows.append([d, disp, mk, side, o_line, o_odds, tier, act, res, round(pnl, 2),
-                     odds_clv, line_self, line_clv(o_line, c_pinn, side), o_src])   # sharp_clv valid w/1 capture; src for honest split
+    rows.append([d, disp, mk, side, o_line, o_odds, tier, act, res, round(pnl, 2),
+                 odds_clv, line_self, line_clv(o_line, c_pinn, side), o_src])   # sharp_clv valid w/1 capture; src for honest split
 
-if new_rows:
-    fnew = not os.path.exists("graded_bets.csv")
-    with open("graded_bets.csv", "a", newline="", encoding="utf-8") as f:
-        wr = csv.writer(f)
-        if fnew:
-            wr.writerow(["date", "player", "market", "side", "line", "odds", "tier", "actual", "result", "pnl", "odds_clv", "line_clv", "sharp_clv", "src"])
-        wr.writerows(sorted(new_rows))
-    print(f"settled {len(new_rows)} new bet(s)")
-else:
-    print("no new bets to settle (games not final yet)")
+with open("graded_bets.csv", "w", newline="", encoding="utf-8") as f:
+    wr = csv.writer(f)
+    wr.writerow(["date", "player", "market", "side", "line", "odds", "tier", "actual", "result", "pnl", "odds_clv", "line_clv", "sharp_clv", "src"])
+    wr.writerows(sorted(rows))
+print(f"graded {len(rows)} settled bet(s) (one-per-player-per-day, rebuilt from bets_log)")
 
 allg = list(csv.DictReader(open("graded_bets.csv", encoding="utf-8"))) if os.path.exists("graded_bets.csv") else []
 def _src(g):                                          # legacy graded rows (no src col): under=model, over=overshoot
