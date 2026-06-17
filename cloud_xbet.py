@@ -233,10 +233,15 @@ def load_picks():
     picks = defaultdict(list)
     if not os.path.exists(PICKS):
         return picks
-    today = datetime.datetime.now(_SLATE_TZ).date().isoformat()    # LA slate date, NOT UTC (else late West-coast games go blind 00:00-07:00 UTC)
-    for r in csv.DictReader(open(PICKS, encoding="utf-8")):
-        if r.get("pick_date") != today:
-            continue
+    today = datetime.datetime.now(_SLATE_TZ).date()                # LA slate date, NOT UTC (else late West-coast games go blind 00:00-07:00 UTC)
+    allrows = list(csv.DictReader(open(PICKS, encoding="utf-8")))
+    # Prefer TODAY's LA slate; fall back to YESTERDAY's during the post-midnight rollover (~07:00-14:00 UTC) before
+    # daily_picks reruns and refiles tonight's still-upcoming games -> otherwise the model BETS vanish for ~7h and only
+    # overshoot fires. The ESPN near-tip gate + 1xbet board availability drop any genuinely stale pick (game already played).
+    rows = [r for r in allrows if r.get("pick_date") == today.isoformat()]
+    if not rows:
+        rows = [r for r in allrows if r.get("pick_date") == (today - datetime.timedelta(days=1)).isoformat()]
+    for r in rows:
         base = r["market"].split("_")[0]
         side = "Over" if r["market"].endswith("over") else "Under"
         if base not in STAT_T or "disrupt" in r.get("signals", "").lower():
