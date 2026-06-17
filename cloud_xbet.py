@@ -190,6 +190,45 @@ def watchlist(teams):
     return wl
 
 
+def new_star_outs(teams, inj):
+    """{team -> star} for teams whose top-usage star is OUT *and* played the team's MOST RECENT game — i.e. a
+    FRESH absence the trailing medians don't reflect yet. A teammate's UNDER then becomes a usage-spike trap (the
+    inverse of the star-out cascade we bet as OVERS). Long-standing star-outs (star already missing recent games)
+    are EXCLUDED: that absence is already baked into the trailing data, so the under is unaffected."""
+    out = {}
+    if not (os.path.exists("data/box_2026.csv") and os.path.exists("data/games_2026.csv")):
+        return out
+    try:
+        box = pd.read_csv("data/box_2026.csv", dtype={"game_id": str})
+        g = pd.read_csv("data/games_2026.csv", dtype={"game_id": str})
+        box = box.join(g.set_index("game_id")[["date"]], on="game_id")
+        for c in ["fga", "fta", "to", "min"]:
+            box[c] = pd.to_numeric(box[c], errors="coerce")
+        box["usg"] = box.fga + 0.44 * box.fta + box.to
+    except Exception as e:
+        print("new_star_outs load err", e); return out
+    for team, tg in box.groupby("team"):
+        if team not in teams:
+            continue
+        feats = []                                        # star = highest trailing-5 usage among >=24-min players (watchlist rule)
+        for player, grp in tg.groupby("player"):
+            grp = grp.sort_values("date")
+            if len(grp) < 5:
+                continue
+            feats.append((grp.usg.tail(5).mean(), grp["min"].tail(5).mean(), player))
+        if not feats:
+            continue
+        feats.sort(reverse=True)
+        _usg, mins, star = feats[0]
+        if mins < 24 or status_of(star, inj) != "OUT":
+            continue
+        team_last = tg["date"].max()                      # FRESH = star featured in the team's most recent game (vs already-sitting)
+        star_last = tg[tg.player == star]["date"].max()
+        if pd.notna(star_last) and star_last == team_last:
+            out[team] = star
+    return out
+
+
 def load_picks():
     picks = defaultdict(list)
     if not os.path.exists(PICKS):
@@ -374,6 +413,9 @@ def main():
     print(f"{len(near)} game(s) near tip -> probing 1xbet")
     nearkw = [TEAMKW.get(t, [t.lower()]) for t in teams]
     inj = injuries()                                  # ESPN injury report (works even when 1xbet is blocked)
+    nso = new_star_outs(teams, inj)                   # teams with a FRESH star-out -> guard teammate UNDERS (usage-spike traps)
+    if nso:
+        print("FRESH star-outs (under-guard active): " + ", ".join(f"{t}:{s.split()[-1]}" for t, s in nso.items()))
 
     disc = get(f"{BASE}/LineFeed/Get1x2_VZip?sports=3&champs={CHAMP}&count=40&lng=en&mode=4&country=115&getEmpty=true&virtualSports=true")
     if not disc:
@@ -487,14 +529,21 @@ def main():
             NEW_SIGS = ("ftdrought", "steady", "streak", "ppseff")
             is_new = bside == "Under" and any(s in sig for s in NEW_SIGS)
             src = "flip" if is_flip else ("newunder" if is_new else ("model" if bside == "Under" else "hotover"))
+            tmab = _team_ab(pks[0].get("team", ""))
+            # INVERSE-CASCADE GUARD: a FRESH star-out spikes teammates' usage, breaking an UNDER's mean-reversion
+            # thesis (the model anchors on a now-stale median). Downgrade such unders to PAPER + retag src=starout so
+            # they never reach the real-BET ping or the PROVEN record. (Overs are left alone — a star-out HELPS them.)
+            star_trap = bside == "Under" and bool(nso.get(tmab)) and nso[tmab].lower() != player.lower()
+            if star_trap:
+                src = "starout"
             if st == "OK":                            # log confirmed-active bets for grading (+ Pinnacle line for sharp CLV)
                 betstruct.append([player, base, bside, line, odds, _tier(ph), round(ev, 3), pin.get(_pkey(player), {}).get(base, ""), src])
             pinref = pin.get(_pkey(player), {}).get(base)
             cstr = f" · Pinn {pinref}" if pinref is not None else ""
-            tmab = _team_ab(pks[0].get("team", ""))
-            paper = is_new or src == "hotover"        # hot-PRA-over is the downgraded/weak signal -> PAPER, never a BET ping
+            paper = is_new or src == "hotover" or star_trap   # weak hotover + newunder forward-test + star-out trap -> PAPER, never a BET ping
+            warn = f" ⚠{nso[tmab].split()[-1]}-OUT" if star_trap else ""
             flip = " 🎯FLIP" if is_flip else (" 🧪PAPER" if paper else "")
-            txt = f"• **{player}** ({tmab}) {base.upper()} {bside} **{line} @ {odds}** [{_tier(ph)}{flip} · {sig} · hit {ph*100:.0f}% · EV {ev*100:+.0f}%]{cstr}"
+            txt = f"• **{player}** ({tmab}) {base.upper()} {bside} **{line} @ {odds}** [{_tier(ph)}{flip}{warn} · {sig} · hit {ph*100:.0f}% · EV {ev*100:+.0f}%]{cstr}"
             claimed_players.add(player.lower())       # model has a line on this player now -> overshoot scan must not add a 2nd line for them
             if st == "HOLD":
                 holds.append(txt + " ⏳unconfirmed")
