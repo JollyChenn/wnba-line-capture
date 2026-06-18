@@ -4,7 +4,7 @@
 # instant a player we'd bet becomes a LATE SCRATCH (out/doubtful, or lineup posted and they're
 # not in it) -> pull the bet. Idempotent via lineup_pinged.json. stdlib-only (no pip).
 # Run every ~15 min during tip hours (workflow: lineup-confirm.yml).
-import os, sys, json, re, csv, urllib.request
+import os, sys, json, re, csv, datetime, urllib.request
 try: sys.stdout.reconfigure(encoding="utf-8")
 except Exception: pass
 
@@ -65,6 +65,22 @@ for r in rows:
     prev = picks.get(k)
     picks[k] = (r["player"], r["game_id"], (prev[2] if prev else False) or is_real)
 
+# tip times (UTC) -> only run the official-lineup check as each game APPROACHES tip
+TIPW = int(os.environ.get("LINEUP_WINDOW_MIN", "45"))   # start checking ~45 min out (ESPN posts actives ~T-30)
+tips = {}
+if os.path.exists("data/games_2026.csv"):
+    for g in csv.DictReader(open("data/games_2026.csv", encoding="utf-8")):
+        t = g.get("tip", "")
+        if t:
+            try:
+                tips[str(g["game_id"])] = datetime.datetime.fromisoformat(t.replace("Z", "+00:00"))
+            except Exception:
+                pass
+now = datetime.datetime.now(datetime.timezone.utc)
+def mins_to_tip(gid):
+    tp = tips.get(str(gid))
+    return (tp - now).total_seconds() / 60 if tp else None
+
 # confirmed actives per game (cached) — empty until ESPN posts the lineup (~30 min pre-tip)
 _acts = {}
 def actives(gid):
@@ -80,15 +96,19 @@ def actives(gid):
     _acts[gid] = (s, len(s) > 0)
     return _acts[gid]
 
-# resolve scratches among our pick players
+# resolve scratches among our pick players — ONLY for games in the ~T-45..T-0 window
 scratched = []
 for k, (name, gid, is_real) in picks.items():
+    m = mins_to_tip(gid)
+    if m is None or m > TIPW or m < -15:          # too early (lineup not up) or game already underway -> skip
+        continue
+    tnote = f", ~{m:.0f} min to tip"
     st = inj.get(k, "")
     if st in SCRATCH:
-        scratched.append((name, is_real, f"{st.upper()} (injury feed)")); continue
+        scratched.append((name, is_real, f"{st.upper()} (injury feed){tnote}")); continue
     acts, posted = actives(gid)
     if posted and k not in acts:
-        scratched.append((name, is_real, "NOT in confirmed lineup"))
+        scratched.append((name, is_real, f"NOT in confirmed lineup{tnote}"))
 
 # dedup + ping (one alert per player per slate)
 state = set(json.load(open(STATE))) if os.path.exists(STATE) else set()
@@ -105,6 +125,9 @@ if new:
     json.dump(sorted(state), open(STATE, "w"))
     print("scratches pinged:", [n for n, _, _ in new])
 else:
-    posted_n = sum(1 for k, (n, g, r) in picks.items() if actives(g)[1])
-    print(f"lineup guard: {len(picks)} pick players, no new scratches "
-          f"(lineups posted for {posted_n}); slate {latest}")
+    inwin = [(n, g) for k, (n, g, r) in picks.items()
+             if (mins_to_tip(g) is not None and -15 <= mins_to_tip(g) <= TIPW)]
+    nearest = min((mins_to_tip(g) for _, g in inwin), default=None)
+    near_s = f"nearest tip ~{nearest:.0f} min" if nearest is not None else "no game within window"
+    print(f"lineup guard: {len(inwin)} pick players within {TIPW} min of tip, no new scratches "
+          f"({near_s}); slate {latest}")
