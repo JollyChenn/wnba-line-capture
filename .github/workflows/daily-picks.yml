@@ -23,11 +23,13 @@ jobs:
         run: python daily_picks.py   # NO DISCORD_WEBHOOK -> no slate ping. The capture bot (cloud_xbet) does ALL pinging now: live-line bets (hit%/EV/team) + per-cycle heartbeat. (The old median/proj slate preview is disabled.)
       - name: Validate gathered data (freshness / range / dups / picks complete)
         run: python validate_data.py || echo "::warning::data validation flagged issues (see log above)"
+      - name: Rebuild HTML dashboard
+        run: python build_dashboard.py || true
       - name: Commit picks + data cache
         run: |
           git config user.name "wnba-picks-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add PICKS.md picks_log.csv data/*.csv 2>/dev/null || true
+          git add PICKS.md picks_log.csv dashboard.html data/*.csv 2>/dev/null || true
           if git diff --staged --quiet; then
             echo "nothing new"
           else

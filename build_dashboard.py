@@ -199,7 +199,7 @@ td{font-size:14px}
 <div class="sub2" style="margin-top:6px">*P&amp;L is vs a synthetic line, not realized cash. Breakeven at 1xbet ~1.80 = 55.6%.</div>
 <h2>Mean CLV by signal (the number that matters)</h2><div class="box">__SVG__</div>
 <h2>Today's slate — __LATEST__</h2>
-<div class="sub2" style="margin-bottom:10px">🩹 __OUT__</div>
+<div class="sub2" style="margin-bottom:10px">__OUT__</div>
 <div class="cols">
 <div class="box"><h3>✅ Real-money (model / flip)</h3>__REAL__</div>
 <div class="box"><h3>🧪 Paper / experimental</h3>__PAPER__</div>
