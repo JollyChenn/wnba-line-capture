@@ -568,9 +568,13 @@ def main():
                 continue
             live = pra_line(props, ben)
             if live and live[0] <= med + 1 and live[1] > CASC_FAIR:        # value zone + beats cascade-fair
-                legs.append(f"{ben} O{live[0]}@{live[1]}")
+                bline, bodds = float(live[0]), float(live[1])
+                legs.append(f"{ben} O{bline}@{bodds}")
             else:
-                legs.append(f"{ben} O{np.floor(med-0.001)+0.5:.1f} PRA (1xbet? need >{CASC_FAIR})")
+                bline, bodds = float(np.floor(med - 0.001) + 0.5), CASC_FAIR   # line lagging -> suggested floor + nominal fair
+                legs.append(f"{ben} O{bline:.1f} PRA (1xbet? need >{CASC_FAIR})")
+            betstruct.append([ben, "pra", "Over", bline, bodds, "CASC", 0.0,
+                              pin.get(_pkey(ben), {}).get("pra", ""), "cascade"])   # LOG cascade legs so they GRADE (hit-rate; CLV approx when the line lags)
         casc.append(f"🚨 **{team}: {w['star']} OUT** → cascade PRA OVER: " + ", ".join(legs))
 
     # ---- board-wide overshoot-overs (any player whose 1xbet over line is >=3 below their median) ----
