@@ -1,20 +1,26 @@
-# lineup_check.py — NEAR-TIP LINEUP GUARD (the ~20-min-before confirmed-lineup check).
-# ESPN confirmed actives (boxscore.players) populate ~30 min pre-tip. This re-checks every
-# PICK player against BOTH the injury feed AND the confirmed actives, and pings Discord the
-# instant a player we'd bet becomes a LATE SCRATCH (out/doubtful, or lineup posted and they're
-# not in it) -> pull the bet. Idempotent via lineup_pinged.json. stdlib-only (no pip).
-# Run every ~15 min during tip hours (workflow: lineup-confirm.yml).
+# lineup_check.py — NEAR-TIP LINEUP GUARD (the before-tip official-lineup confirmation).
+# Cross-confirms every PICK player across THREE sources and pings BEFORE tip so you never
+# accidentally bet a scratch or a shaky day-to-day:
+#   1) ESPN injuries feed  ............ out/doubtful + day-to-day (hours ahead)
+#   2) ESPN summary boxscore.players .. the OFFICIAL confirmed actives (~T-30)
+#   3) RotoWire lineups (fail-open) ... projected/confirmed + play-% (earliest, non-ESPN)
+# Two tiers:  ❌ PULL  (confirmed OUT / not in the confirmed lineup)
+#             ⚠️ DO NOT BET (day-to-day / GTD / doubtful — uncertain, don't risk it)
+# Idempotent via lineup_pinged.json. stdlib-only. Runs every ~10 min in tip hours.
 import os, sys, json, re, csv, datetime, urllib.request
 try: sys.stdout.reconfigure(encoding="utf-8")
 except Exception: pass
 
 WEBHOOK = os.environ.get("DISCORD_WEBHOOK", "")
-H = {"User-Agent": "Mozilla/5.0"}        # Discord silently drops default-agent posts -> UA required
+UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36"}
 SUM = "https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/summary?event="
 INJ = "https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/injuries"
+ROTO = "https://www.rotowire.com/wnba/lineups.php"
 STATE = "lineup_pinged.json"
-SCRATCH = {"out", "doubtful"}
-PAPER_SIGS = {"ftdrought", "steady", "usgshock"}   # everything else = real-money (model/flip/hot)
+TIPW = int(os.environ.get("LINEUP_WINDOW_MIN", "90"))     # start confirming this many min before tip
+SCR_INJ = {"out", "doubtful"}                             # hard scratch
+FLAG_WORDS = ("day-to-day", "day to day", "quest", "game-time", "game time", "probable", "gtd")
+PAPER_SIGS = {"ftdrought", "steady", "usgshock"}
 
 
 def key_of(n):
@@ -24,9 +30,13 @@ def key_of(n):
 
 def getj(u):
     try:
-        return json.load(urllib.request.urlopen(urllib.request.Request(u, headers=H), timeout=20))
+        return json.load(urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=20))
     except Exception:
         return {}
+
+
+def gethtml(u):
+    return urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=25).read().decode("utf-8", "replace")
 
 
 def ping(msg):
@@ -35,13 +45,13 @@ def ping(msg):
     try:
         urllib.request.urlopen(urllib.request.Request(
             WEBHOOK, data=json.dumps({"content": msg}).encode(),
-            headers={**H, "Content-Type": "application/json"}), timeout=15)
+            headers={**UA, "Content-Type": "application/json"}), timeout=15)
         print("pinged Discord")
     except Exception as e:
         print("discord err", e)
 
 
-# injury feed -> {key: status}
+# --- source 1: ESPN injuries -------------------------------------------------
 inj = {}
 for tm in getj(INJ).get("injuries", []):
     for it in tm.get("injuries", []):
@@ -49,10 +59,28 @@ for tm in getj(INJ).get("injuries", []):
         if a:
             inj[key_of(a)] = (it.get("status") or "").lower()
 
-# pick players (latest slate), real-money flagged
+# --- source 3: RotoWire projected/confirmed (fail-open) ----------------------
+# Each player li: class="lineup__player is-pct-play-100" title="STATUS" ... <a title="NAME" href="/wnba/player/
+def rotowire():
+    rw = {}
+    try:
+        html = gethtml(ROTO)
+    except Exception as e:
+        print("rotowire fetch failed (fail-open):", e); return rw
+    for m in re.finditer(
+            r'lineup__player\b[^>]*?is-pct-play-(\d+)"[^>]*?title="([^"]*)"[^>]*>.*?<a title="([^"]+)" href="/wnba/player/',
+            html, re.S):
+        pct = int(m.group(1)); status = m.group(2).strip(); k = key_of(m.group(3))
+        if k not in rw or pct < rw[k][0]:                 # keep the worst (lowest play-%)
+            rw[k] = (pct, status)
+    return rw
+
+rw = rotowire()
+
+# --- pick players (latest slate) + tip times ---------------------------------
 if not os.path.exists("picks_log.csv"):
     print("no picks_log.csv"); raise SystemExit
-rows = list(csv.DictReader(open("picks_log.csv", encoding="utf-8")))
+rows = [r for r in csv.DictReader(open("picks_log.csv", encoding="utf-8"))]
 if not rows:
     print("picks_log empty"); raise SystemExit
 latest = max(r["pick_date"] for r in rows)
@@ -60,28 +88,23 @@ picks = {}
 for r in rows:
     if r["pick_date"] != latest:
         continue
-    k = key_of(r["player"])
-    is_real = r.get("signals", "") not in PAPER_SIGS
+    k = key_of(r["player"]); real = r.get("signals", "") not in PAPER_SIGS
     prev = picks.get(k)
-    picks[k] = (r["player"], r["game_id"], (prev[2] if prev else False) or is_real)
+    picks[k] = (r["player"], r["game_id"], r.get("team", ""), (prev[3] if prev else False) or real)
 
-# tip times (UTC) -> only run the official-lineup check as each game APPROACHES tip
-TIPW = int(os.environ.get("LINEUP_WINDOW_MIN", "45"))   # start checking ~45 min out (ESPN posts actives ~T-30)
 tips = {}
 if os.path.exists("data/games_2026.csv"):
     for g in csv.DictReader(open("data/games_2026.csv", encoding="utf-8")):
         t = g.get("tip", "")
         if t:
-            try:
-                tips[str(g["game_id"])] = datetime.datetime.fromisoformat(t.replace("Z", "+00:00"))
-            except Exception:
-                pass
+            try: tips[str(g["game_id"])] = datetime.datetime.fromisoformat(t.replace("Z", "+00:00"))
+            except Exception: pass
 now = datetime.datetime.now(datetime.timezone.utc)
 def mins_to_tip(gid):
     tp = tips.get(str(gid))
     return (tp - now).total_seconds() / 60 if tp else None
 
-# confirmed actives per game (cached) — empty until ESPN posts the lineup (~30 min pre-tip)
+# --- source 2: ESPN confirmed actives (cached) -------------------------------
 _acts = {}
 def actives(gid):
     if gid in _acts:
@@ -91,43 +114,62 @@ def actives(gid):
         for st in tm.get("statistics", []):
             for a in st.get("athletes", []):
                 nm = (a.get("athlete") or {}).get("displayName")
-                if nm:
-                    s.add(key_of(nm))
+                if nm: s.add(key_of(nm))
     _acts[gid] = (s, len(s) > 0)
     return _acts[gid]
 
-# resolve scratches among our pick players — ONLY for games in the ~T-45..T-0 window
-scratched = []
-for k, (name, gid, is_real) in picks.items():
+# --- classify each pick player (only games approaching tip) ------------------
+pull, flag = [], []           # (name, team, is_real, mins, reasons)
+for k, (name, gid, team, real) in picks.items():
     m = mins_to_tip(gid)
-    if m is None or m > TIPW or m < -15:          # too early (lineup not up) or game already underway -> skip
+    if m is None or m > TIPW or m < -15:
         continue
-    tnote = f", ~{m:.0f} min to tip"
-    st = inj.get(k, "")
-    if st in SCRATCH:
-        scratched.append((name, is_real, f"{st.upper()} (injury feed){tnote}")); continue
+    scr_r, flg_r = [], []
+    ei = inj.get(k, "")
+    if ei in SCR_INJ:
+        scr_r.append(f"ESPN {ei}")
+    elif ei and any(w in ei for w in FLAG_WORDS):
+        flg_r.append(f"ESPN {ei}")
+    if k in rw:
+        pct, stxt = rw[k]
+        if pct == 0: scr_r.append(f"RotoWire {stxt}")
+        elif pct < 100: flg_r.append(f"RotoWire {stxt} {pct}%")
     acts, posted = actives(gid)
     if posted and k not in acts:
-        scratched.append((name, is_real, f"NOT in confirmed lineup{tnote}"))
+        scr_r.append("NOT in confirmed lineup")
+    if scr_r:
+        pull.append((name, team, real, m, scr_r))
+    elif flg_r:
+        flag.append((name, team, real, m, flg_r))
 
-# dedup + ping (one alert per player per slate)
+# --- dedup + ping (separate tiers so flag->scratch escalation re-pings) -------
 state = set(json.load(open(STATE))) if os.path.exists(STATE) else set()
-new = [(n, real, why) for (n, real, why) in scratched if f"{latest}|{key_of(n)}" not in state]
-if new:
-    reals = [f"**{n}** — {why}" for n, real, why in new if real]
-    paps  = [f"{n} — {why}" for n, real, why in new if not real]
-    parts = ["🚨 **LINEUP GUARD — late scratch, pull these bets:**"]
-    if reals: parts.append("✅ real-money: " + "; ".join(reals))
-    if paps:  parts.append("🧪 paper: " + "; ".join(paps))
+def fresh(items, tier):
+    out = []
+    for it in items:
+        key = f"{latest}|{key_of(it[0])}|{tier}"
+        if key not in state:
+            out.append(it); state.add(key)
+    return out
+
+new_pull, new_flag = fresh(pull, "scr"), fresh(flag, "flag")
+if new_pull or new_flag:
+    def line(it):
+        name, team, real, m, rs = it
+        tag = "💰 " if real else "🧪 "
+        return f"   {tag}**{name}** ({team}, ~{m:.0f} min) — {'; '.join(rs)}"
+    parts = ["🚨 **LINEUP GUARD — confirm before betting:**"]
+    if new_pull:
+        parts.append("❌ **PULL (confirmed out / not in lineup):**\n" + "\n".join(line(i) for i in new_pull))
+    if new_flag:
+        parts.append("⚠️ **DO NOT BET (day-to-day / uncertain):**\n" + "\n".join(line(i) for i in new_flag))
     ping("\n".join(parts))
-    for n, _, _ in new:
-        state.add(f"{latest}|{key_of(n)}")
     json.dump(sorted(state), open(STATE, "w"))
-    print("scratches pinged:", [n for n, _, _ in new])
+    print("pulls:", [i[0] for i in new_pull], "| flags:", [i[0] for i in new_flag])
 else:
-    inwin = [(n, g) for k, (n, g, r) in picks.items()
+    inwin = [k for k, (n, g, t, r) in picks.items()
              if (mins_to_tip(g) is not None and -15 <= mins_to_tip(g) <= TIPW)]
-    nearest = min((mins_to_tip(g) for _, g in inwin), default=None)
-    near_s = f"nearest tip ~{nearest:.0f} min" if nearest is not None else "no game within window"
-    print(f"lineup guard: {len(inwin)} pick players within {TIPW} min of tip, no new scratches "
-          f"({near_s}); slate {latest}")
+    nearest = min((mins_to_tip(picks[k][1]) for k in inwin), default=None)
+    print(f"lineup guard: {len(inwin)} pick players within {TIPW} min "
+          f"({'nearest ~%.0f min' % nearest if nearest is not None else 'none near tip'}), "
+          f"no new flags · ESPN inj={len(inj)} RotoWire={len(rw)} · slate {latest}")
