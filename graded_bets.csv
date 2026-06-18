@@ -9,6 +9,17 @@ date,player,market,side,line,odds,tier,actual,result,pnl,odds_clv,line_clv,sharp
 20260615,Natasha Howard,pa,Over,19.5,1.87,STRONG,19.0,loss,-1.0,0.0,0.0,,overshoot
 20260615,Paige Bueckers,pra,Over,28.5,1.909,STRONG,22.0,loss,-1.0,0.0,0.0,,overshoot
 20260616,Aliyah Boston,pra,Over,28.5,1.87,THIN,33.0,WIN,0.87,0.0,0.0,,hotover
+20260617,Arike Ogunbowale,pa,Over,17.5,1.91,THIN,24.0,WIN,0.91,0.001,0.0,,flip
+20260617,Azzi Fudd,pts,Over,12.5,1.92,THIN,10.0,loss,-1.0,0.011,0.0,0.0,flip
+20260617,Courtney Williams,pts,Under,16.5,1.76,SOLID,13.0,WIN,0.76,-0.038,0.0,1.0,newunder
+20260617,Dearica Hamby,pra,Under,22.5,1.909,STRONG,23.0,loss,-1.0,0.061,-3.0,,model
 20260617,Gabriela Jaquez,pts,Under,8.5,1.84,THIN,22.0,loss,-1.0,0.004,0.0,,model
-20260617,Kamilla Cardoso,pra,Under,23.5,1.714,STRONG,18.0,WIN,0.71,-0.143,1.0,,model
-20260617,Michaela Onyenwere,pts,Over,9.5,1.8,STRONG,22.0,WIN,0.8,0.059,0.0,,overshoot
+20260617,Jessica Shepard,pts,Over,11.5,1.82,SOLID,14.0,WIN,0.82,-0.081,0.0,0.0,flip
+20260617,Kahleah Copper,pra,Over,23.5,1.87,SOLID,33.0,WIN,0.87,0.0,0.0,,hotover
+20260617,Kamilla Cardoso,pra,Under,23.5,1.714,STRONG,18.0,WIN,0.71,-0.103,1.0,,model
+20260617,Kayla McBride,pts,Under,14.5,1.81,STRONG,14.0,WIN,0.81,-0.022,0.0,0.0,newunder
+20260617,Michaela Onyenwere,pts,Over,9.5,1.8,STRONG,22.0,WIN,0.8,-0.1,1.0,,overshoot
+20260617,Nalyssa Smith,pr,Over,16.5,1.87,STRONG,26.0,WIN,0.87,0.0,0.0,,overshoot
+20260617,Natasha Howard,pts,Over,16.5,1.82,STRONG,15.0,loss,-1.0,0.011,0.0,,overshoot
+20260617,Natisha Hiedeman,pr,Over,15.5,1.833,STRONG,23.0,WIN,0.83,0.0,0.0,,overshoot
+20260617,Sarah Ashlee Barker,pts,Under,10.5,1.78,STRONG,12.0,loss,-1.0,-0.027,0.0,,newunder
