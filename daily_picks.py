@@ -37,6 +37,38 @@ _H = {"User-Agent": "Mozilla/5.0"}
 SB = "https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard"
 SUMMARY = "https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/summary"
 SEASON_START = datetime.date(2026, 5, 8)
+INJ = "https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/injuries"
+_SCRATCH = {"out", "doubtful"}
+
+
+def injuries():
+    """ESPN injury feed -> {displayName: status_lower}. Fail-open (empty) on any error."""
+    try:
+        r = requests.get(INJ, headers=_H, timeout=20).json()
+    except Exception:
+        return {}
+    out = {}
+    for tm in r.get("injuries", []):
+        for it in tm.get("injuries", []):
+            ath = (it.get("athlete") or {}).get("displayName")
+            if ath:
+                out[ath] = (it.get("status") or "").lower()
+    return out
+
+
+def is_out(player, inj):
+    """OUT/doubtful? Exact name match, then first-initial+surname fallback (minor format diffs)."""
+    s = inj.get(player, "")
+    if s:
+        return s in _SCRATCH
+    p = str(player).lower().split()
+    if len(p) >= 2:
+        key = p[0][0] + " " + p[-1]
+        for k, v in inj.items():
+            kp = k.lower().split()
+            if len(kp) >= 2 and kp[0][0] + " " + kp[-1] == key:
+                return v.lower() in _SCRATCH
+    return False
 DATA = "data"; os.makedirs(DATA, exist_ok=True)
 BOX_CSV = os.path.join(DATA, "box_2026.csv")
 GAMES_CSV = os.path.join(DATA, "games_2026.csv")
@@ -284,6 +316,9 @@ def main():
         })
     f = pd.DataFrame(feats)
     f["trend"] = f.t5_min - f.t10_min
+    inj = injuries()                                       # ESPN injuries -> exclude OUT/doubtful from EVERY pick list
+    f["out"] = f.player.apply(lambda p: is_out(p, inj))
+    out_names = sorted(f[f.out].player.tolist())
 
     # team trailing-10 defense (points allowed)
     da = pd.concat([
@@ -296,8 +331,11 @@ def main():
     leaky_thr = np.nanpercentile(list(dmap.values()), 75)   # top-quartile defense = LEAKY (for hot-overs)
 
     today = _slate_today()
+    inj_note = (f"_🩹 OUT/doubtful (excluded from ALL picks): {', '.join(out_names)}_"
+                if out_names else "_🩹 No OUT/doubtful players flagged._")
     lines_md = [f"# WNBA core picks — {today}",
                 "", f"_Stingy-D threshold (trailing-10 allowed, bottom quartile): {stingy_thr:.0f}_",
+                "", inj_note,
                 "", "## REAL-MONEY CORE — UNDER pts (need >=2 signals, flat 1u)", ""]
     log_rows = []
     core_picks = []          # compact lines for the Discord ping
@@ -335,7 +373,7 @@ def main():
             cold = sub[f"t3_{mkt}"] <= sub[f"med_{mkt}"] - cthr
             ok = ((sub.shrink.astype(int) + cold.astype(int) + sub.stingy.astype(int)) >= 2) if use_st \
                  else (sub.shrink & cold)
-            for idx, r in sub[ok & (sub[f"med_{mkt}"] >= floor_)].iterrows():
+            for idx, r in sub[ok & (sub[f"med_{mkt}"] >= floor_) & ~sub.out].iterrows():
                 slab = "declining" if r.declining else ("disrupted" if r.disrupted else "mins-dip")
                 flags = [(slab, bool(r.shrink)), ("cold", bool(cold[idx]))]
                 if use_st:
@@ -378,7 +416,7 @@ def main():
 
         # HOT-streak OVER on PRA (the one over-market that cleared the gauntlet, 58.7%)
         sub["leaky"] = sub.opp_def >= leaky_thr
-        for idx, r in sub[sub.med_pra >= 13.5].iterrows():
+        for idx, r in sub[(sub.med_pra >= 13.5) & ~sub.out].iterrows():
             if r.player in pm:                          # hot & cold are mutually exclusive — skip dupes
                 continue
             hot = bool(r.t3_pra >= r.med_pra + 4); exp = bool(r.trend >= 3); lk = bool(r.leaky)
@@ -409,7 +447,7 @@ def main():
         # PAPER ONLY: emitted to picks_log so the capture/grade pipeline logs forward CLV, but walled off from the
         # proven record (cloud_xbet tags these src=newunder) and NEVER added to the BET ping. Bet POINTS, not PRA.
         for idx, r in sub.iterrows():
-            if r.player in pm or r.med_pts < 8.5:        # a proven cold+shrink under takes precedence
+            if r.player in pm or r.med_pts < 8.5 or r.out:   # proven under takes precedence OR player is OUT
                 continue
             eft = r.get("fta_t6"); ecv = r.get("cv_pts"); em10 = r.get("pts_mean10"); eoc = r.get("over_consec")
             esig = None
@@ -436,7 +474,7 @@ def main():
             u5, u20 = r.get("usg"), r.get("usg20")
             # CONFLICT GUARD (edge-hunt 2026-06-18): if the player is ALSO a proven cold+shrink UNDER, defer to the
             # UNDER — on that 9.3% overlap the usgshock OVER hits only 36.6%, the UNDER decisively wins.
-            if r.player in pm or pd.isna(u5) or pd.isna(u20) or (u5 - u20) < 4 or pd.isna(r.med_ast) or r.med_ast < 1.5:
+            if r.player in pm or r.out or pd.isna(u5) or pd.isna(u20) or (u5 - u20) < 4 or pd.isna(r.med_ast) or r.med_ast < 1.5:
                 continue
             aln = float(np.floor(r.med_ast - 0.001) + 0.5)
             aproj = round(aln + 0.4, 1)                     # modest lift above the median line -> ~59% over (matches backtest)
@@ -454,8 +492,11 @@ def main():
             tt = f[f.team == tm].sort_values("usg", ascending=False)
             if len(tt) < 5:
                 continue
-            star = tt.iloc[0]
+            star = tt.iloc[0]                              # the trigger (may itself be OUT — that IS the condition)
             ben = tt.iloc[2:6]
+            ben = ben[~ben.out]                            # drop beneficiaries who are THEMSELVES out (e.g. Iriafen) — can't carry the cascade
+            if ben.empty:
+                continue
             names = ", ".join(f"{b.player} OVER {np.floor(b.med_pra - 0.001) + 0.5:.1f} PRA"
                               for _, b in ben.iterrows())
             lines_md.append(f"- {NAME(tm)}: if **{star.player}** OUT -> (fair {fair_odds(CASCADE_FAIR_P)}, "
