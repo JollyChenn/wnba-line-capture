@@ -9,3 +9,6 @@ date,player,market,side,line,odds,tier,actual,result,pnl,odds_clv,line_clv,sharp
 20260615,Natasha Howard,pa,Over,19.5,1.87,STRONG,19.0,loss,-1.0,0.0,0.0,,overshoot
 20260615,Paige Bueckers,pra,Over,28.5,1.909,STRONG,22.0,loss,-1.0,0.0,0.0,,overshoot
 20260616,Aliyah Boston,pra,Over,28.5,1.87,THIN,33.0,WIN,0.87,0.0,0.0,,hotover
+20260617,Gabriela Jaquez,pts,Under,8.5,1.84,THIN,22.0,loss,-1.0,0.004,0.0,,model
+20260617,Kamilla Cardoso,pra,Under,23.5,1.714,STRONG,18.0,WIN,0.71,-0.143,1.0,,model
+20260617,Michaela Onyenwere,pts,Over,9.5,1.8,STRONG,22.0,WIN,0.8,0.059,0.0,,overshoot
