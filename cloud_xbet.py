@@ -246,8 +246,8 @@ def load_picks():
         side = "Over" if r["market"].endswith("over") else "Under"
         if base not in STAT_T or "disrupt" in r.get("signals", "").lower():
             continue
-        if side == "Over" and base != "pra":
-            continue
+        if side == "Over" and base != "pra" and "usgshock" not in r.get("signals", ""):
+            continue       # overs allowed only for PRA flips/hotovers + the usgshock ASSIST forward-test
         picks[r["player"]].append({"base": base, "side": side, "anchor": float(r["anchor"]),
                                    "proj": float(r["proj"]), "fair": float(r["fair_odds"]),
                                    "sd": float(r.get("sd") or 0),
@@ -527,13 +527,13 @@ def main():
                             cands.append((pov, pk["base"], "Over", oline, oodds, oodds / ofair - 1, True))
         if cands:
             ph, base, bside, line, odds, ev, is_flip = max(cands, key=lambda c: c[0])  # highest-confidence bet for this player
-            sig = pks[0].get("sig", "")               # the pick's signal label (drives src + ping routing)
+            sig = next((pk.get("sig", "") for pk in pks if pk["base"] == base and pk["side"] == bside), pks[0].get("sig", ""))  # WINNING pick's signal -> src/routing
             # src tags the SIGNAL so grade_bets/clv_reader keep the PROVEN record (cold+shrink under + flip)
             # separate from the UNPROVEN ones. newunder = volume-brute-force forward-test (ftdrought/steady+streak):
             # captured for CLV but PAPER-only. model=cold+shrink under, flip=cratered over, hotover=hot-PRA-over.
             NEW_SIGS = ("ftdrought", "steady", "streak", "ppseff")
             is_new = bside == "Under" and any(s in sig for s in NEW_SIGS)
-            src = "flip" if is_flip else ("newunder" if is_new else ("model" if bside == "Under" else "hotover"))
+            src = "flip" if is_flip else ("newunder" if is_new else ("usgshock" if "usgshock" in sig else ("model" if bside == "Under" else "hotover")))
             tmab = _team_ab(pks[0].get("team", ""))
             # INVERSE-CASCADE GUARD: a FRESH star-out spikes teammates' usage, breaking an UNDER's mean-reversion
             # thesis (the model anchors on a now-stale median). Downgrade such unders to PAPER + retag src=starout so
@@ -545,7 +545,7 @@ def main():
                 betstruct.append([player, base, bside, line, odds, _tier(ph), round(ev, 3), pin.get(_pkey(player), {}).get(base, ""), src])
             pinref = pin.get(_pkey(player), {}).get(base)
             cstr = f" · Pinn {pinref}" if pinref is not None else ""
-            paper = is_new or src == "hotover" or star_trap   # weak hotover + newunder forward-test + star-out trap -> PAPER, never a BET ping
+            paper = is_new or src == "hotover" or star_trap or src == "usgshock"   # hotover/newunder/star-trap/usgshock -> PAPER, never a real-BET ping
             warn = f" ⚠{nso[tmab].split()[-1]}-OUT" if star_trap else ""
             flip = " 🎯FLIP" if is_flip else (" 🧪PAPER" if paper else "")
             txt = f"• **{player}** ({tmab}) {base.upper()} {bside} **{line} @ {odds}** [{_tier(ph)}{flip}{warn} · {sig} · hit {ph*100:.0f}% · EV {ev*100:+.0f}%]{cstr}"

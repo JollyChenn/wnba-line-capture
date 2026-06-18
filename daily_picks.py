@@ -273,6 +273,7 @@ def main():
             "last_min": grp["min"].iloc[-1],
             "recent_min": " ".join(f"{m:.0f}" for m in grp["min"].tail(5)),
             "usg": grp.usg_raw.tail(5).mean(),
+            "usg20": grp.usg_raw.tail(20).mean(),                               # usage-shock signal: usg5 - usg20 >= 4 -> assist over
             # --- NEW volume-brute-force UNDER atoms (forward-test, computable from box_2026 cols only) ---
             "fta_t6": grp.fta.tail(6).mean(),                                   # ft_volume_drought: not getting to the line
             "pps_t8": grp.pts.tail(8).sum() / max(grp.fga.tail(8).sum(), 1),    # points-per-shot (efficiency -> regress)
@@ -425,6 +426,20 @@ def main():
                              f"[{esig} · PAPER] median~{emed:.0f}→proj~{emu:.1f} · last5 mins [{r.recent_min}]")
             log_rows.append([str(today), gm_["game_id"], r.player, NAME(r.team), NAME(opp_of[r.team]),
                              "pts_under", eln, esig, round(efp, 3), efo, emu, round(esd, 2)])
+        # ---- 🧪 usage-shock -> ASSIST over (forward-test, src=usgshock) ----
+        # usg5-usg20 >= 4 (fresh role/ball-handling expansion) -> assists beat the trailing-10 median 59% (62.8% w/
+        # min>=10), n=1898, ALL 11 seasons, dose-response, assist-SPECIFIC (backtest 2026-06-18). PAPER ONLY; the
+        # median-proxy hit-rate may shrink vs a real book that shades the assist line up post-spike -> validate live CLV.
+        for idx, r in sub.iterrows():
+            u5, u20 = r.get("usg"), r.get("usg20")
+            if pd.isna(u5) or pd.isna(u20) or (u5 - u20) < 4 or pd.isna(r.med_ast) or r.med_ast < 1.5:
+                continue
+            aln = float(np.floor(r.med_ast - 0.001) + 0.5)
+            aproj = round(aln + 0.4, 1)                     # modest lift above the median line -> ~59% over (matches backtest)
+            exp_lines.append(f"- **{r.player}** ({NAME(r.team)}, {NAME(a)} @ {NAME(h)}): ASSISTS OVER ~{aln:.1f} "
+                             f"[usgshock · PAPER] usg {u20:.0f}->{u5:.0f} · med~{r.med_ast:.0f}->proj~{aproj:.1f}")
+            log_rows.append([str(today), gm_["game_id"], r.player, NAME(r.team), NAME(opp_of[r.team]),
+                             "ast_over", aln, "usgshock", 0.591, fair_odds(0.591), aproj, round(r.sd_ast, 2)])
     if not n_unders:
         lines_md.append("_(no 2-signal core unders today — do NOT reach for singles)_")
 
