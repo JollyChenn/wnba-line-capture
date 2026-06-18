@@ -1,0 +1,2 @@
+date,player,market,side,line,odds,stake_u,actual,result,pnl,entry_odds,close_odds,odds_clv,note
+20260617,Kamilla Cardoso,pr,Under,20.5,1.893,1,14,WIN,0.893,1.893,1.893,0.0,manual; 1xbet PR line dead-flat 1.893 for 25h (13 snapshots) -> CLV neutral
