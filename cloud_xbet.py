@@ -617,7 +617,7 @@ def main():
     within_24h = min_mins <= 1440             # hourly reminder only in the final 24h; the 48-24h window just CAPTURES + alerts a new bet once
     # REAL bets remind you EVERY cycle (hourly) within 24h; beyond 24h (and paper/overshoot/cascade) they ping
     # only when NEW or near-tip — so a 48h-early line is snapshotted for CLV without spamming 48 reminders.
-    if (bets and within_24h) or ((bets or forward or oso or casc) and (new_alert or near_tip)):
+    if (bets and within_24h) or ((bets or forward or casc) and (new_alert or near_tip)):
         parts = []
         if near_tip:
             parts.append(f"🔔 **NEAR TIP (~{int(min_mins)} min) — injury list & odds RECONFIRMED**")
@@ -625,8 +625,9 @@ def main():
             parts.append("✅ **BETS** (our model · line@odds · Pinn = sharp close for CLV):\n" + "\n".join(bets))
         if forward:
             parts.append("🧪 **FORWARD-TEST (PAPER — log CLV, do NOT bet real until +CLV)**:\n" + "\n".join(forward))
-        if oso:
-            parts.append("🎯 **OVERSHOOT-OVERS** (line ≥3 below median; injury/team-change/minutes/cold auto-checked; ✓sharp = Pinnacle confirms):\n" + "\n".join(oso))
+        # OVERSHOOT-OVERS removed from the ping (2026-06-17): record 2/7, and the "too-low" lines proved
+        # CORRECT (5/7 players came in UNDER) — i.e. NOT stale, so no soft-book edge, just inflated display EVs
+        # that tempt bad bets. Still captured to bets_log (betstruct above) so the sample grows silently for proof.
         if casc:
             parts.append("🧪 **EXPERIMENTAL** (star-out cascade — ~57% unproven, size small):\n" + "\n".join(casc))
         if holds_show:
@@ -639,7 +640,7 @@ def main():
              "(props may be unposted, or the posted price isn't in value). Model picks to check on 1xbet by hand:\n"
              + proj_msg(inj))
     else:                                             # EVERY cycle reports in — never go dark (user wants explicit "no bet")
-        live = bool(bets or oso or forward or casc)
+        live = bool(bets or forward or casc)         # overshoot no longer counts as "live" (hidden from ping, logged only)
         status = f"{len(betstruct)} pick(s) live (already alerted today)" if live else "NO qualifying bet this cycle"
         ping(f"🟢 **1xbet alive — {now.strftime('%H:%M')} UTC** · {status} · {len(props)} players scanned · nearest tip ~{int(min_mins)} min")
 
