@@ -54,6 +54,22 @@ def injuries():
     return out
 
 
+def _scratched(name, inj):
+    """True if this player is OUT/doubtful. Exact match first, then first-initial+surname fallback for
+    minor name-format diffs (so a beneficiary who is HERSELF out — e.g. Kiki Iriafen, ankle — is dropped)."""
+    s = inj.get(name, "").lower()
+    if s:
+        return s in SCRATCH
+    parts = name.lower().split()
+    if len(parts) >= 2:
+        key = parts[0][0] + " " + parts[-1]
+        for k, v in inj.items():
+            kp = k.lower().split()
+            if len(kp) >= 2 and kp[0][0] + " " + kp[-1] == key:
+                return v.lower() in SCRATCH
+    return False
+
+
 def watchlist():
     """Top-usage star + rank-3-6 PRA-beneficiaries per team, from the usage cache."""
     if not os.path.exists("data/box_2026.csv"):
@@ -103,12 +119,15 @@ def main():
             new.append((team, star, st, w["ben"])); state.add(key)
     if new:
         for team, star, st, ben in new:
+            ben = [(p, ln) for p, ln in ben if not _scratched(p, inj)]   # drop beneficiaries who are THEMSELVES out — they can't carry the cascade (Kiki Iriafen ankle bug)
+            if not ben:
+                print(f"  {star} scratch but every beneficiary is also out — no cascade"); continue
             tg = ", ".join(f"{p} OVER {ln:.1f} PRA" for p, ln in ben)
             msg = (f"🚨 **SCRATCH — {star} ({team}) {st.upper()}**\n"
                    f"Cascade → **PRA OVER** (fair ~1.75): {tg}\n"
                    f"_Fire FAST at 1xbet/Melbet if line ≤ shown & price > 1.75 — window is 20-40 min._")
             if WEBHOOK:
-                try: requests.post(WEBHOOK, json={"content": msg}, timeout=15)
+                try: requests.post(WEBHOOK, json={"content": msg}, headers=_H, timeout=15)
                 except Exception as e: print("discord err", e)
             print("PINGED:", star, team, st)
         json.dump(sorted(state), open(STATE, "w"))
