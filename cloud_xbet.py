@@ -646,8 +646,8 @@ def main():
              + proj_msg(inj))
     else:                                             # EVERY cycle reports in — never go dark (user wants explicit "no bet")
         live = bool(bets or forward or casc)         # overshoot no longer counts as "live" (hidden from ping, logged only)
-        status = f"{len(betstruct)} pick(s) live (already alerted today)" if live else "NO qualifying bet this cycle"
-        ping(f"🟢 **1xbet alive — {now.strftime('%H:%M')} UTC** · {status} · {len(props)} players scanned · nearest tip ~{int(min_mins)} min")
+        status = f"{len(betstruct)} already flagged today, nothing new" if live else "nothing to bet this cycle"
+        ping(f"🟢 **bot alive — {now.strftime('%H:%M')} UTC** · _heartbeat, not a bet_ · {status} · {len(props)} players scanned · nearest tip ~{int(min_mins)} min")
 
 
 if __name__ == "__main__":
