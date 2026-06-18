@@ -432,7 +432,9 @@ def main():
         # median-proxy hit-rate may shrink vs a real book that shades the assist line up post-spike -> validate live CLV.
         for idx, r in sub.iterrows():
             u5, u20 = r.get("usg"), r.get("usg20")
-            if pd.isna(u5) or pd.isna(u20) or (u5 - u20) < 4 or pd.isna(r.med_ast) or r.med_ast < 1.5:
+            # CONFLICT GUARD (edge-hunt 2026-06-18): if the player is ALSO a proven cold+shrink UNDER, defer to the
+            # UNDER — on that 9.3% overlap the usgshock OVER hits only 36.6%, the UNDER decisively wins.
+            if r.player in pm or pd.isna(u5) or pd.isna(u20) or (u5 - u20) < 4 or pd.isna(r.med_ast) or r.med_ast < 1.5:
                 continue
             aln = float(np.floor(r.med_ast - 0.001) + 0.5)
             aproj = round(aln + 0.4, 1)                     # modest lift above the median line -> ~59% over (matches backtest)
