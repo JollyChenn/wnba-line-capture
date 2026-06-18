@@ -1,0 +1,4 @@
+game_date,game_id,team,trigger_out,player,market,side,line,actual,result,odds_captured,clv,illustrative_pnl_at_1.75,note
+2026-06-17,401856996,WSH,Shakira Austin,Michaela Onyenwere,pra,Over,18.5,25,WIN,NOT_CAPTURED,NA,+0.75,Austin+Iriafen OUT; LINE is bot median-anchor NOT a real 1xbet line; fair ~1.75; real odds+CLV never captured
+2026-06-17,401856996,WSH,Shakira Austin,Cotie McMahon,pra,Over,9.5,12,WIN,NOT_CAPTURED,NA,+0.75,Austin+Iriafen OUT; LINE is bot median-anchor NOT a real 1xbet line; fair ~1.75; real odds+CLV never captured
+2026-06-17,401856996,WSH,Shakira Austin,Angela Dugalic,pra,Over,12.5,11,loss,NOT_CAPTURED,NA,-1.00,Austin+Iriafen OUT; LINE is bot median-anchor NOT a real 1xbet line; fair ~1.75; real odds+CLV never captured

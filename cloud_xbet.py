@@ -573,8 +573,9 @@ def main():
             else:
                 bline, bodds = float(np.floor(med - 0.001) + 0.5), CASC_FAIR   # line lagging -> suggested floor + nominal fair
                 legs.append(f"{ben} O{bline:.1f} PRA (1xbet? need >{CASC_FAIR})")
-            betstruct.append([ben, "pra", "Over", bline, bodds, "CASC", 0.0,
-                              pin.get(_pkey(ben), {}).get("pra", ""), "cascade"])   # LOG cascade legs so they GRADE (hit-rate; CLV approx when the line lags)
+            ev_c = round(bodds / CASC_FAIR - 1, 3)     # real EV vs cascade-fair (not 0.0) so the leg carries its edge into the record
+            betstruct.append([ben, "pra", "Over", bline, bodds, "CASC", ev_c,
+                              pin.get(_pkey(ben), {}).get("pra", ""), "cascade"])   # LOG cascade legs so they GRADE (odds+CLV+result; dedup-exempt)
         casc.append(f"🚨 **{team}: {w['star']} OUT** → cascade PRA OVER: " + ", ".join(legs))
 
     # ---- board-wide overshoot-overs (any player whose 1xbet over line is >=3 below their median) ----

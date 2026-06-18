@@ -68,6 +68,9 @@ def line_clv(our, ref, side):
 # to a fake 1/10 every time this re-ran). EV is the tiebreak (the bet the bot would actually have placed).
 best = {}                                              # (date, player) -> (market, side, ev) of the top-EV bet that day
 for (d, plow, mk, side), cl in caps.items():
+    if any(x[6] == "cascade" for x in cl):
+        continue                                       # cascade legs are EXEMPT from the one-per-player contest (a distinct
+                                                       # star-out PRA over) -- never let them displace, or be displaced by, a model bet
     ev = max(x[7] for x in cl)
     if (d, plow) not in best or ev > best[(d, plow)][2]:
         best[(d, plow)] = (mk, side, ev)
@@ -76,7 +79,8 @@ for (d, plow, mk, side), cl in caps.items():
 # is safe, always applies the dedup, and never leaves stale duplicate rows from older append-only runs.
 rows = []
 for (d, plow, mk, side), cl in caps.items():
-    if (mk, side) != best[(d, plow)][:2]:
+    is_casc = any(x[6] == "cascade" for x in cl)       # cascade exempt: graded as its own experimental over
+    if not is_casc and (mk, side) != best[(d, plow)][:2]:
         continue                                       # not this player's top-EV market that day -> drop (one bet per player)
     act = actual.get((plow, d, mk))
     if act is None:

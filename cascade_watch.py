@@ -12,8 +12,12 @@
 #
 # Run frequently during game hours (workflow: every 20 min, 19:00-03:00 UTC).
 # ============================================================================
-import os, sys, json, datetime
+import os, sys, json, csv, datetime
 import requests, pandas as pd, numpy as np
+try:
+    import cloud_xbet as cx                  # reuse the 1xbet board-pull + helpers for live-line capture
+except Exception:                            # never let a missing dep (e.g. curl_cffi) break the alert
+    cx = None
 try: sys.stdout.reconfigure(encoding="utf-8")
 except Exception: pass
 
@@ -102,6 +106,65 @@ def watchlist():
     return wl
 
 
+def _capture_cascade(legs_by_team):
+    """Pull the LIVE 1xbet PRA over for each beneficiary and append qualifying legs to
+    bets_log.csv (src=cascade) so they GRADE with REAL odds + CLV (not a synthetic anchor).
+    Best-effort: any failure is swallowed so the Discord alert is never affected."""
+    if cx is None:
+        print("  cloud_xbet unavailable -> cascade line-capture skipped (alert still sent)"); return
+    disc = cx.get(f"{cx.BASE}/LineFeed/Get1x2_VZip?sports=3&champs={cx.CHAMP}"
+                  "&count=40&lng=en&mode=4&country=115&getEmpty=true&virtualSports=true")
+    games = [e for e in (disc or {}).get("Value", []) if isinstance(e, dict) and e.get("I")]
+    props = {}
+    for e in games:
+        mv = cx.get(cx.gz(e["I"]))
+        sg = (mv.get("Value", {}) or {}).get("SG", []) if mv else []
+        stat = next((s for s in sg if "stat" in str(s.get("TG", "")).lower()), None)
+        if not stat:
+            continue
+        val = (cx.get(cx.gz(stat["I"])) or {}).get("Value", {}) or {}
+        def walk(o):
+            if isinstance(o, dict):
+                pl, T = o.get("PL"), o.get("T")
+                if isinstance(pl, dict) and T in cx.T2S and o.get("P") is not None and o.get("C"):
+                    st, sd = cx.T2S[T]
+                    props.setdefault(str(pl.get("N", "")).lower(), {}).setdefault((st, sd), []).append((float(o["P"]), float(o["C"])))
+                for x in o.values(): walk(x)
+            elif isinstance(o, list):
+                for x in o: walk(x)
+        walk(val)
+
+    stamp = datetime.datetime.now(datetime.timezone.utc).replace(microsecond=0).isoformat()
+    today_la = datetime.datetime.now(cx._SLATE_TZ).date().isoformat()    # slate date (matches cloud_xbet/grade_bets)
+    seen = set()                                                          # don't double-log the same leg today
+    if os.path.exists("bets_log.csv"):
+        for r in csv.DictReader(open("bets_log.csv", encoding="utf-8")):
+            if r.get("date") == today_la and r.get("src") == "cascade":
+                seen.add(r["player"].lower())
+    rows = []
+    for team, ben in legs_by_team.items():
+        for p, syn in ben:
+            if p.lower() in seen:
+                continue
+            live = cx.pra_line(props, p)
+            if not live:
+                continue                                                  # line not posted yet -> a later cycle / cloud_xbet catches it
+            bline, bodds = float(live[0]), float(live[1])
+            if bline <= syn + 1 and bodds > cx.CASC_FAIR:                 # value zone + price beats fair (the actual bet rule)
+                rows.append([stamp, today_la, p, "pra", "Over", bline, bodds,
+                             "CASC", round(bodds / cx.CASC_FAIR - 1, 3), "", "cascade"])
+    if rows:
+        newf = not os.path.exists("bets_log.csv")
+        with open("bets_log.csv", "a", newline="", encoding="utf-8") as bf:
+            w = csv.writer(bf)
+            if newf:
+                w.writerow(["captured_utc", "date", "player", "market", "side", "line", "odds", "tier", "ev", "pinn", "src"])
+            w.writerows(rows)
+        print(f"  captured {len(rows)} cascade leg(s) -> bets_log (REAL 1xbet line, src=cascade)")
+    else:
+        print("  no qualifying live cascade line yet (no real PRA line in value zone > fair)")
+
+
 def main():
     state = set(json.load(open(STATE))) if os.path.exists(STATE) else set()
     teams = today_teams()
@@ -118,10 +181,12 @@ def main():
         if st in SCRATCH and key not in state:
             new.append((team, star, st, w["ben"])); state.add(key)
     if new:
+        legs_by_team = {}
         for team, star, st, ben in new:
             ben = [(p, ln) for p, ln in ben if not _scratched(p, inj)]   # drop beneficiaries who are THEMSELVES out — they can't carry the cascade (Kiki Iriafen ankle bug)
             if not ben:
                 print(f"  {star} scratch but every beneficiary is also out — no cascade"); continue
+            legs_by_team[team] = ben
             tg = ", ".join(f"{p} OVER {ln:.1f} PRA" for p, ln in ben)
             msg = (f"🚨 **SCRATCH — {star} ({team}) {st.upper()}**\n"
                    f"Cascade → **PRA OVER** (fair ~1.75): {tg}\n"
@@ -130,6 +195,9 @@ def main():
                 try: requests.post(WEBHOOK, json={"content": msg}, headers=_H, timeout=15)
                 except Exception as e: print("discord err", e)
             print("PINGED:", star, team, st)
+        if legs_by_team:
+            try: _capture_cascade(legs_by_team)          # log REAL 1xbet lines -> bets_log (src=cascade) so the cascade GRADES with odds + CLV
+            except Exception as e: print("cascade capture err (alert unaffected):", e)
         json.dump(sorted(state), open(STATE, "w"))
     else:
         nstars = sum(1 for t in teams if wl.get(t))
