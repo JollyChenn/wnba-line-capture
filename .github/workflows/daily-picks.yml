@@ -1,7 +1,8 @@
 name: daily-picks
 on:
   schedule:
-    - cron: '0 14 * * *'      # 14:00 UTC daily = hours before earliest WNBA tip (~22:30 UTC)
+    - cron: '23 13 * * *'     # 13:23 UTC — OFF top-of-hour (GitHub skips :00 crons under load; this is what killed 6/18)
+    - cron: '23 16 * * *'     # 16:23 UTC BACKSTOP (idempotent re-file) so a single skipped run can't wipe the day's slate
   workflow_dispatch: {}
 permissions:
   contents: write
