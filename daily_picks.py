@@ -403,7 +403,9 @@ def main():
 
         # ---- 🧪 EXPERIMENTAL forward-test UNDER signals (volume brute-force winners, UNPROVEN) ----
         # ft_volume_drought (fta_t6<=1.0): 58.9% OOS n=474 — the high-volume workhorse (player not getting to the line).
-        # steady+streak (cv<=0.45, mean10>=10, 3+ consec overs): 58.6% OOS n=297 — hot run mean-reverts DOWN.
+        # steady (cv<=0.45, mean10>=10): low-VOLATILITY under, ~56% vs median. The 3-consec-overs STREAK part was
+        # REFUTED 2026-06-18 (added ~0, 48.8% standalone, fails shuffle) -> DROPPED. The old 58.6% did NOT reproduce.
+        # Honest: matched-baseline lift only ~+2pp = mostly the stale-median under-bias; paper/CLV-decide, not a trigger.
         # PAPER ONLY: emitted to picks_log so the capture/grade pipeline logs forward CLV, but walled off from the
         # proven record (cloud_xbet tags these src=newunder) and NEVER added to the BET ping. Bet POINTS, not PRA.
         for idx, r in sub.iterrows():
@@ -413,11 +415,11 @@ def main():
             esig = None
             if pd.notna(eft) and eft <= 1.0:
                 esig = "ftdrought"
-            elif (pd.notna(ecv) and ecv <= 0.45 and pd.notna(em10) and em10 >= 10 and pd.notna(eoc) and eoc >= 3):
-                esig = "steady+streak"
+            elif (pd.notna(ecv) and ecv <= 0.45 and pd.notna(em10) and em10 >= 10):
+                esig = "steady"          # low-cv only; the streak (eoc>=3) filter was REFUTED and dropped (2026-06-18)
             if not esig:
                 continue
-            efp = 0.589 if esig == "ftdrought" else 0.586     # OOS test hit-rate (vs SYNTHETIC line — side-predict only)
+            efp = 0.589 if esig == "ftdrought" else 0.563     # OOS hit-rate vs median (side-predict only); 'steady'=low-cv honest ~56%
             efo = fair_odds(efp)
             emed = r.med_pts; esd = r.sd_pts
             eln = float(np.floor(emed - 0.001) + 0.5)
