@@ -1,0 +1,28 @@
+name: lineup-confirm
+on:
+  schedule:
+    - cron: '7,22,37,52 22,23,0,1,2,3 * * *'   # ~every 15 min during tip hours (UTC), off top-of-hour — the ~20-min-pre-tip confirmed-lineup guard
+  workflow_dispatch: {}
+permissions:
+  contents: write
+concurrency:
+  group: lineup-confirm
+  cancel-in-progress: false
+jobs:
+  confirm:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Confirm lineups, ping late scratches on pick players
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        run: python lineup_check.py
+      - name: Persist ping state
+        run: |
+          git config user.name "lineup-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add lineup_pinged.json 2>/dev/null || true
+          if git diff --staged --quiet; then echo "no new state"; else git commit -m "lineup state $(date -u +%FT%TZ)"; git pull --rebase --autostash origin main 2>&1 || true; git push 2>&1 || echo "PUSH FAILED"; fi
