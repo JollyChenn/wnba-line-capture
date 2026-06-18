@@ -207,3 +207,6 @@ captured_utc,date,player,market,side,line,odds,tier,ev,pinn,src
 2026-06-18T05:02:47+00:00,2026-06-17,Rhyne Howard,pts,Under,18.5,1.88,THIN,0.013,,newunder
 2026-06-18T22:25:46+00:00,2026-06-18,Laura Juskaite,pra,Over,13.5,1.75,CASC,0.0,,cascade
 2026-06-18T22:25:46+00:00,2026-06-18,Isabelle Harrison,pra,Over,19.5,1.75,CASC,0.0,,cascade
+2026-06-18T23:05:04+00:00,2026-06-18,Caitlin Clark,pts,Under,19.5,1.85,THIN,0.045,19.5,newunder
+2026-06-18T23:05:04+00:00,2026-06-18,Laura Juskaite,pra,Over,13.5,1.75,CASC,0.0,,cascade
+2026-06-18T23:05:04+00:00,2026-06-18,Isabelle Harrison,pra,Over,19.5,1.75,CASC,0.0,,cascade
