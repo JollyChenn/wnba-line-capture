@@ -17,7 +17,7 @@ except Exception:
 BASE = "https://1x-bet.com/service-api"
 ESPN = "https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard"
 INJ = "https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/injuries"
-CHAMP = "2874802"
+CHAMP = os.environ.get("XBET_CHAMP", "197289")   # WNBA league champ. 2874802 was a BROAD mixed-league feed (Euroleague/3x3/U20 etc.) that buried & staled WNBA props -> flickering/missing lines. 197289 = the clean WNBA champ melbet/1xbet/malay.1xbet all use.
 WINDOW = int(os.environ.get("XBET_WINDOW_MIN", "180"))
 _SLATE_TZ = ZoneInfo("America/Los_Angeles")   # picks are filed under the US slate date (matches daily_picks)
 PING_MAX = int(os.environ.get("XBET_PING_MAX_MIN", "40"))   # only PING within this many min of tip (the ~30-min-before alert); capture still runs every cycle
