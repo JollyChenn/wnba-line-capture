@@ -533,7 +533,17 @@ def main():
             # captured for CLV but PAPER-only. model=cold+shrink under, flip=cratered over, hotover=hot-PRA-over.
             NEW_SIGS = ("ftdrought", "steady", "streak", "ppseff")
             is_new = bside == "Under" and any(s in sig for s in NEW_SIGS)
-            src = "flip" if is_flip else ("newunder" if is_new else ("usgshock" if "usgshock" in sig else ("model" if bside == "Under" else "hotover")))
+            sig_paper = any(s in sig for s in NEW_SIGS) or "usgshock" in sig   # underlying signal is PAPER/experimental
+            if is_flip:                                   # flip is PROVEN only on MODEL (cold+shrink) under-candidates;
+                src = "flip_paper" if sig_paper else "flip"   # a flip on a steady/ftdrought paper player is unproven -> paper
+            elif is_new:
+                src = "newunder"
+            elif "usgshock" in sig:
+                src = "usgshock"
+            elif bside == "Under":
+                src = "model"
+            else:
+                src = "hotover"
             tmab = _team_ab(pks[0].get("team", ""))
             # INVERSE-CASCADE GUARD: a FRESH star-out spikes teammates' usage, breaking an UNDER's mean-reversion
             # thesis (the model anchors on a now-stale median). Downgrade such unders to PAPER + retag src=starout so
@@ -545,9 +555,9 @@ def main():
                 betstruct.append([player, base, bside, line, odds, _tier(ph), round(ev, 3), pin.get(_pkey(player), {}).get(base, ""), src])
             pinref = pin.get(_pkey(player), {}).get(base)
             cstr = f" · Pinn {pinref}" if pinref is not None else ""
-            paper = is_new or src == "hotover" or star_trap or src == "usgshock"   # hotover/newunder/star-trap/usgshock -> PAPER, never a real-BET ping
+            paper = is_new or star_trap or src in ("hotover", "usgshock", "flip_paper")   # paper/experimental -> never a real-BET ping
             warn = f" ⚠{nso[tmab].split()[-1]}-OUT" if star_trap else ""
-            flip = " 🎯FLIP" if is_flip else (" 🧪PAPER" if paper else "")
+            flip = " 🎯FLIP" if src == "flip" else (" 🧪FLIP-paper" if src == "flip_paper" else (" 🧪PAPER" if paper else ""))
             txt = f"• **{player}** ({tmab}) {base.upper()} {bside} **{line} @ {odds}** [{_tier(ph)}{flip}{warn} · {sig} · hit {ph*100:.0f}% · EV {ev*100:+.0f}%]{cstr}"
             claimed_players.add(player.lower())       # model has a line on this player now -> overshoot scan must not add a 2nd line for them
             if st == "HOLD":
