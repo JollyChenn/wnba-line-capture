@@ -660,9 +660,11 @@ def main():
     new_real = bool(real_keys - seen_today)           # a real-money bet not yet pinged today
     if bets and (new_real or near_tip):
         parts = []
-        if near_tip:
-            parts.append(f"🔔 **NEAR TIP (~{int(min_mins)} min) — injuries & odds reconfirmed**")
-        parts.append("💰 **REAL-MONEY BET — COLD/SHRINK/STINGY** (flat 1u · Pinn = sharp close for CLV):\n" + "\n".join(bets))
+        if near_tip:                                 # BET WINDOW — line settled + lineup confirming (data says bet late, not on sight)
+            parts.append(f"🔔 **NEAR TIP (~{int(min_mins)} min) — line settled + lineup confirming = BET WINDOW**")
+            parts.append("💰 **REAL-MONEY BET — COLD/SHRINK/STINGY** (flat 1u · Pinn = sharp close for CLV):\n" + "\n".join(bets))
+        else:                                        # early heads-up only — DON'T bet on sight (CLV is flat/neg; line+lineup not settled)
+            parts.append(f"👀 **WATCH — real-money candidate (~{int(min_mins)} min to tip). Don't bet on sight** — confirm & place ~30-60 min before tip (the near-tip guard re-checks line + lineup):\n" + "\n".join(bets))
         if holds_show:
             parts.append("⏳ HOLD (still unconfirmed at tip): " + ", ".join(h.split("**")[1] for h in holds_show))
         if drops:

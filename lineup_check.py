@@ -4,8 +4,9 @@
 #   1) ESPN injuries feed  ............ out/doubtful + day-to-day (hours ahead)
 #   2) ESPN summary boxscore.players .. the OFFICIAL confirmed actives (~T-30)
 #   3) RotoWire lineups (fail-open) ... projected/confirmed + play-% (earliest, non-ESPN)
-# Two tiers:  ❌ PULL  (confirmed OUT / not in the confirmed lineup)
+# Three tiers: ❌ PULL  (confirmed OUT / not in the confirmed lineup)
 #             ⚠️ DO NOT BET (day-to-day / GTD / doubtful — uncertain, don't risk it)
+#             📈 LINE MOVED (>=2 against our thesis since first capture = sharp market correcting us -> skip)
 # Idempotent via lineup_pinged.json. stdlib-only. Runs every ~10 min in tip hours.
 import os, sys, json, re, csv, datetime, urllib.request, unicodedata
 try: sys.stdout.reconfigure(encoding="utf-8")
@@ -93,6 +94,29 @@ for r in rows:
     prev = picks.get(k)
     picks[k] = (r["player"], r["game_id"], r.get("team", ""), (prev[3] if prev else False) or real)
 
+# --- LINE-MOVE CHECK (the "two lines" case, e.g. Hamby PRA 22.5 -> 25.5) -------
+# bets_log already stores EVERY snapshot (both the open line and the moved line). Near tip we compare the
+# OPEN line (first capture today) to the CURRENT line (last) per REAL-money bet. A move >= LINE_TOL AGAINST
+# our thesis (UNDER line RISES, or OVER line DROPS) = the sharp market is correcting our stale signal -> skip.
+# (A line moving WITH us — under line drops / over line rises — is the market agreeing; not flagged.)
+LINE_TOL = float(os.environ.get("LINE_MOVE_TOL", "2.0"))
+linemoves = {}                                            # key_of(player) -> ["MKT SIDE opened X -> now Y (+Δ against)"]
+if os.path.exists("bets_log.csv"):
+    blog = [r for r in csv.DictReader(open("bets_log.csv", encoding="utf-8")) if r.get("player")]
+    bdate = max((r.get("date", "") for r in blog), default="")
+    caps = {}                                             # (pkey, market, side) -> [(captured_utc, line)]
+    for r in blog:
+        if r.get("date") != bdate or (r.get("src") or "") != "model":   # today's REAL-money captures only
+            continue
+        try: ln = float(r["line"])
+        except (ValueError, KeyError): continue
+        caps.setdefault((key_of(r["player"]), r["market"], r["side"]), []).append((r.get("captured_utc", ""), ln))
+    for (pk, mkt, side), lst in caps.items():
+        lst.sort(); ol, cur = lst[0][1], lst[-1][1]
+        against = round((cur - ol) if side == "Under" else (ol - cur), 1)   # >0 = moved AGAINST our thesis
+        if against >= LINE_TOL:
+            linemoves.setdefault(pk, []).append(f"{mkt.upper()} {side} opened {ol}→now {cur} ({against:+.1f} against)")
+
 tips = {}
 if os.path.exists("data/games_2026.csv"):
     for g in csv.DictReader(open("data/games_2026.csv", encoding="utf-8")):
@@ -120,7 +144,7 @@ def actives(gid):
     return _acts[gid]
 
 # --- classify each pick player (only games approaching tip) ------------------
-pull, flag = [], []           # (name, team, is_real, mins, reasons)
+pull, flag, linmv = [], [], []   # (name, team, is_real, mins, reasons) — linmv = line moved >=2 against our thesis
 for k, (name, gid, team, real) in picks.items():
     m = mins_to_tip(gid)
     if m is None or m > TIPW or m < -15:
@@ -142,6 +166,8 @@ for k, (name, gid, team, real) in picks.items():
         pull.append((name, team, real, m, scr_r))
     elif flg_r:
         flag.append((name, team, real, m, flg_r))
+    if not scr_r and linemoves.get(k):                # line moved >=2 against our side (and not already a scratch)
+        linmv.append((name, team, real, m, linemoves[k]))
 
 # --- dedup + ping (separate tiers so flag->scratch escalation re-pings) -------
 state = set(json.load(open(STATE))) if os.path.exists(STATE) else set()
@@ -153,24 +179,26 @@ def fresh(items, tier):
             out.append(it); state.add(key)
     return out
 
-new_pull, new_flag = fresh(pull, "scr"), fresh(flag, "flag")
-if new_pull or new_flag:
+new_pull, new_flag, new_mv = fresh(pull, "scr"), fresh(flag, "flag"), fresh(linmv, "lin")
+if new_pull or new_flag or new_mv:
     def line(it):
         name, team, real, m, rs = it
         tag = "💰 " if real else "🧪 "
         return f"   {tag}**{name}** ({team}, ~{m:.0f} min) — {'; '.join(rs)}"
-    parts = ["🚨 **LINEUP GUARD — confirm before betting:**"]
+    parts = ["🚨 **NEAR-TIP GUARD — confirm before betting:**"]
     if new_pull:
         parts.append("❌ **PULL (confirmed out / not in lineup):**\n" + "\n".join(line(i) for i in new_pull))
     if new_flag:
         parts.append("⚠️ **DO NOT BET (day-to-day / uncertain):**\n" + "\n".join(line(i) for i in new_flag))
+    if new_mv:
+        parts.append("📈 **LINE MOVED ≥2 AGAINST — skip/shrink (sharp market correcting our signal):**\n" + "\n".join(line(i) for i in new_mv))
     ping("\n".join(parts))
     json.dump(sorted(state), open(STATE, "w"))
-    print("pulls:", [i[0] for i in new_pull], "| flags:", [i[0] for i in new_flag])
+    print("pulls:", [i[0] for i in new_pull], "| flags:", [i[0] for i in new_flag], "| line-moves:", [i[0] for i in new_mv])
 else:
     inwin = [k for k, (n, g, t, r) in picks.items()
              if (mins_to_tip(g) is not None and -15 <= mins_to_tip(g) <= TIPW)]
     nearest = min((mins_to_tip(picks[k][1]) for k in inwin), default=None)
     print(f"lineup guard: {len(inwin)} pick players within {TIPW} min "
           f"({'nearest ~%.0f min' % nearest if nearest is not None else 'none near tip'}), "
-          f"no new flags · ESPN inj={len(inj)} RotoWire={len(rw)} · slate {latest}")
+          f"no new flags · ESPN inj={len(inj)} RotoWire={len(rw)} · line-moves flagged={sum(len(v) for v in linemoves.values())} · slate {latest}")
