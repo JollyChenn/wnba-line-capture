@@ -18,6 +18,7 @@ def load(p):
 
 graded   = load("graded_bets.csv")
 bets_log = load("bets_log.csv")
+mybets   = load("my_bets.csv")
 esc = lambda s: html.escape(str(s))
 
 REAL_SRC = {"model"}                                   # COLD/SHRINK/STINGY = the ONLY real-money signal
@@ -30,9 +31,10 @@ def signame(s): return SIG_NAME.get(s, s or "?")
 def srcof(r):  return r.get("src") or ("model" if r.get("side") == "Under" else "overshoot")
 def is_real(s): return s in REAL_SRC
 
-# ---- settled (graded_bets) split real / paper ------------------------------
-settled_real  = [r for r in graded if is_real(srcof(r))]
+# ---- settled: REAL MONEY = the bets YOU actually placed (my_bets); PAPER = bot's non-model graded ----
+settled_real  = mybets                                  # your actual real-money bets (the line/result you took)
 settled_paper = [r for r in graded if not is_real(srcof(r))]
+signal_model  = [r for r in graded if is_real(srcof(r))]   # bot's COLD/SHRINK/STINGY at take-on-sight — for the CLV PROOF note only
 
 # ---- pending = the LATEST slate's captures not yet settled (not ancient un-graded rows) ----
 slate_date = max((r.get("date","") for r in bets_log if r.get("player")), default="")
@@ -46,7 +48,8 @@ for r in reversed(bets_log):                            # newest capture per pla
         continue
     seen.add(k); pending.append(r)
 pending.sort(key=lambda r: (r.get("player","")))
-pending_real  = [r for r in pending if is_real(r.get("src",""))]
+mb_players = {r.get("player","").lower() for r in mybets}
+pending_real  = [r for r in pending if is_real(r.get("src","")) and r.get("player","").lower() not in mb_players]  # tonight's flags to place
 pending_paper = [r for r in pending if not is_real(r.get("src",""))]
 
 # ---- per-section summary (flat 1u stake) -----------------------------------
@@ -60,6 +63,7 @@ def summarize(settled):
                 clv=(sum(clv)/len(clv) if clv else None), nclv=len(clv))
 
 rs, ps = summarize(settled_real), summarize(settled_paper)
+sig = summarize(signal_model)                          # signal CLV proof (take-on-sight, separate from your actual P&L)
 BE = 0.556
 
 # ---- formatting helpers ----------------------------------------------------
@@ -140,8 +144,9 @@ tr:nth-child(even) td{background:#12172c} tr.pend td{background:#1a1f3a}
 <h1>🏀 WNBA prop bot</h1><div class="sub2">latest slate __SLATE__ · settled through __THROUGH__ · generated __GEN__</div>
 <div class="banner">⚠️ <b>UNPROVEN — paper / tiny stakes only.</b> Every line is vs a synthetic median (predicts the SIDE, not that it beats the book). <b>CLV is the only proof</b> — real-money CLV is __CLVHEAD__ so far. Never auto-bet.</div>
 
-<div class="real"><h2>💰 REAL MONEY — COLD/SHRINK/STINGY</h2>
+<div class="real"><h2>💰 REAL MONEY — your placed bets (COLD/SHRINK/STINGY)</h2>
 __RSUMM__
+<div class="sub2" style="margin-bottom:6px">⏳ pending = bot flagged it tonight — place &amp; record · settled = what you actually bet. <b>Signal CLV (the proof, take-on-sight): __SIGCLV__</b> · n=__SIGN__</div>
 <table><tr><th>slate</th><th>player</th><th>bet @ odds</th><th>result</th><th>P&amp;L</th><th>CLV</th></tr>__RROWS__</table></div>
 
 <div class="paper"><h2>🧪 PAPER TESTING — all other signals (NOT real money)</h2>
@@ -155,7 +160,8 @@ __PSUMM__
 page = (TEMPLATE.replace("__RSUMM__", summ_line(rs, "real")).replace("__RROWS__", real_rows)
         .replace("__PSUMM__", summ_line(ps, "paper")).replace("__PROWS__", paper_rows)
         .replace("__SLATE__", esc(slate)).replace("__THROUGH__", esc(through))
-        .replace("__GEN__", gen).replace("__CLVHEAD__", clvhead))
+        .replace("__GEN__", gen).replace("__CLVHEAD__", clvhead)
+        .replace("__SIGCLV__", clvfmt(sig["clv"])).replace("__SIGN__", str(sig["n"])))
 
 with open(os.path.join(ROOT, "dashboard.html"), "w", encoding="utf-8") as f:
     f.write(page)

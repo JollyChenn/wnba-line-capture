@@ -239,7 +239,7 @@ def refresh():
     """Incremental: fetch finished games + boxes we don't have; return (games, box, upcoming)."""
     games = pd.read_csv(GAMES_CSV, dtype={"game_id": str}) if os.path.exists(GAMES_CSV) else pd.DataFrame()
     box = pd.read_csv(BOX_CSV, dtype={"game_id": str}) if os.path.exists(BOX_CSV) else pd.DataFrame()
-    have = set(games.game_id) if len(games) else set()
+    have = set(box.game_id) if len(box) else set()   # games we already have a BOX for (upcoming rows must NOT block their later box fetch)
     today = _slate_today()
     fin_all, upcoming = [], []
     d = SEASON_START
@@ -260,8 +260,9 @@ def refresh():
     if newbox:                                      # write BOX first, then games, so a mid-write crash can't leave a game recorded with no box
         box = pd.concat([box, pd.DataFrame(newbox)], ignore_index=True).drop_duplicates(["game_id", "aid"], keep="last")
         box.to_csv(BOX_CSV, index=False)
-    if ok_games:
-        games = pd.concat([games, pd.DataFrame(ok_games)], ignore_index=True).drop_duplicates("game_id", keep="last")
+    write_games = ok_games + upcoming               # record finished (with box) AND upcoming (tip times) so lineup_check has tips BEFORE tip-off
+    if write_games:
+        games = pd.concat([games, pd.DataFrame(write_games)], ignore_index=True).drop_duplicates("game_id", keep="last")
         games.to_csv(GAMES_CSV, index=False)
     print(f"games: {len(games)} (+{len(ok_games)} new) | box rows: {len(box)} | upcoming: {len(upcoming)}")
     return games, box, upcoming
