@@ -1,7 +1,8 @@
 name: grade-bets
 on:
   schedule:
-    - cron: '0 15 * * *'      # 15:00 UTC — after the 14:00 daily-picks pulls last night's final box scores
+    - cron: '23 15 * * *'     # 15:23 UTC — off top-of-hour (GitHub skips :00; that's why graded_bets went stale) — after daily-picks pulls last night's finals
+    - cron: '23 18 * * *'     # 18:23 UTC backstop so a single skipped run can't leave the record un-graded
   workflow_dispatch: {}
 permissions:
   contents: write
