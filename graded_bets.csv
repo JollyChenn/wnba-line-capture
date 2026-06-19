@@ -23,3 +23,5 @@ date,player,market,side,line,odds,tier,actual,result,pnl,odds_clv,line_clv,sharp
 20260617,Natasha Howard,pts,Over,16.5,1.82,STRONG,15.0,loss,-1.0,0.011,0.0,,overshoot
 20260617,Natisha Hiedeman,pr,Over,15.5,1.833,STRONG,23.0,WIN,0.83,0.0,0.0,,overshoot
 20260617,Sarah Ashlee Barker,pts,Under,10.5,1.78,STRONG,12.0,loss,-1.0,-0.027,0.0,,newunder
+20260618,Caitlin Clark,pts,Under,19.5,1.85,THIN,26.0,loss,-1.0,,,0.0,newunder
+20260618,Rhyne Howard,pts,Under,18.5,1.88,THIN,16.0,WIN,0.88,0.0,0.0,,newunder
