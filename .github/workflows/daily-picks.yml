@@ -18,11 +18,13 @@ jobs:
         with:
           python-version: '3.12'
       - name: Install deps
-        run: pip install --quiet pandas requests numpy
+        run: pip install --quiet pandas requests numpy curl_cffi
       - name: Generate core picks (any-2-of-3 unders + cascade lists)
         run: python daily_picks.py   # NO DISCORD_WEBHOOK -> no slate ping. The capture bot (cloud_xbet) does ALL pinging now: live-line bets (hit%/EV/team) + per-cycle heartbeat. (The old median/proj slate preview is disabled.)
       - name: Validate gathered data (freshness / range / dups / picks complete)
         run: python validate_data.py || echo "::warning::data validation flagged issues (see log above)"
+      - name: Cross-check minutes/scoring vs CBS Sports (2nd source — informational)
+        run: python cbs_check.py || echo "::warning::cbs_check could not run (CBS unreachable?)"
       - name: Rebuild HTML dashboard
         run: python build_dashboard.py || true
       - name: Commit picks + data cache

@@ -1,64 +1,88 @@
-# cbs_check.py — second-source the player stats. Pull per-player MPG/PPG/GP from
-# CBS Sports and cross-check against OUR box_2026 (ESPN-derived). Confirms the
-# minutes (the shrink signal!) + scoring the model relies on. Flags divergence.
-#   python cbs_check.py [cbs_team_stats_url]   (default = Toronto Tempo)
-import csv, re, html, sys
+# cbs_check.py — SECOND-SOURCE the player stats. Pull per-player GP/MPG/PPG from CBS Sports
+# (ALL teams) and cross-check vs OUR box_2026 (ESPN-derived). Confirms the minutes (the shrink
+# signal!) + scoring the model relies on; flags divergence. Informational — never blocks.
+# Robust full-name key (no Chance-vs-Chelsea-Gray collision; folds accents + De/Te/A' prefixes).
+#   python cbs_check.py            (all teams, default)
+#   python cbs_check.py <cbs_url>  (single team)
+import csv, re, html, sys, unicodedata
 from collections import defaultdict
 from curl_cffi import requests as creq
 
-URL = sys.argv[1] if len(sys.argv) > 1 else "https://www.cbssports.com/wnba/teams/TOR/toronto-tempo/stats/"
+CBS = "https://www.cbssports.com"
+POS = re.compile(r"[GFC](?:[-/][GFC])?$")             # position token marks where the abbreviated name ends
 
 
-def key_of(name):
-    parts = re.sub(r"[^a-z .]", "", name.lower()).replace(".", " ").split()
-    return (parts[0][0] + " " + parts[-1]) if len(parts) >= 2 else name.lower()
+def nkey(name):                                       # robust FULL-name key: fold accents, drop punctuation, collapse spaces
+    s = unicodedata.normalize("NFKD", str(name or "")).encode("ascii", "ignore").decode().lower()
+    s = s.replace("-", " ").replace(".", " ").replace("'", "")
+    return re.sub(r"\s+", " ", re.sub(r"[^a-z ]", " ", s)).strip()
 
 
-# 1) CBS (independent source)
-t = creq.get(URL, impersonate="chrome", timeout=25).text
-i = t.find("TableBase-table")
-rows = re.findall(r"<tr[^>]*>(.*?)</tr>", t[i:i + 40000], re.S)
-cbs = {}
-for row in rows[1:]:
-    cs = [html.unescape(re.sub(r"<[^>]+>", " ", c)).strip() for c in re.findall(r"<t[dh][^>]*>(.*?)</t[dh]>", row, re.S)]
-    if len(cs) < 5:
-        continue
-    try:
-        gp, mpg, ppg = int(cs[1]), float(cs[3]), float(cs[4])
-    except ValueError:
-        continue
-    nm = re.search(r"([A-Z][a-z]+)\s+([A-Z][a-zA-Z'.-]+)", cs[0])   # CBS packs "B. Sykes / G / Brittney Sykes" in one cell -> take the full name
-    name = f"{nm.group(1)} {nm.group(2)}" if nm else cs[0].strip()
-    cbs[key_of(name)] = {"name": name, "gp": gp, "mpg": mpg, "ppg": ppg}
+def cbs_name(cell):                                   # CBS packs "B. Sykes  G  Brittney Sykes" -> take the FULL name after the position
+    parts = cell.split()
+    last_pos = max((i for i, w in enumerate(parts) if POS.match(w)), default=-1)
+    after = [w for w in parts[last_pos + 1:] if w[:1].isupper()]
+    if len(after) >= 2:
+        return " ".join(after)
+    cap = [w for w in parts if len(w) >= 2 and w[:1].isupper()]   # fallback: last two long capitalized tokens
+    return " ".join(cap[-2:]) if len(cap) >= 2 else cell.strip()
 
-# 2) OURS (box_2026 season averages, ESPN-derived)
-agg = defaultdict(lambda: {"min": [], "pts": []})
-names = {}
+
+def fetch(u):
+    return creq.get(u, impersonate="chrome", timeout=25).text
+
+
+def team_urls():
+    if len(sys.argv) > 1:
+        return [sys.argv[1].replace(CBS, "")]
+    idx = fetch(CBS + "/wnba/teams/")
+    return sorted(set(re.findall(r"/wnba/teams/[A-Za-z]{2,4}/[a-z0-9-]+/", idx)))
+
+
+# OURS: box_2026 season averages, robust full-name key
+agg = defaultdict(lambda: {"min": [], "pts": []}); names = {}
 for r in csv.DictReader(open("data/box_2026.csv", encoding="utf-8")):
     try:
         mn, pt = float(r["min"]), float(r["pts"])
     except (ValueError, KeyError):
         continue
-    k = key_of(r["player"])
-    agg[k]["min"].append(mn); agg[k]["pts"].append(pt); names[k] = r["player"]
-ours = {k: {"name": names[k], "mpg": sum(d["min"]) / len(d["min"]), "ppg": sum(d["pts"]) / len(d["pts"]), "gp": len(d["min"])}
+    k = nkey(r["player"]); agg[k]["min"].append(mn); agg[k]["pts"].append(pt); names[k] = r["player"]
+ours = {k: {"mpg": sum(d["min"]) / len(d["min"]), "ppg": sum(d["pts"]) / len(d["pts"]), "gp": len(d["min"])}
         for k, d in agg.items() if d["min"]}
 
-# 3) cross-check
-print(f"CBS players: {len(cbs)}  (source: {URL.split('/teams/')[-1].split('/stats')[0]})\n")
-print(f"{'player':15}{'CBS mpg/ppg/gp':18}{'OUR mpg/ppg/gp':18}status")
-print("-" * 70)
-flags = 0
-for k, c in sorted(cbs.items(), key=lambda x: -x[1]["mpg"]):
-    o = ours.get(k)
-    cbs_s = f"{c['mpg']:.1f}/{c['ppg']:.1f}/{c['gp']}"
-    if not o:
-        print(f"{c['name']:15}{cbs_s:18}{'-- not in ours':18}WARN missing in our data"); flags += 1; continue
-    our_s = f"{o['mpg']:.1f}/{o['ppg']:.1f}/{o['gp']}"
-    dm, dp = abs(c["mpg"] - o["mpg"]), abs(c["ppg"] - o["ppg"])
-    st = "OK" if dm <= 3 and dp <= 4 else f"WARN dMPG {dm:.1f} dPPG {dp:.1f}"
-    if st != "OK":
-        flags += 1
-    print(f"{c['name']:15}{cbs_s:18}{our_s:18}{st}")
-print("-" * 70)
-print(f"{flags} flag(s)." + ("  CBS confirms our minutes/scoring." if flags == 0 else "  Review WARNs — data gap or name mismatch."))
+try:
+    urls = team_urls()
+except Exception as e:
+    print("cbs_check: CBS unreachable:", str(e)[:60]); sys.exit(0)
+
+tot = match = div = miss = 0; warns = []
+for u in urls:
+    try:
+        t = fetch(u if u.startswith("http") else CBS + u + ("stats/" if not u.endswith("stats/") else ""))
+    except Exception:
+        continue
+    i = t.find("TableBase-table")
+    if i < 0:
+        continue
+    for row in re.findall(r"<tr[^>]*>(.*?)</tr>", t[i:i + 40000], re.S)[1:]:
+        cs = [html.unescape(re.sub(r"<[^>]+>", " ", c)).strip() for c in re.findall(r"<t[dh][^>]*>(.*?)</t[dh]>", row, re.S)]
+        if len(cs) < 5:
+            continue
+        try:
+            gp, mpg, ppg = int(cs[1]), float(cs[3]), float(cs[4])
+        except ValueError:
+            continue
+        name = cbs_name(cs[0]); k = nkey(name); o = ours.get(k); tot += 1
+        if not o:
+            miss += 1; warns.append(f"  MISSING in ours: {name} (CBS {mpg:.0f}/{ppg:.0f}/{gp}gp)"); continue
+        dm, dp = abs(mpg - o["mpg"]), abs(ppg - o["ppg"])
+        if dm > 3 or dp > 4:
+            div += 1; warns.append(f"  DIVERGE {name}: CBS {mpg:.1f}/{ppg:.1f} vs OURS {o['mpg']:.1f}/{o['ppg']:.1f} (gp {gp}/{o['gp']})")
+        else:
+            match += 1
+
+print(f"cbs_check (2nd source): {tot} CBS players / {len(urls)} team(s) -> ✅{match} match · ⚠️{div} diverge · ❓{miss} missing")
+for w in warns[:25]:
+    print(w)
+print("CBS confirms our minutes/scoring." if div == 0 else f"{div} real divergence(s) — review (minutes feed the shrink signal).")
+sys.exit(0)                                           # informational; never block the workflow

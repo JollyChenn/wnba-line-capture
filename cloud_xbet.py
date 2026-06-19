@@ -4,7 +4,7 @@
 # + STAR-OUT CASCADE (top-usage star scratched -> rank-3-6 teammates' PRA over, with
 # live lines). If Cloudflare blocks the scrape -> ping model projections to check by hand.
 # ============================================================================
-import os, sys, csv, json, time, math, re, datetime, urllib.request
+import os, sys, csv, json, time, math, re, datetime, urllib.request, unicodedata
 from collections import defaultdict
 from zoneinfo import ZoneInfo
 from curl_cffi import requests as creq
@@ -56,9 +56,10 @@ def _ncdf(x):
     return 0.5 * (1 + math.erf(x / math.sqrt(2)))
 
 
-def _pkey(name):
-    p = re.sub(r"[^a-z .'-]", "", name.lower()).replace(".", " ").split()
-    return (p[0][0] + " " + p[-1]) if len(p) >= 2 else name.lower()
+def _pkey(name):                                      # robust FULL-name key — no Chance/Chelsea-Gray collision; folds accents + De/Te/A' prefixes
+    s = unicodedata.normalize("NFKD", str(name or "")).encode("ascii", "ignore").decode().lower()
+    s = s.replace("-", " ").replace(".", " ").replace("'", "")
+    return re.sub(r"\s+", " ", re.sub(r"[^a-z ]", " ", s)).strip() or str(name or "").lower()
 
 
 def _team_ab(name):

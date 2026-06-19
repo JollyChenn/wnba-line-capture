@@ -7,7 +7,7 @@
 # Two tiers:  ❌ PULL  (confirmed OUT / not in the confirmed lineup)
 #             ⚠️ DO NOT BET (day-to-day / GTD / doubtful — uncertain, don't risk it)
 # Idempotent via lineup_pinged.json. stdlib-only. Runs every ~10 min in tip hours.
-import os, sys, json, re, csv, datetime, urllib.request
+import os, sys, json, re, csv, datetime, urllib.request, unicodedata
 try: sys.stdout.reconfigure(encoding="utf-8")
 except Exception: pass
 
@@ -23,9 +23,10 @@ FLAG_WORDS = ("day-to-day", "day to day", "quest", "game-time", "game time", "pr
 PAPER_SIGS = {"ftdrought", "steady", "usgshock"}
 
 
-def key_of(n):
-    p = re.sub(r"[^a-z .'-]", "", n.lower()).replace(".", " ").split()
-    return (p[0][0] + " " + p[-1]) if len(p) >= 2 else n.lower()
+def key_of(n):                                        # robust FULL-name key — no same-initial/last-name collision (Chance vs Chelsea Gray); folds accents
+    s = unicodedata.normalize("NFKD", str(n or "")).encode("ascii", "ignore").decode().lower()
+    s = s.replace("-", " ").replace(".", " ").replace("'", "")
+    return re.sub(r"\s+", " ", re.sub(r"[^a-z ]", " ", s)).strip() or str(n or "").lower()
 
 
 def getj(u):
