@@ -12,6 +12,14 @@ def _src(r):                                          # legacy graded rows (no s
     return r.get("src", "") or ("model" if r["side"] == "Under" else "overshoot")
 
 
+SRC_LABEL = {                                         # proper display names (renamed 2026-06-19; internal keys stay stable)
+    "model": "COLD/SHRINK/STINGY", "flip": "FLIP UNDER", "flip_paper": "FLIP UNDER(paper)",
+    "newunder": "FTUNDER", "hotover": "HOT OVER", "usgshock": "usgshock", "cascade": "STAR-OUT CASCADE",
+    "starout": "starout", "overshoot": "BOOK OVERSHOOT", "fragile": "fragile",
+}
+def lab(s): return SRC_LABEL.get(s, s)
+
+
 PROVEN = {"model", "flip"}                            # headline = proven signals (cold+shrink under / cratered-line flip)
 proven = [r for r in rows if _src(r) in PROVEN]       # speculative overs (hotover/overshoot) NEVER touch the headline
 exper = [r for r in rows if _src(r) not in PROVEN]
@@ -24,7 +32,7 @@ exp_dec = [r for r in exper if r["result"] in ("WIN", "loss")]
 def _bucket(rs):
     by = defaultdict(lambda: [0, 0, 0.0])
     for r in rs:
-        by[_src(r)][0] += 1; by[_src(r)][1] += r["result"] == "WIN"; by[_src(r)][2] += float(r["pnl"])
+        k = lab(_src(r)); by[k][0] += 1; by[k][1] += r["result"] == "WIN"; by[k][2] += float(r["pnl"])
     return by
 
 
@@ -83,22 +91,22 @@ for label, key in [("tier", "tier"), ("market", None)]:
     L.append(f"  by {label}: " + " · ".join(f"{k} {ww}/{t} ({p:+.1f}u)" for k, (t, ww, p) in sorted(agg.items())))
 
 print("\n".join(L))
-print("\n  PER-BET (CLV>0 = our price beat the close · src: model/flip=proven, hotover/overshoot=experimental):")
-print(f"  {'date':9}{'player':18}{'bet':15}{'src':10}{'res':5}{'CLV':>6}")
+print("\n  PER-BET (CLV>0 = our price beat the close · COLD/SHRINK/STINGY + FLIP UNDER = proven; rest = paper/experimental):")
+print(f"  {'date':9}{'player':18}{'bet':15}{'signal':19}{'res':5}{'CLV':>6}")
 for r in sorted(rows, key=lambda r: (r["date"], r["player"])):
     oclv = f"{float(r['odds_clv']) * 100:+.0f}%" if r.get("odds_clv") not in ("", None) else "  --"
-    print(f"  {r['date']:9}{r['player'][:17]:18}{(r['market'].upper() + ' ' + r['side'])[:14]:15}{_src(r):10}{r['result'][:4]:5}{oclv:>6}")
+    print(f"  {r['date']:9}{r['player'][:17]:18}{(r['market'].upper() + ' ' + r['side'])[:14]:15}{lab(_src(r)):19}{r['result'][:4]:5}{oclv:>6}")
 
 # persist a human-readable history file (always current; graded_bets.csv = the raw append-only data)
 hist = ["# WNBA Bot — CLV & Track Record", "",
         "_Auto-updated after each slate settles. Raw data: `graded_bets.csv`. CLV>0 = our price beat the close._", "", "```"]
 hist += [ln.replace("**", "") for ln in L]
 hist += ["```", "", "## Per-bet", "",
-         "_src: **model/flip** = proven (headline) · **hotover/overshoot** = experimental (not in record)_", "",
-         "| date | player | bet | src | result | odds-CLV |", "|---|---|---|---|---|---|"]
+         "_signal: **COLD/SHRINK/STINGY** + **FLIP UNDER** = proven (headline) · the rest = paper/experimental (not in record)_", "",
+         "| date | player | bet | signal | result | odds-CLV |", "|---|---|---|---|---|---|"]
 for r in sorted(rows, key=lambda x: (x["date"], x["player"])):
     oc2 = f"{float(r['odds_clv']) * 100:+.0f}%" if r.get("odds_clv") not in ("", None) else "—"
-    hist.append(f"| {r['date']} | {r['player']} | {r['market'].upper()} {r['side']} {r['line']} @ {r['odds']} | {_src(r)} | {r['result']} | {oc2} |")
+    hist.append(f"| {r['date']} | {r['player']} | {r['market'].upper()} {r['side']} {r['line']} @ {r['odds']} | {lab(_src(r))} | {r['result']} | {oc2} |")
 with open("CLV_HISTORY.md", "w", encoding="utf-8") as f:
     f.write("\n".join(hist) + "\n")
 print("\n  → wrote CLV_HISTORY.md (check it anytime, on GitHub or locally)")

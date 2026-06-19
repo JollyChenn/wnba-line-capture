@@ -21,17 +21,17 @@ casc   = load("cascade_log.csv")
 mybets = load("my_bets.csv")
 PROVEN = {"model", "flip"}
 esc = lambda s: html.escape(str(s))
-SRC_LABEL = {                                              # human names so the record reads clearly
-    "model": "cold+shrink UNDER (core)",
-    "flip": "cratered-line OVER · cold/shrink",
-    "flip_paper": "cratered-line OVER · steady/ft (paper)",
-    "newunder": "ft-drought + steady UNDER",
-    "hotover": "hot-PRA OVER",
-    "usgshock": "usage-spike ASSIST over",
-    "cascade": "star-out cascade PRA OVER",
-    "starout": "downgraded UNDER · fresh star-out",
-    "overshoot": "overshoot OVER (logged-only)",
-    "fragile": "reb/ast single UNDER (paper)",
+SRC_LABEL = {                                              # human names so the record reads clearly (renamed 2026-06-19, keys stable)
+    "model": "COLD/SHRINK/STINGY (under · core)",
+    "flip": "FLIP UNDER (cratered line → OVER)",
+    "flip_paper": "FLIP UNDER · paper (steady/ft)",
+    "newunder": "FTUNDER (ft-drought + steady)",
+    "hotover": "HOT OVER",
+    "usgshock": "usgshock (usage-spike ASSIST over)",
+    "cascade": "STAR-OUT CASCADE (teammate PRA over)",
+    "starout": "starout (downgraded UNDER · fresh star-out)",
+    "overshoot": "BOOK OVERSHOOT (logged-only)",
+    "fragile": "fragile (reb/ast single UNDER · paper)",
 }
 def label(s): return SRC_LABEL.get(s, s)
 
