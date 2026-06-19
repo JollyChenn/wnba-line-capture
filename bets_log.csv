@@ -216,3 +216,16 @@ captured_utc,date,player,market,side,line,odds,tier,ev,pinn,src
 2026-06-19T00:15:01+00:00,2026-06-18,Jonquel Jones,pts,Over,13.5,2.0,SOLID,0.223,,flip
 2026-06-19T00:15:01+00:00,2026-06-18,Laura Juskaite,pra,Over,13.5,1.75,CASC,0.0,,cascade
 2026-06-19T00:15:01+00:00,2026-06-18,Isabelle Harrison,pra,Over,19.5,1.75,CASC,0.0,,cascade
+2026-06-19T05:24:13+00:00,2026-06-18,Brittney Griner,pts,Under,11.5,1.83,THIN,0.037,,newunder
+2026-06-19T05:24:13+00:00,2026-06-18,Marina Mabrey,pts,Under,20.5,1.83,STRONG,0.308,,starout
+2026-06-19T05:24:13+00:00,2026-06-18,Breanna Stewart,pts,Under,19.5,1.79,STRONG,0.197,,newunder
+2026-06-19T05:24:13+00:00,2026-06-18,Jonquel Jones,pts,Over,13.5,1.9,SOLID,0.161,,flip
+2026-06-19T05:24:13+00:00,2026-06-18,Kayla Thornton,pr,Under,14.5,2.0,SOLID,0.179,,model
+2026-06-19T05:24:13+00:00,2026-06-18,Courtney Williams,pr,Under,22.5,1.73,SOLID,0.022,,model
+2026-06-19T05:24:13+00:00,2026-06-18,Natasha Howard,pts,Over,14.5,1.69,STRONG,0.293,,flip
+2026-06-19T05:24:13+00:00,2026-06-18,Kayla McBride,pts,Under,13.5,1.8,THIN,0.014,,newunder
+2026-06-19T05:24:13+00:00,2026-06-18,Gabby Williams,pts,Over,15.5,1.92,SOLID,0.16,,flip
+2026-06-19T05:24:13+00:00,2026-06-18,Laura Juskaite,pra,Over,13.5,1.75,CASC,0.0,,cascade
+2026-06-19T05:24:13+00:00,2026-06-18,Isabelle Harrison,pra,Over,19.5,1.75,CASC,0.0,,cascade
+2026-06-19T05:24:13+00:00,2026-06-18,Michaela Onyenwere,pts,Over,9.5,1.8,STRONG,0.479,,overshoot
+2026-06-19T05:24:13+00:00,2026-06-18,Olivia Miles,pra,Over,28.5,1.952,STRONG,0.433,,overshoot
