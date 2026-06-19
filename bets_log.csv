@@ -210,3 +210,9 @@ captured_utc,date,player,market,side,line,odds,tier,ev,pinn,src
 2026-06-18T23:05:04+00:00,2026-06-18,Caitlin Clark,pts,Under,19.5,1.85,THIN,0.045,19.5,newunder
 2026-06-18T23:05:04+00:00,2026-06-18,Laura Juskaite,pra,Over,13.5,1.75,CASC,0.0,,cascade
 2026-06-18T23:05:04+00:00,2026-06-18,Isabelle Harrison,pra,Over,19.5,1.75,CASC,0.0,,cascade
+2026-06-19T00:15:01+00:00,2026-06-18,Brittney Griner,pts,Under,11.5,1.83,THIN,0.037,,newunder
+2026-06-19T00:15:01+00:00,2026-06-18,Marina Mabrey,pts,Under,19.5,2.0,STRONG,0.335,,starout
+2026-06-19T00:15:01+00:00,2026-06-18,Breanna Stewart,pts,Under,19.5,1.73,STRONG,0.157,,newunder
+2026-06-19T00:15:01+00:00,2026-06-18,Jonquel Jones,pts,Over,13.5,2.0,SOLID,0.223,,flip
+2026-06-19T00:15:01+00:00,2026-06-18,Laura Juskaite,pra,Over,13.5,1.75,CASC,0.0,,cascade
+2026-06-19T00:15:01+00:00,2026-06-18,Isabelle Harrison,pra,Over,19.5,1.75,CASC,0.0,,cascade
