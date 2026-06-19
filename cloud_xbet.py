@@ -569,9 +569,9 @@ def main():
                 betstruct.append([player, base, bside, line, odds, _tier(ph), round(ev, 3), pin.get(_pkey(player), {}).get(base, ""), src])
             pinref = pin.get(_pkey(player), {}).get(base)
             cstr = f" · Pinn {pinref}" if pinref is not None else ""
-            paper = is_new or star_trap or src in ("hotover", "usgshock", "flip_paper", "fragile")   # paper/experimental -> never a real-BET ping
+            paper = src != "model"                    # ONLY COLD/SHRINK/STINGY (src=model) is real money; everything else (flip incl.) = paper
             warn = f" ⚠{nso[tmab].split()[-1]}-OUT" if star_trap else ""
-            flip = " 🎯FLIP" if src == "flip" else (" 🧪FLIP-paper" if src == "flip_paper" else (" 🧪PAPER" if paper else ""))
+            flip = " 🧪PAPER" if paper else ""        # real-money (model) bets get no tag; all paper marked PAPER
             txt = f"• **{player}** ({tmab}) {base.upper()} {bside} **{line} @ {odds}** [{_tier(ph)}{flip}{warn} · {sig} · hit {ph*100:.0f}% · EV {ev*100:+.0f}%]{cstr}"
             claimed_players.add(player.lower())       # model has a line on this player now -> overshoot scan must not add a 2nd line for them
             if st == "HOLD":
@@ -642,36 +642,25 @@ def main():
                 wbl.writerow(["captured_utc", "date", "player", "market", "side", "line", "odds", "tier", "ev", "pinn", "src"])
             for b in betstruct:
                 wbl.writerow([stamp, la_today] + b)
-    new_alert = {(b[0].lower(), b[1], b[2]) for b in betstruct} - seen_today   # picks not yet pinged today
-    within_24h = min_mins <= 1440             # hourly reminder only in the final 24h; the 48-24h window just CAPTURES + alerts a new bet once
-    # REAL bets remind you EVERY cycle (hourly) within 24h; beyond 24h (and paper/overshoot/cascade) they ping
-    # only when NEW or near-tip — so a 48h-early line is snapshotted for CLV without spamming 48 reminders.
-    if (bets and within_24h) or ((bets or forward or casc) and (new_alert or near_tip)):
+    # PING POLICY (2026-06-19): ping ONLY the real-money signal (COLD/SHRINK/STINGY, src=model).
+    # Paper/experimental are still captured to bets_log for the dashboard but are NEVER pinged, and there is
+    # no heartbeat / no-bet spam. A real bet pings once when first found, then again near tip (reconfirm).
+    real_keys = {(b[0].lower(), b[1], b[2]) for b in betstruct if len(b) > 8 and b[8] == "model"}
+    new_real = bool(real_keys - seen_today)           # a real-money bet not yet pinged today
+    if bets and (new_real or near_tip):
         parts = []
         if near_tip:
-            parts.append(f"🔔 **NEAR TIP (~{int(min_mins)} min) — injury list & odds RECONFIRMED**")
-        if bets:
-            parts.append("✅ **BETS** (our model · line@odds · Pinn = sharp close for CLV):\n" + "\n".join(bets))
-        if forward:
-            parts.append("🧪 **FORWARD-TEST (PAPER — log CLV, do NOT bet real until +CLV)**:\n" + "\n".join(forward))
-        # OVERSHOOT-OVERS removed from the ping (2026-06-17): record 2/7, and the "too-low" lines proved
-        # CORRECT (5/7 players came in UNDER) — i.e. NOT stale, so no soft-book edge, just inflated display EVs
-        # that tempt bad bets. Still captured to bets_log (betstruct above) so the sample grows silently for proof.
-        if casc:
-            parts.append("🧪 **EXPERIMENTAL** (star-out cascade — ~57% unproven, size small):\n" + "\n".join(casc))
+            parts.append(f"🔔 **NEAR TIP (~{int(min_mins)} min) — injuries & odds reconfirmed**")
+        parts.append("💰 **REAL-MONEY BET — COLD/SHRINK/STINGY** (flat 1u · Pinn = sharp close for CLV):\n" + "\n".join(bets))
         if holds_show:
             parts.append("⏳ HOLD (still unconfirmed at tip): " + ", ".join(h.split("**")[1] for h in holds_show))
         if drops:
             parts.append("❌ OUT (injury → dropped): " + ", ".join(drops))
+        extra = len(forward) + len(casc)
+        if extra:
+            parts.append(f"_🧪 {extra} paper-test signal(s) captured silently — see dashboard._")
         ping(f"🏀 **1xbet — ~{int(min_mins)} min to tip**\n" + "\n".join(parts))
-    elif min_mins <= PING_MAX:                        # near tip + no +EV line -> fallback (don't go dark)
-        ping(f"⏰ **1xbet — tip in ~{int(min_mins)} min, no +EV line found**\n"
-             "(props may be unposted, or the posted price isn't in value). Model picks to check on 1xbet by hand:\n"
-             + proj_msg(inj))
-    else:                                             # EVERY cycle reports in — never go dark (user wants explicit "no bet")
-        live = bool(bets or forward or casc)         # overshoot no longer counts as "live" (hidden from ping, logged only)
-        status = f"{len(betstruct)} already flagged today, nothing new" if live else "nothing to bet this cycle"
-        ping(f"🟢 **bot alive — {now.strftime('%H:%M')} UTC** · _heartbeat, not a bet_ · {status} · {len(props)} players scanned · nearest tip ~{int(min_mins)} min")
+    # else: NO real-money bet -> stay silent. Paper/experimental live on the dashboard, never pinged.
 
 
 if __name__ == "__main__":

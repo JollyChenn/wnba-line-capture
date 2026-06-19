@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 """
-build_dashboard.py — generate a self-contained dashboard.html from the bot's CSVs.
-No external libs, no runtime data loading (numbers baked in) -> opens from file://
-or serves as a static page. Re-run anytime; wire into a workflow to auto-publish.
+build_dashboard.py — clean two-section dashboard.html from the bot's CSVs.
+No external libs. Re-run anytime (the grade-bets workflow runs it on cron).
 
-Honest by construction: PROVEN (model+flip) and PAPER are walled off, and CLV —
-the only real proof — is the hero metric, not P&L.
+Two sections, nothing else:
+  💰 REAL MONEY  = COLD/SHRINK/STINGY only (src=model) — the only real-money signal.
+  🧪 PAPER TESTING = every other signal, merged into ONE bucket.
+Each section: pending (unsettled) at top, then settled marked WIN/LOSE, flat 1u stake P&L.
 """
 import csv, os, html, datetime
 from collections import defaultdict
@@ -15,246 +16,148 @@ def load(p):
     fp = os.path.join(ROOT, p)
     return list(csv.DictReader(open(fp, encoding="utf-8"))) if os.path.exists(fp) else []
 
-graded = load("graded_bets.csv")
-picks  = load("picks_log.csv")
-casc   = load("cascade_log.csv")
-mybets = load("my_bets.csv")
-PROVEN = {"model", "flip"}
+graded   = load("graded_bets.csv")
+bets_log = load("bets_log.csv")
 esc = lambda s: html.escape(str(s))
-SRC_LABEL = {                                              # human names so the record reads clearly (renamed 2026-06-19, keys stable)
-    "model": "COLD/SHRINK/STINGY (under · core)",
-    "flip": "FLIP UNDER (cratered line → OVER)",
-    "flip_paper": "FLIP UNDER · paper (steady/ft)",
-    "newunder": "FTUNDER (ft-drought + steady)",
-    "hotover": "HOT OVER",
-    "usgshock": "usgshock (usage-spike ASSIST over)",
-    "cascade": "STAR-OUT CASCADE (teammate PRA over)",
-    "starout": "starout (downgraded UNDER · fresh star-out)",
-    "overshoot": "BOOK OVERSHOOT (logged-only)",
-    "fragile": "fragile (reb/ast single UNDER · paper)",
+
+REAL_SRC = {"model"}                                   # COLD/SHRINK/STINGY = the ONLY real-money signal
+SIG_NAME = {                                           # proper display names (internal keys stable)
+    "model": "COLD/SHRINK/STINGY", "flip": "FLIP UNDER", "flip_paper": "FLIP UNDER",
+    "newunder": "FTUNDER", "hotover": "HOT OVER", "usgshock": "usgshock",
+    "cascade": "STAR-OUT CASCADE", "starout": "starout", "overshoot": "BOOK OVERSHOOT", "fragile": "fragile",
 }
-def label(s): return SRC_LABEL.get(s, s)
+def signame(s): return SIG_NAME.get(s, s or "?")
+def srcof(r):  return r.get("src") or ("model" if r.get("side") == "Under" else "overshoot")
+def is_real(s): return s in REAL_SRC
 
-# ---- record by src ---------------------------------------------------------
-rec = defaultdict(lambda: {"w": 0, "l": 0, "push": 0, "pnl": 0.0, "clv": []})
-for r in graded:
-    d = rec[(r.get("src") or "?")]
-    res = r.get("result", "")
-    if res == "WIN": d["w"] += 1
-    elif res in ("loss", "LOSS"): d["l"] += 1
-    elif res == "push": d["push"] += 1
-    try: d["pnl"] += float(r.get("pnl") or 0)
-    except ValueError: pass
-    oc = r.get("odds_clv", "")
-    if oc not in ("", "None", None):
-        try: d["clv"].append(float(oc))
-        except ValueError: pass
+# ---- settled (graded_bets) split real / paper ------------------------------
+settled_real  = [r for r in graded if is_real(srcof(r))]
+settled_paper = [r for r in graded if not is_real(srcof(r))]
 
-def agg(srcs):
-    w = l = 0; pnl = 0.0; clv = []
-    for s in srcs:
-        if s in rec:
-            w += rec[s]["w"]; l += rec[s]["l"]; pnl += rec[s]["pnl"]; clv += rec[s]["clv"]
-    n = w + l
-    return dict(w=w, l=l, n=n, hit=(w / n if n else None), pnl=pnl,
-                clv=(sum(clv) / len(clv) if clv else None), nclv=len(clv),
-                beat=(sum(1 for x in clv if x > 0) / len(clv) if clv else None))
-
-proven = agg(PROVEN)
-paper  = agg([s for s in rec if s not in PROVEN])
-overall = agg(list(rec))
-BE = 0.556  # 1xbet flat ~1.80 breakeven
-
-# ---- today's picks (latest pick_date) --------------------------------------
-dates = sorted({p["pick_date"] for p in picks if p.get("pick_date")})
-latest = dates[-1] if dates else None
-today = [p for p in picks if p.get("pick_date") == latest]
-def bucket(p):
-    sig, mk = p.get("signals", ""), p.get("market", "")
-    base = mk.split("_")[0]
-    if any(s in sig for s in ("ftdrought", "steady")): return ("paper", "newunder")
-    if "usgshock" in sig: return ("paper", "usgshock")
-    if mk.endswith("_over"): return ("paper", "hot-PRA over")     # hot-over = paper (cloud_xbet src=hotover)
-    if base in ("reb", "ast"): return ("paper", "fragile reb/ast")  # de-combined single = paper
-    return ("real", "model under")
-real_picks  = [p for p in today if bucket(p)[0] == "real"]
-paper_picks = [p for p in today if bucket(p)[0] == "paper"]
-paper_by = {}
-for p in paper_picks:
-    s = bucket(p)[1]; paper_by[s] = paper_by.get(s, 0) + 1
-paper_summary = ", ".join(f"{n} {s}" for s, n in sorted(paper_by.items(), key=lambda kv: -kv[1])) or "none"
-
-# pending = captured to bets_log but NOT yet settled (not in graded) — the open/unsettled book
-_bl = load("bets_log.csv")
-_settled = {(r.get("date","")[:10].replace("-",""), r.get("player","").lower(), r.get("market","")) for r in graded}
-_seen = set(); pending = []
-for r in reversed(_bl):                                    # keep newest capture per player+slate+market
-    k = (r.get("date","").replace("-",""), r.get("player","").lower(), r.get("market",""))
-    if not r.get("player") or k in _settled or k in _seen:
+# ---- pending = the LATEST slate's captures not yet settled (not ancient un-graded rows) ----
+slate_date = max((r.get("date","") for r in bets_log if r.get("player")), default="")
+settled_keys = {(r.get("date","").replace("-",""), r.get("player","").lower(), r.get("market","")) for r in graded}
+seen = set(); pending = []
+for r in reversed(bets_log):                            # newest capture per player+market, latest slate only
+    if r.get("date","") != slate_date:
         continue
-    _seen.add(k); pending.append(r)
-pending.sort(key=lambda r: (r.get("date",""), r.get("player","")))
+    k = (r.get("date","").replace("-",""), r.get("player","").lower(), r.get("market",""))
+    if not r.get("player") or k in settled_keys or k in seen:
+        continue
+    seen.add(k); pending.append(r)
+pending.sort(key=lambda r: (r.get("player","")))
+pending_real  = [r for r in pending if is_real(r.get("src",""))]
+pending_paper = [r for r in pending if not is_real(r.get("src",""))]
 
-# OUT line from PICKS.md (the bot already wrote it)
-out_line = ""
-mdp = os.path.join(ROOT, "PICKS.md")
-if os.path.exists(mdp):
-    for ln in open(mdp, encoding="utf-8"):
-        if "OUT/doubtful" in ln:
-            out_line = ln.strip().strip("_"); break
+# ---- per-section summary (flat 1u stake) -----------------------------------
+def summarize(settled):
+    w = sum(1 for r in settled if r.get("result") == "WIN")
+    l = sum(1 for r in settled if r.get("result") in ("loss", "LOSS"))
+    pnl = sum(float(r.get("pnl") or 0) for r in settled)
+    clv = [float(r["odds_clv"]) for r in settled if r.get("odds_clv") not in ("", "None", None)]
+    n = w + l
+    return dict(w=w, l=l, n=n, hit=(w/n if n else None), pnl=pnl,
+                clv=(sum(clv)/len(clv) if clv else None), nclv=len(clv))
 
-# ---- html fragments --------------------------------------------------------
-def pct(x): return "—" if x is None else f"{x*100:.0f}%"
+rs, ps = summarize(settled_real), summarize(settled_paper)
+BE = 0.556
+
+# ---- formatting helpers ----------------------------------------------------
+def pct(x):  return "—" if x is None else f"{x*100:.0f}%"
 def clvfmt(x): return "—" if x is None else f"{x*100:+.1f}%"
-def cls(x, good_hi=True, thr=0.0):
-    if x is None: return "muted"
-    return "pos" if (x > thr) == good_hi else "neg"
+def betname(r): return f'{r.get("market","").upper()} {r.get("side","")} {r.get("line","")}'
+def resfmt(res):
+    if res == "WIN": return ('✅ WIN', 'pos')
+    if res in ("loss", "LOSS"): return ('❌ LOSE', 'neg')
+    if res == "push": return ('➖ push', 'muted')
+    return ('· · ·', 'muted')
 
-def card(label, value, sub, klass=""):
-    return (f'<div class="card"><div class="lbl">{esc(label)}</div>'
-            f'<div class="val {klass}">{value}</div><div class="sub">{esc(sub)}</div></div>')
+# build the combined rows for a section: pending first (⏳), then settled newest-first
+def section_rows(pend, settled, with_sig):
+    out = []
+    for r in pend:
+        sig = f'<td>{esc(signame(r.get("src","")))}</td>' if with_sig else ''
+        out.append(f'<tr class="pend"><td>{esc(r.get("date",""))}</td><td><b>{esc(r.get("player",""))}</b></td>'
+                   f'<td>{esc(betname(r))} @ {esc(r.get("odds",""))}</td>{sig}'
+                   f'<td><span class="pill">⏳ pending</span></td><td class="muted">—</td><td class="muted">—</td></tr>')
+    for r in sorted(settled, key=lambda x: x.get("date",""), reverse=True):
+        txt, cl = resfmt(r.get("result",""))
+        try: pnl = float(r.get("pnl") or 0)
+        except ValueError: pnl = 0.0
+        oc = r.get("odds_clv","")
+        try: ocf = clvfmt(float(oc)) if oc not in ("","None",None) else "—"
+        except ValueError: ocf = "—"
+        sig = f'<td>{esc(signame(srcof(r)))}</td>' if with_sig else ''
+        out.append(f'<tr><td>{esc(r.get("date",""))}</td><td><b>{esc(r.get("player",""))}</b></td>'
+                   f'<td>{esc(betname(r))} @ {esc(r.get("odds",""))}</td>{sig}'
+                   f'<td class="{cl}">{txt}</td><td class="{"pos" if pnl>0 else ("neg" if pnl<0 else "muted")}">{pnl:+.2f}u</td>'
+                   f'<td class="{("pos" if (oc not in ("","None",None) and float(oc or 0)>0) else "muted")}">{ocf}</td></tr>')
+    if not out:
+        cols = 7 if with_sig else 6
+        out.append(f'<tr><td colspan="{cols}" class="empty">— none yet —</td></tr>')
+    return "".join(out)
 
-cards = "".join([
-    card("Proven CLV  ⟵ the proof", clvfmt(proven["clv"]),
-         f'beat the close {proven["beat"]*100:.0f}% · n={proven["nclv"]}' if proven["beat"] is not None else "no CLV yet",
-         cls(proven["clv"])),
-    card("Proven record", f'{proven["w"]}–{proven["l"]}',
-         f'{pct(proven["hit"])} hit · {proven["pnl"]:+.1f}u (synthetic)', cls((proven["hit"] or 0) - BE)),
-    card("Paper / experimental", f'{paper["w"]}–{paper["l"]}',
-         f'{pct(paper["hit"])} hit · CLV {clvfmt(paper["clv"])} · walled off', "muted"),
-    card("All settled", f'{overall["w"]}–{overall["l"]}',
-         f'{overall["n"]} bets graded', "muted"),
-])
+real_rows  = section_rows(pending_real,  settled_real,  with_sig=False)
+paper_rows = section_rows(pending_paper, settled_paper, with_sig=True)
 
-# record-by-src table
-rows = ""
-order = sorted(rec, key=lambda s: (s not in PROVEN, -(rec[s]["w"] + rec[s]["l"])))
-for s in order:
-    d = rec[s]; n = d["w"] + d["l"]; hit = d["w"] / n if n else None
-    clv = sum(d["clv"]) / len(d["clv"]) if d["clv"] else None
-    tag = "PROVEN" if s in PROVEN else "paper"
-    rows += (f'<tr><td>{esc(label(s))}</td><td><span class="pill {"pos" if s in PROVEN else "mut"}">{tag}</span></td>'
-             f'<td>{d["w"]}–{d["l"]}</td><td class="{cls((hit or 0)-BE)}">{pct(hit)}</td>'
-             f'<td class="{cls(clv)}">{clvfmt(clv)}</td><td class="{cls(d["pnl"])}">{d["pnl"]:+.1f}u</td></tr>')
+def summ_line(s, kind):
+    rec = f'{s["w"]}–{s["l"]}'
+    hit = pct(s["hit"]); pnl = f'{s["pnl"]:+.2f}u'; clv = clvfmt(s["clv"])
+    pcls = "pos" if s["pnl"] > 0 else ("neg" if s["pnl"] < 0 else "muted")
+    ccls = "pos" if (s["clv"] or 0) > 0 else ("neg" if (s["clv"] or 0) < 0 else "muted")
+    return (f'<div class="summ"><span><b>{rec}</b> ({hit} hit)</span>'
+            f'<span>P&amp;L <b class="{pcls}">{pnl}</b> <span class="muted">flat 1u</span></span>'
+            f'<span>CLV <b class="{ccls}">{clv}</b> <span class="muted">n={s["nclv"]}</span></span>'
+            f'<span class="muted">{len(pending_real if kind=="real" else pending_paper)} pending · {s["n"]} settled</span></div>')
 
-# CLV bar chart (SVG) — mean CLV% per src
-bars = [(s, (sum(rec[s]["clv"]) / len(rec[s]["clv"]) * 100) if rec[s]["clv"] else None) for s in order]
-bars = [(s, v) for s, v in bars if v is not None]
-svg = ""
-if bars:
-    W, H, pad, bw = 460, 40 + 34 * len(bars), 120, 18
-    mx = max(6, max(abs(v) for _, v in bars))
-    zero = pad + (W - pad - 20) * 0  # left axis at pad; we map [-mx,mx] across pad..W-20
-    span = (W - pad - 20)
-    def x_of(v): return pad + span * (v + mx) / (2 * mx)
-    z = x_of(0)
-    parts = [f'<line x1="{z:.0f}" y1="28" x2="{z:.0f}" y2="{H-8}" stroke="#39406b"/>']
-    for i, (s, v) in enumerate(bars):
-        y = 34 + i * 34; xv = x_of(v)
-        x0, x1 = (z, xv) if v >= 0 else (xv, z)
-        col = "#3fb950" if v > 0 else "#f85149"
-        parts.append(f'<rect x="{x0:.0f}" y="{y:.0f}" width="{abs(x1-x0):.0f}" height="18" rx="3" fill="{col}"/>')
-        parts.append(f'<text x="8" y="{y+13:.0f}" fill="#aeb6e0" font-size="12">{esc(s)}</text>')
-        parts.append(f'<text x="{(xv + (6 if v>=0 else -6)):.0f}" y="{y+13:.0f}" fill="#e8ecff" font-size="11" text-anchor="{"start" if v>=0 else "end"}">{v:+.1f}%</text>')
-    svg = f'<svg viewBox="0 0 {W} {H}" width="100%">{"".join(parts)}</svg>'
-
-def picklist(items):
-    if not items:
-        return '<div class="empty">— none —</div>'
-    out = ""
-    for p in items:
-        _, label = bucket(p)
-        side = "Over" if p.get("market","").endswith("_over") else "Under"
-        mk = p.get("market","").split("_")[0].upper()
-        out += (f'<div class="pick"><b>{esc(p.get("player",""))}</b> '
-                f'<span class="mut">{esc(p.get("team",""))}</span> · {mk} {side} '
-                f'<b>{esc(p.get("anchor",""))}</b> @ {esc(p.get("fair_odds",""))} '
-                f'<span class="pill mut">{esc(label)}</span></div>')
-    return out
-
-# recent settled (last 12 by date)
-recent = sorted(graded, key=lambda r: r.get("date",""))[-20:][::-1]
-rrows = ""
-for r in recent:
-    res = r.get("result","")
-    rcls = "pos" if res=="WIN" else ("neg" if res in ("loss","LOSS") else "muted")
-    oc = r.get("odds_clv","")
-    try: ocf = clvfmt(float(oc)) if oc not in ("","None",None) else "—"
-    except ValueError: ocf = "—"
-    rrows += (f'<tr><td>{esc(r.get("date",""))}</td><td>{esc(r.get("player",""))}</td>'
-              f'<td>{esc(r.get("market","").upper())} {esc(r.get("side",""))} {esc(r.get("line",""))}</td>'
-              f'<td>{esc(r.get("actual",""))}</td><td class="{rcls}">{esc(res)}</td>'
-              f'<td><span class="pill {"pos" if (r.get("src") in PROVEN) else "mut"}">{esc(r.get("src",""))}</span></td>'
-              f'<td>{ocf}</td></tr>')
-
-def pendrow(r):
-    s = r.get("src", "")
-    return (f'<tr><td>{esc(r.get("date",""))}</td><td>{esc(r.get("player",""))}</td>'
-            f'<td>{esc(r.get("market","").upper())} {esc(r.get("side",""))} {esc(r.get("line",""))} @ {esc(r.get("odds",""))}</td>'
-            f'<td><span class="pill {"pos" if s in PROVEN else "mut"}">{esc(label(s))}</span></td></tr>')
-pending_html = "".join(pendrow(r) for r in pending) or "<tr><td colspan=4 class='empty'>none pending</td></tr>"
 gen = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
-data_through = max((r.get("date","") for r in graded), default="—")
+through = max((r.get("date","") for r in graded), default="—")
+slate = max((r.get("date","") for r in bets_log), default="—")
+clvhead = (clvfmt(rs["clv"]) + (" (negative)" if (rs["clv"] or 0) < 0 else "")) if rs["clv"] is not None else "not measured yet"
 
 TEMPLATE = """<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>WNBA prop bot — dashboard</title><style>
 *{box-sizing:border-box} body{margin:0;background:#0d1020;color:#e8ecff;
 font:15px/1.5 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
-.wrap{max-width:1040px;margin:0 auto;padding:24px}
-h1{font-size:22px;margin:0 0 2px} h2{font-size:15px;color:#aeb6e0;margin:26px 0 10px;
-text-transform:uppercase;letter-spacing:.06em}
+.wrap{max-width:960px;margin:0 auto;padding:24px}
+h1{font-size:22px;margin:0 0 2px}
+h2{font-size:16px;margin:30px 0 6px;display:flex;align-items:center;gap:8px}
 .sub2{color:#7e87b8;font-size:13px}
-.banner{background:#1a1430;border:1px solid #4a2; border-color:#5b4b8a;border-radius:12px;
-padding:14px 16px;margin:16px 0;color:#ffd9a8}
+.banner{background:#1a1430;border:1px solid #5b4b8a;border-radius:12px;padding:12px 16px;margin:16px 0;color:#ffd9a8}
 .banner b{color:#ffb86b}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
-.card{background:#151a31;border:1px solid #262d4f;border-radius:12px;padding:14px 16px}
-.card .lbl{color:#8b93c2;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
-.card .val{font-size:28px;font-weight:700;margin:4px 0}
-.card .sub{color:#7e87b8;font-size:12px}
+.summ{display:flex;flex-wrap:wrap;gap:18px;background:#151a31;border:1px solid #262d4f;border-radius:10px;
+padding:10px 16px;margin:4px 0 10px;font-size:14px}
 table{width:100%;border-collapse:collapse;background:#151a31;border:1px solid #262d4f;border-radius:12px;overflow:hidden}
-th,td{padding:9px 12px;text-align:left;border-bottom:1px solid #20264400} th{color:#8b93c2;font-size:12px;
-text-transform:uppercase;letter-spacing:.04em;background:#11152a} tr:nth-child(even) td{background:#12172c}
-td{font-size:14px}
+th,td{padding:9px 12px;text-align:left;border-bottom:1px solid #20264433} td{font-size:14px}
+th{color:#8b93c2;font-size:12px;text-transform:uppercase;letter-spacing:.04em;background:#11152a}
+tr:nth-child(even) td{background:#12172c} tr.pend td{background:#1a1f3a}
 .pos{color:#3fb950} .neg{color:#f85149} .muted,.mut{color:#7e87b8}
-.pill{font-size:11px;padding:2px 7px;border-radius:20px;background:#222a4d;color:#aeb6e0}
-.pill.pos{background:#143d22;color:#5fd07a} .pill.mut{background:#222a4d}
-.cols{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.box{background:#151a31;border:1px solid #262d4f;border-radius:12px;padding:12px 14px}
-.box h3{margin:0 0 8px;font-size:13px;color:#aeb6e0}
-.pick{padding:6px 0;border-bottom:1px solid #20264433;font-size:14px}
-.empty{color:#7e87b8;padding:8px 0} .foot{color:#5a628f;font-size:12px;margin-top:24px}
-@media(max-width:640px){.cols{grid-template-columns:1fr}}
+.pill{font-size:11px;padding:2px 8px;border-radius:20px;background:#2a3358;color:#aeb6e0}
+.empty{color:#7e87b8;padding:10px 0;text-align:center} .foot{color:#5a628f;font-size:12px;margin-top:28px}
+.real h2{color:#5fd07a} .paper h2{color:#aeb6e0}
 </style></head><body><div class="wrap">
-<h1>🏀 WNBA prop bot</h1><div class="sub2">slate __LATEST__ · data through __THROUGH__ · generated __GEN__</div>
-<div class="banner">⚠️ <b>UNPROVEN — paper / tiny only.</b> Every hit% is vs a synthetic median line (predicts the SIDE, not that it beats the book). <b>CLV is the only proof</b> — and it's __CLVHEAD__ so far. Never auto-bet.</div>
-<div class="grid">__CARDS__</div>
-<h2>Record by signal</h2>
-<table><tr><th>signal</th><th>tier</th><th>W–L</th><th>hit%</th><th>odds-CLV</th><th>P&amp;L*</th></tr>__ROWS__</table>
-<div class="sub2" style="margin-top:6px">*P&amp;L is vs a synthetic line, not realized cash. Breakeven at 1xbet ~1.80 = 55.6%.</div>
-<h2>Mean CLV by signal (the number that matters)</h2><div class="box">__SVG__</div>
-<h2>Today — real-money picks · __LATEST__</h2>
-<div class="sub2" style="margin-bottom:10px">__OUT__</div>
-<div class="box">__REAL__</div>
-<div class="sub2" style="margin-top:12px">🧪 <b>__PAPERCOUNT__ paper / experimental</b> tracking silently (__PAPERSUMMARY__) — kept out of the way; each shows up in <b>Settled history</b> below once it resolves with a result + CLV.</div>
-<h2>Pending — captured &amp; awaiting result (__NPEND__)</h2>
-<table><tr><th>slate</th><th>player</th><th>bet @ odds</th><th>signal</th></tr>__PENDING__</table>
-<h2>Settled history — all signals (real · paper · experimental), newest first</h2>
-<table><tr><th>date</th><th>player</th><th>bet</th><th>act</th><th>result</th><th>signal</th><th>CLV</th></tr>__RECENT__</table>
-<div class="foot">Generated by build_dashboard.py from graded_bets / picks_log / PICKS.md. Proven = model+flip; everything else is walled-off paper. CLV &gt; 0 = we beat the close.</div>
+<h1>🏀 WNBA prop bot</h1><div class="sub2">latest slate __SLATE__ · settled through __THROUGH__ · generated __GEN__</div>
+<div class="banner">⚠️ <b>UNPROVEN — paper / tiny stakes only.</b> Every line is vs a synthetic median (predicts the SIDE, not that it beats the book). <b>CLV is the only proof</b> — real-money CLV is __CLVHEAD__ so far. Never auto-bet.</div>
+
+<div class="real"><h2>💰 REAL MONEY — COLD/SHRINK/STINGY</h2>
+__RSUMM__
+<table><tr><th>slate</th><th>player</th><th>bet @ odds</th><th>result</th><th>P&amp;L</th><th>CLV</th></tr>__RROWS__</table></div>
+
+<div class="paper"><h2>🧪 PAPER TESTING — all other signals (NOT real money)</h2>
+<div class="sub2" style="margin-bottom:6px">FLIP UNDER · FTUNDER · HOT OVER · BOOK OVERSHOOT · STAR-OUT CASCADE · usgshock — tracked for CLV, never staked.</div>
+__PSUMM__
+<table><tr><th>slate</th><th>player</th><th>bet @ odds</th><th>signal</th><th>result</th><th>P&amp;L</th><th>CLV</th></tr>__PROWS__</table></div>
+
+<div class="foot">build_dashboard.py · REAL = COLD/SHRINK/STINGY (src=model); PAPER = everything else. P&amp;L is flat 1u stake vs the captured price. CLV &gt; 0 = we beat the close.</div>
 </div></body></html>"""
 
-clvhead = (clvfmt(proven["clv"]) + (" (negative)" if (proven["clv"] or 0) < 0 else "")) if proven["clv"] is not None else "not measured yet"
-page = (TEMPLATE.replace("__CARDS__", cards).replace("__ROWS__", rows).replace("__SVG__", svg or "<div class='empty'>no CLV data yet</div>")
-        .replace("__REAL__", picklist(real_picks))
-        .replace("__PAPERCOUNT__", str(len(paper_picks))).replace("__PAPERSUMMARY__", esc(paper_summary))
-        .replace("__RECENT__", rrows or "<tr><td colspan=7 class='empty'>none</td></tr>")
-        .replace("__LATEST__", esc(latest or "—")).replace("__THROUGH__", esc(data_through))
-        .replace("__GEN__", gen).replace("__OUT__", esc(out_line or "no OUT/doubtful flagged"))
-        .replace("__PENDING__", pending_html).replace("__NPEND__", str(len(pending)))
-        .replace("__CLVHEAD__", clvhead))
+page = (TEMPLATE.replace("__RSUMM__", summ_line(rs, "real")).replace("__RROWS__", real_rows)
+        .replace("__PSUMM__", summ_line(ps, "paper")).replace("__PROWS__", paper_rows)
+        .replace("__SLATE__", esc(slate)).replace("__THROUGH__", esc(through))
+        .replace("__GEN__", gen).replace("__CLVHEAD__", clvhead))
 
-open(os.path.join(ROOT, "dashboard.html"), "w", encoding="utf-8").write(page)
-print(f"dashboard.html written — proven {proven['w']}-{proven['l']} CLV {clvfmt(proven['clv'])}, "
-      f"{len(real_picks)} real + {len(paper_picks)} paper picks for {latest}")
+with open(os.path.join(ROOT, "dashboard.html"), "w", encoding="utf-8") as f:
+    f.write(page)
+print(f"dashboard.html written — REAL {rs['w']}-{rs['l']} ({rs['pnl']:+.2f}u) · PAPER {ps['w']}-{ps['l']} ({ps['pnl']:+.2f}u) · "
+      f"{len(pending_real)} real + {len(pending_paper)} paper pending")

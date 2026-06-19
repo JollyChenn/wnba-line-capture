@@ -20,7 +20,7 @@ SRC_LABEL = {                                         # proper display names (re
 def lab(s): return SRC_LABEL.get(s, s)
 
 
-PROVEN = {"model", "flip"}                            # headline = proven signals (cold+shrink under / cratered-line flip)
+PROVEN = {"model"}                                    # headline = REAL-MONEY signal ONLY (COLD/SHRINK/STINGY); flip/etc = paper
 proven = [r for r in rows if _src(r) in PROVEN]       # speculative overs (hotover/overshoot) NEVER touch the headline
 exper = [r for r in rows if _src(r) not in PROVEN]
 dec = [r for r in proven if r["result"] in ("WIN", "loss")]
@@ -67,7 +67,7 @@ if oc:
     L.append(f"  ODDS-CLV: {avg_clv * 100:+.1f}% avg | beat close {beat}/{len(oc)} ({beat_pct * 100:.0f}%)  ← the edge signal")
 if exp_dec:                                           # the unproven overs, clearly walled off from the headline
     b = _bucket(exp_dec)
-    L.append("  ⚗️ Experimental overs (UNPROVEN, NOT the record): " + " · ".join(
+    L.append("  ⚗️ Paper / experimental (UNPROVEN, NOT the record): " + " · ".join(
         f"{k} {ww}/{t} ({p:+.1f}u)" for k, (t, ww, p) in sorted(b.items())))
 
 # VERDICT — CLV is the proof; hit-rate at small n is noise
@@ -91,7 +91,7 @@ for label, key in [("tier", "tier"), ("market", None)]:
     L.append(f"  by {label}: " + " · ".join(f"{k} {ww}/{t} ({p:+.1f}u)" for k, (t, ww, p) in sorted(agg.items())))
 
 print("\n".join(L))
-print("\n  PER-BET (CLV>0 = our price beat the close · COLD/SHRINK/STINGY + FLIP UNDER = proven; rest = paper/experimental):")
+print("\n  PER-BET (CLV>0 = our price beat the close · COLD/SHRINK/STINGY = real money; everything else = paper):")
 print(f"  {'date':9}{'player':18}{'bet':15}{'signal':19}{'res':5}{'CLV':>6}")
 for r in sorted(rows, key=lambda r: (r["date"], r["player"])):
     oclv = f"{float(r['odds_clv']) * 100:+.0f}%" if r.get("odds_clv") not in ("", None) else "  --"
@@ -102,7 +102,7 @@ hist = ["# WNBA Bot — CLV & Track Record", "",
         "_Auto-updated after each slate settles. Raw data: `graded_bets.csv`. CLV>0 = our price beat the close._", "", "```"]
 hist += [ln.replace("**", "") for ln in L]
 hist += ["```", "", "## Per-bet", "",
-         "_signal: **COLD/SHRINK/STINGY** + **FLIP UNDER** = proven (headline) · the rest = paper/experimental (not in record)_", "",
+         "_signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = paper/experimental (not in record)_", "",
          "| date | player | bet | signal | result | odds-CLV |", "|---|---|---|---|---|---|"]
 for r in sorted(rows, key=lambda x: (x["date"], x["player"])):
     oc2 = f"{float(r['odds_clv']) * 100:+.0f}%" if r.get("odds_clv") not in ("", None) else "—"

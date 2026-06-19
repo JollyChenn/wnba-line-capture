@@ -110,7 +110,7 @@ print(f"graded {len(rows)} settled bet(s) (one-per-player-per-day, rebuilt from 
 allg = list(csv.DictReader(open("graded_bets.csv", encoding="utf-8"))) if os.path.exists("graded_bets.csv") else []
 def _src(g):                                          # legacy graded rows (no src col): under=model, over=overshoot
     return g.get("src", "") or ("model" if g["side"] == "Under" else "overshoot")
-PROVEN = {"model", "flip"}                            # the headline track record = proven signals ONLY
+PROVEN = {"model"}                                    # headline = REAL-MONEY signal ONLY (COLD/SHRINK/STINGY); flip/etc = paper
 decided = [g for g in allg if g["result"] in ("WIN", "loss")]
 dec = [g for g in decided if _src(g) in PROVEN]       # speculative overs (hotover/overshoot) are reported SEPARATELY
 exp = [g for g in decided if _src(g) not in PROVEN]
@@ -118,7 +118,7 @@ if exp:                                               # always surface the unpro
     by = defaultdict(lambda: [0, 0, 0.0])
     for g in exp:
         by[_src(g)][0] += 1; by[_src(g)][1] += g["result"] == "WIN"; by[_src(g)][2] += float(g["pnl"])
-    print("  EXPERIMENTAL overs (UNPROVEN, not in headline): "
+    print("  PAPER / experimental (UNPROVEN, not in headline): "
           + " · ".join(f"{k} {ww}/{t} ({p:+.1f}u)" for k, (t, ww, p) in sorted(by.items())))
 if not dec:
     print("no PROVEN-signal bets settled yet — headline track record starts when a cold+shrink under/flip settles"); raise SystemExit
