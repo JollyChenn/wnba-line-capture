@@ -6,17 +6,17 @@ _🩹 OUT/doubtful (excluded from ALL picks): Brittney Sykes, Cameron Brink, Hai
 
 ## 💰 REAL-MONEY — UNDER (cold/shrink + stingy · pts/PR/PA/PRA · flat 1u)
 
-- **Kiki Iriafen** (Washington Mystics, Washington Mystics @ New York Liberty): points median~13→proj~10.7 fair[10.5=2.06 11.5=1.84 12.5=1.67] · PR 24→21.4 · PA 14→11.4 · RA 11→9.1 · PRA 26→23.0 · [disrupted+stingy] · last5 mins [24 27 27 27 8] oppDef 80 ⚠VERIFY (last game anomaly — skip if blowout/garbage time) · UNDER value zone = book line between proj and median (MAX edge near median)
+- **Kiki Iriafen** (Washington Mystics, Washington Mystics @ New York Liberty): points median~13→proj~10.7 fair[10.5=2.06 11.5=1.84 12.5=1.67] · PR 24→21.4 · PA 14→11.4 · RA 11→9.1 · PRA 26→23.0 · [disrupted+stingy] · last5 mins [24 27 27 27 8] oppDef 79 ⚠VERIFY (last game anomaly — skip if blowout/garbage time) · UNDER value zone = book line between proj and median (MAX edge near median)
 - **Kayla Thornton** (Golden State Valkyries, Minnesota Lynx @ Golden State Valkyries): PR median~15→proj~12.9 fair[13.0=1.98 14.0=1.78 15.0=1.62] · [cold+stingy] · last5 mins [35 35 24 23 29] oppDef 78 · UNDER value zone = book line between proj and median (MAX edge near median)
-- **Courtney Williams** (Minnesota Lynx, Minnesota Lynx @ Golden State Valkyries): PR median~23→proj~21.0 fair[21.0=2.0 22.0=1.79 23.0=1.61] · [cold+stingy] · last5 mins [27 31 33 24 26] oppDef 79 · UNDER value zone = book line between proj and median (MAX edge near median)
+- **Courtney Williams** (Minnesota Lynx, Minnesota Lynx @ Golden State Valkyries): PR median~23→proj~21.0 fair[21.0=2.0 22.0=1.79 23.0=1.61] · [cold+stingy] · last5 mins [27 31 33 24 26] oppDef 80 · UNDER value zone = book line between proj and median (MAX edge near median)
 - **Gabriela Jaquez** (Chicago Sky, Chicago Sky @ Dallas Wings): points median~10→proj~8.3 fair[8.5=1.95 9.5=1.73 10.5=1.56] · PR 15→13.0 · PA 12→9.7 · PRA 16→13.3 · [declining+stingy] · last5 mins [23 19 19 22 29] oppDef 81 · UNDER value zone = book line between proj and median (MAX edge near median)
 
 ## 🧪 PAPER — hot-PRA OVERS (capture for CLV; NOT real money)
 
 - **Leila Lacan** (Connecticut Sun, Toronto Tempo @ Connecticut Sun): **PRA OVER** median~17→proj~19.4 fair[19.5=2.03 18.5=1.84 17.5=1.68] · [hot+leaky] · last5 mins [34 26 32 30 28] oppDef 94 · OVER value zone = book line between median and proj (MAX edge near median)
-- **Allisha Gray** (Atlanta Dream, Indiana Fever @ Atlanta Dream): **PRA OVER** median~20→proj~22.6 fair[22.5=1.97 21.5=1.77 20.5=1.61] · [hot+leaky] · last5 mins [25 35 31 35 34] oppDef 88 · OVER value zone = book line between median and proj (MAX edge near median)
-- **Rhyne Howard** (Atlanta Dream, Indiana Fever @ Atlanta Dream): **PRA OVER** median~26→proj~28.5 fair[28.5=2.0 27.5=1.82 26.5=1.68] · [hot+leaky] · last5 mins [21 36 36 38 38] oppDef 88 · OVER value zone = book line between median and proj (MAX edge near median)
-- **Arike Ogunbowale** (Dallas Wings, Chicago Sky @ Dallas Wings): **PRA OVER** median~26→proj~29.6 fair[29.5=1.99 28.5=1.88 27.5=1.78] · [hot+leaky] · last5 mins [28 29 35 30 28] oppDef 92 · OVER value zone = book line between median and proj (MAX edge near median)
+- **Allisha Gray** (Atlanta Dream, Indiana Fever @ Atlanta Dream): **PRA OVER** median~20→proj~22.6 fair[22.5=1.97 21.5=1.77 20.5=1.61] · [hot+leaky] · last5 mins [25 35 31 35 34] oppDef 89 · OVER value zone = book line between median and proj (MAX edge near median)
+- **Rhyne Howard** (Atlanta Dream, Indiana Fever @ Atlanta Dream): **PRA OVER** median~26→proj~28.5 fair[28.5=2.0 27.5=1.82 26.5=1.68] · [hot+leaky] · last5 mins [21 36 36 38 38] oppDef 89 · OVER value zone = book line between median and proj (MAX edge near median)
+- **Arike Ogunbowale** (Dallas Wings, Chicago Sky @ Dallas Wings): **PRA OVER** median~26→proj~29.6 fair[29.5=1.99 28.5=1.88 27.5=1.78] · [hot+leaky] · last5 mins [28 29 35 30 28] oppDef 91 · OVER value zone = book line between median and proj (MAX edge near median)
 
 ## 🧪 PAPER — fragile reb/ast singles (matrix: de-combined reb/ast unders backfire)
 
