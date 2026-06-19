@@ -526,8 +526,9 @@ def main():
             # ---- the model's own side (an under, or a PRA over) ----
             outs = pp.get((pk["base"], psd))
             if outs:
-                line, odds = min(outs, key=lambda t: abs(t[0] - pk["anchor"]))
-                rows.append([stamp, player, pk["base"], psd, line, odds])
+                line, odds = min(outs, key=lambda t: abs(t[0] - pk["anchor"]))   # the model's value-zone line (closest to median)
+                for _L, _O in outs:                       # capture EVERY alternate line (book often lists 2+, e.g. U22.5 AND U25.5) for the record
+                    rows.append([stamp, player, pk["base"], psd, _L, _O])
                 zone = (line >= pk["anchor"] - 1) if psd == "Under" else (line <= pk["anchor"] + 1)
                 if pk.get("sd"):
                     # de-inflate the hot-over projection (backtest: actual regresses ~15% toward the median)
@@ -584,6 +585,16 @@ def main():
             warn = f" ⚠{nso[tmab].split()[-1]}-OUT" if star_trap else ""
             flip = " 🧪PAPER" if paper else ""        # real-money (model) bets get no tag; all paper marked PAPER
             txt = f"• **{player}** ({tmab}) {base.upper()} {bside} **{line} @ {odds}** [{_tier(ph)}{flip}{warn} · {sig} · hit {ph*100:.0f}% · EV {ev*100:+.0f}%]{cstr}"
+            _alts = sorted([(L, O) for L, O in (pp.get((base, bside)) or []) if abs(L - line) > 0.01], key=lambda t: t[0])[:4]
+            if _alts:                                 # book lists 2+ lines (alt lines, e.g. U22.5 AND U25.5) -> show each w/ its own EV so you pick best cushion/price
+                _pk = next((p for p in pks if p["base"] == base and p["side"] == bside), None)
+                _sd, _proj = (_pk or {}).get("sd"), (_pk or {}).get("proj")
+                def _aev(L, O, _sd=_sd, _proj=_proj):     # show CUSHION (chance of clearing), NOT EV — the model's tail hit% is inflated, a far line isn't free edge
+                    if _sd and _proj is not None:
+                        h = _ncdf((L - _proj) / _sd); h = h if bside == "Under" else 1 - h
+                        return f" (~{h*100:.0f}% cushion)"
+                    return ""
+                txt += "\n    ↳ alt lines (higher = safer/lower odds; the recommended line is the model's edge): " + ", ".join(f"{L}@{O}{_aev(L, O)}" for L, O in _alts)
             claimed_players.add(player.lower())       # model has a line on this player now -> overshoot scan must not add a 2nd line for them
             if st == "HOLD":
                 holds.append(txt + " ⏳unconfirmed")
