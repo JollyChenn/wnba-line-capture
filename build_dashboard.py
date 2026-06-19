@@ -21,6 +21,18 @@ casc   = load("cascade_log.csv")
 mybets = load("my_bets.csv")
 PROVEN = {"model", "flip"}
 esc = lambda s: html.escape(str(s))
+SRC_LABEL = {                                              # human names so the record reads clearly
+    "model": "cold+shrink UNDER (core)",
+    "flip": "cratered-line OVER · cold/shrink",
+    "flip_paper": "cratered-line OVER · steady/ft (paper)",
+    "newunder": "ft-drought + steady UNDER",
+    "hotover": "hot-PRA OVER",
+    "usgshock": "usage-spike ASSIST over",
+    "cascade": "star-out cascade PRA OVER",
+    "starout": "downgraded UNDER · fresh star-out",
+    "overshoot": "overshoot OVER (logged-only)",
+}
+def label(s): return SRC_LABEL.get(s, s)
 
 # ---- record by src ---------------------------------------------------------
 rec = defaultdict(lambda: {"w": 0, "l": 0, "push": 0, "pnl": 0.0, "clv": []})
@@ -107,7 +119,7 @@ for s in order:
     d = rec[s]; n = d["w"] + d["l"]; hit = d["w"] / n if n else None
     clv = sum(d["clv"]) / len(d["clv"]) if d["clv"] else None
     tag = "PROVEN" if s in PROVEN else "paper"
-    rows += (f'<tr><td>{esc(s)}</td><td><span class="pill {"pos" if s in PROVEN else "mut"}">{tag}</span></td>'
+    rows += (f'<tr><td>{esc(label(s))}</td><td><span class="pill {"pos" if s in PROVEN else "mut"}">{tag}</span></td>'
              f'<td>{d["w"]}–{d["l"]}</td><td class="{cls((hit or 0)-BE)}">{pct(hit)}</td>'
              f'<td class="{cls(clv)}">{clvfmt(clv)}</td><td class="{cls(d["pnl"])}">{d["pnl"]:+.1f}u</td></tr>')
 
