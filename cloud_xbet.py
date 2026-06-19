@@ -540,6 +540,8 @@ def main():
                 src = "newunder"
             elif "usgshock" in sig:
                 src = "usgshock"
+            elif bside == "Under" and base in ("reb", "ast"):
+                src = "fragile"          # de-combined reb/ast single -> PAPER (matrix: these backfire, 42-49%)
             elif bside == "Under":
                 src = "model"
             else:
@@ -555,7 +557,7 @@ def main():
                 betstruct.append([player, base, bside, line, odds, _tier(ph), round(ev, 3), pin.get(_pkey(player), {}).get(base, ""), src])
             pinref = pin.get(_pkey(player), {}).get(base)
             cstr = f" · Pinn {pinref}" if pinref is not None else ""
-            paper = is_new or star_trap or src in ("hotover", "usgshock", "flip_paper")   # paper/experimental -> never a real-BET ping
+            paper = is_new or star_trap or src in ("hotover", "usgshock", "flip_paper", "fragile")   # paper/experimental -> never a real-BET ping
             warn = f" ⚠{nso[tmab].split()[-1]}-OUT" if star_trap else ""
             flip = " 🎯FLIP" if src == "flip" else (" 🧪FLIP-paper" if src == "flip_paper" else (" 🧪PAPER" if paper else ""))
             txt = f"• **{player}** ({tmab}) {base.upper()} {bside} **{line} @ {odds}** [{_tier(ph)}{flip}{warn} · {sig} · hit {ph*100:.0f}% · EV {ev*100:+.0f}%]{cstr}"

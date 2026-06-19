@@ -335,12 +335,14 @@ def main():
                 if out_names else "_🩹 No OUT/doubtful players flagged._")
     lines_md = [f"# WNBA core picks — {today}",
                 "", f"_Stingy-D threshold (trailing-10 allowed, bottom quartile): {stingy_thr:.0f}_",
-                "", inj_note,
-                "", "## REAL-MONEY CORE — UNDER pts (need >=2 signals, flat 1u)", ""]
+                "", inj_note, ""]
     log_rows = []
     core_picks = []          # compact lines for the Discord ping
     cascade_lines = []
     exp_lines = []           # 🧪 forward-test signals (paper only, never in the BET ping)
+    real_under = []          # 💰 model unders that route to REAL money (pts/PR/PA/PRA, cold/shrink+stingy)
+    frag_under = []          # 🧪 reb/ast single unders -> PAPER (matrix: de-combined reb/ast unders backfire)
+    over_lines = []          # 🧪 hot-PRA overs -> PAPER (cloud_xbet tags src=hotover, never real money)
     n_unders = 0
     for gm_ in upcoming:
         a, h = gm_["away"], gm_["home"]
@@ -403,14 +405,16 @@ def main():
             opts = " · ".join(parts)
             tg0 = shown[0][2]
             warn = " ⚠VERIFY (last game anomaly — skip if blowout/garbage time)" if r.disrupted and not r.declining else ""
-            lines_md.append(f"- **{player}** ({NAME(r.team)}, {NAME(a)} @ {NAME(h)}): {opts} "
-                            f"· [{tg0}] · last5 mins [{r.recent_min}] oppDef {r.opp_def:.0f}{warn} "
-                            f"· UNDER value zone = book line between proj and median (MAX edge near median=book naive, NONE near proj=book moved)")
+            is_frag = all(o[5] in FRAGILE for o in d["opts"])   # only reb/ast markets available -> fragile single -> paper
+            line_md = (f"- **{player}** ({NAME(r.team)}, {NAME(a)} @ {NAME(h)}): {opts} "
+                       f"· [{tg0}] · last5 mins [{r.recent_min}] oppDef {r.opp_def:.0f}{warn} "
+                       f"· UNDER value zone = book line between proj and median (MAX edge near median)")
+            (frag_under if is_frag else real_under).append(line_md)
             for label, ln, tg, fp, fo, mkt in d["opts"]:
                 mu = round(ln - r[f"sd_{mkt}"] * _nppf(fp), 1)     # our projection (for CLV grading)
                 log_rows.append([str(today), gm_["game_id"], player, NAME(r.team), NAME(opp_of[r.team]),
                                  f"{mkt}_under", ln, tg, round(fp, 3), fo, mu, round(r[f"sd_{mkt}"], 2)])
-            if not (r.disrupted and not r.declining):     # don't PING one-game minute anomalies (still listed in PICKS.md w/ ⚠VERIFY)
+            if not is_frag and not (r.disrupted and not r.declining):   # PING real-money unders only (not fragile / not anomaly)
                 core_picks.append(f"• **{player}** ({NAME(r.team)}) — {opts}")
             n_unders += 1
 
@@ -429,10 +433,10 @@ def main():
             c = round(mu * 2) / 2
             lad = " ".join(f"{c-off:.1f}={round(1/max(_ncdf((mu-(c-off))/max(sd_m,1)),0.01),2)}" for off in (0, 1, 2))
             ln = float(np.floor(med - 0.001) + 0.5)
-            lines_md.append(f"- **{r.player}** ({NAME(r.team)}, {NAME(a)} @ {NAME(h)}): **PRA OVER** "
-                            f"median~{med:.0f}→proj~{mu:.1f} fair[{lad}] · [{tg}] · "
-                            f"last5 mins [{r.recent_min}] oppDef {r.opp_def:.0f} "
-                            f"· OVER value zone = book line between median and proj (MAX edge near median)")
+            over_lines.append(f"- **{r.player}** ({NAME(r.team)}, {NAME(a)} @ {NAME(h)}): **PRA OVER** "
+                              f"median~{med:.0f}→proj~{mu:.1f} fair[{lad}] · [{tg}] · "
+                              f"last5 mins [{r.recent_min}] oppDef {r.opp_def:.0f} "
+                              f"· OVER value zone = book line between median and proj (MAX edge near median)")
             log_rows.append([str(today), gm_["game_id"], r.player, NAME(r.team), NAME(opp_of[r.team]),
                              "pra_over", ln, tg, round(fp, 3), fo, round(mu, 1), round(r.sd_pra, 2)])
             if med >= STAR_PRA_MIN:     # PRA star-only on 1xbet -> only PING star overs (role overs stay in PICKS.md)
@@ -482,8 +486,12 @@ def main():
                              f"[usgshock · PAPER] usg {u20:.0f}->{u5:.0f} · med~{r.med_ast:.0f}->proj~{aproj:.1f}")
             log_rows.append([str(today), gm_["game_id"], r.player, NAME(r.team), NAME(opp_of[r.team]),
                              "ast_over", aln, "usgshock", 0.591, fair_odds(0.591), aproj, round(r.sd_ast, 2)])
-    if not n_unders:
-        lines_md.append("_(no 2-signal core unders today — do NOT reach for singles)_")
+    lines_md += ["## 💰 REAL-MONEY — UNDER (cold/shrink + stingy · pts/PR/PA/PRA · flat 1u)", ""]
+    lines_md += real_under if real_under else ["_(no real-money core unders today — do NOT reach for singles)_"]
+    if over_lines:
+        lines_md += ["", "## 🧪 PAPER — hot-PRA OVERS (capture for CLV; NOT real money)", ""] + over_lines
+    if frag_under:
+        lines_md += ["", "## 🧪 PAPER — fragile reb/ast singles (matrix: de-combined reb/ast unders backfire)", ""] + frag_under
 
     lines_md += ["", "## CASCADE contingencies — fire ONLY on scratch news (PRA OVER rank-3-6, flat 1u)", ""]
     for gm_ in upcoming:
