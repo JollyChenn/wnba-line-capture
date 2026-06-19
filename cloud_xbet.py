@@ -70,7 +70,9 @@ def _team_ab(name):
 
 
 def pinnacle_lines():
-    """Pinnacle WNBA single-stat prop lines (the sharp ~close) -> {player_key:{stat:line}}. Best-effort, for the CLV ref."""
+    """Pinnacle WNBA single-stat prop lines (sharp ~close) + DERIVED combos -> {player_key:{market:line}}.
+    Pinnacle posts WNBA props only NEAR tip and offers SINGLE stats only (pts/reb/ast) — so we SUM them to get a
+    sharp reference for the PR/PA/RA/PRA combo bets too. Best-effort CLV ref (returns {} when props aren't up yet)."""
     PB = "https://guest.api.arcadia.pinnacle.com/0.1"
     HK = {"X-API-Key": "CmX2KcMrXuFmNg6YFbmTxE0y9CIrOi0R", "User-Agent": UA}
     SMAP = {"Points": "pts", "Rebounds": "reb", "Assists": "ast"}
@@ -78,13 +80,21 @@ def pinnacle_lines():
     try:
         mm = creq.get(PB + "/sports/4/matchups", impersonate="chrome", timeout=20, headers=HK).json()
         mk = creq.get(PB + "/sports/4/markets/straight", impersonate="chrome", timeout=20, headers=HK).json()
-        mkt = {x["matchupId"]: x for x in mk if x.get("type") == "total" and x.get("prices")}
+        mkt = {x["matchupId"]: x for x in mk                      # FULL-GAME (period 0) totals only — never a half/quarter line
+               if x.get("type") == "total" and x.get("period") == 0 and x.get("prices")}
         for m in mm:
             if "wnba" not in json.dumps(m.get("league", {})).lower():
                 continue
             mt = re.match(r"(.+?) Total (Points|Rebounds|Assists)\b", (m.get("special") or {}).get("description", ""))
             if mt and m["id"] in mkt:
-                out[_pkey(mt.group(1))][SMAP[mt.group(2)]] = mkt[m["id"]]["prices"][0].get("points")
+                pt = mkt[m["id"]]["prices"][0].get("points")
+                if pt is not None:
+                    out[_pkey(mt.group(1))][SMAP[mt.group(2)]] = float(pt)
+        for d in out.values():                                   # derive combos (Pinnacle has no PR/PA/RA/PRA) by summing singles
+            if "pts" in d and "reb" in d: d["pr"] = d["pts"] + d["reb"]
+            if "pts" in d and "ast" in d: d["pa"] = d["pts"] + d["ast"]
+            if "reb" in d and "ast" in d: d["ra"] = d["reb"] + d["ast"]
+            if "pts" in d and "reb" in d and "ast" in d: d["pra"] = d["pts"] + d["reb"] + d["ast"]
     except Exception as e:
         print("pinnacle ref unavailable:", str(e)[:40])
     return out
