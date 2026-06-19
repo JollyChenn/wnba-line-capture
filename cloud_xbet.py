@@ -14,7 +14,11 @@ try:
 except Exception:
     pass
 
-BASE = "https://1x-bet.com/service-api"
+# Mirror fallback: 1x-bet.com (primary) -> melbet.com. SAME LineFeed engine + champ 197289; both
+# datacenter-reachable past Cloudflare (verified 2026-06-19). If the primary returns nothing (block or
+# empty feed), the discovery step auto-switches BASE to the next mirror for the whole run (gz() reads this).
+MIRRORS = ["https://1x-bet.com/service-api", "https://melbet.com/service-api"]
+BASE = MIRRORS[0]
 ESPN = "https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard"
 INJ = "https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/injuries"
 CHAMP = os.environ.get("XBET_CHAMP", "197289")   # WNBA league champ. 2874802 was a BROAD mixed-league feed (Euroleague/3x3/U20 etc.) that buried & staled WNBA props -> flickering/missing lines. 197289 = the clean WNBA champ melbet/1xbet/malay.1xbet all use.
@@ -422,9 +426,17 @@ def main():
     if nso:
         print("FRESH star-outs (under-guard active): " + ", ".join(f"{t}:{s.split()[-1]}" for t, s in nso.items()))
 
-    disc = get(f"{BASE}/LineFeed/Get1x2_VZip?sports=3&champs={CHAMP}&count=40&lng=en&mode=4&country=115&getEmpty=true&virtualSports=true")
+    global BASE                                          # may be re-pinned to a fallback mirror below
+    disc = None
+    for mirror in MIRRORS:                               # try 1x-bet.com, then melbet.com — first one with WNBA games wins
+        d = get(f"{mirror}/LineFeed/Get1x2_VZip?sports=3&champs={CHAMP}&count=40&lng=en&mode=4&country=115&getEmpty=true&virtualSports=true")
+        if [e for e in (d or {}).get("Value", []) if isinstance(e, dict) and e.get("O1") and e.get("I")]:
+            BASE, disc = mirror, d                        # pin this mirror for the rest of the run (gz() reads BASE)
+            if mirror != MIRRORS[0]:
+                print(f"primary mirror empty/blocked -> using fallback {mirror}")
+            break
     if not disc:
-        ping(f"⚠️ **1xbet scrape BLOCKED (Cloudflare) — {now.strftime('%H:%M')} UTC**\nCheck these on 1xbet yourself:\n" + proj_msg(inj))
+        ping(f"⚠️ **1xbet scrape BLOCKED (all mirrors) — {now.strftime('%H:%M')} UTC**\nCheck these on 1xbet yourself:\n" + proj_msg(inj))
         return
 
     games = [e for e in disc.get("Value", []) if isinstance(e, dict) and e.get("O1") and e.get("I")]
