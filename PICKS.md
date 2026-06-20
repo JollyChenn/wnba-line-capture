@@ -2,7 +2,7 @@
 
 _Stingy-D threshold (trailing-10 allowed, bottom quartile): 82_
 
-_🩹 OUT/doubtful (excluded from ALL picks): Aaliyah Nye, Brittney Sykes, Cameron Brink, Hailey Van Lith, Jordan Horston, Jovana Nogic, Kiki Rice, Nyara Sabally, Odyssey Sims_
+_🩹 OUT/doubtful (excluded from ALL picks): Aaliyah Nye, Brittney Sykes, Cameron Brink, Hailey Van Lith, Jordan Horston, Jovana Nogic, Kiki Rice, Monique Akoa Makani, Nyara Sabally, Odyssey Sims_
 
 ## 💰 REAL-MONEY — UNDER (cold/shrink + stingy · pts/PR/PA/PRA · flat 1u)
 
@@ -30,7 +30,7 @@ _🩹 OUT/doubtful (excluded from ALL picks): Aaliyah Nye, Brittney Sykes, Camer
 - Indiana Fever: if **Caitlin Clark** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Kelsey Mitchell OVER 24.5 PRA, Sophie Cunningham OVER 12.5 PRA, Lexie Hull OVER 10.5 PRA, Monique Billings OVER 7.5 PRA
 - Atlanta Dream: if **Angel Reese** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Allisha Gray OVER 20.5 PRA, Jordin Canada OVER 19.5 PRA, Naz Hillmon OVER 16.5 PRA, Isobel Borlase OVER 7.5 PRA
 - Seattle Storm: if **Natisha Hiedeman** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Flau'jae Johnson OVER 17.5 PRA, Awa Fam OVER 15.5 PRA, Jade Melbourne OVER 10.5 PRA
-- Phoenix Mercury: if **Kahleah Copper** OUT -> (fair 1.75, bet if 1xbet over > 1.75) DeWanna Bonner OVER 9.5 PRA, Lexi Held OVER 7.5 PRA, Monique Akoa Makani OVER 15.5 PRA, Natasha Mack OVER 17.5 PRA
+- Phoenix Mercury: if **Kahleah Copper** OUT -> (fair 1.75, bet if 1xbet over > 1.75) DeWanna Bonner OVER 9.5 PRA, Lexi Held OVER 7.5 PRA, Natasha Mack OVER 17.5 PRA
 - Chicago Sky: if **Skylar Diggins** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Natasha Cloud OVER 16.5 PRA, Kamilla Cardoso OVER 20.5 PRA, Gabriela Jaquez OVER 15.5 PRA, Sydney Taylor OVER 13.5 PRA
 - Dallas Wings: if **Paige Bueckers** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Azzi Fudd OVER 16.5 PRA, Jessica Shepard OVER 28.5 PRA, Aziaha James OVER 12.5 PRA, Awak Kuier OVER 10.5 PRA
 - Golden State Valkyries: if **Gabby Williams** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Janelle Salaun OVER 20.5 PRA, Cecilia Zandalasini OVER 11.5 PRA, Kayla Thornton OVER 14.5 PRA, Tiffany Hayes OVER 8.5 PRA
@@ -54,7 +54,6 @@ _ft_volume_drought 58.9% / steady+streak 58.6% OOS vs a synthetic line — prove
 - **Kahleah Copper** (Phoenix Mercury, Seattle Storm @ Phoenix Mercury): PTS UNDER ~18.5 [steady · PAPER] median~18→proj~17.1 · last5 mins [35 26 29 38 30]
 - **Natisha Hiedeman** (Seattle Storm, Seattle Storm @ Phoenix Mercury): PTS UNDER ~16.5 [steady · PAPER] median~16→proj~15.6 · last5 mins [26 28 29 33 33]
 - **Flau'jae Johnson** (Seattle Storm, Seattle Storm @ Phoenix Mercury): PTS UNDER ~9.5 [steady · PAPER] median~10→proj~8.9 · last5 mins [26 24 30 29 22]
-- **Monique Akoa Makani** (Phoenix Mercury, Seattle Storm @ Phoenix Mercury): PTS UNDER ~9.5 [steady · PAPER] median~10→proj~8.8 · last5 mins [31 32 24 24 20]
 - **Lexi Held** (Phoenix Mercury, Seattle Storm @ Phoenix Mercury): ASSISTS OVER ~1.5 [usgshock · PAPER] usg 5->10 · med~2->proj~1.9
 - **Skylar Diggins** (Chicago Sky, Chicago Sky @ Dallas Wings): PTS UNDER ~15.5 [steady · PAPER] median~16→proj~14.7 · last5 mins [32 27 32 32 31]
 - **Jessica Shepard** (Dallas Wings, Chicago Sky @ Dallas Wings): PTS UNDER ~13.5 [steady · PAPER] median~14→proj~12.8 · last5 mins [29 32 35 31 33]

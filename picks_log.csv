@@ -202,7 +202,6 @@ pick_date,game_id,player,team,opp,market,anchor,signals,fair_p,fair_odds,proj,sd
 2026-06-20,401857007,Kahleah Copper,Phoenix Mercury,Seattle Storm,pts_under,18.5,steady,0.563,1.78,17.1,8.74
 2026-06-20,401857007,Natisha Hiedeman,Seattle Storm,Phoenix Mercury,pts_under,16.5,steady,0.563,1.78,15.6,5.43
 2026-06-20,401857007,Flau'jae Johnson,Seattle Storm,Phoenix Mercury,pts_under,9.5,steady,0.563,1.78,8.9,3.68
-2026-06-20,401857007,Monique Akoa Makani,Phoenix Mercury,Seattle Storm,pts_under,9.5,steady,0.563,1.78,8.8,4.3
 2026-06-20,401857007,Lexi Held,Phoenix Mercury,Seattle Storm,ast_over,1.5,usgshock,0.591,1.69,1.9,1.5
 2026-06-20,401857008,Gabriela Jaquez,Chicago Sky,Dallas Wings,pts_under,10.5,declining+stingy,0.642,1.56,8.3,6.05
 2026-06-20,401857008,Gabriela Jaquez,Chicago Sky,Dallas Wings,pr_under,14.5,declining+stingy,0.59,1.69,13.0,6.79
