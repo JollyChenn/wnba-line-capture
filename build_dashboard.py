@@ -29,7 +29,15 @@ for _r in load("data/box_2026.csv"):
     _d = _gdate.get(_r.get("game_id"), "")
     if _pl and _tm and (_pl not in _team_by or _d >= _team_by[_pl][0]):
         _team_by[_pl] = (_d, _tm)                       # keep the LATEST team (handles mid-season moves)
-def team_of(name): return _team_by.get((name or "").lower(), ("", ""))[1]
+TEAM_FULL = {                                          # ESPN abbreviation -> full WNBA team name (incl. 2026 expansion)
+    "ATL": "Atlanta Dream", "CHI": "Chicago Sky", "CON": "Connecticut Sun", "DAL": "Dallas Wings",
+    "GS": "Golden State Valkyries", "IND": "Indiana Fever", "LA": "Los Angeles Sparks", "LV": "Las Vegas Aces",
+    "MIN": "Minnesota Lynx", "NY": "New York Liberty", "PHX": "Phoenix Mercury", "POR": "Portland Fire",
+    "SEA": "Seattle Storm", "TOR": "Toronto Tempo", "WSH": "Washington Mystics",
+}
+def team_of(name):                                     # -> full team name, falling back to the abbreviation
+    ab = _team_by.get((name or "").lower(), ("", ""))[1]
+    return TEAM_FULL.get(ab, ab)
 
 REAL_SRC = {"model"}                                   # COLD/SHRINK/STINGY = the ONLY real-money signal
 SIG_NAME = {                                           # proper display names (internal keys stable)
