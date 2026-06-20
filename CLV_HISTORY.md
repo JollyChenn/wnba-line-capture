@@ -9,7 +9,7 @@ _**sharp-odds** = vs Pinnacle's vig-free fair price (TRUE edge test) · **sharp-
   Net P&L : -0.39u  (ROI -6.5%/bet)
   SHARP LINE-CLV : -0.25 pts | n=2  ← better number than the sharp
   self ODDS-CLV  : -0.7% | beat 1/6 (17%)  (1xbet's own close = weak)
-  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 5/13 (-3.8u) · FLIP UNDER 2/6 (-2.3u) · FLIP UNDER(paper) 1/1 (+0.9u) · FTUNDER 7/14 (-1.3u) · HOT OVER 5/5 (+4.4u) · STAR-OUT CASCADE 2/2 (+1.5u) · starout 0/1 (-1.0u)
+  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 6/14 (-2.9u) · FLIP UNDER 2/6 (-2.3u) · FLIP UNDER(paper) 1/1 (+0.9u) · FTUNDER 8/16 (-1.5u) · HOT OVER 5/5 (+4.4u) · STAR-OUT CASCADE 2/2 (+1.5u) · starout 0/1 (-1.0u)
   VERDICT : ⏳ TOO EARLY (n=6; sharp-CLV thin, need ~20-40 ≈ 2wks). CLV flat — not yet meaningful.
   by tier: SOLID 1/2 (+0.0u) · STRONG 2/3 (+0.6u) · THIN 0/1 (-1.0u)
   by market: pr Under 1/2 (+0.0u) · pra Under 1/2 (-0.3u) · pts Under 1/2 (-0.1u)
@@ -65,7 +65,10 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260620 | Allisha Gray | PTS Under 18.5 @ 1.93 | FTUNDER | loss | — | — | +0% |
 | 20260620 | Angel Reese | PRA Over 29.5 @ 1.893 | BOOK OVERSHOOT | loss | — | — | +0% |
 | 20260620 | Caitlin Clark | PTS Under 20.5 @ 1.8 | FTUNDER | loss | — | — | +2% |
+| 20260620 | Flau'jae Johnson | PTS Under 10.5 @ 1.93 | FTUNDER | loss | — | — | +0% |
 | 20260620 | Jordin Canada | PTS Under 12.5 @ 1.77 | FTUNDER | WIN | -7% | +0.0 | +1% |
+| 20260620 | Kahleah Copper | PTS Under 19.5 @ 1.79 | FTUNDER | WIN | — | — | +0% |
 | 20260620 | Kelsey Mitchell | PTS Under 19.5 @ 1.92 | FTUNDER | WIN | — | — | +2% |
+| 20260620 | Natisha Hiedeman | PRA Over 21.5 @ 1.87 | BOOK OVERSHOOT | WIN | — | — | +0% |
 | 20260620 | Rhyne Howard | PRA Over 25.5 @ 2.0 | HOT OVER | WIN | — | — | +6% |
 | 20260620 | Sophie Cunningham | PTS Over 8.5 @ 1.86 | FLIP UNDER(paper) | WIN | -7% | +0.0 | -0% |
