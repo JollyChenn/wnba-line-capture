@@ -35,9 +35,10 @@ TEAM_FULL = {                                          # ESPN abbreviation -> fu
     "MIN": "Minnesota Lynx", "NY": "New York Liberty", "PHX": "Phoenix Mercury", "POR": "Portland Fire",
     "SEA": "Seattle Storm", "TOR": "Toronto Tempo", "WSH": "Washington Mystics",
 }
-def team_of(name):                                     # -> full team name, falling back to the abbreviation
+def team_of(name):                                     # -> just the nickname (Dream / Sparks / Lynx); falls back to the abbreviation
     ab = _team_by.get((name or "").lower(), ("", ""))[1]
-    return TEAM_FULL.get(ab, ab)
+    full = TEAM_FULL.get(ab, ab)
+    return full.split()[-1] if full else ""            # last word = the nickname (all WNBA nicknames are one word)
 
 REAL_SRC = {"model"}                                   # COLD/SHRINK/STINGY = the ONLY real-money signal
 SIG_NAME = {                                           # proper display names (internal keys stable)
