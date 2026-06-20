@@ -7,9 +7,9 @@ _**sharp-odds** = vs Pinnacle's vig-free fair price (TRUE edge test) · **sharp-
 📊 WNBA BOT — TRACK RECORD (6 settled · PROVEN signals only)
   Record  : 3-3  (50% hit)
   Net P&L : -0.39u  (ROI -6.5%/bet)
-  SHARP LINE-CLV : +0.00 pts | n=3  ← better number than the sharp
-  self ODDS-CLV  : -0.6% | beat 3/6 (50%)  (1xbet's own close = weak)
-  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 5/12 (-2.8u) · FLIP UNDER 2/6 (-2.3u) · FTUNDER 4/8 (-0.8u) · HOT OVER 4/4 (+3.4u) · STAR-OUT CASCADE 2/2 (+1.5u) · starout 0/1 (-1.0u)
+  SHARP LINE-CLV : -0.25 pts | n=2  ← better number than the sharp
+  self ODDS-CLV  : +0.9% | beat 3/6 (50%)  (1xbet's own close = weak)
+  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 5/12 (-2.8u) · FLIP UNDER 2/6 (-2.3u) · FTUNDER 4/9 (-1.8u) · HOT OVER 4/4 (+3.4u) · STAR-OUT CASCADE 2/2 (+1.5u) · starout 0/1 (-1.0u)
   VERDICT : ⏳ TOO EARLY (n=6; sharp-CLV thin, need ~20-40 ≈ 2wks). CLV flat — not yet meaningful.
   by tier: SOLID 1/2 (+0.0u) · STRONG 2/3 (+0.6u) · THIN 0/1 (-1.0u)
   by market: pr Under 1/2 (+0.0u) · pra Under 1/2 (-0.3u) · pts Under 1/2 (-0.1u)
@@ -49,14 +49,15 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260618 | Rhyne Howard | PTS Under 18.5 @ 1.88 | FTUNDER | WIN | — | — | +0% |
 | 20260619 | Breanna Stewart | PTS Under 19.5 @ 1.73 | FTUNDER | WIN | — | — | -9% |
 | 20260619 | Brittney Griner | PTS Under 11.5 @ 1.83 | FTUNDER | loss | — | +0.0 | -3% |
-| 20260619 | Courtney Williams | PR Under 22.5 @ 1.73 | COLD/SHRINK/STINGY | loss | — | +0.5 | -9% |
-| 20260619 | Gabby Williams | PTS Over 15.5 @ 1.92 | FLIP UNDER | loss | — | +0.0 | +3% |
+| 20260619 | Courtney Williams | PR Under 22.5 @ 1.73 | COLD/SHRINK/STINGY | loss | — | — | +0% |
+| 20260619 | Gabby Williams | PTS Over 15.5 @ 1.92 | FLIP UNDER | loss | — | — | -4% |
 | 20260619 | Isabelle Harrison | PRA Over 19.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260619 | Jonquel Jones | PTS Over 13.5 @ 2.0 | FLIP UNDER | loss | — | — | +5% |
-| 20260619 | Kayla McBride | PTS Under 13.5 @ 1.8 | FTUNDER | loss | — | +0.0 | -4% |
+| 20260619 | Kayla McBride | PTS Under 13.5 @ 1.8 | FTUNDER | loss | — | — | -10% |
 | 20260619 | Kayla Thornton | PR Under 14.5 @ 2.0 | COLD/SHRINK/STINGY | WIN | — | -0.5 | +9% |
 | 20260619 | Laura Juskaite | PRA Over 13.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260619 | Marina Mabrey | PTS Under 19.5 @ 2.0 | starout | loss | — | -1.0 | +5% |
 | 20260619 | Michaela Onyenwere | PTS Over 9.5 @ 1.8 | BOOK OVERSHOOT | WIN | — | — | -5% |
-| 20260619 | Natasha Howard | PTS Over 14.5 @ 1.69 | FLIP UNDER | loss | — | +1.0 | -16% |
+| 20260619 | Natasha Howard | PTS Over 14.5 @ 1.69 | FLIP UNDER | loss | — | — | -12% |
 | 20260619 | Olivia Miles | PA Over 23.5 @ 1.83 | BOOK OVERSHOOT | loss | — | — | +6% |
+| 20260619 | Shakira Austin | PTS Under 13.5 @ 1.73 | FTUNDER | loss | — | — | — |
