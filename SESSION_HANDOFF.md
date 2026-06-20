@@ -136,7 +136,7 @@ Internal `src` keys are STABLE in the data; display names renamed for clarity.
 ## 11. FILE MAP / HOW TO RUN (locally, past Cloudflare via curl_cffi)
 - `cloud_xbet.py` — capture+ping bot. `XBET_WINDOW_MIN=1440 DISCORD_WEBHOOK="" python cloud_xbet.py` (wide gate, no ping). Mirrors in `MIRRORS`; champ in `CHAMP`.
 - `daily_picks.py` — ESPN fetch + picks. `DISCORD_WEBHOOK="" python daily_picks.py`.
-- `grade_bets.py` — settle (idempotent, rebuilds graded_bets from bets_log+box). `clv_reader.py` — record + verdict.
+- `grade_bets.py` — settle (idempotent, rebuilds graded_bets from bets_log+box). **CLV close = last capture AT OUR OPENING LINE** (not the absolute-last capture) → odds-CLV is apples-to-apples, deterministic, frozen post-tip (was bouncing because the soft book oscillates the price and shifts the line). Real-money CLV lives in `my_bets.csv` (hand-entered, never recomputed). `clv_reader.py` — record + verdict.
 - `build_dashboard.py` → `dashboard.html` (LOCAL only, not GitHub Pages — open the file).
 - `lineup_check.py` — near-tip guard. `LINEUP_WINDOW_MIN=1440 python lineup_check.py` to test wide.
 - `cbs_check.py` — CBS 2nd-source cross-check (all teams).

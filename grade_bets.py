@@ -111,18 +111,25 @@ for (d, plow, mk, side), cl in caps.items():
     if act is None:
         continue                                       # game not final yet -> pending
     cl.sort()
-    o_line, o_odds, tier, disp = cl[0][1], cl[0][2], cl[0][3], cl[0][4]      # OUR bet = first alert
-    c_line, c_odds, c_pinn = cl[-1][1], cl[-1][2], cl[-1][5]                 # CLOSE = last capture
+    o_line, o_odds, tier, disp = cl[0][1], cl[0][2], cl[0][3], cl[0][4]      # OUR bet = first alert (opening line + price)
     o_src = cl[0][6]                                                          # signal source of OUR (first) capture
-    has_close = len(cl) >= 2                                                 # only ONE capture -> no measured close -> CLV is UNKNOWN (blank), NOT a real 0
+    # CLOSE PRICE = the last capture STILL AT OUR OPENING LINE. The soft book oscillates the price (1.91<->2.0) and
+    # sometimes shifts the line (e.g. 14.5->15.5); taking the absolute-last capture made the odds-CLV BOUNCE and could
+    # even compare our 14.5 open against a 15.5 close. Locking the close to OUR line keeps it apples-to-apples and
+    # STABLE -- it stops moving once captures end after tip. (Real-money entry/close odds live in my_bets.csv,
+    # hand-entered and never recomputed -- this only affects the bot's SIGNAL CLV.)
+    at_line = [c for c in cl if c[1] == o_line]                              # captures still at our opening line
+    c_odds, c_pinn = at_line[-1][2], at_line[-1][5]                          # closing PRICE + sharp ref AT our line
+    c_line = cl[-1][1]                                                        # true last line (line MOVE itself is real signal -> line-CLV)
+    has_close = len(at_line) >= 2                                            # need >=2 captures AT OUR LINE for a measured close
     if act == o_line:
         res, pnl = "push", 0.0
     elif (act < o_line) == (side == "Under"):
         res, pnl = "WIN", o_odds - 1
     else:
         res, pnl = "loss", -1.0
-    odds_clv = round(o_odds / c_odds - 1, 3) if (c_odds and has_close) else ""   # >0 = we got a longer price than the close
-    line_self = line_clv(o_line, c_line, side) if has_close else ""              # our line vs our OWN close (needs 2+ captures)
+    odds_clv = round(o_odds / c_odds - 1, 3) if (c_odds and has_close) else ""   # opening price vs CLOSING price AT OUR LINE (stable)
+    line_self = line_clv(o_line, c_line, side) if len(cl) >= 2 else ""           # line drift open->close (uses the true last line)
     rows.append([d, disp, mk, side, o_line, o_odds, tier, act, res, round(pnl, 2),
                  odds_clv, line_self, line_clv(o_line, c_pinn, side),
                  sharp_odds_clv(o_line, o_odds, plow, mk, side, d), o_src])   # sharp line+odds CLV; src for honest split
