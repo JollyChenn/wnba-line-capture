@@ -155,6 +155,33 @@ def summ_line(s, kind):
             f'<span>CLV <b class="{ccls}">{clv}</b> <span class="muted">n={s["nclv"]}</span></span>'
             f'<span class="muted">{len(pending_real if kind=="real" else pending_paper)} pending · {s["n"]} settled</span></div>')
 
+# ---- per-signal scoreboard: W-L, P&L, CLV for EACH model (take-on-sight, flat 1u) — compact, no scrolling ----
+def scoreboard_html():
+    agg = defaultdict(lambda: {"w": 0, "l": 0, "pnl": 0.0, "clv": [], "pend": 0})
+    for r in graded:                                   # every graded bet (model + all paper signals)
+        a = agg[signame(srcof(r))]
+        res = r.get("result", "")
+        if res == "WIN": a["w"] += 1
+        elif res in ("loss", "LOSS"): a["l"] += 1
+        a["pnl"] += float(r.get("pnl") or 0)
+        oc = r.get("odds_clv")
+        if oc not in ("", "None", None):
+            try: a["clv"].append(float(oc))
+            except ValueError: pass
+    for r in pending:                                  # tonight's not-yet-settled, per signal
+        agg[signame(r.get("src", ""))]["pend"] += 1
+    out = []
+    for nm, a in sorted(agg.items(), key=lambda kv: (kv[1]["w"] + kv[1]["l"] == 0, -kv[1]["pnl"])):
+        n = a["w"] + a["l"]
+        hit = f'{a["w"] / n * 100:.0f}%' if n else "—"
+        clv = clvfmt(sum(a["clv"]) / len(a["clv"])) if a["clv"] else "—"
+        pcls = "pos" if a["pnl"] > 0 else ("neg" if a["pnl"] < 0 else "muted")
+        real = ' <span class="pill">💰 real</span>' if nm == "COLD/SHRINK/STINGY" else ''
+        out.append(f'<tr><td><b>{esc(nm)}</b>{real}</td><td><b>{a["w"]}–{a["l"]}</b></td><td class="muted">{hit}</td>'
+                   f'<td class="{pcls}"><b>{a["pnl"]:+.2f}u</b></td><td class="muted">{clv}</td>'
+                   f'<td class="muted">{a["pend"] or "—"}</td></tr>')
+    return "".join(out) or '<tr><td colspan="6" class="empty">— none yet —</td></tr>'
+
 gen = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
 through = max((r.get("date","") for r in graded), default="—")
 slate = max((r.get("date","") for r in bets_log), default="—")
@@ -185,6 +212,9 @@ tr:nth-child(even) td{background:#12172c} tr.pend td{background:#1a1f3a}
 <h1>🏀 WNBA prop bot</h1><div class="sub2">latest slate __SLATE__ · settled through __THROUGH__ · generated __GEN__</div>
 <div class="banner">⚠️ <b>UNPROVEN — paper / tiny stakes only.</b> Every line is vs a synthetic median (predicts the SIDE, not that it beats the book). <b>CLV is the only proof</b> — real-money CLV is __CLVHEAD__ so far. Never auto-bet.</div>
 
+<h2>📊 BY SIGNAL <span class="sub2" style="font-weight:400">— each model's W–L · P&amp;L · CLV (take-on-sight, flat 1u — the signal record, not your placed bets)</span></h2>
+<table><tr><th>signal</th><th>W–L</th><th>hit</th><th>P&amp;L</th><th>CLV</th><th>pend</th></tr>__SCOREBOARD__</table>
+
 <div class="real"><h2>💰 REAL MONEY — your placed bets (COLD/SHRINK/STINGY)</h2>
 __RSUMM__
 <div class="sub2" style="margin-bottom:6px">⏳ pending = bot flagged it tonight — place &amp; record · settled = what you actually bet.<br><b>Signal CLV (the proof, take-on-sight):</b> __SIGCLVALL__</div>
@@ -202,6 +232,7 @@ page = (TEMPLATE.replace("__RSUMM__", summ_line(rs, "real")).replace("__RROWS__"
         .replace("__PSUMM__", summ_line(ps, "paper")).replace("__PROWS__", paper_rows)
         .replace("__SLATE__", esc(slate)).replace("__THROUGH__", esc(through))
         .replace("__GEN__", gen).replace("__CLVHEAD__", clvhead)
+        .replace("__SCOREBOARD__", scoreboard_html())
         .replace("__SIGCLVALL__", sig_clv_html(sig)))
 
 with open(os.path.join(ROOT, "dashboard.html"), "w", encoding="utf-8") as f:
