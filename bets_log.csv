@@ -660,3 +660,5 @@ captured_utc,date,player,market,side,line,odds,tier,ev,pinn,src
 2026-06-20T22:35:09+00:00,2026-06-20,Nneka Ogwumike,pts,Under,13.5,1.91,SOLID,0.225,,newunder
 2026-06-20T22:35:09+00:00,2026-06-20,Breanna Stewart,pts,Under,18.5,1.952,SOLID,0.206,,newunder
 2026-06-20T22:35:09+00:00,2026-06-20,Michaela Onyenwere,pts,Over,9.5,1.75,STRONG,0.389,,overshoot
+2026-06-20T22:40:09+00:00,2026-06-20,Gabriela Jaquez,pts,Under,9.5,1.85,THIN,0.07,9.5,model
+2026-06-20T22:40:09+00:00,2026-06-20,Kiki Iriafen,pra,Under,23.5,1.91,SOLID,0.111,,model
