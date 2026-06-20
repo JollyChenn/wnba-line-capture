@@ -33,10 +33,8 @@ jobs:
         run: pip install --quiet pandas requests numpy && python daily_picks.py || true
       - name: Settle logged bets vs actual results
         run: python grade_bets.py
-      - name: Update CLV history + ping the verdict to Discord
-        env:
-          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-        run: python clv_reader.py || true
+      - name: Update CLV history (no Discord ping — the dashboard shows results now)
+        run: python clv_reader.py || true   # DISCORD_WEBHOOK intentionally NOT passed -> clv_reader stays silent (results live on the dashboard); actionable BET pings still fire from capture-xbet
       - name: Rebuild HTML dashboard
         run: python build_dashboard.py || true
       - name: Commit track record
