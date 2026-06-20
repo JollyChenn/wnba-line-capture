@@ -1,125 +1,160 @@
-# WNBA LINE-CAPTURE BOT — SESSION HANDOFF
-_Last updated: 2026-06-18. Repo: JollyChenn/wnba-line-capture (all on `main`). Runs on GitHub Actions (laptop-off)._
+# WNBA-LINE-CAPTURE — SESSION HANDOFF (updated 2026-06-20)
 
-> **READ THIS FIRST.** This is the live WNBA player-prop bot. It is **UNPROVEN forward → paper/tiny only**. The account is **READ-ONLY; NEVER auto-bet 1xbet** (bot activity = account freeze). The one real proof of edge is **forward CLV**, not backtests.
-
----
-
-## 0. TL;DR — the honest state
-- **The edge thesis:** soft-book (1xbet) line **staleness** — grab a stale price before the sharp market moves it. It is a **timing** edge, proven by **CLV** (entry price vs close), NOT by hit-rate or P&L.
-- **Status: NOT proven.** First real settlements (G6-17) went **2/3 on results but −4.6% ODDS-CLV** — i.e. we're getting *worse* prices than the close, the opposite of the edge. n=3, far too small to conclude, but it echoes the NBA cousin (−6%).
-- **Everything is paper/tiny** until ~2 weeks of **positive** forward CLV. The NBA version of this bot got −6% CLV and never proved out — same risk here.
-- **The recurring trap (learned hard this session):** a backtest vs a **trailing-median proxy line** manufactures fake 55-63% rates on right-skewed/low-integer stats (assists, 3pm, totals). Beating the proxy ≠ beating a book. Only CLV settles it.
+Repo: `JollyChenn/wnba-line-capture` (private), all on `main`. Runs fully on GitHub Actions (laptop can be off).
+This file = the complete state. Research lives in the memory files (see §12). **Read §1 + §5 first.**
 
 ---
 
-## 1. THE 5 GITHUB WORKFLOWS (`.github/workflows/`)
-| Workflow | Schedule (UTC) | Does | Pings? |
-|---|---|---|---|
-| **capture-xbet** | every ~30 min, off-peak mins :13/:43 (14:00-02:00) + every-3h | **THE HEART** — `cloud_xbet.py`: pull 1xbet lines (48h window) + injuries + Pinnacle, apply signals, log to `bets_log.csv`, ping Discord | ✅ **sole ping source** |
-| **daily-picks** | 14:00 daily | `daily_picks.py`: refresh box scores, generate model picks → `picks_log.csv`, validate, commit | ❌ **ping disabled** (commit 049a6d8) |
-| **grade-bets** | 15:00 daily | `grade_bets.py` → settle bets + CLV → `graded_bets.csv`; `clv_reader.py` → CLV verdict ping | ✅ CLV record |
-| **cascade-watch** | every 20 min, game hrs (00-03/19-23) | `cascade_watch.py`: poll injuries, ping star-scratch cascade alerts; dedup via `cascade_pinged.json` | ✅ cascade |
-| **capture-wnba-lines** | **DISABLED** | old Odds-API path (redundant w/ Pinnacle guest API); manual `workflow_dispatch` only | — |
-
-**Crons are best-effort** (GitHub skips/delays top-of-hour runs under load → hence off-peak :13/:43). Cron is UTC-fixed; WNBA tips vary 22:00-02:00 UTC.
+## 1. TL;DR / READ FIRST
+- **What it is:** a WNBA player-prop bot that scrapes 1xbet/melbet lines, runs a model, **PINGS Discord (never auto-bets — 1xbet freezes bots)**, and grades results + CLV.
+- **The edge:** SOFT-BOOK STALENESS (the soft book's line lags reality). **UNPROVEN.** CLV is the only proof, and it's currently **~flat/slightly negative** → paper/tiny stakes only.
+- **Real money = COLD/SHRINK/STINGY signal ONLY** (everything else is paper/tracking).
+- **Records (2026-06-20):** your real bets (`my_bets`) **3-1, +1.60u**; the model SIGNAL (take-on-sight) **3-3, −0.39u**, odds-CLV −0.6%. No edge proven (n tiny).
+- **Golden rules:** bet LATE (~T-30-60, not on sight) · grab the ~2.0 price ceiling when it appears · skip a bet whose line moved ≥2 against you · flat 1u · NEVER auto-bet.
 
 ---
 
-## 2. DATA / PIPELINE FILES
-- `data/box_2026.csv` — player box scores (game results); `data/games_2026.csv` — schedule/dates/scores.
-- `picks_log.csv` — the model's daily picks (cols: pick_date, game_id, player, team, opp, market, anchor, signals, fair_p, fair_odds, proj, sd).
-- `bets_log.csv` — **every 1xbet capture** of a pick (for CLV); cols incl. `src` + `pinn`. Append-only, multiple captures per bet = the open→close trajectory.
-- `graded_bets.csv` — settled bets + result + 3 CLVs (rebuilt each grade run).
-- `my_bets.csv` — **YOUR real placed bets** (the record that actually matters). 1 entry so far: Cardoso PR U20.5 @1.893 → WIN.
-- `xbet_snapshots.csv` — raw line snapshots (all pick markets, every cycle).
-- `market_codes.json` — 1xbet market discovery dump. `cascade_pinged.json` — cascade dedup state.
-
-**Flow:** daily-picks → `picks_log` → capture-xbet reads picks + pulls 1xbet → `bets_log` (+ pings) → grade-bets → `graded_bets` + CLV.
+## 2. THE EDGE THESIS + HONEST STATUS
+- Thesis: 1xbet posts a stale line ≈ the trailing-10 median, which lags a player's real decline → the UNDER on cold/declining players is +EV *if the book is slow*.
+- **Every backtest number is vs a SYNTHETIC median anchor, NOT a real price** — it proves the SIDE predicts, NOT that the bet beats the book. The NBA cousin of this method had a real predictive side and STILL ran −6% beat-the-close.
+- **CLV is the only proof.** Current proven (model) odds-CLV ≈ **−0.6%** (n=6) = not beating the close yet. Verdict: ⏳ TOO EARLY (need ~20-40 settled, ~2 weeks).
+- Breakeven at 1xbet flat ~1.80 = **55.6%/bet**. Prop odds **cap ~2.0** (see §5).
 
 ---
 
-## 3. THE SIGNALS (honest `src` taxonomy)
-**PROVEN headline record = {model, flip} only.** Everything else is walled-off EXPERIMENTAL/paper, never in the headline ROI/CLV.
-
-| src | Signal | Status |
+## 3. ARCHITECTURE — 5 GitHub workflows + pipeline
+| Workflow | Cron (UTC) | Does |
 |---|---|---|
-| **model** | cold+shrink UNDER (cold: t3≤med−~2-4; shrink: t5min−t10min≤−3) — the workhorse | PROVEN bucket; n=2 settled |
-| **flip** | cratered-OVER (an under-player whose 1xbet over line overshot below proj) | PROVEN bucket; 0 settled |
-| **newunder** | `ft_volume_drought` (fta_t6≤1.0, ~58.9%) + `steady` (cv_pts≤0.45 & mean10≥10) | PAPER forward-test |
-| **hotover** | hot-PRA-over (downgraded weak signal) | PAPER (3/3, tiny n) |
-| **overshoot** | line ≥3 below median → over | PAPER, **REMOVED from ping** (commit 32601f5) — 1/6→2/7, book prices it (5/7 came UNDER) |
-| **starout** | a model UNDER downgraded because a teammate star is freshly out (usage trap) | PAPER (inverse-cascade guard) |
-| **cascade** | star OUT → rank-3-6 teammate PRA OVER | PAPER (~57%, cascade_watch) |
-| **usgshock** | usg5−usg20≥4 → ASSIST over | PAPER, **CONTESTED** (see §6) |
+| **daily-picks** | 13:23, 16:23 | ESPN box+games+injuries → `box_2026.csv`/`games_2026.csv`; picks → `picks_log.csv`/`PICKS.md`; runs `validate_data.py` + **`cbs_check.py`** (2nd source); rebuilds dashboard |
+| **capture-xbet** | every 3h + every 30m (14:00-02:00) | scrapes 1xbet (`1x-bet.com`, fallback `melbet.com`) champ **197289**, 48h window → `bets_log.csv` (bets) + `xbet_snapshots.csv` (all lines) + Pinnacle `pinn`; **PINGS** real-money bets |
+| **grade-bets** | **05:23, 06:23**, 15:23, 18:23 | pulls finals → `grade_bets.py` settles → result + P&L + 3×CLV → `graded_bets.csv`; `clv_reader.py` → `CLV_HISTORY.md` + verdict ping; rebuilds dashboard |
+| **lineup-confirm** | ~every 10m, tip hours | `lineup_check.py` — NEAR-TIP guard: scratches + day-to-day + **line-move ≥2 against** |
+| **cascade-watch** | ~every 20m, game hours | star-out cascade detection + ping |
+
+**Pipeline:** capture (bets_log) → grade (graded_bets) → CLV (CLV_HISTORY) → dashboard. `my_bets.csv` = the user's HAND-ENTERED real-money log (separate from the bot's signal record).
 
 ---
 
-## 4. HONEST RECORD (as of G6-17 settlements)
-- **PROVEN: 2/3** — Austin pts U15.5→8 WIN, Cardoso PRA U23.5→18 WIN, **Jaquez pts U8.5→22 LOSS** (was flagged weak/PASS by recheck — correctly).
-- **★ ODDS-CLV = −4.6% (beat the close 1/3).** Cardoso "won" but we took 1.714 into a ~2.0 close = −14.3% CLV. **This is the number that matters and it's leaning NEGATIVE.** n=3.
-- Experimental: hotover 3/3 (+2.5u), overshoot 1/6→2/7 (−).
-- `my_bets.csv` (real): Cardoso PR U20.5 @1.893 WIN +0.89u, CLV 0 (line was dead-flat 25h).
+## 4. DATA SOURCES (used + status)
+- **ESPN** (free): scoreboard (games+tips), summary (per-player box), injuries. PRIMARY game data. ✅
+- **1xbet** `https://1x-bet.com/service-api` champ **197289** (curl_cffi impersonate=chrome past Cloudflare) + **melbet.com fallback** (same LineFeed engine, auto-switch if 1x-bet empty). ✅
+- **Pinnacle guest API** `guest.api.arcadia.pinnacle.com` (key `CmX2KcMrXuFmNg6YFbmTxE0y9CIrOi0R`), sport 4, league WNBA → sharp CLV ref. **WNBA props post only NEAR TIP**; single stats only (pts/reb/ast) → combos DERIVED by summing; filter `period==0`. ✅ (live near tip)
+- **RotoWire** `rotowire.com/wnba/lineups.php` — non-ESPN 2nd lineup source (lineup_check, fail-open). ✅
+- **CBS Sports** team stat pages — 2nd source for minutes/scoring (`cbs_check.py`, wired to daily-picks cron). 2026 data CONFIRMED 142/150 match. ✅
+- 1xbet TYPE-CODES (odd=Over, even=Under, "Players' stats" subgame): pts 1807/1806 · pr 5671/5672 · pa 5673/5674 · ra 7141/7142 · pra 16427/16428 · **ast 1491/1492 · reb 1489/1490** · 3pm 1495/1496.
 
 ---
 
-## 5. WHAT WE BUILT/FIXED THIS SESSION (commit trail)
-- **Pings now deliver** — every Discord post needs a `User-Agent` header (Discord silently drops default-agent; cost us "no pings" for days). `320778c`.
-- **daily-picks ping disabled** → capture-xbet is the sole ping source. `045..049a6d8`.
-- **One-bet-per-player** — within-section + **cross-section** (overshoot can't re-list a model-picked player). `9431f76`.
-- **grade_bets dedup** (one bet/player/day highest-EV) + full rebuild — killed a counting artifact (overshoot fake 1/10→honest 1/6). `98f57dc`.
-- **Inverse-cascade UNDER guard** — fresh star-out → teammate unders downgraded to paper (`new_star_outs`). `b6930f2`.
-- **load_picks rollover** — falls back to yesterday's LA slate during the ~07:00-14:00 UTC post-midnight gap (model bets were vanishing). `7ee579b`.
-- **Game-date resolution in grade_bets** — bets dated by capture-slate but results by game-date; now re-keyed so cross-midnight captures merge → every capture/CLV counts. `697a4bf`.
-- **cascade_watch beneficiary-OUT filter** — was pinging Kiki Iriafen (OUT, ankle); now `_scratched` drops out-beneficiaries. `e0714c5`.
-- **Cascade legs now logged** to bets_log (src=cascade) for grading (were display-only). `743aa76`.
-- **Overshoot removed from ping** (kept logging). `32601f5`.
-- **usgshock signal added** (paper) `7810fa3`, **conflict guard** `ab0c3e4`.
-- **steady+streak → steady** (dropped the refuted streak filter). `a367f35`.
-- 48h capture window (`XBET_WINDOW_MIN=2880`), off-peak crons, Pinnacle on free guest API.
+## 5. STRATEGY / BETTING RULES (decisions settled this session)
+1. **BET LATE, not on sight.** odds-CLV is flat/negative → no early edge; betting near tip = settled line + confirmed lineup + (slightly) better price. Ping: **👀 WATCH early → 💰 BET near tip**.
+2. **Prop odds cap ~2.0** (data: max 2.07, 95th pctile 2.00, only 1.7% >2.0). When a bet hits **~2.0 (ceiling), TAKE IT** — it can't go higher and usually *sags* toward tip (Thornton 2.0→1.83). **Don't wait for a hypothetical better line — at the cap there's no price upside, only downside.** Bird in hand.
+3. **Alternate / "two lines":** the book often lists 2+ lines at once (e.g. U22.5 AND U25.5) and/or opens new ones + trims odds. Higher line = more cushion, lower odds. **Crossover (Jaquez ex.): a +1 line needs ≥1.80, a +2 line needs ≥1.65 to beat U-low @2.0.** Below that, take the cap. Higher-line "EV" is model-optimism (tail hit% inflated; book prices the curve fairly) — the *reliable* gain is lower variance, not profit.
+4. **Line MOVED ≥2 against your thesis** (under RISES / over DROPS) by tip = sharp market correcting our stale signal → **SKIP/shrink** (lineup_check flags it). Hamby lesson: 22.5→25.5, scored 23 — the under was wrong; the 25.5 only won on cushion.
+5. **Flat 1u stake. NEVER auto-bet 1xbet** (freeze). One bet per player per day (highest-EV market). Bet POINTS over PRA. Keep stakes tiny until CLV proves positive.
 
 ---
 
-## 6. RESEARCH FINDINGS (5 multi-agent edge-hunts, all leakage-safe + adversarially verified)
-### CONFIRMED / kept
-- **ft_volume_drought** (58.9%) + **steady (low-cv)** unders — the load-bearing paper signals. (steady's "streak" part was REFUTED & dropped; low-cv is the real component, +2.5pp matched, shuffle 6σ.)
-- **cold+shrink UNDER** + **flip** — the proven bucket (prior validation).
+## 6. SIGNAL REGISTRY — every model, routing, record (settled, 2026-06-20)
+Internal `src` keys are STABLE in the data; display names renamed for clarity.
 
-### CONTESTED → paper, CLV decides
-- **usgshock (usg5−usg20≥4 → ASSIST over):** dedicated backtest 59.2% vs median + every season + dose-response + assist-specific. BUT deeper verify: the median-proxy may be a **stale-line artifact** (assists low-integer right-skewed); lift collapses 73→50% vs a trend-aware line; "min-rising+ast-rising alone = 60.7%". My matched-baseline reconciliation still shows +5-6pp, so **genuinely contested**. Only LIVE CLV settles stale (edge) vs fair (artifact). Conflict guard: skip if player also cold+shrink-under (the under wins, 36.6%).
+| Signal (`src`) | Route | Settled W-L · P&L · oddsCLV | Verdict |
+|---|---|---|---|
+| **COLD/SHRINK/STINGY** (`model`) | 💰 REAL | 3-3 · −0.39u · −0.6% | core thesis; break-even, unproven. Any 2-of-3: cold(t3≤med−4)/shrink(t5−t10≤−3)/stingy(opp btm-quartile). Bet PTS not PRA |
+| **HOT OVER** (`hotover`) | 🧪 paper | 4-0 · +3.38u · +0.1% | ⚠️ variance (CLV flat = not beating close) |
+| **STAR-OUT CASCADE** (`cascade`) | 🧪 exp | 2-0 · +1.50u · ~0% | n=2 small. Star OUT → teammate PRA over |
+| **FTUNDER** (`newunder`) | 🧪 paper | 4-4 · −0.82u · −3.5% | ft-drought(58.9% OOS)+steady(cv≤.45); side-predicts only |
+| **FLIP UNDER** (`flip`) | 🧪 paper | 2-4 · −2.27u · −2.6% | ❌ suspect median-proxy artifact — confirmed weak |
+| **BOOK OVERSHOOT** (`overshoot`) | 📝 logged | 5-7 · −2.79u · −0.2% | ❌ "too-low lines are correct" — not an edge |
+| **starout** | 🧪 paper | 0-1 · −1.0u | downgraded-under after a star-out |
+| **ALL signals (flat 1u)** | | **20-19 · −2.39u** | flat-betting everything LOSES; winners are small-n variance |
 
-### DEAD ENDS (do NOT re-chase — all refuted)
-- **3-pointers-made (tpm) over/under** — variance too high (R²=0.27 vs ast 0.44/pra 0.52), 49.7% push, ~52% of lines=0; every signal refuted. New 1xbet player-3pm code = **1495/1496** if ever needed.
-- **Role-aware market selection (PR for C, PA for G)** — REFUTED; PRA is best cold-under for all positions; tight singles (ast/reb) BACKFIRE (cold-ast-under 41.9%).
-- **Teammate-volume → reb/ast** — mechanism real (more teammate misses → bigs' **OFFENSIVE** rebounds, NOT dreb) but NOT bettable; the "62-71% teammate model" was a mean-vs-median artifact.
-- **Style × defense matchup (perimeter scorer × leaky-perim-D)** — perimeter DEAD; interior REAL but diffuse (<0.5pt); only thin tail = UNDER big interior scorers vs stingy rim-D at line≥12-16. As an under-**filter/stack** it adds 0 / **backfires on cold+shrink** (personal collapse dominates the matchup). NOT implemented.
-- **Totals (game points / team 2pt / team 3pt)** — ALL efficiently priced; apparent edges are median-proxy mirages that collapse vs a pace-aware line. Don't bet.
-- **Forward × rim-protector:** REBOUND ticks up (not assist — kick-out hypothesis fails) but ~0.1pt = not bettable.
-- **B2B/rest, pace→stocks** — minutes-selection / current-game-pace-leak artifacts.
-
----
-
-## 7. 1xbet MARKET TYPE-CODES (`cloud_xbet.STAT_T`; ODD=Over, EVEN=Under; all in the "Players' stats" subgame)
-pts 1807/1806 · pr 5671/5672 · pa 5673/5674 · ra 7141/7142 · pra 16427/16428 · **ast 1491/1492** · reb 1489/1490. (Discovered but unused: player 3pm 1495/1496.) Endpoint: `1x-bet.com/service-api/LineFeed`, champ **2874802**. `curl_cffi impersonate="chrome"` clears Cloudflare from the local Windows machine too (`scan_now.py`). Pinnacle sharp ref = FREE guest API `guest.api.arcadia.pinnacle.com` (key in cloud_xbet).
+**DEAD (never bet):** rebound 53.7% · assist 53.8% (singles) · totals · 3PM · teammate-volume (leakage) · last-5 form overlay.
 
 ---
 
-## 8. KEY GOTCHAS / OPS
-- **Every Discord post MUST set a User-Agent** or it silently bounces.
-- **bets_log dates by capture-slate, results by game-date** — grade_bets `game_date()` reconciles them; never match on slate date alone.
-- **Median-proxy over-bias** — raw >52.4% on a trailing-median line is NOT automatically bettable (low-integer right-skewed stats manufacture a fake under/over bias). Always: half-point line, decided-only, MATCHED baseline, shuffle control.
-- **Team-D is diffuse** (<0.5pt on a line) and barely persists game-to-game (perimeter corr 0.08, interior 0.12, blk 0.19) → never a standalone gate.
-- **1xbet sits flat ~1.80** both sides → breakeven 55.6%/bet; price-sensitive signals (steady, usgshock) need ≥~1.84.
-- ESPN gates near-tip; 1xbet posts days early (slate ≠ game date).
-- Bots run via **GitHub Actions**, NOT Windows Task Scheduler.
+## 7. RECORDS (2026-06-20)
+**💵 YOUR real money (`my_bets.csv`): 3-1, +1.60u, CLV −3.5%**
+- 6/17 Cardoso PR U20.5 @1.893 ✅ +0.89u
+- 6/17 Hamby PRA U25.5 @1.8 ✅ +0.80u (took the drifted-up line vs bot's 22.5)
+- 6/19 Thornton PR U14.5 @1.91 ✅ +0.91u (bet early; −4.5% CLV — drifted to 2.0)
+- 6/19 C.Williams PR U22.5 @1.73 ❌ −1.0u (scored 33)
+
+**📡 Model SIGNAL (graded take-on-sight): 3-3, −0.39u, oddsCLV −0.6%.** Your +1.60u beats it via line-shopping (Hamby) + skipping Jaquez (signal lost it). NOT in my_bets (user's choice): Austin 6/14 (signal won), Jaquez 6/17 (signal lost).
+
+**★ KEY FINDING — bet-late, in dollars:** re-grading the SAME bets at the CLOSE line+odds:
+- TOTAL: −2.39u → **−0.03u** (+2.36u just from timing).
+- COLD/SHRINK/STINGY: 3-3 −0.39u → **4-2 +1.44u** (the **Hamby flip**: open 22.5=loss → close 25.5=win, her 23 cleared the higher line). This is why "the model record went 3-3 → 4-2."
+- Drivers: odds drift longer by close + lines drift to more cushion on unders. Caveat: Hamby's flip is cushion-dependent, small n, still ~break-even at close.
+
+**Tonight (6/19) settled:** Thornton ✅ (PR 9 vs U14.5), C.Williams ❌ (33). Paper: cascade 2/2 ✅, flip 0/3 ❌, FTUNDER Stewart ✅/Griner ❌/McBride ❌, Onyenwere overshoot ✅, Mabrey starout ❌ (37).
 
 ---
 
-## 9. NEXT STEPS (the only thing left = forward proof)
-1. **Collect ~2 weeks of forward CLV** on the paper signals (usgshock, steady, ft_volume_drought) + the proven model/flip bets. **CLV is the only proof** — not hit-rate, not P&L.
-2. **Watch the proven-bucket CLV** — it's −4.6% on n=3. If it stays negative over ~20+ bets, the staleness edge isn't there (like the NBA cousin).
-3. Log real bets to `my_bets.csv` as placed (real positions = the record that matters).
-4. Eyeball the **first graded cascade leg** (synthetic floor-line P&L sanity check).
-5. Do NOT add more signals off median-proxy backtests; gate everything on forward CLV.
+## 8. CHANGES MADE THIS SESSION (code commits, newest first)
+- `759466d` my_bets: tonight's real bets (Thornton W, C.Williams L)
+- `0bd9c7b` grade-bets: **+05:23/06:23 UTC crons** so the overnight slate settles right after games (was 15:23-only → ~10h lag)
+- `e33c235` capture + show **alternate lines** (simultaneous "two lines") with cushion%
+- `d8b6d3f` near-tip **line-move guard** (≥2 against = skip) + **bet-late ping** framing (WATCH→BET)
+- `88b97b7` **name-key hardening** (full-name, accent-fold; Chance≠Chelsea Gray) + **CBS 2nd source** wired to cron
+- `2e479b3` **Pinnacle fix**: `period==0` filter + **derive PR/PA/RA/PRA** by summing singles
+- `16d2a9a` **lineup-guard fix**: write UPCOMING games (tips) to games_2026 → guard can fire (was skipping every player); dashboard REAL = my_bets
+- `f7e0281` **cleanup**: real money = COLD/SHRINK/STINGY only (`PROVEN={model}`, flip→paper); pings ONLY real money (no heartbeat spam); dashboard = 2 sections
+- `b50bea2` rename signals to proper display names
+- `d63db6e` **melbet.com fallback mirror**
+- `0d9eb10` **THE big fix**: champ `2874802` (junk mixed-league feed) → `197289` (clean WNBA) — root cause of "flickering/missing lines"
 
-_Full research detail + thresholds in memory: `reference_wnba_model_matrix.md` (signals/edges/dead-ends) + `reference_wnba_bot_ops.md` (plumbing)._
+---
+
+## 9. KEY FINDINGS (this session)
+1. **Champ bug** (`2874802`) buried WNBA props the whole time → fixed to `197289`.
+2. **Bet-late pays** (+2.36u at close; real signal flips to +1.44u). odds-CLV negative = early entries get worse prices.
+3. **Prop odds cap ~2.0** — take the ceiling, don't wait.
+4. **Name-key collision** (`"c gray"` merged Chance + Chelsea Gray) — fixed (Pinnacle + lineup). Model unaffected (groups by athlete-ID).
+5. **Lineup guard was non-functional** (no tips for upcoming games) — fixed; caught Austin day-to-day.
+6. **Pinnacle posts WNBA props only near tip** + single-stats only → derive combos.
+7. **FLIP UNDER is a median-proxy artifact** (2-4, neg CLV) → demoted to paper.
+8. Data CONFIRMED clean via CBS 2nd source (142/150) + the earlier 4-way ESPN/identity audit.
+
+---
+
+## 10. OPEN ITEMS / TODO / WATCH
+- **GROW THE CLV SAMPLE** — everything hinges on this. ~20-40 settled model bets before any verdict. Currently n=6, CLV −0.6%.
+- **Sharp-CLV coverage** still thin (Pinnacle near-tip only) — improving now combos are derived; watch it fill in.
+- **Peak-odds alert (OFFERED, NOT BUILT):** ping when a real bet hits ≥1.95 (near cap) or a +2-cushion line opens ≥1.65 → "take it." Build if wanted.
+- **Open-vs-close P&L as a standing dashboard metric** (offered, not built).
+- **GitHub skips some crons** (free-tier) — morning grade has a 06:23 backstop; capture has dense tip-window crons.
+- **my_bets is hand-entered** — the bot can't know what you staked; log each bet (player+line+odds) when you place it.
+
+---
+
+## 11. FILE MAP / HOW TO RUN (locally, past Cloudflare via curl_cffi)
+- `cloud_xbet.py` — capture+ping bot. `XBET_WINDOW_MIN=1440 DISCORD_WEBHOOK="" python cloud_xbet.py` (wide gate, no ping). Mirrors in `MIRRORS`; champ in `CHAMP`.
+- `daily_picks.py` — ESPN fetch + picks. `DISCORD_WEBHOOK="" python daily_picks.py`.
+- `grade_bets.py` — settle (idempotent, rebuilds graded_bets from bets_log+box). `clv_reader.py` — record + verdict.
+- `build_dashboard.py` → `dashboard.html` (LOCAL only, not GitHub Pages — open the file).
+- `lineup_check.py` — near-tip guard. `LINEUP_WINDOW_MIN=1440 python lineup_check.py` to test wide.
+- `cbs_check.py` — CBS 2nd-source cross-check (all teams).
+- Data: `data/box_2026.csv`, `data/games_2026.csv`, `bets_log.csv`, `xbet_snapshots.csv`, `graded_bets.csv`, `CLV_HISTORY.md`, `my_bets.csv`, `cascade_log.csv`.
+- **Commit policy:** code files freely; `my_bets.csv` (hand-entered) yes; the bot's data files (`bets_log`, `box_2026`, `games_2026`, `graded_bets`, `dashboard.html`) are cloud-managed — let the cron own them (revert local churn).
+
+---
+
+## 12. MEMORIES (knowledge base — auto-loaded each session)
+- `reference_wnba_signal_registry.md` — THE model tracker (signals, routing, records, the 2026-06-19 cleanup).
+- `reference_wnba_model_matrix.md` — full backtest research (signal defs, value-zones, flip matrix, dead ends, 4-way data audit).
+- `reference_wnba_bot_ops.md` — plumbing (type-codes, Discord UA gotcha, ping policy, name-key, line-move guard, bet-late, alt-lines).
+- `reference_pinnacle_api.md` — Pinnacle guest API recipe + period/combo/near-tip fixes.
+- `reference_xbet_pull.md` — 1xbet scrape recipe. `project_wnba_bot.md` — project status.
+
+---
+
+## 13. PRIOR-SESSION HIGHLIGHTS (pre-2026-06-19, from summary/transcript)
+- Re-confirmed 3 dead-ends DEAD; **teammate-volume "edge" = LEAKAGE** (sign-flips leak-free, corr −0.79 w/ own usage). Brute-force found only median-proxy artifacts.
+- Audited signals into proven/paper/experimental; built the honest-grading `src` split.
+- Built `lineup_check.py` (3-source near-tip guard) + injury filters on all pick masks.
+- Fixed: flip-on-steady bug (→flip_paper), graded_bets staleness (cron top-of-hour skips), C.Williams EV display bug, dashboard double-emoji.
+- Discovered the champ-feed bug (root cause of missing lines) — fixed this session.
+- Established: proven record honest (no edge proven), recording verified (line/actual/result/CLV), injury check held (0 bets on players who sat).
+
+---
+_Honest one-liner: a clean, fully-automated soft-book-staleness bot with NO proven edge yet. Real money only on COLD/SHRINK/STINGY, bet late, take the ~2.0 cap, flat 1u, never auto-bet. CLV over ~2 weeks decides if any of it is real._
