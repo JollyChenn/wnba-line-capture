@@ -101,8 +101,12 @@ def pinnacle_lines():
                 if pt is not None:
                     pk, st = _pkey(mt.group(1)), SMAP[mt.group(2)]
                     out[pk][st] = float(pt)
-                    od = {p.get("designation"): p.get("price") for p in prices    # de-vig the two-way price -> fair odds/side
-                          if p.get("designation") in ("over", "under") and p.get("price") is not None}
+                    pmap = {p.get("id"): (p.get("name") or "").lower() for p in (m.get("participants") or [])}  # id->over/under
+                    od = {}                                                       # de-vig the two-way price -> fair odds/side
+                    for p in prices:                                              # side via participantId (robust) OR designation
+                        sd = (pmap.get(p.get("participantId")) or p.get("designation") or "").lower()
+                        if sd in ("over", "under") and p.get("price") is not None:
+                            od[sd] = p.get("price")
                     if "over" in od and "under" in od:
                         try:
                             po, pu = 1 / _am2dec(od["over"]), 1 / _am2dec(od["under"])   # raw (vigged) implied probs
