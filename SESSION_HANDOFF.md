@@ -17,7 +17,11 @@ This file = the complete state. Research lives in the memory files (see §12). *
 ## 2. THE EDGE THESIS + HONEST STATUS
 - Thesis: 1xbet posts a stale line ≈ the trailing-10 median, which lags a player's real decline → the UNDER on cold/declining players is +EV *if the book is slow*.
 - **Every backtest number is vs a SYNTHETIC median anchor, NOT a real price** — it proves the SIDE predicts, NOT that the bet beats the book. The NBA cousin of this method had a real predictive side and STILL ran −6% beat-the-close.
-- **CLV is the only proof.** Current proven (model) odds-CLV ≈ **−0.6%** (n=6) = not beating the close yet. Verdict: ⏳ TOO EARLY (need ~20-40 settled, ~2 weeks).
+- **CLV is the only proof — and there are now 3 of them, in a hierarchy** (study all; trust the sharpest with coverage):
+  1. **★ sharp ODDS-CLV** = our price vs **Pinnacle's vig-free fair price** (singles only, matched line) = the TRUE edge test. *Blank until the cron fills `pinn_snapshots.csv`; will populate mostly on pts unders.*
+  2. **sharp LINE-CLV** = our line vs Pinnacle line (combos included). Currently n=1 (+0.0).
+  3. **self odds-CLV** = vs 1xbet's OWN close = WEAK (just times the soft book's own move). Currently ≈ **−0.6/−0.9%** (n≈4-6) — *this was the old "headline"; demoted.*
+- Verdict: ⏳ TOO EARLY (need ~20-40 settled + ≥10 sharp-CLV points, ~2 weeks). The verdict logic auto-prefers sharp odds-CLV once it has ≥10 points.
 - Breakeven at 1xbet flat ~1.80 = **55.6%/bet**. Prop odds **cap ~2.0** (see §5).
 
 ---
@@ -26,8 +30,8 @@ This file = the complete state. Research lives in the memory files (see §12). *
 | Workflow | Cron (UTC) | Does |
 |---|---|---|
 | **daily-picks** | 13:23, 16:23 | ESPN box+games+injuries → `box_2026.csv`/`games_2026.csv`; picks → `picks_log.csv`/`PICKS.md`; runs `validate_data.py` + **`cbs_check.py`** (2nd source); rebuilds dashboard |
-| **capture-xbet** | every 3h + every 30m (14:00-02:00) | scrapes 1xbet (`1x-bet.com`, fallback `melbet.com`) champ **197289**, 48h window → `bets_log.csv` (bets) + `xbet_snapshots.csv` (all lines) + Pinnacle `pinn`; **PINGS** real-money bets |
-| **grade-bets** | **05:23, 06:23**, 15:23, 18:23 | pulls finals → `grade_bets.py` settles → result + P&L + 3×CLV → `graded_bets.csv`; `clv_reader.py` → `CLV_HISTORY.md` + verdict ping; rebuilds dashboard |
+| **capture-xbet** | every 3h + every 30m (14:00-02:00) | scrapes 1xbet (`1x-bet.com`, fallback `melbet.com`) champ **197289**, 48h window → `bets_log.csv` (bets) + `xbet_snapshots.csv` (all lines) + Pinnacle line `pinn` + **`pinn_snapshots.csv`** (Pinnacle vig-free FAIR odds, singles); **PINGS** real-money bets |
+| **grade-bets** | **05:23, 06:23**, 15:23, 18:23 | pulls finals → `grade_bets.py` settles → result + P&L + **4×CLV** → `graded_bets.csv`; `clv_reader.py` → `CLV_HISTORY.md` + verdict ping; rebuilds dashboard |
 | **lineup-confirm** | ~every 10m, tip hours | `lineup_check.py` — NEAR-TIP guard: scratches + day-to-day + **line-move ≥2 against** |
 | **cascade-watch** | ~every 20m, game hours | star-out cascade detection + ping |
 
@@ -38,7 +42,7 @@ This file = the complete state. Research lives in the memory files (see §12). *
 ## 4. DATA SOURCES (used + status)
 - **ESPN** (free): scoreboard (games+tips), summary (per-player box), injuries. PRIMARY game data. ✅
 - **1xbet** `https://1x-bet.com/service-api` champ **197289** (curl_cffi impersonate=chrome past Cloudflare) + **melbet.com fallback** (same LineFeed engine, auto-switch if 1x-bet empty). ✅
-- **Pinnacle guest API** `guest.api.arcadia.pinnacle.com` (key `CmX2KcMrXuFmNg6YFbmTxE0y9CIrOi0R`), sport 4, league WNBA → sharp CLV ref. **WNBA props post only NEAR TIP**; single stats only (pts/reb/ast) → combos DERIVED by summing; filter `period==0`. ✅ (live near tip)
+- **Pinnacle guest API** `guest.api.arcadia.pinnacle.com` (key `CmX2KcMrXuFmNg6YFbmTxE0y9CIrOi0R`), sport 4, league WNBA → sharp CLV ref. **WNBA props post only NEAR TIP**; single stats only (pts/reb/ast) → **lines** combos DERIVED by summing; filter `period==0`. Now also captures **VIG-FREE FAIR ODDS** per side (de-vig the two-way price) → `pinn_snapshots.csv` → powers sharp ODDS-CLV (singles only; can't sum prices). ✅ (live near tip)
 - **RotoWire** `rotowire.com/wnba/lineups.php` — non-ESPN 2nd lineup source (lineup_check, fail-open). ✅
 - **CBS Sports** team stat pages — 2nd source for minutes/scoring (`cbs_check.py`, wired to daily-picks cron). 2026 data CONFIRMED 142/150 match. ✅
 - 1xbet TYPE-CODES (odd=Over, even=Under, "Players' stats" subgame): pts 1807/1806 · pr 5671/5672 · pa 5673/5674 · ra 7141/7142 · pra 16427/16428 · **ast 1491/1492 · reb 1489/1490** · 3pm 1495/1496.
@@ -91,6 +95,7 @@ Internal `src` keys are STABLE in the data; display names renamed for clarity.
 ---
 
 ## 8. CHANGES MADE THIS SESSION (code commits, newest first)
+- `3936865` **Pinnacle sharp-CLV as headline**: capture Pinnacle vig-free FAIR odds (de-vig two-way price) → new sidecar `pinn_snapshots.csv` (zero bets_log migration); grade adds `sharp_odds_clv` col + prints proof hierarchy (sharp-odds ★ > sharp-line > self); clv_reader/dashboard show all 3; verdict auto-prefers sharp odds-CLV at ≥10 pts. The old self odds-CLV "headline" was 1xbet-vs-its-own-close = weak; sharp = vs Pinnacle's fair price = the true test.
 - `759466d` my_bets: tonight's real bets (Thornton W, C.Williams L)
 - `0bd9c7b` grade-bets: **+05:23/06:23 UTC crons** so the overnight slate settles right after games (was 15:23-only → ~10h lag)
 - `e33c235` capture + show **alternate lines** (simultaneous "two lines") with cushion%
@@ -118,8 +123,8 @@ Internal `src` keys are STABLE in the data; display names renamed for clarity.
 ---
 
 ## 10. OPEN ITEMS / TODO / WATCH
-- **GROW THE CLV SAMPLE** — everything hinges on this. ~20-40 settled model bets before any verdict. Currently n=6, CLV −0.6%.
-- **Sharp-CLV coverage** still thin (Pinnacle near-tip only) — improving now combos are derived; watch it fill in.
+- **GROW THE CLV SAMPLE** — everything hinges on this. ~20-40 settled model bets + ≥10 sharp-odds-CLV points before any verdict. Currently n≈4-6, self-CLV −0.6/−0.9%, sharp-odds-CLV n=0 (just shipped — fills going forward).
+- **Sharp ODDS-CLV is the metric that matters now** (vs Pinnacle's vig-free fair price). Coverage starts empty (singles only, matched line); watch `pinn_snapshots.csv` + the `sharp_odds_clv` column fill in, mostly on pts unders. Sharp LINE-CLV (combos incl.) fills faster.
 - **Peak-odds alert (OFFERED, NOT BUILT):** ping when a real bet hits ≥1.95 (near cap) or a +2-cushion line opens ≥1.65 → "take it." Build if wanted.
 - **Open-vs-close P&L as a standing dashboard metric** (offered, not built).
 - **GitHub skips some crons** (free-tier) — morning grade has a 06:23 backstop; capture has dense tip-window crons.
@@ -134,7 +139,7 @@ Internal `src` keys are STABLE in the data; display names renamed for clarity.
 - `build_dashboard.py` → `dashboard.html` (LOCAL only, not GitHub Pages — open the file).
 - `lineup_check.py` — near-tip guard. `LINEUP_WINDOW_MIN=1440 python lineup_check.py` to test wide.
 - `cbs_check.py` — CBS 2nd-source cross-check (all teams).
-- Data: `data/box_2026.csv`, `data/games_2026.csv`, `bets_log.csv`, `xbet_snapshots.csv`, `graded_bets.csv`, `CLV_HISTORY.md`, `my_bets.csv`, `cascade_log.csv`.
+- Data: `data/box_2026.csv`, `data/games_2026.csv`, `bets_log.csv`, `xbet_snapshots.csv`, `pinn_snapshots.csv` (Pinnacle fair odds, sharp odds-CLV source), `graded_bets.csv` (now 15 cols incl. `sharp_odds_clv`), `CLV_HISTORY.md`, `my_bets.csv`, `cascade_log.csv`.
 - **Commit policy:** code files freely; `my_bets.csv` (hand-entered) yes; the bot's data files (`bets_log`, `box_2026`, `games_2026`, `graded_bets`, `dashboard.html`) are cloud-managed — let the cron own them (revert local churn).
 
 ---
