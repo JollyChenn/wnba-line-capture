@@ -1,10 +1,20 @@
 name: grade-bets
 on:
   schedule:
-    - cron: '23 5 * * *'      # 05:23 UTC — settle the OVERNIGHT slate right after games finish (WNBA tips 23:00-02:00 UTC, end ~05:00) — was waiting until 15:23
-    - cron: '23 6 * * *'      # 06:23 UTC — backstop for late-ending games / ESPN box-score lag
-    - cron: '23 15 * * *'     # 15:23 UTC — off top-of-hour (GitHub skips :00; that's why graded_bets went stale) — after daily-picks pulls last night's finals
-    - cron: '23 18 * * *'     # 18:23 UTC backstop so a single skipped run can't leave the record un-graded
+    # MORNING SWEEP — overnight/West-coast games end ~04:00-05:00 UTC. GitHub free-tier DELAYS (~1.5-2h) and
+    # often DROPS early-morning scheduled runs, so a single 05:23/06:23 cron silently no-fires and the slate sits
+    # un-graded ~13h until the afternoon run. Fix: fire MANY cheap idempotent attempts across the morning — the
+    # first one GitHub actually honors fetches last night's box + grades. Each run is ~30s and a no-op if nothing
+    # new settled (the commit step skips when there's no diff), so over-firing costs nothing.
+    - cron: '41 4 * * *'      # 04:41 UTC
+    - cron: '41 5 * * *'      # 05:41 UTC
+    - cron: '41 6 * * *'      # 06:41 UTC
+    - cron: '41 7 * * *'      # 07:41 UTC
+    - cron: '41 8 * * *'      # 08:41 UTC
+    - cron: '41 9 * * *'      # 09:41 UTC — last morning catch-up before the afternoon backstops
+    # AFTERNOON / EVENING BACKSTOPS — off top-of-hour (GitHub skips :00 hardest); after daily-picks pulls finals.
+    - cron: '23 15 * * *'     # 15:23 UTC
+    - cron: '23 18 * * *'     # 18:23 UTC
   workflow_dispatch: {}
 permissions:
   contents: write
