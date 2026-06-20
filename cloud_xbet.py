@@ -33,6 +33,8 @@ NEAR_TIP_MIN = int(os.environ.get("XBET_NEARTIP_MIN", "90"))  # reconfirm window
 CAPTURE_ROLE = os.environ.get("CAPTURE_ROLE", "all").lower()
 DO_REAL = CAPTURE_ROLE in ("all", "real")             # real-money: log model rows, write snapshots, ping
 DO_PAPER = CAPTURE_ROLE in ("all", "paper")           # paper: log paper/experimental rows for the cloud dashboard
+FINAL_MIN = int(os.environ.get("XBET_FINAL_MIN", "20"))  # the FINAL "place it now" ping fires ONCE when a bet's OWN game is <= this many min from tip (the ~10-20-min-before alert)
+PING_STATE = "ping_state.json"                        # per-day record of which bets already got their FINAL ping, so it fires exactly once
 PICKS, SNAP = "picks_log.csv", "xbet_snapshots.csv"
 WEBHOOK = os.environ.get("DISCORD_WEBHOOK", "")
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -639,7 +641,7 @@ def main():
             elif paper:
                 forward.append(txt)                   # 🧪 forward-test + hot-overs: logged for CLV, NOT a real-money BET ping
             else:
-                bets.append((tmab, txt))              # store TEAM so the ping uses THIS bet's OWN game tip time (per-game near-tip)
+                bets.append((tmab, txt, (player.lower(), base, bside)))   # TEAM (for per-game tip timing) + KEY (so the FINAL ping fires once)
 
     # ---- STAR-OUT CASCADE ----
     casc = []
@@ -732,23 +734,32 @@ def main():
     # own game: far-out bets stay 👀 WATCH (heads-up, once), and flip to 💰 BET only when their game is ~tip.
     def _bmins(tm):
         return team_mins_all.get(tm, min_mins)        # THIS team's own soonest tip (covers games BEYOND the pre-gate window)
-    bets_near = [(tm, txt) for tm, txt in bets if _bmins(tm) <= NEAR_TIP_MIN]   # THIS game is near -> real BET window
-    bets_watch = [(tm, txt) for tm, txt in bets if _bmins(tm) > NEAR_TIP_MIN]   # game still hours out -> heads-up only
-    real_keys = {(b[0].lower(), b[1], b[2]) for b in betstruct if len(b) > 8 and b[8] == "model"}
-    new_real = bool(real_keys - seen_today)           # a real-money bet not yet pinged today (gates the one-time WATCH)
-    if DO_REAL and (bets_near or (bets_watch and new_real)):   # real-money pings = LAPTOP only (cloud role=paper stays silent)
+    # TWO-SHOT PING (2026-06-21 — user sleeps through tip): each real-money bet pings at most TWICE, never in between:
+    #   (1) 👀 HEADS-UP once when first found (its game still > FINAL_MIN out), then
+    #   (2) 💰 PLACE IT NOW once, when its OWN game is <= FINAL_MIN (~10-20) min from tip.
+    # The FINAL ping is recorded in ping_state.json so it fires exactly once even though the laptop captures every ~20 min.
+    final_done = set()                                # bets that already got their FINAL ping today
+    if os.path.exists(PING_STATE):
+        try:
+            for k in json.load(open(PING_STATE, encoding="utf-8")).get(la_today, []):
+                final_done.add(tuple(k))
+        except Exception:
+            pass
+    final_now = [(tm, txt, k) for tm, txt, k in bets if _bmins(tm) <= FINAL_MIN and k not in final_done]   # ~tip -> place it now (once)
+    early_now = [(tm, txt, k) for tm, txt, k in bets if _bmins(tm) > FINAL_MIN and k not in seen_today]    # found, game far -> heads-up (once)
+    if DO_REAL and (final_now or early_now):          # real-money pings = LAPTOP only (cloud role=paper stays silent)
         parts = []
-        if bets_near:                                # BET WINDOW — these bets' OWN games are ~tip
-            nm = int(min(_bmins(tm) for tm, _ in bets_near))
-            parts.append(f"🔔 **NEAR TIP (~{nm} min) — line settled + lineup confirming = BET WINDOW**")
-            parts.append("💰 **REAL-MONEY BET — COLD/SHRINK/STINGY** (flat 1u · Pinn = sharp close for CLV):\n"
-                         + "\n".join(txt for _, txt in bets_near))
-        if bets_watch and new_real:                  # early heads-up only — DON'T bet on sight; re-pings as 💰 BET near ITS tip
-            wm = int(min(_bmins(tm) for tm, _ in bets_watch))
-            parts.append(f"👀 **WATCH — real-money candidate (~{wm} min to ITS tip). Don't bet on sight** — "
-                         "it re-pings as 💰 BET when its OWN game is ~30-60 min out:\n"
-                         + "\n".join(txt for _, txt in bets_watch))
-        if holds_show:
+        if final_now:
+            nm = int(min(_bmins(tm) for tm, _, _ in final_now))
+            parts.append(f"🔔 **~{nm} MIN TO TIP — PLACE IT NOW (final call)**")
+            parts.append("💰 **REAL-MONEY BET — COLD/SHRINK/STINGY** (take the close · flat 1u):\n"
+                         + "\n".join(t for _, t, _ in final_now))
+        if early_now:
+            wm = int(min(_bmins(tm) for tm, _, _ in early_now))
+            parts.append(f"👀 **HEADS-UP — real-money candidate (~{wm} min to tip). Don't bet yet** — "
+                         f"you'll get ONE 💰 'place it now' ping ~{FINAL_MIN} min before tip:\n"
+                         + "\n".join(t for _, t, _ in early_now))
+        if final_now and holds_show:
             parts.append("⏳ HOLD (still unconfirmed at tip): " + ", ".join(h.split("**")[1] for h in holds_show))
         if drops:
             parts.append("❌ OUT (injury → dropped): " + ", ".join(drops))
@@ -756,7 +767,19 @@ def main():
         if extra:
             parts.append(f"_🧪 {extra} paper-test signal(s) captured silently — see dashboard._")
         ping("🏀 **1xbet**\n" + "\n".join(parts))
-    # else: NO real-money bet near tip (and nothing new) -> stay silent. Paper/experimental live on the dashboard, never pinged.
+        if final_now:                                 # persist so the FINAL ping never repeats for these bets today
+            for _, _, k in final_now:
+                final_done.add(k)
+            try:
+                allst = json.load(open(PING_STATE, encoding="utf-8")) if os.path.exists(PING_STATE) else {}
+            except Exception:
+                allst = {}
+            allst[la_today] = [list(k) for k in final_done]
+            try:
+                json.dump(allst, open(PING_STATE, "w", encoding="utf-8"))
+            except Exception:
+                pass
+    # else: nothing newly found and nothing entering the final window -> stay silent (paper lives on the dashboard).
 
 
 if __name__ == "__main__":
