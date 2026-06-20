@@ -54,32 +54,44 @@ if not dec:
     raise SystemExit
 
 n = len(dec); w = sum(1 for r in dec if r["result"] == "WIN"); net = sum(float(r["pnl"]) for r in dec)
-oc = [float(r["odds_clv"]) for r in proven if r.get("odds_clv") not in ("", None)]   # CLV: proven only
+oc = [float(r["odds_clv"]) for r in proven if r.get("odds_clv") not in ("", None)]   # self odds-CLV (weak: 1xbet's own close)
+slc = [float(r["sharp_clv"]) for r in proven if r.get("sharp_clv") not in ("", None)]          # line vs Pinnacle (combos incl.)
+soc = [float(r["sharp_odds_clv"]) for r in proven if r.get("sharp_odds_clv") not in ("", None)]  # price vs Pinnacle fair (TRUE test)
 avg_clv = sum(oc) / len(oc) if oc else 0.0
 beat = sum(1 for x in oc if x > 0)
 beat_pct = beat / len(oc) if oc else 0
+avg_soc = sum(soc) / len(soc) if soc else None        # the headline edge metric once it has coverage
 
 L = []
 L.append(f"📊 **WNBA BOT — TRACK RECORD** ({n} settled · PROVEN signals only)")
 L.append(f"  Record  : {w}-{n - w}  ({w / n * 100:.0f}% hit)")
 L.append(f"  Net P&L : {net:+.2f}u  (ROI {net / n * 100:+.1f}%/bet)")
+# CLV PROOF HIERARCHY (study all three): sharp-odds > sharp-line > self-odds
+if soc:
+    sb = sum(1 for x in soc if x > 0)
+    L.append(f"  ★ SHARP ODDS-CLV: {avg_soc * 100:+.1f}% | beat fair {sb}/{len(soc)} ({sb / len(soc) * 100:.0f}%)  ← TRUE edge (vs Pinnacle fair price)")
+if slc:
+    L.append(f"  SHARP LINE-CLV : {sum(slc) / len(slc):+.2f} pts | n={len(slc)}  ← better number than the sharp")
 if oc:
-    L.append(f"  ODDS-CLV: {avg_clv * 100:+.1f}% avg | beat close {beat}/{len(oc)} ({beat_pct * 100:.0f}%)  ← the edge signal")
+    L.append(f"  self ODDS-CLV  : {avg_clv * 100:+.1f}% | beat {beat}/{len(oc)} ({beat_pct * 100:.0f}%)  (1xbet's own close = weak)")
 if exp_dec:                                           # the unproven overs, clearly walled off from the headline
     b = _bucket(exp_dec)
     L.append("  ⚗️ Paper / experimental (UNPROVEN, NOT the record): " + " · ".join(
         f"{k} {ww}/{t} ({p:+.1f}u)" for k, (t, ww, p) in sorted(b.items())))
 
-# VERDICT — CLV is the proof; hit-rate at small n is noise
-if n < 20:
-    lean = "leaning +" if avg_clv > 0.01 else "leaning −" if avg_clv < -0.01 else "flat"
-    verdict = f"⏳ TOO EARLY (n={n}, need ~20-40 ≈ 2wks). Early CLV {lean} — not yet meaningful."
-elif avg_clv > 0.02 and beat_pct > 0.55:
-    verdict = "✅ POSITIVE CLV — we're beating the close. Edge looks REAL — consider scaling."
-elif avg_clv < -0.01 or beat_pct < 0.45:
-    verdict = "❌ NEGATIVE CLV — the market beats us. No real edge — kill or rebuild."
+# VERDICT — CLV is the proof; hit-rate at small n is noise. PREFER the sharp odds-CLV (vs Pinnacle's fair price);
+# fall back to the self odds-CLV only while sharp coverage is thin, and say so.
+pm, pn, plabel = (avg_soc, len(soc), "SHARP") if (avg_soc is not None and len(soc) >= 10) else (avg_clv, len(oc), "self")
+if n < 20 or pn < 10:
+    lean = "leaning +" if pm > 0.01 else "leaning −" if pm < -0.01 else "flat"
+    src_note = "sharp-CLV thin" if plabel == "self" else f"{plabel} n={pn}"
+    verdict = f"⏳ TOO EARLY (n={n}; {src_note}, need ~20-40 ≈ 2wks). CLV {lean} — not yet meaningful."
+elif pm > 0.02:
+    verdict = f"✅ POSITIVE {plabel} CLV — we're beating the {'sharp fair price' if plabel=='SHARP' else 'close'}. Edge looks REAL — consider scaling."
+elif pm < -0.01:
+    verdict = f"❌ NEGATIVE {plabel} CLV — the {'sharp' if plabel=='SHARP' else 'market'} beats us. No real edge — kill or rebuild."
 else:
-    verdict = "⚠️ NEUTRAL CLV — winning on outcomes, not beating the line. Unproven; keep collecting."
+    verdict = f"⚠️ NEUTRAL {plabel} CLV — winning on outcomes, not beating the line. Unproven; keep collecting."
 L.append(f"  VERDICT : {verdict}")
 
 # by tier + by market
@@ -90,23 +102,36 @@ for label, key in [("tier", "tier"), ("market", None)]:
         agg[k][0] += 1; agg[k][1] += r["result"] == "WIN"; agg[k][2] += float(r["pnl"])
     L.append(f"  by {label}: " + " · ".join(f"{k} {ww}/{t} ({p:+.1f}u)" for k, (t, ww, p) in sorted(agg.items())))
 
+def _pc(r, col):                                       # CLV cell: % for odds cols, signed pts for the line col, — when blank
+    v = r.get(col)
+    if v in ("", None):
+        return "—"
+    try:
+        return f"{float(v):+.1f}" if col == "sharp_clv" else f"{float(v) * 100:+.0f}%"
+    except ValueError:
+        return "—"
+
+
 print("\n".join(L))
-print("\n  PER-BET (CLV>0 = our price beat the close · COLD/SHRINK/STINGY = real money; everything else = paper):")
-print(f"  {'date':9}{'player':18}{'bet':15}{'signal':19}{'res':5}{'CLV':>6}")
+print("\n  PER-BET (sharp = vs Pinnacle [the real test] · self = vs 1xbet's own close · COLD/SHRINK/STINGY = real money):")
+print(f"  {'date':9}{'player':18}{'bet':15}{'signal':19}{'res':5}{'shOdds':>7}{'shLine':>7}{'self':>6}")
 for r in sorted(rows, key=lambda r: (r["date"], r["player"])):
-    oclv = f"{float(r['odds_clv']) * 100:+.0f}%" if r.get("odds_clv") not in ("", None) else "  --"
-    print(f"  {r['date']:9}{r['player'][:17]:18}{(r['market'].upper() + ' ' + r['side'])[:14]:15}{lab(_src(r)):19}{r['result'][:4]:5}{oclv:>6}")
+    print(f"  {r['date']:9}{r['player'][:17]:18}{(r['market'].upper() + ' ' + r['side'])[:14]:15}{lab(_src(r)):19}"
+          f"{r['result'][:4]:5}{_pc(r, 'sharp_odds_clv'):>7}{_pc(r, 'sharp_clv'):>7}{_pc(r, 'odds_clv'):>6}")
 
 # persist a human-readable history file (always current; graded_bets.csv = the raw append-only data)
 hist = ["# WNBA Bot — CLV & Track Record", "",
-        "_Auto-updated after each slate settles. Raw data: `graded_bets.csv`. CLV>0 = our price beat the close._", "", "```"]
+        "_Auto-updated after each slate settles. Raw data: `graded_bets.csv`. CLV>0 = we got the better number/price._",
+        "_**sharp-odds** = vs Pinnacle's vig-free fair price (TRUE edge test) · **sharp-line** = pts vs Pinnacle's line · "
+        "**self** = vs 1xbet's own close (weak)._", "", "```"]
 hist += [ln.replace("**", "") for ln in L]
 hist += ["```", "", "## Per-bet", "",
          "_signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = paper/experimental (not in record)_", "",
-         "| date | player | bet | signal | result | odds-CLV |", "|---|---|---|---|---|---|"]
+         "| date | player | bet | signal | result | sharp-odds | sharp-line | self-CLV |",
+         "|---|---|---|---|---|---|---|---|"]
 for r in sorted(rows, key=lambda x: (x["date"], x["player"])):
-    oc2 = f"{float(r['odds_clv']) * 100:+.0f}%" if r.get("odds_clv") not in ("", None) else "—"
-    hist.append(f"| {r['date']} | {r['player']} | {r['market'].upper()} {r['side']} {r['line']} @ {r['odds']} | {lab(_src(r))} | {r['result']} | {oc2} |")
+    hist.append(f"| {r['date']} | {r['player']} | {r['market'].upper()} {r['side']} {r['line']} @ {r['odds']} | "
+                f"{lab(_src(r))} | {r['result']} | {_pc(r, 'sharp_odds_clv')} | {_pc(r, 'sharp_clv')} | {_pc(r, 'odds_clv')} |")
 with open("CLV_HISTORY.md", "w", encoding="utf-8") as f:
     f.write("\n".join(hist) + "\n")
 print("\n  → wrote CLV_HISTORY.md (check it anytime, on GitHub or locally)")

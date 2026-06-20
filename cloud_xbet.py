@@ -70,14 +70,22 @@ def _team_ab(name):
     return (name or "")[:3].upper()
 
 
+def _am2dec(a):                                               # American odds -> decimal (e.g. -110 -> 1.909, +120 -> 2.20)
+    a = float(a)
+    return a / 100 + 1 if a > 0 else 100 / (-a) + 1
+
+
 def pinnacle_lines():
-    """Pinnacle WNBA single-stat prop lines (sharp ~close) + DERIVED combos -> {player_key:{market:line}}.
-    Pinnacle posts WNBA props only NEAR tip and offers SINGLE stats only (pts/reb/ast) — so we SUM them to get a
-    sharp reference for the PR/PA/RA/PRA combo bets too. Best-effort CLV ref (returns {} when props aren't up yet)."""
+    """Pinnacle WNBA props as a SHARP reference, returned as TWO maps (best-effort; empty when props aren't up yet):
+      lines = {player_key:{market:line}}  — single-stat lines (pts/reb/ast) + DERIVED combos (PR/PA/RA/PRA = sum of
+              singles). Used for the line-CLV (works for combos too) and the in-signal "✓sharp" confirm.
+      fair  = {player_key:{stat:{"line":L,"over":dec,"under":dec}}} — VIG-FREE fair DECIMAL odds per side, computed by
+              de-vigging Pinnacle's two-way price. SINGLES ONLY (pts/reb/ast): you can sum lines but NOT prices, so
+              combos get no fair odds. This powers the sharp ODDS-CLV (our price vs the sharp's fair price = true edge)."""
     PB = "https://guest.api.arcadia.pinnacle.com/0.1"
     HK = {"X-API-Key": "CmX2KcMrXuFmNg6YFbmTxE0y9CIrOi0R", "User-Agent": UA}
     SMAP = {"Points": "pts", "Rebounds": "reb", "Assists": "ast"}
-    out = defaultdict(dict)
+    out, fair = defaultdict(dict), defaultdict(dict)
     try:
         mm = creq.get(PB + "/sports/4/matchups", impersonate="chrome", timeout=20, headers=HK).json()
         mk = creq.get(PB + "/sports/4/markets/straight", impersonate="chrome", timeout=20, headers=HK).json()
@@ -88,9 +96,20 @@ def pinnacle_lines():
                 continue
             mt = re.match(r"(.+?) Total (Points|Rebounds|Assists)\b", (m.get("special") or {}).get("description", ""))
             if mt and m["id"] in mkt:
-                pt = mkt[m["id"]]["prices"][0].get("points")
+                prices = mkt[m["id"]]["prices"]
+                pt = prices[0].get("points")
                 if pt is not None:
-                    out[_pkey(mt.group(1))][SMAP[mt.group(2)]] = float(pt)
+                    pk, st = _pkey(mt.group(1)), SMAP[mt.group(2)]
+                    out[pk][st] = float(pt)
+                    od = {p.get("designation"): p.get("price") for p in prices    # de-vig the two-way price -> fair odds/side
+                          if p.get("designation") in ("over", "under") and p.get("price") is not None}
+                    if "over" in od and "under" in od:
+                        try:
+                            po, pu = 1 / _am2dec(od["over"]), 1 / _am2dec(od["under"])   # raw (vigged) implied probs
+                            fair[pk][st] = {"line": float(pt),                            # fair decimal = 1 / no-vig prob
+                                            "over": round((po + pu) / po, 4), "under": round((po + pu) / pu, 4)}
+                        except (ZeroDivisionError, ValueError, TypeError):
+                            pass
         for d in out.values():                                   # derive combos (Pinnacle has no PR/PA/RA/PRA) by summing singles
             if "pts" in d and "reb" in d: d["pr"] = d["pts"] + d["reb"]
             if "pts" in d and "ast" in d: d["pa"] = d["pts"] + d["ast"]
@@ -98,7 +117,7 @@ def pinnacle_lines():
             if "pts" in d and "reb" in d and "ast" in d: d["pra"] = d["pts"] + d["reb"] + d["ast"]
     except Exception as e:
         print("pinnacle ref unavailable:", str(e)[:40])
-    return out
+    return out, fair
 
 
 def get(url, tries=2):
@@ -503,7 +522,7 @@ def main():
         except Exception as ex:
             print("market discovery skipped:", str(ex)[:60])
 
-    pin = pinnacle_lines()   # sharp reference lines, shown next to each bet for live CLV
+    pin, pinfair = pinnacle_lines()   # pin = sharp lines (live CLV + ✓sharp confirm); pinfair = vig-free fair odds (sharp odds-CLV)
 
     picks = load_picks()
     stamp = now.isoformat(timespec="seconds")
@@ -664,6 +683,25 @@ def main():
                 wbl.writerow(["captured_utc", "date", "player", "market", "side", "line", "odds", "tier", "ev", "pinn", "src"])
             for b in betstruct:
                 wbl.writerow([stamp, la_today] + b)
+    # PINNACLE vig-free FAIR ODDS sidecar (sharp ODDS-CLV source). Separate file so we never touch the bets_log schema.
+    # SINGLES ONLY (pts/reb/ast): combos sum lines but can't sum prices. grade_bets takes the LAST capture = sharp close.
+    SINGLES = {"pts", "reb", "ast"}
+    pinn_rows = []
+    for b in betstruct:
+        plr, bmkt, bsd = b[0], b[1], b[2]
+        if bmkt not in SINGLES:
+            continue
+        fz = pinfair.get(_pkey(plr), {}).get(bmkt)
+        fo = fz and fz.get("over" if bsd == "Over" else "under")
+        if fo:
+            pinn_rows.append([stamp, la_today, plr, bmkt, bsd, fz["line"], fo])
+    if pinn_rows:
+        pnew = not os.path.exists("pinn_snapshots.csv")
+        with open("pinn_snapshots.csv", "a", newline="", encoding="utf-8") as pf:
+            wp = csv.writer(pf)
+            if pnew:
+                wp.writerow(["captured_utc", "date", "player", "market", "side", "pinn_line", "pinn_fair"])
+            wp.writerows(pinn_rows)
     # PING POLICY (2026-06-19): ping ONLY the real-money signal (COLD/SHRINK/STINGY, src=model).
     # Paper/experimental are still captured to bets_log for the dashboard but are NEVER pinged, and there is
     # no heartbeat / no-bet spam. A real bet pings once when first found, then again near tip (reconfirm).

@@ -54,6 +54,31 @@ for (d, plow, mk, side), cl in caps.items():
     merged[(game_date(plow, mk, d), plow, mk, side)].extend(cl)
 caps = merged                                          # everything downstream now groups by GAME date
 
+# PINNACLE vig-free FAIR ODDS (sidecar pinn_snapshots.csv) -> sharp ODDS-CLV: our price vs the sharp's fair price.
+# Singles only (pts/reb/ast); the LAST capture of each bet = Pinnacle's near-tip "close" fair number. Re-keyed to the
+# real game date exactly like the captures above so an evening-before "open" snapshot lands on the right game.
+pinn_odds = {}                                          # (game_date, player, market, side) -> (pinn_line, pinn_fair) at close
+if os.path.exists("pinn_snapshots.csv"):
+    _ps = defaultdict(list)
+    for r in csv.DictReader(open("pinn_snapshots.csv", encoding="utf-8")):
+        plow = r["player"].lower()
+        gd2 = game_date(plow, r["market"], r["date"].replace("-", ""))
+        _ps[(gd2, plow, r["market"], r["side"])].append((r["captured_utc"], r.get("pinn_line", ""), r.get("pinn_fair", "")))
+    for k, lst in _ps.items():
+        lst.sort()
+        pinn_odds[k] = (lst[-1][1], lst[-1][2])         # latest capture = sharp close
+
+
+def sharp_odds_clv(o_line, o_odds, plow, mk, side, gdate):
+    po = pinn_odds.get((gdate, plow, mk, side))         # only the SAME line is price-comparable (line diff is line-CLV's job)
+    if not po:
+        return ""
+    try:
+        pl, pf = float(po[0]), float(po[1])
+        return round(o_odds / pf - 1, 3) if (abs(pl - o_line) < 0.01 and pf > 0) else ""   # >0 = we beat the sharp's fair price
+    except (ValueError, TypeError):
+        return ""
+
 
 def line_clv(our, ref, side):
     try:
@@ -99,11 +124,13 @@ for (d, plow, mk, side), cl in caps.items():
     odds_clv = round(o_odds / c_odds - 1, 3) if (c_odds and has_close) else ""   # >0 = we got a longer price than the close
     line_self = line_clv(o_line, c_line, side) if has_close else ""              # our line vs our OWN close (needs 2+ captures)
     rows.append([d, disp, mk, side, o_line, o_odds, tier, act, res, round(pnl, 2),
-                 odds_clv, line_self, line_clv(o_line, c_pinn, side), o_src])   # sharp_clv valid w/1 capture; src for honest split
+                 odds_clv, line_self, line_clv(o_line, c_pinn, side),
+                 sharp_odds_clv(o_line, o_odds, plow, mk, side, d), o_src])   # sharp line+odds CLV; src for honest split
 
 with open("graded_bets.csv", "w", newline="", encoding="utf-8") as f:
     wr = csv.writer(f)
-    wr.writerow(["date", "player", "market", "side", "line", "odds", "tier", "actual", "result", "pnl", "odds_clv", "line_clv", "sharp_clv", "src"])
+    wr.writerow(["date", "player", "market", "side", "line", "odds", "tier", "actual", "result", "pnl",
+                 "odds_clv", "line_clv", "sharp_clv", "sharp_odds_clv", "src"])
     wr.writerows(sorted(rows))
 print(f"graded {len(rows)} settled bet(s) (one-per-player-per-day, rebuilt from bets_log)")
 
@@ -127,13 +154,20 @@ print(f"\n===== TRACK RECORD — PROVEN signals only ({n} settled) =====")
 print(f"  hit-rate : {w}/{n} = {w / n * 100:.0f}%")
 print(f"  net P&L  : {net:+.2f}u  (ROI {net / n * 100:+.1f}%/bet)")
 proven_rows = [g for g in allg if _src(g) in PROVEN]   # CLV headline also restricted to proven signals
+# THE PROOF HIERARCHY: sharp ODDS-CLV (beat Pinnacle's fair price) > sharp LINE-CLV (better number than sharp) >
+# self ODDS-CLV (just timed 1xbet's own move = weakest). Print all so we can study them side by side.
+soc = [float(g["sharp_odds_clv"]) for g in proven_rows if g.get("sharp_odds_clv") not in ("", None)]
+if soc:
+    sb = sum(1 for x in soc if x > 0)
+    print(f"  ★ SHARP ODDS-CLV vs Pinnacle fair price: {sum(soc) / len(soc) * 100:+.1f}% avg | beat fair {sb}/{len(soc)} ({sb / len(soc) * 100:.0f}%)   <- TRUE edge test")
+sc = [float(g["sharp_clv"]) for g in proven_rows if g.get("sharp_clv") not in ("", None)]
+if sc:
+    sbl = sum(1 for x in sc if x > 0)
+    print(f"    SHARP LINE-CLV vs Pinnacle line: {sum(sc) / len(sc):+.2f} pts avg | better {sbl}/{len(sc)} ({len(sc)} bets, combos incl.)")
 oc = [float(g["odds_clv"]) for g in proven_rows if g.get("odds_clv") not in ("", None)]
 if oc:
     beat = sum(1 for x in oc if x > 0)
-    print(f"  ODDS CLV : {sum(oc) / len(oc) * 100:+.1f}% avg | beat the close {beat}/{len(oc)} ({beat / len(oc) * 100:.0f}%)   <- THE edge signal")
-sc = [float(g["sharp_clv"]) for g in proven_rows if g.get("sharp_clv") not in ("", None)]
-if sc:
-    print(f"  SHARP CLV vs Pinnacle (line): {sum(sc) / len(sc):+.2f} avg ({len(sc)} points bets)")
+    print(f"    self ODDS-CLV vs 1xbet's own close: {sum(oc) / len(oc) * 100:+.1f}% avg | beat {beat}/{len(oc)} ({beat / len(oc) * 100:.0f}%)   (soft-book self-close = weak)")
 for label, keyf in [("market/side", lambda g: f"{g['market']} {g['side']}"), ("tier", lambda g: g["tier"] or "?")]:
     by = defaultdict(lambda: [0, 0])
     for g in dec:

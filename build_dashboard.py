@@ -53,14 +53,27 @@ pending_real  = [r for r in pending if is_real(r.get("src","")) and r.get("playe
 pending_paper = [r for r in pending if not is_real(r.get("src",""))]
 
 # ---- per-section summary (flat 1u stake) -----------------------------------
+def _nums(settled, col):
+    out = []
+    for r in settled:
+        v = r.get(col)
+        if v in ("", "None", None):
+            continue
+        try: out.append(float(v))
+        except ValueError: pass
+    return out
+
 def summarize(settled):
     w = sum(1 for r in settled if r.get("result") == "WIN")
     l = sum(1 for r in settled if r.get("result") in ("loss", "LOSS"))
     pnl = sum(float(r.get("pnl") or 0) for r in settled)
-    clv = [float(r["odds_clv"]) for r in settled if r.get("odds_clv") not in ("", "None", None)]
+    clv = _nums(settled, "odds_clv")                   # self odds-CLV (1xbet's own close — weak)
+    slc = _nums(settled, "sharp_clv")                  # line vs Pinnacle (pts; combos incl.)
+    soc = _nums(settled, "sharp_odds_clv")             # price vs Pinnacle's fair price (TRUE edge test)
     n = w + l
+    avg = lambda xs: (sum(xs)/len(xs) if xs else None)
     return dict(w=w, l=l, n=n, hit=(w/n if n else None), pnl=pnl,
-                clv=(sum(clv)/len(clv) if clv else None), nclv=len(clv))
+                clv=avg(clv), nclv=len(clv), slc=avg(slc), nslc=len(slc), soc=avg(soc), nsoc=len(soc))
 
 rs, ps = summarize(settled_real), summarize(settled_paper)
 sig = summarize(signal_model)                          # signal CLV proof (take-on-sight, separate from your actual P&L)
@@ -69,6 +82,11 @@ BE = 0.556
 # ---- formatting helpers ----------------------------------------------------
 def pct(x):  return "—" if x is None else f"{x*100:.0f}%"
 def clvfmt(x): return "—" if x is None else f"{x*100:+.1f}%"
+def ptsfmt(x): return "—" if x is None else f"{x:+.2f} pts"
+def sig_clv_html(s):                                   # the three CLVs side by side: sharp-odds (true test) > sharp-line > self
+    return (f'★ <b>sharp-odds</b> {clvfmt(s["soc"])} <span class="muted">(n={s["nsoc"]}, vs Pinnacle fair price — TRUE edge)</span> · '
+            f'<b>sharp-line</b> {ptsfmt(s["slc"])} <span class="muted">(n={s["nslc"]})</span> · '
+            f'<b>self</b> {clvfmt(s["clv"])} <span class="muted">(n={s["nclv"]}, 1xbet close — weak)</span>')
 def betname(r): return f'{r.get("market","").upper()} {r.get("side","")} {r.get("line","")}'
 def resfmt(res):
     if res == "WIN": return ('✅ WIN', 'pos')
@@ -146,7 +164,7 @@ tr:nth-child(even) td{background:#12172c} tr.pend td{background:#1a1f3a}
 
 <div class="real"><h2>💰 REAL MONEY — your placed bets (COLD/SHRINK/STINGY)</h2>
 __RSUMM__
-<div class="sub2" style="margin-bottom:6px">⏳ pending = bot flagged it tonight — place &amp; record · settled = what you actually bet. <b>Signal CLV (the proof, take-on-sight): __SIGCLV__</b> · n=__SIGN__</div>
+<div class="sub2" style="margin-bottom:6px">⏳ pending = bot flagged it tonight — place &amp; record · settled = what you actually bet.<br><b>Signal CLV (the proof, take-on-sight):</b> __SIGCLVALL__</div>
 <table><tr><th>slate</th><th>player</th><th>bet @ odds</th><th>result</th><th>P&amp;L</th><th>CLV</th></tr>__RROWS__</table></div>
 
 <div class="paper"><h2>🧪 PAPER TESTING — all other signals (NOT real money)</h2>
@@ -161,7 +179,7 @@ page = (TEMPLATE.replace("__RSUMM__", summ_line(rs, "real")).replace("__RROWS__"
         .replace("__PSUMM__", summ_line(ps, "paper")).replace("__PROWS__", paper_rows)
         .replace("__SLATE__", esc(slate)).replace("__THROUGH__", esc(through))
         .replace("__GEN__", gen).replace("__CLVHEAD__", clvhead)
-        .replace("__SIGCLV__", clvfmt(sig["clv"])).replace("__SIGN__", str(sig["n"])))
+        .replace("__SIGCLVALL__", sig_clv_html(sig)))
 
 with open(os.path.join(ROOT, "dashboard.html"), "w", encoding="utf-8") as f:
     f.write(page)
