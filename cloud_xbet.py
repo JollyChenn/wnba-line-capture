@@ -143,7 +143,10 @@ def gz(g):
 
 
 def espn_near(window):
-    out, now = [], datetime.datetime.now(datetime.timezone.utc)
+    """Returns (near, team_mins). `near` = [(away, home, mins)] for games WITHIN `window` min of tip — the pre-gate.
+    `team_mins` = {team: mins-to-its-soonest-tip} for ALL upcoming games (today+tomorrow, unfiltered) so each bet can
+    be timed to ITS OWN game even when it's many hours out (a late-game bet must not inherit the earliest game's clock)."""
+    out, team_mins, now = [], {}, datetime.datetime.now(datetime.timezone.utc)
     for d in (now.strftime("%Y%m%d"), (now + datetime.timedelta(days=1)).strftime("%Y%m%d")):
         try:
             j = json.load(urllib.request.urlopen(urllib.request.Request(ESPN + "?dates=" + d, headers={"User-Agent": UA}), timeout=20))
@@ -156,12 +159,17 @@ def espn_near(window):
             if not tip:
                 continue
             mins = (datetime.datetime.fromisoformat(tip.replace("Z", "+00:00")) - now).total_seconds() / 60
-            if 0 < mins <= window:
-                cs = (ev.get("competitions") or [{}])[0].get("competitors", [])
-                a = next((x for x in cs if x.get("homeAway") == "away"), {})
-                h = next((x for x in cs if x.get("homeAway") == "home"), {})
-                out.append(((a.get("team") or {}).get("abbreviation"), (h.get("team") or {}).get("abbreviation"), mins))
-    return out
+            if mins <= 0:
+                continue
+            cs = (ev.get("competitions") or [{}])[0].get("competitors", [])
+            a = ((next((x for x in cs if x.get("homeAway") == "away"), {}).get("team")) or {}).get("abbreviation")
+            h = ((next((x for x in cs if x.get("homeAway") == "home"), {}).get("team")) or {}).get("abbreviation")
+            for tm in (a, h):
+                if tm:
+                    team_mins[tm] = min(team_mins.get(tm, 1e18), mins)   # soonest tip per team, ALL upcoming games
+            if mins <= window:
+                out.append((a, h, mins))                                 # within-window games -> the 1xbet pre-gate
+    return out, team_mins
 
 
 def injuries():
@@ -449,7 +457,7 @@ def overshoot_overs(props, inj, picked, pin, ptot=None):
 
 def main():
     now = datetime.datetime.now(datetime.timezone.utc)
-    near = espn_near(WINDOW)
+    near, team_mins_all = espn_near(WINDOW)        # team_mins_all = each team's soonest tip (for per-game bet timing)
     if not near:
         print(f"ESPN pre-gate: no game within {WINDOW} min of tip; 0 calls to 1xbet."); return
     teams = set(t for a, h, _ in near for t in (a, h) if t)
@@ -624,7 +632,7 @@ def main():
             elif paper:
                 forward.append(txt)                   # 🧪 forward-test + hot-overs: logged for CLV, NOT a real-money BET ping
             else:
-                bets.append(txt)
+                bets.append((tmab, txt))              # store TEAM so the ping uses THIS bet's OWN game tip time (per-game near-tip)
 
     # ---- STAR-OUT CASCADE ----
     casc = []
@@ -709,15 +717,28 @@ def main():
     # PING POLICY (2026-06-19): ping ONLY the real-money signal (COLD/SHRINK/STINGY, src=model).
     # Paper/experimental are still captured to bets_log for the dashboard but are NEVER pinged, and there is
     # no heartbeat / no-bet spam. A real bet pings once when first found, then again near tip (reconfirm).
+    # PER-GAME near-tip (fix 2026-06-20): a bet is in the BET window only when ITS OWN game is <= NEAR_TIP_MIN —
+    # NOT when the earliest game on the slate is near. Before, a model bet on a LATE game (e.g. Jaquez, tip in 8h)
+    # got a premature "💰 BET" ping the moment an unrelated early game crossed 90 min. Now each bet is timed to its
+    # own game: far-out bets stay 👀 WATCH (heads-up, once), and flip to 💰 BET only when their game is ~tip.
+    def _bmins(tm):
+        return team_mins_all.get(tm, min_mins)        # THIS team's own soonest tip (covers games BEYOND the pre-gate window)
+    bets_near = [(tm, txt) for tm, txt in bets if _bmins(tm) <= NEAR_TIP_MIN]   # THIS game is near -> real BET window
+    bets_watch = [(tm, txt) for tm, txt in bets if _bmins(tm) > NEAR_TIP_MIN]   # game still hours out -> heads-up only
     real_keys = {(b[0].lower(), b[1], b[2]) for b in betstruct if len(b) > 8 and b[8] == "model"}
-    new_real = bool(real_keys - seen_today)           # a real-money bet not yet pinged today
-    if bets and (new_real or near_tip):
+    new_real = bool(real_keys - seen_today)           # a real-money bet not yet pinged today (gates the one-time WATCH)
+    if bets_near or (bets_watch and new_real):        # BET when a game is near (reconfirm each cycle); WATCH once when found
         parts = []
-        if near_tip:                                 # BET WINDOW — line settled + lineup confirming (data says bet late, not on sight)
-            parts.append(f"🔔 **NEAR TIP (~{int(min_mins)} min) — line settled + lineup confirming = BET WINDOW**")
-            parts.append("💰 **REAL-MONEY BET — COLD/SHRINK/STINGY** (flat 1u · Pinn = sharp close for CLV):\n" + "\n".join(bets))
-        else:                                        # early heads-up only — DON'T bet on sight (CLV is flat/neg; line+lineup not settled)
-            parts.append(f"👀 **WATCH — real-money candidate (~{int(min_mins)} min to tip). Don't bet on sight** — confirm & place ~30-60 min before tip (the near-tip guard re-checks line + lineup):\n" + "\n".join(bets))
+        if bets_near:                                # BET WINDOW — these bets' OWN games are ~tip
+            nm = int(min(_bmins(tm) for tm, _ in bets_near))
+            parts.append(f"🔔 **NEAR TIP (~{nm} min) — line settled + lineup confirming = BET WINDOW**")
+            parts.append("💰 **REAL-MONEY BET — COLD/SHRINK/STINGY** (flat 1u · Pinn = sharp close for CLV):\n"
+                         + "\n".join(txt for _, txt in bets_near))
+        if bets_watch and new_real:                  # early heads-up only — DON'T bet on sight; re-pings as 💰 BET near ITS tip
+            wm = int(min(_bmins(tm) for tm, _ in bets_watch))
+            parts.append(f"👀 **WATCH — real-money candidate (~{wm} min to ITS tip). Don't bet on sight** — "
+                         "it re-pings as 💰 BET when its OWN game is ~30-60 min out:\n"
+                         + "\n".join(txt for _, txt in bets_watch))
         if holds_show:
             parts.append("⏳ HOLD (still unconfirmed at tip): " + ", ".join(h.split("**")[1] for h in holds_show))
         if drops:
@@ -725,8 +746,8 @@ def main():
         extra = len(forward) + len(casc)
         if extra:
             parts.append(f"_🧪 {extra} paper-test signal(s) captured silently — see dashboard._")
-        ping(f"🏀 **1xbet — ~{int(min_mins)} min to tip**\n" + "\n".join(parts))
-    # else: NO real-money bet -> stay silent. Paper/experimental live on the dashboard, never pinged.
+        ping("🏀 **1xbet**\n" + "\n".join(parts))
+    # else: NO real-money bet near tip (and nothing new) -> stay silent. Paper/experimental live on the dashboard, never pinged.
 
 
 if __name__ == "__main__":
