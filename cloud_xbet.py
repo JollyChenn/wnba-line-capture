@@ -26,6 +26,13 @@ WINDOW = int(os.environ.get("XBET_WINDOW_MIN", "180"))
 _SLATE_TZ = ZoneInfo("America/Los_Angeles")   # picks are filed under the US slate date (matches daily_picks)
 PING_MAX = int(os.environ.get("XBET_PING_MAX_MIN", "40"))   # only PING within this many min of tip (the ~30-min-before alert); capture still runs every cycle
 NEAR_TIP_MIN = int(os.environ.get("XBET_NEARTIP_MIN", "90"))  # reconfirm window: within this many min of tip, surface day-to-day players + re-show injury/odds
+# CAPTURE_ROLE splits the bot across cloud + laptop (2026-06-20):
+#   "all"   = do everything (default / single-host).
+#   "paper" = CLOUD: log only PAPER signals to bets_log; NO odds snapshots; NEVER ping real money. (paper tracking on cloud)
+#   "real"  = LAPTOP: log only REAL-MONEY (model) bets + write the odds snapshots (xbet/pinn) + ping real money. (real money + snapshots on laptop)
+CAPTURE_ROLE = os.environ.get("CAPTURE_ROLE", "all").lower()
+DO_REAL = CAPTURE_ROLE in ("all", "real")             # real-money: log model rows, write snapshots, ping
+DO_PAPER = CAPTURE_ROLE in ("all", "paper")           # paper: log paper/experimental rows for the cloud dashboard
 PICKS, SNAP = "picks_log.csv", "xbet_snapshots.csv"
 WEBHOOK = os.environ.get("DISCORD_WEBHOOK", "")
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -664,7 +671,7 @@ def main():
     for h, n, st, ln, od, ev, med, tag in osc:
         rows.append([stamp, n, st, "Over", ln, od])     # capture for CLV (all are confirmed-active & median-verified now)
 
-    if rows:
+    if rows and DO_REAL:                             # odds snapshots = LAPTOP only (CAPTURE_ROLE); cloud (paper) skips them
         new = not os.path.exists(SNAP)
         with open(SNAP, "a", newline="", encoding="utf-8") as f:
             w = csv.writer(f)
@@ -693,8 +700,10 @@ def main():
             wbl = csv.writer(bf)
             if bnew:
                 wbl.writerow(["captured_utc", "date", "player", "market", "side", "line", "odds", "tier", "ev", "pinn", "src"])
-            for b in betstruct:
-                wbl.writerow([stamp, la_today] + b)
+            for b in betstruct:                          # ROLE split: real-money (model) rows on the laptop, paper rows on the cloud
+                is_model = len(b) > 8 and b[8] == "model"
+                if (is_model and DO_REAL) or (not is_model and DO_PAPER):
+                    wbl.writerow([stamp, la_today] + b)
     # PINNACLE vig-free FAIR ODDS sidecar (sharp ODDS-CLV source). Separate file so we never touch the bets_log schema.
     # SINGLES ONLY (pts/reb/ast): combos sum lines but can't sum prices. grade_bets takes the LAST capture = sharp close.
     SINGLES = {"pts", "reb", "ast"}
@@ -707,7 +716,7 @@ def main():
         fo = fz and fz.get("over" if bsd == "Over" else "under")
         if fo:
             pinn_rows.append([stamp, la_today, plr, bmkt, bsd, fz["line"], fo])
-    if pinn_rows:
+    if pinn_rows and DO_REAL:                         # pinn (sharp odds-CLV) snapshots = LAPTOP only
         pnew = not os.path.exists("pinn_snapshots.csv")
         with open("pinn_snapshots.csv", "a", newline="", encoding="utf-8") as pf:
             wp = csv.writer(pf)
@@ -727,7 +736,7 @@ def main():
     bets_watch = [(tm, txt) for tm, txt in bets if _bmins(tm) > NEAR_TIP_MIN]   # game still hours out -> heads-up only
     real_keys = {(b[0].lower(), b[1], b[2]) for b in betstruct if len(b) > 8 and b[8] == "model"}
     new_real = bool(real_keys - seen_today)           # a real-money bet not yet pinged today (gates the one-time WATCH)
-    if bets_near or (bets_watch and new_real):        # BET when a game is near (reconfirm each cycle); WATCH once when found
+    if DO_REAL and (bets_near or (bets_watch and new_real)):   # real-money pings = LAPTOP only (cloud role=paper stays silent)
         parts = []
         if bets_near:                                # BET WINDOW — these bets' OWN games are ~tip
             nm = int(min(_bmins(tm) for tm, _ in bets_near))
