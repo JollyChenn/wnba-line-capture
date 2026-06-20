@@ -648,3 +648,15 @@ captured_utc,date,player,market,side,line,odds,tier,ev,pinn,src
 2026-06-20T22:00:04+00:00,2026-06-20,Kiki Iriafen,pra,Under,23.5,1.91,SOLID,0.111,,model
 2026-06-20T22:20:04+00:00,2026-06-20,Gabriela Jaquez,pts,Under,9.5,1.85,THIN,0.07,9.5,model
 2026-06-20T22:20:04+00:00,2026-06-20,Kiki Iriafen,pra,Under,23.5,1.91,SOLID,0.111,,model
+2026-06-20T22:35:09+00:00,2026-06-20,Arike Ogunbowale,pra,Over,21.5,1.8,STRONG,0.283,,hotover
+2026-06-20T22:35:09+00:00,2026-06-20,Paige Bueckers,pts,Under,19.5,1.73,SOLID,0.061,19.5,newunder
+2026-06-20T22:35:09+00:00,2026-06-20,Gabby Williams,pts,Over,15.5,1.77,SOLID,0.069,,flip_paper
+2026-06-20T22:35:09+00:00,2026-06-20,Cecilia Zandalasini,pts,Under,8.5,1.92,SOLID,0.126,,newunder
+2026-06-20T22:35:09+00:00,2026-06-20,NaLyssa Smith,pts,Over,9.5,1.8,STRONG,0.28,,flip_paper
+2026-06-20T22:35:09+00:00,2026-06-20,Kayla McBride,pts,Under,13.5,1.88,THIN,0.055,,newunder
+2026-06-20T22:35:09+00:00,2026-06-20,Courtney Williams,pts,Under,16.5,1.84,THIN,0.038,,newunder
+2026-06-20T22:35:09+00:00,2026-06-20,Shakira Austin,pts,Under,12.5,1.94,SOLID,0.226,,newunder
+2026-06-20T22:35:09+00:00,2026-06-20,Sonia Citron,pts,Under,15.5,1.8,THIN,0.008,,newunder
+2026-06-20T22:35:09+00:00,2026-06-20,Nneka Ogwumike,pts,Under,13.5,1.91,SOLID,0.225,,newunder
+2026-06-20T22:35:09+00:00,2026-06-20,Breanna Stewart,pts,Under,18.5,1.952,SOLID,0.206,,newunder
+2026-06-20T22:35:09+00:00,2026-06-20,Michaela Onyenwere,pts,Over,9.5,1.75,STRONG,0.389,,overshoot
