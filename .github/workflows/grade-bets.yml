@@ -12,9 +12,15 @@ on:
     - cron: '41 7 * * *'      # 07:41 UTC
     - cron: '41 8 * * *'      # 08:41 UTC
     - cron: '41 9 * * *'      # 09:41 UTC — last morning catch-up before the afternoon backstops
-    # AFTERNOON / EVENING BACKSTOPS — off top-of-hour (GitHub skips :00 hardest); after daily-picks pulls finals.
+    # AFTERNOON backstops — off top-of-hour (GitHub skips :00 hardest); after daily-picks pulls finals.
     - cron: '23 15 * * *'     # 15:23 UTC
     - cron: '23 18 * * *'     # 18:23 UTC
+    # EVENING/OVERNIGHT — WNBA games tip 17:00-02:00 UTC and END ~19:30-04:30 UTC, so these settle each game
+    # within ~1-2h of its finish instead of leaving it until the morning sweep (the ~9h lag we kept hitting).
+    - cron: '41 20 * * *'     # 20:41 UTC
+    - cron: '41 22 * * *'     # 22:41 UTC
+    - cron: '41 0 * * *'      # 00:41 UTC
+    - cron: '41 2 * * *'      # 02:41 UTC
   workflow_dispatch: {}
 permissions:
   contents: write
