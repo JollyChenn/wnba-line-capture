@@ -31,7 +31,7 @@ This file = the complete state. Research lives in the memory files (see §12). *
 |---|---|---|
 | **daily-picks** | 13:23, 16:23 | ESPN box+games+injuries → `box_2026.csv`/`games_2026.csv`; picks → `picks_log.csv`/`PICKS.md`; runs `validate_data.py` + **`cbs_check.py`** (2nd source); rebuilds dashboard |
 | **capture-xbet** | every 3h + every 30m (14:00-02:00) | scrapes 1xbet (`1x-bet.com`, fallback `melbet.com`) champ **197289**, 48h window → `bets_log.csv` (bets) + `xbet_snapshots.csv` (all lines) + Pinnacle line `pinn` + **`pinn_snapshots.csv`** (Pinnacle vig-free FAIR odds, singles); **PINGS** real-money bets |
-| **grade-bets** | **05:23, 06:23**, 15:23, 18:23 | pulls finals → `grade_bets.py` settles → result + P&L + **4×CLV** → `graded_bets.csv`; `clv_reader.py` → `CLV_HISTORY.md` + verdict ping; rebuilds dashboard |
+| **grade-bets** | **04:41–09:41 (6× morning sweep) + 15:23, 18:23** | runs `daily_picks.py` (fetches finals into box) → `grade_bets.py` settles → result + P&L + **4×CLV** → `graded_bets.csv`; `clv_reader.py` → `CLV_HISTORY.md` + verdict ping; rebuilds dashboard. **Dense morning sweep** because GitHub free-tier delays runs ~1.5-2h AND drops early-AM crons — 6 cheap idempotent attempts so a dropped run can't strand the overnight slate ~13h (the 2026-06-20 bug) |
 | **lineup-confirm** | ~every 10m, tip hours | `lineup_check.py` — NEAR-TIP guard: scratches + day-to-day + **line-move ≥2 against** |
 | **cascade-watch** | ~every 20m, game hours | star-out cascade detection + ping |
 
@@ -127,7 +127,8 @@ Internal `src` keys are STABLE in the data; display names renamed for clarity.
 - **Sharp ODDS-CLV is the metric that matters now** (vs Pinnacle's vig-free fair price). Coverage starts empty (singles only, matched line); watch `pinn_snapshots.csv` + the `sharp_odds_clv` column fill in, mostly on pts unders. Sharp LINE-CLV (combos incl.) fills faster.
 - **Peak-odds alert (OFFERED, NOT BUILT):** ping when a real bet hits ≥1.95 (near cap) or a +2-cushion line opens ≥1.65 → "take it." Build if wanted.
 - **Open-vs-close P&L as a standing dashboard metric** (offered, not built).
-- **GitHub skips some crons** (free-tier) — morning grade has a 06:23 backstop; capture has dense tip-window crons.
+- **GitHub free-tier is the #1 ops risk** — VERIFIED 2026-06-20 via `gh run list`: it delays grade runs ~1.5-2h (15:23→~17:30, 18:23→~20:00) AND silently DROPS early-AM crons (the 05:23/06:23 added that morning never fired). This stranded the 6/19 slate un-graded ~13h. Mitigated with the 04:41–09:41 dense sweep (6 idempotent attempts). For ZERO-lag certainty, add a laptop Task-Scheduler trigger: `gh workflow run grade-bets.yml` each morning (GitHub always honors manual/API dispatch). Grading logic itself is correct (audited 39/39 via `audit_results.py`).
+- **`actions/checkout@v4` + `setup-python@v5` are on deprecated Node 20** (GitHub forcing Node 24; warning only for now) — bump to `@v5`/`@v6` across all 6 workflows before it hard-breaks.
 - **my_bets is hand-entered** — the bot can't know what you staked; log each bet (player+line+odds) when you place it.
 
 ---
