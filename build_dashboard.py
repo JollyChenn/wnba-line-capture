@@ -55,21 +55,41 @@ settled_real  = mybets                                  # your actual real-money
 settled_paper = [r for r in graded if not is_real(srcof(r))]
 signal_model  = [r for r in graded if is_real(srcof(r))]   # bot's COLD/SHRINK/STINGY at take-on-sight — for the CLV PROOF note only
 
-# ---- pending = the LATEST slate's captures not yet settled (not ancient un-graded rows) ----
-slate_date = max((r.get("date","") for r in bets_log if r.get("player")), default="")
+# ---- PENDING -------------------------------------------------------------------------------------------------
+# REAL-MONEY (model) bets must NEVER silently drop off the board. A model bet captured a day+ before its game
+# (under an EARLIER LA slate) used to vanish the moment the slate rolled. Now: show EVERY un-settled model bet from
+# the last ~3 slates (the 48h capture window), newest capture per player+market, with a "last seen" freshness so a
+# line that got PULLED (stale) is flagged instead of disappearing. PAPER stays latest-slate only (it's high-volume).
+_model_caps = [r.get("captured_utc","") for r in bets_log if is_real(r.get("src","")) and r.get("captured_utc")]
+_latest_model = max(_model_caps) if _model_caps else ""   # newest time the LAPTOP actually scanned for real-money bets
+def _stale_line(ts):                                       # True = line likely PULLED: a newer model scan didn't re-capture this bet
+    if not _latest_model or not ts:
+        return False
+    try:
+        return (datetime.datetime.fromisoformat(_latest_model.replace("Z", "+00:00"))
+                - datetime.datetime.fromisoformat(ts.replace("Z", "+00:00"))).total_seconds() > 1800  # >30 min newer scan, no re-capture
+    except Exception:
+        return False
+_slates = sorted({r.get("date","") for r in bets_log if r.get("date","")})
+_latest = _slates[-1] if _slates else ""
+_recent = set(_slates[-3:])                             # real-money visibility window (~48h: captured days before tip)
 settled_keys = {(r.get("date","").replace("-",""), r.get("player","").lower(), r.get("market","")) for r in graded}
-seen = set(); pending = []
-for r in reversed(bets_log):                            # newest capture per player+market, latest slate only
-    if r.get("date","") != slate_date:
-        continue
-    k = (r.get("date","").replace("-",""), r.get("player","").lower(), r.get("market",""))
-    if not r.get("player") or k in settled_keys or k in seen:
-        continue
-    seen.add(k); pending.append(r)
-pending.sort(key=lambda r: (r.get("player","")))
 mb_players = {r.get("player","").lower() for r in mybets}
-pending_real  = [r for r in pending if is_real(r.get("src","")) and r.get("player","").lower() not in mb_players]  # tonight's flags to place
-pending_paper = [r for r in pending if not is_real(r.get("src",""))]
+seen_r, seen_p, pending_real, pending_paper = set(), set(), [], []
+for r in reversed(bets_log):                            # newest capture per player+market wins (bets_log is append-order)
+    p = r.get("player","")
+    if not p:
+        continue
+    k = (r.get("date","").replace("-",""), p.lower(), r.get("market",""))
+    if k in settled_keys:
+        continue
+    if is_real(r.get("src","")):                        # REAL MONEY: last ~3 slates, exclude what you already placed
+        if r.get("date","") in _recent and k not in seen_r and p.lower() not in mb_players:
+            seen_r.add(k); r["_stale"] = _stale_line(r.get("captured_utc","")); pending_real.append(r)
+    elif r.get("date","") == _latest and k not in seen_p:   # PAPER: latest slate only
+        seen_p.add(k); pending_paper.append(r)
+pending_real.sort(key=lambda r: r.get("player",""))
+pending_paper.sort(key=lambda r: r.get("player",""))
 
 # ---- per-section summary (flat 1u stake) -----------------------------------
 def _nums(settled, col):
@@ -130,9 +150,10 @@ def section_rows(pend, settled, with_sig):
     out = []
     for r in pend:
         sig = f'<td>{esc(signame(r.get("src","")))}</td>' if with_sig else ''
+        plbl, pcls = ('⚠ line pulled', 'pill neg') if r.get("_stale") else ('⏳ pending', 'pill')
         out.append(f'<tr class="pend"><td>{esc(r.get("date",""))}</td>{player_cell(r)}{logged_cell(r)}'
                    f'<td>{esc(betname(r))} @ {esc(r.get("odds",""))}</td>{sig}'
-                   f'<td><span class="pill">⏳ pending</span></td><td class="muted">—</td><td class="muted">—</td></tr>')
+                   f'<td><span class="{pcls}">{esc(plbl)}</span></td><td class="muted">—</td><td class="muted">—</td></tr>')
     for r in sorted(settled, key=lambda x: x.get("date",""), reverse=True):
         txt, cl = resfmt(r.get("result",""))
         try: pnl = float(r.get("pnl") or 0)
@@ -176,7 +197,7 @@ def scoreboard_html():
         if oc not in ("", "None", None):
             try: a["clv"].append(float(oc))
             except ValueError: pass
-    for r in pending:                                  # tonight's not-yet-settled, per signal
+    for r in (pending_real + pending_paper):           # tonight's not-yet-settled, per signal
         agg[signame(r.get("src", ""))]["pend"] += 1
     out = []
     for nm, a in sorted(agg.items(), key=lambda kv: (kv[1]["w"] + kv[1]["l"] == 0, -kv[1]["pnl"])):
