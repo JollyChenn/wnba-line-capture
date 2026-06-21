@@ -73,21 +73,26 @@ def _stale_line(ts):                                       # True = line likely 
 _slates = sorted({r.get("date","") for r in bets_log if r.get("date","")})
 _latest = _slates[-1] if _slates else ""
 _recent = set(_slates[-3:])                             # real-money visibility window (~48h: captured days before tip)
-settled_keys = {(r.get("date","").replace("-",""), r.get("player","").lower(), r.get("market","")) for r in graded}
+graded_pm = defaultdict(set)                            # (player, market) -> {graded GAME dates}
+for r in graded:
+    graded_pm[(r.get("player","").lower(), r.get("market",""))].add(r.get("date","").replace("-",""))
+def _settled(plow, mk, slate):                          # a bet is settled if a graded result exists on/after its slate
+    return any(gd >= slate for gd in graded_pm.get((plow, mk), ()))
 mb_players = {r.get("player","").lower() for r in mybets}
 seen_r, seen_p, pending_real, pending_paper = set(), set(), [], []
-for r in reversed(bets_log):                            # newest capture per player+market wins (bets_log is append-order)
+for r in reversed(bets_log):                            # newest capture per (player,market,side) wins (append-order)
     p = r.get("player","")
     if not p:
         continue
-    k = (r.get("date","").replace("-",""), p.lower(), r.get("market",""))
-    if k in settled_keys:
+    plow, mk, sd = p.lower(), r.get("market",""), r.get("side","")
+    if _settled(plow, mk, r.get("date","").replace("-","")):
         continue
-    if is_real(r.get("src","")):                        # REAL MONEY: last ~3 slates, exclude what you already placed
-        if r.get("date","") in _recent and k not in seen_r and p.lower() not in mb_players:
-            seen_r.add(k); r["_stale"] = _stale_line(r.get("captured_utc","")); pending_real.append(r)
-    elif r.get("date","") == _latest and k not in seen_p:   # PAPER: latest slate only
-        seen_p.add(k); pending_paper.append(r)
+    pm = (plow, mk, sd)                                 # dedup ACROSS slates -> a bet captured over 2 days shows ONCE
+    if is_real(r.get("src","")):                        # REAL MONEY: visible across the 48h window, exclude what you placed
+        if r.get("date","") in _recent and pm not in seen_r and plow not in mb_players:
+            seen_r.add(pm); r["_stale"] = _stale_line(r.get("captured_utc","")); pending_real.append(r)
+    elif r.get("date","") == _latest and pm not in seen_p:   # PAPER: latest slate only
+        seen_p.add(pm); pending_paper.append(r)
 pending_real.sort(key=lambda r: r.get("player",""))
 pending_paper.sort(key=lambda r: r.get("player",""))
 
