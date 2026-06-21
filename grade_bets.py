@@ -33,25 +33,39 @@ for b in csv.DictReader(open("bets_log.csv", encoding="utf-8")):
     caps[(d, b["player"].lower(), b["market"], b["side"])].append(
         (b["captured_utc"], float(b["line"]), float(b["odds"]), b.get("tier", ""), b["player"], b.get("pinn", ""), src, ev))
 
-# RESOLVE TO THE REAL GAME DATE so EVERY capture of a bet is counted (every odds, full open->close CLV).
-# A bet's "date" is the CAPTURE slate date (LA). A game tipping late (West-coast evening = next UTC day),
-# captured the evening before, lands a day BEFORE the box-score game date -> those early "open" captures (the
-# whole reason we capture 48h out) would orphan into a date group that never matches a result: no settlement,
-# truncated CLV. Re-key each capture to the EARLIEST game the player has on/after the capture date, so all
-# captures of one bet merge into a single open->close group.
+# RESOLVE TO THE REAL GAME DATE so every capture of a bet is counted (full open->close CLV) -- now TIP-AWARE.
+# A line captured AFTER a game has tipped cannot be a bet on that game; it's a line for the player's NEXT game
+# (e.g. the every-3h cloud scan at ~05:13 UTC, after the night's games ended, logs tomorrow's lines under today's
+# LA slate). The old "earliest box-date >= slate" then MIS-SETTLED those against the FINISHED game. Fix: resolve to
+# the earliest game whose TIP is after the bet's first capture, and drop any capture taken at/after that tip. A bet
+# captured after every known game tipped -> future game -> stays PENDING (never graded against a finished game).
+gt = {r["game_id"]: (r.get("tip") or "") for r in csv.DictReader(open("data/games_2026.csv", encoding="utf-8"))}
 player_dates = defaultdict(set)                        # (player, market) -> {dates the player has a FINAL box result}
+player_tip = {}                                        # (player, gamedate) -> that game's tip (ISO)
+for r in csv.DictReader(open("data/box_2026.csv", encoding="utf-8")):
+    dd = gd.get(r["game_id"])
+    if dd:
+        player_tip[(r["player"].lower(), dd)] = gt.get(r["game_id"], "")
 for (plow, dd, mk) in actual:
     player_dates[(plow, mk)].add(dd)
 
 
-def game_date(plow, mk, slate):
-    later = sorted(x for x in player_dates.get((plow, mk), ()) if x >= slate)
-    return later[0] if later else slate                # earliest game on/after capture; else slate (still pending)
+def game_date(plow, mk, slate, first_cap=""):
+    for d in sorted(x for x in player_dates.get((plow, mk), ()) if x >= slate):
+        tip = player_tip.get((plow, d), "")
+        if not tip or not first_cap or tip[:16] > first_cap[:16]:   # captured BEFORE this game tipped -> it's this game
+            return d
+    return "99999999"                                  # captured after every known game tipped -> future game -> pending
 
 
-merged = defaultdict(list)                              # collapse cross-midnight captures of the SAME bet
+merged = defaultdict(list)                              # collapse cross-midnight captures of the SAME bet (tip-aware)
 for (d, plow, mk, side), cl in caps.items():
-    merged[(game_date(plow, mk, d), plow, mk, side)].extend(cl)
+    first_cap = min(c[0] for c in cl)                  # earliest capture in this slate group
+    gdate = game_date(plow, mk, d, first_cap)
+    tip = player_tip.get((plow, gdate), "")
+    kept = [c for c in cl if (not tip) or c[0][:16] < tip[:16]]   # drop captures at/after the game's tip (next-game lines)
+    if kept:
+        merged[(gdate, plow, mk, side)].extend(kept)
 caps = merged                                          # everything downstream now groups by GAME date
 
 # PINNACLE vig-free FAIR ODDS (sidecar pinn_snapshots.csv) -> sharp ODDS-CLV: our price vs the sharp's fair price.
@@ -62,7 +76,7 @@ if os.path.exists("pinn_snapshots.csv"):
     _ps = defaultdict(list)
     for r in csv.DictReader(open("pinn_snapshots.csv", encoding="utf-8")):
         plow = r["player"].lower()
-        gd2 = game_date(plow, r["market"], r["date"].replace("-", ""))
+        gd2 = game_date(plow, r["market"], r["date"].replace("-", ""), r["captured_utc"])
         _ps[(gd2, plow, r["market"], r["side"])].append((r["captured_utc"], r.get("pinn_line", ""), r.get("pinn_fair", "")))
     for k, lst in _ps.items():
         lst.sort()
