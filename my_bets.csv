@@ -3,4 +3,4 @@ date,player,market,side,line,odds,stake_u,actual,result,pnl,entry_odds,close_odd
 20260617,Dearica Hamby,pra,Under,25.5,1.8,1,23,WIN,0.8,1.8,1.8,0.0,manual; bot pinged 22.5 but line drifted UP to 25.5@1.8 by tip - took the better under; actual 23 -> WIN (+3 LINE value; bot take-on-sight record shows 22.5 LOSS)
 20260619,Kayla Thornton,pr,Under,14.5,1.91,1,9,WIN,0.91,1.91,2.0,-0.045,manual; bet EARLY @1.91 (drifted to ~2.0 by tip = -4.5% odds-CLV, reinforces bet-late); PR 9 -> WIN
 20260619,Courtney Williams,pr,Under,22.5,1.73,1,33,loss,-1.0,1.73,1.91,-0.094,manual; bet all real-money pings early @1.73; PR 33 -> LOSS (line drifted 22.5->21.5 AGAINST us + she erupted; line-move guard would now flag this)
-20260620,Gabriela Jaquez,pts,Under,9.5,2.0,1,,,,2.0,,,manual; took U9.5 @2.0 early (THIN model bet; line later sagged to 1.85 = we beat the price by ~8%); CHI vs DAL tips 6/21 00:00Z; result+close PENDING
+20260620,Gabriela Jaquez,pts,Under,9.5,2.0,1,6,WIN,1.0,2.0,1.85,0.081,manual; took U9.5 @2.0 early; CHI 6 pts (DAL@CHI 93-92) -> WIN +1.0u; entry 2.0 beat the 1.85 close = +8% CLV
