@@ -760,3 +760,5 @@ captured_utc,date,player,market,side,line,odds,tier,ev,pinn,src
 2026-06-21T10:05:16+00:00,2026-06-21,Nalyssa Smith,pr,Over,16.5,1.952,STRONG,0.533,,overshoot
 2026-06-21T10:05:16+00:00,2026-06-21,Angel Reese,pr,Over,27.5,1.83,STRONG,0.316,,overshoot
 2026-06-21T10:05:16+00:00,2026-06-21,Gabby Williams,pr,Over,19.5,1.769,STRONG,0.262,,overshoot
+2026-06-21T14:00:04+00:00,2026-06-21,Kiki Iriafen,pra,Under,23.5,1.909,SOLID,0.11,,model
+2026-06-21T14:00:04+00:00,2026-06-21,Ariel Atkins,pra,Under,13.5,1.67,SOLID,0.033,,model
