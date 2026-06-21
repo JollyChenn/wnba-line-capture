@@ -111,6 +111,14 @@ def player_cell(r):                                    # player name + their tea
     tm = team_of(r.get("player", ""))
     tag = f' <span class="mut" style="font-size:12px">{esc(tm)}</span>' if tm else ''
     return f'<td><b>{esc(r.get("player",""))}</b>{tag}</td>'
+def logged_cell(r):                                    # WHEN this bet was first captured (transparency) -> MM-DD
+    d = r.get("opened") or (r.get("captured_utc", "") or "")[:10]   # settled: first-capture date; pending: capture date
+    if not d:                                          # my_bets (hand-entered) -> fall back to the bet date
+        dt = r.get("date", "")
+        d = f"{dt[4:6]}-{dt[6:8]}" if len(dt) == 8 else dt
+    else:
+        d = d[5:] if len(d) >= 10 else d
+    return f'<td class="mut" style="font-size:12px">{esc(d)}</td>'
 def resfmt(res):
     if res == "WIN": return ('✅ WIN', 'pos')
     if res in ("loss", "LOSS"): return ('❌ LOSE', 'neg')
@@ -122,7 +130,7 @@ def section_rows(pend, settled, with_sig):
     out = []
     for r in pend:
         sig = f'<td>{esc(signame(r.get("src","")))}</td>' if with_sig else ''
-        out.append(f'<tr class="pend"><td>{esc(r.get("date",""))}</td>{player_cell(r)}'
+        out.append(f'<tr class="pend"><td>{esc(r.get("date",""))}</td>{player_cell(r)}{logged_cell(r)}'
                    f'<td>{esc(betname(r))} @ {esc(r.get("odds",""))}</td>{sig}'
                    f'<td><span class="pill">⏳ pending</span></td><td class="muted">—</td><td class="muted">—</td></tr>')
     for r in sorted(settled, key=lambda x: x.get("date",""), reverse=True):
@@ -133,12 +141,12 @@ def section_rows(pend, settled, with_sig):
         try: ocf = clvfmt(float(oc)) if oc not in ("","None",None) else "—"
         except ValueError: ocf = "—"
         sig = f'<td>{esc(signame(srcof(r)))}</td>' if with_sig else ''
-        out.append(f'<tr><td>{esc(r.get("date",""))}</td>{player_cell(r)}'
+        out.append(f'<tr><td>{esc(r.get("date",""))}</td>{player_cell(r)}{logged_cell(r)}'
                    f'<td>{esc(betname(r))} @ {esc(r.get("odds",""))}</td>{sig}'
                    f'<td class="{cl}">{txt}</td><td class="{"pos" if pnl>0 else ("neg" if pnl<0 else "muted")}">{pnl:+.2f}u</td>'
                    f'<td class="{("pos" if (oc not in ("","None",None) and float(oc or 0)>0) else "muted")}">{ocf}</td></tr>')
     if not out:
-        cols = 7 if with_sig else 6
+        cols = 8 if with_sig else 7
         out.append(f'<tr><td colspan="{cols}" class="empty">— none yet —</td></tr>')
     return "".join(out)
 
@@ -218,12 +226,12 @@ tr:nth-child(even) td{background:#12172c} tr.pend td{background:#1a1f3a}
 <div class="real"><h2>💰 REAL MONEY — your placed bets (COLD/SHRINK/STINGY)</h2>
 __RSUMM__
 <div class="sub2" style="margin-bottom:6px">⏳ pending = bot flagged it tonight — place &amp; record · settled = what you actually bet.<br><b>Signal CLV (the proof, take-on-sight):</b> __SIGCLVALL__</div>
-<table><tr><th>slate</th><th>player</th><th>bet @ odds</th><th>result</th><th>P&amp;L</th><th>CLV</th></tr>__RROWS__</table></div>
+<table><tr><th>slate</th><th>player</th><th>logged</th><th>bet @ odds</th><th>result</th><th>P&amp;L</th><th>CLV</th></tr>__RROWS__</table></div>
 
 <div class="paper"><h2>🧪 PAPER TESTING — all other signals (NOT real money)</h2>
-<div class="sub2" style="margin-bottom:6px">FLIP UNDER · FTUNDER · HOT OVER · BOOK OVERSHOOT · STAR-OUT CASCADE · usgshock — tracked for CLV, never staked.</div>
+<div class="sub2" style="margin-bottom:6px">FLIP UNDER · FTUNDER · HOT OVER · BOOK OVERSHOOT · STAR-OUT CASCADE · usgshock — tracked for CLV, never staked.<br><b>logged</b> = MM-DD this bet was first captured (usually the day BEFORE the game — so a bet logged days ago only shows its result here once its game finishes, which is why they all surface together).</div>
 __PSUMM__
-<table><tr><th>slate</th><th>player</th><th>bet @ odds</th><th>signal</th><th>result</th><th>P&amp;L</th><th>CLV</th></tr>__PROWS__</table></div>
+<table><tr><th>slate</th><th>player</th><th>logged</th><th>bet @ odds</th><th>signal</th><th>result</th><th>P&amp;L</th><th>CLV</th></tr>__PROWS__</table></div>
 
 <div class="foot">build_dashboard.py · REAL = COLD/SHRINK/STINGY (src=model); PAPER = everything else. P&amp;L is flat 1u stake vs the captured price. CLV &gt; 0 = we beat the close.</div>
 </div></body></html>"""

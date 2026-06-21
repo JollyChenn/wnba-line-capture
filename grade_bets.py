@@ -127,6 +127,7 @@ for (d, plow, mk, side), cl in caps.items():
     cl.sort()
     o_line, o_odds, tier, disp = cl[0][1], cl[0][2], cl[0][3], cl[0][4]      # OUR bet = first alert (opening line + price)
     o_src = cl[0][6]                                                          # signal source of OUR (first) capture
+    o_open = cl[0][0][:10]                                                    # DATE this bet was first captured (transparency: usually the day before the game)
     # CLOSE PRICE = the last capture STILL AT OUR OPENING LINE. The soft book oscillates the price (1.91<->2.0) and
     # sometimes shifts the line (e.g. 14.5->15.5); taking the absolute-last capture made the odds-CLV BOUNCE and could
     # even compare our 14.5 open against a 15.5 close. Locking the close to OUR line keeps it apples-to-apples and
@@ -146,12 +147,12 @@ for (d, plow, mk, side), cl in caps.items():
     line_self = line_clv(o_line, c_line, side) if len(cl) >= 2 else ""           # line drift open->close (uses the true last line)
     rows.append([d, disp, mk, side, o_line, o_odds, tier, act, res, round(pnl, 2),
                  odds_clv, line_self, line_clv(o_line, c_pinn, side),
-                 sharp_odds_clv(o_line, o_odds, plow, mk, side, d), o_src])   # sharp line+odds CLV; src for honest split
+                 sharp_odds_clv(o_line, o_odds, plow, mk, side, d), o_src, o_open])   # sharp line+odds CLV; src for honest split
 
 with open("graded_bets.csv", "w", newline="", encoding="utf-8") as f:
     wr = csv.writer(f)
     wr.writerow(["date", "player", "market", "side", "line", "odds", "tier", "actual", "result", "pnl",
-                 "odds_clv", "line_clv", "sharp_clv", "sharp_odds_clv", "src"])
+                 "odds_clv", "line_clv", "sharp_clv", "sharp_odds_clv", "src", "opened"])
     wr.writerows(sorted(rows))
 print(f"graded {len(rows)} settled bet(s) (one-per-player-per-day, rebuilt from bets_log)")
 
