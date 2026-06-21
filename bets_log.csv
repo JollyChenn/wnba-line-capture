@@ -920,3 +920,5 @@ captured_utc,date,player,market,side,line,odds,tier,ev,pinn,src
 2026-06-21T20:02:01+00:00,2026-06-21,Flau'jae Johnson,pts,Under,10.5,1.952,STRONG,0.335,,newunder
 2026-06-21T20:02:01+00:00,2026-06-21,Michaela Onyenwere,pts,Over,9.5,1.78,STRONG,0.412,,overshoot
 2026-06-21T20:02:01+00:00,2026-06-21,Arike Ogunbowale,pa,Over,17.5,1.83,STRONG,0.263,,overshoot
+2026-06-21T20:20:04+00:00,2026-06-21,Kiki Iriafen,pra,Under,23.5,1.909,SOLID,0.11,,model
+2026-06-21T20:20:04+00:00,2026-06-21,Ariel Atkins,pra,Under,13.5,1.8,SOLID,0.114,,model
