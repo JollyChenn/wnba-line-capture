@@ -10,7 +10,7 @@ _**sharp-odds** = vs Pinnacle's vig-free fair price (TRUE edge test) · **sharp-
   ★ SHARP ODDS-CLV: -3.4% | beat fair 0/1 (0%)  ← TRUE edge (vs Pinnacle fair price)
   SHARP LINE-CLV : -0.17 pts | n=3  ← better number than the sharp
   self ODDS-CLV  : +0.5% | beat 2/7 (29%)  (1xbet's own close = weak)
-  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 6/14 (-2.9u) · FLIP UNDER 2/6 (-2.3u) · FLIP UNDER(paper) 1/1 (+0.9u) · FTUNDER 9/17 (-0.7u) · HOT OVER 5/6 (+3.4u) · STAR-OUT CASCADE 2/2 (+1.5u) · starout 0/1 (-1.0u)
+  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 7/16 (-3.0u) · FLIP UNDER 2/6 (-2.3u) · FLIP UNDER(paper) 1/2 (-0.1u) · FTUNDER 9/18 (-1.7u) · HOT OVER 5/6 (+3.4u) · STAR-OUT CASCADE 2/2 (+1.5u) · starout 0/1 (-1.0u)
   VERDICT : ⏳ TOO EARLY (n=7; sharp-CLV thin, need ~20-40 ≈ 2wks). CLV flat — not yet meaningful.
   by tier: SOLID 1/2 (+0.0u) · STRONG 2/3 (+0.6u) · THIN 1/2 (+0.0u)
   by market: pr Under 1/2 (+0.0u) · pra Under 1/2 (-0.3u) · pts Under 2/3 (+0.9u)
@@ -76,3 +76,7 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260620 | Rhyne Howard | PRA Over 25.5 @ 2.0 | HOT OVER | WIN | — | — | +6% |
 | 20260620 | Skylar Diggins | PTS Under 15.5 @ 1.82 | FTUNDER | WIN | — | — | +2% |
 | 20260620 | Sophie Cunningham | PTS Over 8.5 @ 1.86 | FLIP UNDER(paper) | WIN | -7% | +0.0 | -0% |
+| 20260621 | Cecilia Zandalasini | PTS Under 8.5 @ 1.82 | FTUNDER | loss | -12% | +0.0 | +4% |
+| 20260621 | Gabby Williams | PR Over 19.5 @ 1.769 | BOOK OVERSHOOT | loss | — | — | +2% |
+| 20260621 | Janelle Salaun | PTS Over 13.5 @ 1.85 | FLIP UNDER(paper) | loss | -10% | +0.0 | +0% |
+| 20260621 | Nalyssa Smith | PR Over 16.5 @ 1.952 | BOOK OVERSHOOT | WIN | — | — | — |
