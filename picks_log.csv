@@ -296,3 +296,41 @@ pick_date,game_id,player,team,opp,market,anchor,signals,fair_p,fair_odds,proj,sd
 2026-06-21,401857015,Paige Bueckers,Dallas Wings,Seattle Storm,pts_under,18.5,steady,0.563,1.78,17.3,7.39
 2026-06-21,401857015,Azzi Fudd,Dallas Wings,Seattle Storm,pts_under,14.5,steady,0.563,1.78,13.6,5.97
 2026-06-21,401857015,Flau'jae Johnson,Seattle Storm,Dallas Wings,pts_under,9.5,steady,0.563,1.78,9.0,3.13
+2026-06-22,401857012,Raegan Beers,Connecticut Sun,Chicago Sky,reb_under,3.5,declining+cold,0.58,1.72,3.0,2.45
+2026-06-22,401857012,Azura Stevens,Chicago Sky,Connecticut Sun,pra_over,14.5,hot+expand+leaky,0.62,1.61,17.2,7.21
+2026-06-22,401857012,Sydney Taylor,Chicago Sky,Connecticut Sun,pra_over,15.5,hot+leaky,0.62,1.61,19.2,12.17
+2026-06-22,401857012,Brittney Griner,Connecticut Sun,Chicago Sky,pts_under,12.5,steady,0.563,1.78,11.8,4.17
+2026-06-22,401857012,Skylar Diggins,Chicago Sky,Connecticut Sun,pts_under,15.5,steady,0.563,1.78,14.6,5.38
+2026-06-22,401857013,Allisha Gray,Atlanta Dream,Toronto Tempo,pra_over,21.5,hot+leaky,0.62,1.61,24.1,7.03
+2026-06-22,401857013,Jordin Canada,Atlanta Dream,Toronto Tempo,pra_over,19.5,hot+leaky,0.62,1.61,21.7,5.42
+2026-06-22,401857013,Rhyne Howard,Atlanta Dream,Toronto Tempo,pra_over,25.5,hot+leaky,0.62,1.61,28.6,8.37
+2026-06-22,401857013,Isabelle Harrison,Toronto Tempo,Atlanta Dream,pts_under,12.5,steady,0.563,1.78,11.8,4.55
+2026-06-22,401857013,Allisha Gray,Atlanta Dream,Toronto Tempo,pts_under,17.5,steady,0.563,1.78,16.7,5.02
+2026-06-22,401857013,Jordin Canada,Atlanta Dream,Toronto Tempo,pts_under,11.5,steady,0.563,1.78,10.8,4.35
+2026-06-22,401857013,Marina Mabrey,Toronto Tempo,Atlanta Dream,pts_under,18.5,steady,0.563,1.78,17.2,8.27
+2026-06-22,401857013,Rhyne Howard,Atlanta Dream,Toronto Tempo,pts_under,17.5,steady,0.563,1.78,16.2,8.19
+2026-06-22,401857013,Naz Hillmon,Atlanta Dream,Toronto Tempo,pts_under,12.5,steady,0.563,1.78,11.7,4.97
+2026-06-22,401857013,Angel Reese,Atlanta Dream,Toronto Tempo,pts_under,17.5,steady,0.563,1.78,16.8,4.65
+2026-06-22,401857014,Kahleah Copper,Phoenix Mercury,Indiana Fever,pra_over,22.5,hot+leaky,0.62,1.61,26.2,10.61
+2026-06-22,401857014,Kahleah Copper,Phoenix Mercury,Indiana Fever,pts_under,17.5,steady,0.563,1.78,16.1,8.76
+2026-06-22,401857014,Kelsey Mitchell,Indiana Fever,Phoenix Mercury,pts_under,18.5,steady,0.563,1.78,17.8,4.7
+2026-06-22,401857014,Aliyah Boston,Indiana Fever,Phoenix Mercury,pts_under,15.5,steady,0.563,1.78,14.4,6.65
+2026-06-22,401857014,Caitlin Clark,Indiana Fever,Phoenix Mercury,pts_under,19.5,steady,0.563,1.78,18.2,7.91
+2026-06-22,401857014,Lexi Held,Phoenix Mercury,Indiana Fever,ast_over,1.5,usgshock,0.591,1.69,1.9,1.5
+2026-06-22,401857015,Natisha Hiedeman,Seattle Storm,Dallas Wings,pts_under,16.5,steady,0.563,1.78,15.7,4.97
+2026-06-22,401857015,Jessica Shepard,Dallas Wings,Seattle Storm,pts_under,14.5,steady,0.563,1.78,13.7,4.84
+2026-06-22,401857015,Paige Bueckers,Dallas Wings,Seattle Storm,pts_under,18.5,steady,0.563,1.78,17.3,7.39
+2026-06-22,401857015,Azzi Fudd,Dallas Wings,Seattle Storm,pts_under,14.5,steady,0.563,1.78,13.6,5.97
+2026-06-22,401857015,Flau'jae Johnson,Seattle Storm,Dallas Wings,pts_under,9.5,steady,0.563,1.78,9.0,3.13
+2026-06-22,401857016,Chelsea Gray,Las Vegas Aces,New York Liberty,pts_under,11.5,cold+stingy,0.626,1.6,8.7,8.67
+2026-06-22,401857016,Chelsea Gray,Las Vegas Aces,New York Liberty,pr_under,16.5,cold+stingy,0.59,1.69,14.4,9.13
+2026-06-22,401857016,Chelsea Gray,Las Vegas Aces,New York Liberty,pra_under,24.5,cold+stingy,0.621,1.61,22.0,8.06
+2026-06-22,401857016,A'ja Wilson,Las Vegas Aces,New York Liberty,pr_under,38.5,cold+stingy,0.59,1.69,36.7,7.82
+2026-06-22,401857016,A'ja Wilson,Las Vegas Aces,New York Liberty,pra_under,40.5,cold+stingy,0.621,1.61,37.7,9.12
+2026-06-22,401857016,Jackie Young,Las Vegas Aces,New York Liberty,pr_under,22.5,cold+stingy,0.59,1.69,20.9,6.92
+2026-06-22,401857016,Jackie Young,Las Vegas Aces,New York Liberty,pa_under,26.5,cold+stingy,0.61,1.64,24.6,6.7
+2026-06-22,401857016,Jackie Young,Las Vegas Aces,New York Liberty,pra_under,30.5,cold+stingy,0.621,1.61,28.3,7.26
+2026-06-22,401857016,Satou Sabally,New York Liberty,Las Vegas Aces,pra_over,15.5,hot+expand,0.55,1.82,16.9,7.02
+2026-06-22,401857016,Breanna Stewart,New York Liberty,Las Vegas Aces,pts_under,17.5,steady,0.563,1.78,16.4,6.64
+2026-06-22,401857016,Jonquel Jones,New York Liberty,Las Vegas Aces,pts_under,16.5,steady,0.563,1.78,15.7,4.98
+2026-06-22,401857016,NaLyssa Smith,Las Vegas Aces,New York Liberty,pts_under,12.5,steady,0.563,1.78,11.8,4.67
