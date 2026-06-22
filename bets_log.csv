@@ -1037,3 +1037,13 @@ captured_utc,date,player,market,side,line,odds,tier,ev,pinn,src
 2026-06-22T12:26:03+00:00,2026-06-22,Aliyah Boston,pts,Under,16.5,1.78,SOLID,0.111,,newunder
 2026-06-22T12:26:03+00:00,2026-06-22,Azzi Fudd,pr,Over,14.5,1.909,STRONG,0.336,,overshoot
 2026-06-22T12:26:03+00:00,2026-06-22,Arike Ogunbowale,pa,Over,17.5,1.833,STRONG,0.265,,overshoot
+2026-06-22T18:18:27+00:00,2026-06-22,Skylar Diggins,pts,Under,15.5,1.9,THIN,0.076,16.5,newunder
+2026-06-22T18:18:27+00:00,2026-06-22,Jordin Canada,pts,Under,12.5,1.73,SOLID,0.128,12.5,newunder
+2026-06-22T18:18:27+00:00,2026-06-22,Rhyne Howard,pra,Over,26.5,2.0,THIN,0.155,,hotover
+2026-06-22T18:18:27+00:00,2026-06-22,Marina Mabrey,pts,Under,19.5,1.87,SOLID,0.14,19.5,newunder
+2026-06-22T18:18:27+00:00,2026-06-22,Angel Reese,pts,Over,15.5,1.8,SOLID,0.098,15.5,flip_paper
+2026-06-22T18:18:27+00:00,2026-06-22,Aliyah Boston,pts,Under,16.5,1.78,SOLID,0.111,16.5,newunder
+2026-06-22T18:18:27+00:00,2026-06-22,Breanna Stewart,pts,Under,19.5,1.8,STRONG,0.223,,newunder
+2026-06-22T18:18:27+00:00,2026-06-22,Jonquel Jones,pts,Over,13.5,1.909,STRONG,0.28,,flip_paper
+2026-06-22T18:18:27+00:00,2026-06-22,Azzi Fudd,pr,Over,14.5,1.909,STRONG,0.336,,overshoot
+2026-06-22T18:18:27+00:00,2026-06-22,Arike Ogunbowale,pa,Over,17.5,1.833,STRONG,0.265,,overshoot
