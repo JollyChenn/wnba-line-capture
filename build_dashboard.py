@@ -216,6 +216,52 @@ def scoreboard_html():
                    f'<td class="muted">{a["pend"] or "—"}</td></tr>')
     return "".join(out) or '<tr><td colspan="6" class="empty">— none yet —</td></tr>'
 
+# ---- FILTER LAB: candidate filters tracked as the sample grows (NOT applied to live bets) ----
+def filter_lab_html():
+    base = [r for r in graded if r.get("result") in ("WIN", "loss", "LOSS")]
+    def negclv(r):                                     # the price moved against us by the close
+        v = r.get("odds_clv")
+        try: return v not in ("", "None", None) and float(v) < 0
+        except ValueError: return False
+    def bigover(r):                                    # the "book trap": big-line / star overshoot over
+        try: return r.get("src") == "overshoot" and float(r.get("line") or 0) >= 18
+        except ValueError: return False
+    def rec(items):
+        w = sum(1 for r in items if r.get("result") == "WIN")
+        l = sum(1 for r in items if r.get("result") in ("loss", "LOSS"))
+        return w, l, sum(float(r.get("pnl") or 0) for r in items)
+    def frow(label, items):
+        w, l, pnl = rec(items); n = w + l
+        hit = f"{w / n * 100:.0f}%" if n else "—"
+        pcls = "pos" if pnl > 0 else ("neg" if pnl < 0 else "muted")
+        return (f'<tr><td>{esc(label)}</td><td><b>{w}–{l}</b></td><td class="muted">{hit}</td>'
+                f'<td class="{pcls}"><b>{pnl:+.2f}u</b></td></tr>')
+    if not base:
+        empty = '<tr><td colspan="4" class="empty">— none yet —</td></tr>'
+        return empty, empty
+    n_neg = sum(1 for r in base if negclv(r)); n_big = sum(1 for r in base if bigover(r))
+    filt = "".join([
+        frow("Baseline — bet everything", base),
+        frow(f"Skip negative odds-CLV (−{n_neg})", [r for r in base if not negclv(r)]),
+        frow(f"Skip big book-overshoot overs ≥18 (−{n_big})", [r for r in base if not bigover(r)]),
+        frow("Both filters", [r for r in base if not negclv(r) and not bigover(r)]),
+    ])
+    ov = [r for r in base if r.get("src") == "overshoot"]
+    osub = []
+    for lab, t in [("big line ≥18", lambda r: float(r.get("line") or 0) >= 18),
+                   ("small line <18", lambda r: float(r.get("line") or 0) < 18)]:
+        s = [r for r in ov if t(r)]
+        if not s: continue
+        w, l, pnl = rec(s)
+        fade = sum(((float(r.get("odds") or 0) - 1) if r.get("result") in ("loss", "LOSS") else -1.0) for r in s)
+        pcls = "pos" if pnl > 0 else ("neg" if pnl < 0 else "muted")
+        fcls = "pos" if fade > 0 else ("neg" if fade < 0 else "muted")
+        osub.append(f'<tr><td>{esc(lab)}</td><td><b>{w}–{l}</b></td><td class="{pcls}">{pnl:+.2f}u</td>'
+                    f'<td class="{fcls}"><b>{fade:+.2f}u</b></td></tr>')
+    return filt, ("".join(osub) or '<tr><td colspan="4" class="empty">—</td></tr>')
+
+filter_rows, overshoot_rows = filter_lab_html()
+
 gen = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
 through = max((r.get("date","") for r in graded), default="—")
 slate = max((r.get("date","") for r in bets_log), default="—")
@@ -242,6 +288,9 @@ tr:nth-child(even) td{background:#12172c} tr.pend td{background:#1a1f3a}
 .pill{font-size:11px;padding:2px 8px;border-radius:20px;background:#2a3358;color:#aeb6e0}
 .empty{color:#7e87b8;padding:10px 0;text-align:center} .foot{color:#5a628f;font-size:12px;margin-top:28px}
 .real h2{color:#5fd07a} .paper h2{color:#aeb6e0}
+.lab{margin-top:42px;border-top:2px dashed #3a4170;padding-top:14px}
+.lab h2{color:#6fd3e0} .lab .labnote{color:#7e87b8;font-size:13px;margin:2px 0 10px}
+.lab .pill{background:#143a44;color:#7fe3f0}
 </style></head><body><div class="wrap">
 <h1>🏀 WNBA prop bot</h1><div class="sub2">latest slate __SLATE__ · settled through __THROUGH__ · generated __GEN__</div>
 <div class="banner">⚠️ <b>UNPROVEN — paper / tiny stakes only.</b> Every line is vs a synthetic median (predicts the SIDE, not that it beats the book). <b>CLV is the only proof</b> — real-money CLV is __CLVHEAD__ so far. Never auto-bet.</div>
@@ -259,6 +308,14 @@ __RSUMM__
 __PSUMM__
 <table><tr><th>slate</th><th>player</th><th>logged</th><th>bet @ odds</th><th>signal</th><th>result</th><th>P&amp;L</th><th>CLV</th></tr>__PROWS__</table></div>
 
+<div class="lab">
+<h2>🔬 FILTER LAB <span class="sub2" style="font-weight:400">— candidate filters · <span class="pill">tracking only</span> NOT applied to live bets</span></h2>
+<div class="labnote">Two filters we're watching as the sample grows — <b>not acted on yet</b> (directional on a small sample). Negative-CLV is hindsight (known only at the close); the live form is <i>“bet late, pass when the price has moved against you.”</i> Full breakdown in <b>FILTER_REPORT.md</b>.</div>
+<table><tr><th>filtered view</th><th>W–L</th><th>hit</th><th>P&amp;L (flat 1u)</th></tr>__FILTERROWS__</table>
+<div class="labnote" style="margin-top:16px"><b>📉 Book overshoot — bet the over vs. FADE it, by line size.</b> The trap is the big numbers: ≥18 overshoot-overs whiff, so fading them would have profited.</div>
+<table><tr><th>line</th><th>over W–L</th><th>over P&amp;L</th><th>fade P&amp;L</th></tr>__OVERROWS__</table>
+</div>
+
 <div class="foot">build_dashboard.py · REAL = COLD/SHRINK/STINGY (src=model); PAPER = everything else. P&amp;L is flat 1u stake vs the captured price. CLV &gt; 0 = we beat the close.</div>
 </div></body></html>"""
 
@@ -267,7 +324,8 @@ page = (TEMPLATE.replace("__RSUMM__", summ_line(rs, "real")).replace("__RROWS__"
         .replace("__SLATE__", esc(slate)).replace("__THROUGH__", esc(through))
         .replace("__GEN__", gen).replace("__CLVHEAD__", clvhead)
         .replace("__SCOREBOARD__", scoreboard_html())
-        .replace("__SIGCLVALL__", sig_clv_html(sig)))
+        .replace("__SIGCLVALL__", sig_clv_html(sig))
+        .replace("__FILTERROWS__", filter_rows).replace("__OVERROWS__", overshoot_rows))
 
 with open(os.path.join(ROOT, "dashboard.html"), "w", encoding="utf-8") as f:
     f.write(page)
