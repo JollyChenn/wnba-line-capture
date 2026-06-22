@@ -43,11 +43,13 @@ jobs:
         run: python clv_reader.py || true   # DISCORD_WEBHOOK intentionally NOT passed -> clv_reader stays silent (results live on the dashboard); actionable BET pings still fire from capture-xbet
       - name: Rebuild HTML dashboard
         run: python build_dashboard.py || true
+      - name: Update signal filter report (forward CLV/overshoot tracker)
+        run: python signal_report.py || true
       - name: Commit track record
         run: |
           git config user.name "wnba-grade-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add graded_bets.csv CLV_HISTORY.md dashboard.html data/*.csv 2>/dev/null || true
+          git add graded_bets.csv CLV_HISTORY.md dashboard.html FILTER_REPORT.md data/*.csv 2>/dev/null || true
           if git diff --staged --quiet; then
             echo "nothing to commit"
           else
