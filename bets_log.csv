@@ -990,3 +990,16 @@ captured_utc,date,player,market,side,line,odds,tier,ev,pinn,src
 2026-06-21T23:00:04+00:00,2026-06-21,Ariel Atkins,pra,Under,13.5,1.8,SOLID,0.114,,model
 2026-06-21T23:20:04+00:00,2026-06-21,Ariel Atkins,pra,Under,13.5,1.73,SOLID,0.071,,model
 2026-06-21T23:40:04+00:00,2026-06-21,Ariel Atkins,pra,Under,13.5,1.73,SOLID,0.071,,model
+2026-06-22T01:41:28+00:00,2026-06-21,Skylar Diggins,pts,Under,16.5,1.8,SOLID,0.148,,newunder
+2026-06-22T01:41:28+00:00,2026-06-21,Allisha Gray,pts,Under,19.5,1.82,STRONG,0.295,,newunder
+2026-06-22T01:41:28+00:00,2026-06-21,Jordin Canada,pts,Under,12.5,1.77,SOLID,0.154,,newunder
+2026-06-22T01:41:28+00:00,2026-06-21,Rhyne Howard,pts,Under,18.5,1.77,SOLID,0.081,,newunder
+2026-06-22T01:41:28+00:00,2026-06-21,Marina Mabrey,pts,Under,19.5,1.85,SOLID,0.128,,newunder
+2026-06-22T01:41:28+00:00,2026-06-21,Angel Reese,pts,Over,15.5,1.86,SOLID,0.135,,flip_paper
+2026-06-22T01:41:28+00:00,2026-06-21,Kahleah Copper,pts,Under,19.5,1.952,SOLID,0.271,,newunder
+2026-06-22T01:41:28+00:00,2026-06-21,Kelsey Mitchell,pts,Under,19.5,1.87,SOLID,0.199,,newunder
+2026-06-22T01:41:28+00:00,2026-06-21,Aliyah Boston,pts,Under,16.5,1.8,SOLID,0.123,,newunder
+2026-06-22T01:41:28+00:00,2026-06-21,Paige Bueckers,pts,Under,18.5,1.8,THIN,0.016,,newunder
+2026-06-22T01:41:28+00:00,2026-06-21,Azzi Fudd,pts,Over,12.5,1.8,THIN,0.032,,flip_paper
+2026-06-22T01:41:28+00:00,2026-06-21,Flau'jae Johnson,pts,Under,10.5,1.952,STRONG,0.335,,newunder
+2026-06-22T01:41:28+00:00,2026-06-21,Arike Ogunbowale,pa,Over,17.5,1.8,STRONG,0.242,,overshoot
