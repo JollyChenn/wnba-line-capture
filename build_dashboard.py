@@ -248,16 +248,16 @@ def filter_lab_html():
     ])
     ov = [r for r in base if r.get("src") == "overshoot"]
     osub = []
-    for lab, t in [("big line ≥18", lambda r: float(r.get("line") or 0) >= 18),
-                   ("small line <18", lambda r: float(r.get("line") or 0) < 18)]:
+    for lab, t in [("★ STAR (line ≥18)", lambda r: float(r.get("line") or 0) >= 18),
+                   ("· ROLE (line <18)", lambda r: float(r.get("line") or 0) < 18)]:
         s = [r for r in ov if t(r)]
         if not s: continue
         w, l, pnl = rec(s)
         fade = sum(((float(r.get("odds") or 0) - 1) if r.get("result") in ("loss", "LOSS") else -1.0) for r in s)
         pcls = "pos" if pnl > 0 else ("neg" if pnl < 0 else "muted")
         fcls = "pos" if fade > 0 else ("neg" if fade < 0 else "muted")
-        osub.append(f'<tr><td>{esc(lab)}</td><td><b>{w}–{l}</b></td><td class="{pcls}">{pnl:+.2f}u</td>'
-                    f'<td class="{fcls}"><b>{fade:+.2f}u</b></td></tr>')
+        osub.append(f'<tr><td>{esc(lab)}</td><td>{w}–{l}</td><td class="{pcls}">{pnl:+.2f}u</td>'
+                    f'<td class="{fcls}"><b>{l}–{w}, {fade:+.2f}u</b></td></tr>')
     return filt, ("".join(osub) or '<tr><td colspan="4" class="empty">—</td></tr>')
 
 filter_rows, overshoot_rows = filter_lab_html()
@@ -312,8 +312,8 @@ __PSUMM__
 <h2>🔬 FILTER LAB <span class="sub2" style="font-weight:400">— candidate filters · <span class="pill">tracking only</span> NOT applied to live bets</span></h2>
 <div class="labnote">Two filters we're watching as the sample grows — <b>not acted on yet</b> (directional on a small sample). Negative-CLV is hindsight (known only at the close); the live form is <i>“bet late, pass when the price has moved against you.”</i> Full breakdown in <b>FILTER_REPORT.md</b>.</div>
 <table><tr><th>filtered view</th><th>W–L</th><th>hit</th><th>P&amp;L (flat 1u)</th></tr>__FILTERROWS__</table>
-<div class="labnote" style="margin-top:16px"><b>📉 Book overshoot — bet the over vs. FADE it, by line size.</b> The trap is the big numbers: ≥18 overshoot-overs whiff, so fading them would have profited.</div>
-<table><tr><th>line</th><th>over W–L</th><th>over P&amp;L</th><th>fade P&amp;L</th></tr>__OVERROWS__</table>
+<div class="labnote" style="margin-top:16px"><b>📉 FADE the book overshoot — STAR vs ROLE (paper, tracking).</b> Stars whiff a discounted line because <b>blowouts bench them</b> (misses: ~3 min under, ~19-pt blowouts, finishing ~10 under their median); role players clear theirs. So <b>fade the STAR overs, keep the ROLE overs.</b> FADE = take the under (P&amp;L is the mirror; true fade-CLV needs forward under-odds capture).</div>
+<table><tr><th>overshoot</th><th>over W–L</th><th>over P&amp;L</th><th>FADE (record + P&amp;L)</th></tr>__OVERROWS__</table>
 </div>
 
 <div class="foot">build_dashboard.py · REAL = COLD/SHRINK/STINGY (src=model); PAPER = everything else. P&amp;L is flat 1u stake vs the captured price. CLV &gt; 0 = we beat the close.</div>

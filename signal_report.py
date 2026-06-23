@@ -141,16 +141,17 @@ else:
     # overshoot by line size
     ov = [r for r in g if r['src'] == 'overshoot']
     if ov:
-        out.append("## Book overshoot — bet the over vs FADE, by line size")
-        out.append("| line | n | over W-L | over P&L | fade P&L |")
-        out.append("|---|--:|:--:|--:|--:|")
-        for lab, t in [("big ≥18", lambda r: (fnum(r['line']) or 0) >= 18),
-                       ("small <18", lambda r: (fnum(r['line']) or 0) < 18)]:
+        out.append("## FADE the book overshoot — STAR vs ROLE (paper, tracking)")
+        out.append("_Stars whiff a discounted line because blowouts bench them (~3 min under, ~19-pt blowouts, ~10 under median); role players clear theirs. **Fade STAR, keep ROLE.** FADE = take the under (P&L is the mirror; true fade-CLV needs forward under-odds capture)._")
+        out.append("| overshoot | n | over W-L | over P&L | FADE W-L | FADE P&L |")
+        out.append("|---|--:|:--:|--:|:--:|--:|")
+        for lab, t in [("★ STAR (≥18)", lambda r: (fnum(r['line']) or 0) >= 18),
+                       ("· ROLE (<18)", lambda r: (fnum(r['line']) or 0) < 18)]:
             sub = [r for r in ov if t(r)]
             if sub:
                 s = rec(sub)
                 fade = sum(((fnum(r['odds']) - 1) if r['_win'] == 0 else -1.0) for r in sub)
-                out.append(f"| {lab} | {s['n']} | {s['w']}-{s['l']} | {s['pnl']:+.2f}u | {fade:+.2f}u |")
+                out.append(f"| {lab} | {s['n']} | {s['w']}-{s['l']} | {s['pnl']:+.2f}u | {s['l']}-{s['w']} | {fade:+.2f}u |")
         out.append("")
 
 text = "\n".join(out) + "\n"

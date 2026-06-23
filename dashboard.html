@@ -23,7 +23,7 @@ tr:nth-child(even) td{background:#12172c} tr.pend td{background:#1a1f3a}
 .lab h2{color:#6fd3e0} .lab .labnote{color:#7e87b8;font-size:13px;margin:2px 0 10px}
 .lab .pill{background:#143a44;color:#7fe3f0}
 </style></head><body><div class="wrap">
-<h1>🏀 WNBA prop bot</h1><div class="sub2">latest slate 2026-06-22 · settled through 20260622 · generated 2026-06-23 06:34</div>
+<h1>🏀 WNBA prop bot</h1><div class="sub2">latest slate 2026-06-22 · settled through 20260622 · generated 2026-06-23 15:54</div>
 <div class="banner">⚠️ <b>UNPROVEN — paper / tiny stakes only.</b> Every line is vs a synthetic median (predicts the SIDE, not that it beats the book). <b>CLV is the only proof</b> — real-money CLV is -1.2% (negative) so far. Never auto-bet.</div>
 
 <h2>📊 BY SIGNAL <span class="sub2" style="font-weight:400">— each model's W–L · P&amp;L · CLV (take-on-sight, flat 1u — the signal record, not your placed bets)</span></h2>
@@ -43,8 +43,8 @@ tr:nth-child(even) td{background:#12172c} tr.pend td{background:#1a1f3a}
 <h2>🔬 FILTER LAB <span class="sub2" style="font-weight:400">— candidate filters · <span class="pill">tracking only</span> NOT applied to live bets</span></h2>
 <div class="labnote">Two filters we're watching as the sample grows — <b>not acted on yet</b> (directional on a small sample). Negative-CLV is hindsight (known only at the close); the live form is <i>“bet late, pass when the price has moved against you.”</i> Full breakdown in <b>FILTER_REPORT.md</b>.</div>
 <table><tr><th>filtered view</th><th>W–L</th><th>hit</th><th>P&amp;L (flat 1u)</th></tr><tr><td>Baseline — bet everything</td><td><b>42–45</b></td><td class="muted">48%</td><td class="neg"><b>-9.57u</b></td></tr><tr><td>Skip negative odds-CLV (−24)</td><td><b>31–32</b></td><td class="muted">49%</td><td class="neg"><b>-5.21u</b></td></tr><tr><td>Skip big book-overshoot overs ≥18 (−10)</td><td><b>41–36</b></td><td class="muted">53%</td><td class="neg"><b>-1.44u</b></td></tr><tr><td>Both filters</td><td><b>30–26</b></td><td class="muted">54%</td><td class="neg"><b>-0.08u</b></td></tr></table>
-<div class="labnote" style="margin-top:16px"><b>📉 Book overshoot — bet the over vs. FADE it, by line size.</b> The trap is the big numbers: ≥18 overshoot-overs whiff, so fading them would have profited.</div>
-<table><tr><th>line</th><th>over W–L</th><th>over P&amp;L</th><th>fade P&amp;L</th></tr><tr><td>big line ≥18</td><td><b>1–9</b></td><td class="neg">-8.13u</td><td class="pos"><b>+6.60u</b></td></tr><tr><td>small line &lt;18</td><td><b>7–3</b></td><td class="pos">+3.07u</td><td class="neg"><b>-4.70u</b></td></tr></table>
+<div class="labnote" style="margin-top:16px"><b>📉 FADE the book overshoot — STAR vs ROLE (paper, tracking).</b> Stars whiff a discounted line because <b>blowouts bench them</b> (misses: ~3 min under, ~19-pt blowouts, finishing ~10 under their median); role players clear theirs. So <b>fade the STAR overs, keep the ROLE overs.</b> FADE = take the under (P&amp;L is the mirror; true fade-CLV needs forward under-odds capture).</div>
+<table><tr><th>overshoot</th><th>over W–L</th><th>over P&amp;L</th><th>FADE (record + P&amp;L)</th></tr><tr><td>★ STAR (line ≥18)</td><td>1–9</td><td class="neg">-8.13u</td><td class="pos"><b>9–1, +6.60u</b></td></tr><tr><td>· ROLE (line &lt;18)</td><td>7–3</td><td class="pos">+3.07u</td><td class="neg"><b>3–7, -4.70u</b></td></tr></table>
 </div>
 
 <div class="foot">build_dashboard.py · REAL = COLD/SHRINK/STINGY (src=model); PAPER = everything else. P&amp;L is flat 1u stake vs the captured price. CLV &gt; 0 = we beat the close.</div>

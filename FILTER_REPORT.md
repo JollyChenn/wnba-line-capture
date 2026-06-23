@@ -32,9 +32,10 @@ _As of 20260622 · 87 settled paper bets (20260614→20260622) · flat 1u · aut
 | worse close (<0) | 24 | 11-13 | 46% | -4.36u |
 | no data | 8 | 2-6 | 25% | -4.34u |
 
-## Book overshoot — bet the over vs FADE, by line size
-| line | n | over W-L | over P&L | fade P&L |
-|---|--:|:--:|--:|--:|
-| big ≥18 | 10 | 1-9 | -8.13u | +6.60u |
-| small <18 | 10 | 7-3 | +3.07u | -4.70u |
+## FADE the book overshoot — STAR vs ROLE (paper, tracking)
+_Stars whiff a discounted line because blowouts bench them (~3 min under, ~19-pt blowouts, ~10 under median); role players clear theirs. **Fade STAR, keep ROLE.** FADE = take the under (P&L is the mirror; true fade-CLV needs forward under-odds capture)._
+| overshoot | n | over W-L | over P&L | FADE W-L | FADE P&L |
+|---|--:|:--:|--:|:--:|--:|
+| ★ STAR (≥18) | 10 | 1-9 | -8.13u | 9-1 | +6.60u |
+| · ROLE (<18) | 10 | 7-3 | +3.07u | 3-7 | -4.70u |
 
