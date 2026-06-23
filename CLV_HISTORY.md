@@ -10,7 +10,7 @@ _**sharp-odds** = vs Pinnacle's vig-free fair price (TRUE edge test) · **sharp-
   ★ SHARP ODDS-CLV: -3.4% | beat fair 0/1 (0%)  ← TRUE edge (vs Pinnacle fair price)
   SHARP LINE-CLV : -0.17 pts | n=3  ← better number than the sharp
   self ODDS-CLV  : -0.1% | beat 3/10 (30%)  (1xbet's own close = weak)
-  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 7/18 (-5.0u) · FLIP UNDER 2/6 (-2.3u) · FLIP UNDER(paper) 3/4 (+1.6u) · FTUNDER 13/25 (-1.4u) · HOT OVER 5/6 (+3.4u) · STAR-OUT CASCADE 2/2 (+1.5u) · starout 0/1 (-1.0u)
+  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 8/20 (-5.1u) · FLIP UNDER 2/6 (-2.3u) · FLIP UNDER(paper) 3/4 (+1.6u) · FTUNDER 17/36 (-5.3u) · HOT OVER 6/8 (+3.4u) · STAR-OUT CASCADE 2/2 (+1.5u) · starout 0/1 (-1.0u)
   VERDICT : ⏳ TOO EARLY (n=10; sharp-CLV thin, need ~20-40 ≈ 2wks). CLV flat — not yet meaningful.
   by tier: SOLID 1/5 (-3.0u) · STRONG 2/3 (+0.6u) · THIN 1/2 (+0.0u)
   by market: pr Under 1/2 (+0.0u) · pra Under 1/4 (-2.3u) · pts Under 2/4 (-0.1u)
@@ -94,3 +94,18 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260621 | Olivia Miles | PTS Under 17.5 @ 2.02 | FTUNDER | loss | -0% | +0.0 | +1% |
 | 20260621 | Shakira Austin | PTS Under 13.5 @ 1.73 | FTUNDER | WIN | -5% | +0.0 | -1% |
 | 20260621 | Sonia Citron | PTS Under 16.5 @ 1.714 | FTUNDER | loss | — | — | — |
+| 20260622 | Aliyah Boston | PTS Under 16.5 @ 1.85 | FTUNDER | WIN | -1% | +0.0 | +6% |
+| 20260622 | Allisha Gray | PTS Under 19.5 @ 1.73 | FTUNDER | WIN | — | — | -7% |
+| 20260622 | Angel Reese | PR Over 27.5 @ 1.83 | BOOK OVERSHOOT | loss | — | — | +0% |
+| 20260622 | Arike Ogunbowale | PRA Over 20.5 @ 1.73 | HOT OVER | loss | — | — | +0% |
+| 20260622 | Azzi Fudd | PR Over 14.5 @ 1.909 | BOOK OVERSHOOT | WIN | — | — | +0% |
+| 20260622 | Caitlin Clark | PTS Under 20.5 @ 1.91 | FTUNDER | loss | — | — | +0% |
+| 20260622 | Flau'jae Johnson | PTS Under 10.5 @ 2.0 | FTUNDER | loss | — | — | +2% |
+| 20260622 | Jessica Shepard | PTS Under 13.5 @ 1.83 | FTUNDER | loss | — | — | +2% |
+| 20260622 | Jordin Canada | PTS Under 12.5 @ 1.74 | FTUNDER | WIN | -3% | +0.0 | +1% |
+| 20260622 | Kahleah Copper | PTS Under 19.5 @ 2.0 | FTUNDER | loss | — | — | +8% |
+| 20260622 | Kelsey Mitchell | PTS Under 19.5 @ 1.8 | FTUNDER | loss | — | — | -2% |
+| 20260622 | Marina Mabrey | PTS Under 19.5 @ 1.87 | FTUNDER | loss | -14% | +0.0 | +0% |
+| 20260622 | Paige Bueckers | PTS Under 18.5 @ 1.8 | FTUNDER | loss | -7% | +0.0 | -5% |
+| 20260622 | Rhyne Howard | PRA Over 26.5 @ 2.0 | HOT OVER | WIN | — | — | +0% |
+| 20260622 | Skylar Diggins | PTS Under 16.5 @ 1.73 | FTUNDER | WIN | -7% | — | +2% |
