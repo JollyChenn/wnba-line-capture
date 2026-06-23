@@ -1136,3 +1136,4 @@ captured_utc,date,player,market,side,line,odds,tier,ev,pinn,src
 2026-06-23T10:02:35+00:00,2026-06-23,Michaela Onyenwere,pts,Over,8.5,1.8,STRONG,0.42,,overshoot
 2026-06-23T10:02:35+00:00,2026-06-23,Sonia Citron,pa,Over,18.5,1.83,STRONG,0.37,,overshoot
 2026-06-23T10:02:35+00:00,2026-06-23,Gabby Williams,pra,Over,20.5,1.73,SOLID,0.128,,overshoot
+2026-06-23T14:00:05+00:00,2026-06-23,Chelsea Gray,pts,Under,12.5,1.75,STRONG,0.171,11.5,model
