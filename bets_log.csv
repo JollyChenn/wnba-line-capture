@@ -1096,3 +1096,12 @@ captured_utc,date,player,market,side,line,odds,tier,ev,pinn,src
 2026-06-23T01:23:50+00:00,2026-06-22,Michaela Onyenwere,pts,Over,8.5,1.77,STRONG,0.396,,overshoot
 2026-06-23T01:23:50+00:00,2026-06-22,Sonia Citron,pa,Over,18.5,1.8,STRONG,0.348,,overshoot
 2026-06-23T01:23:50+00:00,2026-06-22,Jonquel Jones,pr,Over,21.5,1.73,STRONG,0.248,,overshoot
+2026-06-23T04:20:02+00:00,2026-06-22,Kahleah Copper,pts,Under,18.5,2.0,SOLID,0.216,,newunder
+2026-06-23T04:20:02+00:00,2026-06-22,Kelsey Mitchell,pts,Under,19.5,2.0,SOLID,0.282,,newunder
+2026-06-23T04:20:02+00:00,2026-06-22,Aliyah Boston,pts,Under,16.5,1.83,SOLID,0.142,,newunder
+2026-06-23T04:20:02+00:00,2026-06-22,Caitlin Clark,pts,Under,21.5,1.91,STRONG,0.264,,newunder
+2026-06-23T04:20:02+00:00,2026-06-22,Breanna Stewart,pts,Under,18.5,1.78,SOLID,0.111,,newunder
+2026-06-23T04:20:02+00:00,2026-06-22,Jonquel Jones,pts,Over,13.5,1.96,STRONG,0.315,,flip_paper
+2026-06-23T04:20:02+00:00,2026-06-22,NaLyssa Smith,pts,Over,10.5,1.81,SOLID,0.103,,flip_paper
+2026-06-23T04:20:02+00:00,2026-06-22,Michaela Onyenwere,pts,Over,8.5,1.77,STRONG,0.396,,overshoot
+2026-06-23T04:20:02+00:00,2026-06-22,Sonia Citron,pa,Over,18.5,1.83,STRONG,0.37,,overshoot
