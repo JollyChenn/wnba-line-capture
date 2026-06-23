@@ -1255,3 +1255,4 @@ captured_utc,date,player,market,side,line,odds,tier,ev,pinn,src
 2026-06-23T21:06:39+00:00,2026-06-23,Michaela Onyenwere,pts,Over,8.5,1.85,STRONG,0.459,,overshoot
 2026-06-23T21:20:04+00:00,2026-06-23,Chelsea Gray,pts,Under,12.5,1.75,STRONG,0.171,11.5,model
 2026-06-23T21:40:04+00:00,2026-06-23,Chelsea Gray,pts,Under,12.5,1.75,STRONG,0.171,11.5,model
+2026-06-23T22:00:04+00:00,2026-06-23,Chelsea Gray,pts,Under,12.5,1.75,STRONG,0.171,12.5,model
