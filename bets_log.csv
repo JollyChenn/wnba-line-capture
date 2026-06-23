@@ -1233,3 +1233,23 @@ captured_utc,date,player,market,side,line,odds,tier,ev,pinn,src
 2026-06-23T20:22:03+00:00,2026-06-23,Michaela Onyenwere,pts,Over,8.5,1.85,STRONG,0.459,,overshoot
 2026-06-23T20:40:05+00:00,2026-06-23,Chelsea Gray,pts,Under,12.5,1.75,STRONG,0.171,11.5,model
 2026-06-23T21:00:04+00:00,2026-06-23,Chelsea Gray,pts,Under,12.5,1.75,STRONG,0.171,11.5,model
+2026-06-23T21:06:39+00:00,2026-06-23,Pauline Astier,pa,Over,9.5,1.73,SOLID,0.122,,flip
+2026-06-23T21:06:39+00:00,2026-06-23,Jackie Young,pa,Over,23.5,1.833,THIN,0.036,24.0,flip
+2026-06-23T21:06:39+00:00,2026-06-23,Breanna Stewart,pts,Under,18.5,1.85,SOLID,0.155,18.5,newunder
+2026-06-23T21:06:39+00:00,2026-06-23,Kahleah Copper,pts,Under,18.5,2.02,SOLID,0.228,,newunder
+2026-06-23T21:06:39+00:00,2026-06-23,Kelsey Mitchell,pts,Under,19.5,2.0,THIN,0.131,,newunder
+2026-06-23T21:06:39+00:00,2026-06-23,Aliyah Boston,pts,Under,16.5,1.952,SOLID,0.2,,newunder
+2026-06-23T21:06:39+00:00,2026-06-23,Kayla McBride,pts,Under,14.5,1.8,SOLID,0.163,,newunder
+2026-06-23T21:06:39+00:00,2026-06-23,Courtney Williams,pts,Under,15.5,1.91,THIN,0.073,,newunder
+2026-06-23T21:06:39+00:00,2026-06-23,Shakira Austin,pts,Under,11.5,1.96,THIN,0.103,,newunder
+2026-06-23T21:06:39+00:00,2026-06-23,Sonia Citron,pts,Over,14.5,1.8,SOLID,0.045,,flip_paper
+2026-06-23T21:06:39+00:00,2026-06-23,Skylar Diggins,pts,Under,15.5,1.833,THIN,0.034,,newunder
+2026-06-23T21:06:39+00:00,2026-06-23,Megan Gustafson,pts,Under,12.5,2.02,SOLID,0.304,,newunder
+2026-06-23T21:06:39+00:00,2026-06-23,Sarah Ashlee Barker,pts,Under,11.5,1.833,SOLID,0.203,,newunder
+2026-06-23T21:06:39+00:00,2026-06-23,Carla Leite,pts,Under,14.5,1.833,STRONG,0.527,,newunder
+2026-06-23T21:06:39+00:00,2026-06-23,Angel Reese,pr,Over,25.5,1.83,STRONG,0.369,,flip
+2026-06-23T21:06:39+00:00,2026-06-23,Allisha Gray,pts,Under,17.5,1.952,THIN,0.102,,newunder
+2026-06-23T21:06:39+00:00,2026-06-23,Gabby Williams,pts,Over,14.5,1.8,SOLID,0.068,,flip_paper
+2026-06-23T21:06:39+00:00,2026-06-23,Cecilia Zandalasini,pts,Under,8.5,1.893,SOLID,0.119,,newunder
+2026-06-23T21:06:39+00:00,2026-06-23,Jonquel Jones,pa,Over,15.5,1.833,STRONG,0.563,,overshoot
+2026-06-23T21:06:39+00:00,2026-06-23,Michaela Onyenwere,pts,Over,8.5,1.85,STRONG,0.459,,overshoot
