@@ -334,3 +334,49 @@ pick_date,game_id,player,team,opp,market,anchor,signals,fair_p,fair_odds,proj,sd
 2026-06-22,401857016,Breanna Stewart,New York Liberty,Las Vegas Aces,pts_under,17.5,steady,0.563,1.78,16.4,6.64
 2026-06-22,401857016,Jonquel Jones,New York Liberty,Las Vegas Aces,pts_under,16.5,steady,0.563,1.78,15.7,4.98
 2026-06-22,401857016,NaLyssa Smith,Las Vegas Aces,New York Liberty,pts_under,12.5,steady,0.563,1.78,11.8,4.67
+2026-06-23,401857016,Chelsea Gray,Las Vegas Aces,New York Liberty,pts_under,11.5,cold+stingy,0.626,1.6,8.7,8.67
+2026-06-23,401857016,Chelsea Gray,Las Vegas Aces,New York Liberty,pr_under,16.5,cold+stingy,0.59,1.69,14.4,9.13
+2026-06-23,401857016,Chelsea Gray,Las Vegas Aces,New York Liberty,pra_under,24.5,cold+stingy,0.621,1.61,22.0,8.06
+2026-06-23,401857016,Pauline Astier,New York Liberty,Las Vegas Aces,pts_under,9.5,declining+stingy,0.642,1.56,7.7,5.07
+2026-06-23,401857016,Pauline Astier,New York Liberty,Las Vegas Aces,pr_under,12.5,declining+stingy,0.59,1.69,10.9,6.93
+2026-06-23,401857016,Pauline Astier,New York Liberty,Las Vegas Aces,pa_under,13.5,declining+stingy,0.61,1.64,11.8,6.04
+2026-06-23,401857016,Pauline Astier,New York Liberty,Las Vegas Aces,pra_under,16.5,declining+stingy,0.62,1.61,14.1,7.81
+2026-06-23,401857016,A'ja Wilson,Las Vegas Aces,New York Liberty,pr_under,38.5,cold+stingy,0.59,1.69,36.7,7.82
+2026-06-23,401857016,A'ja Wilson,Las Vegas Aces,New York Liberty,pra_under,40.5,cold+stingy,0.621,1.61,37.7,9.12
+2026-06-23,401857016,Marine Johannes,New York Liberty,Las Vegas Aces,pr_under,11.5,cold+stingy,0.59,1.69,10.2,5.85
+2026-06-23,401857016,Jackie Young,Las Vegas Aces,New York Liberty,pr_under,22.5,cold+stingy,0.59,1.69,20.9,6.92
+2026-06-23,401857016,Jackie Young,Las Vegas Aces,New York Liberty,pa_under,26.5,cold+stingy,0.61,1.64,24.6,6.7
+2026-06-23,401857016,Jackie Young,Las Vegas Aces,New York Liberty,pra_under,30.5,cold+stingy,0.621,1.61,28.3,7.26
+2026-06-23,401857016,Satou Sabally,New York Liberty,Las Vegas Aces,pra_over,15.5,hot+expand,0.55,1.82,16.9,7.02
+2026-06-23,401857016,Breanna Stewart,New York Liberty,Las Vegas Aces,pts_under,17.5,steady,0.563,1.78,16.4,6.64
+2026-06-23,401857016,Jonquel Jones,New York Liberty,Las Vegas Aces,pts_under,16.5,steady,0.563,1.78,15.7,4.98
+2026-06-23,401857016,NaLyssa Smith,Las Vegas Aces,New York Liberty,pts_under,12.5,steady,0.563,1.78,11.8,4.67
+2026-06-23,401857017,Kahleah Copper,Phoenix Mercury,Indiana Fever,pts_under,17.5,steady,0.563,1.78,16.1,8.76
+2026-06-23,401857017,Kelsey Mitchell,Indiana Fever,Phoenix Mercury,pts_under,19.5,steady,0.563,1.78,18.8,4.24
+2026-06-23,401857017,Aliyah Boston,Indiana Fever,Phoenix Mercury,pts_under,15.5,steady,0.563,1.78,14.4,7.21
+2026-06-23,401857017,Caitlin Clark,Indiana Fever,Phoenix Mercury,pts_under,22.5,steady,0.563,1.78,21.2,7.89
+2026-06-23,401857017,Monique Akoa Makani,Phoenix Mercury,Indiana Fever,pts_under,9.5,steady,0.563,1.78,8.8,4.3
+2026-06-23,401857017,Lexi Held,Phoenix Mercury,Indiana Fever,ast_over,1.5,usgshock,0.591,1.69,1.9,1.5
+2026-06-23,401857018,Kiki Iriafen,Washington Mystics,Minnesota Lynx,pr_under,22.5,cold+stingy,0.59,1.69,20.5,8.64
+2026-06-23,401857018,Kiki Iriafen,Washington Mystics,Minnesota Lynx,pra_under,23.5,cold+stingy,0.621,1.61,20.7,9.03
+2026-06-23,401857018,Natasha Howard,Minnesota Lynx,Washington Mystics,pts_under,16.5,steady,0.563,1.78,15.6,5.52
+2026-06-23,401857018,Kayla McBride,Minnesota Lynx,Washington Mystics,pts_under,13.5,steady,0.563,1.78,12.8,4.53
+2026-06-23,401857018,Courtney Williams,Minnesota Lynx,Washington Mystics,pts_under,15.5,steady,0.563,1.78,14.6,5.78
+2026-06-23,401857018,Shakira Austin,Washington Mystics,Minnesota Lynx,pts_under,11.5,steady,0.563,1.78,10.6,5.72
+2026-06-23,401857018,Sonia Citron,Washington Mystics,Minnesota Lynx,pts_under,16.5,steady,0.563,1.78,15.6,5.42
+2026-06-23,401857018,Olivia Miles,Minnesota Lynx,Washington Mystics,pts_under,20.5,steady,0.563,1.78,19.3,7.63
+2026-06-23,401857019,Bridget Carleton,Portland Fire,Chicago Sky,pra_over,15.5,hot+leaky,0.62,1.61,17.6,6.75
+2026-06-23,401857019,Kamilla Cardoso,Chicago Sky,Portland Fire,pra_over,20.5,hot+leaky,0.62,1.61,23.0,8.29
+2026-06-23,401857019,Sydney Taylor,Chicago Sky,Portland Fire,pra_over,14.5,hot+leaky,0.62,1.61,18.7,12.19
+2026-06-23,401857019,Skylar Diggins,Chicago Sky,Portland Fire,pts_under,15.5,steady,0.563,1.78,14.4,6.82
+2026-06-23,401857019,Megan Gustafson,Portland Fire,Chicago Sky,pts_under,11.5,steady,0.563,1.78,10.7,4.83
+2026-06-23,401857019,Sarah Ashlee Barker,Portland Fire,Chicago Sky,pts_under,10.5,steady,0.563,1.78,9.9,3.98
+2026-06-23,401857019,Carla Leite,Portland Fire,Chicago Sky,pts_under,10.5,steady,0.563,1.78,9.7,4.97
+2026-06-23,401857020,Angel Reese,Atlanta Dream,Golden State Valkyries,pr_under,30.5,cold+stingy,0.59,1.69,29.2,5.53
+2026-06-23,401857020,Angel Reese,Atlanta Dream,Golden State Valkyries,pra_under,32.5,cold+stingy,0.621,1.61,30.8,5.48
+2026-06-23,401857020,Allisha Gray,Atlanta Dream,Golden State Valkyries,pts_under,17.5,steady,0.563,1.78,16.7,4.94
+2026-06-23,401857020,Jordin Canada,Atlanta Dream,Golden State Valkyries,pts_under,11.5,steady,0.563,1.78,10.8,4.32
+2026-06-23,401857020,Gabby Williams,Golden State Valkyries,Atlanta Dream,pts_under,17.5,steady,0.563,1.78,16.3,7.6
+2026-06-23,401857020,Cecilia Zandalasini,Golden State Valkyries,Atlanta Dream,pts_under,8.5,ftdrought,0.589,1.7,6.8,7.39
+2026-06-23,401857020,Rhyne Howard,Atlanta Dream,Golden State Valkyries,pts_under,19.5,steady,0.563,1.78,18.3,7.52
+2026-06-23,401857020,Janelle Salaun,Golden State Valkyries,Atlanta Dream,pts_under,13.5,steady,0.563,1.78,12.7,5.19
