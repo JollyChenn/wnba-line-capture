@@ -1180,3 +1180,4 @@ captured_utc,date,player,market,side,line,odds,tier,ev,pinn,src
 2026-06-23T16:42:47+00:00,2026-06-23,Cecilia Zandalasini,pts,Under,8.5,1.893,SOLID,0.119,,newunder
 2026-06-23T16:42:47+00:00,2026-06-23,Jonquel Jones,pa,Over,15.5,1.833,STRONG,0.563,,overshoot
 2026-06-23T16:42:47+00:00,2026-06-23,Michaela Onyenwere,pts,Over,8.5,1.77,STRONG,0.396,,overshoot
+2026-06-23T17:00:04+00:00,2026-06-23,Chelsea Gray,pts,Under,12.5,1.75,STRONG,0.171,11.5,model
