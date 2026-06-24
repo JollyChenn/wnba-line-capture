@@ -33,7 +33,7 @@ jobs:
           git config user.name "xbet-cloud-bot"
           git config user.email "actions@users.noreply.github.com"
           echo "snapshot file:"; ls -la xbet_snapshots.csv 2>&1 || echo "(none written this run)"
-          git add -f xbet_snapshots.csv pinn_snapshots.csv bets_log.csv market_codes.json xbet_board.csv board_last.json injuries_log.csv lineups_log.csv news_last.json 2>&1 || true
+          for f in xbet_snapshots.csv pinn_snapshots.csv bets_log.csv market_codes.json xbet_board.csv board_last.json injuries_log.csv lineups_log.csv news_last.json; do [ -f "$f" ] && git add -f "$f" || true; done   # add each file that EXISTS (a missing one, e.g. lineups_log before any live game, must NOT abort the whole add)
           git status --short
           if git diff --staged --quiet; then
             echo "nothing staged this run"
