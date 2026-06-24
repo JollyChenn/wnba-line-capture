@@ -1532,3 +1532,23 @@ captured_utc,date,player,market,side,line,odds,tier,ev,pinn,src
 2026-06-24T20:06:55+00:00,2026-06-24,Jessica Shepard,pa,Over,18.5,2.0,STRONG,0.495,,overshoot
 2026-06-24T20:06:55+00:00,2026-06-24,Michaela Onyenwere,pts,Over,9.5,1.75,STRONG,0.29,,overshoot
 2026-06-24T20:06:55+00:00,2026-06-24,Gabby Williams,pr,Over,18.5,1.73,SOLID,0.106,,overshoot
+2026-06-24T20:18:29+00:00,2026-06-24,Aliyah Boston,pts,Under,16.5,1.74,SOLID,0.069,15.5,newunder
+2026-06-24T20:18:29+00:00,2026-06-24,Kayla McBride,pts,Under,14.5,1.9,SOLID,0.228,14.5,newunder
+2026-06-24T20:18:29+00:00,2026-06-24,Courtney Williams,pts,Under,15.5,1.92,THIN,0.079,15.5,newunder
+2026-06-24T20:18:29+00:00,2026-06-24,Shakira Austin,pts,Under,12.5,1.8,SOLID,0.134,12.5,newunder
+2026-06-24T20:18:29+00:00,2026-06-24,Megan Gustafson,pts,Under,14.5,1.83,STRONG,0.435,14.5,newunder
+2026-06-24T20:18:29+00:00,2026-06-24,Sarah Ashlee Barker,pts,Under,11.5,1.9,SOLID,0.247,,newunder
+2026-06-24T20:18:29+00:00,2026-06-24,Angel Reese,pr,Over,25.5,1.83,STRONG,0.369,25.0,flip
+2026-06-24T20:18:29+00:00,2026-06-24,Cecilia Zandalasini,pts,Under,8.5,1.85,SOLID,0.093,8.5,newunder
+2026-06-24T20:18:29+00:00,2026-06-24,Jackie Young,pts,Over,16.5,1.73,SOLID,0.077,,flip_paper
+2026-06-24T20:18:29+00:00,2026-06-24,NaLyssa Smith,pts,Over,10.5,1.73,SOLID,0.033,,flip_paper
+2026-06-24T20:18:29+00:00,2026-06-24,Natisha Hiedeman,pts,Over,14.5,1.77,STRONG,0.256,,flip_paper
+2026-06-24T20:18:29+00:00,2026-06-24,Flau'jae Johnson,pts,Under,10.5,1.9,THIN,0.076,,newunder
+2026-06-24T20:18:29+00:00,2026-06-24,Rae Burrell,pra,Over,18.5,1.75,CASC,0.0,,cascade
+2026-06-24T20:18:29+00:00,2026-06-24,Erica Wheeler,pra,Over,11.5,1.75,CASC,0.0,,cascade
+2026-06-24T20:18:29+00:00,2026-06-24,Dearica Hamby,pra,Over,20.5,1.75,CASC,0.0,,cascade
+2026-06-24T20:18:29+00:00,2026-06-24,Ariel Atkins,pra,Over,13.5,1.75,CASC,0.0,,cascade
+2026-06-24T20:18:29+00:00,2026-06-24,Sonia Citron,pa,Over,18.5,1.8,STRONG,0.348,,overshoot
+2026-06-24T20:18:29+00:00,2026-06-24,Jessica Shepard,pa,Over,18.5,2.0,STRONG,0.495,,overshoot
+2026-06-24T20:18:29+00:00,2026-06-24,Michaela Onyenwere,pts,Over,9.5,1.85,STRONG,0.364,,overshoot
+2026-06-24T20:18:29+00:00,2026-06-24,Gabby Williams,pr,Over,18.5,1.73,SOLID,0.106,,overshoot
