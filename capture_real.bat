@@ -16,7 +16,7 @@ set "CAPTURE_ROLE=real"
 set "XBET_WINDOW_MIN=1440"
 git pull --rebase --autostash origin main >> capture_real.log 2>&1
 python cloud_xbet.py >> capture_real.log 2>&1
-git add -f bets_log.csv xbet_snapshots.csv pinn_snapshots.csv >> capture_real.log 2>&1
+git add -f bets_log.csv xbet_snapshots.csv pinn_snapshots.csv xbet_board.csv board_last.json >> capture_real.log 2>&1
 git diff --staged --quiet
 if errorlevel 1 (
   git commit -m "laptop real-money capture %DATE% %TIME%" >> capture_real.log 2>&1

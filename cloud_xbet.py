@@ -682,6 +682,31 @@ def main():
             w.writerows(rows)
         print(f"logged {len(rows)} xbet snapshot rows")
 
+    # ---- FULL TWO-SIDED BOARD CAPTURE -> xbet_board.csv, EVERY run (cloud + laptop, NOT gated on role) ----
+    # Every player, BOTH sides — so any signal bet always has its COMPLEMENT odds for honest fade testing.
+    # Logs only PRICE CHANGES vs the last run (board_last.json) so it records line MOVEMENT without bloating the
+    # file with identical rows. Wrapped so it can NEVER break a capture.
+    try:
+        blast = json.load(open("board_last.json")) if os.path.exists("board_last.json") else {}
+        board = []
+        for _pl, _mk in props.items():
+            for (_st, _sd), _outs in _mk.items():
+                for _L, _O in _outs:
+                    _k = f"{_pl}|{_st}|{_sd}|{_L}"
+                    if blast.get(_k) != _O:                  # new line or a price move -> log it
+                        board.append([stamp, _pl, _st, _sd, _L, _O]); blast[_k] = _O
+        if board:
+            _bnew = not os.path.exists("xbet_board.csv")
+            with open("xbet_board.csv", "a", newline="", encoding="utf-8") as _bf:
+                _bw = csv.writer(_bf)
+                if _bnew:
+                    _bw.writerow(["captured_utc", "player", "market", "side", "line", "odds"])
+                _bw.writerows(board)
+            json.dump(blast, open("board_last.json", "w"))
+            print(f"FULL BOARD: logged {len(board)} changed two-sided rows -> xbet_board.csv ({len(blast)} keys tracked)")
+    except Exception as _ex:
+        print("full-board capture skipped:", str(_ex)[:80])
+
     min_mins = min(t[2] for t in near)
     near_tip = min_mins <= NEAR_TIP_MIN              # reconfirm window (used for the model holds + the 🔔 banner)
     osc_show = osc                                    # overshoot_overs now returns injury-proof + median-verified only
