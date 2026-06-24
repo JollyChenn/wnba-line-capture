@@ -4,7 +4,8 @@
 # Checks + auto-fixes:
 #   1. GIT SYNC - the recurring divergence / conflict-marker / stuck-rebase mess -> resync laptop to origin
 #      (cloud is the source of truth; laptop is a mirror + capturer). Backs up before any hard reset.
-#   2. SCHEDULED TASKS - WNBA-Capture-Real / WNBA-Grade-Trigger enabled (re-enable if Windows disabled them).
+#   2. SCHEDULED TASKS - WNBA-Grade-Trigger enabled (re-enable if Windows disabled it).
+#      (Laptop capture is intentionally DISABLED now - the cloud is the sole capturer - so it is NOT managed here.)
 #   3. CLOUD LIVENESS - if origin hasn't committed in hours, nudge a grade+capture dispatch; alert if long-dead.
 #   4. gh AUTH - if the CLI auth lapses the laptop can't dispatch; alert.
 # Pings Discord (webhook.txt) only on a REAL problem. Logs every run to watchdog_wnba.log.
@@ -61,7 +62,7 @@ try {
 } catch { log "git-sync error: $($_.Exception.Message)" }
 
 # ---------- 2) SCHEDULED TASKS ----------
-foreach ($t in @('WNBA-Capture-Real', 'WNBA-Grade-Trigger')) {
+foreach ($t in @('WNBA-Grade-Trigger')) {
     try {
         $info = schtasks /query /tn "\$t" /v /fo CSV 2>$null | ConvertFrom-Csv | Select-Object -First 1
         if (-not $info) {

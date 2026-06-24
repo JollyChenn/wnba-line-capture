@@ -21,17 +21,19 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install --quiet curl_cffi pandas numpy
-      - name: capture 1xbet — PAPER tracking only (real money + snapshots run on the laptop)
+      - name: capture 1xbet — FULL (board both sides + xbet/pinn snapshots = CLV fuel + all signals; cloud is now the SOLE capturer)
         env:
-          CAPTURE_ROLE: paper       # CLOUD role = paper: log only paper/experimental signals; NO odds snapshots; NEVER ping real money
-          XBET_WINDOW_MIN: '2880'   # 48h window so the paper signals still get full open->close coverage for their CLV
+          CAPTURE_ROLE: all         # cloud is the ONLY capturer now (laptop capture disabled) -> grab EVERYTHING: xbet+pinn snapshots (CLV/odds-movement fuel), full two-sided board, all signals. Webhook deleted so the real-money ping safely no-ops.
+          XBET_WINDOW_MIN: '2880'   # 48h window = full open->close odds-movement + CLV coverage
         run: python cloud_xbet.py
+      - name: capture injuries + official lineups (gentle ESPN pull; additive; never fails the job)
+        run: python capture_news.py || true
       - name: commit snapshots
         run: |
           git config user.name "xbet-cloud-bot"
           git config user.email "actions@users.noreply.github.com"
           echo "snapshot file:"; ls -la xbet_snapshots.csv 2>&1 || echo "(none written this run)"
-          git add -f xbet_snapshots.csv bets_log.csv market_codes.json xbet_board.csv board_last.json 2>&1 || true
+          git add -f xbet_snapshots.csv pinn_snapshots.csv bets_log.csv market_codes.json xbet_board.csv board_last.json injuries_log.csv lineups_log.csv news_last.json 2>&1 || true
           git status --short
           if git diff --staged --quiet; then
             echo "nothing staged this run"
