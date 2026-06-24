@@ -1323,3 +1323,4 @@ captured_utc,date,player,market,side,line,odds,tier,ev,pinn,src
 2026-06-23T23:41:38+00:00,2026-06-23,Jonquel Jones,pa,Over,15.5,1.833,STRONG,0.563,,overshoot
 2026-06-23T23:41:38+00:00,2026-06-23,Michaela Onyenwere,pr,Over,11.5,1.73,STRONG,0.346,,overshoot
 2026-06-24T00:00:06+00:00,2026-06-23,Kiki Iriafen,pra,Under,23.5,2.0,SOLID,0.243,,model
+2026-06-24T00:20:04+00:00,2026-06-23,Kiki Iriafen,pra,Under,23.5,2.0,SOLID,0.243,,model
