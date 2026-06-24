@@ -178,6 +178,7 @@ def section_rows(pend, settled, with_sig):
 
 real_rows  = section_rows(pending_real,  settled_real,  with_sig=False)
 paper_rows = section_rows(pending_paper, settled_paper, with_sig=True)
+model_rows = section_rows([], signal_model, with_sig=False)   # the COLD/SHRINK/STINGY signal's full take-on-sight history (so model bets never vanish on settle)
 
 def summ_line(s, kind):
     rec = f'{s["w"]}–{s["l"]}'
@@ -188,6 +189,14 @@ def summ_line(s, kind):
             f'<span>P&amp;L <b class="{pcls}">{pnl}</b> <span class="muted">flat 1u</span></span>'
             f'<span>CLV <b class="{ccls}">{clv}</b> <span class="muted">n={s["nclv"]}</span></span>'
             f'<span class="muted">{len(pending_real if kind=="real" else pending_paper)} pending · {s["n"]} settled</span></div>')
+
+def signal_summ(s):                                    # summary for the COLD/SHRINK/STINGY signal record (take-on-sight, no pending)
+    pcls = "pos" if s["pnl"] > 0 else ("neg" if s["pnl"] < 0 else "muted")
+    ccls = "pos" if (s["clv"] or 0) > 0 else ("neg" if (s["clv"] or 0) < 0 else "muted")
+    return (f'<div class="summ"><span><b>{s["w"]}–{s["l"]}</b> ({pct(s["hit"])} hit)</span>'
+            f'<span>signal P&amp;L <b class="{pcls}">{s["pnl"]:+.2f}u</b> <span class="muted">take-on-sight, flat 1u</span></span>'
+            f'<span>CLV <b class="{ccls}">{clvfmt(s["clv"])}</b> <span class="muted">n={s["nclv"]}</span></span>'
+            f'<span class="muted">{s["n"]} settled</span></div>')
 
 # ---- per-signal scoreboard: W-L, P&L, CLV for EACH model (take-on-sight, flat 1u) — compact, no scrolling ----
 def scoreboard_html():
@@ -301,7 +310,10 @@ tr:nth-child(even) td{background:#12172c} tr.pend td{background:#1a1f3a}
 <div class="real"><h2>💰 REAL MONEY — your placed bets (COLD/SHRINK/STINGY)</h2>
 __RSUMM__
 <div class="sub2" style="margin-bottom:6px">⏳ pending = bot flagged it tonight — place &amp; record · settled = what you actually bet.<br><b>Signal CLV (the proof, take-on-sight):</b> __SIGCLVALL__</div>
-<table><tr><th>slate</th><th>player</th><th>logged</th><th>bet @ odds</th><th>result</th><th>P&amp;L</th><th>CLV</th></tr>__RROWS__</table></div>
+<table><tr><th>slate</th><th>player</th><th>logged</th><th>bet @ odds</th><th>result</th><th>P&amp;L</th><th>CLV</th></tr>__RROWS__</table>
+<div class="sub2" style="margin:18px 0 6px"><b>📋 COLD/SHRINK/STINGY — full signal record</b> (every fire at take-on-sight, flat 1u — <i>including ones you skipped</i>; this is the model's TRUE record vs your selective placed bets above. They no longer vanish when they settle.)</div>
+__MODELSUMM__
+<table><tr><th>slate</th><th>player</th><th>logged</th><th>bet @ odds</th><th>result</th><th>P&amp;L</th><th>CLV</th></tr>__MODELROWS__</table></div>
 
 <div class="paper"><h2>🧪 PAPER TESTING — all other signals (NOT real money)</h2>
 <div class="sub2" style="margin-bottom:6px">FLIP UNDER · FTUNDER · HOT OVER · BOOK OVERSHOOT · STAR-OUT CASCADE · usgshock — tracked for CLV, never staked.<br><b>logged</b> = MM-DD this bet was first captured (usually the day BEFORE the game — so a bet logged days ago only shows its result here once its game finishes, which is why they all surface together).</div>
@@ -325,6 +337,7 @@ page = (TEMPLATE.replace("__RSUMM__", summ_line(rs, "real")).replace("__RROWS__"
         .replace("__GEN__", gen).replace("__CLVHEAD__", clvhead)
         .replace("__SCOREBOARD__", scoreboard_html())
         .replace("__SIGCLVALL__", sig_clv_html(sig))
+        .replace("__MODELSUMM__", signal_summ(sig)).replace("__MODELROWS__", model_rows)
         .replace("__FILTERROWS__", filter_rows).replace("__OVERROWS__", overshoot_rows))
 
 with open(os.path.join(ROOT, "dashboard.html"), "w", encoding="utf-8") as f:
