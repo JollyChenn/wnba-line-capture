@@ -1413,3 +1413,20 @@ captured_utc,date,player,market,side,line,odds,tier,ev,pinn,src
 2026-06-24T14:20:06+00:00,2026-06-24,Kiki Iriafen,pra,Under,23.5,2.0,SOLID,0.243,,model
 2026-06-24T14:40:05+00:00,2026-06-24,Kiki Iriafen,pra,Under,23.5,2.0,SOLID,0.243,,model
 2026-06-24T15:00:04+00:00,2026-06-24,Kiki Iriafen,pra,Under,23.5,2.0,SOLID,0.243,,model
+2026-06-24T15:07:16+00:00,2026-06-24,Breanna Stewart,pts,Under,19.5,1.714,STRONG,0.165,,newunder
+2026-06-24T15:07:16+00:00,2026-06-24,Jonquel Jones,pts,Over,13.5,1.833,STRONG,0.229,,flip_paper
+2026-06-24T15:07:16+00:00,2026-06-24,Kahleah Copper,pts,Under,19.5,1.8,SOLID,0.172,18.5,newunder
+2026-06-24T15:07:16+00:00,2026-06-24,Kelsey Mitchell,pts,Under,19.5,2.0,THIN,0.131,19.5,newunder
+2026-06-24T15:07:16+00:00,2026-06-24,Aliyah Boston,pts,Under,15.5,2.02,THIN,0.132,15.5,newunder
+2026-06-24T15:07:16+00:00,2026-06-24,Kayla McBride,pts,Under,14.5,1.893,SOLID,0.223,14.5,newunder
+2026-06-24T15:07:16+00:00,2026-06-24,Courtney Williams,pts,Under,15.5,1.952,THIN,0.097,15.5,newunder
+2026-06-24T15:07:16+00:00,2026-06-24,Shakira Austin,pts,Under,12.5,1.8,SOLID,0.134,12.5,newunder
+2026-06-24T15:07:16+00:00,2026-06-24,Olivia Miles,pts,Over,18.5,1.909,THIN,0.034,18.5,flip_paper
+2026-06-24T15:07:16+00:00,2026-06-24,Megan Gustafson,pts,Under,14.5,1.8,STRONG,0.412,14.5,newunder
+2026-06-24T15:07:16+00:00,2026-06-24,Sarah Ashlee Barker,pts,Under,11.5,1.833,SOLID,0.203,,newunder
+2026-06-24T15:07:16+00:00,2026-06-24,Angel Reese,pr,Over,25.5,1.91,STRONG,0.429,25.0,flip
+2026-06-24T15:07:16+00:00,2026-06-24,Allisha Gray,pts,Under,17.5,1.79,THIN,0.01,17.5,newunder
+2026-06-24T15:07:16+00:00,2026-06-24,Gabby Williams,pts,Over,14.5,1.707,SOLID,0.013,14.5,flip_paper
+2026-06-24T15:07:16+00:00,2026-06-24,Cecilia Zandalasini,pts,Under,8.5,1.79,SOLID,0.058,8.5,newunder
+2026-06-24T15:07:16+00:00,2026-06-24,Michaela Onyenwere,pts,Over,8.5,1.8,STRONG,0.42,,overshoot
+2026-06-24T15:07:16+00:00,2026-06-24,Sonia Citron,pa,Over,18.5,1.8,STRONG,0.348,,overshoot
