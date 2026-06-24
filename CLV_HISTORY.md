@@ -4,16 +4,16 @@ _Auto-updated after each slate settles. Raw data: `graded_bets.csv`. CLV>0 = we 
 _**sharp-odds** = vs Pinnacle's vig-free fair price (TRUE edge test) · **sharp-line** = pts vs Pinnacle's line · **self** = vs 1xbet's own close (weak)._
 
 ```
-📊 WNBA BOT — TRACK RECORD (10 settled · PROVEN signals only)
-  Record  : 4-6  (40% hit)
-  Net P&L : -2.39u  (ROI -23.9%/bet)
-  ★ SHARP ODDS-CLV: -3.4% | beat fair 0/1 (0%)  ← TRUE edge (vs Pinnacle fair price)
-  SHARP LINE-CLV : -0.17 pts | n=3  ← better number than the sharp
-  self ODDS-CLV  : -0.1% | beat 3/10 (30%)  (1xbet's own close = weak)
-  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 8/20 (-5.1u) · FLIP UNDER 2/6 (-2.3u) · FLIP UNDER(paper) 3/4 (+1.6u) · FTUNDER 17/36 (-5.3u) · HOT OVER 6/8 (+3.4u) · STAR-OUT CASCADE 2/2 (+1.5u) · starout 0/1 (-1.0u)
-  VERDICT : ⏳ TOO EARLY (n=10; sharp-CLV thin, need ~20-40 ≈ 2wks). CLV flat — not yet meaningful.
-  by tier: SOLID 1/5 (-3.0u) · STRONG 2/3 (+0.6u) · THIN 1/2 (+0.0u)
-  by market: pr Under 1/2 (+0.0u) · pra Under 1/4 (-2.3u) · pts Under 2/4 (-0.1u)
+📊 WNBA BOT — TRACK RECORD (11 settled · PROVEN signals only)
+  Record  : 5-6  (45% hit)
+  Net P&L : -1.64u  (ROI -14.9%/bet)
+  ★ SHARP ODDS-CLV: -7.1% | beat fair 0/2 (0%)  ← TRUE edge (vs Pinnacle fair price)
+  SHARP LINE-CLV : -0.12 pts | n=4  ← better number than the sharp
+  self ODDS-CLV  : -0.1% | beat 3/11 (27%)  (1xbet's own close = weak)
+  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 9/22 (-5.3u) · FLIP UNDER 3/8 (-2.5u) · FLIP UNDER(paper) 3/4 (+1.6u) · FTUNDER 17/37 (-6.3u) · HOT OVER 6/8 (+3.4u) · STAR-OUT CASCADE 2/2 (+1.5u) · starout 0/1 (-1.0u)
+  VERDICT : ⏳ TOO EARLY (n=11; sharp-CLV thin, need ~20-40 ≈ 2wks). CLV flat — not yet meaningful.
+  by tier: SOLID 1/5 (-3.0u) · STRONG 3/4 (+1.4u) · THIN 1/2 (+0.0u)
+  by market: pr Under 1/2 (+0.0u) · pra Under 1/4 (-2.3u) · pts Under 3/5 (+0.7u)
 ```
 
 ## Per-bet
@@ -109,3 +109,9 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260622 | Paige Bueckers | PTS Under 18.5 @ 1.8 | FTUNDER | loss | -7% | +0.0 | -5% |
 | 20260622 | Rhyne Howard | PRA Over 26.5 @ 2.0 | HOT OVER | WIN | — | — | +0% |
 | 20260622 | Skylar Diggins | PTS Under 16.5 @ 1.73 | FTUNDER | WIN | -7% | — | +2% |
+| 20260623 | Breanna Stewart | PTS Under 19.5 @ 1.8 | FTUNDER | loss | — | — | — |
+| 20260623 | Chelsea Gray | PTS Under 12.5 @ 1.75 | COLD/SHRINK/STINGY | WIN | -11% | +0.0 | +0% |
+| 20260623 | Jackie Young | PA Over 23.5 @ 1.8 | FLIP UNDER | WIN | — | +0.5 | -2% |
+| 20260623 | Jonquel Jones | PA Over 15.5 @ 1.8 | BOOK OVERSHOOT | WIN | — | — | -2% |
+| 20260623 | Nalyssa Smith | PR Over 16.5 @ 1.91 | BOOK OVERSHOOT | loss | — | — | +4% |
+| 20260623 | Pauline Astier | PA Over 9.5 @ 1.73 | FLIP UNDER | loss | — | — | +0% |
