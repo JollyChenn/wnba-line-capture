@@ -37,7 +37,7 @@ for d in range(0, 4):
         espn[(norm((a.get("team") or {}).get("displayName", "")), norm((hh.get("team") or {}).get("displayName", "")))] = tip
 
 # 2) the-odds-api events (independent; the /events endpoint is FREE — no quota cost)
-KEY = (os.environ.get("ODDS_API_KEYS", "").split(",")[0].strip()) or "387645d689cd646ead0f9680f15e3713"
+KEY = os.environ.get("ODDS_API_KEYS", "").split(",")[0].strip()   # env/GitHub-secret only; no hardcoded fallback (repo is public)
 oddsapi, err = {}, None
 try:
     j = json.load(urllib.request.urlopen(urllib.request.Request(
