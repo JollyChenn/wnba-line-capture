@@ -21,6 +21,20 @@ bets_log = load("bets_log.csv")
 mybets   = load("my_bets.csv")
 esc = lambda s: html.escape(str(s))
 
+def _f(x):
+    try: return float(x)
+    except (TypeError, ValueError): return None
+_comp = {}                                             # two-sided odds: (player, market, line, side) -> [odds], from snapshots + the new full board
+for _fn in ("xbet_snapshots.csv", "xbet_board.csv"):
+    for _r in load(_fn):
+        _ln, _od = _f(_r.get("line")), _f(_r.get("odds"))
+        if _ln is not None and _od:
+            _comp.setdefault((_r.get("player", "").lower(), _r.get("market"), _ln, _r.get("side")), []).append(_od)
+def _med(v): v = sorted(v); return v[len(v) // 2]
+def comp_odds(player, mk, line, side):                 # the OTHER side's odds (the fade price) when we captured it
+    v = _comp.get(((player or "").lower(), mk, _f(line), "Over" if side == "Under" else "Under"), [])
+    return _med(v) if v else None
+
 # player -> most-recent team (data files don't store team; the box does). Shown next to each name on the board.
 _gdate = {r.get("game_id"): r.get("date", "") for r in load("data/games_2026.csv")}
 _team_by = {}
@@ -132,6 +146,13 @@ def sig_clv_html(s):                                   # the three CLVs side by 
             f'<b>sharp-line</b> {ptsfmt(s["slc"])} <span class="muted">(n={s["nslc"]})</span> · '
             f'<b>self</b> {clvfmt(s["clv"])} <span class="muted">(n={s["nclv"]}, 1xbet close — weak)</span>')
 def betname(r): return f'{r.get("market","").upper()} {r.get("side","")} {r.get("line","")}'
+def bet_disp(r):                                       # "BET @ odds" + the OTHER side's odds (the fade price) when captured
+    base = f'{esc(betname(r))} @ {esc(r.get("odds",""))}'
+    co = comp_odds(r.get("player", ""), r.get("market"), r.get("line"), r.get("side", ""))
+    if co:
+        opp = "O" if r.get("side") == "Under" else "U"
+        return f'{base} <span class="mut" style="font-size:12px">⇄ {opp}@{co:.2f}</span>'
+    return base
 def player_cell(r):                                    # player name + their team (muted) next to it
     tm = team_of(r.get("player", ""))
     tag = f' <span class="mut" style="font-size:12px">{esc(tm)}</span>' if tm else ''
@@ -157,7 +178,7 @@ def section_rows(pend, settled, with_sig):
         sig = f'<td>{esc(signame(r.get("src","")))}</td>' if with_sig else ''
         plbl, pcls = ('⚠ line pulled', 'pill neg') if r.get("_stale") else ('⏳ pending', 'pill')
         out.append(f'<tr class="pend"><td>{esc(r.get("date",""))}</td>{player_cell(r)}{logged_cell(r)}'
-                   f'<td>{esc(betname(r))} @ {esc(r.get("odds",""))}</td>{sig}'
+                   f'<td>{bet_disp(r)}</td>{sig}'
                    f'<td><span class="{pcls}">{esc(plbl)}</span></td><td class="muted">—</td><td class="muted">—</td></tr>')
     for r in sorted(settled, key=lambda x: x.get("date",""), reverse=True):
         txt, cl = resfmt(r.get("result",""))
@@ -168,7 +189,7 @@ def section_rows(pend, settled, with_sig):
         except ValueError: ocf = "—"
         sig = f'<td>{esc(signame(srcof(r)))}</td>' if with_sig else ''
         out.append(f'<tr><td>{esc(r.get("date",""))}</td>{player_cell(r)}{logged_cell(r)}'
-                   f'<td>{esc(betname(r))} @ {esc(r.get("odds",""))}</td>{sig}'
+                   f'<td>{bet_disp(r)}</td>{sig}'
                    f'<td class="{cl}">{txt}</td><td class="{"pos" if pnl>0 else ("neg" if pnl<0 else "muted")}">{pnl:+.2f}u</td>'
                    f'<td class="{("pos" if (oc not in ("","None",None) and float(oc or 0)>0) else "muted")}">{ocf}</td></tr>')
     if not out:
