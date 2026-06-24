@@ -2,7 +2,7 @@
 
 _Stingy-D threshold (trailing-10 allowed, bottom quartile): 85_
 
-_🩹 OUT/doubtful (excluded from ALL picks): Aaliyah Nye, Brittney Sykes, Cameron Brink, Chennedy Carter, Hailey Van Lith, Jordan Horston, Jovana Nogic, Kiki Rice, Monique Akoa Makani, Odyssey Sims_
+_🩹 OUT/doubtful (excluded from ALL picks): Aaliyah Nye, Brittney Sykes, Cameron Brink, Chennedy Carter, Hailey Van Lith, Jordan Horston, Jovana Nogic, Kelsey Plum, Kiki Rice, Monique Akoa Makani, Natasha Mack, Odyssey Sims_
 
 ## 💰 REAL-MONEY — UNDER (cold/shrink + stingy · pts/PR/PA/PRA · flat 1u)
 
@@ -21,7 +21,7 @@ _🩹 OUT/doubtful (excluded from ALL picks): Aaliyah Nye, Brittney Sykes, Camer
 
 ## CASCADE contingencies — fire ONLY on scratch news (PRA OVER rank-3-6, flat 1u)
 
-- Phoenix Mercury: if **Kahleah Copper** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Lexi Held OVER 8.5 PRA, Natasha Mack OVER 17.5 PRA
+- Phoenix Mercury: if **Kahleah Copper** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Lexi Held OVER 8.5 PRA
 - Indiana Fever: if **Caitlin Clark** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Aliyah Boston OVER 27.5 PRA, Sophie Cunningham OVER 13.5 PRA, Monique Billings OVER 8.5 PRA, Raven Johnson OVER 5.5 PRA
 - Minnesota Lynx: if **Olivia Miles** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Natasha Howard OVER 25.5 PRA, Kayla McBride OVER 19.5 PRA, Nia Coffey OVER 15.5 PRA, Maya Caldwell OVER 7.5 PRA
 - Washington Mystics: if **Sonia Citron** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Kiki Iriafen OVER 23.5 PRA, Michaela Onyenwere OVER 18.5 PRA, Georgia Amoore OVER 8.5 PRA, Alicia Florez OVER 10.5 PRA
