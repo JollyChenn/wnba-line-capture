@@ -92,3 +92,24 @@ date,player,market,side,line,odds,tier,actual,result,pnl,odds_clv,line_clv,sharp
 20260623,Jonquel Jones,pa,Over,15.5,1.8,STRONG,17.0,WIN,0.8,-0.018,0.0,,,overshoot,2026-06-23
 20260623,Nalyssa Smith,pr,Over,16.5,1.91,STRONG,8.0,loss,-1.0,0.044,0.0,,,overshoot,2026-06-23
 20260623,Pauline Astier,pa,Over,9.5,1.73,SOLID,9.0,loss,-1.0,0.0,0.0,,,flip,2026-06-23
+20260624,Aliyah Boston,pts,Under,16.5,1.75,SOLID,23.0,loss,-1.0,0.006,0.0,1.0,,newunder,2026-06-23
+20260624,Allisha Gray,pts,Under,17.5,1.94,THIN,8.0,WIN,0.94,0.084,0.0,0.0,-0.061,newunder,2026-06-23
+20260624,Angel Reese,pr,Over,25.5,1.83,STRONG,22.0,loss,-1.0,-0.085,0.0,-0.5,,flip,2026-06-23
+20260624,Caitlin Clark,pts,Under,21.5,1.91,STRONG,19.0,WIN,0.91,0.001,-1.0,,-0.07,newunder,2026-06-23
+20260624,Carla Leite,pts,Under,14.5,1.833,STRONG,10.0,WIN,0.83,-0.009,0.0,0.0,-0.048,newunder,2026-06-23
+20260624,Cecilia Zandalasini,pts,Under,8.5,1.893,SOLID,14.0,loss,-1.0,0.023,0.0,0.0,-0.111,newunder,2026-06-23
+20260624,Courtney Williams,pts,Under,15.5,1.91,THIN,5.0,WIN,0.91,-0.005,0.0,0.0,-0.107,newunder,2026-06-23
+20260624,Gabby Williams,pra,Over,20.5,1.73,SOLID,33.0,WIN,0.73,0.0,0.0,,,overshoot,2026-06-23
+20260624,Jordin Canada,pra,Over,20.5,1.8,THIN,14.0,loss,-1.0,0.0,0.0,,,hotover,2026-06-23
+20260624,Kahleah Copper,pts,Under,18.5,1.87,SOLID,28.0,loss,-1.0,-0.031,-1.0,,-0.186,newunder,2026-06-23
+20260624,Kayla McBride,pts,Under,14.5,1.77,SOLID,19.0,loss,-1.0,-0.068,0.0,0.0,-0.108,newunder,2026-06-23
+20260624,Kelsey Mitchell,pts,Under,19.5,1.86,SOLID,30.0,loss,-1.0,-0.07,-1.0,0.0,-0.144,newunder,2026-06-23
+20260624,Kiki Iriafen,pra,Under,23.5,1.91,SOLID,27.0,loss,-1.0,-0.045,0.0,,,model,2026-06-23
+20260624,Megan Gustafson,pts,Under,12.5,2.02,SOLID,17.0,loss,-1.0,0.0,-2.0,,,newunder,2026-06-23
+20260624,Michaela Onyenwere,pts,Over,8.5,1.77,STRONG,2.0,loss,-1.0,-0.017,1.0,,,overshoot,2026-06-23
+20260624,Olivia Miles,pts,Over,18.5,1.88,THIN,21.0,WIN,0.88,-0.015,0.0,0.0,-0.083,flip_paper,2026-06-23
+20260624,Rhyne Howard,pra,Over,25.5,1.91,SOLID,20.0,loss,-1.0,0.0,0.0,,,hotover,2026-06-23
+20260624,Sarah Ashlee Barker,pts,Under,11.5,1.833,SOLID,13.0,loss,-1.0,-0.035,0.0,,,newunder,2026-06-23
+20260624,Shakira Austin,pts,Under,12.5,1.76,SOLID,11.0,WIN,0.76,-0.022,0.0,0.0,-0.023,newunder,2026-06-23
+20260624,Skylar Diggins,pts,Under,15.5,1.81,THIN,15.0,WIN,0.81,-0.013,0.0,,,newunder,2026-06-23
+20260624,Sonia Citron,pra,Over,21.5,1.833,STRONG,34.0,WIN,0.83,,,,,overshoot,2026-06-23

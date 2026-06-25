@@ -4,16 +4,16 @@ _Auto-updated after each slate settles. Raw data: `graded_bets.csv`. CLV>0 = we 
 _**sharp-odds** = vs Pinnacle's vig-free fair price (TRUE edge test) · **sharp-line** = pts vs Pinnacle's line · **self** = vs 1xbet's own close (weak)._
 
 ```
-📊 WNBA BOT — TRACK RECORD (11 settled · PROVEN signals only)
-  Record  : 5-6  (45% hit)
-  Net P&L : -1.64u  (ROI -14.9%/bet)
+📊 WNBA BOT — TRACK RECORD (12 settled · PROVEN signals only)
+  Record  : 5-7  (42% hit)
+  Net P&L : -2.64u  (ROI -22.0%/bet)
   ★ SHARP ODDS-CLV: -7.1% | beat fair 0/2 (0%)  ← TRUE edge (vs Pinnacle fair price)
   SHARP LINE-CLV : -0.12 pts | n=4  ← better number than the sharp
-  self ODDS-CLV  : -0.1% | beat 3/11 (27%)  (1xbet's own close = weak)
-  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 9/22 (-5.3u) · FLIP UNDER 3/8 (-2.5u) · FLIP UNDER(paper) 3/4 (+1.6u) · FTUNDER 17/37 (-6.3u) · HOT OVER 6/8 (+3.4u) · STAR-OUT CASCADE 2/2 (+1.5u) · starout 0/1 (-1.0u)
-  VERDICT : ⏳ TOO EARLY (n=11; sharp-CLV thin, need ~20-40 ≈ 2wks). CLV flat — not yet meaningful.
-  by tier: SOLID 1/5 (-3.0u) · STRONG 3/4 (+1.4u) · THIN 1/2 (+0.0u)
-  by market: pr Under 1/2 (+0.0u) · pra Under 1/4 (-2.3u) · pts Under 3/5 (+0.7u)
+  self ODDS-CLV  : -0.5% | beat 3/12 (25%)  (1xbet's own close = weak)
+  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 11/25 (-4.7u) · FLIP UNDER 3/9 (-3.5u) · FLIP UNDER(paper) 4/5 (+2.5u) · FTUNDER 23/50 (-8.2u) · HOT OVER 6/10 (+1.4u) · STAR-OUT CASCADE 2/2 (+1.5u) · starout 0/1 (-1.0u)
+  VERDICT : ⏳ TOO EARLY (n=12; sharp-CLV thin, need ~20-40 ≈ 2wks). CLV flat — not yet meaningful.
+  by tier: SOLID 1/6 (-4.0u) · STRONG 3/4 (+1.4u) · THIN 1/2 (+0.0u)
+  by market: pr Under 1/2 (+0.0u) · pra Under 1/5 (-3.3u) · pts Under 3/5 (+0.7u)
 ```
 
 ## Per-bet
@@ -115,3 +115,24 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260623 | Jonquel Jones | PA Over 15.5 @ 1.8 | BOOK OVERSHOOT | WIN | — | — | -2% |
 | 20260623 | Nalyssa Smith | PR Over 16.5 @ 1.91 | BOOK OVERSHOOT | loss | — | — | +4% |
 | 20260623 | Pauline Astier | PA Over 9.5 @ 1.73 | FLIP UNDER | loss | — | — | +0% |
+| 20260624 | Aliyah Boston | PTS Under 16.5 @ 1.75 | FTUNDER | loss | — | +1.0 | +1% |
+| 20260624 | Allisha Gray | PTS Under 17.5 @ 1.94 | FTUNDER | WIN | -6% | +0.0 | +8% |
+| 20260624 | Angel Reese | PR Over 25.5 @ 1.83 | FLIP UNDER | loss | — | -0.5 | -8% |
+| 20260624 | Caitlin Clark | PTS Under 21.5 @ 1.91 | FTUNDER | WIN | -7% | — | +0% |
+| 20260624 | Carla Leite | PTS Under 14.5 @ 1.833 | FTUNDER | WIN | -5% | +0.0 | -1% |
+| 20260624 | Cecilia Zandalasini | PTS Under 8.5 @ 1.893 | FTUNDER | loss | -11% | +0.0 | +2% |
+| 20260624 | Courtney Williams | PTS Under 15.5 @ 1.91 | FTUNDER | WIN | -11% | +0.0 | -0% |
+| 20260624 | Gabby Williams | PRA Over 20.5 @ 1.73 | BOOK OVERSHOOT | WIN | — | — | +0% |
+| 20260624 | Jordin Canada | PRA Over 20.5 @ 1.8 | HOT OVER | loss | — | — | +0% |
+| 20260624 | Kahleah Copper | PTS Under 18.5 @ 1.87 | FTUNDER | loss | -19% | — | -3% |
+| 20260624 | Kayla McBride | PTS Under 14.5 @ 1.77 | FTUNDER | loss | -11% | +0.0 | -7% |
+| 20260624 | Kelsey Mitchell | PTS Under 19.5 @ 1.86 | FTUNDER | loss | -14% | +0.0 | -7% |
+| 20260624 | Kiki Iriafen | PRA Under 23.5 @ 1.91 | COLD/SHRINK/STINGY | loss | — | — | -4% |
+| 20260624 | Megan Gustafson | PTS Under 12.5 @ 2.02 | FTUNDER | loss | — | — | +0% |
+| 20260624 | Michaela Onyenwere | PTS Over 8.5 @ 1.77 | BOOK OVERSHOOT | loss | — | — | -2% |
+| 20260624 | Olivia Miles | PTS Over 18.5 @ 1.88 | FLIP UNDER(paper) | WIN | -8% | +0.0 | -2% |
+| 20260624 | Rhyne Howard | PRA Over 25.5 @ 1.91 | HOT OVER | loss | — | — | +0% |
+| 20260624 | Sarah Ashlee Barker | PTS Under 11.5 @ 1.833 | FTUNDER | loss | — | — | -4% |
+| 20260624 | Shakira Austin | PTS Under 12.5 @ 1.76 | FTUNDER | WIN | -2% | +0.0 | -2% |
+| 20260624 | Skylar Diggins | PTS Under 15.5 @ 1.81 | FTUNDER | WIN | — | — | -1% |
+| 20260624 | Sonia Citron | PRA Over 21.5 @ 1.833 | BOOK OVERSHOOT | WIN | — | — | — |
