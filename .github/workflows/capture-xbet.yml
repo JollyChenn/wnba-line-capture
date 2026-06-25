@@ -5,7 +5,7 @@ on:
     # under load, which silently dropped the 17:00/18:00 runs. Off-peak + every ~30 min in the active window
     # means a skipped run is covered by the next one, so a heartbeat/bet lands each cycle.
     - cron: '13 */3 * * *'                                 # daytime baseline -> early open-side snapshots (48/40/30/24h)
-    - cron: '13,43 14,15,16,17,18,19,20,21,22,23,0,1,2 * * *'  # every ~30 min through the tip window (14:00-02:00 UTC)
+    - cron: '13,43 14,15,16,17,18,19,20,21,22,23,0,1,2,3,4 * * *'  # every ~30 min through the tip window INCL. late West-Coast games (14:00-04:00 UTC) so a 02:00-tip game's lineup + closing line get captured before it ends ~04:00
   workflow_dispatch: {}
 permissions:
   contents: write
