@@ -2,7 +2,7 @@
 
 _Stingy-D threshold (trailing-10 allowed, bottom quartile): 84_
 
-_🩹 OUT/doubtful (excluded from ALL picks): Aaliyah Nye, Alanna Smith, Brittney Sykes, Cameron Brink, Chennedy Carter, Hailey Van Lith, Jordan Horston, Jovana Nogic, Kelsey Plum, Kiki Rice, Monique Akoa Makani, Odyssey Sims_
+_🩹 OUT/doubtful (excluded from ALL picks): Aaliyah Nye, Alanna Smith, Breanna Stewart, Brittney Sykes, Cameron Brink, Chennedy Carter, Hailey Van Lith, Jordan Horston, Jovana Nogic, Kelsey Plum, Kiki Rice, Monique Akoa Makani, Odyssey Sims_
 
 ## 💰 REAL-MONEY — UNDER (cold/shrink + stingy · pts/PR/PA/PRA · flat 1u)
 
@@ -47,7 +47,6 @@ _ft_volume_drought 58.9% / steady+streak 58.6% OOS vs a synthetic line — prove
 - **NaLyssa Smith** (Las Vegas Aces, Dallas Wings @ Las Vegas Aces): PTS UNDER ~12.5 [steady · PAPER] median~13→proj~11.7 · last5 mins [27 23 31 27 23]
 - **Paige Bueckers** (Dallas Wings, Dallas Wings @ Las Vegas Aces): PTS UNDER ~19.5 [steady · PAPER] median~20→proj~18.4 · last5 mins [32 24 36 36 38]
 - **Azzi Fudd** (Dallas Wings, Dallas Wings @ Las Vegas Aces): PTS UNDER ~14.5 [steady · PAPER] median~15→proj~13.5 · last5 mins [32 28 37 34 42]
-- **Breanna Stewart** (New York Liberty, New York Liberty @ Seattle Storm): PTS UNDER ~18.5 [steady · PAPER] median~18→proj~17.5 · last5 mins [30 35 32 34 36]
 - **Jonquel Jones** (New York Liberty, New York Liberty @ Seattle Storm): PTS UNDER ~16.5 [steady · PAPER] median~16→proj~15.7 · last5 mins [27 28 33 33 28]
 - **Natisha Hiedeman** (Seattle Storm, New York Liberty @ Seattle Storm): PTS UNDER ~17.5 [steady · PAPER] median~18→proj~16.8 · last5 mins [29 33 33 28 37]
 - **Flau'jae Johnson** (Seattle Storm, New York Liberty @ Seattle Storm): PTS UNDER ~10.5 [steady · PAPER] median~10→proj~10.0 · last5 mins [30 29 22 34 40]
