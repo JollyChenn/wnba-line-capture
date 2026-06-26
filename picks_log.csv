@@ -466,3 +466,38 @@ pick_date,game_id,player,team,opp,market,anchor,signals,fair_p,fair_odds,proj,sd
 2026-06-25,401857026,Allisha Gray,Atlanta Dream,Golden State Valkyries,pts_under,17.5,steady,0.563,1.78,16.6,5.72
 2026-06-25,401857026,Jordin Canada,Atlanta Dream,Golden State Valkyries,pts_under,11.5,steady,0.563,1.78,10.8,4.37
 2026-06-25,401857026,Rhyne Howard,Atlanta Dream,Golden State Valkyries,pts_under,19.5,steady,0.563,1.78,18.3,7.73
+2026-06-26,401857024,Brittney Griner,Connecticut Sun,Washington Mystics,pts_under,13.5,steady,0.563,1.78,12.9,3.97
+2026-06-26,401857024,Shakira Austin,Washington Mystics,Connecticut Sun,pts_under,11.5,steady,0.563,1.78,10.6,5.74
+2026-06-26,401857024,Sonia Citron,Washington Mystics,Connecticut Sun,pts_under,17.5,steady,0.563,1.78,16.5,6.49
+2026-06-26,401857024,Kiki Iriafen,Washington Mystics,Connecticut Sun,pts_under,12.5,steady,0.563,1.78,11.6,5.95
+2026-06-26,401857025,Kamilla Cardoso,Chicago Sky,Portland Fire,pra_over,22.5,hot+leaky,0.62,1.61,24.6,6.98
+2026-06-26,401857025,Sydney Taylor,Chicago Sky,Portland Fire,pra_over,14.5,expand+leaky,0.58,1.72,17.2,11.09
+2026-06-26,401857025,Skylar Diggins,Chicago Sky,Portland Fire,pts_under,14.5,steady,0.563,1.78,13.5,6.28
+2026-06-26,401857025,Megan Gustafson,Portland Fire,Chicago Sky,pts_under,14.5,steady,0.563,1.78,13.7,4.88
+2026-06-26,401857025,Kamilla Cardoso,Chicago Sky,Portland Fire,pts_under,11.5,steady,0.563,1.78,10.7,4.98
+2026-06-26,401857025,Sarah Ashlee Barker,Portland Fire,Chicago Sky,pts_under,12.5,steady,0.563,1.78,12.0,3.27
+2026-06-26,401857025,Carla Leite,Portland Fire,Chicago Sky,pts_under,9.5,steady,0.563,1.78,8.8,4.48
+2026-06-26,401857025,Sydney Taylor,Chicago Sky,Portland Fire,ast_over,1.5,usgshock,0.591,1.69,1.9,1.58
+2026-06-26,401857026,Angel Reese,Atlanta Dream,Golden State Valkyries,pr_under,28.5,cold+stingy,0.59,1.69,27.2,5.92
+2026-06-26,401857026,Angel Reese,Atlanta Dream,Golden State Valkyries,pra_under,31.5,cold+stingy,0.621,1.61,29.8,5.56
+2026-06-26,401857026,Kayla Thornton,Golden State Valkyries,Atlanta Dream,pts_under,8.5,ftdrought,0.589,1.7,7.2,5.94
+2026-06-26,401857026,Allisha Gray,Atlanta Dream,Golden State Valkyries,pts_under,17.5,steady,0.563,1.78,16.6,5.72
+2026-06-26,401857026,Jordin Canada,Atlanta Dream,Golden State Valkyries,pts_under,11.5,steady,0.563,1.78,10.8,4.37
+2026-06-26,401857026,Rhyne Howard,Atlanta Dream,Golden State Valkyries,pts_under,19.5,steady,0.563,1.78,18.3,7.73
+2026-06-26,401857027,Kahleah Copper,Phoenix Mercury,Toronto Tempo,pra_over,22.5,hot+leaky,0.62,1.61,26.3,10.79
+2026-06-26,401857027,Isabelle Harrison,Toronto Tempo,Phoenix Mercury,pts_under,12.5,steady,0.563,1.78,11.7,5.24
+2026-06-26,401857027,Kahleah Copper,Phoenix Mercury,Toronto Tempo,pts_under,17.5,steady,0.563,1.78,16.0,9.16
+2026-06-26,401857027,Noemie Brochant,Phoenix Mercury,Toronto Tempo,pts_under,8.5,ftdrought,0.589,1.7,7.6,4.03
+2026-06-26,401857027,Marina Mabrey,Toronto Tempo,Phoenix Mercury,ast_over,3.5,usgshock,0.591,1.69,3.9,1.83
+2026-06-26,401857027,Lexi Held,Phoenix Mercury,Toronto Tempo,ast_over,1.5,usgshock,0.591,1.69,1.9,1.5
+2026-06-26,401857028,Dearica Hamby,Los Angeles Sparks,Indiana Fever,pra_over,20.5,hot+leaky,0.62,1.61,22.7,7.13
+2026-06-26,401857028,Nneka Ogwumike,Los Angeles Sparks,Indiana Fever,pts_under,13.5,steady,0.563,1.78,12.6,5.73
+2026-06-26,401857028,Kelsey Mitchell,Indiana Fever,Los Angeles Sparks,pts_under,21.5,steady,0.563,1.78,20.7,4.92
+2026-06-26,401857028,Aliyah Boston,Indiana Fever,Los Angeles Sparks,pts_under,15.5,steady,0.563,1.78,14.3,7.44
+2026-06-26,401857029,Dominique Malonga,Seattle Storm,Atlanta Dream,pra_over,23.5,hot+expand,0.55,1.82,25.6,12.96
+2026-06-26,401857029,Allisha Gray,Atlanta Dream,Seattle Storm,pts_under,17.5,steady,0.563,1.78,16.6,5.72
+2026-06-26,401857029,Jordin Canada,Atlanta Dream,Seattle Storm,pts_under,11.5,steady,0.563,1.78,10.8,4.37
+2026-06-26,401857029,Natisha Hiedeman,Seattle Storm,Atlanta Dream,pts_under,16.5,steady,0.563,1.78,15.8,4.67
+2026-06-26,401857029,Rhyne Howard,Atlanta Dream,Seattle Storm,pts_under,19.5,steady,0.563,1.78,18.3,7.73
+2026-06-26,401857029,Angel Reese,Atlanta Dream,Seattle Storm,pts_under,15.5,steady,0.563,1.78,14.7,4.92
+2026-06-26,401857029,Awa Fam,Seattle Storm,Atlanta Dream,pts_under,13.5,steady,0.563,1.78,12.6,5.4
