@@ -10,7 +10,7 @@ _**sharp-odds** = vs Pinnacle's vig-free fair price (TRUE edge test) · **sharp-
   ★ SHARP ODDS-CLV: -7.1% | beat fair 0/2 (0%)  ← TRUE edge (vs Pinnacle fair price)
   SHARP LINE-CLV : -0.12 pts | n=4  ← better number than the sharp
   self ODDS-CLV  : -0.5% | beat 3/12 (25%)  (1xbet's own close = weak)
-  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 11/25 (-4.7u) · FLIP UNDER 3/9 (-3.5u) · FLIP UNDER(paper) 4/5 (+2.5u) · FTUNDER 23/50 (-8.2u) · HOT OVER 6/10 (+1.4u) · STAR-OUT CASCADE 2/2 (+1.5u) · starout 0/1 (-1.0u)
+  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 13/27 (-3.0u) · FLIP UNDER 3/9 (-3.5u) · FLIP UNDER(paper) 5/8 (+1.3u) · FTUNDER 24/54 (-10.2u) · HOT OVER 7/11 (+2.3u) · STAR-OUT CASCADE 6/8 (+2.5u) · starout 0/2 (-2.0u)
   VERDICT : ⏳ TOO EARLY (n=12; sharp-CLV thin, need ~20-40 ≈ 2wks). CLV flat — not yet meaningful.
   by tier: SOLID 1/6 (-4.0u) · STRONG 3/4 (+1.4u) · THIN 1/2 (+0.0u)
   by market: pr Under 1/2 (+0.0u) · pra Under 1/5 (-3.3u) · pts Under 3/5 (+0.7u)
@@ -136,3 +136,20 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260624 | Shakira Austin | PTS Under 12.5 @ 1.76 | FTUNDER | WIN | -2% | +0.0 | -2% |
 | 20260624 | Skylar Diggins | PTS Under 15.5 @ 1.81 | FTUNDER | WIN | — | — | -1% |
 | 20260624 | Sonia Citron | PRA Over 21.5 @ 1.833 | BOOK OVERSHOOT | WIN | — | — | — |
+| 20260625 | Ariel Atkins | PRA Over 13.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
+| 20260625 | Dearica Hamby | PRA Over 20.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
+| 20260625 | Erica Wheeler | PRA Over 11.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
+| 20260625 | Flau'jae Johnson | PTS Under 10.5 @ 1.9 | FTUNDER | loss | — | — | +2% |
+| 20260625 | Isabelle Harrison | PTS Under 14.5 @ 1.952 | FTUNDER | WIN | — | — | +7% |
+| 20260625 | Jackie Young | PA Over 23.5 @ 1.73 | BOOK OVERSHOOT | WIN | — | — | -6% |
+| 20260625 | Jessica Shepard | PA Over 18.5 @ 2.0 | BOOK OVERSHOOT | WIN | — | — | +0% |
+| 20260625 | Jonquel Jones | PTS Over 13.5 @ 1.833 | FLIP UNDER(paper) | WIN | — | — | -1% |
+| 20260625 | Leonie Fiebich | PRA Over 14.5 @ 1.91 | HOT OVER | WIN | — | — | +0% |
+| 20260625 | Marina Mabrey | PTS Under 20.5 @ 1.952 | FTUNDER | loss | — | — | +0% |
+| 20260625 | Marine Johannes | PRA Over 12.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
+| 20260625 | NaLyssa Smith | PTS Over 10.5 @ 1.73 | FLIP UNDER(paper) | loss | — | — | +0% |
+| 20260625 | Natisha Hiedeman | PTS Over 14.5 @ 1.77 | FLIP UNDER(paper) | loss | — | — | +0% |
+| 20260625 | Nneka Ogwumike | PTS Under 16.5 @ 1.909 | starout | loss | — | — | +0% |
+| 20260625 | Paige Bueckers | PTS Under 18.5 @ 2.0 | FTUNDER | loss | — | — | +0% |
+| 20260625 | Rae Burrell | PRA Over 18.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
+| 20260625 | Sabrina Ionescu | PRA Over 13.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
