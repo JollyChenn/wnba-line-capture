@@ -2,13 +2,14 @@
 
 _Stingy-D threshold (trailing-10 allowed, bottom quartile): 85_
 
-_🩹 OUT/doubtful (excluded from ALL picks): Aaliyah Nye, Alanna Smith, Brittney Sykes, Caitlin Clark, Cameron Brink, Chennedy Carter, Hailey Van Lith, Jordan Horston, Jovana Nogic, Kelsey Plum, Kiki Rice, Monique Akoa Makani, Natasha Mack, Odyssey Sims_
+_🩹 OUT/doubtful (excluded from ALL picks): Aaliyah Nye, Alanna Smith, Brittney Sykes, Caitlin Clark, Cameron Brink, Hailey Van Lith, Jordan Horston, Jovana Nogic, Kelsey Plum, Kiki Rice, Monique Akoa Makani, Natasha Mack, Odyssey Sims_
 
 ## 💰 REAL-MONEY — UNDER (cold/shrink + stingy · pts/PR/PA/PRA · flat 1u)
 
 - **Arike Ogunbowale** (Dallas Wings, Minnesota Lynx @ Dallas Wings): points median~14→proj~10.5 fair[10.5=1.99 11.5=1.84 12.5=1.71] · PR 17→14.2 · PA 18→14.4 · PRA 20→16.9 · [cold+stingy] · last5 mins [30 28 32 20 29] oppDef 80 · UNDER value zone = book line between proj and median (MAX edge near median)
 - **Aziaha James** (Dallas Wings, Minnesota Lynx @ Dallas Wings): points median~8→proj~6.3 fair[6.5=1.94 7.5=1.73 8.5=1.56] · PR 12→9.8 · [declining+stingy] · last5 mins [12 6 6 24 13] oppDef 80 · UNDER value zone = book line between proj and median (MAX edge near median)
 - **Megan Gustafson** (Portland Fire, Portland Fire @ Washington Mystics): PR median~19→proj~17.2 fair[17.0=2.05 18.0=1.8 19.0=1.6] · [cold+stingy] · last5 mins [26 17 28 23 29] oppDef 83 · UNDER value zone = book line between proj and median (MAX edge near median)
+- **Chennedy Carter** (Las Vegas Aces, Las Vegas Aces @ Chicago Sky): points median~16→proj~11.2 fair[11.0=2.03 12.0=1.86 13.0=1.72] · PR 17→14.1 · PA 16→13.7 · PRA 18→13.2 · [declining+cold] · last5 mins [26 19 9 8 8] oppDef 90 · UNDER value zone = book line between proj and median (MAX edge near median)
 - **Janelle Salaun** (Golden State Valkyries, New York Liberty @ Golden State Valkyries): points median~11→proj~7.9 fair[8.0=1.98 9.0=1.73 10.0=1.54] · PR 16→14.0 · PA 12→9.9 · PRA 16→13.1 · [declining+cold] · last5 mins [20 24 18 10 22] oppDef 85 · UNDER value zone = book line between proj and median (MAX edge near median)
 
 ## 🧪 PAPER — hot-PRA OVERS (capture for CLV; NOT real money)
@@ -34,7 +35,7 @@ _🩹 OUT/doubtful (excluded from ALL picks): Aaliyah Nye, Alanna Smith, Brittne
 - Dallas Wings: if **Paige Bueckers** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Azzi Fudd OVER 16.5 PRA, Arike Ogunbowale OVER 20.5 PRA, Awak Kuier OVER 10.5 PRA, Aziaha James OVER 12.5 PRA
 - Portland Fire: if **Carla Leite** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Sarah Ashlee Barker OVER 17.5 PRA, Megan Gustafson OVER 19.5 PRA, Emily Engstler OVER 16.5 PRA, Teja Oblak OVER 7.5 PRA
 - Washington Mystics: if **Sonia Citron** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Kiki Iriafen OVER 24.5 PRA, Georgia Amoore OVER 10.5 PRA, Michaela Onyenwere OVER 16.5 PRA, Cotie McMahon OVER 11.5 PRA
-- Las Vegas Aces: if **A'ja Wilson** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Chelsea Gray OVER 24.5 PRA, Jewell Loyd OVER 11.5 PRA, NaLyssa Smith OVER 16.5 PRA
+- Las Vegas Aces: if **A'ja Wilson** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Chelsea Gray OVER 24.5 PRA, Jewell Loyd OVER 11.5 PRA, NaLyssa Smith OVER 16.5 PRA, Chennedy Carter OVER 17.5 PRA
 - Chicago Sky: if **Sydney Taylor** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Skylar Diggins OVER 22.5 PRA, Azura Stevens OVER 23.5 PRA, Gabriela Jaquez OVER 12.5 PRA, Natasha Cloud OVER 15.5 PRA
 - New York Liberty: if **Breanna Stewart** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Sabrina Ionescu OVER 13.5 PRA, Leonie Fiebich OVER 14.5 PRA, Satou Sabally OVER 15.5 PRA, Marine Johannes OVER 12.5 PRA
 - Golden State Valkyries: if **Gabby Williams** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Veronica Burton OVER 18.5 PRA, Janelle Salaun OVER 15.5 PRA, Kaitlyn Chen OVER 9.5 PRA, Kayla Thornton OVER 12.5 PRA

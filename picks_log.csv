@@ -535,6 +535,10 @@ pick_date,game_id,player,team,opp,market,anchor,signals,fair_p,fair_odds,proj,sd
 2026-06-27,401857031,Sarah Ashlee Barker,Portland Fire,Washington Mystics,pts_under,11.5,steady,0.563,1.78,11.0,3.16
 2026-06-27,401857031,Kiki Iriafen,Washington Mystics,Portland Fire,pts_under,12.5,steady,0.563,1.78,11.6,5.8
 2026-06-27,401857031,Carla Leite,Portland Fire,Washington Mystics,pts_under,9.5,steady,0.563,1.78,8.7,4.77
+2026-06-27,401857032,Chennedy Carter,Las Vegas Aces,Chicago Sky,pts_under,15.5,declining+cold,0.684,1.46,11.2,9.07
+2026-06-27,401857032,Chennedy Carter,Las Vegas Aces,Chicago Sky,pr_under,16.5,declining+cold,0.59,1.69,14.1,10.69
+2026-06-27,401857032,Chennedy Carter,Las Vegas Aces,Chicago Sky,pa_under,16.5,declining+cold,0.61,1.64,13.7,10.09
+2026-06-27,401857032,Chennedy Carter,Las Vegas Aces,Chicago Sky,pra_under,17.5,declining+cold,0.641,1.56,13.2,11.8
 2026-06-27,401857032,Sydney Taylor,Chicago Sky,Las Vegas Aces,pra_over,17.5,hot+expand,0.55,1.82,19.6,12.75
 2026-06-27,401857032,Skylar Diggins,Chicago Sky,Las Vegas Aces,pts_under,14.5,steady,0.563,1.78,13.5,6.4
 2026-06-27,401857032,Azura Stevens,Chicago Sky,Las Vegas Aces,pts_under,10.5,steady,0.563,1.78,9.9,3.5
