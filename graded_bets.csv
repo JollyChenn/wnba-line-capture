@@ -130,3 +130,16 @@ date,player,market,side,line,odds,tier,actual,result,pnl,odds_clv,line_clv,sharp
 20260625,Paige Bueckers,pts,Under,18.5,2.0,THIN,25.0,loss,-1.0,0.0,0.0,,,newunder,2026-06-24
 20260625,Rae Burrell,pra,Over,18.5,1.75,CASC,23.0,WIN,0.75,0.0,0.0,,,cascade,2026-06-24
 20260625,Sabrina Ionescu,pra,Over,13.5,1.75,CASC,21.0,WIN,0.75,0.0,0.0,,,cascade,2026-06-25
+20260626,Allisha Gray,pts,Under,17.5,1.87,THIN,14.0,WIN,0.87,-0.005,0.0,,,newunder,2026-06-26
+20260626,Angel Reese,pr,Over,25.5,1.83,STRONG,27.0,WIN,0.83,-0.002,-1.0,-0.5,,flip,2026-06-25
+20260626,Brittney Griner,pr,Over,16.5,1.73,STRONG,12.0,loss,-1.0,0.0,0.0,,,overshoot,2026-06-25
+20260626,Carla Leite,pts,Under,14.5,1.82,STRONG,18.0,loss,-1.0,-0.005,0.0,0.0,-0.106,newunder,2026-06-25
+20260626,Jordin Canada,pts,Under,11.5,1.8,THIN,23.0,loss,-1.0,0.011,0.0,0.0,-0.071,newunder,2026-06-25
+20260626,Kamilla Cardoso,pts,Under,13.5,1.893,STRONG,30.0,loss,-1.0,0.0,0.0,,,newunder,2026-06-25
+20260626,Kayla Thornton,pts,Under,8.5,1.893,SOLID,0.0,WIN,0.89,0.052,-1.0,0.0,-0.078,newunder,2026-06-25
+20260626,Kiki Iriafen,pts,Under,15.5,1.833,STRONG,11.0,WIN,0.83,0.053,0.0,0.0,-0.036,newunder,2026-06-25
+20260626,Megan Gustafson,pts,Under,14.5,1.91,STRONG,13.0,WIN,0.91,0.021,0.0,0.0,-0.003,newunder,2026-06-25
+20260626,Sarah Ashlee Barker,pts,Under,11.5,1.85,SOLID,11.0,WIN,0.85,-0.023,0.0,,,newunder,2026-06-25
+20260626,Shakira Austin,pts,Under,13.5,2.0,STRONG,6.0,WIN,1.0,-0.01,0.0,0.0,0.008,newunder,2026-06-25
+20260626,Skylar Diggins,pts,Under,15.5,1.84,THIN,10.0,WIN,0.84,0.057,0.0,0.0,-0.019,newunder,2026-06-25
+20260626,Sonia Citron,pts,Under,17.5,1.73,SOLID,11.0,WIN,0.73,-0.056,0.0,,,newunder,2026-06-25

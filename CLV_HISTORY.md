@@ -10,7 +10,7 @@ _**sharp-odds** = vs Pinnacle's vig-free fair price (TRUE edge test) · **sharp-
   ★ SHARP ODDS-CLV: -7.1% | beat fair 0/2 (0%)  ← TRUE edge (vs Pinnacle fair price)
   SHARP LINE-CLV : -0.12 pts | n=4  ← better number than the sharp
   self ODDS-CLV  : -0.5% | beat 3/12 (25%)  (1xbet's own close = weak)
-  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 13/27 (-3.0u) · FLIP UNDER 3/9 (-3.5u) · FLIP UNDER(paper) 5/8 (+1.3u) · FTUNDER 24/54 (-10.2u) · HOT OVER 7/11 (+2.3u) · STAR-OUT CASCADE 6/8 (+2.5u) · starout 0/2 (-2.0u)
+  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 13/28 (-4.0u) · FLIP UNDER 4/10 (-2.6u) · FLIP UNDER(paper) 5/8 (+1.3u) · FTUNDER 32/65 (-6.3u) · HOT OVER 7/11 (+2.3u) · STAR-OUT CASCADE 6/8 (+2.5u) · starout 0/2 (-2.0u)
   VERDICT : ⏳ TOO EARLY (n=12; sharp-CLV thin, need ~20-40 ≈ 2wks). CLV flat — not yet meaningful.
   by tier: SOLID 1/6 (-4.0u) · STRONG 3/4 (+1.4u) · THIN 1/2 (+0.0u)
   by market: pr Under 1/2 (+0.0u) · pra Under 1/5 (-3.3u) · pts Under 3/5 (+0.7u)
@@ -153,3 +153,16 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260625 | Paige Bueckers | PTS Under 18.5 @ 2.0 | FTUNDER | loss | — | — | +0% |
 | 20260625 | Rae Burrell | PRA Over 18.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260625 | Sabrina Ionescu | PRA Over 13.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
+| 20260626 | Allisha Gray | PTS Under 17.5 @ 1.87 | FTUNDER | WIN | — | — | -0% |
+| 20260626 | Angel Reese | PR Over 25.5 @ 1.83 | FLIP UNDER | WIN | — | -0.5 | -0% |
+| 20260626 | Brittney Griner | PR Over 16.5 @ 1.73 | BOOK OVERSHOOT | loss | — | — | +0% |
+| 20260626 | Carla Leite | PTS Under 14.5 @ 1.82 | FTUNDER | loss | -11% | +0.0 | -0% |
+| 20260626 | Jordin Canada | PTS Under 11.5 @ 1.8 | FTUNDER | loss | -7% | +0.0 | +1% |
+| 20260626 | Kamilla Cardoso | PTS Under 13.5 @ 1.893 | FTUNDER | loss | — | — | +0% |
+| 20260626 | Kayla Thornton | PTS Under 8.5 @ 1.893 | FTUNDER | WIN | -8% | +0.0 | +5% |
+| 20260626 | Kiki Iriafen | PTS Under 15.5 @ 1.833 | FTUNDER | WIN | -4% | +0.0 | +5% |
+| 20260626 | Megan Gustafson | PTS Under 14.5 @ 1.91 | FTUNDER | WIN | -0% | +0.0 | +2% |
+| 20260626 | Sarah Ashlee Barker | PTS Under 11.5 @ 1.85 | FTUNDER | WIN | — | — | -2% |
+| 20260626 | Shakira Austin | PTS Under 13.5 @ 2.0 | FTUNDER | WIN | +1% | +0.0 | -1% |
+| 20260626 | Skylar Diggins | PTS Under 15.5 @ 1.84 | FTUNDER | WIN | -2% | +0.0 | +6% |
+| 20260626 | Sonia Citron | PTS Under 17.5 @ 1.73 | FTUNDER | WIN | — | — | -6% |
