@@ -10,7 +10,7 @@ _**sharp-odds** = vs Pinnacle's vig-free fair price (TRUE edge test) · **sharp-
   ★ SHARP ODDS-CLV: -7.1% | beat fair 0/2 (0%)  ← TRUE edge (vs Pinnacle fair price)
   SHARP LINE-CLV : -0.12 pts | n=4  ← better number than the sharp
   self ODDS-CLV  : -0.5% | beat 3/12 (25%)  (1xbet's own close = weak)
-  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 13/28 (-4.0u) · FLIP UNDER 4/10 (-2.6u) · FLIP UNDER(paper) 5/8 (+1.3u) · FTUNDER 32/65 (-6.3u) · HOT OVER 7/11 (+2.3u) · STAR-OUT CASCADE 6/8 (+2.5u) · starout 0/2 (-2.0u)
+  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 13/28 (-4.0u) · FLIP UNDER 4/10 (-2.6u) · FLIP UNDER(paper) 5/8 (+1.3u) · FTUNDER 34/68 (-5.6u) · HOT OVER 7/11 (+2.3u) · STAR-OUT CASCADE 6/8 (+2.5u) · starout 0/2 (-2.0u)
   VERDICT : ⏳ TOO EARLY (n=12; sharp-CLV thin, need ~20-40 ≈ 2wks). CLV flat — not yet meaningful.
   by tier: SOLID 1/6 (-4.0u) · STRONG 3/4 (+1.4u) · THIN 1/2 (+0.0u)
   by market: pr Under 1/2 (+0.0u) · pra Under 1/5 (-3.3u) · pts Under 3/5 (+0.7u)
@@ -166,3 +166,6 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260626 | Shakira Austin | PTS Under 13.5 @ 2.0 | FTUNDER | WIN | +1% | +0.0 | -1% |
 | 20260626 | Skylar Diggins | PTS Under 15.5 @ 1.84 | FTUNDER | WIN | -2% | +0.0 | +6% |
 | 20260626 | Sonia Citron | PTS Under 17.5 @ 1.73 | FTUNDER | WIN | — | — | -6% |
+| 20260627 | Isabelle Harrison | PTS Under 12.5 @ 1.952 | FTUNDER | WIN | — | — | +8% |
+| 20260627 | Kahleah Copper | PTS Under 20.5 @ 1.833 | FTUNDER | loss | — | — | -11% |
+| 20260627 | Noemie Brochant | PTS Under 9.5 @ 1.75 | FTUNDER | WIN | — | — | +0% |
