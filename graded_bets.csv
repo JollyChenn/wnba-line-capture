@@ -162,9 +162,16 @@ date,player,market,side,line,odds,tier,actual,result,pnl,odds_clv,line_clv,sharp
 20260627,Noemie Brochant,pts,Under,9.5,1.75,STRONG,3.0,WIN,0.75,0.0,0.0,,,newunder,2026-06-27
 20260627,Sophie Cunningham,pra,Over,12.5,1.75,CASC,12.0,loss,-1.0,0.0,0.0,,,cascade,2026-06-26
 20260628,Arike Ogunbowale,pts,Under,13.5,1.97,SOLID,5.0,WIN,0.97,0.026,0.0,,,model,2026-06-27
+20260628,Azura Stevens,pra,Over,20.5,1.83,STRONG,33.0,WIN,0.83,0.058,0.0,,,overshoot,2026-06-28
+20260628,Carla Leite,pts,Under,14.5,1.73,STRONG,32.0,loss,-1.0,-0.039,0.0,0.0,-0.098,newunder,2026-06-27
 20260628,Courtney Williams,pts,Under,15.5,1.9,THIN,12.0,WIN,0.9,-0.027,0.0,0.0,-0.102,newunder,2026-06-27
+20260628,Jackie Young,pts,Over,17.5,2.0,THIN,28.0,WIN,1.0,0.117,0.0,0.0,-0.014,flip_paper,2026-06-27
 20260628,Jessica Shepard,pa,Over,18.5,1.83,STRONG,11.0,loss,-1.0,-0.033,0.0,,,overshoot,2026-06-27
 20260628,Kayla McBride,pts,Under,14.5,1.8,SOLID,17.0,loss,-1.0,-0.057,0.0,0.0,-0.122,newunder,2026-06-27
+20260628,Kiki Iriafen,pts,Under,15.5,1.73,STRONG,27.0,loss,-1.0,-0.056,0.0,0.0,-0.117,newunder,2026-06-27
+20260628,Megan Gustafson,pr,Under,18.5,1.91,SOLID,25.0,loss,-1.0,0.061,0.0,,,model,2026-06-27
 20260628,Natasha Howard,pts,Over,15.5,1.92,SOLID,21.0,WIN,0.92,0.006,1.0,,,flip_paper,2026-06-27
 20260628,Olivia Miles,pts,Over,18.5,1.87,SOLID,21.0,WIN,0.87,0.02,0.0,0.0,-0.049,flip_paper,2026-06-27
 20260628,Paige Bueckers,pts,Under,19.5,1.78,THIN,25.0,loss,-1.0,-0.029,0.0,0.0,-0.072,newunder,2026-06-27
+20260628,Skylar Diggins,pts,Under,14.5,1.83,THIN,7.0,WIN,0.83,0.022,0.0,0.0,-0.107,newunder,2026-06-27
+20260628,Sonia Citron,pts,Under,18.5,1.73,SOLID,32.0,loss,-1.0,-0.056,0.0,0.0,-0.107,newunder,2026-06-27

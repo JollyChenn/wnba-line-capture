@@ -4,16 +4,16 @@ _Auto-updated after each slate settles. Raw data: `graded_bets.csv`. CLV>0 = we 
 _**sharp-odds** = vs Pinnacle's vig-free fair price (TRUE edge test) · **sharp-line** = pts vs Pinnacle's line · **self** = vs 1xbet's own close (weak)._
 
 ```
-📊 WNBA BOT — TRACK RECORD (13 settled · PROVEN signals only)
-  Record  : 6-7  (46% hit)
-  Net P&L : -1.67u  (ROI -12.8%/bet)
+📊 WNBA BOT — TRACK RECORD (14 settled · PROVEN signals only)
+  Record  : 6-8  (43% hit)
+  Net P&L : -2.67u  (ROI -19.1%/bet)
   ★ SHARP ODDS-CLV: -7.1% | beat fair 0/2 (0%)  ← TRUE edge (vs Pinnacle fair price)
   SHARP LINE-CLV : -0.12 pts | n=4  ← better number than the sharp
-  self ODDS-CLV  : -0.3% | beat 4/13 (31%)  (1xbet's own close = weak)
-  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 14/30 (-4.3u) · FLIP UNDER 5/11 (-1.9u) · FLIP UNDER(paper) 8/11 (+3.9u) · FTUNDER 37/73 (-4.8u) · HOT OVER 7/11 (+2.3u) · STAR-OUT CASCADE 10/16 (+1.5u) · starout 0/4 (-4.0u)
-  VERDICT : ⏳ TOO EARLY (n=13; sharp-CLV thin, need ~20-40 ≈ 2wks). CLV flat — not yet meaningful.
-  by tier: SOLID 2/7 (-3.0u) · STRONG 3/4 (+1.4u) · THIN 1/2 (+0.0u)
-  by market: pr Under 1/2 (+0.0u) · pra Under 1/5 (-3.3u) · pts Under 4/6 (+1.6u)
+  self ODDS-CLV  : +0.2% | beat 5/14 (36%)  (1xbet's own close = weak)
+  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 15/31 (-3.5u) · FLIP UNDER 5/11 (-1.9u) · FLIP UNDER(paper) 9/12 (+4.8u) · FTUNDER 38/77 (-6.9u) · HOT OVER 7/11 (+2.3u) · STAR-OUT CASCADE 10/16 (+1.5u) · starout 0/4 (-4.0u)
+  VERDICT : ⏳ TOO EARLY (n=14; sharp-CLV thin, need ~20-40 ≈ 2wks). CLV flat — not yet meaningful.
+  by tier: SOLID 2/8 (-4.0u) · STRONG 3/4 (+1.4u) · THIN 1/2 (+0.0u)
+  by market: pr Under 1/3 (-1.0u) · pra Under 1/5 (-3.3u) · pts Under 4/6 (+1.6u)
 ```
 
 ## Per-bet
@@ -185,9 +185,16 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260627 | Noemie Brochant | PTS Under 9.5 @ 1.75 | FTUNDER | WIN | — | — | +0% |
 | 20260627 | Sophie Cunningham | PRA Over 12.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
 | 20260628 | Arike Ogunbowale | PTS Under 13.5 @ 1.97 | COLD/SHRINK/STINGY | WIN | — | — | +3% |
+| 20260628 | Azura Stevens | PRA Over 20.5 @ 1.83 | BOOK OVERSHOOT | WIN | — | — | +6% |
+| 20260628 | Carla Leite | PTS Under 14.5 @ 1.73 | FTUNDER | loss | -10% | +0.0 | -4% |
 | 20260628 | Courtney Williams | PTS Under 15.5 @ 1.9 | FTUNDER | WIN | -10% | +0.0 | -3% |
+| 20260628 | Jackie Young | PTS Over 17.5 @ 2.0 | FLIP UNDER(paper) | WIN | -1% | +0.0 | +12% |
 | 20260628 | Jessica Shepard | PA Over 18.5 @ 1.83 | BOOK OVERSHOOT | loss | — | — | -3% |
 | 20260628 | Kayla McBride | PTS Under 14.5 @ 1.8 | FTUNDER | loss | -12% | +0.0 | -6% |
+| 20260628 | Kiki Iriafen | PTS Under 15.5 @ 1.73 | FTUNDER | loss | -12% | +0.0 | -6% |
+| 20260628 | Megan Gustafson | PR Under 18.5 @ 1.91 | COLD/SHRINK/STINGY | loss | — | — | +6% |
 | 20260628 | Natasha Howard | PTS Over 15.5 @ 1.92 | FLIP UNDER(paper) | WIN | — | — | +1% |
 | 20260628 | Olivia Miles | PTS Over 18.5 @ 1.87 | FLIP UNDER(paper) | WIN | -5% | +0.0 | +2% |
 | 20260628 | Paige Bueckers | PTS Under 19.5 @ 1.78 | FTUNDER | loss | -7% | +0.0 | -3% |
+| 20260628 | Skylar Diggins | PTS Under 14.5 @ 1.83 | FTUNDER | WIN | -11% | +0.0 | +2% |
+| 20260628 | Sonia Citron | PTS Under 18.5 @ 1.73 | FTUNDER | loss | -11% | +0.0 | -6% |
