@@ -10,7 +10,7 @@ _**sharp-odds** = vs Pinnacle's vig-free fair price (TRUE edge test) · **sharp-
   ★ SHARP ODDS-CLV: -7.1% | beat fair 0/2 (0%)  ← TRUE edge (vs Pinnacle fair price)
   SHARP LINE-CLV : -0.12 pts | n=4  ← better number than the sharp
   self ODDS-CLV  : -0.5% | beat 3/12 (25%)  (1xbet's own close = weak)
-  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 13/28 (-4.0u) · FLIP UNDER 4/10 (-2.6u) · FLIP UNDER(paper) 5/8 (+1.3u) · FTUNDER 34/68 (-5.6u) · HOT OVER 7/11 (+2.3u) · STAR-OUT CASCADE 6/8 (+2.5u) · starout 0/2 (-2.0u)
+  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 14/29 (-3.3u) · FLIP UNDER 5/11 (-1.9u) · FLIP UNDER(paper) 6/9 (+2.1u) · FTUNDER 36/70 (-3.7u) · HOT OVER 7/11 (+2.3u) · STAR-OUT CASCADE 10/16 (+1.5u) · starout 0/4 (-4.0u)
   VERDICT : ⏳ TOO EARLY (n=12; sharp-CLV thin, need ~20-40 ≈ 2wks). CLV flat — not yet meaningful.
   by tier: SOLID 1/6 (-4.0u) · STRONG 3/4 (+1.4u) · THIN 1/2 (+0.0u)
   by market: pr Under 1/2 (+0.0u) · pra Under 1/5 (-3.3u) · pts Under 3/5 (+0.7u)
@@ -166,6 +166,21 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260626 | Shakira Austin | PTS Under 13.5 @ 2.0 | FTUNDER | WIN | +1% | +0.0 | -1% |
 | 20260626 | Skylar Diggins | PTS Under 15.5 @ 1.84 | FTUNDER | WIN | -2% | +0.0 | +6% |
 | 20260626 | Sonia Citron | PTS Under 17.5 @ 1.73 | FTUNDER | WIN | — | — | -6% |
+| 20260627 | Aliyah Boston | PRA Over 29.5 @ 1.8 | STAR-OUT CASCADE | loss | — | +1.0 | -4% |
+| 20260627 | Aliyah Boston | PTS Under 16.5 @ 1.893 | starout | loss | -17% | +0.0 | +5% |
+| 20260627 | Angel Reese | PR Over 24.5 @ 1.73 | FLIP UNDER | WIN | — | — | +0% |
+| 20260627 | Ariel Atkins | PRA Over 12.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
+| 20260627 | Dearica Hamby | PRA Over 20.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
+| 20260627 | Erica Wheeler | PRA Over 11.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
+| 20260627 | Erica Wheeler | PTS Under 8.5 @ 1.952 | FTUNDER | WIN | — | — | — |
 | 20260627 | Isabelle Harrison | PTS Under 12.5 @ 1.952 | FTUNDER | WIN | — | — | +8% |
+| 20260627 | Jordin Canada | PA Over 16.5 @ 1.67 | BOOK OVERSHOOT | WIN | — | — | +0% |
 | 20260627 | Kahleah Copper | PTS Under 20.5 @ 1.833 | FTUNDER | loss | — | — | -11% |
+| 20260627 | Kelsey Mitchell | PTS Under 21.5 @ 1.893 | starout | loss | — | — | +0% |
+| 20260627 | Monique Billings | PRA Over 10.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
+| 20260627 | Myisha Hines-Allen | PRA Over 7.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
+| 20260627 | Natisha Hiedeman | PTS Over 14.5 @ 1.73 | FLIP UNDER(paper) | WIN | — | — | — |
+| 20260627 | Nneka Ogwumike | PRA Over 29.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
+| 20260627 | Nneka Ogwumike | PTS Under 17.5 @ 2.0 | FTUNDER | WIN | — | — | +3% |
 | 20260627 | Noemie Brochant | PTS Under 9.5 @ 1.75 | FTUNDER | WIN | — | — | +0% |
+| 20260627 | Sophie Cunningham | PRA Over 12.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
