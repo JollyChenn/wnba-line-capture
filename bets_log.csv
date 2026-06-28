@@ -2450,3 +2450,17 @@ captured_utc,date,player,market,side,line,odds,tier,ev,pinn,src
 2026-06-27T23:42:05+00:00,2026-06-27,Erica Wheeler,pra,Over,11.5,1.75,CASC,0.0,,cascade
 2026-06-27T23:42:05+00:00,2026-06-27,Ariel Atkins,pra,Over,12.5,1.75,CASC,0.0,,cascade
 2026-06-27T23:42:05+00:00,2026-06-27,Jessica Shepard,pa,Over,18.5,1.83,STRONG,0.493,,overshoot
+2026-06-28T01:52:48+00:00,2026-06-27,Arike Ogunbowale,pr,Under,17.5,1.833,SOLID,0.147,,model
+2026-06-28T01:52:48+00:00,2026-06-27,Natasha Howard,pts,Over,15.5,1.909,SOLID,0.236,,flip_paper
+2026-06-28T01:52:48+00:00,2026-06-27,Kayla McBride,pts,Under,14.5,1.909,SOLID,0.24,,newunder
+2026-06-28T01:52:48+00:00,2026-06-27,Courtney Williams,pts,Under,15.5,1.833,THIN,0.028,,newunder
+2026-06-28T01:52:48+00:00,2026-06-27,Paige Bueckers,pts,Under,18.5,2.0,THIN,0.011,,newunder
+2026-06-28T01:52:48+00:00,2026-06-27,Olivia Miles,pts,Over,18.5,1.909,SOLID,0.135,,flip_paper
+2026-06-28T01:52:48+00:00,2026-06-27,Megan Gustafson,pr,Under,18.5,1.91,SOLID,0.125,,model
+2026-06-28T01:52:48+00:00,2026-06-27,Sonia Citron,pts,Under,18.5,1.78,SOLID,0.117,,newunder
+2026-06-28T01:52:48+00:00,2026-06-27,Kiki Iriafen,pts,Under,15.5,1.88,STRONG,0.409,,newunder
+2026-06-28T01:52:48+00:00,2026-06-27,Carla Leite,pts,Under,14.5,1.77,STRONG,0.572,,newunder
+2026-06-28T01:52:48+00:00,2026-06-27,Azura Stevens,pts,Under,10.5,1.9,THIN,0.079,,newunder
+2026-06-28T01:52:48+00:00,2026-06-27,Jackie Young,pts,Over,16.5,1.77,SOLID,0.105,,flip_paper
+2026-06-28T01:52:48+00:00,2026-06-27,Jonquel Jones,pts,Over,13.5,1.88,SOLID,0.2,,flip_paper
+2026-06-28T01:52:48+00:00,2026-06-27,Jessica Shepard,pa,Over,18.5,1.8,STRONG,0.469,,overshoot
