@@ -10,7 +10,7 @@ _**sharp-odds** = vs Pinnacle's vig-free fair price (TRUE edge test) · **sharp-
   ★ SHARP ODDS-CLV: -7.1% | beat fair 0/2 (0%)  ← TRUE edge (vs Pinnacle fair price)
   SHARP LINE-CLV : -0.12 pts | n=4  ← better number than the sharp
   self ODDS-CLV  : +0.2% | beat 5/14 (36%)  (1xbet's own close = weak)
-  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 15/31 (-3.5u) · FLIP UNDER 5/11 (-1.9u) · FLIP UNDER(paper) 9/12 (+4.8u) · FTUNDER 38/77 (-6.9u) · HOT OVER 7/11 (+2.3u) · STAR-OUT CASCADE 10/16 (+1.5u) · starout 0/4 (-4.0u)
+  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 15/31 (-3.5u) · FLIP UNDER 5/11 (-1.9u) · FLIP UNDER(paper) 10/13 (+5.8u) · FTUNDER 39/78 (-6.2u) · HOT OVER 7/11 (+2.3u) · STAR-OUT CASCADE 10/16 (+1.5u) · starout 0/4 (-4.0u)
   VERDICT : ⏳ TOO EARLY (n=14; sharp-CLV thin, need ~20-40 ≈ 2wks). CLV flat — not yet meaningful.
   by tier: SOLID 2/8 (-4.0u) · STRONG 3/4 (+1.4u) · THIN 1/2 (+0.0u)
   by market: pr Under 1/3 (-1.0u) · pra Under 1/5 (-3.3u) · pts Under 4/6 (+1.6u)
@@ -186,10 +186,12 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260627 | Sophie Cunningham | PRA Over 12.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
 | 20260628 | Arike Ogunbowale | PTS Under 13.5 @ 1.97 | COLD/SHRINK/STINGY | WIN | — | — | +3% |
 | 20260628 | Azura Stevens | PRA Over 20.5 @ 1.83 | BOOK OVERSHOOT | WIN | — | — | +6% |
+| 20260628 | Breanna Stewart | PTS Under 19.5 @ 1.714 | FTUNDER | WIN | — | — | -7% |
 | 20260628 | Carla Leite | PTS Under 14.5 @ 1.73 | FTUNDER | loss | -10% | +0.0 | -4% |
 | 20260628 | Courtney Williams | PTS Under 15.5 @ 1.9 | FTUNDER | WIN | -10% | +0.0 | -3% |
 | 20260628 | Jackie Young | PTS Over 17.5 @ 2.0 | FLIP UNDER(paper) | WIN | -1% | +0.0 | +12% |
 | 20260628 | Jessica Shepard | PA Over 18.5 @ 1.83 | BOOK OVERSHOOT | loss | — | — | -3% |
+| 20260628 | Jonquel Jones | PTS Over 13.5 @ 1.91 | FLIP UNDER(paper) | WIN | -5% | +0.0 | +6% |
 | 20260628 | Kayla McBride | PTS Under 14.5 @ 1.8 | FTUNDER | loss | -12% | +0.0 | -6% |
 | 20260628 | Kiki Iriafen | PTS Under 15.5 @ 1.73 | FTUNDER | loss | -12% | +0.0 | -6% |
 | 20260628 | Megan Gustafson | PR Under 18.5 @ 1.91 | COLD/SHRINK/STINGY | loss | — | — | +6% |
