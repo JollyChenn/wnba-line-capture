@@ -593,3 +593,14 @@ pick_date,game_id,player,team,opp,market,anchor,signals,fair_p,fair_odds,proj,sd
 2026-06-29,401857321,Jonquel Jones,New York Liberty,Las Vegas Aces,pts_under,18.5,steady,0.563,1.78,17.6,5.52
 2026-06-29,401857321,A'ja Wilson,Las Vegas Aces,New York Liberty,pts_under,28.5,steady,0.563,1.78,27.4,6.82
 2026-06-29,401857321,Jackie Young,Las Vegas Aces,New York Liberty,pts_under,19.5,steady,0.563,1.78,18.4,6.75
+2026-06-30,401857321,Chennedy Carter,Las Vegas Aces,New York Liberty,pts_under,15.5,declining+cold+stingy,0.7,1.43,10.8,9.02
+2026-06-30,401857321,Chennedy Carter,Las Vegas Aces,New York Liberty,pr_under,16.5,declining+cold+stingy,0.59,1.69,14.1,10.69
+2026-06-30,401857321,Chennedy Carter,Las Vegas Aces,New York Liberty,pa_under,16.5,declining+cold+stingy,0.61,1.64,13.7,10.09
+2026-06-30,401857321,Chennedy Carter,Las Vegas Aces,New York Liberty,pra_under,17.5,declining+cold+stingy,0.66,1.52,12.6,11.84
+2026-06-30,401857321,NaLyssa Smith,Las Vegas Aces,New York Liberty,pts_under,10.5,cold+stingy,0.626,1.6,8.7,5.48
+2026-06-30,401857321,NaLyssa Smith,Las Vegas Aces,New York Liberty,pr_under,15.5,cold+stingy,0.59,1.69,14.0,6.66
+2026-06-30,401857321,NaLyssa Smith,Las Vegas Aces,New York Liberty,pa_under,11.5,cold+stingy,0.61,1.64,9.9,5.8
+2026-06-30,401857321,NaLyssa Smith,Las Vegas Aces,New York Liberty,pra_under,16.5,cold+stingy,0.621,1.61,14.4,6.91
+2026-06-30,401857321,Breanna Stewart,New York Liberty,Las Vegas Aces,pts_under,18.5,steady,0.563,1.78,17.7,5.32
+2026-06-30,401857321,Jonquel Jones,New York Liberty,Las Vegas Aces,pts_under,18.5,steady,0.563,1.78,17.6,5.52
+2026-06-30,401857321,Jackie Young,Las Vegas Aces,New York Liberty,pts_under,19.5,steady,0.563,1.78,18.4,6.75

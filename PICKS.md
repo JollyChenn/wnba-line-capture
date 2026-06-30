@@ -1,8 +1,8 @@
-# WNBA core picks — 2026-06-29
+# WNBA core picks — 2026-06-30
 
 _Stingy-D threshold (trailing-10 allowed, bottom quartile): 85_
 
-_🩹 OUT/doubtful (excluded from ALL picks): Aaliyah Nye, Alanna Smith, Brittney Sykes, Caitlin Clark, Cameron Brink, Hailey Van Lith, Jordan Horston, Jovana Nogic, Karlie Samuelson, Kate Martin, Katie Lou Samuelson, Kelsey Plum, Kiki Rice, Marina Mabrey, Monique Akoa Makani, Odyssey Sims, Satou Sabally_
+_🩹 OUT/doubtful (excluded from ALL picks): A'ja Wilson, Aaliyah Nye, Alanna Smith, Brittney Sykes, Caitlin Clark, Cameron Brink, Hailey Van Lith, Jordan Horston, Jovana Nogic, Karlie Samuelson, Kate Martin, Katie Lou Samuelson, Kelsey Plum, Kiki Rice, Marina Mabrey, Monique Akoa Makani, Natasha Mack, Odyssey Sims, Satou Sabally_
 
 ## 💰 REAL-MONEY — UNDER (cold/shrink + stingy · pts/PR/PA/PRA · flat 1u)
 
@@ -19,7 +19,6 @@ _ft_volume_drought 58.9% / steady+streak 58.6% OOS vs a synthetic line — prove
 
 - **Breanna Stewart** (New York Liberty, Las Vegas Aces @ New York Liberty): PTS UNDER ~18.5 [steady · PAPER] median~18→proj~17.7 · last5 mins [35 32 34 36 26]
 - **Jonquel Jones** (New York Liberty, Las Vegas Aces @ New York Liberty): PTS UNDER ~18.5 [steady · PAPER] median~18→proj~17.6 · last5 mins [33 33 28 30 27]
-- **A'ja Wilson** (Las Vegas Aces, Las Vegas Aces @ New York Liberty): PTS UNDER ~28.5 [steady · PAPER] median~29→proj~27.4 · last5 mins [37 31 36 32 34]
 - **Jackie Young** (Las Vegas Aces, Las Vegas Aces @ New York Liberty): PTS UNDER ~19.5 [steady · PAPER] median~20→proj~18.4 · last5 mins [38 32 38 32 36]
 
 ---
