@@ -177,3 +177,7 @@ date,player,market,side,line,odds,tier,actual,result,pnl,odds_clv,line_clv,sharp
 20260628,Paige Bueckers,pts,Under,19.5,1.78,THIN,25.0,loss,-1.0,-0.029,0.0,0.0,-0.072,newunder,2026-06-27
 20260628,Skylar Diggins,pts,Under,14.5,1.83,THIN,7.0,WIN,0.83,0.022,0.0,0.0,-0.107,newunder,2026-06-27
 20260628,Sonia Citron,pts,Under,18.5,1.73,SOLID,32.0,loss,-1.0,-0.056,0.0,0.0,-0.107,newunder,2026-06-27
+20260630,Chelsea Gray,pra,Over,24.5,1.75,CASC,17.0,loss,-1.0,0.0,0.0,,,cascade,2026-06-30
+20260630,Chennedy Carter,pra,Over,17.5,1.75,CASC,24.0,WIN,0.75,0.0,0.0,,,cascade,2026-06-30
+20260630,Jewell Loyd,pra,Over,9.5,1.75,CASC,8.0,loss,-1.0,0.0,0.0,,,cascade,2026-06-30
+20260630,NaLyssa Smith,pra,Over,16.5,1.75,CASC,16.0,loss,-1.0,0.0,0.0,,,cascade,2026-06-30
