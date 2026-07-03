@@ -10,7 +10,7 @@ _**sharp-odds** = vs Pinnacle's vig-free fair price (TRUE edge test) · **sharp-
   ★ SHARP ODDS-CLV: -7.0% | beat fair 0/3 (0%)  ← TRUE edge (vs Pinnacle fair price)
   SHARP LINE-CLV : -0.10 pts | n=5  ← better number than the sharp
   self ODDS-CLV  : -0.5% | beat 5/16 (31%)  (1xbet's own close = weak)
-  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 17/36 (-4.5u) · FLIP UNDER 5/12 (-2.9u) · FLIP UNDER(paper) 11/14 (+6.5u) · FTUNDER 41/83 (-7.6u) · HOT OVER 7/11 (+2.3u) · STAR-OUT CASCADE 11/20 (-0.8u) · starout 0/4 (-4.0u)
+  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 15/34 (-6.5u) · FLIP UNDER 5/12 (-2.9u) · FLIP UNDER(paper) 11/14 (+6.5u) · FTUNDER 41/83 (-7.6u) · HOT OVER 8/12 (+3.2u) · STAR-OUT CASCADE 11/20 (-0.8u) · starout 0/4 (-4.0u)
   VERDICT : ⏳ TOO EARLY (n=16; sharp-CLV thin, need ~20-40 ≈ 2wks). CLV flat — not yet meaningful.
   by tier: SOLID 3/9 (-3.0u) · STRONG 3/5 (+0.4u) · THIN 1/2 (+0.0u)
   by market: pr Under 1/3 (-1.0u) · pra Under 1/6 (-4.3u) · pts Under 5/7 (+2.6u)
@@ -211,9 +211,8 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260702 | Brittney Griner | PTS Under 12.5 @ 1.8 | FTUNDER | loss | — | +1.0 | +0% |
 | 20260702 | DeWanna Bonner | PTS Under 12.5 @ 1.8 | FTUNDER | WIN | — | — | +0% |
 | 20260702 | Jessica Shepard | PTS Under 14.5 @ 1.87 | FTUNDER | WIN | — | — | +0% |
-| 20260702 | Jordin Canada | PTS Over 2.5 @ 2.0 | BOOK OVERSHOOT | WIN | — | — | — |
 | 20260702 | Kahleah Copper | PTS Under 18.5 @ 1.952 | FTUNDER | loss | -5% | +0.0 | +0% |
-| 20260702 | Kiki Iriafen | PTS Over 3.5 @ 2.0 | BOOK OVERSHOOT | WIN | — | — | — |
+| 20260702 | Kiki Iriafen | PRA Over 24.5 @ 1.91 | HOT OVER | WIN | — | — | +0% |
 | 20260702 | Michaela Onyenwere | PTS Over 9.5 @ 1.87 | BOOK OVERSHOOT | loss | — | — | +2% |
 | 20260702 | Natisha Hiedeman | PRA Over 22.5 @ 1.73 | BOOK OVERSHOOT | loss | — | — | -4% |
 | 20260702 | Paige Bueckers | PTS Under 20.5 @ 1.909 | FTUNDER | loss | -4% | +0.0 | +2% |

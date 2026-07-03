@@ -188,9 +188,8 @@ date,player,market,side,line,odds,tier,actual,result,pnl,odds_clv,line_clv,sharp
 20260702,Brittney Griner,pts,Under,12.5,1.8,SOLID,13.0,loss,-1.0,0.0,0.0,1.0,,newunder,2026-07-01
 20260702,DeWanna Bonner,pts,Under,12.5,1.8,STRONG,6.0,WIN,0.8,0.0,1.0,,,newunder,2026-07-01
 20260702,Jessica Shepard,pts,Under,14.5,1.87,THIN,14.0,WIN,0.87,0.0,0.0,,,newunder,2026-07-01
-20260702,Jordin Canada,pts,Over,2.5,2.0,STRONG,10.0,WIN,1.0,,,,,overshoot,2026-07-01
 20260702,Kahleah Copper,pts,Under,18.5,1.952,THIN,30.0,loss,-1.0,0.0,0.0,0.0,-0.053,newunder,2026-07-01
-20260702,Kiki Iriafen,pts,Over,3.5,2.0,STRONG,14.0,WIN,1.0,,,,,overshoot,2026-07-01
+20260702,Kiki Iriafen,pra,Over,24.5,1.91,SOLID,26.0,WIN,0.91,0.001,0.0,,,hotover,2026-07-01
 20260702,Michaela Onyenwere,pts,Over,9.5,1.87,STRONG,4.0,loss,-1.0,0.022,0.0,,,overshoot,2026-07-01
 20260702,Natisha Hiedeman,pra,Over,22.5,1.73,STRONG,19.0,loss,-1.0,-0.039,0.0,,,overshoot,2026-07-01
 20260702,Paige Bueckers,pts,Under,20.5,1.909,THIN,25.0,loss,-1.0,0.021,0.0,0.0,-0.038,newunder,2026-07-01
