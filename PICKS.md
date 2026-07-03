@@ -2,7 +2,7 @@
 
 _Stingy-D threshold (trailing-10 allowed, bottom quartile): 85_
 
-_🩹 OUT/doubtful (excluded from ALL picks): Aaliyah Nye, Brittney Sykes, Caitlin Clark, Cameron Brink, Hailey Van Lith, Jovana Nogic, Karlie Samuelson, Kate Martin, Katie Lou Samuelson, Kelsey Plum, Kiki Rice, Marina Mabrey, Natasha Mack, Noemie Brochant, Satou Sabally_
+_🩹 OUT/doubtful (excluded from ALL picks): Aaliyah Nye, Ashlon Jackson, Brittney Sykes, Caitlin Clark, Cameron Brink, Hailey Van Lith, Jovana Nogic, Karlie Samuelson, Kate Martin, Katie Lou Samuelson, Kelsey Plum, Kiki Rice, Marina Mabrey, Natasha Mack, Noemie Brochant, Satou Sabally, Sonia Citron, Sophie Cunningham_
 
 ## 💰 REAL-MONEY — UNDER (cold/shrink + stingy · pts/PR/PA/PRA · flat 1u)
 
