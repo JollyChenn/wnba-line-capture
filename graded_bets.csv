@@ -181,3 +181,17 @@ date,player,market,side,line,odds,tier,actual,result,pnl,odds_clv,line_clv,sharp
 20260630,Chennedy Carter,pra,Over,17.5,1.75,CASC,24.0,WIN,0.75,0.0,0.0,,,cascade,2026-06-30
 20260630,Jewell Loyd,pra,Over,9.5,1.75,CASC,8.0,loss,-1.0,0.0,0.0,,,cascade,2026-06-30
 20260630,NaLyssa Smith,pra,Over,16.5,1.75,CASC,16.0,loss,-1.0,0.0,0.0,,,cascade,2026-06-30
+20260702,Allisha Gray,pra,Under,22.5,1.73,STRONG,24.0,loss,-1.0,-0.114,0.0,,,model,2026-07-01
+20260702,Angel Reese,pr,Over,27.5,2.0,THIN,26.0,loss,-1.0,0.025,0.0,-1.5,,flip,2026-07-01
+20260702,Arike Ogunbowale,pts,Under,13.5,2.0,SOLID,9.0,WIN,1.0,0.0,0.0,0.0,-0.068,model,2026-07-02
+20260702,Azzi Fudd,pr,Over,15.5,1.73,STRONG,8.0,loss,-1.0,-0.039,0.0,,,overshoot,2026-07-01
+20260702,Brittney Griner,pts,Under,12.5,1.8,SOLID,13.0,loss,-1.0,0.0,0.0,1.0,,newunder,2026-07-01
+20260702,DeWanna Bonner,pts,Under,12.5,1.8,STRONG,6.0,WIN,0.8,0.0,1.0,,,newunder,2026-07-01
+20260702,Jessica Shepard,pts,Under,14.5,1.87,THIN,14.0,WIN,0.87,0.0,0.0,,,newunder,2026-07-01
+20260702,Jordin Canada,pts,Over,2.5,2.0,STRONG,10.0,WIN,1.0,,,,,overshoot,2026-07-01
+20260702,Kahleah Copper,pts,Under,18.5,1.952,THIN,30.0,loss,-1.0,0.0,0.0,0.0,-0.053,newunder,2026-07-01
+20260702,Kiki Iriafen,pts,Over,3.5,2.0,STRONG,14.0,WIN,1.0,,,,,overshoot,2026-07-01
+20260702,Michaela Onyenwere,pts,Over,9.5,1.87,STRONG,4.0,loss,-1.0,0.022,0.0,,,overshoot,2026-07-01
+20260702,Natisha Hiedeman,pra,Over,22.5,1.73,STRONG,19.0,loss,-1.0,-0.039,0.0,,,overshoot,2026-07-01
+20260702,Paige Bueckers,pts,Under,20.5,1.909,THIN,25.0,loss,-1.0,0.021,0.0,0.0,-0.038,newunder,2026-07-01
+20260702,Shakira Austin,pts,Over,2.5,1.73,STRONG,21.0,WIN,0.73,,,,,flip_paper,2026-07-01
