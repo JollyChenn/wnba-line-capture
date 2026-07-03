@@ -439,6 +439,8 @@ def overshoot_overs(props, inj, picked, pin, ptot=None):
             v10 = v[-10:]; med = statistics.median(v10); t3 = statistics.mean(v[-3:])
             if line > med - 3 or t3 <= med - 3:           # deep overshoot only; skip COLD form
                 continue
+            if line < med * 0.5:                          # PERIOD/LIVE-PROP guard: a "pts 2.5" vs median 10 is a quarter/in-game
+                continue                                  # line 1xbet serves under the same code (Canada/Iriafen 07-01) — not a full-game overshoot
             tot = ptot.get(cur_team)                       # GAME-TOTAL trap: a low-scoring game craters POINTS,
             if st in TOTAL_TRAP and tot is not None and tot <= LOW_TOTAL:   # so pts/PRA overshoot-overs are traps
                 continue                                   # there (June-15); assists/rebounds are immune -> keep pa/pr/ra
