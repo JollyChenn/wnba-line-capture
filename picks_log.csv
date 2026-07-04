@@ -690,3 +690,20 @@ pick_date,game_id,player,team,opp,market,anchor,signals,fair_p,fair_odds,proj,sd
 2026-07-03,401857040,Megan Gustafson,Portland Fire,Seattle Storm,pts_under,14.5,steady,0.563,1.78,13.8,4.38
 2026-07-03,401857040,Sarah Ashlee Barker,Portland Fire,Seattle Storm,pts_under,11.5,steady,0.563,1.78,10.7,5.33
 2026-07-03,401857040,Awa Fam,Seattle Storm,Portland Fire,pts_under,13.5,ftdrought,0.589,1.7,12.2,5.59
+2026-07-04,401857039,Rhyne Howard,Atlanta Dream,Golden State Valkyries,pr_under,26.5,cold+stingy,0.59,1.69,25.3,5.41
+2026-07-04,401857039,Allisha Gray,Atlanta Dream,Golden State Valkyries,pts_under,16.5,steady,0.563,1.78,15.7,4.84
+2026-07-04,401857039,Gabby Williams,Golden State Valkyries,Atlanta Dream,pts_under,17.5,steady,0.563,1.78,16.4,6.72
+2026-07-04,401857039,Angel Reese,Atlanta Dream,Golden State Valkyries,pts_under,15.5,steady,0.563,1.78,14.8,4.52
+2026-07-04,401857040,Flau'jae Johnson,Seattle Storm,Portland Fire,pra_over,19.5,hot+expand+leaky,0.62,1.61,23.1,10.26
+2026-07-04,401857040,Jade Melbourne,Seattle Storm,Portland Fire,pra_over,13.5,hot+leaky,0.62,1.61,15.7,7.09
+2026-07-04,401857040,Natisha Hiedeman,Seattle Storm,Portland Fire,pts_under,17.5,steady,0.563,1.78,16.8,4.42
+2026-07-04,401857040,Megan Gustafson,Portland Fire,Seattle Storm,pts_under,14.5,steady,0.563,1.78,13.8,4.38
+2026-07-04,401857040,Sarah Ashlee Barker,Portland Fire,Seattle Storm,pts_under,11.5,steady,0.563,1.78,10.7,5.33
+2026-07-04,401857040,Awa Fam,Seattle Storm,Portland Fire,pts_under,13.5,ftdrought,0.589,1.7,12.2,5.59
+2026-07-04,401857041,Isabelle Harrison,Toronto Tempo,Dallas Wings,pts_under,11.5,steady,0.563,1.78,10.7,4.9
+2026-07-04,401857041,Jessica Shepard,Dallas Wings,Toronto Tempo,pts_under,13.5,steady,0.563,1.78,12.8,4.14
+2026-07-04,401857041,Paige Bueckers,Dallas Wings,Toronto Tempo,pts_under,23.5,steady,0.563,1.78,22.5,6.25
+2026-07-04,401857041,Azzi Fudd,Dallas Wings,Toronto Tempo,pts_under,14.5,ftdrought,0.589,1.7,12.9,7.25
+2026-07-04,401857042,Kelsey Mitchell,Indiana Fever,Las Vegas Aces,pts_under,21.5,steady,0.563,1.78,20.7,5.0
+2026-07-04,401857042,Jackie Young,Las Vegas Aces,Indiana Fever,pts_under,19.5,steady,0.563,1.78,18.4,6.8
+2026-07-04,401857042,Aliyah Boston,Indiana Fever,Las Vegas Aces,pts_under,15.5,steady,0.563,1.78,14.3,7.43
