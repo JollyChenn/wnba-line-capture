@@ -10,7 +10,7 @@ _**sharp-odds** = vs Pinnacle's vig-free fair price (TRUE edge test) · **sharp-
   ★ SHARP ODDS-CLV: -7.0% | beat fair 0/3 (0%)  ← TRUE edge (vs Pinnacle fair price)
   SHARP LINE-CLV : -0.10 pts | n=5  ← better number than the sharp
   self ODDS-CLV  : -0.5% | beat 5/16 (31%)  (1xbet's own close = weak)
-  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 15/34 (-6.5u) · FLIP UNDER 5/12 (-2.9u) · FLIP UNDER(paper) 11/14 (+6.5u) · FTUNDER 41/83 (-7.6u) · HOT OVER 8/12 (+3.2u) · STAR-OUT CASCADE 11/20 (-0.8u) · starout 0/4 (-4.0u)
+  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 16/37 (-7.6u) · FLIP UNDER 5/12 (-2.9u) · FLIP UNDER(paper) 11/14 (+6.5u) · FTUNDER 41/86 (-10.6u) · HOT OVER 8/12 (+3.2u) · STAR-OUT CASCADE 11/20 (-0.8u) · starout 0/4 (-4.0u)
   VERDICT : ⏳ TOO EARLY (n=16; sharp-CLV thin, need ~20-40 ≈ 2wks). CLV flat — not yet meaningful.
   by tier: SOLID 3/9 (-3.0u) · STRONG 3/5 (+0.4u) · THIN 1/2 (+0.0u)
   by market: pr Under 1/3 (-1.0u) · pra Under 1/6 (-4.3u) · pts Under 5/7 (+2.6u)
@@ -217,3 +217,9 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260702 | Natisha Hiedeman | PRA Over 22.5 @ 1.73 | BOOK OVERSHOOT | loss | — | — | -4% |
 | 20260702 | Paige Bueckers | PTS Under 20.5 @ 1.909 | FTUNDER | loss | -4% | +0.0 | +2% |
 | 20260702 | Shakira Austin | PTS Over 2.5 @ 1.73 | FLIP UNDER(paper) | WIN | — | — | — |
+| 20260703 | Breanna Stewart | PTS Under 19.5 @ 1.79 | FTUNDER | loss | -4% | +0.0 | -1% |
+| 20260703 | Courtney Williams | PTS Under 15.5 @ 1.82 | FTUNDER | loss | -8% | +0.0 | +1% |
+| 20260703 | Jonquel Jones | PA Over 17.5 @ 1.83 | BOOK OVERSHOOT | WIN | — | — | -6% |
+| 20260703 | Kayla McBride | PTS Under 15.5 @ 1.81 | FTUNDER | loss | — | — | +0% |
+| 20260703 | Natasha Howard | PTS Over 15.5 @ 1.74 | BOOK OVERSHOOT | loss | -6% | — | +1% |
+| 20260703 | Olivia Miles | PA Over 24.5 @ 1.83 | BOOK OVERSHOOT | loss | — | — | +0% |
