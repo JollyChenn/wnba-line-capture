@@ -3384,3 +3384,17 @@ captured_utc,date,player,market,side,line,odds,tier,ev,pinn,src
 2026-07-04T21:37:43+00:00,2026-07-04,Jewell Loyd,pra,Over,9.5,1.75,CASC,0.0,,cascade
 2026-07-04T21:37:43+00:00,2026-07-04,Cheyenne Parker-Tyus,pra,Over,10.5,1.75,CASC,0.0,,cascade
 2026-07-04T21:37:43+00:00,2026-07-04,Chelsea Gray,pa,Over,19.5,1.8,SOLID,0.171,,overshoot
+2026-07-04T22:10:32+00:00,2026-07-04,Megan Gustafson,pts,Over,12.5,1.95,SOLID,0.203,12.5,flip_paper
+2026-07-04T22:10:32+00:00,2026-07-04,Jessica Shepard,pts,Under,13.5,1.91,THIN,0.083,,newunder
+2026-07-04T22:10:32+00:00,2026-07-04,Paige Bueckers,pts,Over,21.5,1.91,THIN,0.076,,flip_paper
+2026-07-04T22:10:32+00:00,2026-07-04,Azzi Fudd,pts,Under,14.5,1.73,SOLID,0.016,,newunder
+2026-07-04T22:10:32+00:00,2026-07-04,Kelsey Mitchell,pts,Under,23.5,1.83,STRONG,0.303,,newunder
+2026-07-04T22:10:32+00:00,2026-07-04,Aliyah Boston,pts,Under,18.5,1.76,STRONG,0.257,,newunder
+2026-07-04T22:10:32+00:00,2026-07-04,Aliyah Boston,pra,Over,29.5,1.83,CASC,0.046,,cascade
+2026-07-04T22:10:32+00:00,2026-07-04,Monique Billings,pra,Over,12.5,1.75,CASC,0.0,,cascade
+2026-07-04T22:10:32+00:00,2026-07-04,Myisha Hines-Allen,pra,Over,7.5,1.75,CASC,0.0,,cascade
+2026-07-04T22:10:32+00:00,2026-07-04,Chelsea Gray,pra,Over,24.5,2.0,CASC,0.143,,cascade
+2026-07-04T22:10:32+00:00,2026-07-04,NaLyssa Smith,pra,Over,16.5,1.75,CASC,0.0,,cascade
+2026-07-04T22:10:32+00:00,2026-07-04,Jewell Loyd,pra,Over,9.5,1.75,CASC,0.0,,cascade
+2026-07-04T22:10:32+00:00,2026-07-04,Cheyenne Parker-Tyus,pra,Over,10.5,1.75,CASC,0.0,,cascade
+2026-07-04T22:10:32+00:00,2026-07-04,Chelsea Gray,pa,Over,19.5,1.8,SOLID,0.171,,overshoot
