@@ -10,7 +10,7 @@ _**sharp-odds** = vs Pinnacle's vig-free fair price (TRUE edge test) · **sharp-
   ★ SHARP ODDS-CLV: -7.0% | beat fair 0/4 (0%)  ← TRUE edge (vs Pinnacle fair price)
   SHARP LINE-CLV : -0.08 pts | n=6  ← better number than the sharp
   self ODDS-CLV  : -0.5% | beat 5/16 (31%)  (1xbet's own close = weak)
-  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 16/37 (-7.6u) · FLIP UNDER 5/12 (-2.9u) · FLIP UNDER(paper) 11/14 (+6.5u) · FTUNDER 41/87 (-11.6u) · HOT OVER 8/13 (+2.2u) · STAR-OUT CASCADE 14/24 (+0.5u) · starout 0/4 (-4.0u)
+  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 16/37 (-7.6u) · FLIP UNDER 6/13 (-2.0u) · FLIP UNDER(paper) 13/16 (+8.2u) · FTUNDER 41/88 (-12.6u) · HOT OVER 8/13 (+2.2u) · STAR-OUT CASCADE 14/24 (+0.5u) · starout 0/4 (-4.0u)
   VERDICT : ⏳ TOO EARLY (n=17; sharp-CLV thin, need ~20-40 ≈ 2wks). CLV flat — not yet meaningful.
   by tier: SOLID 3/9 (-3.0u) · STRONG 4/6 (+1.1u) · THIN 1/2 (+0.0u)
   by market: pr Under 1/3 (-1.0u) · pra Under 1/6 (-4.3u) · pts Under 6/8 (+3.4u)
@@ -230,3 +230,7 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260703 | NaLyssa Smith | PRA Over 16.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260703 | Natasha Howard | PTS Over 15.5 @ 1.74 | BOOK OVERSHOOT | loss | -6% | — | +1% |
 | 20260703 | Olivia Miles | PA Over 24.5 @ 1.83 | BOOK OVERSHOOT | loss | — | — | +0% |
+| 20260704 | Allisha Gray | PTS Under 16.5 @ 2.0 | FTUNDER | loss | — | — | +0% |
+| 20260704 | Angel Reese | PTS Over 13.5 @ 1.82 | FLIP UNDER(paper) | WIN | -4% | +0.0 | +6% |
+| 20260704 | Gabby Williams | PTS Over 15.5 @ 1.893 | FLIP UNDER(paper) | WIN | — | — | +3% |
+| 20260704 | Rhyne Howard | PR Over 22.5 @ 1.87 | FLIP UNDER | WIN | — | — | +0% |

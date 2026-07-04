@@ -207,3 +207,7 @@ date,player,market,side,line,odds,tier,actual,result,pnl,odds_clv,line_clv,sharp
 20260703,NaLyssa Smith,pra,Over,16.5,1.75,CASC,38.0,WIN,0.75,0.0,0.0,,,cascade,2026-07-02
 20260703,Natasha Howard,pts,Over,15.5,1.74,STRONG,7.0,loss,-1.0,0.006,1.0,,-0.063,overshoot,2026-07-02
 20260703,Olivia Miles,pa,Over,24.5,1.83,STRONG,19.0,loss,-1.0,0.0,0.0,,,overshoot,2026-07-02
+20260704,Allisha Gray,pts,Under,16.5,2.0,THIN,22.0,loss,-1.0,0.0,-1.0,,,newunder,2026-07-03
+20260704,Angel Reese,pts,Over,13.5,1.82,SOLID,17.0,WIN,0.82,0.058,0.0,0.0,-0.042,flip_paper,2026-07-03
+20260704,Gabby Williams,pts,Over,15.5,1.893,THIN,19.0,WIN,0.89,0.034,0.0,,,flip_paper,2026-07-03
+20260704,Rhyne Howard,pr,Over,22.5,1.87,STRONG,24.0,WIN,0.87,0.0,-1.0,,,flip,2026-07-03
