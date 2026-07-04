@@ -4,16 +4,16 @@ _Auto-updated after each slate settles. Raw data: `graded_bets.csv`. CLV>0 = we 
 _**sharp-odds** = vs Pinnacle's vig-free fair price (TRUE edge test) · **sharp-line** = pts vs Pinnacle's line · **self** = vs 1xbet's own close (weak)._
 
 ```
-📊 WNBA BOT — TRACK RECORD (16 settled · PROVEN signals only)
-  Record  : 7-9  (44% hit)
-  Net P&L : -2.67u  (ROI -16.7%/bet)
-  ★ SHARP ODDS-CLV: -7.0% | beat fair 0/3 (0%)  ← TRUE edge (vs Pinnacle fair price)
-  SHARP LINE-CLV : -0.10 pts | n=5  ← better number than the sharp
+📊 WNBA BOT — TRACK RECORD (17 settled · PROVEN signals only)
+  Record  : 8-9  (47% hit)
+  Net P&L : -1.89u  (ROI -11.1%/bet)
+  ★ SHARP ODDS-CLV: -7.0% | beat fair 0/4 (0%)  ← TRUE edge (vs Pinnacle fair price)
+  SHARP LINE-CLV : -0.08 pts | n=6  ← better number than the sharp
   self ODDS-CLV  : -0.5% | beat 5/16 (31%)  (1xbet's own close = weak)
-  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 16/37 (-7.6u) · FLIP UNDER 5/12 (-2.9u) · FLIP UNDER(paper) 11/14 (+6.5u) · FTUNDER 41/86 (-10.6u) · HOT OVER 8/12 (+3.2u) · STAR-OUT CASCADE 11/20 (-0.8u) · starout 0/4 (-4.0u)
-  VERDICT : ⏳ TOO EARLY (n=16; sharp-CLV thin, need ~20-40 ≈ 2wks). CLV flat — not yet meaningful.
-  by tier: SOLID 3/9 (-3.0u) · STRONG 3/5 (+0.4u) · THIN 1/2 (+0.0u)
-  by market: pr Under 1/3 (-1.0u) · pra Under 1/6 (-4.3u) · pts Under 5/7 (+2.6u)
+  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 16/37 (-7.6u) · FLIP UNDER 5/12 (-2.9u) · FLIP UNDER(paper) 11/14 (+6.5u) · FTUNDER 41/87 (-11.6u) · HOT OVER 8/13 (+2.2u) · STAR-OUT CASCADE 14/24 (+0.5u) · starout 0/4 (-4.0u)
+  VERDICT : ⏳ TOO EARLY (n=17; sharp-CLV thin, need ~20-40 ≈ 2wks). CLV flat — not yet meaningful.
+  by tier: SOLID 3/9 (-3.0u) · STRONG 4/6 (+1.1u) · THIN 1/2 (+0.0u)
+  by market: pr Under 1/3 (-1.0u) · pra Under 1/6 (-4.3u) · pts Under 6/8 (+3.4u)
 ```
 
 ## Per-bet
@@ -217,9 +217,16 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260702 | Natisha Hiedeman | PRA Over 22.5 @ 1.73 | BOOK OVERSHOOT | loss | — | — | -4% |
 | 20260702 | Paige Bueckers | PTS Under 20.5 @ 1.909 | FTUNDER | loss | -4% | +0.0 | +2% |
 | 20260702 | Shakira Austin | PTS Over 2.5 @ 1.73 | FLIP UNDER(paper) | WIN | — | — | — |
+| 20260703 | Azura Stevens | PTS Under 10.5 @ 1.96 | FTUNDER | loss | -9% | — | -4% |
 | 20260703 | Breanna Stewart | PTS Under 19.5 @ 1.79 | FTUNDER | loss | -4% | +0.0 | -1% |
+| 20260703 | Chelsea Gray | PRA Over 24.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
+| 20260703 | Chennedy Carter | PRA Over 17.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
+| 20260703 | Chennedy Carter | PTS Under 17.5 @ 1.78 | COLD/SHRINK/STINGY | WIN | -7% | +0.0 | — |
 | 20260703 | Courtney Williams | PTS Under 15.5 @ 1.82 | FTUNDER | loss | -8% | +0.0 | +1% |
+| 20260703 | Jackie Young | PRA Over 31.5 @ 1.73 | HOT OVER | loss | — | +0.0 | -14% |
+| 20260703 | Jewell Loyd | PRA Over 7.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260703 | Jonquel Jones | PA Over 17.5 @ 1.83 | BOOK OVERSHOOT | WIN | — | — | -6% |
 | 20260703 | Kayla McBride | PTS Under 15.5 @ 1.81 | FTUNDER | loss | — | — | +0% |
+| 20260703 | NaLyssa Smith | PRA Over 16.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260703 | Natasha Howard | PTS Over 15.5 @ 1.74 | BOOK OVERSHOOT | loss | -6% | — | +1% |
 | 20260703 | Olivia Miles | PA Over 24.5 @ 1.83 | BOOK OVERSHOOT | loss | — | — | +0% |
