@@ -2,7 +2,7 @@
 
 _Stingy-D threshold (trailing-10 allowed, bottom quartile): 85_
 
-_🩹 OUT/doubtful (excluded from ALL picks): A'ja Wilson, Aaliyah Nye, Aneesah Morrow, Brittney Sykes, Caitlin Clark, Cameron Brink, Jovana Nogic, Julie Allemand, Karlie Samuelson, Katie Lou Samuelson, Kelsey Plum, Kiki Rice, Natasha Mack, Noemie Brochant, Satou Sabally, Temi Fagbenle_
+_🩹 OUT/doubtful (excluded from ALL picks): A'ja Wilson, Aaliyah Nye, Aneesah Morrow, Brittney Sykes, Caitlin Clark, Cameron Brink, Jovana Nogic, Julie Allemand, Karlie Samuelson, Katie Lou Samuelson, Kelsey Plum, Kiki Rice, Natasha Mack, Noemie Brochant, Olivia Miles, Satou Sabally, Temi Fagbenle_
 
 ## 💰 REAL-MONEY — UNDER (cold/shrink + stingy · pts/PR/PA/PRA · flat 1u)
 
@@ -41,7 +41,6 @@ _ft_volume_drought 58.9% / steady+streak 58.6% OOS vs a synthetic line — prove
 - **Kayla McBride** (Minnesota Lynx, Connecticut Sun @ Minnesota Lynx): PTS UNDER ~16.5 [steady · PAPER] median~17→proj~16.0 · last5 mins [34 36 38 38 33]
 - **Olivia Nelson-Ododa** (Connecticut Sun, Connecticut Sun @ Minnesota Lynx): PTS UNDER ~10.5 [steady · PAPER] median~11→proj~9.9 · last5 mins [10 16 27 30 24]
 - **Diamond Miller** (Connecticut Sun, Connecticut Sun @ Minnesota Lynx): PTS UNDER ~8.5 [ftdrought · PAPER] median~8→proj~7.6 · last5 mins [12 21 24 25 22]
-- **Olivia Miles** (Minnesota Lynx, Connecticut Sun @ Minnesota Lynx): PTS UNDER ~20.5 [steady · PAPER] median~21→proj~19.3 · last5 mins [32 32 35 34 26]
 - **Nneka Ogwumike** (Los Angeles Sparks, Seattle Storm @ Los Angeles Sparks): PTS UNDER ~15.5 [steady · PAPER] median~16→proj~14.6 · last5 mins [29 30 35 27 26]
 - **Natisha Hiedeman** (Seattle Storm, Seattle Storm @ Los Angeles Sparks): PTS UNDER ~17.5 [steady · PAPER] median~18→proj~16.8 · last5 mins [37 33 31 27 34]
 - **Awa Fam** (Seattle Storm, Seattle Storm @ Los Angeles Sparks): PTS UNDER ~13.5 [ftdrought · PAPER] median~14→proj~12.4 · last5 mins [39 33 28 27 34]
