@@ -214,11 +214,23 @@ date,player,market,side,line,odds,tier,actual,result,pnl,odds_clv,line_clv,sharp
 20260704,Natisha Hiedeman,pts,Over,14.5,1.8,STRONG,15.0,WIN,0.8,0.0,1.0,,,flip_paper,2026-07-03
 20260704,Rhyne Howard,pr,Over,22.5,1.87,STRONG,24.0,WIN,0.87,0.0,-1.0,,,flip,2026-07-03
 20260704,Sarah Ashlee Barker,pts,Under,11.5,1.81,THIN,4.0,WIN,0.81,,,,,newunder,2026-07-04
+20260705,Aliyah Boston,pra,Over,28.5,1.75,CASC,29.0,WIN,0.75,0.0,0.0,,,cascade,2026-07-04
+20260705,Aliyah Boston,pts,Under,17.5,1.77,STRONG,18.0,loss,-1.0,-0.068,0.0,0.0,-0.126,newunder,2026-07-04
 20260705,Azzi Fudd,pts,Under,14.5,1.73,SOLID,17.0,loss,-1.0,-0.039,0.0,0.0,-0.153,newunder,2026-07-04
+20260705,Chelsea Gray,pa,Over,19.5,1.73,SOLID,16.0,loss,-1.0,0.0,0.0,,,overshoot,2026-07-04
+20260705,Chelsea Gray,pra,Over,24.5,2.0,CASC,20.0,loss,-1.0,0.143,1.0,,,cascade,2026-07-04
+20260705,Cheyenne Parker-Tyus,pra,Over,10.5,1.75,CASC,9.0,loss,-1.0,0.0,0.0,,,cascade,2026-07-04
 20260705,Isabelle Harrison,pra,Over,19.5,1.75,CASC,19.0,loss,-1.0,0.0,0.0,,,cascade,2026-07-04
 20260705,Isabelle Harrison,pts,Under,14.5,1.67,STRONG,13.0,WIN,0.67,-0.097,0.0,,,newunder,2026-07-05
+20260705,Jackie Young,pra,Over,29.5,1.73,STRONG,21.0,loss,-1.0,-0.039,0.0,,,hotover,2026-07-04
 20260705,Jessica Shepard,pts,Under,13.5,1.91,THIN,14.0,loss,-1.0,-0.045,-1.0,,-0.153,newunder,2026-07-04
+20260705,Jewell Loyd,pra,Over,9.5,1.75,CASC,16.0,WIN,0.75,0.0,0.0,,,cascade,2026-07-04
+20260705,Kelsey Mitchell,pts,Under,23.5,1.88,STRONG,27.0,loss,-1.0,0.005,0.0,,,newunder,2026-07-04
 20260705,Maria Conde,pra,Over,17.5,1.75,CASC,16.0,loss,-1.0,0.0,0.0,,,cascade,2026-07-04
 20260705,Marina Mabrey,pts,Under,22.5,1.81,STRONG,19.0,WIN,0.81,,1.0,,,newunder,2026-06-26
+20260705,Monique Billings,pra,Over,12.5,1.75,CASC,14.0,WIN,0.75,0.0,0.0,,,cascade,2026-07-04
+20260705,Myisha Hines-Allen,pra,Over,7.5,1.75,CASC,9.0,WIN,0.75,0.0,0.0,,,cascade,2026-07-04
+20260705,NaLyssa Smith,pra,Over,16.5,1.75,CASC,20.0,WIN,0.75,0.0,0.0,,,cascade,2026-07-04
 20260705,Nyara Sabally,pra,Over,16.5,1.75,CASC,26.0,WIN,0.75,0.0,0.0,,,cascade,2026-07-04
 20260705,Paige Bueckers,pts,Over,21.5,1.91,THIN,22.0,WIN,0.91,0.061,0.0,0.0,-0.06,flip_paper,2026-07-04
+20260705,Sophie Cunningham,pra,Over,12.5,1.75,CASC,11.0,loss,-1.0,0.0,0.0,,,cascade,2026-07-05
