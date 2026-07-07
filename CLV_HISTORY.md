@@ -4,16 +4,16 @@ _Auto-updated after each slate settles. Raw data: `graded_bets.csv`. CLV>0 = we 
 _**sharp-odds** = vs Pinnacle's vig-free fair price (TRUE edge test) · **sharp-line** = pts vs Pinnacle's line · **self** = vs 1xbet's own close (weak)._
 
 ```
-📊 WNBA BOT — TRACK RECORD (17 settled · PROVEN signals only)
-  Record  : 8-9  (47% hit)
-  Net P&L : -1.89u  (ROI -11.1%/bet)
+📊 WNBA BOT — TRACK RECORD (19 settled · PROVEN signals only)
+  Record  : 9-10  (47% hit)
+  Net P&L : -2.14u  (ROI -11.3%/bet)
   ★ SHARP ODDS-CLV: -7.0% | beat fair 0/4 (0%)  ← TRUE edge (vs Pinnacle fair price)
-  SHARP LINE-CLV : -0.08 pts | n=6  ← better number than the sharp
-  self ODDS-CLV  : -0.5% | beat 5/16 (31%)  (1xbet's own close = weak)
-  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 17/39 (-7.8u) · FLIP UNDER 6/13 (-2.0u) · FLIP UNDER(paper) 15/18 (+9.9u) · FTUNDER 44/95 (-14.3u) · HOT OVER 8/14 (+1.2u) · STAR-OUT CASCADE 20/35 (+0.0u) · starout 0/4 (-4.0u)
-  VERDICT : ⏳ TOO EARLY (n=17; sharp-CLV thin, need ~20-40 ≈ 2wks). CLV flat — not yet meaningful.
-  by tier: SOLID 3/9 (-3.0u) · STRONG 4/6 (+1.1u) · THIN 1/2 (+0.0u)
-  by market: pr Under 1/3 (-1.0u) · pra Under 1/6 (-4.3u) · pts Under 6/8 (+3.4u)
+  SHARP LINE-CLV : +0.07 pts | n=7  ← better number than the sharp
+  self ODDS-CLV  : -0.5% | beat 5/18 (28%)  (1xbet's own close = weak)
+  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 18/41 (-8.0u) · FLIP UNDER 7/14 (-1.1u) · FLIP UNDER(paper) 15/20 (+7.9u) · FTUNDER 46/97 (-12.5u) · HOT OVER 9/16 (+0.9u) · STAR-OUT CASCADE 25/47 (-3.1u) · starout 0/5 (-5.0u)
+  VERDICT : ⏳ TOO EARLY (n=19; sharp-CLV thin, need ~20-40 ≈ 2wks). CLV flat — not yet meaningful.
+  by tier: SOLID 4/10 (-2.3u) · STRONG 4/7 (+0.1u) · THIN 1/2 (+0.0u)
+  by market: pr Under 1/3 (-1.0u) · pra Under 1/7 (-5.3u) · pts Under 7/9 (+4.2u)
 ```
 
 ## Per-bet
@@ -257,3 +257,27 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260705 | Nyara Sabally | PRA Over 16.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260705 | Paige Bueckers | PTS Over 21.5 @ 1.91 | FLIP UNDER(paper) | WIN | -6% | +0.0 | +6% |
 | 20260705 | Sophie Cunningham | PRA Over 12.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
+| 20260706 | Ariel Atkins | PRA Over 12.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
+| 20260706 | Cotie McMahon | PRA Over 11.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
+| 20260706 | Courtney Williams | PRA Over 23.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | +6.0 | +0% |
+| 20260706 | Courtney Williams | PRA Under 25.5 @ 1.73 | COLD/SHRINK/STINGY | loss | — | — | +0% |
+| 20260706 | Dearica Hamby | PRA Over 21.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
+| 20260706 | Erica Wheeler | PRA Over 10.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
+| 20260706 | Flau'jae Johnson | PRA Over 20.5 @ 1.73 | HOT OVER | WIN | — | — | — |
+| 20260706 | Gabby Williams | PTS Over 14.5 @ 1.91 | FLIP UNDER(paper) | loss | — | — | +0% |
+| 20260706 | Georgia Amoore | PRA Over 11.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
+| 20260706 | Janelle Salaun | PTS Under 10.5 @ 1.75 | COLD/SHRINK/STINGY | WIN | — | +1.0 | +0% |
+| 20260706 | Kayla McBride | PTS Under 18.5 @ 1.85 | starout | loss | — | +1.0 | +0% |
+| 20260706 | Kiki Iriafen | PRA Over 26.5 @ 2.0 | HOT OVER | loss | — | — | +2% |
+| 20260706 | Maya Caldwell | PRA Over 7.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
+| 20260706 | Michaela Onyenwere | PRA Over 16.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
+| 20260706 | Michaela Onyenwere | PTS Over 9.5 @ 1.83 | BOOK OVERSHOOT | loss | — | — | -3% |
+| 20260706 | Natasha Howard | PRA Over 25.5 @ 1.893 | STAR-OUT CASCADE | WIN | — | — | +0% |
+| 20260706 | Natasha Howard | PTS Over 16.5 @ 1.893 | FLIP UNDER | WIN | — | -1.0 | +5% |
+| 20260706 | Natisha Hiedeman | PTS Over 15.5 @ 1.833 | FLIP UNDER(paper) | loss | — | — | +0% |
+| 20260706 | Nia Coffey | PRA Over 14.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
+| 20260706 | Nneka Ogwumike | PRA Over 29.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
+| 20260706 | Nneka Ogwumike | PTS Under 17.5 @ 1.769 | FTUNDER | WIN | -7% | — | -5% |
+| 20260706 | Olivia Nelson-Ododa | PR Over 15.5 @ 1.8 | BOOK OVERSHOOT | WIN | — | — | +0% |
+| 20260706 | Shakira Austin | PRA Over 22.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
+| 20260706 | Shakira Austin | PTS Under 11.5 @ 2.0 | FTUNDER | WIN | — | -2.0 | +3% |
