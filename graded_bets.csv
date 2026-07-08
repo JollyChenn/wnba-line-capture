@@ -258,8 +258,12 @@ date,player,market,side,line,odds,tier,actual,result,pnl,odds_clv,line_clv,sharp
 20260706,Olivia Nelson-Ododa,pr,Over,15.5,1.8,STRONG,18.0,WIN,0.8,0.0,0.0,,,overshoot,2026-07-05
 20260706,Shakira Austin,pra,Over,22.5,1.75,CASC,22.0,loss,-1.0,0.0,1.0,,,cascade,2026-07-05
 20260706,Shakira Austin,pts,Under,11.5,2.0,STRONG,11.0,WIN,1.0,0.026,0.0,-2.0,,newunder,2026-07-05
+20260707,Azura Stevens,pra,Over,20.5,1.91,STRONG,21.0,WIN,0.91,0.001,0.0,,,overshoot,2026-07-06
 20260707,Azzi Fudd,pts,Under,14.5,1.81,SOLID,12.0,WIN,0.81,0.0,0.0,,,newunder,2026-07-06
 20260707,Breanna Stewart,pts,Under,19.5,1.79,SOLID,29.0,loss,-1.0,-0.032,0.0,0.0,-0.123,newunder,2026-07-06
+20260707,DeWanna Bonner,pts,Under,11.5,1.91,STRONG,12.0,loss,-1.0,0.005,0.0,0.0,-0.06,newunder,2026-07-06
 20260707,Jessica Shepard,pr,Over,23.5,1.83,STRONG,34.0,WIN,0.83,0.0,0.0,,,overshoot,2026-07-07
 20260707,Jonquel Jones,pra,Over,26.5,1.91,STRONG,31.0,WIN,0.91,0.104,0.0,,,overshoot,2026-07-06
+20260707,Kahleah Copper,pr,Over,23.5,2.02,STRONG,29.0,WIN,1.02,0.104,0.0,,,overshoot,2026-07-06
+20260707,Kamilla Cardoso,pts,Under,14.5,1.8,THIN,9.0,WIN,0.8,,-1.0,,,newunder,2026-07-06
 20260707,Paige Bueckers,pts,Over,20.5,1.82,SOLID,15.0,loss,-1.0,0.0,1.0,,-0.112,flip_paper,2026-07-06
