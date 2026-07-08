@@ -10,7 +10,7 @@ _**sharp-odds** = vs Pinnacle's vig-free fair price (TRUE edge test) · **sharp-
   ★ SHARP ODDS-CLV: -7.0% | beat fair 0/4 (0%)  ← TRUE edge (vs Pinnacle fair price)
   SHARP LINE-CLV : +0.07 pts | n=7  ← better number than the sharp
   self ODDS-CLV  : -0.5% | beat 5/18 (28%)  (1xbet's own close = weak)
-  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 18/41 (-8.0u) · FLIP UNDER 7/14 (-1.1u) · FLIP UNDER(paper) 15/20 (+7.9u) · FTUNDER 46/97 (-12.5u) · HOT OVER 9/16 (+0.9u) · STAR-OUT CASCADE 25/47 (-3.1u) · starout 0/5 (-5.0u)
+  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 20/43 (-6.3u) · FLIP UNDER 7/14 (-1.1u) · FLIP UNDER(paper) 15/21 (+6.9u) · FTUNDER 47/99 (-12.7u) · HOT OVER 9/16 (+0.9u) · STAR-OUT CASCADE 25/47 (-3.1u) · starout 0/5 (-5.0u)
   VERDICT : ⏳ TOO EARLY (n=19; sharp-CLV thin, need ~20-40 ≈ 2wks). CLV flat — not yet meaningful.
   by tier: SOLID 4/10 (-2.3u) · STRONG 4/7 (+0.1u) · THIN 1/2 (+0.0u)
   by market: pr Under 1/3 (-1.0u) · pra Under 1/7 (-5.3u) · pts Under 7/9 (+4.2u)
@@ -281,3 +281,8 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260706 | Olivia Nelson-Ododa | PR Over 15.5 @ 1.8 | BOOK OVERSHOOT | WIN | — | — | +0% |
 | 20260706 | Shakira Austin | PRA Over 22.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
 | 20260706 | Shakira Austin | PTS Under 11.5 @ 2.0 | FTUNDER | WIN | — | -2.0 | +3% |
+| 20260707 | Azzi Fudd | PTS Under 14.5 @ 1.81 | FTUNDER | WIN | — | — | +0% |
+| 20260707 | Breanna Stewart | PTS Under 19.5 @ 1.79 | FTUNDER | loss | -12% | +0.0 | -3% |
+| 20260707 | Jessica Shepard | PR Over 23.5 @ 1.83 | BOOK OVERSHOOT | WIN | — | — | +0% |
+| 20260707 | Jonquel Jones | PRA Over 26.5 @ 1.91 | BOOK OVERSHOOT | WIN | — | — | +10% |
+| 20260707 | Paige Bueckers | PTS Over 20.5 @ 1.82 | FLIP UNDER(paper) | loss | -11% | — | +0% |
