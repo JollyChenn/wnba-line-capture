@@ -10,7 +10,7 @@ _**sharp-odds** = vs Pinnacle's vig-free fair price (TRUE edge test) · **sharp-
   ★ SHARP ODDS-CLV: -7.0% | beat fair 0/4 (0%)  ← TRUE edge (vs Pinnacle fair price)
   SHARP LINE-CLV : +0.07 pts | n=7  ← better number than the sharp
   self ODDS-CLV  : -0.5% | beat 5/18 (28%)  (1xbet's own close = weak)
-  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 22/45 (-4.4u) · FLIP UNDER 7/14 (-1.1u) · FLIP UNDER(paper) 15/21 (+6.9u) · FTUNDER 48/101 (-12.9u) · HOT OVER 9/16 (+0.9u) · STAR-OUT CASCADE 25/47 (-3.1u) · starout 0/5 (-5.0u)
+  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 22/45 (-4.4u) · FLIP UNDER 7/15 (-2.1u) · FLIP UNDER(paper) 15/21 (+6.9u) · FTUNDER 49/108 (-18.1u) · HOT OVER 9/16 (+0.9u) · STAR-OUT CASCADE 31/58 (-3.6u) · starout 0/5 (-5.0u)
   VERDICT : ⏳ TOO EARLY (n=19; sharp-CLV thin, need ~20-40 ≈ 2wks). CLV flat — not yet meaningful.
   by tier: SOLID 4/10 (-2.3u) · STRONG 4/7 (+0.1u) · THIN 1/2 (+0.0u)
   by market: pr Under 1/3 (-1.0u) · pra Under 1/7 (-5.3u) · pts Under 7/9 (+4.2u)
@@ -290,3 +290,22 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260707 | Kahleah Copper | PR Over 23.5 @ 2.02 | BOOK OVERSHOOT | WIN | — | — | +10% |
 | 20260707 | Kamilla Cardoso | PTS Under 14.5 @ 1.8 | FTUNDER | WIN | — | — | — |
 | 20260707 | Paige Bueckers | PTS Over 20.5 @ 1.82 | FLIP UNDER(paper) | loss | -11% | — | +0% |
+| 20260708 | Ariel Atkins | PRA Over 9.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
+| 20260708 | Courtney Williams | PRA Over 24.5 @ 1.75 | STAR-OUT CASCADE | loss | — | +7.0 | +0% |
+| 20260708 | Courtney Williams | PTS Under 18.5 @ 1.8 | FTUNDER | WIN | — | -1.0 | -5% |
+| 20260708 | Dearica Hamby | PRA Over 22.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
+| 20260708 | Dearica Hamby | PTS Under 15.5 @ 1.77 | FTUNDER | loss | -10% | — | +4% |
+| 20260708 | Erica Wheeler | PRA Over 10.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
+| 20260708 | Gabby Williams | PRA Over 19.5 @ 1.91 | FLIP UNDER | loss | — | — | +0% |
+| 20260708 | Isabelle Harrison | PTS Under 12.5 @ 1.96 | FTUNDER | loss | — | — | +0% |
+| 20260708 | Kayla McBride | PTS Under 18.5 @ 1.83 | FTUNDER | loss | -4% | +0.0 | -1% |
+| 20260708 | Kelsey Mitchell | PTS Under 23.5 @ 1.82 | FTUNDER | loss | — | — | +1% |
+| 20260708 | Maya Caldwell | PRA Over 7.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
+| 20260708 | Monique Billings | PRA Over 12.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
+| 20260708 | Myisha Hines-Allen | PRA Over 9.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
+| 20260708 | Natasha Howard | PRA Over 27.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | -12% |
+| 20260708 | Nia Coffey | PRA Over 14.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
+| 20260708 | Nneka Ogwumike | PTS Under 17.5 @ 1.83 | FTUNDER | loss | — | — | +4% |
+| 20260708 | Olivia Nelson-Ododa | PTS Under 10.5 @ 1.8 | FTUNDER | loss | -9% | +0.0 | -5% |
+| 20260708 | Rae Burrell | PRA Over 14.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
+| 20260708 | Sophie Cunningham | PRA Over 12.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
