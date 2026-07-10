@@ -75,8 +75,29 @@ two-sided odds capture (fwd). NEED:
   games before any real consideration. Injury-window bets tracked as their own bucket (the thesis).
 - Shuffle control at G3 (shuffle player-game assignment; edge must vanish).
 
+## 5b. ZONE MAPS + COACHING (user 2026-07-11; VERIFIED feasible — ESPN WNBA pbp has (x,y) on all
+plays + timeout events; sentinel coords like -214748340 filtered out)
+- **Zone grid**: bucket court into ~10 zones (rim / paint / midrange L-C-R / corner-3 L-R / arc-3 L-C-R).
+  Per team+player per game: attempts + makes per zone from pbp shot coords.
+- **Offensive zone profile**: team/player expected attempt-share + eff per zone (season-to-date, decayed).
+- **Defensive zone Elo**: opponent's actual attempts/eff in a zone vs THEIR OWN usual profile →
+  suppression score (the user's example: team A usually 5 corner-L attempts, gets 2 vs team B =
+  team B corner-D strong). Update Elo-style per zone per team (player-level zone-D later — needs
+  lineup-on-court inference, v2).
+- **Matchup adjustment**: pregame, overlay offense zone-profile × opponent zone-D → expected eff shift
+  feeding team strength + total (a team whose diet is corner-3s vs a corner-suppressing defense
+  gets marked down where a generic Elo sees nothing).
+- **Coach Elo**: (a) post-timeout response — run-differential in the ~4 min after own timeout vs
+  league baseline (the user's timeout idea); (b) ATS-style over/underperformance vs our own pregame
+  margin expectation = in-game/scheme value; (c) zone-suppression consistency across roster changes
+  (defense that survives player churn = coaching). Small samples — treat as a ±small Elo modifier,
+  never a primary driver.
+- Gate: zone/coach layers must IMPROVE G3 metrics (margin MAE / Brier) vs the plain player-Elo model,
+  else they stay analysis-only. Multiplicity discipline: these are 3 extra knobs on tiny WNBA samples.
+
 ## 6. Phases
-1. **Data expansion** — extend box collector (full stat line), backfill 2023-2026. ~1 session.
+1. **Data expansion** — extend box collector (full stat line) + pbp crawl (shot coords, timeouts,
+   zone-bucketed per game), backfill 2023-2026. ~1 session.
 2. **Elo engine** — player O/D-Elo over history, variable K, season regression. G2 check. ~1 session.
 3. **Minutes model + aggregation** — projected lineups → team strengths. ~1 session.
 4. **Calibration** — margin/total/ML fits, walk-forward. G3 vs team-Elo baseline. ~1 session.
