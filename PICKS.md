@@ -2,7 +2,7 @@
 
 _Stingy-D threshold (trailing-10 allowed, bottom quartile): 85_
 
-_🩹 OUT/doubtful (excluded from ALL picks): Aaliyah Nye, Aneesah Morrow, Ashlon Jackson, Brittney Griner, Brittney Sykes, Caitlin Clark, Cameron Brink, Hailey Van Lith, Indya Nivar, Jovana Nogic, Kelsey Plum, Kiki Rice, Leonie Fiebich, Natasha Mack, Olivia Miles, Quionche Carter, Rebecca Allen, Saniya Rivers, Satou Sabally, Skylar Diggins, Sonia Citron, Ta'Niya Latson, Temi Fagbenle_
+_🩹 OUT/doubtful (excluded from ALL picks): Aaliyah Nye, Aneesah Morrow, Brittney Griner, Brittney Sykes, Caitlin Clark, Cameron Brink, Indya Nivar, Jovana Nogic, Kelsey Plum, Kiki Rice, Leonie Fiebich, Natasha Mack, Nyara Sabally, Olivia Miles, Quionche Carter, Rebecca Allen, Saniya Rivers, Satou Sabally, Skylar Diggins, Sonia Citron, Ta'Niya Latson, Temi Fagbenle_
 
 ## 💰 REAL-MONEY — UNDER (cold/shrink + stingy · pts/PR/PA/PRA · flat 1u)
 
@@ -22,7 +22,7 @@ _🩹 OUT/doubtful (excluded from ALL picks): Aaliyah Nye, Aneesah Morrow, Ashlo
 - Golden State Valkyries: if **Gabby Williams** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Veronica Burton OVER 15.5 PRA, Kaitlyn Chen OVER 12.5 PRA, Kaila Charles OVER 12.5 PRA, Cecilia Zandalasini OVER 12.5 PRA
 - Connecticut Sun: if **Brittney Griner** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Olivia Nelson-Ododa OVER 20.5 PRA, Charlisse Leger-Walker OVER 14.5 PRA, Kennedy Burke OVER 14.5 PRA, Diamond Miller OVER 12.5 PRA
 - Dallas Wings: if **Paige Bueckers** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Jessica Shepard OVER 31.5 PRA, Arike Ogunbowale OVER 13.5 PRA, Awak Kuier OVER 10.5 PRA, Aziaha James OVER 7.5 PRA
-- Toronto Tempo: if **Marina Mabrey** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Isabelle Harrison OVER 19.5 PRA, Maria Conde OVER 17.5 PRA, Nyara Sabally OVER 19.5 PRA
+- Toronto Tempo: if **Marina Mabrey** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Isabelle Harrison OVER 19.5 PRA, Maria Conde OVER 17.5 PRA
 - Chicago Sky: if **Kamilla Cardoso** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Sydney Taylor OVER 18.5 PRA, Natasha Cloud OVER 17.5 PRA, Jacy Sheldon OVER 7.5 PRA
 - Los Angeles Sparks: if **Kelsey Plum** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Dearica Hamby OVER 22.5 PRA, Rae Burrell OVER 18.5 PRA, Ariel Atkins OVER 9.5 PRA, Erica Wheeler OVER 10.5 PRA
 - New York Liberty: if **Breanna Stewart** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Jonquel Jones OVER 29.5 PRA, Pauline Astier OVER 11.5 PRA
