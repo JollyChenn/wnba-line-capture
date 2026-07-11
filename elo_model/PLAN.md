@@ -164,3 +164,9 @@ plays + timeout events; sentinel coords like -214748340 filtered out)
   pfr=foul-prone). Still sub-significance (+2.5pp ~ z1.1, 23 feats tried) -> Phase-5 logs v3+v4+v5, CLV picks.
   Still untouched: timeouts.csv (coach, needs nickname->abbrev map), pbp TEXT (assists/alley-oops, re-crawl),
   halves_2026 (2026-only), injuries/lineups (forward-only by nature).
+- PBP-TEXT layers (2026-07-12, plays_text.csv 1022 games): pass_o(own assisted-share) acc 68.8->69.4;
+  coach timeout-rate MAE 10.44->10.41; STAR(top-2 battle) 10.41 best-MAE. Pass/cut CROSS-matchups + alley
+  service vs rim-denial = dead beyond ratings. Skill-split (sc/vo/pa/rb/de) all redundant w/ composite.
+- EDGE MACHINE VERIFIED IN CLOUD 2026-07-12: predict-tonight.yml run logged slate w/ Pinnacle lines.
+  Totals deviation-form live. Grading plan: at n>=60, (a) blend regression margin~[market,model] (model
+  coef>0 = real info), (b) bets |model-market|>=4 -> hit-rate vs 52.4% breakeven, (c) beat-the-close.
