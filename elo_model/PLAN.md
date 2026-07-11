@@ -137,3 +137,18 @@ plays + timeout events; sentinel coords like -214748340 filtered out)
 - Minutes model error dominates rating error on most nights.
 - Books already price star injuries in seconds; our edge window is role-player/lineup-config news.
 - Results-calibrated ≠ market-beating; only Phase-5 CLV counts (repeat of every prior project's lesson).
+
+## 9. FINDINGS LOG (2026-07-11 deep-dive, all walk-forward 23-24 fit / 25-26 test)
+- MODEL v3: margin = 17.6*pnews + 0.005*teloD + 12*orebD + 12*p3arD + 1.52 home -> MAE 10.49, 66.5% side.
+  pnews (injury-adjusted player strength) alone = 10.58/66.3%; combo gain sub-multiplicity. TOTALS:
+  pace_s+tov+p3pct MAE 14.65 vs 15.00 naive.
+- DEAD (tested honestly): zone-matchup team-v1 (redundant w/ quality), rest/b2b/form/bench/stocks/H2H
+  (H2H corr +0.09 z2.5 real but priced by pace), totals streak-reversion (both directions +1 = drift),
+  win-streak momentum (z<1.7), 28d cycle (periodicity AND recurrence: 19.9% vs 20.8% base, null),
+  weekday/month/week-of-month player weakness (FEWER sig players than chance: 4 vs 10 etc).
+- WHY TEAMS WIN (four factors, in-game R2=.95): eFG 12.1 pts/sd >> TOV 6.3 > OREB 4.8 > FT 2.9.
+- HOW UNDERDOGS WIN (n=829, 29% upset rate): shooting swing eFG +0.131 = ~15 pts = ~70% of the upset;
+  OREB +2.5, FT +1.3, TOV 2.9. Upsets are mostly SHOOTING VARIANCE (unpredictable 3pt luck) ->
+  favorites' ML prices are hard to beat with skill features; variance is the underdog's friend.
+- TOTALS drivers in-game: joint eFG corr +0.74 > pace +0.53 -> half of totals movement = shooting luck;
+  the predictable half (pace) is already the model's main feature. MAE ~14.6 is near the info ceiling.
