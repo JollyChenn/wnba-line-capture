@@ -31,6 +31,11 @@ telo = defaultdict(lambda: 1500.0)                    # baseline team Elo
 def lr(g): return 0.28 * 15 / (15 + g) + 0.04
 CLIP = 2.5
 season_cur = None
+zf = {}
+try:
+    for _r in csv.DictReader(open(os.path.join(D, "zone_feats.csv"), encoding="utf-8")):
+        zf[_r["game_id"]] = float(_r["matchup_diff"])
+except Exception: pass
 rows_fit, rows_test = [], []                          # (pstrength_diff, elodiff, margin, home_win)
 
 def proj_minutes(team):
@@ -83,7 +88,7 @@ for g in games:
             tot = sum(pmx.values()) or 1
             return sum((oR[a] + dR[a]) * m for a, m in pmx.items()) / tot
         rec = (sh - sa, telo[home] - telo[away], margin, 1 if margin > 0 else 0, shock,
-               strength_avail(home) - strength_avail(away))
+               strength_avail(home) - strength_avail(away), zf.get(g["game_id"], 0.0))
         (rows_fit if g["season"] in ("2023", "2024") else rows_test).append(rec)
     # ---- update baseline team Elo (538-style MOV) ----
     ed = telo[home] + 80 - telo[away]
@@ -142,3 +147,19 @@ for label, xi in (("PLAYER-model", 0), ("PLAYER+news", 5), ("TEAM-Elo baseline",
         mae = statistics.mean(abs(a * r[xi] + b - r[2]) for r in sub)
         acc = statistics.mean(((a * r[xi] + b > 0) == (r[2] > 0)) for r in sub)
         print(f"{label:18} {tag} n={len(sub):>3} MAE={mae:.2f} side-acc={acc:.1%}")
+# combined 2-feature: player strength + zone matchup
+import random
+def ols2(rows):
+    # y = a*x1 + c*x2 + b via gradient descent (small, fine)
+    a=c=b=0.0
+    for _ in range(4000):
+        ga=gc=gb=0
+        for r in rows:
+            e=a*r[0]+c*r[6]+b-r[2]; ga+=e*r[0]; gc+=e*r[6]; gb+=e
+        n=len(rows); a-=1e-3*ga/n; c-=1e-3*gc/n; b-=1e-3*gb/n
+    return a,c,b
+a2,c2,b2 = ols2(rows_fit)
+for sub,tag in ((rows_test,"ALL  "),([r for r in rows_test if r[4]],"SHOCK")):
+    mae = statistics.mean(abs(a2*r[0]+c2*r[6]+b2-r[2]) for r in sub)
+    acc = statistics.mean(((a2*r[0]+c2*r[6]+b2>0)==(r[2]>0)) for r in sub)
+    print(f"PLAYER+ZONE        {tag} n={len(sub):>3} MAE={mae:.2f} side-acc={acc:.1%}  (zone coef {c2:.2f})")
