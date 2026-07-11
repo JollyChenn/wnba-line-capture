@@ -152,3 +152,8 @@ plays + timeout events; sentinel coords like -214748340 filtered out)
   favorites' ML prices are hard to beat with skill features; variance is the underdog's friend.
 - TOTALS drivers in-game: joint eFG corr +0.74 > pace +0.53 -> half of totals movement = shooting luck;
   the predictable half (pace) is already the model's main feature. MAE ~14.6 is near the info ceiling.
+- CHEMISTRY/RIM tests (2026-07-11b): chem(ast/fgm)=dead; CONTINUITY (starter-set stability) acc 66.5->67.8%
+  same MAE; RIM-MATCHUP (rim-reliant off x rim-suppressing def, the user's alley-oop/cut thesis) MAE
+  10.49->10.47, alone 60.6% acc (best solo non-rating feature). Gains sub-significance (n=490) ->
+  v4 CANDIDATE = pnews+telo+oreb+p3ar+cont+rim (10.48/67.6%); Phase-5 logs v3 AND v4, CLV picks.
+  True alley-oop/pass-network detection needs a pbp TEXT re-crawl (only shooter saved) - optional later.
