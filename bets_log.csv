@@ -5244,3 +5244,17 @@ captured_utc,date,player,market,side,line,odds,tier,ev,pinn,src
 2026-07-11T03:41:29+00:00,2026-07-10,Cotie McMahon,pra,Over,11.5,1.75,CASC,0.0,,cascade
 2026-07-11T03:41:29+00:00,2026-07-10,Alicia Florez,pra,Over,9.5,1.75,CASC,0.0,,cascade
 2026-07-11T03:41:29+00:00,2026-07-10,Olivia Miles,pa,Over,22.5,1.73,STRONG,0.238,,overshoot
+2026-07-11T04:25:40+00:00,2026-07-10,Jonquel Jones,pts,Over,13.5,1.76,STRONG,0.182,,flip
+2026-07-11T04:25:40+00:00,2026-07-10,Kayla McBride,pts,Over,14.5,1.77,STRONG,0.219,,flip
+2026-07-11T04:25:40+00:00,2026-07-10,Natasha Howard,pts,Over,14.5,1.541,STRONG,0.023,,flip_paper
+2026-07-11T04:25:40+00:00,2026-07-10,Courtney Williams,pts,Under,16.5,1.76,STRONG,0.284,,newunder
+2026-07-11T04:25:40+00:00,2026-07-10,Breanna Stewart,pts,Under,19.5,1.77,SOLID,0.093,,newunder
+2026-07-11T04:25:40+00:00,2026-07-10,Allisha Gray,pts,Under,18.5,1.81,SOLID,0.152,,newunder
+2026-07-11T04:25:40+00:00,2026-07-10,Megan Gustafson,pts,Over,12.5,1.92,SOLID,0.219,,flip_paper
+2026-07-11T04:25:40+00:00,2026-07-10,Kahleah Copper,pts,Over,20.5,1.909,STRONG,0.315,,flip_paper
+2026-07-11T04:25:40+00:00,2026-07-10,Jackie Young,pts,Over,16.5,1.87,SOLID,0.139,,flip_paper
+2026-07-11T04:25:40+00:00,2026-07-10,Shakira Austin,pra,Over,22.5,1.75,CASC,0.0,,cascade
+2026-07-11T04:25:40+00:00,2026-07-10,Michaela Onyenwere,pra,Over,11.5,1.75,CASC,0.0,,cascade
+2026-07-11T04:25:40+00:00,2026-07-10,Cotie McMahon,pra,Over,11.5,1.75,CASC,0.0,,cascade
+2026-07-11T04:25:40+00:00,2026-07-10,Alicia Florez,pra,Over,9.5,1.75,CASC,0.0,,cascade
+2026-07-11T04:25:40+00:00,2026-07-10,Olivia Miles,pa,Over,22.5,1.73,STRONG,0.238,,overshoot
