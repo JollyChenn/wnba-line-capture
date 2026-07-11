@@ -157,3 +157,10 @@ plays + timeout events; sentinel coords like -214748340 filtered out)
   10.49->10.47, alone 60.6% acc (best solo non-rating feature). Gains sub-significance (n=490) ->
   v4 CANDIDATE = pnews+telo+oreb+p3ar+cont+rim (10.48/67.6%); Phase-5 logs v3 AND v4, CLV picks.
   True alley-oop/pass-network detection needs a pbp TEXT re-crawl (only shooter saved) - optional later.
+- UNTAPPED-DATA SWEEP (2026-07-11c, feats_v4): NEW singles - pmr (plus-minus rating) 10.98/63.1% (2nd-best
+  standalone rating!), fluid (adaptive-lr offense) 11.01/62.9; pfr(fouls) 60.8%; ftp/blkr/q4/road DEAD.
+  GREEDY-FORWARD -> **v5 = pnews+p3ar+oreb+fluid+drop+pfr = MAE 10.44 / acc 68.8%** (from 10.58/66.3
+  pnews-alone; fluid step +1.1pp = the "player improving" adaptive-K works as a complement; drop=depth,
+  pfr=foul-prone). Still sub-significance (+2.5pp ~ z1.1, 23 feats tried) -> Phase-5 logs v3+v4+v5, CLV picks.
+  Still untouched: timeouts.csv (coach, needs nickname->abbrev map), pbp TEXT (assists/alley-oops, re-crawl),
+  halves_2026 (2026-only), injuries/lineups (forward-only by nature).
