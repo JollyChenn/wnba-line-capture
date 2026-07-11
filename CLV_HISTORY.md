@@ -10,7 +10,7 @@ _**sharp-odds** = vs Pinnacle's vig-free fair price (TRUE edge test) · **sharp-
   ★ SHARP ODDS-CLV: -7.0% | beat fair 0/4 (0%)  ← TRUE edge (vs Pinnacle fair price)
   SHARP LINE-CLV : +0.07 pts | n=7  ← better number than the sharp
   self ODDS-CLV  : -0.5% | beat 5/18 (28%)  (1xbet's own close = weak)
-  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 23/47 (-4.6u) · FLIP UNDER 7/15 (-2.1u) · FLIP UNDER(paper) 19/25 (+10.2u) · FTUNDER 49/111 (-21.1u) · HOT OVER 9/16 (+0.9u) · STAR-OUT CASCADE 34/66 (-6.4u) · starout 0/6 (-6.0u)
+  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 24/48 (-3.8u) · FLIP UNDER 7/15 (-2.1u) · FLIP UNDER(paper) 19/25 (+10.2u) · FTUNDER 51/116 (-22.2u) · HOT OVER 9/16 (+0.9u) · STAR-OUT CASCADE 36/70 (-6.9u) · starout 0/6 (-6.0u)
   VERDICT : ⏳ TOO EARLY (n=19; sharp-CLV thin, need ~20-40 ≈ 2wks). CLV flat — not yet meaningful.
   by tier: SOLID 4/10 (-2.3u) · STRONG 4/7 (+0.1u) · THIN 1/2 (+0.0u)
   by market: pr Under 1/3 (-1.0u) · pra Under 1/7 (-5.3u) · pts Under 7/9 (+4.2u)
@@ -327,3 +327,13 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260709 | Natisha Hiedeman | PTS Over 15.5 @ 2.02 | FLIP UNDER(paper) | WIN | -12% | +0.0 | +0% |
 | 20260709 | Raven Johnson | PRA Over 7.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260709 | Rhyne Howard | PTS Over 18.5 @ 1.769 | BOOK OVERSHOOT | WIN | — | — | -9% |
+| 20260710 | Azzi Fudd | PTS Under 13.5 @ 2.0 | FTUNDER | WIN | — | -1.0 | +4% |
+| 20260710 | Charlisse Leger-Walker | PRA Over 13.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | — |
+| 20260710 | Diamond Miller | PRA Over 12.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
+| 20260710 | Isabelle Harrison | PTS Under 13.5 @ 1.893 | FTUNDER | loss | — | — | +3% |
+| 20260710 | Jessica Shepard | PTS Under 14.5 @ 1.893 | FTUNDER | loss | — | -1.0 | +3% |
+| 20260710 | Kennedy Burke | PRA Over 14.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
+| 20260710 | Leila Lacan | PTS Under 12.5 @ 1.85 | FTUNDER | WIN | -9% | +0.0 | +0% |
+| 20260710 | Olivia Nelson-Ododa | PRA Over 20.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | -6% |
+| 20260710 | Olivia Nelson-Ododa | PTS Under 11.5 @ 1.8 | FTUNDER | loss | -4% | +0.0 | +0% |
+| 20260710 | Paige Bueckers | PTS Over 20.5 @ 1.8 | BOOK OVERSHOOT | WIN | — | — | +2% |
