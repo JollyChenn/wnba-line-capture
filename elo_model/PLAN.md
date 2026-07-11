@@ -22,6 +22,21 @@ Bar for "works": beats closing line (CLV), not just results, AND beats a dumb te
 - **Soccer club Elo / KenPom**: pace-adjust everything (points per possession, not per game).
   → totals need PACE as a separate team rating.
 
+## 1b. Deep-research adoptions (agent survey 2026-07-11 of RAPM/EPM/DARKO/LEBRON/BPM/RAPTOR/KenPom/WNBA-RAPM)
+Adopted into design (most-signal-per-data for 13 teams × 40 games):
+1. Box-score prior FIRST, on-off second (Bayesian: box SPM = prior, on-off updates slowly).
+2. 3-YEAR rolling window for any plus-minus (Falkenheim: single-season WNBA RAPM = noise; ridge λ≈3500 poss).
+3. Pace-normalize everything (per-100); iterative opponent-adjust loop (~5 passes, KenPom).
+4. Luck-clean before rating: regress opp-3P% to mean, FT-luck, close-game luck; garbage-time filter (lead>15, <5min).
+5. Zone maps: use xFG% (zone-avg) not actual FG% (cuts variance); rim-rate/corner3-rate stable at ~15 games.
+6. Minutes projection: exponential decay, last-10 games >> season avg.
+7. Coach = team-level fixed-effect intercept (O/D residual after roster quality) — simple, high continuity in W.
+8. Bench: pool <200-possession players into a generic "team bench" entity (don't drop, don't inflate starters).
+9. Aging curves + rookie prior toward league avg (DARKO-style dampening).
+10. Variable-selection discipline (RAPTOR): keep a variable only if it predicts OUT-OF-SAMPLE; drop in-sample-only
+    (their finding: opp-3P%-as-defense is in-sample-only = luck). Public WNBA refs: mlapm.com, Positive Residual,
+    Falkenheim RAPM; no public WNBA DARKO equivalent = our niche.
+
 ## 2. Rating engine (the core design)
 Two ratings per player, updated per game, all **per-possession**:
 - **O-Elo**: offensive impact. Expected = f(own O-Elo vs opponent lineup's minutes-weighted D-Elo).
@@ -47,7 +62,13 @@ MOV-style damper on blowout garbage time (clip performances beyond ±2.5 z).
 1. **Minutes model** (secretly the hardest part): projected minutes per player from trailing usage,
    confirmed lineup (lineups_log.csv), injury status (injuries_log.csv), blowout-risk adjustment.
    Redistribution rule when a player is OUT: minutes flow within position group ∝ recent share.
-2. **Team O/D strength** = Σ minutes-weighted player O-Elo / D-Elo (+ bench depth term).
+2. **Team O/D strength** = Σ minutes-weighted player O-Elo / D-Elo — STARTERS AND BENCH alike
+   (every player who logs minutes carries a rating; bench = same engine, higher K/uncertainty).
+   Plus explicit BENCH/DEPTH terms: (a) bench-unit strength = minutes-weighted Elo of non-starters
+   (fatigue/foul-trouble insurance — matters in WNBA's compressed schedule); (b) drop-off score =
+   starter avg minus bench avg per position (big drop-off = fragile to foul trouble/blowout);
+   (c) low-minute players get Bayesian-padded ratings (shrunk toward replacement level ~-2/100,
+   NOT league mean — a 5-min bench player is below average, padding to mean would flatter depth).
 3. **Margin (spread)**: `a*(homeO-awayD) - a*(awayO-homeD) + HCA` — fit `a`, HCA on history.
 4. **Total**: pace rating per team (possessions/48, own Elo-like update) → possessions × combined
    efficiency expectation.
