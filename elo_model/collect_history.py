@@ -26,10 +26,10 @@ bf = os.path.join(D, "box_full.csv")
 if os.path.exists(bf):
     done = {r.split(",")[0] for r in open(bf, encoding="utf-8").read().splitlines()[1:]}
 new_files = not os.path.exists(bf)
-g_w = csv.writer(open(os.path.join(D, "games_full.csv"), "a", newline="", encoding="utf-8"))
-b_w = csv.writer(open(bf, "a", newline="", encoding="utf-8"))
-s_w = csv.writer(open(os.path.join(D, "shots.csv"), "a", newline="", encoding="utf-8"))
-t_w = csv.writer(open(os.path.join(D, "timeouts.csv"), "a", newline="", encoding="utf-8"))
+gf=open(os.path.join(D, "games_full.csv"), "a", newline="", encoding="utf-8"); g_w = csv.writer(gf)
+bfh=open(bf, "a", newline="", encoding="utf-8"); b_w = csv.writer(bfh)
+sf=open(os.path.join(D, "shots.csv"), "a", newline="", encoding="utf-8"); s_w = csv.writer(sf)
+tf=open(os.path.join(D, "timeouts.csv"), "a", newline="", encoding="utf-8"); t_w = csv.writer(tf)
 if new_files:
     g_w.writerow("game_id,date,home,away,home_score,away_score,season".split(","))
     b_w.writerow("game_id,team,player,aid,starter,min,pts,fgm,fga,tpm,tpa,ftm,fta,oreb,dreb,reb,ast,to,stl,blk,pf,pm".split(","))
@@ -82,6 +82,8 @@ for yr in (2023, 2024, 2025, 2026):
                     t_w.writerow([gid, p.get("period", {}).get("number"),
                                   (p.get("clock") or {}).get("displayValue"), txt[:40]])
             done.add(gid)
+            for _f in (g_w,b_w,s_w,t_w): pass
+            gf.flush(); bfh.flush(); sf.flush(); tf.flush()
             time.sleep(0.4)
         if sb.get("events"): seen_dates += 1
     print(f"{yr}: cumulative games {len(done)}", flush=True)
