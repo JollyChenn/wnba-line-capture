@@ -10,7 +10,7 @@ _**sharp-odds** = vs Pinnacle's vig-free fair price (TRUE edge test) · **sharp-
   ★ SHARP ODDS-CLV: -7.0% | beat fair 0/4 (0%)  ← TRUE edge (vs Pinnacle fair price)
   SHARP LINE-CLV : +0.07 pts | n=7  ← better number than the sharp
   self ODDS-CLV  : -0.5% | beat 5/18 (28%)  (1xbet's own close = weak)
-  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 26/50 (-2.0u) · FLIP UNDER 7/15 (-2.1u) · FLIP UNDER(paper) 19/25 (+10.2u) · FTUNDER 52/118 (-22.3u) · HOT OVER 9/16 (+0.9u) · STAR-OUT CASCADE 40/74 (-3.9u) · starout 0/6 (-6.0u)
+  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 28/52 (-0.5u) · FLIP UNDER 8/16 (-1.4u) · FLIP UNDER(paper) 20/26 (+11.0u) · FTUNDER 53/119 (-21.5u) · HOT OVER 9/17 (-0.1u) · STAR-OUT CASCADE 43/78 (-2.6u) · starout 0/6 (-6.0u)
   VERDICT : ⏳ TOO EARLY (n=19; sharp-CLV thin, need ~20-40 ≈ 2wks). CLV flat — not yet meaningful.
   by tier: SOLID 4/10 (-2.3u) · STRONG 4/7 (+0.1u) · THIN 1/2 (+0.0u)
   by market: pr Under 1/3 (-1.0u) · pra Under 1/7 (-5.3u) · pts Under 7/9 (+4.2u)
@@ -345,3 +345,13 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260710 | Olivia Nelson-Ododa | PTS Under 11.5 @ 1.8 | FTUNDER | loss | -4% | +0.0 | +0% |
 | 20260710 | Paige Bueckers | PTS Over 20.5 @ 1.8 | BOOK OVERSHOOT | WIN | — | — | +2% |
 | 20260710 | Rae Burrell | PRA Over 18.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
+| 20260711 | Antonia Delaere | PRA Over 6.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
+| 20260711 | Breanna Stewart | PRA Over 30.5 @ 1.8 | HOT OVER | loss | — | — | +0% |
+| 20260711 | Courtney Williams | PRA Over 23.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
+| 20260711 | Courtney Williams | PTS Under 15.5 @ 1.893 | FTUNDER | WIN | — | — | +0% |
+| 20260711 | Jonquel Jones | PRA Over 26.5 @ 1.8 | BOOK OVERSHOOT | WIN | — | — | +0% |
+| 20260711 | Kayla McBride | PTS Over 14.5 @ 1.77 | FLIP UNDER | WIN | — | — | +0% |
+| 20260711 | Natasha Howard | PRA Over 26.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
+| 20260711 | Natasha Howard | PTS Over 15.5 @ 1.76 | FLIP UNDER(paper) | WIN | — | — | — |
+| 20260711 | Nia Coffey | PRA Over 14.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
+| 20260711 | Olivia Miles | PA Over 22.5 @ 1.73 | BOOK OVERSHOOT | WIN | — | — | +0% |
