@@ -10,7 +10,7 @@ _**sharp-odds** = vs Pinnacle's vig-free fair price (TRUE edge test) · **sharp-
   ★ SHARP ODDS-CLV: -7.0% | beat fair 0/4 (0%)  ← TRUE edge (vs Pinnacle fair price)
   SHARP LINE-CLV : +0.07 pts | n=7  ← better number than the sharp
   self ODDS-CLV  : -0.5% | beat 5/18 (28%)  (1xbet's own close = weak)
-  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 29/53 (+0.2u) · FLIP UNDER 8/16 (-1.4u) · FLIP UNDER(paper) 20/27 (+10.0u) · FTUNDER 54/122 (-22.6u) · HOT OVER 9/17 (-0.1u) · STAR-OUT CASCADE 43/78 (-2.6u) · starout 0/6 (-6.0u)
+  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 29/54 (-0.8u) · FLIP UNDER 8/16 (-1.4u) · FLIP UNDER(paper) 20/28 (+9.0u) · FTUNDER 54/122 (-22.6u) · HOT OVER 9/17 (-0.1u) · STAR-OUT CASCADE 43/78 (-2.6u) · starout 0/6 (-6.0u)
   VERDICT : ⏳ TOO EARLY (n=19; sharp-CLV thin, need ~20-40 ≈ 2wks). CLV flat — not yet meaningful.
   by tier: SOLID 4/10 (-2.3u) · STRONG 4/7 (+0.1u) · THIN 1/2 (+0.0u)
   by market: pr Under 1/3 (-1.0u) · pra Under 1/7 (-5.3u) · pts Under 7/9 (+4.2u)
@@ -352,7 +352,9 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260711 | Courtney Williams | PRA Over 23.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260711 | Courtney Williams | PTS Under 15.5 @ 1.893 | FTUNDER | WIN | — | — | +0% |
 | 20260711 | Emily Engstler | PTS Under 8.5 @ 1.952 | FTUNDER | loss | — | — | — |
+| 20260711 | Jackie Young | PTS Over 16.5 @ 1.8 | FLIP UNDER(paper) | loss | — | — | +4% |
 | 20260711 | Jonquel Jones | PRA Over 26.5 @ 1.8 | BOOK OVERSHOOT | WIN | — | — | +0% |
+| 20260711 | Kahleah Copper | PA Over 22.5 @ 1.893 | BOOK OVERSHOOT | loss | — | — | +0% |
 | 20260711 | Kayla McBride | PTS Over 14.5 @ 1.77 | FLIP UNDER | WIN | — | — | +0% |
 | 20260711 | Megan Gustafson | PR Over 15.5 @ 1.73 | BOOK OVERSHOOT | WIN | — | — | — |
 | 20260711 | Natasha Howard | PRA Over 26.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
