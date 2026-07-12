@@ -952,3 +952,59 @@ pick_date,game_id,player,team,opp,market,anchor,signals,fair_p,fair_odds,proj,sd
 2026-07-11,401857063,A'ja Wilson,Las Vegas Aces,Indiana Fever,pts_under,30.5,steady,0.563,1.78,29.4,7.02
 2026-07-11,401857063,Jackie Young,Las Vegas Aces,Indiana Fever,pts_under,19.5,steady,0.563,1.78,18.4,6.85
 2026-07-11,401857063,Aliyah Boston,Indiana Fever,Las Vegas Aces,pts_under,17.5,steady,0.563,1.78,16.4,7.15
+2026-07-12,401857060,Breanna Stewart,New York Liberty,Toronto Tempo,pra_over,30.5,hot+leaky,0.62,1.61,33.4,7.77
+2026-07-12,401857060,Sabrina Ionescu,New York Liberty,Toronto Tempo,pra_over,21.5,hot+leaky,0.62,1.61,24.7,10.33
+2026-07-12,401857060,Isabelle Harrison,Toronto Tempo,New York Liberty,pts_under,13.5,steady,0.563,1.78,12.7,5.2
+2026-07-12,401857060,Breanna Stewart,New York Liberty,Toronto Tempo,pts_under,17.5,steady,0.563,1.78,16.4,7.12
+2026-07-12,401857060,Jonquel Jones,New York Liberty,Toronto Tempo,pts_under,15.5,steady,0.563,1.78,14.7,5.08
+2026-07-12,401857060,Maria Conde,Toronto Tempo,New York Liberty,pts_under,10.5,ftdrought,0.589,1.7,9.5,4.25
+2026-07-12,401857060,Marina Mabrey,Toronto Tempo,New York Liberty,ast_over,3.5,usgshock,0.591,1.69,3.9,1.89
+2026-07-12,401857061,Dominique Malonga,Seattle Storm,Washington Mystics,pts_under,15.5,declining+stingy,0.642,1.56,11.6,10.74
+2026-07-12,401857061,Dominique Malonga,Seattle Storm,Washington Mystics,pr_under,25.5,declining+cold+stingy,0.59,1.69,22.7,12.5
+2026-07-12,401857061,Dominique Malonga,Seattle Storm,Washington Mystics,pa_under,17.5,declining+stingy,0.61,1.64,14.5,10.73
+2026-07-12,401857061,Dominique Malonga,Seattle Storm,Washington Mystics,pra_under,26.5,declining+cold+stingy,0.66,1.52,21.3,12.55
+2026-07-12,401857061,Awa Fam,Seattle Storm,Washington Mystics,pts_under,12.5,cold+stingy,0.626,1.6,10.6,5.93
+2026-07-12,401857061,Awa Fam,Seattle Storm,Washington Mystics,pr_under,16.5,cold+stingy,0.59,1.69,15.3,5.1
+2026-07-12,401857061,Awa Fam,Seattle Storm,Washington Mystics,pa_under,14.5,cold+stingy,0.61,1.64,12.9,5.66
+2026-07-12,401857061,Awa Fam,Seattle Storm,Washington Mystics,pra_under,19.5,cold+stingy,0.621,1.61,17.9,5.06
+2026-07-12,401857061,Kiki Iriafen,Washington Mystics,Seattle Storm,pra_over,25.5,hot+expand,0.55,1.82,27.2,9.46
+2026-07-12,401857061,Natisha Hiedeman,Seattle Storm,Washington Mystics,pts_under,19.5,steady,0.563,1.78,18.8,4.45
+2026-07-12,401857061,Shakira Austin,Washington Mystics,Seattle Storm,pts_under,10.5,steady,0.563,1.78,9.8,4.28
+2026-07-12,401857062,Azura Stevens,Chicago Sky,Dallas Wings,pts_under,10.5,steady,0.563,1.78,9.7,4.83
+2026-07-12,401857062,Jessica Shepard,Dallas Wings,Chicago Sky,pts_under,14.5,steady,0.563,1.78,13.8,4.62
+2026-07-12,401857062,Kamilla Cardoso,Chicago Sky,Dallas Wings,pts_under,15.5,steady,0.563,1.78,14.3,7.32
+2026-07-12,401857062,Paige Bueckers,Dallas Wings,Chicago Sky,pts_under,23.5,steady,0.563,1.78,22.4,7.04
+2026-07-12,401857062,Azzi Fudd,Dallas Wings,Chicago Sky,pts_under,12.5,ftdrought,0.589,1.7,11.0,6.65
+2026-07-12,401857062,Sydney Taylor,Chicago Sky,Dallas Wings,pts_under,15.5,steady,0.563,1.78,14.3,7.83
+2026-07-12,401857063,Caitlin Clark,Indiana Fever,Las Vegas Aces,pts_under,22.5,declining+cold+stingy,0.7,1.43,18.7,7.22
+2026-07-12,401857063,Caitlin Clark,Indiana Fever,Las Vegas Aces,pr_under,26.5,declining+cold+stingy,0.59,1.69,24.8,7.36
+2026-07-12,401857063,Caitlin Clark,Indiana Fever,Las Vegas Aces,pa_under,31.5,declining+cold+stingy,0.61,1.64,29.1,8.64
+2026-07-12,401857063,Caitlin Clark,Indiana Fever,Las Vegas Aces,pra_under,33.5,declining+cold+stingy,0.66,1.52,29.8,9.03
+2026-07-12,401857063,Chelsea Gray,Las Vegas Aces,Indiana Fever,pts_under,11.5,steady,0.563,1.78,10.8,4.53
+2026-07-12,401857063,Kelsey Mitchell,Indiana Fever,Las Vegas Aces,pts_under,26.5,steady,0.563,1.78,25.8,4.63
+2026-07-12,401857063,A'ja Wilson,Las Vegas Aces,Indiana Fever,pts_under,26.5,steady,0.563,1.78,25.4,6.78
+2026-07-12,401857063,Jackie Young,Las Vegas Aces,Indiana Fever,pts_under,19.5,steady,0.563,1.78,18.5,6.43
+2026-07-12,401857063,Aliyah Boston,Indiana Fever,Las Vegas Aces,pts_under,17.5,steady,0.563,1.78,16.4,7.15
+2026-07-12,401857064,Allisha Gray,Atlanta Dream,Los Angeles Sparks,pra_over,22.5,hot+leaky,0.62,1.61,24.9,6.26
+2026-07-12,401857064,Nneka Ogwumike,Los Angeles Sparks,Atlanta Dream,pts_under,18.5,steady,0.563,1.78,17.5,6.11
+2026-07-12,401857064,Dearica Hamby,Los Angeles Sparks,Atlanta Dream,pts_under,13.5,steady,0.563,1.78,12.6,5.64
+2026-07-12,401857064,Allisha Gray,Atlanta Dream,Los Angeles Sparks,pts_under,17.5,steady,0.563,1.78,16.8,4.43
+2026-07-12,401857064,Jordin Canada,Atlanta Dream,Los Angeles Sparks,pts_under,10.5,steady,0.563,1.78,9.7,5.02
+2026-07-12,401857064,Rhyne Howard,Atlanta Dream,Los Angeles Sparks,pts_under,18.5,steady,0.563,1.78,17.5,6.18
+2026-07-12,401857064,Rae Burrell,Los Angeles Sparks,Atlanta Dream,pts_under,16.5,steady,0.563,1.78,15.4,6.76
+2026-07-12,401857064,Angel Reese,Atlanta Dream,Los Angeles Sparks,pts_under,15.5,steady,0.563,1.78,15.0,3.41
+2026-07-12,401857064,Rae Burrell,Los Angeles Sparks,Atlanta Dream,ast_over,1.5,usgshock,0.591,1.69,1.9,1.64
+2026-07-12,401857065,Kahleah Copper,Phoenix Mercury,Minnesota Lynx,pts_under,25.5,cold+stingy,0.626,1.6,22.8,8.48
+2026-07-12,401857065,Kahleah Copper,Phoenix Mercury,Minnesota Lynx,pr_under,29.5,cold+stingy,0.59,1.69,27.3,9.88
+2026-07-12,401857065,Kahleah Copper,Phoenix Mercury,Minnesota Lynx,pa_under,26.5,cold+stingy,0.61,1.64,24.0,8.85
+2026-07-12,401857065,Kahleah Copper,Phoenix Mercury,Minnesota Lynx,pra_under,30.5,cold+stingy,0.621,1.61,27.3,10.27
+2026-07-12,401857065,Lexi Held,Phoenix Mercury,Minnesota Lynx,pts_under,8.5,cold+stingy,0.626,1.6,6.6,5.85
+2026-07-12,401857065,Monique Akoa Makani,Phoenix Mercury,Minnesota Lynx,pts_under,9.5,declining+stingy,0.642,1.56,7.7,4.88
+2026-07-12,401857065,Monique Akoa Makani,Phoenix Mercury,Minnesota Lynx,pr_under,12.5,declining+stingy,0.59,1.69,11.2,5.61
+2026-07-12,401857065,Monique Akoa Makani,Phoenix Mercury,Minnesota Lynx,pa_under,13.5,declining+stingy,0.61,1.64,12.0,5.43
+2026-07-12,401857065,Monique Akoa Makani,Phoenix Mercury,Minnesota Lynx,pra_under,15.5,declining+stingy,0.62,1.61,13.6,6.12
+2026-07-12,401857065,Natasha Howard,Minnesota Lynx,Phoenix Mercury,pts_under,16.5,steady,0.563,1.78,15.7,4.8
+2026-07-12,401857065,Kayla McBride,Minnesota Lynx,Phoenix Mercury,pts_under,17.5,steady,0.563,1.78,16.7,5.17
+2026-07-12,401857065,Courtney Williams,Minnesota Lynx,Phoenix Mercury,pts_under,12.5,ftdrought,0.589,1.7,11.4,5.08
+2026-07-12,401857065,Olivia Miles,Minnesota Lynx,Phoenix Mercury,pts_under,21.5,steady,0.563,1.78,20.3,7.46
+2026-07-12,401857065,Valeriane Ayayi,Phoenix Mercury,Minnesota Lynx,ast_over,1.5,usgshock,0.591,1.69,1.9,1.5
