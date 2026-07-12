@@ -2,7 +2,7 @@
 
 _Stingy-D threshold (trailing-10 allowed, bottom quartile): 84_
 
-_🩹 OUT/doubtful (excluded from ALL picks): Aneesah Morrow, Ashlon Jackson, Brittney Griner, Brittney Sykes, Cameron Brink, Gabby Williams, Jovana Nogic, Kelsey Plum, Kiki Rice, Natasha Mack, Saniya Rivers, Satou Sabally, Skylar Diggins, Sonia Citron, Temi Fagbenle_
+_🩹 OUT/doubtful (excluded from ALL picks): Aneesah Morrow, Ashlon Jackson, Brittney Griner, Brittney Sykes, Cameron Brink, Gabby Williams, Jovana Nogic, Kelsey Plum, Kiki Rice, Leonie Fiebich, Natasha Mack, Saniya Rivers, Satou Sabally, Skylar Diggins, Sonia Citron, Temi Fagbenle_
 
 ## 💰 REAL-MONEY — UNDER (cold/shrink + stingy · pts/PR/PA/PRA · flat 1u)
 
@@ -22,7 +22,7 @@ _🩹 OUT/doubtful (excluded from ALL picks): Aneesah Morrow, Ashlon Jackson, Br
 
 ## CASCADE contingencies — fire ONLY on scratch news (PRA OVER rank-3-6, flat 1u)
 
-- New York Liberty: if **Breanna Stewart** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Jonquel Jones OVER 29.5 PRA, Leonie Fiebich OVER 14.5 PRA, Pauline Astier OVER 9.5 PRA
+- New York Liberty: if **Breanna Stewart** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Jonquel Jones OVER 29.5 PRA, Pauline Astier OVER 9.5 PRA
 - Toronto Tempo: if **Marina Mabrey** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Isabelle Harrison OVER 20.5 PRA, Maria Conde OVER 19.5 PRA, Laura Juskaite OVER 12.5 PRA
 - Seattle Storm: if **Dominique Malonga** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Natisha Hiedeman OVER 26.5 PRA, Awa Fam OVER 19.5 PRA, Jade Melbourne OVER 13.5 PRA, Jordan Horston OVER 9.5 PRA
 - Washington Mystics: if **Sonia Citron** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Shakira Austin OVER 22.5 PRA, Michaela Onyenwere OVER 11.5 PRA, Cotie McMahon OVER 11.5 PRA, Alicia Florez OVER 9.5 PRA
