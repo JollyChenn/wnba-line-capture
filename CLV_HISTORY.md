@@ -10,7 +10,7 @@ _**sharp-odds** = vs Pinnacle's vig-free fair price (TRUE edge test) · **sharp-
   ★ SHARP ODDS-CLV: -6.7% | beat fair 0/5 (0%)  ← TRUE edge (vs Pinnacle fair price)
   SHARP LINE-CLV : +0.06 pts | n=8  ← better number than the sharp
   self ODDS-CLV  : -0.5% | beat 5/19 (26%)  (1xbet's own close = weak)
-  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 30/55 (+0.2u) · FLIP UNDER 8/17 (-2.4u) · FLIP UNDER(paper) 21/29 (+9.7u) · FTUNDER 55/126 (-24.7u) · HOT OVER 10/18 (+0.8u) · STAR-OUT CASCADE 45/82 (-3.1u) · starout 0/6 (-6.0u)
+  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 32/57 (+2.0u) · FLIP UNDER 8/17 (-2.4u) · FLIP UNDER(paper) 20/29 (+8.1u) · FTUNDER 56/132 (-28.7u) · HOT OVER 10/18 (+0.8u) · STAR-OUT CASCADE 45/82 (-3.1u) · starout 0/6 (-6.0u)
   VERDICT : ⚠️ NEUTRAL self CLV — winning on outcomes, not beating the line. Unproven; keep collecting.
   by tier: SOLID 4/10 (-2.3u) · STRONG 5/8 (+1.1u) · THIN 1/2 (+0.0u)
   by market: pr Under 1/3 (-1.0u) · pra Under 1/7 (-5.3u) · pts Under 8/10 (+5.1u)
@@ -216,7 +216,7 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260702 | Michaela Onyenwere | PTS Over 9.5 @ 1.87 | BOOK OVERSHOOT | loss | — | — | +2% |
 | 20260702 | Natisha Hiedeman | PRA Over 22.5 @ 1.73 | BOOK OVERSHOOT | loss | — | — | -4% |
 | 20260702 | Paige Bueckers | PTS Under 20.5 @ 1.909 | FTUNDER | loss | -4% | +0.0 | +2% |
-| 20260702 | Shakira Austin | PTS Over 2.5 @ 1.73 | FLIP UNDER(paper) | WIN | — | — | — |
+| 20260702 | Shakira Austin | PTS Under 12.5 @ 1.909 | FTUNDER | loss | +0% | +0.0 | +4% |
 | 20260703 | Azura Stevens | PTS Under 10.5 @ 1.96 | FTUNDER | loss | -9% | — | -4% |
 | 20260703 | Breanna Stewart | PTS Under 19.5 @ 1.79 | FTUNDER | loss | -4% | +0.0 | -1% |
 | 20260703 | Chelsea Gray | PRA Over 24.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
@@ -363,15 +363,23 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260711 | Olivia Miles | PA Over 22.5 @ 1.73 | BOOK OVERSHOOT | WIN | — | — | +0% |
 | 20260711 | Rhyne Howard | PTS Over 18.5 @ 1.893 | FLIP UNDER(paper) | loss | — | — | — |
 | 20260712 | Alicia Florez | PRA Over 9.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
+| 20260712 | Aliyah Boston | PR Over 25.5 @ 1.91 | BOOK OVERSHOOT | WIN | — | — | +4% |
+| 20260712 | Azura Stevens | PTS Under 12.5 @ 1.67 | FTUNDER | loss | -8% | +0.0 | -10% |
+| 20260712 | Azzi Fudd | PTS Under 14.5 @ 1.83 | FTUNDER | loss | -8% | +0.0 | -4% |
 | 20260712 | Breanna Stewart | PTS Under 20.5 @ 1.8 | FTUNDER | loss | — | +1.0 | +3% |
+| 20260712 | Chelsea Gray | PTS Under 11.5 @ 1.95 | FTUNDER | WIN | -3% | +0.0 | +0% |
 | 20260712 | Cotie McMahon | PRA Over 11.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
 | 20260712 | Dominique Malonga | PTS Under 16.5 @ 1.95 | COLD/SHRINK/STINGY | WIN | -5% | +0.0 | +0% |
 | 20260712 | Isabelle Harrison | PTS Under 13.5 @ 1.91 | FTUNDER | WIN | -7% | — | +0% |
+| 20260712 | Jackie Young | PTS Over 16.5 @ 1.8 | FLIP UNDER(paper) | loss | — | — | — |
+| 20260712 | Jessica Shepard | PTS Under 15.5 @ 1.83 | FTUNDER | loss | -5% | +0.0 | -1% |
 | 20260712 | Jonquel Jones | PTS Over 15.5 @ 1.952 | FLIP UNDER | loss | — | -1.0 | +0% |
+| 20260712 | Kelsey Mitchell | PRA Over 26.5 @ 1.833 | BOOK OVERSHOOT | WIN | — | — | +0% |
 | 20260712 | Kiki Iriafen | PRA Over 25.5 @ 1.91 | HOT OVER | WIN | — | — | +4% |
 | 20260712 | Maria Conde | PTS Under 10.5 @ 1.86 | FTUNDER | loss | — | — | -5% |
 | 20260712 | Michaela Onyenwere | PRA Over 11.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
 | 20260712 | Natisha Hiedeman | PRA Over 19.5 @ 2.0 | BOOK OVERSHOOT | WIN | — | — | +9% |
+| 20260712 | Paige Bueckers | PTS Over 21.5 @ 1.86 | FLIP UNDER(paper) | WIN | — | — | — |
 | 20260712 | Shakira Austin | PRA Over 22.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260712 | Shakira Austin | PTS Under 12.5 @ 1.91 | FTUNDER | loss | -2% | +0.0 | -2% |
-| 20260712 | Sonia Citron | PTS Over 3.5 @ 1.67 | FLIP UNDER(paper) | WIN | — | — | — |
+| 20260712 | Sonia Citron | PTS Under 17.5 @ 2.0 | FTUNDER | loss | — | — | +0% |
