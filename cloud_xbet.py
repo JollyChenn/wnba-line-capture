@@ -568,6 +568,8 @@ def main():
             # ---- the model's own side (an under, or a PRA over) ----
             outs = pp.get((pk["base"], psd))
             if outs:
+                outs = [t for t in outs if t[0] >= max(3, pk["anchor"] * 0.5)]   # global period/quarter guard: never treat a sub-half-of-anchor line as a full-game prop
+                if not outs: continue
                 line, odds = min(outs, key=lambda t: abs(t[0] - pk["anchor"]))   # the model's value-zone line (closest to median)
                 for _L, _O in outs:                       # capture EVERY alternate line (book often lists 2+, e.g. U22.5 AND U25.5) for the record
                     rows.append([stamp, player, pk["base"], psd, _L, _O])
@@ -585,7 +587,9 @@ def main():
             if psd == "Under" and pk.get("sd"):
                 oo = pp.get((pk["base"], "Over"))
                 if oo:
-                    oline, oodds = min(oo, key=lambda t: t[0])               # most-overshot (lowest) over line
+                    oo_full = [t for t in oo if t[0] >= max(3, pk["anchor"] * 0.5)]   # drop period/quarter lines (1xbet sometimes serves them under the same code — same bug as overshoot fix)
+                    if not oo_full: continue
+                    oline, oodds = min(oo_full, key=lambda t: t[0])          # most-overshot (lowest) over line
                     if oline <= pk["anchor"] - 2 and oline < pk["proj"]:      # genuine overshoot, below our proj
                         pov = 1 - _ncdf((oline - pk["proj"]) / pk["sd"]); ofair = 1 / max(pov, 0.02)
                         if oodds > ofair:
