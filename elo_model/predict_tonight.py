@@ -153,7 +153,12 @@ def main():
     new = not os.path.exists(outp)
     fh = open(outp, "a", newline="", encoding="utf-8"); w = csv.writer(fh)
     if new: w.writerow(["logged_utc","date","home","away","tip","v3_margin","v5_margin","tot_pred",
-                        "pin_spread","pin_total","pin_ml","outs"])
+                        "pin_spread","pin_total","pin_ml","outs",
+                        # enriched — everything needed to REBUILD or RE-FIT retroactively:
+                        "d_pnews","d_telo","d_oreb","d_p3ar","d_fluid","d_drop","d_pfr",  # feature deltas H-A
+                        "s_pace","s_tov","d_p3pct","lg_env",                              # total inputs
+                        "top2_H","top2_A","proj_min_H","proj_min_A","n_outs",             # roster info
+                        "b3_coef","b5_coef","bt_coef"])                                    # model coefs at time of prediction
     nrows = 0
     ABBR = {}  # espn abbrev used throughout
     for ev in sb.get("events", []):
@@ -191,9 +196,21 @@ def main():
                 if v: return f"{v[0]}@{v[1]}"
             return ""
         outs = [name_of.get(k, k) for k in inj if team_of.get(k) in (h, a)]
+        # top-2 projected minutes players per side (for later star-anchor analysis)
+        pmh = proj(h, inj) or {}; pma = proj(a, inj) or {}
+        t2h = "|".join(name_of.get(k, k) for k in sorted(pmh, key=lambda x: -pmh[x])[:2])
+        t2a = "|".join(name_of.get(k, k) for k in sorted(pma, key=lambda x: -pma[x])[:2])
         w.writerow([stamp, ev.get("date", "")[:10], h, a, ev.get("date", "")[11:16],
                     round(m3, 2), round(m5, 2), round(tp, 1),
-                    pin("spread"), pin("total"), pin("moneyline"), ";".join(outs[:6])])
+                    pin("spread"), pin("total"), pin("moneyline"), ";".join(outs[:6]),
+                    round(H["pnews"]-A["pnews"], 3), round(teld, 1), round(H["oreb"]-A["oreb"], 4),
+                    round(H["p3ar"]-A["p3ar"], 4), round(H["fluid"]-A["fluid"], 3),
+                    round(H["drop"]-A["drop"], 4), round(H["pf"]-A["pf"], 3),
+                    round(H["pace"]+A["pace"], 2), round(H["tov"]-A["tov"], 4),
+                    round(H["p3"]-A["p3"], 4), round(LGENV, 2),
+                    t2h, t2a, round(sum(pmh.values()), 0), round(sum(pma.values()), 0), len(outs),
+                    "|".join(f"{b:.4g}" for b in B3), "|".join(f"{b:.4g}" for b in B5),
+                    "|".join(f"{b:.4g}" for b in BT)])
         nrows += 1
         print(f"{a}@{h}: v3 {m3:+.1f} v5 {m5:+.1f} total {tp:.0f} | pin sp={pin('spread')} tot={pin('total')} | outs={len(outs)}")
     fh.close()

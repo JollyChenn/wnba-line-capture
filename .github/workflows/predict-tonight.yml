@@ -21,8 +21,10 @@ jobs:
         run: cd elo_model && python collect_history.py || true
       - name: predict tonight vs market
         run: cd elo_model && python predict_tonight.py || true
+      - name: grade finished games (append scores + hit-columns to elo_graded.csv)
+        run: cd elo_model && python elo_grade.py || true
       - name: commit
         run: |
           git config user.name "elo-bot"; git config user.email "actions@users.noreply.github.com"
-          for f in elo_model/elo_forward_log.csv elo_model/games_full.csv elo_model/box_full.csv elo_model/shots.csv elo_model/timeouts.csv; do [ -f "$f" ] && git add -f "$f" || true; done
+          for f in elo_model/elo_forward_log.csv elo_model/elo_graded.csv elo_model/games_full.csv elo_model/box_full.csv elo_model/shots.csv elo_model/timeouts.csv; do [ -f "$f" ] && git add -f "$f" || true; done
           git diff --staged --quiet || { git commit -m "elo forward log $(date -u +%F)"; git pull --rebase --autostash origin main || true; git push || true; }
