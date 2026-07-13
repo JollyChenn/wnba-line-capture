@@ -1008,3 +1008,41 @@ pick_date,game_id,player,team,opp,market,anchor,signals,fair_p,fair_odds,proj,sd
 2026-07-12,401857065,Courtney Williams,Minnesota Lynx,Phoenix Mercury,pts_under,12.5,ftdrought,0.589,1.7,11.4,5.08
 2026-07-12,401857065,Olivia Miles,Minnesota Lynx,Phoenix Mercury,pts_under,21.5,steady,0.563,1.78,20.3,7.46
 2026-07-12,401857065,Valeriane Ayayi,Phoenix Mercury,Minnesota Lynx,ast_over,1.5,usgshock,0.591,1.69,1.9,1.5
+2026-07-13,401857064,Allisha Gray,Atlanta Dream,Los Angeles Sparks,pra_over,22.5,hot+leaky,0.62,1.61,24.9,6.26
+2026-07-13,401857064,Nneka Ogwumike,Los Angeles Sparks,Atlanta Dream,pts_under,18.5,steady,0.563,1.78,17.5,6.11
+2026-07-13,401857064,Dearica Hamby,Los Angeles Sparks,Atlanta Dream,pts_under,13.5,steady,0.563,1.78,12.6,5.64
+2026-07-13,401857064,Allisha Gray,Atlanta Dream,Los Angeles Sparks,pts_under,17.5,steady,0.563,1.78,16.8,4.43
+2026-07-13,401857064,Jordin Canada,Atlanta Dream,Los Angeles Sparks,pts_under,10.5,steady,0.563,1.78,9.7,5.02
+2026-07-13,401857064,Rhyne Howard,Atlanta Dream,Los Angeles Sparks,pts_under,18.5,steady,0.563,1.78,17.5,6.18
+2026-07-13,401857064,Rae Burrell,Los Angeles Sparks,Atlanta Dream,pts_under,16.5,steady,0.563,1.78,15.4,6.76
+2026-07-13,401857064,Angel Reese,Atlanta Dream,Los Angeles Sparks,pts_under,15.5,steady,0.563,1.78,15.0,3.41
+2026-07-13,401857064,Rae Burrell,Los Angeles Sparks,Atlanta Dream,ast_over,1.5,usgshock,0.591,1.69,1.9,1.64
+2026-07-13,401857065,Kahleah Copper,Phoenix Mercury,Minnesota Lynx,pts_under,25.5,cold+stingy,0.626,1.6,22.8,8.48
+2026-07-13,401857065,Kahleah Copper,Phoenix Mercury,Minnesota Lynx,pr_under,29.5,cold+stingy,0.59,1.69,27.3,9.88
+2026-07-13,401857065,Kahleah Copper,Phoenix Mercury,Minnesota Lynx,pa_under,26.5,cold+stingy,0.61,1.64,24.0,8.85
+2026-07-13,401857065,Kahleah Copper,Phoenix Mercury,Minnesota Lynx,pra_under,30.5,cold+stingy,0.621,1.61,27.3,10.27
+2026-07-13,401857065,Lexi Held,Phoenix Mercury,Minnesota Lynx,pts_under,8.5,cold+stingy,0.626,1.6,6.6,5.85
+2026-07-13,401857065,Monique Akoa Makani,Phoenix Mercury,Minnesota Lynx,pts_under,9.5,declining+stingy,0.642,1.56,7.7,4.88
+2026-07-13,401857065,Monique Akoa Makani,Phoenix Mercury,Minnesota Lynx,pr_under,12.5,declining+stingy,0.59,1.69,11.2,5.61
+2026-07-13,401857065,Monique Akoa Makani,Phoenix Mercury,Minnesota Lynx,pa_under,13.5,declining+stingy,0.61,1.64,12.0,5.43
+2026-07-13,401857065,Monique Akoa Makani,Phoenix Mercury,Minnesota Lynx,pra_under,15.5,declining+stingy,0.62,1.61,13.6,6.12
+2026-07-13,401857065,Natasha Howard,Minnesota Lynx,Phoenix Mercury,pts_under,16.5,steady,0.563,1.78,15.7,4.8
+2026-07-13,401857065,Kayla McBride,Minnesota Lynx,Phoenix Mercury,pts_under,17.5,steady,0.563,1.78,16.7,5.17
+2026-07-13,401857065,Courtney Williams,Minnesota Lynx,Phoenix Mercury,pts_under,12.5,ftdrought,0.589,1.7,11.4,5.08
+2026-07-13,401857065,Olivia Miles,Minnesota Lynx,Phoenix Mercury,pts_under,21.5,steady,0.563,1.78,20.3,7.46
+2026-07-13,401857065,Valeriane Ayayi,Phoenix Mercury,Minnesota Lynx,ast_over,1.5,usgshock,0.591,1.69,1.9,1.5
+2026-07-13,401857066,Olivia Nelson-Ododa,Connecticut Sun,Portland Fire,pra_over,20.5,expand+leaky,0.58,1.72,22.2,6.1
+2026-07-13,401857066,Charlisse Leger-Walker,Connecticut Sun,Portland Fire,pra_over,14.5,expand+leaky,0.58,1.72,15.6,5.46
+2026-07-13,401857066,Megan Gustafson,Portland Fire,Connecticut Sun,pts_under,14.5,steady,0.563,1.78,13.8,4.13
+2026-07-13,401857066,Olivia Nelson-Ododa,Connecticut Sun,Portland Fire,pts_under,11.5,steady,0.563,1.78,11.0,3.0
+2026-07-13,401857066,Leila Lacan,Connecticut Sun,Portland Fire,pts_under,12.5,steady,0.563,1.78,11.8,4.52
+2026-07-13,401857066,Carla Leite,Portland Fire,Connecticut Sun,pts_under,15.5,steady,0.563,1.78,14.4,6.83
+2026-07-13,401857066,Olivia Nelson-Ododa,Connecticut Sun,Portland Fire,ast_over,1.5,usgshock,0.591,1.69,1.9,1.5
+2026-07-13,401857066,Carla Leite,Portland Fire,Connecticut Sun,ast_over,6.5,usgshock,0.591,1.69,6.9,2.63
+2026-07-13,401857067,Shakira Austin,Washington Mystics,Toronto Tempo,pra_over,23.5,hot+leaky,0.62,1.61,25.9,6.38
+2026-07-13,401857067,Kiki Iriafen,Washington Mystics,Toronto Tempo,pra_over,25.5,expand+leaky,0.58,1.72,27.9,9.46
+2026-07-13,401857067,Isabelle Harrison,Toronto Tempo,Washington Mystics,pts_under,13.5,steady,0.563,1.78,12.7,5.07
+2026-07-13,401857067,Maria Conde,Toronto Tempo,Washington Mystics,pts_under,11.5,steady,0.563,1.78,10.8,4.27
+2026-07-13,401857067,Nyara Sabally,Toronto Tempo,Washington Mystics,pts_under,11.5,steady,0.563,1.78,10.8,4.5
+2026-07-13,401857067,Sonia Citron,Washington Mystics,Toronto Tempo,pts_under,17.5,steady,0.563,1.78,16.3,7.28
+2026-07-13,401857067,Marina Mabrey,Toronto Tempo,Washington Mystics,ast_over,3.5,usgshock,0.591,1.69,3.9,1.77
