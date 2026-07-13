@@ -5867,3 +5867,22 @@ captured_utc,date,player,market,side,line,odds,tier,ev,pinn,src
 2026-07-13T17:23:27+00:00,2026-07-13,Dearica Hamby,pra,Over,22.5,1.75,CASC,0.0,,cascade
 2026-07-13T17:23:27+00:00,2026-07-13,Ariel Atkins,pra,Over,12.5,1.75,CASC,0.0,,cascade
 2026-07-13T17:23:27+00:00,2026-07-13,Erica Wheeler,pra,Over,11.5,1.75,CASC,0.0,,cascade
+2026-07-13T18:22:11+00:00,2026-07-13,Dearica Hamby,pts,Under,16.5,1.73,STRONG,0.307,16.5,newunder
+2026-07-13T18:22:11+00:00,2026-07-13,Jordin Canada,pts,Under,11.5,1.8,SOLID,0.152,11.5,newunder
+2026-07-13T18:22:11+00:00,2026-07-13,Rae Burrell,pts,Over,14.5,1.833,THIN,0.014,14.5,flip_paper
+2026-07-13T18:22:11+00:00,2026-07-13,Kahleah Copper,pr,Over,23.5,1.833,SOLID,0.191,,flip
+2026-07-13T18:22:11+00:00,2026-07-13,Monique Akoa Makani,pts,Under,9.5,1.85,SOLID,0.191,9.5,model
+2026-07-13T18:22:11+00:00,2026-07-13,Courtney Williams,pts,Under,16.5,1.8,STRONG,0.516,16.5,newunder
+2026-07-13T18:22:11+00:00,2026-07-13,Olivia Miles,pts,Over,19.5,1.85,THIN,0.004,19.5,flip_paper
+2026-07-13T18:22:11+00:00,2026-07-13,Megan Gustafson,pts,Over,12.5,2.0,SOLID,0.247,,flip_paper
+2026-07-13T18:22:11+00:00,2026-07-13,Carla Leite,ast,Over,5.5,2.0,STRONG,0.39,,usgshock
+2026-07-13T18:22:11+00:00,2026-07-13,Isabelle Harrison,pts,Under,13.5,1.79,THIN,0.007,,newunder
+2026-07-13T18:22:11+00:00,2026-07-13,Maria Conde,pts,Over,9.5,1.714,SOLID,0.062,,flip_paper
+2026-07-13T18:22:11+00:00,2026-07-13,Sonia Citron,pts,Under,17.5,1.9,THIN,0.074,,newunder
+2026-07-13T18:22:11+00:00,2026-07-13,Leila Lacan,pra,Over,18.5,1.75,CASC,0.0,,cascade
+2026-07-13T18:22:11+00:00,2026-07-13,Charlisse Leger-Walker,pra,Over,14.5,1.75,CASC,0.0,,cascade
+2026-07-13T18:22:11+00:00,2026-07-13,Diamond Miller,pra,Over,12.5,1.75,CASC,0.0,,cascade
+2026-07-13T18:22:11+00:00,2026-07-13,Rae Burrell,pra,Over,19.5,1.8,CASC,0.029,,cascade
+2026-07-13T18:22:11+00:00,2026-07-13,Dearica Hamby,pra,Over,22.5,1.75,CASC,0.0,,cascade
+2026-07-13T18:22:11+00:00,2026-07-13,Ariel Atkins,pra,Over,12.5,1.75,CASC,0.0,,cascade
+2026-07-13T18:22:11+00:00,2026-07-13,Erica Wheeler,pra,Over,11.5,1.75,CASC,0.0,,cascade
