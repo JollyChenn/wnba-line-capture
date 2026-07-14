@@ -377,3 +377,8 @@ date,player,market,side,line,odds,tier,actual,result,pnl,odds_clv,line_clv,sharp
 20260713,Rae Burrell,pra,Over,21.5,1.75,CASC,26.0,WIN,0.75,0.0,-2.0,,,cascade,2026-07-12
 20260713,Rae Burrell,pts,Over,14.5,1.87,THIN,18.0,WIN,0.87,0.02,0.0,0.0,-0.024,flip_paper,2026-07-13
 20260713,Rhyne Howard,pts,Under,19.5,1.73,SOLID,11.0,WIN,0.73,-0.07,0.0,,,newunder,2026-07-12
+20260714,Charlisse Leger-Walker,pra,Over,14.5,1.75,CASC,15.0,WIN,0.75,0.0,0.0,,,cascade,2026-07-13
+20260714,Diamond Miller,pra,Over,12.5,1.75,CASC,14.0,WIN,0.75,0.0,0.0,,,cascade,2026-07-13
+20260714,Leila Lacan,pra,Over,18.5,1.75,CASC,18.0,loss,-1.0,0.0,0.0,,,cascade,2026-07-13
+20260714,Megan Gustafson,pts,Over,12.5,2.0,SOLID,15.0,WIN,1.0,0.053,0.0,,,flip_paper,2026-07-13
+20260714,Olivia Nelson-Ododa,pts,Under,11.5,1.91,THIN,16.0,loss,-1.0,0.005,0.0,,,newunder,2026-07-14
