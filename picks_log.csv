@@ -1046,3 +1046,47 @@ pick_date,game_id,player,team,opp,market,anchor,signals,fair_p,fair_odds,proj,sd
 2026-07-13,401857067,Nyara Sabally,Toronto Tempo,Washington Mystics,pts_under,11.5,steady,0.563,1.78,10.8,4.5
 2026-07-13,401857067,Sonia Citron,Washington Mystics,Toronto Tempo,pts_under,17.5,steady,0.563,1.78,16.3,7.28
 2026-07-13,401857067,Marina Mabrey,Toronto Tempo,Washington Mystics,ast_over,3.5,usgshock,0.591,1.69,3.9,1.77
+2026-07-14,401857066,Brittney Griner,Connecticut Sun,Portland Fire,pra_over,20.5,hot+leaky,0.62,1.61,23.5,9.92
+2026-07-14,401857066,Olivia Nelson-Ododa,Connecticut Sun,Portland Fire,pra_over,20.5,expand+leaky,0.58,1.72,22.2,6.1
+2026-07-14,401857066,Charlisse Leger-Walker,Connecticut Sun,Portland Fire,pra_over,14.5,expand+leaky,0.58,1.72,15.6,5.46
+2026-07-14,401857066,Megan Gustafson,Portland Fire,Connecticut Sun,pts_under,14.5,steady,0.563,1.78,13.8,4.13
+2026-07-14,401857066,Olivia Nelson-Ododa,Connecticut Sun,Portland Fire,pts_under,11.5,steady,0.563,1.78,11.0,3.0
+2026-07-14,401857066,Leila Lacan,Connecticut Sun,Portland Fire,pts_under,12.5,steady,0.563,1.78,11.8,4.52
+2026-07-14,401857066,Carla Leite,Portland Fire,Connecticut Sun,pts_under,15.5,steady,0.563,1.78,14.4,6.83
+2026-07-14,401857066,Olivia Nelson-Ododa,Connecticut Sun,Portland Fire,ast_over,1.5,usgshock,0.591,1.69,1.9,1.5
+2026-07-14,401857066,Carla Leite,Portland Fire,Connecticut Sun,ast_over,6.5,usgshock,0.591,1.69,6.9,2.63
+2026-07-14,401857067,Shakira Austin,Washington Mystics,Toronto Tempo,pra_over,23.5,hot+leaky,0.62,1.61,25.9,6.38
+2026-07-14,401857067,Kiki Iriafen,Washington Mystics,Toronto Tempo,pra_over,25.5,expand+leaky,0.58,1.72,27.9,9.46
+2026-07-14,401857067,Isabelle Harrison,Toronto Tempo,Washington Mystics,pts_under,13.5,steady,0.563,1.78,12.7,5.07
+2026-07-14,401857067,Maria Conde,Toronto Tempo,Washington Mystics,pts_under,11.5,steady,0.563,1.78,10.8,4.27
+2026-07-14,401857067,Nyara Sabally,Toronto Tempo,Washington Mystics,pts_under,11.5,steady,0.563,1.78,10.8,4.5
+2026-07-14,401857067,Sonia Citron,Washington Mystics,Toronto Tempo,pts_under,17.5,steady,0.563,1.78,16.3,7.28
+2026-07-14,401857067,Marina Mabrey,Toronto Tempo,Washington Mystics,ast_over,3.5,usgshock,0.591,1.69,3.9,1.77
+2026-07-14,401857068,Dominique Malonga,Seattle Storm,Chicago Sky,pts_under,15.5,declining+cold,0.684,1.46,10.4,10.67
+2026-07-14,401857068,Dominique Malonga,Seattle Storm,Chicago Sky,pr_under,25.5,declining+cold,0.59,1.69,22.7,12.19
+2026-07-14,401857068,Dominique Malonga,Seattle Storm,Chicago Sky,pa_under,17.5,declining+cold,0.61,1.64,14.5,10.66
+2026-07-14,401857068,Dominique Malonga,Seattle Storm,Chicago Sky,pra_under,27.5,declining+cold,0.641,1.56,23.1,12.26
+2026-07-14,401857068,Azura Stevens,Chicago Sky,Seattle Storm,pts_under,10.5,steady,0.563,1.78,9.7,5.25
+2026-07-14,401857068,Natisha Hiedeman,Seattle Storm,Chicago Sky,pts_under,19.5,steady,0.563,1.78,18.6,5.58
+2026-07-14,401857068,Kamilla Cardoso,Chicago Sky,Seattle Storm,pts_under,15.5,steady,0.563,1.78,14.4,7.14
+2026-07-14,401857068,Sydney Taylor,Chicago Sky,Seattle Storm,pts_under,15.5,steady,0.563,1.78,14.5,6.62
+2026-07-14,401857068,Awa Fam,Seattle Storm,Chicago Sky,pts_under,12.5,ftdrought,0.589,1.7,11.1,6.23
+2026-07-14,401857069,Nia Coffey,Minnesota Lynx,Los Angeles Sparks,ra_under,7.5,mins-dip+cold,0.61,1.64,6.6,3.14
+2026-07-14,401857069,Nia Coffey,Minnesota Lynx,Los Angeles Sparks,pra_under,14.5,mins-dip+cold,0.6,1.67,12.6,7.39
+2026-07-14,401857069,Nia Coffey,Minnesota Lynx,Los Angeles Sparks,reb_under,4.5,mins-dip+cold,0.58,1.72,4.1,2.11
+2026-07-14,401857069,Kayla McBride,Minnesota Lynx,Los Angeles Sparks,pra_over,24.5,hot+leaky,0.62,1.61,27.1,8.42
+2026-07-14,401857069,Nneka Ogwumike,Los Angeles Sparks,Minnesota Lynx,pts_under,17.5,steady,0.563,1.78,16.6,5.79
+2026-07-14,401857069,Natasha Howard,Minnesota Lynx,Los Angeles Sparks,pts_under,15.5,steady,0.563,1.78,14.7,4.81
+2026-07-14,401857069,Kayla McBride,Minnesota Lynx,Los Angeles Sparks,pts_under,18.5,steady,0.563,1.78,17.3,7.45
+2026-07-14,401857069,Dearica Hamby,Los Angeles Sparks,Minnesota Lynx,pts_under,13.5,steady,0.563,1.78,12.7,5.04
+2026-07-14,401857069,Courtney Williams,Minnesota Lynx,Los Angeles Sparks,pts_under,12.5,ftdrought,0.589,1.7,11.3,5.4
+2026-07-14,401857069,Rae Burrell,Los Angeles Sparks,Minnesota Lynx,pts_under,17.5,steady,0.563,1.78,16.6,5.54
+2026-07-14,401857069,Olivia Miles,Minnesota Lynx,Los Angeles Sparks,pts_under,21.5,steady,0.563,1.78,20.2,8.42
+2026-07-14,401857069,Kayla McBride,Minnesota Lynx,Los Angeles Sparks,ast_over,1.5,usgshock,0.591,1.69,1.9,1.5
+2026-07-14,401857070,Caitlin Clark,Indiana Fever,Golden State Valkyries,pts_under,22.5,declining+cold+stingy,0.7,1.43,18.9,6.9
+2026-07-14,401857070,Caitlin Clark,Indiana Fever,Golden State Valkyries,pr_under,26.5,declining+cold+stingy,0.59,1.69,24.9,7.15
+2026-07-14,401857070,Caitlin Clark,Indiana Fever,Golden State Valkyries,pa_under,31.5,declining+cold+stingy,0.61,1.64,29.1,8.77
+2026-07-14,401857070,Caitlin Clark,Indiana Fever,Golden State Valkyries,pra_under,33.5,declining+cold+stingy,0.66,1.52,29.7,9.12
+2026-07-14,401857070,Janelle Salaun,Golden State Valkyries,Indiana Fever,pra_over,15.5,hot+leaky,0.62,1.61,17.8,7.61
+2026-07-14,401857070,Kelsey Mitchell,Indiana Fever,Golden State Valkyries,pts_under,26.5,steady,0.563,1.78,25.8,4.12
+2026-07-14,401857070,Aliyah Boston,Indiana Fever,Golden State Valkyries,pts_under,17.5,steady,0.563,1.78,16.7,4.79
