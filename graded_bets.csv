@@ -360,3 +360,20 @@ date,player,market,side,line,odds,tier,actual,result,pnl,odds_clv,line_clv,sharp
 20260712,Shakira Austin,pra,Over,22.5,1.75,CASC,35.0,WIN,0.75,0.0,0.0,,,cascade,2026-07-11
 20260712,Shakira Austin,pts,Under,12.5,1.91,STRONG,27.0,loss,-1.0,-0.021,0.0,0.0,-0.016,newunder,2026-07-12
 20260712,Sonia Citron,pts,Under,17.5,2.0,THIN,19.0,loss,-1.0,0.0,0.0,,,newunder,2026-07-01
+20260713,Allisha Gray,pts,Under,20.5,2.0,STRONG,20.0,WIN,1.0,0.081,-1.0,,,newunder,2026-07-12
+20260713,Angel Reese,pts,Under,15.5,1.833,THIN,23.0,loss,-1.0,0.0,0.0,,,newunder,2026-07-10
+20260713,Ariel Atkins,pra,Over,12.5,1.75,CASC,18.0,WIN,0.75,0.0,0.0,,,cascade,2026-07-12
+20260713,Courtney Williams,pts,Under,16.5,1.8,STRONG,8.0,WIN,0.8,0.0,0.0,1.0,,newunder,2026-07-12
+20260713,Dearica Hamby,pra,Over,22.5,1.75,CASC,19.0,loss,-1.0,0.0,0.0,,,cascade,2026-07-12
+20260713,Dearica Hamby,pts,Under,16.5,1.909,STRONG,12.0,WIN,0.91,0.103,0.0,1.0,,newunder,2026-07-12
+20260713,Erica Wheeler,pra,Over,11.5,1.75,CASC,27.0,WIN,0.75,0.0,0.0,,,cascade,2026-07-12
+20260713,Jordin Canada,pts,Under,11.5,1.8,SOLID,16.0,loss,-1.0,0.0,0.0,0.0,-0.087,newunder,2026-07-12
+20260713,Kahleah Copper,pts,Over,19.5,1.8,SOLID,26.0,WIN,0.8,-0.037,0.0,,,flip,2026-07-12
+20260713,Kayla McBride,pts,Over,15.5,1.8,SOLID,37.0,WIN,0.8,0.017,0.0,,,flip_paper,2026-07-12
+20260713,Monique Akoa Makani,pts,Under,9.5,1.83,SOLID,17.0,loss,-1.0,-0.011,0.0,0.0,-0.046,model,2026-07-13
+20260713,Natasha Howard,pts,Over,15.5,1.73,SOLID,13.0,loss,-1.0,,,,,flip_paper,2026-07-12
+20260713,Nneka Ogwumike,pts,Under,18.5,1.87,THIN,19.0,loss,-1.0,0.0,0.0,,,newunder,2026-07-12
+20260713,Olivia Miles,pa,Over,23.5,1.73,STRONG,41.0,WIN,0.73,,,,,overshoot,2026-07-12
+20260713,Rae Burrell,pra,Over,21.5,1.75,CASC,26.0,WIN,0.75,0.0,-2.0,,,cascade,2026-07-12
+20260713,Rae Burrell,pts,Over,14.5,1.87,THIN,18.0,WIN,0.87,0.02,0.0,0.0,-0.024,flip_paper,2026-07-13
+20260713,Rhyne Howard,pts,Under,19.5,1.73,SOLID,11.0,WIN,0.73,-0.07,0.0,,,newunder,2026-07-12

@@ -4,16 +4,16 @@ _Auto-updated after each slate settles. Raw data: `graded_bets.csv`. CLV>0 = we 
 _**sharp-odds** = vs Pinnacle's vig-free fair price (TRUE edge test) · **sharp-line** = pts vs Pinnacle's line · **self** = vs 1xbet's own close (weak)._
 
 ```
-📊 WNBA BOT — TRACK RECORD (20 settled · PROVEN signals only)
-  Record  : 10-10  (50% hit)
-  Net P&L : -1.19u  (ROI -5.9%/bet)
-  ★ SHARP ODDS-CLV: -6.7% | beat fair 0/5 (0%)  ← TRUE edge (vs Pinnacle fair price)
-  SHARP LINE-CLV : +0.06 pts | n=8  ← better number than the sharp
-  self ODDS-CLV  : -0.5% | beat 5/19 (26%)  (1xbet's own close = weak)
-  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 32/57 (+2.0u) · FLIP UNDER 8/17 (-2.4u) · FLIP UNDER(paper) 20/29 (+8.1u) · FTUNDER 56/132 (-28.7u) · HOT OVER 10/18 (+0.8u) · STAR-OUT CASCADE 45/82 (-3.1u) · starout 0/6 (-6.0u)
+📊 WNBA BOT — TRACK RECORD (21 settled · PROVEN signals only)
+  Record  : 10-11  (48% hit)
+  Net P&L : -2.19u  (ROI -10.4%/bet)
+  ★ SHARP ODDS-CLV: -6.3% | beat fair 0/6 (0%)  ← TRUE edge (vs Pinnacle fair price)
+  SHARP LINE-CLV : +0.06 pts | n=9  ← better number than the sharp
+  self ODDS-CLV  : -0.5% | beat 5/20 (25%)  (1xbet's own close = weak)
+  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 33/58 (+2.7u) · FLIP UNDER 9/18 (-1.6u) · FLIP UNDER(paper) 22/32 (+8.8u) · FTUNDER 60/139 (-28.3u) · HOT OVER 10/18 (+0.8u) · STAR-OUT CASCADE 48/86 (-1.9u) · starout 0/6 (-6.0u)
   VERDICT : ⚠️ NEUTRAL self CLV — winning on outcomes, not beating the line. Unproven; keep collecting.
-  by tier: SOLID 4/10 (-2.3u) · STRONG 5/8 (+1.1u) · THIN 1/2 (+0.0u)
-  by market: pr Under 1/3 (-1.0u) · pra Under 1/7 (-5.3u) · pts Under 8/10 (+5.1u)
+  by tier: SOLID 4/11 (-3.3u) · STRONG 5/8 (+1.1u) · THIN 1/2 (+0.0u)
+  by market: pr Under 1/3 (-1.0u) · pra Under 1/7 (-5.3u) · pts Under 8/11 (+4.1u)
 ```
 
 ## Per-bet
@@ -383,3 +383,20 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260712 | Shakira Austin | PRA Over 22.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260712 | Shakira Austin | PTS Under 12.5 @ 1.91 | FTUNDER | loss | -2% | +0.0 | -2% |
 | 20260712 | Sonia Citron | PTS Under 17.5 @ 2.0 | FTUNDER | loss | — | — | +0% |
+| 20260713 | Allisha Gray | PTS Under 20.5 @ 2.0 | FTUNDER | WIN | — | — | +8% |
+| 20260713 | Angel Reese | PTS Under 15.5 @ 1.833 | FTUNDER | loss | — | — | +0% |
+| 20260713 | Ariel Atkins | PRA Over 12.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
+| 20260713 | Courtney Williams | PTS Under 16.5 @ 1.8 | FTUNDER | WIN | — | +1.0 | +0% |
+| 20260713 | Dearica Hamby | PRA Over 22.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
+| 20260713 | Dearica Hamby | PTS Under 16.5 @ 1.909 | FTUNDER | WIN | — | +1.0 | +10% |
+| 20260713 | Erica Wheeler | PRA Over 11.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
+| 20260713 | Jordin Canada | PTS Under 11.5 @ 1.8 | FTUNDER | loss | -9% | +0.0 | +0% |
+| 20260713 | Kahleah Copper | PTS Over 19.5 @ 1.8 | FLIP UNDER | WIN | — | — | -4% |
+| 20260713 | Kayla McBride | PTS Over 15.5 @ 1.8 | FLIP UNDER(paper) | WIN | — | — | +2% |
+| 20260713 | Monique Akoa Makani | PTS Under 9.5 @ 1.83 | COLD/SHRINK/STINGY | loss | -5% | +0.0 | -1% |
+| 20260713 | Natasha Howard | PTS Over 15.5 @ 1.73 | FLIP UNDER(paper) | loss | — | — | — |
+| 20260713 | Nneka Ogwumike | PTS Under 18.5 @ 1.87 | FTUNDER | loss | — | — | +0% |
+| 20260713 | Olivia Miles | PA Over 23.5 @ 1.73 | BOOK OVERSHOOT | WIN | — | — | — |
+| 20260713 | Rae Burrell | PRA Over 21.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
+| 20260713 | Rae Burrell | PTS Over 14.5 @ 1.87 | FLIP UNDER(paper) | WIN | -2% | +0.0 | +2% |
+| 20260713 | Rhyne Howard | PTS Under 19.5 @ 1.73 | FTUNDER | WIN | — | — | -7% |
