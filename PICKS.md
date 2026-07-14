@@ -12,9 +12,6 @@ _🩹 OUT/doubtful (excluded from ALL picks): Alanna Smith, Aneesah Morrow, Ashl
 
 ## 🧪 PAPER — hot-PRA OVERS (capture for CLV; NOT real money)
 
-- **Brittney Griner** (Connecticut Sun, Portland Fire @ Connecticut Sun): **PRA OVER** median~20→proj~23.5 fair[23.5=2.0 22.5=1.85 21.5=1.72] · [hot+leaky] · last5 mins [24 22 21 30 34] oppDef 98 · OVER value zone = book line between median and proj (MAX edge near median)
-- **Olivia Nelson-Ododa** (Connecticut Sun, Portland Fire @ Connecticut Sun): **PRA OVER** median~21→proj~22.2 fair[22.0=1.94 21.0=1.72 20.0=1.56] · [expand+leaky] · last5 mins [30 24 29 27 25] oppDef 98 · OVER value zone = book line between median and proj (MAX edge near median)
-- **Charlisse Leger-Walker** (Connecticut Sun, Portland Fire @ Connecticut Sun): **PRA OVER** median~14→proj~15.6 fair[15.5=1.97 14.5=1.72 13.5=1.54] · [expand+leaky] · last5 mins [31 30 28 31 25] oppDef 98 · OVER value zone = book line between median and proj (MAX edge near median)
 - **Shakira Austin** (Washington Mystics, Washington Mystics @ Toronto Tempo): **PRA OVER** median~24→proj~25.9 fair[26.0=2.01 25.0=1.79 24.0=1.61] · [hot+leaky] · last5 mins [23 47 30 24 33] oppDef 96 · OVER value zone = book line between median and proj (MAX edge near median)
 - **Kiki Iriafen** (Washington Mystics, Washington Mystics @ Toronto Tempo): **PRA OVER** median~26→proj~27.9 fair[28.0=2.02 27.0=1.86 26.0=1.72] · [expand+leaky] · last5 mins [32 48 30 30 29] oppDef 96 · OVER value zone = book line between median and proj (MAX edge near median)
 - **Kayla McBride** (Minnesota Lynx, Los Angeles Sparks @ Minnesota Lynx): **PRA OVER** median~24→proj~27.1 fair[27.0=1.99 26.0=1.82 25.0=1.67] · [hot+leaky] · last5 mins [33 38 38 33 35] oppDef 97 · OVER value zone = book line between median and proj (MAX edge near median)
@@ -22,8 +19,6 @@ _🩹 OUT/doubtful (excluded from ALL picks): Alanna Smith, Aneesah Morrow, Ashl
 
 ## CASCADE contingencies — fire ONLY on scratch news (PRA OVER rank-3-6, flat 1u)
 
-- Portland Fire: if **Carla Leite** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Sarah Ashlee Barker OVER 17.5 PRA, Megan Gustafson OVER 19.5 PRA, Emily Engstler OVER 17.5 PRA, Frieda Buhner OVER 8.5 PRA
-- Connecticut Sun: if **Brittney Griner** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Leila Lacan OVER 18.5 PRA, Charlisse Leger-Walker OVER 14.5 PRA, Diamond Miller OVER 12.5 PRA
 - Washington Mystics: if **Sonia Citron** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Shakira Austin OVER 23.5 PRA, Michaela Onyenwere OVER 9.5 PRA, Cotie McMahon OVER 10.5 PRA, Georgia Amoore OVER 11.5 PRA
 - Toronto Tempo: if **Marina Mabrey** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Isabelle Harrison OVER 20.5 PRA, Maria Conde OVER 19.5 PRA, Laura Juskaite OVER 14.5 PRA
 - Seattle Storm: if **Natisha Hiedeman** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Flau'jae Johnson OVER 19.5 PRA, Awa Fam OVER 19.5 PRA, Jade Melbourne OVER 13.5 PRA, Zia Cooke OVER 8.5 PRA
@@ -36,12 +31,6 @@ _🩹 OUT/doubtful (excluded from ALL picks): Alanna Smith, Aneesah Morrow, Ashl
 ## 🧪 EXPERIMENTAL forward-test — PAPER ONLY (volume brute-force winners; log CLV, do NOT bet real until +CLV)
 _ft_volume_drought 58.9% / steady+streak 58.6% OOS vs a synthetic line — proves the side, NOT that it beats 1xbet. Tracked separately until forward CLV confirms._
 
-- **Megan Gustafson** (Portland Fire, Portland Fire @ Connecticut Sun): PTS UNDER ~14.5 [steady · PAPER] median~14→proj~13.8 · last5 mins [29 46 27 26 27]
-- **Olivia Nelson-Ododa** (Connecticut Sun, Portland Fire @ Connecticut Sun): PTS UNDER ~11.5 [steady · PAPER] median~12→proj~11.0 · last5 mins [30 24 29 27 25]
-- **Leila Lacan** (Connecticut Sun, Portland Fire @ Connecticut Sun): PTS UNDER ~12.5 [steady · PAPER] median~12→proj~11.8 · last5 mins [29 32 34 29 32]
-- **Carla Leite** (Portland Fire, Portland Fire @ Connecticut Sun): PTS UNDER ~15.5 [steady · PAPER] median~16→proj~14.4 · last5 mins [23 48 22 21 26]
-- **Olivia Nelson-Ododa** (Connecticut Sun, Portland Fire @ Connecticut Sun): ASSISTS OVER ~1.5 [usgshock · PAPER] usg 9->14 · med~2->proj~1.9
-- **Carla Leite** (Portland Fire, Portland Fire @ Connecticut Sun): ASSISTS OVER ~6.5 [usgshock · PAPER] usg 16->21 · med~7->proj~6.9
 - **Isabelle Harrison** (Toronto Tempo, Washington Mystics @ Toronto Tempo): PTS UNDER ~13.5 [steady · PAPER] median~14→proj~12.7 · last5 mins [27 27 31 26 23]
 - **Maria Conde** (Toronto Tempo, Washington Mystics @ Toronto Tempo): PTS UNDER ~11.5 [steady · PAPER] median~12→proj~10.8 · last5 mins [37 29 35 35 34]
 - **Nyara Sabally** (Toronto Tempo, Washington Mystics @ Toronto Tempo): PTS UNDER ~11.5 [steady · PAPER] median~12→proj~10.8 · last5 mins [19 26 29 7 26]
