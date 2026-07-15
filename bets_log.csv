@@ -6434,3 +6434,11 @@ captured_utc,date,player,market,side,line,odds,tier,ev,pinn,src
 2026-07-15T18:43:52+00:00,2026-07-15,Paige Bueckers,pts,Over,21.5,1.833,THIN,0.056,,flip_paper
 2026-07-15T18:43:52+00:00,2026-07-15,Azzi Fudd,pts,Under,14.5,1.769,STRONG,0.248,,newunder
 2026-07-15T18:43:52+00:00,2026-07-15,Kelsey Mitchell,pr,Over,22.5,1.833,STRONG,0.77,,overshoot
+2026-07-15T19:35:29+00:00,2026-07-15,Aliyah Boston,pts,Over,15.5,1.8,SOLID,0.078,15.5,flip_paper
+2026-07-15T19:35:29+00:00,2026-07-15,Megan Gustafson,pts,Under,13.5,1.87,THIN,0.046,,newunder
+2026-07-15T19:35:29+00:00,2026-07-15,Carla Leite,pts,Under,15.5,1.87,THIN,0.055,,newunder
+2026-07-15T19:35:29+00:00,2026-07-15,Breanna Stewart,pts,Under,19.5,1.833,SOLID,0.141,,newunder
+2026-07-15T19:35:29+00:00,2026-07-15,Jonquel Jones,pts,Under,14.5,1.952,THIN,0.092,,newunder
+2026-07-15T19:35:29+00:00,2026-07-15,Paige Bueckers,pts,Over,21.5,1.909,THIN,0.1,,flip_paper
+2026-07-15T19:35:29+00:00,2026-07-15,Azzi Fudd,pts,Under,14.5,1.769,STRONG,0.248,,newunder
+2026-07-15T19:35:29+00:00,2026-07-15,Kelsey Mitchell,pr,Over,22.5,1.833,STRONG,0.77,,overshoot
