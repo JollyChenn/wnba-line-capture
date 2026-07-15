@@ -170,3 +170,32 @@ plays + timeout events; sentinel coords like -214748340 filtered out)
 - EDGE MACHINE VERIFIED IN CLOUD 2026-07-12: predict-tonight.yml run logged slate w/ Pinnacle lines.
   Totals deviation-form live. Grading plan: at n>=60, (a) blend regression margin~[market,model] (model
   coef>0 = real info), (b) bets |model-market|>=4 -> hit-rate vs 52.4% breakeven, (c) beat-the-close.
+
+## 10. BRAINSTORM REGISTRY (2026-07-12) — professional edge ideas + full data-to-gather list
+### Unlocked TODAY (full_crawl.py backfill)
+- **espn_odds.csv = HISTORICAL DK spread/OU/ML per game (pickcenter)** → REAL ATS/OU backtest of v3/v5
+  on ~1000 games. The single most valuable dataset found; kills the "no historical closings" blocker.
+- gameinfo.csv: officials (REF TENDENCIES: refs with high foul-rate → overs/FTr props; ref-pace effect),
+  attendance+venue (crowd/travel proxies).
+- plays_full.csv: full pbp w/ type/clock/running score → run-detection, garbage-time filter, clutch
+  splits, POSSESSION-LEVEL SIMULATION fuel (see below).
+### Live-betting angles (needs live polling — future infra)
+- Pregame rating + live score + clock → live win-prob/spread; beat slow books in-game (esp. 1xbet live).
+- Halftime lines vs model 2H projection (we have halves_2026 + per-half patterns).
+- Live prop pace: player on pace vs prop line at half; foul-trouble triggers (2 fouls Q1 → minutes down).
+- ESPN winprobability feed = free benchmark to calibrate our live model against.
+### Simulation path (the endgame)
+- Monte-Carlo possession sim: team pace → possessions; per-possession outcome from player usage shares,
+  zone profiles, TS%, TO/OREB rates (ALL already collected); minutes from our projection engine.
+  Calibrate sim so mean == v5 prediction; the DISTRIBUTION gives spreads, totals, alt lines, and PROPS
+  (pts/reb/ast) in one engine. Validate vs history before any use.
+### Prop-model upgrades (skill-splits are built, reuse them)
+- Per-player scoring-vs-defense: player TS z × opp D-Elo + opp position-defense (need position tags —
+  ESPN athlete position, one crawl).
+- Usage redistribution on OUTs (cascade formalized): teammate usage share × minutes bump → prop means.
+- Minutes-restriction NLP: scan injuries detail text for "minutes restriction/limit", "return from" →
+  cap minutes projection (we already store the detail text in injuries_log!).
+### Context/other
+- Ref×team familiarity, ref home-bias; commissioner's-cup/tanking spots; national-TV effect;
+  season-phase pace drift (env feature exists); GAME-CODE keyword mining of pbp text (e.g. "fast break",
+  "turnover leads to", "and one") for style fingerprints beyond zones.
