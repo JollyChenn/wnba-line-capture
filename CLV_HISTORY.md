@@ -4,16 +4,16 @@ _Auto-updated after each slate settles. Raw data: `graded_bets.csv`. CLV>0 = we 
 _**sharp-odds** = vs Pinnacle's vig-free fair price (TRUE edge test) · **sharp-line** = pts vs Pinnacle's line · **self** = vs 1xbet's own close (weak)._
 
 ```
-📊 WNBA BOT — TRACK RECORD (21 settled · PROVEN signals only)
-  Record  : 10-11  (48% hit)
-  Net P&L : -2.19u  (ROI -10.4%/bet)
+📊 WNBA BOT — TRACK RECORD (22 settled · PROVEN signals only)
+  Record  : 10-12  (45% hit)
+  Net P&L : -3.19u  (ROI -14.5%/bet)
   ★ SHARP ODDS-CLV: -6.3% | beat fair 0/6 (0%)  ← TRUE edge (vs Pinnacle fair price)
   SHARP LINE-CLV : +0.06 pts | n=9  ← better number than the sharp
   self ODDS-CLV  : -0.5% | beat 5/20 (25%)  (1xbet's own close = weak)
-  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 33/58 (+2.7u) · FLIP UNDER 9/18 (-1.6u) · FLIP UNDER(paper) 23/34 (+8.8u) · FTUNDER 62/143 (-28.6u) · HOT OVER 10/18 (+0.8u) · STAR-OUT CASCADE 50/89 (-1.4u) · starout 0/6 (-6.0u)
+  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 33/59 (+1.7u) · FLIP UNDER 9/18 (-1.6u) · FLIP UNDER(paper) 24/36 (+8.7u) · FTUNDER 64/149 (-30.9u) · HOT OVER 11/19 (+1.6u) · STAR-OUT CASCADE 53/93 (-0.1u) · starout 0/6 (-6.0u)
   VERDICT : ⚠️ NEUTRAL self CLV — winning on outcomes, not beating the line. Unproven; keep collecting.
-  by tier: SOLID 4/11 (-3.3u) · STRONG 5/8 (+1.1u) · THIN 1/2 (+0.0u)
-  by market: pr Under 1/3 (-1.0u) · pra Under 1/7 (-5.3u) · pts Under 8/11 (+4.1u)
+  by tier: SOLID 4/11 (-3.3u) · STRONG 5/9 (+0.1u) · THIN 1/2 (+0.0u)
+  by market: pr Under 1/3 (-1.0u) · pra Under 1/7 (-5.3u) · pts Under 8/12 (+3.1u)
 ```
 
 ## Per-bet
@@ -409,3 +409,18 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260714 | Olivia Nelson-Ododa | PTS Under 11.5 @ 1.91 | FTUNDER | loss | — | — | +0% |
 | 20260714 | Shakira Austin | PTS Under 13.5 @ 1.92 | FTUNDER | loss | — | — | +3% |
 | 20260714 | Sonia Citron | PTS Under 17.5 @ 1.89 | FTUNDER | WIN | — | — | -3% |
+| 20260715 | Ariel Atkins | PRA Over 12.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
+| 20260715 | Azura Stevens | PTS Under 12.5 @ 1.87 | FTUNDER | loss | — | — | +0% |
+| 20260715 | Courtney Williams | PTS Under 15.5 @ 1.83 | FTUNDER | loss | -10% | +0.0 | -4% |
+| 20260715 | Dearica Hamby | PRA Over 22.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
+| 20260715 | Dearica Hamby | PTS Under 15.5 @ 1.73 | FTUNDER | WIN | — | +1.0 | +0% |
+| 20260715 | Dominique Malonga | PTS Under 15.5 @ 1.833 | COLD/SHRINK/STINGY | loss | — | — | — |
+| 20260715 | Erica Wheeler | PRA Over 12.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
+| 20260715 | Kayla McBride | PRA Over 23.5 @ 1.73 | HOT OVER | WIN | — | — | -4% |
+| 20260715 | Natasha Howard | PTS Under 15.5 @ 1.952 | FTUNDER | WIN | — | — | +2% |
+| 20260715 | Natisha Hiedeman | PR Over 18.5 @ 1.769 | BOOK OVERSHOOT | loss | — | — | -7% |
+| 20260715 | Nneka Ogwumike | PTS Under 17.5 @ 1.833 | FTUNDER | loss | — | — | +2% |
+| 20260715 | Olivia Miles | PTS Over 19.5 @ 1.87 | FLIP UNDER(paper) | loss | — | — | -2% |
+| 20260715 | Rae Burrell | PRA Over 22.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
+| 20260715 | Rae Burrell | PTS Over 14.5 @ 1.93 | FLIP UNDER(paper) | WIN | +1% | +0.0 | +7% |
+| 20260715 | Sydney Taylor | PTS Under 15.5 @ 1.87 | FTUNDER | loss | — | — | +4% |
