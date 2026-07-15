@@ -2,7 +2,7 @@
 
 _Stingy-D threshold (trailing-10 allowed, bottom quartile): 85_
 
-_🩹 OUT/doubtful (excluded from ALL picks): Alanna Smith, Aneesah Morrow, Ashlon Jackson, Brittney Sykes, Cameron Brink, Indya Nivar, Jovana Nogic, Kelsey Plum, Kierstan Bell, Kiki Rice, Leonie Fiebich, Natasha Mack, Quionche Carter, Saniya Rivers, Satou Sabally, Skylar Diggins, Ta'Niya Latson, Temi Fagbenle_
+_🩹 OUT/doubtful (excluded from ALL picks): Alanna Smith, Aneesah Morrow, Ashlon Jackson, Brittney Sykes, Indya Nivar, Jovana Nogic, Kamilla Cardoso, Kelsey Plum, Kierstan Bell, Kiki Rice, Leonie Fiebich, Natasha Mack, Quionche Carter, Saniya Rivers, Satou Sabally, Skylar Diggins, Ta'Niya Latson, Temi Fagbenle_
 
 ## 💰 REAL-MONEY — UNDER (cold/shrink + stingy · pts/PR/PA/PRA · flat 1u)
 
@@ -38,7 +38,6 @@ _ft_volume_drought 58.9% / steady+streak 58.6% OOS vs a synthetic line — prove
 
 - **Azura Stevens** (Chicago Sky, Seattle Storm @ Chicago Sky): PTS UNDER ~10.5 [steady · PAPER] median~11→proj~9.7 · last5 mins [30 26 26 30 32]
 - **Natisha Hiedeman** (Seattle Storm, Seattle Storm @ Chicago Sky): PTS UNDER ~19.5 [steady · PAPER] median~20→proj~18.6 · last5 mins [27 34 25 34 33]
-- **Kamilla Cardoso** (Chicago Sky, Seattle Storm @ Chicago Sky): PTS UNDER ~15.5 [steady · PAPER] median~16→proj~14.4 · last5 mins [30 27 28 28 29]
 - **Sydney Taylor** (Chicago Sky, Seattle Storm @ Chicago Sky): PTS UNDER ~15.5 [steady · PAPER] median~16→proj~14.5 · last5 mins [32 26 23 21 26]
 - **Awa Fam** (Seattle Storm, Seattle Storm @ Chicago Sky): PTS UNDER ~12.5 [ftdrought · PAPER] median~12→proj~11.1 · last5 mins [27 34 25 30 32]
 - **Nneka Ogwumike** (Los Angeles Sparks, Los Angeles Sparks @ Minnesota Lynx): PTS UNDER ~17.5 [steady · PAPER] median~18→proj~16.6 · last5 mins [26 28 31 33 32]
