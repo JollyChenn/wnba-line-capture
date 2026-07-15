@@ -10,7 +10,7 @@ _**sharp-odds** = vs Pinnacle's vig-free fair price (TRUE edge test) · **sharp-
   ★ SHARP ODDS-CLV: -6.3% | beat fair 0/6 (0%)  ← TRUE edge (vs Pinnacle fair price)
   SHARP LINE-CLV : +0.06 pts | n=9  ← better number than the sharp
   self ODDS-CLV  : -0.5% | beat 5/20 (25%)  (1xbet's own close = weak)
-  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 33/58 (+2.7u) · FLIP UNDER 9/18 (-1.6u) · FLIP UNDER(paper) 23/33 (+9.8u) · FTUNDER 60/140 (-29.3u) · HOT OVER 10/18 (+0.8u) · STAR-OUT CASCADE 50/89 (-1.4u) · starout 0/6 (-6.0u)
+  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 33/58 (+2.7u) · FLIP UNDER 9/18 (-1.6u) · FLIP UNDER(paper) 23/34 (+8.8u) · FTUNDER 62/143 (-28.6u) · HOT OVER 10/18 (+0.8u) · STAR-OUT CASCADE 50/89 (-1.4u) · starout 0/6 (-6.0u)
   VERDICT : ⚠️ NEUTRAL self CLV — winning on outcomes, not beating the line. Unproven; keep collecting.
   by tier: SOLID 4/11 (-3.3u) · STRONG 5/8 (+1.1u) · THIN 1/2 (+0.0u)
   by market: pr Under 1/3 (-1.0u) · pra Under 1/7 (-5.3u) · pts Under 8/11 (+4.1u)
@@ -402,6 +402,10 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260713 | Rhyne Howard | PTS Under 19.5 @ 1.73 | FTUNDER | WIN | — | — | -7% |
 | 20260714 | Charlisse Leger-Walker | PRA Over 14.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260714 | Diamond Miller | PRA Over 12.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
+| 20260714 | Isabelle Harrison | PTS Under 13.5 @ 1.83 | FTUNDER | WIN | — | — | -2% |
 | 20260714 | Leila Lacan | PRA Over 18.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
+| 20260714 | Maria Conde | PTS Over 9.5 @ 1.714 | FLIP UNDER(paper) | loss | — | — | -0% |
 | 20260714 | Megan Gustafson | PTS Over 12.5 @ 2.0 | FLIP UNDER(paper) | WIN | — | — | +5% |
 | 20260714 | Olivia Nelson-Ododa | PTS Under 11.5 @ 1.91 | FTUNDER | loss | — | — | +0% |
+| 20260714 | Shakira Austin | PTS Under 13.5 @ 1.92 | FTUNDER | loss | — | — | +3% |
+| 20260714 | Sonia Citron | PTS Under 17.5 @ 1.89 | FTUNDER | WIN | — | — | -3% |
