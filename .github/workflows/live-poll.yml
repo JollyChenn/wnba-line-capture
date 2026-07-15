@@ -1,0 +1,24 @@
+name: live-poll
+on:
+  schedule:
+    - cron: '55 22 * * *'   # 22:55 UTC daily: just before earliest tips; job self-exits when slate ends
+  workflow_dispatch: {}
+permissions:
+  contents: write
+concurrency:
+  group: live-poll
+  cancel-in-progress: false
+jobs:
+  live:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install --quiet curl_cffi
+      - name: git identity
+        run: git config user.name "live-bot" && git config user.email "actions@users.noreply.github.com"
+      - name: poll live games (75s cycle; exits when slate over)
+        run: python live_poll.py || true
