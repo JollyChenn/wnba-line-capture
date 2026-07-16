@@ -386,14 +386,17 @@ date,player,market,side,line,odds,tier,actual,result,pnl,odds_clv,line_clv,sharp
 20260714,Olivia Nelson-Ododa,pts,Under,11.5,1.91,THIN,16.0,loss,-1.0,0.005,0.0,,,newunder,2026-07-14
 20260714,Shakira Austin,pts,Under,13.5,1.92,STRONG,17.0,loss,-1.0,0.027,0.0,,,newunder,2026-07-13
 20260714,Sonia Citron,pts,Under,17.5,1.89,THIN,2.0,WIN,0.89,-0.032,-1.0,,,newunder,2026-07-13
+20260715,Aliyah Boston,pr,Over,24.5,1.91,STRONG,22.0,loss,-1.0,0.0,0.0,,,overshoot,2026-07-14
 20260715,Ariel Atkins,pra,Over,12.5,1.75,CASC,16.0,WIN,0.75,0.0,0.0,,,cascade,2026-07-14
 20260715,Azura Stevens,pts,Under,12.5,1.87,STRONG,20.0,loss,-1.0,0.0,-1.0,,,newunder,2026-07-14
+20260715,Caitlin Clark,pa,Over,21.5,1.8,STRONG,19.0,loss,-1.0,,,0.5,,flip,2026-07-15
 20260715,Courtney Williams,pts,Under,15.5,1.83,STRONG,19.0,loss,-1.0,-0.037,0.0,0.0,-0.1,newunder,2026-07-14
 20260715,Dearica Hamby,pra,Over,22.5,1.75,CASC,19.0,loss,-1.0,0.0,0.0,,,cascade,2026-07-14
 20260715,Dearica Hamby,pts,Under,15.5,1.73,STRONG,10.0,WIN,0.73,0.0,0.0,1.0,,newunder,2026-07-14
 20260715,Dominique Malonga,pts,Under,15.5,1.833,STRONG,16.0,loss,-1.0,,-2.0,,,model,2026-07-14
 20260715,Erica Wheeler,pra,Over,12.5,1.75,CASC,18.0,WIN,0.75,0.0,0.0,,,cascade,2026-07-14
 20260715,Kayla McBride,pra,Over,23.5,1.73,SOLID,26.0,WIN,0.73,-0.039,0.0,,,hotover,2026-07-14
+20260715,Kelsey Mitchell,pr,Over,22.5,1.833,STRONG,21.0,loss,-1.0,-0.061,0.0,,,overshoot,2026-07-15
 20260715,Natasha Howard,pts,Under,15.5,1.952,THIN,10.0,WIN,0.95,0.022,-1.0,,,newunder,2026-07-14
 20260715,Natisha Hiedeman,pr,Over,18.5,1.769,STRONG,9.0,loss,-1.0,-0.073,0.0,,,overshoot,2026-07-15
 20260715,Nneka Ogwumike,pts,Under,17.5,1.833,THIN,23.0,loss,-1.0,0.018,0.0,,,newunder,2026-07-14
