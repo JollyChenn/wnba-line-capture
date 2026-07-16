@@ -838,3 +838,443 @@ ts,teams,type,side,points,prices,alt
 2026-07-16T00:29:11Z,Washington Mystics|Portland Fire,total,,164.0,"-108,-120",1
 2026-07-16T00:29:11Z,Washington Mystics|Portland Fire,total,,164.5,"-103,-126",1
 2026-07-16T00:29:11Z,Washington Mystics|Portland Fire,total,,165.0,"102,-133",1
+2026-07-16T00:30:27Z,Dallas Wings|New York Liberty,moneyline,,,"-135,111",0
+2026-07-16T00:30:27Z,Dallas Wings|New York Liberty,team_total,home,88.5,"-111,-113",0
+2026-07-16T00:30:27Z,Dallas Wings|New York Liberty,team_total,away,87.5,"-105,-120",0
+2026-07-16T00:30:27Z,Dallas Wings|New York Liberty,spread,,-2.0,"-110,-110",0
+2026-07-16T00:30:27Z,Dallas Wings|New York Liberty,spread,,1.0,"-143,114",1
+2026-07-16T00:30:27Z,Dallas Wings|New York Liberty,spread,,-1.0,"-129,102",1
+2026-07-16T00:30:27Z,Dallas Wings|New York Liberty,spread,,-1.5,"-121,-103",1
+2026-07-16T00:30:27Z,Dallas Wings|New York Liberty,spread,,-2.5,"-103,-122",1
+2026-07-16T00:30:27Z,Dallas Wings|New York Liberty,spread,,-3.0,"105,-132",1
+2026-07-16T00:30:27Z,Dallas Wings|New York Liberty,spread,,-3.5,"114,-143",1
+2026-07-16T00:30:27Z,Dallas Wings|New York Liberty,total,,175.5,"-108,-116",0
+2026-07-16T00:30:27Z,Dallas Wings|New York Liberty,total,,174.0,"-129,-101",1
+2026-07-16T00:30:27Z,Dallas Wings|New York Liberty,total,,174.5,"-122,-106",1
+2026-07-16T00:30:27Z,Dallas Wings|New York Liberty,total,,175.0,"-116,-112",1
+2026-07-16T00:30:27Z,Dallas Wings|New York Liberty,total,,176.0,"-105,-124",1
+2026-07-16T00:30:27Z,Dallas Wings|New York Liberty,total,,176.5,"-100,-130",1
+2026-07-16T00:30:27Z,Dallas Wings|New York Liberty,total,,177.0,"106,-138",1
+2026-07-16T00:30:27Z,Indiana Fever|Golden State Valkyries,moneyline,,,"135,-181",0
+2026-07-16T00:30:27Z,Indiana Fever|Golden State Valkyries,team_total,home,79.5,"-119,-111",0
+2026-07-16T00:30:27Z,Indiana Fever|Golden State Valkyries,team_total,home,78.5,"-140,106",1
+2026-07-16T00:30:27Z,Indiana Fever|Golden State Valkyries,team_total,home,80.5,"-102,-130",1
+2026-07-16T00:30:27Z,Indiana Fever|Golden State Valkyries,team_total,away,83.5,"-108,-122",0
+2026-07-16T00:30:27Z,Indiana Fever|Golden State Valkyries,team_total,away,82.5,"-128,-103",1
+2026-07-16T00:30:27Z,Indiana Fever|Golden State Valkyries,team_total,away,84.5,"109,-144",1
+2026-07-16T00:30:27Z,Indiana Fever|Golden State Valkyries,spread,,4.0,"-117,-113",0
+2026-07-16T00:30:27Z,Indiana Fever|Golden State Valkyries,spread,,5.5,"-144,106",1
+2026-07-16T00:30:27Z,Indiana Fever|Golden State Valkyries,spread,,5.0,"-135,100",1
+2026-07-16T00:30:27Z,Indiana Fever|Golden State Valkyries,spread,,4.5,"-125,-107",1
+2026-07-16T00:30:27Z,Indiana Fever|Golden State Valkyries,spread,,3.5,"-110,-121",1
+2026-07-16T00:30:27Z,Indiana Fever|Golden State Valkyries,spread,,3.0,"-103,-130",1
+2026-07-16T00:30:27Z,Indiana Fever|Golden State Valkyries,spread,,2.5,"102,-139",1
+2026-07-16T00:30:27Z,Indiana Fever|Golden State Valkyries,total,,162.5,"-118,-112",0
+2026-07-16T00:30:27Z,Indiana Fever|Golden State Valkyries,total,,161.0,"-139,103",1
+2026-07-16T00:30:27Z,Indiana Fever|Golden State Valkyries,total,,161.5,"-131,-103",1
+2026-07-16T00:30:27Z,Indiana Fever|Golden State Valkyries,total,,162.0,"-124,-107",1
+2026-07-16T00:30:27Z,Indiana Fever|Golden State Valkyries,total,,163.0,"-112,-119",1
+2026-07-16T00:30:27Z,Indiana Fever|Golden State Valkyries,total,,163.5,"-107,-126",1
+2026-07-16T00:30:27Z,Indiana Fever|Golden State Valkyries,total,,164.0,"-102,-133",1
+2026-07-16T00:30:27Z,Washington Mystics|Portland Fire,moneyline,,,"-240,193",0
+2026-07-16T00:30:27Z,Washington Mystics|Portland Fire,team_total,home,84.5,"-111,-113",0
+2026-07-16T00:30:27Z,Washington Mystics|Portland Fire,team_total,away,79.5,"-108,-117",0
+2026-07-16T00:30:27Z,Washington Mystics|Portland Fire,spread,,-6.0,"-110,-110",0
+2026-07-16T00:30:27Z,Washington Mystics|Portland Fire,spread,,-4.5,"-145,115",1
+2026-07-16T00:30:27Z,Washington Mystics|Portland Fire,spread,,-5.0,"-134,106",1
+2026-07-16T00:30:27Z,Washington Mystics|Portland Fire,spread,,-5.5,"-123,-102",1
+2026-07-16T00:30:27Z,Washington Mystics|Portland Fire,spread,,-6.5,"-102,-123",1
+2026-07-16T00:30:27Z,Washington Mystics|Portland Fire,spread,,-7.0,"106,-134",1
+2026-07-16T00:30:27Z,Washington Mystics|Portland Fire,spread,,-7.5,"115,-144",1
+2026-07-16T00:30:27Z,Washington Mystics|Portland Fire,total,,163.5,"-112,-112",0
+2026-07-16T00:30:27Z,Washington Mystics|Portland Fire,total,,162.0,"-133,102",1
+2026-07-16T00:30:27Z,Washington Mystics|Portland Fire,total,,162.5,"-127,-103",1
+2026-07-16T00:30:27Z,Washington Mystics|Portland Fire,total,,163.0,"-120,-108",1
+2026-07-16T00:30:27Z,Washington Mystics|Portland Fire,total,,164.0,"-108,-120",1
+2026-07-16T00:30:27Z,Washington Mystics|Portland Fire,total,,164.5,"-103,-126",1
+2026-07-16T00:30:27Z,Washington Mystics|Portland Fire,total,,165.0,"102,-133",1
+2026-07-16T00:31:43Z,Dallas Wings|New York Liberty,moneyline,,,"-135,111",0
+2026-07-16T00:31:43Z,Dallas Wings|New York Liberty,team_total,home,88.5,"-111,-113",0
+2026-07-16T00:31:43Z,Dallas Wings|New York Liberty,team_total,away,87.5,"-105,-120",0
+2026-07-16T00:31:43Z,Dallas Wings|New York Liberty,spread,,-2.0,"-110,-110",0
+2026-07-16T00:31:43Z,Dallas Wings|New York Liberty,spread,,1.0,"-143,114",1
+2026-07-16T00:31:43Z,Dallas Wings|New York Liberty,spread,,-1.0,"-129,102",1
+2026-07-16T00:31:43Z,Dallas Wings|New York Liberty,spread,,-1.5,"-121,-103",1
+2026-07-16T00:31:43Z,Dallas Wings|New York Liberty,spread,,-2.5,"-103,-122",1
+2026-07-16T00:31:43Z,Dallas Wings|New York Liberty,spread,,-3.0,"105,-132",1
+2026-07-16T00:31:43Z,Dallas Wings|New York Liberty,spread,,-3.5,"114,-143",1
+2026-07-16T00:31:43Z,Dallas Wings|New York Liberty,total,,175.5,"-108,-116",0
+2026-07-16T00:31:43Z,Dallas Wings|New York Liberty,total,,174.0,"-129,-101",1
+2026-07-16T00:31:43Z,Dallas Wings|New York Liberty,total,,174.5,"-122,-106",1
+2026-07-16T00:31:43Z,Dallas Wings|New York Liberty,total,,175.0,"-116,-112",1
+2026-07-16T00:31:43Z,Dallas Wings|New York Liberty,total,,176.0,"-105,-124",1
+2026-07-16T00:31:43Z,Dallas Wings|New York Liberty,total,,176.5,"-100,-130",1
+2026-07-16T00:31:43Z,Dallas Wings|New York Liberty,total,,177.0,"106,-138",1
+2026-07-16T00:31:43Z,Indiana Fever|Golden State Valkyries,moneyline,,,"135,-181",0
+2026-07-16T00:31:43Z,Indiana Fever|Golden State Valkyries,team_total,home,79.5,"-119,-111",0
+2026-07-16T00:31:43Z,Indiana Fever|Golden State Valkyries,team_total,home,78.5,"-140,106",1
+2026-07-16T00:31:43Z,Indiana Fever|Golden State Valkyries,team_total,home,80.5,"-102,-130",1
+2026-07-16T00:31:43Z,Indiana Fever|Golden State Valkyries,team_total,away,83.5,"-108,-122",0
+2026-07-16T00:31:43Z,Indiana Fever|Golden State Valkyries,team_total,away,82.5,"-128,-103",1
+2026-07-16T00:31:43Z,Indiana Fever|Golden State Valkyries,team_total,away,84.5,"109,-144",1
+2026-07-16T00:31:43Z,Indiana Fever|Golden State Valkyries,spread,,4.0,"-117,-113",0
+2026-07-16T00:31:43Z,Indiana Fever|Golden State Valkyries,spread,,5.5,"-144,106",1
+2026-07-16T00:31:43Z,Indiana Fever|Golden State Valkyries,spread,,5.0,"-135,100",1
+2026-07-16T00:31:43Z,Indiana Fever|Golden State Valkyries,spread,,4.5,"-125,-107",1
+2026-07-16T00:31:43Z,Indiana Fever|Golden State Valkyries,spread,,3.5,"-110,-121",1
+2026-07-16T00:31:43Z,Indiana Fever|Golden State Valkyries,spread,,3.0,"-103,-130",1
+2026-07-16T00:31:43Z,Indiana Fever|Golden State Valkyries,spread,,2.5,"102,-139",1
+2026-07-16T00:31:43Z,Indiana Fever|Golden State Valkyries,total,,162.5,"-118,-112",0
+2026-07-16T00:31:43Z,Indiana Fever|Golden State Valkyries,total,,161.0,"-139,103",1
+2026-07-16T00:31:43Z,Indiana Fever|Golden State Valkyries,total,,161.5,"-131,-103",1
+2026-07-16T00:31:43Z,Indiana Fever|Golden State Valkyries,total,,162.0,"-124,-107",1
+2026-07-16T00:31:43Z,Indiana Fever|Golden State Valkyries,total,,163.0,"-112,-119",1
+2026-07-16T00:31:43Z,Indiana Fever|Golden State Valkyries,total,,163.5,"-107,-126",1
+2026-07-16T00:31:43Z,Indiana Fever|Golden State Valkyries,total,,164.0,"-102,-133",1
+2026-07-16T00:31:43Z,Washington Mystics|Portland Fire,moneyline,,,"-240,193",0
+2026-07-16T00:31:43Z,Washington Mystics|Portland Fire,team_total,home,84.5,"-111,-113",0
+2026-07-16T00:31:43Z,Washington Mystics|Portland Fire,team_total,away,79.5,"-108,-117",0
+2026-07-16T00:31:43Z,Washington Mystics|Portland Fire,spread,,-6.0,"-110,-110",0
+2026-07-16T00:31:43Z,Washington Mystics|Portland Fire,spread,,-4.5,"-145,115",1
+2026-07-16T00:31:43Z,Washington Mystics|Portland Fire,spread,,-5.0,"-134,106",1
+2026-07-16T00:31:43Z,Washington Mystics|Portland Fire,spread,,-5.5,"-123,-102",1
+2026-07-16T00:31:43Z,Washington Mystics|Portland Fire,spread,,-6.5,"-102,-123",1
+2026-07-16T00:31:43Z,Washington Mystics|Portland Fire,spread,,-7.0,"106,-134",1
+2026-07-16T00:31:43Z,Washington Mystics|Portland Fire,spread,,-7.5,"115,-144",1
+2026-07-16T00:31:43Z,Washington Mystics|Portland Fire,total,,163.5,"-112,-112",0
+2026-07-16T00:31:43Z,Washington Mystics|Portland Fire,total,,162.0,"-133,102",1
+2026-07-16T00:31:43Z,Washington Mystics|Portland Fire,total,,162.5,"-127,-103",1
+2026-07-16T00:31:43Z,Washington Mystics|Portland Fire,total,,163.0,"-120,-108",1
+2026-07-16T00:31:43Z,Washington Mystics|Portland Fire,total,,164.0,"-108,-120",1
+2026-07-16T00:31:43Z,Washington Mystics|Portland Fire,total,,164.5,"-103,-126",1
+2026-07-16T00:31:43Z,Washington Mystics|Portland Fire,total,,165.0,"102,-133",1
+2026-07-16T00:32:58Z,Dallas Wings|New York Liberty,moneyline,,,"-135,111",0
+2026-07-16T00:32:58Z,Dallas Wings|New York Liberty,team_total,home,88.5,"-111,-113",0
+2026-07-16T00:32:58Z,Dallas Wings|New York Liberty,team_total,away,87.5,"-105,-120",0
+2026-07-16T00:32:58Z,Dallas Wings|New York Liberty,spread,,-2.0,"-110,-110",0
+2026-07-16T00:32:58Z,Dallas Wings|New York Liberty,spread,,1.0,"-143,114",1
+2026-07-16T00:32:58Z,Dallas Wings|New York Liberty,spread,,-1.0,"-129,102",1
+2026-07-16T00:32:58Z,Dallas Wings|New York Liberty,spread,,-1.5,"-121,-103",1
+2026-07-16T00:32:58Z,Dallas Wings|New York Liberty,spread,,-2.5,"-103,-122",1
+2026-07-16T00:32:58Z,Dallas Wings|New York Liberty,spread,,-3.0,"105,-132",1
+2026-07-16T00:32:58Z,Dallas Wings|New York Liberty,spread,,-3.5,"114,-143",1
+2026-07-16T00:32:58Z,Dallas Wings|New York Liberty,total,,175.5,"-108,-116",0
+2026-07-16T00:32:58Z,Dallas Wings|New York Liberty,total,,174.0,"-129,-101",1
+2026-07-16T00:32:58Z,Dallas Wings|New York Liberty,total,,174.5,"-122,-106",1
+2026-07-16T00:32:58Z,Dallas Wings|New York Liberty,total,,175.0,"-116,-112",1
+2026-07-16T00:32:58Z,Dallas Wings|New York Liberty,total,,176.0,"-105,-124",1
+2026-07-16T00:32:58Z,Dallas Wings|New York Liberty,total,,176.5,"-100,-130",1
+2026-07-16T00:32:58Z,Dallas Wings|New York Liberty,total,,177.0,"106,-138",1
+2026-07-16T00:32:58Z,Indiana Fever|Golden State Valkyries,moneyline,,,"-116,-105",0
+2026-07-16T00:32:58Z,Indiana Fever|Golden State Valkyries,team_total,home,83.5,"-109,-111",0
+2026-07-16T00:32:58Z,Indiana Fever|Golden State Valkyries,team_total,home,82.5,"-131,108",1
+2026-07-16T00:32:58Z,Indiana Fever|Golden State Valkyries,team_total,home,84.5,"109,-133",1
+2026-07-16T00:32:58Z,Indiana Fever|Golden State Valkyries,team_total,away,83.5,"-105,-115",0
+2026-07-16T00:32:58Z,Indiana Fever|Golden State Valkyries,team_total,away,82.5,"-126,104",1
+2026-07-16T00:32:58Z,Indiana Fever|Golden State Valkyries,team_total,away,84.5,"114,-138",1
+2026-07-16T00:32:58Z,Indiana Fever|Golden State Valkyries,spread,,-1.0,"-107,-114",0
+2026-07-16T00:32:58Z,Indiana Fever|Golden State Valkyries,spread,,2.0,"-147,118",1
+2026-07-16T00:32:58Z,Indiana Fever|Golden State Valkyries,spread,,1.5,"-135,110",1
+2026-07-16T00:32:58Z,Indiana Fever|Golden State Valkyries,spread,,1.0,"-126,103",1
+2026-07-16T00:32:58Z,Indiana Fever|Golden State Valkyries,spread,,-1.5,"101,-124",1
+2026-07-16T00:32:58Z,Indiana Fever|Golden State Valkyries,spread,,-2.0,"110,-135",1
+2026-07-16T00:32:58Z,Indiana Fever|Golden State Valkyries,spread,,-2.5,"117,-146",1
+2026-07-16T00:32:58Z,Indiana Fever|Golden State Valkyries,total,,166.5,"-110,-110",0
+2026-07-16T00:32:58Z,Indiana Fever|Golden State Valkyries,total,,165.0,"-133,107",1
+2026-07-16T00:32:58Z,Indiana Fever|Golden State Valkyries,total,,165.5,"-124,101",1
+2026-07-16T00:32:58Z,Indiana Fever|Golden State Valkyries,total,,166.0,"-117,-104",1
+2026-07-16T00:32:58Z,Indiana Fever|Golden State Valkyries,total,,167.0,"-104,-118",1
+2026-07-16T00:32:58Z,Indiana Fever|Golden State Valkyries,total,,167.5,"102,-125",1
+2026-07-16T00:32:58Z,Indiana Fever|Golden State Valkyries,total,,168.0,"108,-134",1
+2026-07-16T00:32:58Z,Washington Mystics|Portland Fire,moneyline,,,"-240,193",0
+2026-07-16T00:32:58Z,Washington Mystics|Portland Fire,team_total,home,84.5,"-111,-113",0
+2026-07-16T00:32:58Z,Washington Mystics|Portland Fire,team_total,away,79.5,"-108,-117",0
+2026-07-16T00:32:58Z,Washington Mystics|Portland Fire,spread,,-6.0,"-110,-110",0
+2026-07-16T00:32:58Z,Washington Mystics|Portland Fire,spread,,-4.5,"-145,115",1
+2026-07-16T00:32:58Z,Washington Mystics|Portland Fire,spread,,-5.0,"-134,106",1
+2026-07-16T00:32:58Z,Washington Mystics|Portland Fire,spread,,-5.5,"-123,-102",1
+2026-07-16T00:32:58Z,Washington Mystics|Portland Fire,spread,,-6.5,"-102,-123",1
+2026-07-16T00:32:58Z,Washington Mystics|Portland Fire,spread,,-7.0,"106,-134",1
+2026-07-16T00:32:58Z,Washington Mystics|Portland Fire,spread,,-7.5,"115,-144",1
+2026-07-16T00:32:58Z,Washington Mystics|Portland Fire,total,,163.5,"-112,-112",0
+2026-07-16T00:32:58Z,Washington Mystics|Portland Fire,total,,162.0,"-133,102",1
+2026-07-16T00:32:58Z,Washington Mystics|Portland Fire,total,,162.5,"-127,-103",1
+2026-07-16T00:32:58Z,Washington Mystics|Portland Fire,total,,163.0,"-120,-108",1
+2026-07-16T00:32:58Z,Washington Mystics|Portland Fire,total,,164.0,"-108,-120",1
+2026-07-16T00:32:58Z,Washington Mystics|Portland Fire,total,,164.5,"-103,-126",1
+2026-07-16T00:32:58Z,Washington Mystics|Portland Fire,total,,165.0,"102,-133",1
+2026-07-16T00:34:13Z,Dallas Wings|New York Liberty,moneyline,,,"-135,111",0
+2026-07-16T00:34:13Z,Dallas Wings|New York Liberty,team_total,home,88.5,"-111,-113",0
+2026-07-16T00:34:13Z,Dallas Wings|New York Liberty,team_total,away,87.5,"-105,-120",0
+2026-07-16T00:34:13Z,Dallas Wings|New York Liberty,spread,,-2.0,"-110,-110",0
+2026-07-16T00:34:13Z,Dallas Wings|New York Liberty,spread,,1.0,"-143,114",1
+2026-07-16T00:34:13Z,Dallas Wings|New York Liberty,spread,,-1.0,"-129,102",1
+2026-07-16T00:34:13Z,Dallas Wings|New York Liberty,spread,,-1.5,"-121,-103",1
+2026-07-16T00:34:13Z,Dallas Wings|New York Liberty,spread,,-2.5,"-103,-122",1
+2026-07-16T00:34:13Z,Dallas Wings|New York Liberty,spread,,-3.0,"105,-132",1
+2026-07-16T00:34:13Z,Dallas Wings|New York Liberty,spread,,-3.5,"114,-143",1
+2026-07-16T00:34:13Z,Dallas Wings|New York Liberty,total,,175.5,"-108,-116",0
+2026-07-16T00:34:13Z,Dallas Wings|New York Liberty,total,,174.0,"-129,-101",1
+2026-07-16T00:34:13Z,Dallas Wings|New York Liberty,total,,174.5,"-122,-106",1
+2026-07-16T00:34:13Z,Dallas Wings|New York Liberty,total,,175.0,"-116,-112",1
+2026-07-16T00:34:13Z,Dallas Wings|New York Liberty,total,,176.0,"-105,-124",1
+2026-07-16T00:34:13Z,Dallas Wings|New York Liberty,total,,176.5,"-100,-130",1
+2026-07-16T00:34:13Z,Dallas Wings|New York Liberty,total,,177.0,"106,-138",1
+2026-07-16T00:34:13Z,Indiana Fever|Golden State Valkyries,moneyline,,,"-116,-105",0
+2026-07-16T00:34:13Z,Indiana Fever|Golden State Valkyries,team_total,home,83.5,"-109,-111",0
+2026-07-16T00:34:13Z,Indiana Fever|Golden State Valkyries,team_total,home,82.5,"-131,108",1
+2026-07-16T00:34:13Z,Indiana Fever|Golden State Valkyries,team_total,home,84.5,"109,-133",1
+2026-07-16T00:34:13Z,Indiana Fever|Golden State Valkyries,team_total,away,83.5,"-105,-115",0
+2026-07-16T00:34:13Z,Indiana Fever|Golden State Valkyries,team_total,away,82.5,"-126,104",1
+2026-07-16T00:34:13Z,Indiana Fever|Golden State Valkyries,team_total,away,84.5,"114,-138",1
+2026-07-16T00:34:13Z,Indiana Fever|Golden State Valkyries,spread,,-1.0,"-107,-114",0
+2026-07-16T00:34:13Z,Indiana Fever|Golden State Valkyries,spread,,2.0,"-147,118",1
+2026-07-16T00:34:13Z,Indiana Fever|Golden State Valkyries,spread,,1.5,"-135,110",1
+2026-07-16T00:34:13Z,Indiana Fever|Golden State Valkyries,spread,,1.0,"-126,103",1
+2026-07-16T00:34:13Z,Indiana Fever|Golden State Valkyries,spread,,-1.5,"101,-124",1
+2026-07-16T00:34:13Z,Indiana Fever|Golden State Valkyries,spread,,-2.0,"110,-135",1
+2026-07-16T00:34:13Z,Indiana Fever|Golden State Valkyries,spread,,-2.5,"117,-146",1
+2026-07-16T00:34:13Z,Indiana Fever|Golden State Valkyries,total,,166.5,"-110,-110",0
+2026-07-16T00:34:13Z,Indiana Fever|Golden State Valkyries,total,,165.0,"-133,107",1
+2026-07-16T00:34:13Z,Indiana Fever|Golden State Valkyries,total,,165.5,"-124,101",1
+2026-07-16T00:34:13Z,Indiana Fever|Golden State Valkyries,total,,166.0,"-117,-104",1
+2026-07-16T00:34:13Z,Indiana Fever|Golden State Valkyries,total,,167.0,"-104,-118",1
+2026-07-16T00:34:13Z,Indiana Fever|Golden State Valkyries,total,,167.5,"102,-125",1
+2026-07-16T00:34:13Z,Indiana Fever|Golden State Valkyries,total,,168.0,"108,-134",1
+2026-07-16T00:34:13Z,Washington Mystics|Portland Fire,moneyline,,,"-240,193",0
+2026-07-16T00:34:13Z,Washington Mystics|Portland Fire,team_total,home,84.5,"-111,-113",0
+2026-07-16T00:34:13Z,Washington Mystics|Portland Fire,team_total,away,79.5,"-108,-117",0
+2026-07-16T00:34:13Z,Washington Mystics|Portland Fire,spread,,-6.0,"-110,-110",0
+2026-07-16T00:34:13Z,Washington Mystics|Portland Fire,spread,,-4.5,"-145,115",1
+2026-07-16T00:34:13Z,Washington Mystics|Portland Fire,spread,,-5.0,"-134,106",1
+2026-07-16T00:34:13Z,Washington Mystics|Portland Fire,spread,,-5.5,"-123,-102",1
+2026-07-16T00:34:13Z,Washington Mystics|Portland Fire,spread,,-6.5,"-102,-123",1
+2026-07-16T00:34:13Z,Washington Mystics|Portland Fire,spread,,-7.0,"106,-134",1
+2026-07-16T00:34:13Z,Washington Mystics|Portland Fire,spread,,-7.5,"115,-144",1
+2026-07-16T00:34:13Z,Washington Mystics|Portland Fire,total,,163.5,"-112,-112",0
+2026-07-16T00:34:13Z,Washington Mystics|Portland Fire,total,,162.0,"-133,102",1
+2026-07-16T00:34:13Z,Washington Mystics|Portland Fire,total,,162.5,"-127,-103",1
+2026-07-16T00:34:13Z,Washington Mystics|Portland Fire,total,,163.0,"-120,-108",1
+2026-07-16T00:34:13Z,Washington Mystics|Portland Fire,total,,164.0,"-108,-120",1
+2026-07-16T00:34:13Z,Washington Mystics|Portland Fire,total,,164.5,"-103,-126",1
+2026-07-16T00:34:13Z,Washington Mystics|Portland Fire,total,,165.0,"102,-133",1
+2026-07-16T00:35:28Z,Dallas Wings|New York Liberty,moneyline,,,"-135,111",0
+2026-07-16T00:35:28Z,Dallas Wings|New York Liberty,team_total,home,88.5,"-111,-113",0
+2026-07-16T00:35:28Z,Dallas Wings|New York Liberty,team_total,away,87.5,"-105,-120",0
+2026-07-16T00:35:28Z,Dallas Wings|New York Liberty,spread,,-2.0,"-110,-110",0
+2026-07-16T00:35:28Z,Dallas Wings|New York Liberty,spread,,1.0,"-143,114",1
+2026-07-16T00:35:28Z,Dallas Wings|New York Liberty,spread,,-1.0,"-129,102",1
+2026-07-16T00:35:28Z,Dallas Wings|New York Liberty,spread,,-1.5,"-121,-103",1
+2026-07-16T00:35:28Z,Dallas Wings|New York Liberty,spread,,-2.5,"-103,-122",1
+2026-07-16T00:35:28Z,Dallas Wings|New York Liberty,spread,,-3.0,"105,-132",1
+2026-07-16T00:35:28Z,Dallas Wings|New York Liberty,spread,,-3.5,"114,-143",1
+2026-07-16T00:35:28Z,Dallas Wings|New York Liberty,total,,175.5,"-108,-116",0
+2026-07-16T00:35:28Z,Dallas Wings|New York Liberty,total,,174.0,"-129,-101",1
+2026-07-16T00:35:28Z,Dallas Wings|New York Liberty,total,,174.5,"-122,-106",1
+2026-07-16T00:35:28Z,Dallas Wings|New York Liberty,total,,175.0,"-116,-112",1
+2026-07-16T00:35:28Z,Dallas Wings|New York Liberty,total,,176.0,"-105,-124",1
+2026-07-16T00:35:28Z,Dallas Wings|New York Liberty,total,,176.5,"-100,-130",1
+2026-07-16T00:35:28Z,Dallas Wings|New York Liberty,total,,177.0,"106,-138",1
+2026-07-16T00:35:28Z,Indiana Fever|Golden State Valkyries,moneyline,,,"-116,-105",0
+2026-07-16T00:35:28Z,Indiana Fever|Golden State Valkyries,team_total,home,83.5,"-109,-111",0
+2026-07-16T00:35:28Z,Indiana Fever|Golden State Valkyries,team_total,home,82.5,"-131,108",1
+2026-07-16T00:35:28Z,Indiana Fever|Golden State Valkyries,team_total,home,84.5,"109,-133",1
+2026-07-16T00:35:28Z,Indiana Fever|Golden State Valkyries,team_total,away,83.5,"-105,-115",0
+2026-07-16T00:35:28Z,Indiana Fever|Golden State Valkyries,team_total,away,82.5,"-126,104",1
+2026-07-16T00:35:28Z,Indiana Fever|Golden State Valkyries,team_total,away,84.5,"114,-138",1
+2026-07-16T00:35:28Z,Indiana Fever|Golden State Valkyries,spread,,-1.0,"-107,-114",0
+2026-07-16T00:35:28Z,Indiana Fever|Golden State Valkyries,spread,,2.0,"-147,118",1
+2026-07-16T00:35:28Z,Indiana Fever|Golden State Valkyries,spread,,1.5,"-135,110",1
+2026-07-16T00:35:28Z,Indiana Fever|Golden State Valkyries,spread,,1.0,"-126,103",1
+2026-07-16T00:35:28Z,Indiana Fever|Golden State Valkyries,spread,,-1.5,"101,-124",1
+2026-07-16T00:35:28Z,Indiana Fever|Golden State Valkyries,spread,,-2.0,"110,-135",1
+2026-07-16T00:35:28Z,Indiana Fever|Golden State Valkyries,spread,,-2.5,"117,-146",1
+2026-07-16T00:35:28Z,Indiana Fever|Golden State Valkyries,total,,166.5,"-110,-110",0
+2026-07-16T00:35:28Z,Indiana Fever|Golden State Valkyries,total,,165.0,"-133,107",1
+2026-07-16T00:35:28Z,Indiana Fever|Golden State Valkyries,total,,165.5,"-124,101",1
+2026-07-16T00:35:28Z,Indiana Fever|Golden State Valkyries,total,,166.0,"-117,-104",1
+2026-07-16T00:35:28Z,Indiana Fever|Golden State Valkyries,total,,167.0,"-104,-118",1
+2026-07-16T00:35:28Z,Indiana Fever|Golden State Valkyries,total,,167.5,"102,-125",1
+2026-07-16T00:35:28Z,Indiana Fever|Golden State Valkyries,total,,168.0,"108,-134",1
+2026-07-16T00:35:28Z,Washington Mystics|Portland Fire,moneyline,,,"-240,193",0
+2026-07-16T00:35:28Z,Washington Mystics|Portland Fire,team_total,home,84.5,"-111,-113",0
+2026-07-16T00:35:28Z,Washington Mystics|Portland Fire,team_total,away,79.5,"-108,-117",0
+2026-07-16T00:35:28Z,Washington Mystics|Portland Fire,spread,,-6.0,"-110,-110",0
+2026-07-16T00:35:28Z,Washington Mystics|Portland Fire,spread,,-4.5,"-145,115",1
+2026-07-16T00:35:28Z,Washington Mystics|Portland Fire,spread,,-5.0,"-134,106",1
+2026-07-16T00:35:28Z,Washington Mystics|Portland Fire,spread,,-5.5,"-123,-102",1
+2026-07-16T00:35:28Z,Washington Mystics|Portland Fire,spread,,-6.5,"-102,-123",1
+2026-07-16T00:35:28Z,Washington Mystics|Portland Fire,spread,,-7.0,"106,-134",1
+2026-07-16T00:35:28Z,Washington Mystics|Portland Fire,spread,,-7.5,"115,-144",1
+2026-07-16T00:35:28Z,Washington Mystics|Portland Fire,total,,163.5,"-112,-112",0
+2026-07-16T00:35:28Z,Washington Mystics|Portland Fire,total,,162.0,"-133,102",1
+2026-07-16T00:35:28Z,Washington Mystics|Portland Fire,total,,162.5,"-127,-103",1
+2026-07-16T00:35:28Z,Washington Mystics|Portland Fire,total,,163.0,"-120,-108",1
+2026-07-16T00:35:28Z,Washington Mystics|Portland Fire,total,,164.0,"-108,-120",1
+2026-07-16T00:35:28Z,Washington Mystics|Portland Fire,total,,164.5,"-103,-126",1
+2026-07-16T00:35:28Z,Washington Mystics|Portland Fire,total,,165.0,"102,-133",1
+2026-07-16T00:36:43Z,Dallas Wings|New York Liberty,moneyline,,,"-135,111",0
+2026-07-16T00:36:43Z,Dallas Wings|New York Liberty,team_total,home,88.5,"-111,-113",0
+2026-07-16T00:36:43Z,Dallas Wings|New York Liberty,team_total,away,87.5,"-105,-120",0
+2026-07-16T00:36:43Z,Dallas Wings|New York Liberty,spread,,-2.0,"-110,-110",0
+2026-07-16T00:36:43Z,Dallas Wings|New York Liberty,spread,,1.0,"-143,114",1
+2026-07-16T00:36:43Z,Dallas Wings|New York Liberty,spread,,-1.0,"-129,102",1
+2026-07-16T00:36:43Z,Dallas Wings|New York Liberty,spread,,-1.5,"-121,-103",1
+2026-07-16T00:36:43Z,Dallas Wings|New York Liberty,spread,,-2.5,"-103,-122",1
+2026-07-16T00:36:43Z,Dallas Wings|New York Liberty,spread,,-3.0,"105,-132",1
+2026-07-16T00:36:43Z,Dallas Wings|New York Liberty,spread,,-3.5,"114,-143",1
+2026-07-16T00:36:43Z,Dallas Wings|New York Liberty,total,,175.5,"-108,-116",0
+2026-07-16T00:36:43Z,Dallas Wings|New York Liberty,total,,174.0,"-129,-101",1
+2026-07-16T00:36:43Z,Dallas Wings|New York Liberty,total,,174.5,"-122,-106",1
+2026-07-16T00:36:43Z,Dallas Wings|New York Liberty,total,,175.0,"-116,-112",1
+2026-07-16T00:36:43Z,Dallas Wings|New York Liberty,total,,176.0,"-105,-124",1
+2026-07-16T00:36:43Z,Dallas Wings|New York Liberty,total,,176.5,"-100,-130",1
+2026-07-16T00:36:43Z,Dallas Wings|New York Liberty,total,,177.0,"106,-138",1
+2026-07-16T00:36:43Z,Indiana Fever|Golden State Valkyries,moneyline,,,"-116,-105",0
+2026-07-16T00:36:43Z,Indiana Fever|Golden State Valkyries,team_total,home,83.5,"-109,-111",0
+2026-07-16T00:36:43Z,Indiana Fever|Golden State Valkyries,team_total,home,82.5,"-131,108",1
+2026-07-16T00:36:43Z,Indiana Fever|Golden State Valkyries,team_total,home,84.5,"109,-133",1
+2026-07-16T00:36:43Z,Indiana Fever|Golden State Valkyries,team_total,away,83.5,"-105,-115",0
+2026-07-16T00:36:43Z,Indiana Fever|Golden State Valkyries,team_total,away,82.5,"-126,104",1
+2026-07-16T00:36:43Z,Indiana Fever|Golden State Valkyries,team_total,away,84.5,"114,-138",1
+2026-07-16T00:36:43Z,Indiana Fever|Golden State Valkyries,spread,,-1.0,"-107,-114",0
+2026-07-16T00:36:43Z,Indiana Fever|Golden State Valkyries,spread,,2.0,"-147,118",1
+2026-07-16T00:36:43Z,Indiana Fever|Golden State Valkyries,spread,,1.5,"-135,110",1
+2026-07-16T00:36:43Z,Indiana Fever|Golden State Valkyries,spread,,1.0,"-126,103",1
+2026-07-16T00:36:43Z,Indiana Fever|Golden State Valkyries,spread,,-1.5,"101,-124",1
+2026-07-16T00:36:43Z,Indiana Fever|Golden State Valkyries,spread,,-2.0,"110,-135",1
+2026-07-16T00:36:43Z,Indiana Fever|Golden State Valkyries,spread,,-2.5,"117,-146",1
+2026-07-16T00:36:43Z,Indiana Fever|Golden State Valkyries,total,,166.5,"-110,-110",0
+2026-07-16T00:36:43Z,Indiana Fever|Golden State Valkyries,total,,165.0,"-133,107",1
+2026-07-16T00:36:43Z,Indiana Fever|Golden State Valkyries,total,,165.5,"-124,101",1
+2026-07-16T00:36:43Z,Indiana Fever|Golden State Valkyries,total,,166.0,"-117,-104",1
+2026-07-16T00:36:43Z,Indiana Fever|Golden State Valkyries,total,,167.0,"-104,-118",1
+2026-07-16T00:36:43Z,Indiana Fever|Golden State Valkyries,total,,167.5,"102,-125",1
+2026-07-16T00:36:43Z,Indiana Fever|Golden State Valkyries,total,,168.0,"108,-134",1
+2026-07-16T00:36:43Z,Washington Mystics|Portland Fire,moneyline,,,"-240,193",0
+2026-07-16T00:36:43Z,Washington Mystics|Portland Fire,team_total,home,84.5,"-111,-113",0
+2026-07-16T00:36:43Z,Washington Mystics|Portland Fire,team_total,away,79.5,"-108,-117",0
+2026-07-16T00:36:43Z,Washington Mystics|Portland Fire,spread,,-6.0,"-110,-110",0
+2026-07-16T00:36:43Z,Washington Mystics|Portland Fire,spread,,-4.5,"-145,115",1
+2026-07-16T00:36:43Z,Washington Mystics|Portland Fire,spread,,-5.0,"-134,106",1
+2026-07-16T00:36:43Z,Washington Mystics|Portland Fire,spread,,-5.5,"-123,-102",1
+2026-07-16T00:36:43Z,Washington Mystics|Portland Fire,spread,,-6.5,"-102,-123",1
+2026-07-16T00:36:43Z,Washington Mystics|Portland Fire,spread,,-7.0,"106,-134",1
+2026-07-16T00:36:43Z,Washington Mystics|Portland Fire,spread,,-7.5,"115,-144",1
+2026-07-16T00:36:43Z,Washington Mystics|Portland Fire,total,,163.5,"-112,-112",0
+2026-07-16T00:36:43Z,Washington Mystics|Portland Fire,total,,162.0,"-133,102",1
+2026-07-16T00:36:43Z,Washington Mystics|Portland Fire,total,,162.5,"-127,-103",1
+2026-07-16T00:36:43Z,Washington Mystics|Portland Fire,total,,163.0,"-120,-108",1
+2026-07-16T00:36:43Z,Washington Mystics|Portland Fire,total,,164.0,"-108,-120",1
+2026-07-16T00:36:43Z,Washington Mystics|Portland Fire,total,,164.5,"-103,-126",1
+2026-07-16T00:36:43Z,Washington Mystics|Portland Fire,total,,165.0,"102,-133",1
+2026-07-16T00:37:58Z,Dallas Wings|New York Liberty,moneyline,,,"-135,111",0
+2026-07-16T00:37:58Z,Dallas Wings|New York Liberty,team_total,home,88.5,"-111,-113",0
+2026-07-16T00:37:58Z,Dallas Wings|New York Liberty,team_total,away,87.5,"-105,-120",0
+2026-07-16T00:37:58Z,Dallas Wings|New York Liberty,spread,,-2.0,"-110,-110",0
+2026-07-16T00:37:58Z,Dallas Wings|New York Liberty,spread,,1.0,"-143,114",1
+2026-07-16T00:37:58Z,Dallas Wings|New York Liberty,spread,,-1.0,"-129,102",1
+2026-07-16T00:37:58Z,Dallas Wings|New York Liberty,spread,,-1.5,"-121,-103",1
+2026-07-16T00:37:58Z,Dallas Wings|New York Liberty,spread,,-2.5,"-103,-122",1
+2026-07-16T00:37:58Z,Dallas Wings|New York Liberty,spread,,-3.0,"105,-132",1
+2026-07-16T00:37:58Z,Dallas Wings|New York Liberty,spread,,-3.5,"114,-143",1
+2026-07-16T00:37:58Z,Dallas Wings|New York Liberty,total,,175.5,"-108,-116",0
+2026-07-16T00:37:58Z,Dallas Wings|New York Liberty,total,,174.0,"-129,-101",1
+2026-07-16T00:37:58Z,Dallas Wings|New York Liberty,total,,174.5,"-122,-106",1
+2026-07-16T00:37:58Z,Dallas Wings|New York Liberty,total,,175.0,"-116,-112",1
+2026-07-16T00:37:58Z,Dallas Wings|New York Liberty,total,,176.0,"-105,-124",1
+2026-07-16T00:37:58Z,Dallas Wings|New York Liberty,total,,176.5,"-100,-130",1
+2026-07-16T00:37:58Z,Dallas Wings|New York Liberty,total,,177.0,"106,-138",1
+2026-07-16T00:37:58Z,Indiana Fever|Golden State Valkyries,moneyline,,,"-116,-105",0
+2026-07-16T00:37:58Z,Indiana Fever|Golden State Valkyries,team_total,home,83.5,"-109,-111",0
+2026-07-16T00:37:58Z,Indiana Fever|Golden State Valkyries,team_total,home,82.5,"-131,108",1
+2026-07-16T00:37:58Z,Indiana Fever|Golden State Valkyries,team_total,home,84.5,"109,-133",1
+2026-07-16T00:37:58Z,Indiana Fever|Golden State Valkyries,team_total,away,83.5,"-105,-115",0
+2026-07-16T00:37:58Z,Indiana Fever|Golden State Valkyries,team_total,away,82.5,"-126,104",1
+2026-07-16T00:37:58Z,Indiana Fever|Golden State Valkyries,team_total,away,84.5,"114,-138",1
+2026-07-16T00:37:58Z,Indiana Fever|Golden State Valkyries,spread,,-1.0,"-107,-114",0
+2026-07-16T00:37:58Z,Indiana Fever|Golden State Valkyries,spread,,2.0,"-147,118",1
+2026-07-16T00:37:58Z,Indiana Fever|Golden State Valkyries,spread,,1.5,"-135,110",1
+2026-07-16T00:37:58Z,Indiana Fever|Golden State Valkyries,spread,,1.0,"-126,103",1
+2026-07-16T00:37:58Z,Indiana Fever|Golden State Valkyries,spread,,-1.5,"101,-124",1
+2026-07-16T00:37:58Z,Indiana Fever|Golden State Valkyries,spread,,-2.0,"110,-135",1
+2026-07-16T00:37:58Z,Indiana Fever|Golden State Valkyries,spread,,-2.5,"117,-146",1
+2026-07-16T00:37:58Z,Indiana Fever|Golden State Valkyries,total,,166.5,"-110,-110",0
+2026-07-16T00:37:58Z,Indiana Fever|Golden State Valkyries,total,,165.0,"-133,107",1
+2026-07-16T00:37:58Z,Indiana Fever|Golden State Valkyries,total,,165.5,"-124,101",1
+2026-07-16T00:37:58Z,Indiana Fever|Golden State Valkyries,total,,166.0,"-117,-104",1
+2026-07-16T00:37:58Z,Indiana Fever|Golden State Valkyries,total,,167.0,"-104,-118",1
+2026-07-16T00:37:58Z,Indiana Fever|Golden State Valkyries,total,,167.5,"102,-125",1
+2026-07-16T00:37:58Z,Indiana Fever|Golden State Valkyries,total,,168.0,"108,-134",1
+2026-07-16T00:37:58Z,Washington Mystics|Portland Fire,moneyline,,,"-240,193",0
+2026-07-16T00:37:58Z,Washington Mystics|Portland Fire,team_total,home,84.5,"-111,-113",0
+2026-07-16T00:37:58Z,Washington Mystics|Portland Fire,team_total,away,79.5,"-108,-117",0
+2026-07-16T00:37:58Z,Washington Mystics|Portland Fire,spread,,-6.0,"-110,-110",0
+2026-07-16T00:37:58Z,Washington Mystics|Portland Fire,spread,,-4.5,"-145,115",1
+2026-07-16T00:37:58Z,Washington Mystics|Portland Fire,spread,,-5.0,"-134,106",1
+2026-07-16T00:37:58Z,Washington Mystics|Portland Fire,spread,,-5.5,"-123,-102",1
+2026-07-16T00:37:58Z,Washington Mystics|Portland Fire,spread,,-6.5,"-102,-123",1
+2026-07-16T00:37:58Z,Washington Mystics|Portland Fire,spread,,-7.0,"106,-134",1
+2026-07-16T00:37:58Z,Washington Mystics|Portland Fire,spread,,-7.5,"115,-144",1
+2026-07-16T00:37:58Z,Washington Mystics|Portland Fire,total,,163.5,"-112,-112",0
+2026-07-16T00:37:58Z,Washington Mystics|Portland Fire,total,,162.0,"-133,102",1
+2026-07-16T00:37:58Z,Washington Mystics|Portland Fire,total,,162.5,"-127,-103",1
+2026-07-16T00:37:58Z,Washington Mystics|Portland Fire,total,,163.0,"-120,-108",1
+2026-07-16T00:37:58Z,Washington Mystics|Portland Fire,total,,164.0,"-108,-120",1
+2026-07-16T00:37:58Z,Washington Mystics|Portland Fire,total,,164.5,"-103,-126",1
+2026-07-16T00:37:58Z,Washington Mystics|Portland Fire,total,,165.0,"102,-133",1
+2026-07-16T00:39:14Z,Dallas Wings|New York Liberty,moneyline,,,"-135,111",0
+2026-07-16T00:39:14Z,Dallas Wings|New York Liberty,team_total,home,88.5,"-111,-113",0
+2026-07-16T00:39:14Z,Dallas Wings|New York Liberty,team_total,away,87.5,"-105,-120",0
+2026-07-16T00:39:14Z,Dallas Wings|New York Liberty,spread,,-2.0,"-110,-110",0
+2026-07-16T00:39:14Z,Dallas Wings|New York Liberty,spread,,1.0,"-143,114",1
+2026-07-16T00:39:14Z,Dallas Wings|New York Liberty,spread,,-1.0,"-129,102",1
+2026-07-16T00:39:14Z,Dallas Wings|New York Liberty,spread,,-1.5,"-121,-103",1
+2026-07-16T00:39:14Z,Dallas Wings|New York Liberty,spread,,-2.5,"-103,-122",1
+2026-07-16T00:39:14Z,Dallas Wings|New York Liberty,spread,,-3.0,"105,-132",1
+2026-07-16T00:39:14Z,Dallas Wings|New York Liberty,spread,,-3.5,"114,-143",1
+2026-07-16T00:39:14Z,Dallas Wings|New York Liberty,total,,175.5,"-108,-116",0
+2026-07-16T00:39:14Z,Dallas Wings|New York Liberty,total,,174.0,"-129,-101",1
+2026-07-16T00:39:14Z,Dallas Wings|New York Liberty,total,,174.5,"-122,-106",1
+2026-07-16T00:39:14Z,Dallas Wings|New York Liberty,total,,175.0,"-116,-112",1
+2026-07-16T00:39:14Z,Dallas Wings|New York Liberty,total,,176.0,"-105,-124",1
+2026-07-16T00:39:14Z,Dallas Wings|New York Liberty,total,,176.5,"-100,-130",1
+2026-07-16T00:39:14Z,Dallas Wings|New York Liberty,total,,177.0,"106,-138",1
+2026-07-16T00:39:14Z,Indiana Fever|Golden State Valkyries,moneyline,,,"-116,-105",0
+2026-07-16T00:39:14Z,Indiana Fever|Golden State Valkyries,team_total,home,83.5,"-109,-111",0
+2026-07-16T00:39:14Z,Indiana Fever|Golden State Valkyries,team_total,home,82.5,"-131,108",1
+2026-07-16T00:39:14Z,Indiana Fever|Golden State Valkyries,team_total,home,84.5,"109,-133",1
+2026-07-16T00:39:14Z,Indiana Fever|Golden State Valkyries,team_total,away,83.5,"-105,-115",0
+2026-07-16T00:39:14Z,Indiana Fever|Golden State Valkyries,team_total,away,82.5,"-126,104",1
+2026-07-16T00:39:14Z,Indiana Fever|Golden State Valkyries,team_total,away,84.5,"114,-138",1
+2026-07-16T00:39:14Z,Indiana Fever|Golden State Valkyries,spread,,-1.0,"-107,-114",0
+2026-07-16T00:39:14Z,Indiana Fever|Golden State Valkyries,spread,,2.0,"-147,118",1
+2026-07-16T00:39:14Z,Indiana Fever|Golden State Valkyries,spread,,1.5,"-135,110",1
+2026-07-16T00:39:14Z,Indiana Fever|Golden State Valkyries,spread,,1.0,"-126,103",1
+2026-07-16T00:39:14Z,Indiana Fever|Golden State Valkyries,spread,,-1.5,"101,-124",1
+2026-07-16T00:39:14Z,Indiana Fever|Golden State Valkyries,spread,,-2.0,"110,-135",1
+2026-07-16T00:39:14Z,Indiana Fever|Golden State Valkyries,spread,,-2.5,"117,-146",1
+2026-07-16T00:39:14Z,Indiana Fever|Golden State Valkyries,total,,166.5,"-110,-110",0
+2026-07-16T00:39:14Z,Indiana Fever|Golden State Valkyries,total,,165.0,"-133,107",1
+2026-07-16T00:39:14Z,Indiana Fever|Golden State Valkyries,total,,165.5,"-124,101",1
+2026-07-16T00:39:14Z,Indiana Fever|Golden State Valkyries,total,,166.0,"-117,-104",1
+2026-07-16T00:39:14Z,Indiana Fever|Golden State Valkyries,total,,167.0,"-104,-118",1
+2026-07-16T00:39:14Z,Indiana Fever|Golden State Valkyries,total,,167.5,"102,-125",1
+2026-07-16T00:39:14Z,Indiana Fever|Golden State Valkyries,total,,168.0,"108,-134",1
+2026-07-16T00:39:14Z,Washington Mystics|Portland Fire,moneyline,,,"-240,193",0
+2026-07-16T00:39:14Z,Washington Mystics|Portland Fire,team_total,home,84.5,"-111,-113",0
+2026-07-16T00:39:14Z,Washington Mystics|Portland Fire,team_total,away,79.5,"-108,-117",0
+2026-07-16T00:39:14Z,Washington Mystics|Portland Fire,spread,,-6.0,"-110,-110",0
+2026-07-16T00:39:14Z,Washington Mystics|Portland Fire,spread,,-4.5,"-145,115",1
+2026-07-16T00:39:14Z,Washington Mystics|Portland Fire,spread,,-5.0,"-134,106",1
+2026-07-16T00:39:14Z,Washington Mystics|Portland Fire,spread,,-5.5,"-123,-102",1
+2026-07-16T00:39:14Z,Washington Mystics|Portland Fire,spread,,-6.5,"-102,-123",1
+2026-07-16T00:39:14Z,Washington Mystics|Portland Fire,spread,,-7.0,"106,-134",1
+2026-07-16T00:39:14Z,Washington Mystics|Portland Fire,spread,,-7.5,"115,-144",1
+2026-07-16T00:39:14Z,Washington Mystics|Portland Fire,total,,163.5,"-112,-112",0
+2026-07-16T00:39:14Z,Washington Mystics|Portland Fire,total,,162.0,"-133,102",1
+2026-07-16T00:39:14Z,Washington Mystics|Portland Fire,total,,162.5,"-127,-103",1
+2026-07-16T00:39:14Z,Washington Mystics|Portland Fire,total,,163.0,"-120,-108",1
+2026-07-16T00:39:14Z,Washington Mystics|Portland Fire,total,,164.0,"-108,-120",1
+2026-07-16T00:39:14Z,Washington Mystics|Portland Fire,total,,164.5,"-103,-126",1
+2026-07-16T00:39:14Z,Washington Mystics|Portland Fire,total,,165.0,"102,-133",1
