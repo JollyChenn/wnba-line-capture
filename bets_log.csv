@@ -6501,3 +6501,17 @@ captured_utc,date,player,market,side,line,odds,tier,ev,pinn,src
 2026-07-16T04:23:32+00:00,2026-07-15,Dearica Hamby,pra,Over,22.5,1.75,CASC,0.0,,cascade
 2026-07-16T04:23:32+00:00,2026-07-15,Ariel Atkins,pra,Over,15.5,1.75,CASC,0.0,,cascade
 2026-07-16T04:23:32+00:00,2026-07-15,Erica Wheeler,pra,Over,15.5,1.75,CASC,0.0,,cascade
+2026-07-16T07:07:58+00:00,2026-07-16,Dominique Malonga,pts,Under,16.5,1.909,STRONG,0.367,,model
+2026-07-16T07:07:58+00:00,2026-07-16,Natisha Hiedeman,pts,Over,17.5,2.0,THIN,0.156,,flip_paper
+2026-07-16T07:07:58+00:00,2026-07-16,Dearica Hamby,pts,Under,14.5,1.83,SOLID,0.17,,newunder
+2026-07-16T07:07:58+00:00,2026-07-16,Rae Burrell,pts,Over,14.5,1.73,SOLID,0.12,,flip_paper
+2026-07-16T07:07:58+00:00,2026-07-16,Emily Engstler,pra,Over,18.5,1.8,THIN,0.038,,hotover
+2026-07-16T07:07:58+00:00,2026-07-16,Breanna Stewart,pts,Under,20.5,1.833,STRONG,0.242,,newunder
+2026-07-16T07:07:58+00:00,2026-07-16,Jonquel Jones,pts,Under,15.5,1.8,SOLID,0.138,,newunder
+2026-07-16T07:07:58+00:00,2026-07-16,Paige Bueckers,pts,Over,21.5,1.909,THIN,0.1,,flip_paper
+2026-07-16T07:07:58+00:00,2026-07-16,Azzi Fudd,pts,Under,14.5,1.769,STRONG,0.248,,newunder
+2026-07-16T07:07:58+00:00,2026-07-16,Rae Burrell,pra,Over,20.5,2.0,CASC,0.143,,cascade
+2026-07-16T07:07:58+00:00,2026-07-16,Dearica Hamby,pra,Over,22.5,1.75,CASC,0.0,,cascade
+2026-07-16T07:07:58+00:00,2026-07-16,Ariel Atkins,pra,Over,15.5,2.0,CASC,0.143,,cascade
+2026-07-16T07:07:58+00:00,2026-07-16,Erica Wheeler,pra,Over,16.5,1.83,CASC,0.046,,cascade
+2026-07-16T07:07:58+00:00,2026-07-16,Nneka Ogwumike,pa,Over,19.5,1.8,STRONG,0.439,,overshoot
