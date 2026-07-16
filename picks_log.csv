@@ -1125,3 +1125,54 @@ pick_date,game_id,player,team,opp,market,anchor,signals,fair_p,fair_odds,proj,sd
 2026-07-15,401857072,Paige Bueckers,Dallas Wings,New York Liberty,pts_under,23.5,steady,0.563,1.78,22.6,5.72
 2026-07-15,401857072,Azzi Fudd,Dallas Wings,New York Liberty,pts_under,12.5,ftdrought,0.589,1.7,11.0,6.47
 2026-07-15,401857072,Sabrina Ionescu,New York Liberty,Dallas Wings,ast_over,4.5,usgshock,0.591,1.69,4.9,1.84
+2026-07-16,401857071,Emily Engstler,Portland Fire,Washington Mystics,pra_over,18.5,hot+expand,0.55,1.82,19.7,5.29
+2026-07-16,401857071,Shakira Austin,Washington Mystics,Portland Fire,pra_over,24.5,expand+leaky,0.58,1.72,25.8,6.4
+2026-07-16,401857071,Kiki Iriafen,Washington Mystics,Portland Fire,pra_over,25.5,hot+expand+leaky,0.62,1.61,29.2,10.45
+2026-07-16,401857071,Carla Leite,Portland Fire,Washington Mystics,pts_under,15.5,steady,0.563,1.78,14.4,6.83
+2026-07-16,401857071,Carla Leite,Portland Fire,Washington Mystics,ast_over,5.5,usgshock,0.591,1.69,5.9,2.59
+2026-07-16,401857072,Sabrina Ionescu,New York Liberty,Dallas Wings,pra_over,23.5,hot+expand,0.55,1.82,24.9,11.32
+2026-07-16,401857072,Breanna Stewart,New York Liberty,Dallas Wings,pts_under,18.5,steady,0.563,1.78,17.4,6.72
+2026-07-16,401857072,Jonquel Jones,New York Liberty,Dallas Wings,pts_under,14.5,steady,0.563,1.78,13.7,5.34
+2026-07-16,401857072,Jessica Shepard,Dallas Wings,New York Liberty,pts_under,16.5,steady,0.563,1.78,15.8,4.66
+2026-07-16,401857072,Paige Bueckers,Dallas Wings,New York Liberty,pts_under,23.5,steady,0.563,1.78,22.6,5.72
+2026-07-16,401857072,Azzi Fudd,Dallas Wings,New York Liberty,pts_under,12.5,ftdrought,0.589,1.7,11.0,6.47
+2026-07-16,401857072,Sabrina Ionescu,New York Liberty,Dallas Wings,ast_over,4.5,usgshock,0.591,1.69,4.9,1.84
+2026-07-16,401857073,Caitlin Clark,Indiana Fever,Seattle Storm,pts_under,22.5,declining+cold,0.684,1.46,19.0,7.36
+2026-07-16,401857073,Caitlin Clark,Indiana Fever,Seattle Storm,pr_under,26.5,declining+cold,0.59,1.69,24.8,7.66
+2026-07-16,401857073,Caitlin Clark,Indiana Fever,Seattle Storm,pa_under,31.5,declining+cold,0.61,1.64,28.9,9.2
+2026-07-16,401857073,Caitlin Clark,Indiana Fever,Seattle Storm,pra_under,33.5,declining+cold,0.641,1.56,30.0,9.57
+2026-07-16,401857073,Caitlin Clark,Indiana Fever,Seattle Storm,ast_under,6.5,declining+cold,0.58,1.72,5.9,3.03
+2026-07-16,401857073,Kelsey Mitchell,Indiana Fever,Seattle Storm,pts_under,26.5,steady,0.563,1.78,25.8,4.49
+2026-07-16,401857073,Natisha Hiedeman,Seattle Storm,Indiana Fever,pts_under,17.5,steady,0.563,1.78,16.4,6.83
+2026-07-16,401857073,Aliyah Boston,Indiana Fever,Seattle Storm,pts_under,17.5,steady,0.563,1.78,16.8,4.62
+2026-07-16,401857073,Awa Fam,Seattle Storm,Indiana Fever,pts_under,12.5,ftdrought,0.589,1.7,11.2,5.91
+2026-07-16,401857074,Angel Reese,Atlanta Dream,Toronto Tempo,pra_over,27.5,hot+leaky,0.62,1.61,29.4,4.61
+2026-07-16,401857074,Isabelle Harrison,Toronto Tempo,Atlanta Dream,pts_under,12.5,steady,0.563,1.78,11.6,5.44
+2026-07-16,401857074,Allisha Gray,Atlanta Dream,Toronto Tempo,pts_under,18.5,steady,0.563,1.78,17.8,4.49
+2026-07-16,401857074,Jordin Canada,Atlanta Dream,Toronto Tempo,pts_under,10.5,steady,0.563,1.78,9.7,4.79
+2026-07-16,401857074,Maria Conde,Toronto Tempo,Atlanta Dream,pts_under,10.5,ftdrought,0.589,1.7,9.3,5.17
+2026-07-16,401857074,Rhyne Howard,Atlanta Dream,Toronto Tempo,pts_under,18.5,steady,0.563,1.78,17.5,6.55
+2026-07-16,401857074,Nyara Sabally,Toronto Tempo,Atlanta Dream,pts_under,12.5,steady,0.563,1.78,11.8,4.46
+2026-07-16,401857074,Angel Reese,Atlanta Dream,Toronto Tempo,pts_under,16.5,steady,0.563,1.78,15.8,4.14
+2026-07-16,401857075,Nneka Ogwumike,Los Angeles Sparks,Chicago Sky,pra_over,30.5,hot+leaky,0.62,1.61,33.0,8.1
+2026-07-16,401857075,Erica Wheeler,Los Angeles Sparks,Chicago Sky,pra_over,15.5,hot+leaky,0.62,1.61,18.2,7.14
+2026-07-16,401857075,Natasha Cloud,Chicago Sky,Los Angeles Sparks,pra_over,18.5,expand+leaky,0.58,1.72,20.3,6.42
+2026-07-16,401857075,Azura Stevens,Chicago Sky,Los Angeles Sparks,pra_over,23.5,hot+leaky,0.62,1.61,25.7,7.32
+2026-07-16,401857075,Ariel Atkins,Los Angeles Sparks,Chicago Sky,pra_over,15.5,hot+expand+leaky,0.62,1.61,18.1,7.02
+2026-07-16,401857075,Nneka Ogwumike,Los Angeles Sparks,Chicago Sky,pts_under,19.5,steady,0.563,1.78,18.6,5.91
+2026-07-16,401857075,Erica Wheeler,Los Angeles Sparks,Chicago Sky,pts_under,8.5,ftdrought,0.589,1.7,7.0,6.49
+2026-07-16,401857075,Dearica Hamby,Los Angeles Sparks,Chicago Sky,pts_under,13.5,steady,0.563,1.78,12.7,4.81
+2026-07-16,401857075,Azura Stevens,Chicago Sky,Los Angeles Sparks,pts_under,10.5,steady,0.563,1.78,9.7,5.34
+2026-07-16,401857075,Rae Burrell,Los Angeles Sparks,Chicago Sky,pts_under,17.5,steady,0.563,1.78,16.6,5.54
+2026-07-16,401857075,Sydney Taylor,Chicago Sky,Los Angeles Sparks,pts_under,15.5,steady,0.563,1.78,14.5,6.1
+2026-07-16,401857076,Kahleah Copper,Phoenix Mercury,Connecticut Sun,pts_under,25.5,cold+stingy,0.626,1.6,23.5,6.27
+2026-07-16,401857076,Kahleah Copper,Phoenix Mercury,Connecticut Sun,pr_under,28.5,cold+stingy,0.59,1.69,27.0,6.47
+2026-07-16,401857076,Kahleah Copper,Phoenix Mercury,Connecticut Sun,pa_under,26.5,cold+stingy,0.61,1.64,24.6,6.87
+2026-07-16,401857076,Kahleah Copper,Phoenix Mercury,Connecticut Sun,pra_under,29.5,cold+stingy,0.621,1.61,27.3,7.19
+2026-07-16,401857076,Valeriane Ayayi,Phoenix Mercury,Connecticut Sun,pr_under,13.5,cold+stingy,0.59,1.69,11.5,8.69
+2026-07-16,401857076,Valeriane Ayayi,Phoenix Mercury,Connecticut Sun,pa_under,12.5,cold+stingy,0.61,1.64,10.4,7.51
+2026-07-16,401857076,Valeriane Ayayi,Phoenix Mercury,Connecticut Sun,pra_under,15.5,cold+stingy,0.621,1.61,12.8,8.81
+2026-07-16,401857076,Olivia Nelson-Ododa,Connecticut Sun,Phoenix Mercury,pts_under,11.5,steady,0.563,1.78,11.0,3.0
+2026-07-16,401857076,Charlisse Leger-Walker,Connecticut Sun,Phoenix Mercury,pts_under,8.5,ftdrought,0.589,1.7,7.7,3.63
+2026-07-16,401857076,Leila Lacan,Connecticut Sun,Phoenix Mercury,pts_under,12.5,steady,0.563,1.78,12.0,3.0
+2026-07-16,401857076,Olivia Nelson-Ododa,Connecticut Sun,Phoenix Mercury,ast_over,1.5,usgshock,0.591,1.69,1.9,1.5
