@@ -2,7 +2,7 @@
 
 _Stingy-D threshold (trailing-10 allowed, bottom quartile): 86_
 
-_🩹 OUT/doubtful (excluded from ALL picks): Aneesah Morrow, Brittney Sykes, Jovana Nogic, Kelsey Plum, Kierstan Bell, Kiki Rice, Leonie Fiebich, Megan Gustafson, Natasha Mack, Olivia Miles, Saniya Rivers, Satou Sabally, Skylar Diggins, Ta'Niya Latson, Temi Fagbenle_
+_🩹 OUT/doubtful (excluded from ALL picks): Aneesah Morrow, Brittney Sykes, Jovana Nogic, Kelsey Plum, Kierstan Bell, Kiki Rice, Leonie Fiebich, Megan Gustafson, Natasha Mack, Olivia Miles, Saniya Rivers, Satou Sabally, Skylar Diggins, Ta'Niya Latson_
 
 ## 💰 REAL-MONEY — UNDER (cold/shrink + stingy · pts/PR/PA/PRA · flat 1u)
 
