@@ -404,3 +404,6 @@ date,player,market,side,line,odds,tier,actual,result,pnl,odds_clv,line_clv,sharp
 20260715,Rae Burrell,pra,Over,22.5,1.75,CASC,30.0,WIN,0.75,0.0,-3.0,,,cascade,2026-07-14
 20260715,Rae Burrell,pts,Over,14.5,1.93,SOLID,24.0,WIN,0.93,0.072,0.0,0.0,0.006,flip_paper,2026-07-14
 20260715,Sydney Taylor,pts,Under,15.5,1.87,THIN,17.0,loss,-1.0,0.039,0.0,,,newunder,2026-07-14
+20260716,Carla Leite,pts,Under,15.5,1.87,THIN,14.0,WIN,0.87,0.0,1.0,,,newunder,2026-07-15
+20260716,Emily Engstler,pra,Over,18.5,1.83,THIN,16.0,loss,-1.0,-0.021,0.0,,,hotover,2026-07-16
+20260716,Sonia Citron,pts,Under,18.5,1.8,SOLID,8.0,WIN,0.8,0.0,0.0,,,newunder,2026-07-15

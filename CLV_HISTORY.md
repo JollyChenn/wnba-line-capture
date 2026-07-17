@@ -10,7 +10,7 @@ _**sharp-odds** = vs Pinnacle's vig-free fair price (TRUE edge test) · **sharp-
   ★ SHARP ODDS-CLV: -6.3% | beat fair 0/6 (0%)  ← TRUE edge (vs Pinnacle fair price)
   SHARP LINE-CLV : +0.06 pts | n=9  ← better number than the sharp
   self ODDS-CLV  : -0.5% | beat 5/20 (25%)  (1xbet's own close = weak)
-  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 33/61 (-0.3u) · FLIP UNDER 9/19 (-2.6u) · FLIP UNDER(paper) 24/36 (+8.7u) · FTUNDER 64/149 (-30.9u) · HOT OVER 11/19 (+1.6u) · STAR-OUT CASCADE 53/93 (-0.1u) · starout 0/6 (-6.0u)
+  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 33/61 (-0.3u) · FLIP UNDER 9/19 (-2.6u) · FLIP UNDER(paper) 24/36 (+8.7u) · FTUNDER 66/151 (-29.2u) · HOT OVER 11/20 (+0.6u) · STAR-OUT CASCADE 53/93 (-0.1u) · starout 0/6 (-6.0u)
   VERDICT : ⚠️ NEUTRAL self CLV — winning on outcomes, not beating the line. Unproven; keep collecting.
   by tier: SOLID 4/11 (-3.3u) · STRONG 5/9 (+0.1u) · THIN 1/2 (+0.0u)
   by market: pr Under 1/3 (-1.0u) · pra Under 1/7 (-5.3u) · pts Under 8/12 (+3.1u)
@@ -427,3 +427,6 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260715 | Rae Burrell | PRA Over 22.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260715 | Rae Burrell | PTS Over 14.5 @ 1.93 | FLIP UNDER(paper) | WIN | +1% | +0.0 | +7% |
 | 20260715 | Sydney Taylor | PTS Under 15.5 @ 1.87 | FTUNDER | loss | — | — | +4% |
+| 20260716 | Carla Leite | PTS Under 15.5 @ 1.87 | FTUNDER | WIN | — | — | +0% |
+| 20260716 | Emily Engstler | PRA Over 18.5 @ 1.83 | HOT OVER | loss | — | — | -2% |
+| 20260716 | Sonia Citron | PTS Under 18.5 @ 1.8 | FTUNDER | WIN | — | — | +0% |
