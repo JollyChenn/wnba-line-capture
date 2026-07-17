@@ -107,3 +107,31 @@ ts,game_id,period,clock,away,home,away_score,home_score,h_fouls,a_fouls,h_to,a_t
 2026-07-17T00:58:53Z,401857071,4,1:48,POR,WSH,70,53,14,26,19,11,44,28,Angela Dugalic offensive rebound
 2026-07-17T01:00:10Z,401857071,4,1:00,POR,WSH,75,54,14,26,19,11,44,29,Frieda Buhner defensive rebound
 2026-07-17T01:01:25Z,401857071,4,8.5,POR,WSH,75,56,14,26,19,11,46,30,Rori Harmon makes 2-foot shot
+2026-07-17T23:41:26Z,401857073,1,5:22,SEA,IND,13,17,3,2,3,4,3,2,Lexie Hull shooting foul
+2026-07-17T23:41:26Z,401857074,1,5:49,ATL,TOR,7,6,1,4,2,1,6,3,Allisha Gray shooting foul
+2026-07-17T23:41:26Z,401857075,1,4:45,LA,CHI,8,9,2,0,1,2,5,6,Dearica Hamby out of bounds bad pass turnover
+2026-07-17T23:42:42Z,401857073,1,4:46,SEA,IND,14,19,3,2,3,5,4,3,Storm Full timeout
+2026-07-17T23:42:42Z,401857074,1,5:11,ATL,TOR,7,6,2,4,3,1,7,3,Nyara Sabally offensive foul turnover
+2026-07-17T23:42:42Z,401857075,1,4:30,LA,CHI,8,9,3,0,1,2,5,6,Official timeout
+2026-07-17T23:43:58Z,401857073,1,4:46,SEA,IND,14,19,3,2,3,5,4,3,Storm Full timeout
+2026-07-17T23:43:58Z,401857074,1,4:51,ATL,TOR,7,6,3,4,3,1,7,4,Brionna Jones misses shot
+2026-07-17T23:43:58Z,401857075,1,4:30,LA,CHI,8,9,3,0,1,2,5,6,Official timeout
+2026-07-17T23:45:15Z,401857073,1,4:46,SEA,IND,14,19,3,2,3,5,4,3,Storm Full timeout
+2026-07-17T23:45:15Z,401857074,1,4:51,ATL,TOR,7,6,4,4,3,1,7,4,Official timeout
+2026-07-17T23:45:15Z,401857075,1,4:20,LA,CHI,10,9,3,0,1,2,5,6,Cameron Brink enters the game for Erica Wheeler
+2026-07-17T23:46:31Z,401857073,1,4:06,SEA,IND,14,19,3,2,3,5,5,4,Storm offensive team rebound
+2026-07-17T23:46:31Z,401857074,1,4:51,ATL,TOR,7,6,4,4,3,1,7,4,Official timeout
+2026-07-17T23:46:31Z,401857075,1,3:11,LA,CHI,10,11,4,0,1,3,6,8,Azura Stevens makes layup (Natasha Cloud assists)
+2026-07-17T23:47:47Z,401857073,1,3:15,SEA,IND,16,23,3,3,3,5,6,5,enters the game for Natisha Hiedeman
+2026-07-17T23:47:47Z,401857074,1,4:38,ATL,TOR,9,6,4,4,3,1,7,4,Brionna Jones makes free throw 1 of 2
+2026-07-17T23:47:47Z,401857075,1,2:17,LA,CHI,13,13,4,0,1,3,7,9,Jacy Sheldon makes 20-foot pullup jump shot (Gabriela Jaquez assists)
+2026-07-17T23:49:03Z,401857073,1,2:26,SEA,IND,19,24,3,3,4,5,7,5,"Makayla Timpson bad pass
+turnover (Stefanie Dolson steals)"
+2026-07-17T23:49:03Z,401857074,1,4:02,ATL,TOR,12,8,4,5,4,1,7,4,foul
+2026-07-17T23:49:03Z,401857075,1,1:52,LA,CHI,13,13,4,1,2,4,8,9,Elizabeth Williams turnover
+2026-07-17T23:50:19Z,401857073,1,2:13,SEA,IND,20,24,4,3,4,5,7,5,Stefanie Dolson makes free throw 2 of 2
+2026-07-17T23:50:19Z,401857074,1,3:18,ATL,TOR,14,11,5,5,4,1,7,4,Naz Hillmon makes free throw 2 of 2
+2026-07-17T23:50:19Z,401857075,1,46.9,LA,CHI,15,13,4,1,2,5,9,11,Erica Wheeler defensive rebound
+2026-07-17T23:51:35Z,401857073,1,1:38,SEA,IND,20,26,5,4,4,5,8,5,Storm offensive team rebound
+2026-07-17T23:51:35Z,401857074,1,2:29,ATL,TOR,16,13,5,6,5,1,8,4,Julie Allemand defensive rebound
+2026-07-17T23:51:35Z,401857075,1,2.3,LA,CHI,17,15,4,2,3,5,9,11,foul
