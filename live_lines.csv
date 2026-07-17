@@ -5839,3 +5839,687 @@ ts,teams,type,side,points,prices,alt
 2026-07-17T00:38:44Z,Toronto Tempo|Atlanta Dream,total,,183.5,"-104,-125",1
 2026-07-17T00:38:44Z,Toronto Tempo|Atlanta Dream,total,,184.0,"101,-131",1
 2026-07-17T00:38:44Z,Toronto Tempo|Atlanta Dream,total,,184.5,"105,-137",1
+2026-07-17T00:40:01Z,Washington Mystics|Portland Fire,moneyline,,,"1222,-3654",0
+2026-07-17T00:40:01Z,Washington Mystics|Portland Fire,team_total,home,66.5,"-110,-121",0
+2026-07-17T00:40:01Z,Washington Mystics|Portland Fire,team_total,home,65.5,"-138,105",1
+2026-07-17T00:40:01Z,Washington Mystics|Portland Fire,team_total,home,67.5,"115,-152",1
+2026-07-17T00:40:01Z,Washington Mystics|Portland Fire,team_total,away,78.5,"-114,-116",0
+2026-07-17T00:40:01Z,Washington Mystics|Portland Fire,team_total,away,77.5,"-151,114",1
+2026-07-17T00:40:01Z,Washington Mystics|Portland Fire,team_total,away,79.5,"115,-153",1
+2026-07-17T00:40:01Z,Washington Mystics|Portland Fire,spread,,12.0,"-114,-116",0
+2026-07-17T00:40:01Z,Washington Mystics|Portland Fire,spread,,13.5,"-164,120",1
+2026-07-17T00:40:01Z,Washington Mystics|Portland Fire,spread,,13.0,"-146,108",1
+2026-07-17T00:40:01Z,Washington Mystics|Portland Fire,spread,,12.5,"-127,-105",1
+2026-07-17T00:40:01Z,Washington Mystics|Portland Fire,spread,,11.5,"-103,-129",1
+2026-07-17T00:40:01Z,Washington Mystics|Portland Fire,spread,,11.0,"110,-149",1
+2026-07-17T00:40:01Z,Washington Mystics|Portland Fire,spread,,10.5,"122,-167",1
+2026-07-17T00:40:01Z,Washington Mystics|Portland Fire,total,,144.5,"-113,-117",0
+2026-07-17T00:40:01Z,Washington Mystics|Portland Fire,total,,143.0,"-149,109",1
+2026-07-17T00:40:01Z,Washington Mystics|Portland Fire,total,,143.5,"-134,-100",1
+2026-07-17T00:40:01Z,Washington Mystics|Portland Fire,total,,144.0,"-124,-108",1
+2026-07-17T00:40:01Z,Washington Mystics|Portland Fire,total,,145.0,"-104,-128",1
+2026-07-17T00:40:01Z,Washington Mystics|Portland Fire,total,,145.5,"104,-140",1
+2026-07-17T00:40:01Z,Washington Mystics|Portland Fire,total,,146.0,"113,-153",1
+2026-07-17T00:40:01Z,Indiana Fever|Seattle Storm,moneyline,,,"-400,305",0
+2026-07-17T00:40:01Z,Indiana Fever|Seattle Storm,team_total,home,92.0,"-108,-116",0
+2026-07-17T00:40:01Z,Indiana Fever|Seattle Storm,team_total,away,83.5,"-109,-115",0
+2026-07-17T00:40:01Z,Indiana Fever|Seattle Storm,spread,,-9.0,"-109,-111",0
+2026-07-17T00:40:01Z,Indiana Fever|Seattle Storm,spread,,-7.5,"-144,114",1
+2026-07-17T00:40:01Z,Indiana Fever|Seattle Storm,spread,,-8.0,"-133,106",1
+2026-07-17T00:40:01Z,Indiana Fever|Seattle Storm,spread,,-8.5,"-122,-103",1
+2026-07-17T00:40:01Z,Indiana Fever|Seattle Storm,spread,,-9.5,"-102,-123",1
+2026-07-17T00:40:01Z,Indiana Fever|Seattle Storm,spread,,-10.0,"107,-134",1
+2026-07-17T00:40:01Z,Indiana Fever|Seattle Storm,spread,,-10.5,"115,-145",1
+2026-07-17T00:40:01Z,Indiana Fever|Seattle Storm,total,,175.0,"-112,-112",0
+2026-07-17T00:40:01Z,Indiana Fever|Seattle Storm,total,,173.5,"-132,101",1
+2026-07-17T00:40:01Z,Indiana Fever|Seattle Storm,total,,174.0,"-126,-103",1
+2026-07-17T00:40:01Z,Indiana Fever|Seattle Storm,total,,174.5,"-120,-109",1
+2026-07-17T00:40:01Z,Indiana Fever|Seattle Storm,total,,175.5,"-108,-121",1
+2026-07-17T00:40:01Z,Indiana Fever|Seattle Storm,total,,176.0,"-103,-127",1
+2026-07-17T00:40:01Z,Indiana Fever|Seattle Storm,total,,176.5,"102,-133",1
+2026-07-17T00:40:01Z,Chicago Sky|Los Angeles Sparks,moneyline,,,"-118,-103",0
+2026-07-17T00:40:01Z,Chicago Sky|Los Angeles Sparks,team_total,home,93.0,"-111,-113",0
+2026-07-17T00:40:01Z,Chicago Sky|Los Angeles Sparks,team_total,away,92.5,"-112,-112",0
+2026-07-17T00:40:01Z,Chicago Sky|Los Angeles Sparks,spread,,-1.0,"-110,-110",0
+2026-07-17T00:40:01Z,Chicago Sky|Los Angeles Sparks,spread,,2.0,"-144,114",1
+2026-07-17T00:40:01Z,Chicago Sky|Los Angeles Sparks,spread,,1.5,"-134,107",1
+2026-07-17T00:40:01Z,Chicago Sky|Los Angeles Sparks,spread,,1.0,"-127,101",1
+2026-07-17T00:40:01Z,Chicago Sky|Los Angeles Sparks,spread,,-1.5,"-106,-119",1
+2026-07-17T00:40:01Z,Chicago Sky|Los Angeles Sparks,spread,,-2.0,"102,-128",1
+2026-07-17T00:40:01Z,Chicago Sky|Los Angeles Sparks,spread,,-2.5,"110,-138",1
+2026-07-17T00:40:01Z,Chicago Sky|Los Angeles Sparks,total,,185.0,"-114,-110",0
+2026-07-17T00:40:01Z,Chicago Sky|Los Angeles Sparks,total,,183.5,"-135,104",1
+2026-07-17T00:40:01Z,Chicago Sky|Los Angeles Sparks,total,,184.0,"-129,-101",1
+2026-07-17T00:40:01Z,Chicago Sky|Los Angeles Sparks,total,,184.5,"-122,-106",1
+2026-07-17T00:40:01Z,Chicago Sky|Los Angeles Sparks,total,,185.5,"-110,-118",1
+2026-07-17T00:40:01Z,Chicago Sky|Los Angeles Sparks,total,,186.0,"-105,-124",1
+2026-07-17T00:40:01Z,Chicago Sky|Los Angeles Sparks,total,,186.5,"-100,-130",1
+2026-07-17T00:40:01Z,Phoenix Mercury|Connecticut Sun,moneyline,,,"-210,170",0
+2026-07-17T00:40:01Z,Phoenix Mercury|Connecticut Sun,team_total,home,84.0,"-112,-112",0
+2026-07-17T00:40:01Z,Phoenix Mercury|Connecticut Sun,team_total,away,79.5,"-116,-108",0
+2026-07-17T00:40:01Z,Phoenix Mercury|Connecticut Sun,spread,,-5.0,"-111,-109",0
+2026-07-17T00:40:01Z,Phoenix Mercury|Connecticut Sun,spread,,-3.5,"-146,116",1
+2026-07-17T00:40:01Z,Phoenix Mercury|Connecticut Sun,spread,,-4.0,"-135,107",1
+2026-07-17T00:40:01Z,Phoenix Mercury|Connecticut Sun,spread,,-4.5,"-124,-101",1
+2026-07-17T00:40:01Z,Phoenix Mercury|Connecticut Sun,spread,,-5.5,"-103,-122",1
+2026-07-17T00:40:01Z,Phoenix Mercury|Connecticut Sun,spread,,-6.0,"105,-132",1
+2026-07-17T00:40:01Z,Phoenix Mercury|Connecticut Sun,spread,,-6.5,"114,-143",1
+2026-07-17T00:40:01Z,Phoenix Mercury|Connecticut Sun,total,,163.5,"-112,-112",0
+2026-07-17T00:40:01Z,Phoenix Mercury|Connecticut Sun,total,,162.0,"-134,102",1
+2026-07-17T00:40:01Z,Phoenix Mercury|Connecticut Sun,total,,162.5,"-127,-103",1
+2026-07-17T00:40:01Z,Phoenix Mercury|Connecticut Sun,total,,163.0,"-120,-108",1
+2026-07-17T00:40:01Z,Phoenix Mercury|Connecticut Sun,total,,164.0,"-108,-120",1
+2026-07-17T00:40:01Z,Phoenix Mercury|Connecticut Sun,total,,164.5,"-103,-126",1
+2026-07-17T00:40:01Z,Phoenix Mercury|Connecticut Sun,total,,165.0,"102,-133",1
+2026-07-17T00:40:01Z,Toronto Tempo|Atlanta Dream,moneyline,,,"256,-327",0
+2026-07-17T00:40:01Z,Toronto Tempo|Atlanta Dream,team_total,home,88.0,"-109,-115",0
+2026-07-17T00:40:01Z,Toronto Tempo|Atlanta Dream,team_total,away,95.0,"-112,-112",0
+2026-07-17T00:40:01Z,Toronto Tempo|Atlanta Dream,spread,,7.5,"-104,-116",0
+2026-07-17T00:40:01Z,Toronto Tempo|Atlanta Dream,spread,,9.0,"-137,109",1
+2026-07-17T00:40:01Z,Toronto Tempo|Atlanta Dream,spread,,8.5,"-127,101",1
+2026-07-17T00:40:01Z,Toronto Tempo|Atlanta Dream,spread,,8.0,"-116,-108",1
+2026-07-17T00:40:01Z,Toronto Tempo|Atlanta Dream,spread,,7.0,"103,-130",1
+2026-07-17T00:40:01Z,Toronto Tempo|Atlanta Dream,spread,,6.5,"112,-141",1
+2026-07-17T00:40:01Z,Toronto Tempo|Atlanta Dream,spread,,6.0,"121,-153",1
+2026-07-17T00:40:01Z,Toronto Tempo|Atlanta Dream,total,,183.0,"-108,-116",0
+2026-07-17T00:40:01Z,Toronto Tempo|Atlanta Dream,total,,181.5,"-127,-102",1
+2026-07-17T00:40:01Z,Toronto Tempo|Atlanta Dream,total,,182.0,"-121,-107",1
+2026-07-17T00:40:01Z,Toronto Tempo|Atlanta Dream,total,,182.5,"-116,-113",1
+2026-07-17T00:40:01Z,Toronto Tempo|Atlanta Dream,total,,183.5,"-104,-125",1
+2026-07-17T00:40:01Z,Toronto Tempo|Atlanta Dream,total,,184.0,"101,-131",1
+2026-07-17T00:40:01Z,Toronto Tempo|Atlanta Dream,total,,184.5,"105,-137",1
+2026-07-17T00:41:17Z,Washington Mystics|Portland Fire,moneyline,,,"976,-2498",0
+2026-07-17T00:41:17Z,Washington Mystics|Portland Fire,team_total,home,67.5,"-125,-106",0
+2026-07-17T00:41:17Z,Washington Mystics|Portland Fire,team_total,home,66.5,"-166,125",1
+2026-07-17T00:41:17Z,Washington Mystics|Portland Fire,team_total,home,68.5,"105,-139",1
+2026-07-17T00:41:17Z,Washington Mystics|Portland Fire,team_total,away,77.5,"-126,-105",0
+2026-07-17T00:41:17Z,Washington Mystics|Portland Fire,team_total,away,76.5,"-178,133",1
+2026-07-17T00:41:17Z,Washington Mystics|Portland Fire,team_total,away,78.5,"109,-145",1
+2026-07-17T00:41:17Z,Washington Mystics|Portland Fire,spread,,10.0,"-111,-119",0
+2026-07-17T00:41:17Z,Washington Mystics|Portland Fire,spread,,11.0,"-152,113",1
+2026-07-17T00:41:17Z,Washington Mystics|Portland Fire,spread,,10.5,"-130,-103",1
+2026-07-17T00:41:17Z,Washington Mystics|Portland Fire,spread,,9.5,"104,-139",1
+2026-07-17T00:41:17Z,Washington Mystics|Portland Fire,spread,,9.0,"120,-163",1
+2026-07-17T00:41:17Z,Washington Mystics|Portland Fire,total,,145.5,"-111,-119",0
+2026-07-17T00:41:17Z,Washington Mystics|Portland Fire,total,,144.5,"-138,102",1
+2026-07-17T00:41:17Z,Washington Mystics|Portland Fire,total,,145.0,"-124,-107",1
+2026-07-17T00:41:17Z,Washington Mystics|Portland Fire,total,,146.0,"-101,-132",1
+2026-07-17T00:41:17Z,Washington Mystics|Portland Fire,total,,146.5,"108,-145",1
+2026-07-17T00:41:17Z,Phoenix Mercury|Connecticut Sun,moneyline,,,"-210,170",0
+2026-07-17T00:41:17Z,Phoenix Mercury|Connecticut Sun,team_total,home,84.0,"-112,-112",0
+2026-07-17T00:41:17Z,Phoenix Mercury|Connecticut Sun,team_total,away,79.5,"-116,-108",0
+2026-07-17T00:41:17Z,Phoenix Mercury|Connecticut Sun,spread,,-5.0,"-111,-109",0
+2026-07-17T00:41:17Z,Phoenix Mercury|Connecticut Sun,spread,,-3.5,"-146,116",1
+2026-07-17T00:41:17Z,Phoenix Mercury|Connecticut Sun,spread,,-4.0,"-135,107",1
+2026-07-17T00:41:17Z,Phoenix Mercury|Connecticut Sun,spread,,-4.5,"-124,-101",1
+2026-07-17T00:41:17Z,Phoenix Mercury|Connecticut Sun,spread,,-5.5,"-103,-122",1
+2026-07-17T00:41:17Z,Phoenix Mercury|Connecticut Sun,spread,,-6.0,"105,-132",1
+2026-07-17T00:41:17Z,Phoenix Mercury|Connecticut Sun,spread,,-6.5,"114,-143",1
+2026-07-17T00:41:17Z,Phoenix Mercury|Connecticut Sun,total,,163.5,"-112,-112",0
+2026-07-17T00:41:17Z,Phoenix Mercury|Connecticut Sun,total,,162.0,"-134,102",1
+2026-07-17T00:41:17Z,Phoenix Mercury|Connecticut Sun,total,,162.5,"-127,-103",1
+2026-07-17T00:41:17Z,Phoenix Mercury|Connecticut Sun,total,,163.0,"-120,-108",1
+2026-07-17T00:41:17Z,Phoenix Mercury|Connecticut Sun,total,,164.0,"-108,-120",1
+2026-07-17T00:41:17Z,Phoenix Mercury|Connecticut Sun,total,,164.5,"-103,-126",1
+2026-07-17T00:41:17Z,Phoenix Mercury|Connecticut Sun,total,,165.0,"102,-133",1
+2026-07-17T00:41:17Z,Indiana Fever|Seattle Storm,moneyline,,,"-400,305",0
+2026-07-17T00:41:17Z,Indiana Fever|Seattle Storm,team_total,home,92.0,"-108,-116",0
+2026-07-17T00:41:17Z,Indiana Fever|Seattle Storm,team_total,away,83.5,"-109,-115",0
+2026-07-17T00:41:17Z,Indiana Fever|Seattle Storm,spread,,-9.0,"-109,-111",0
+2026-07-17T00:41:17Z,Indiana Fever|Seattle Storm,spread,,-7.5,"-144,114",1
+2026-07-17T00:41:17Z,Indiana Fever|Seattle Storm,spread,,-8.0,"-133,106",1
+2026-07-17T00:41:17Z,Indiana Fever|Seattle Storm,spread,,-8.5,"-122,-103",1
+2026-07-17T00:41:17Z,Indiana Fever|Seattle Storm,spread,,-9.5,"-102,-123",1
+2026-07-17T00:41:17Z,Indiana Fever|Seattle Storm,spread,,-10.0,"107,-134",1
+2026-07-17T00:41:17Z,Indiana Fever|Seattle Storm,spread,,-10.5,"115,-145",1
+2026-07-17T00:41:17Z,Indiana Fever|Seattle Storm,total,,175.0,"-112,-112",0
+2026-07-17T00:41:17Z,Indiana Fever|Seattle Storm,total,,173.5,"-132,101",1
+2026-07-17T00:41:17Z,Indiana Fever|Seattle Storm,total,,174.0,"-126,-103",1
+2026-07-17T00:41:17Z,Indiana Fever|Seattle Storm,total,,174.5,"-120,-109",1
+2026-07-17T00:41:17Z,Indiana Fever|Seattle Storm,total,,175.5,"-108,-121",1
+2026-07-17T00:41:17Z,Indiana Fever|Seattle Storm,total,,176.0,"-103,-127",1
+2026-07-17T00:41:17Z,Indiana Fever|Seattle Storm,total,,176.5,"102,-133",1
+2026-07-17T00:41:17Z,Chicago Sky|Los Angeles Sparks,moneyline,,,"-118,-103",0
+2026-07-17T00:41:17Z,Chicago Sky|Los Angeles Sparks,team_total,home,93.0,"-111,-113",0
+2026-07-17T00:41:17Z,Chicago Sky|Los Angeles Sparks,team_total,away,92.5,"-112,-112",0
+2026-07-17T00:41:17Z,Chicago Sky|Los Angeles Sparks,spread,,-1.0,"-110,-110",0
+2026-07-17T00:41:17Z,Chicago Sky|Los Angeles Sparks,spread,,2.0,"-144,114",1
+2026-07-17T00:41:17Z,Chicago Sky|Los Angeles Sparks,spread,,1.5,"-134,107",1
+2026-07-17T00:41:17Z,Chicago Sky|Los Angeles Sparks,spread,,1.0,"-127,101",1
+2026-07-17T00:41:17Z,Chicago Sky|Los Angeles Sparks,spread,,-1.5,"-106,-119",1
+2026-07-17T00:41:17Z,Chicago Sky|Los Angeles Sparks,spread,,-2.0,"102,-128",1
+2026-07-17T00:41:17Z,Chicago Sky|Los Angeles Sparks,spread,,-2.5,"110,-138",1
+2026-07-17T00:41:17Z,Chicago Sky|Los Angeles Sparks,total,,185.0,"-114,-110",0
+2026-07-17T00:41:17Z,Chicago Sky|Los Angeles Sparks,total,,183.5,"-135,104",1
+2026-07-17T00:41:17Z,Chicago Sky|Los Angeles Sparks,total,,184.0,"-129,-101",1
+2026-07-17T00:41:17Z,Chicago Sky|Los Angeles Sparks,total,,184.5,"-122,-106",1
+2026-07-17T00:41:17Z,Chicago Sky|Los Angeles Sparks,total,,185.5,"-110,-118",1
+2026-07-17T00:41:17Z,Chicago Sky|Los Angeles Sparks,total,,186.0,"-105,-124",1
+2026-07-17T00:41:17Z,Chicago Sky|Los Angeles Sparks,total,,186.5,"-100,-130",1
+2026-07-17T00:41:17Z,Toronto Tempo|Atlanta Dream,moneyline,,,"256,-327",0
+2026-07-17T00:41:17Z,Toronto Tempo|Atlanta Dream,team_total,home,88.0,"-109,-115",0
+2026-07-17T00:41:17Z,Toronto Tempo|Atlanta Dream,team_total,away,95.0,"-112,-112",0
+2026-07-17T00:41:17Z,Toronto Tempo|Atlanta Dream,spread,,7.5,"-104,-116",0
+2026-07-17T00:41:17Z,Toronto Tempo|Atlanta Dream,spread,,9.0,"-137,109",1
+2026-07-17T00:41:17Z,Toronto Tempo|Atlanta Dream,spread,,8.5,"-127,101",1
+2026-07-17T00:41:17Z,Toronto Tempo|Atlanta Dream,spread,,8.0,"-116,-108",1
+2026-07-17T00:41:17Z,Toronto Tempo|Atlanta Dream,spread,,7.0,"103,-130",1
+2026-07-17T00:41:17Z,Toronto Tempo|Atlanta Dream,spread,,6.5,"112,-141",1
+2026-07-17T00:41:17Z,Toronto Tempo|Atlanta Dream,spread,,6.0,"121,-153",1
+2026-07-17T00:41:17Z,Toronto Tempo|Atlanta Dream,total,,183.0,"-108,-116",0
+2026-07-17T00:41:17Z,Toronto Tempo|Atlanta Dream,total,,181.5,"-127,-102",1
+2026-07-17T00:41:17Z,Toronto Tempo|Atlanta Dream,total,,182.0,"-121,-107",1
+2026-07-17T00:41:17Z,Toronto Tempo|Atlanta Dream,total,,182.5,"-116,-113",1
+2026-07-17T00:41:17Z,Toronto Tempo|Atlanta Dream,total,,183.5,"-104,-125",1
+2026-07-17T00:41:17Z,Toronto Tempo|Atlanta Dream,total,,184.0,"101,-131",1
+2026-07-17T00:41:17Z,Toronto Tempo|Atlanta Dream,total,,184.5,"105,-137",1
+2026-07-17T00:42:32Z,Washington Mystics|Portland Fire,moneyline,,,"976,-2498",0
+2026-07-17T00:42:32Z,Washington Mystics|Portland Fire,team_total,home,67.5,"-125,-106",0
+2026-07-17T00:42:32Z,Washington Mystics|Portland Fire,team_total,home,66.5,"-166,125",1
+2026-07-17T00:42:32Z,Washington Mystics|Portland Fire,team_total,home,68.5,"105,-139",1
+2026-07-17T00:42:32Z,Washington Mystics|Portland Fire,team_total,away,77.5,"-126,-105",0
+2026-07-17T00:42:32Z,Washington Mystics|Portland Fire,team_total,away,76.5,"-178,133",1
+2026-07-17T00:42:32Z,Washington Mystics|Portland Fire,team_total,away,78.5,"109,-145",1
+2026-07-17T00:42:32Z,Washington Mystics|Portland Fire,spread,,10.0,"-111,-119",0
+2026-07-17T00:42:32Z,Washington Mystics|Portland Fire,spread,,11.0,"-152,113",1
+2026-07-17T00:42:32Z,Washington Mystics|Portland Fire,spread,,10.5,"-130,-103",1
+2026-07-17T00:42:32Z,Washington Mystics|Portland Fire,spread,,9.5,"104,-139",1
+2026-07-17T00:42:32Z,Washington Mystics|Portland Fire,spread,,9.0,"120,-163",1
+2026-07-17T00:42:32Z,Washington Mystics|Portland Fire,total,,145.5,"-111,-119",0
+2026-07-17T00:42:32Z,Washington Mystics|Portland Fire,total,,144.5,"-138,102",1
+2026-07-17T00:42:32Z,Washington Mystics|Portland Fire,total,,145.0,"-124,-107",1
+2026-07-17T00:42:32Z,Washington Mystics|Portland Fire,total,,146.0,"-101,-132",1
+2026-07-17T00:42:32Z,Washington Mystics|Portland Fire,total,,146.5,"108,-145",1
+2026-07-17T00:42:32Z,Phoenix Mercury|Connecticut Sun,moneyline,,,"-210,170",0
+2026-07-17T00:42:32Z,Phoenix Mercury|Connecticut Sun,team_total,home,84.0,"-112,-112",0
+2026-07-17T00:42:32Z,Phoenix Mercury|Connecticut Sun,team_total,away,79.5,"-116,-108",0
+2026-07-17T00:42:32Z,Phoenix Mercury|Connecticut Sun,spread,,-5.0,"-111,-109",0
+2026-07-17T00:42:32Z,Phoenix Mercury|Connecticut Sun,spread,,-3.5,"-146,116",1
+2026-07-17T00:42:32Z,Phoenix Mercury|Connecticut Sun,spread,,-4.0,"-135,107",1
+2026-07-17T00:42:32Z,Phoenix Mercury|Connecticut Sun,spread,,-4.5,"-124,-101",1
+2026-07-17T00:42:32Z,Phoenix Mercury|Connecticut Sun,spread,,-5.5,"-103,-122",1
+2026-07-17T00:42:32Z,Phoenix Mercury|Connecticut Sun,spread,,-6.0,"105,-132",1
+2026-07-17T00:42:32Z,Phoenix Mercury|Connecticut Sun,spread,,-6.5,"114,-143",1
+2026-07-17T00:42:32Z,Phoenix Mercury|Connecticut Sun,total,,163.5,"-112,-112",0
+2026-07-17T00:42:32Z,Phoenix Mercury|Connecticut Sun,total,,162.0,"-134,102",1
+2026-07-17T00:42:32Z,Phoenix Mercury|Connecticut Sun,total,,162.5,"-127,-103",1
+2026-07-17T00:42:32Z,Phoenix Mercury|Connecticut Sun,total,,163.0,"-120,-108",1
+2026-07-17T00:42:32Z,Phoenix Mercury|Connecticut Sun,total,,164.0,"-108,-120",1
+2026-07-17T00:42:32Z,Phoenix Mercury|Connecticut Sun,total,,164.5,"-103,-126",1
+2026-07-17T00:42:32Z,Phoenix Mercury|Connecticut Sun,total,,165.0,"102,-133",1
+2026-07-17T00:42:32Z,Indiana Fever|Seattle Storm,moneyline,,,"-400,305",0
+2026-07-17T00:42:32Z,Indiana Fever|Seattle Storm,team_total,home,92.0,"-108,-116",0
+2026-07-17T00:42:32Z,Indiana Fever|Seattle Storm,team_total,away,83.5,"-109,-115",0
+2026-07-17T00:42:32Z,Indiana Fever|Seattle Storm,spread,,-9.0,"-109,-111",0
+2026-07-17T00:42:32Z,Indiana Fever|Seattle Storm,spread,,-7.5,"-144,114",1
+2026-07-17T00:42:32Z,Indiana Fever|Seattle Storm,spread,,-8.0,"-133,106",1
+2026-07-17T00:42:32Z,Indiana Fever|Seattle Storm,spread,,-8.5,"-122,-103",1
+2026-07-17T00:42:32Z,Indiana Fever|Seattle Storm,spread,,-9.5,"-102,-123",1
+2026-07-17T00:42:32Z,Indiana Fever|Seattle Storm,spread,,-10.0,"107,-134",1
+2026-07-17T00:42:32Z,Indiana Fever|Seattle Storm,spread,,-10.5,"115,-145",1
+2026-07-17T00:42:32Z,Indiana Fever|Seattle Storm,total,,175.0,"-112,-112",0
+2026-07-17T00:42:32Z,Indiana Fever|Seattle Storm,total,,173.5,"-132,101",1
+2026-07-17T00:42:32Z,Indiana Fever|Seattle Storm,total,,174.0,"-126,-103",1
+2026-07-17T00:42:32Z,Indiana Fever|Seattle Storm,total,,174.5,"-120,-109",1
+2026-07-17T00:42:32Z,Indiana Fever|Seattle Storm,total,,175.5,"-108,-121",1
+2026-07-17T00:42:32Z,Indiana Fever|Seattle Storm,total,,176.0,"-103,-127",1
+2026-07-17T00:42:32Z,Indiana Fever|Seattle Storm,total,,176.5,"102,-133",1
+2026-07-17T00:42:32Z,Chicago Sky|Los Angeles Sparks,moneyline,,,"-118,-103",0
+2026-07-17T00:42:32Z,Chicago Sky|Los Angeles Sparks,team_total,home,93.0,"-111,-113",0
+2026-07-17T00:42:32Z,Chicago Sky|Los Angeles Sparks,team_total,away,92.5,"-112,-112",0
+2026-07-17T00:42:32Z,Chicago Sky|Los Angeles Sparks,spread,,-1.0,"-110,-110",0
+2026-07-17T00:42:32Z,Chicago Sky|Los Angeles Sparks,spread,,2.0,"-144,114",1
+2026-07-17T00:42:32Z,Chicago Sky|Los Angeles Sparks,spread,,1.5,"-134,107",1
+2026-07-17T00:42:32Z,Chicago Sky|Los Angeles Sparks,spread,,1.0,"-127,101",1
+2026-07-17T00:42:32Z,Chicago Sky|Los Angeles Sparks,spread,,-1.5,"-106,-119",1
+2026-07-17T00:42:32Z,Chicago Sky|Los Angeles Sparks,spread,,-2.0,"102,-128",1
+2026-07-17T00:42:32Z,Chicago Sky|Los Angeles Sparks,spread,,-2.5,"110,-138",1
+2026-07-17T00:42:32Z,Chicago Sky|Los Angeles Sparks,total,,185.0,"-114,-110",0
+2026-07-17T00:42:32Z,Chicago Sky|Los Angeles Sparks,total,,183.5,"-135,104",1
+2026-07-17T00:42:32Z,Chicago Sky|Los Angeles Sparks,total,,184.0,"-129,-101",1
+2026-07-17T00:42:32Z,Chicago Sky|Los Angeles Sparks,total,,184.5,"-122,-106",1
+2026-07-17T00:42:32Z,Chicago Sky|Los Angeles Sparks,total,,185.5,"-110,-118",1
+2026-07-17T00:42:32Z,Chicago Sky|Los Angeles Sparks,total,,186.0,"-105,-124",1
+2026-07-17T00:42:32Z,Chicago Sky|Los Angeles Sparks,total,,186.5,"-100,-130",1
+2026-07-17T00:42:32Z,Toronto Tempo|Atlanta Dream,moneyline,,,"256,-327",0
+2026-07-17T00:42:32Z,Toronto Tempo|Atlanta Dream,team_total,home,88.0,"-109,-115",0
+2026-07-17T00:42:32Z,Toronto Tempo|Atlanta Dream,team_total,away,95.0,"-112,-112",0
+2026-07-17T00:42:32Z,Toronto Tempo|Atlanta Dream,spread,,7.5,"-104,-116",0
+2026-07-17T00:42:32Z,Toronto Tempo|Atlanta Dream,spread,,9.0,"-137,109",1
+2026-07-17T00:42:32Z,Toronto Tempo|Atlanta Dream,spread,,8.5,"-127,101",1
+2026-07-17T00:42:32Z,Toronto Tempo|Atlanta Dream,spread,,8.0,"-116,-108",1
+2026-07-17T00:42:32Z,Toronto Tempo|Atlanta Dream,spread,,7.0,"103,-130",1
+2026-07-17T00:42:32Z,Toronto Tempo|Atlanta Dream,spread,,6.5,"112,-141",1
+2026-07-17T00:42:32Z,Toronto Tempo|Atlanta Dream,spread,,6.0,"121,-153",1
+2026-07-17T00:42:32Z,Toronto Tempo|Atlanta Dream,total,,183.0,"-108,-116",0
+2026-07-17T00:42:32Z,Toronto Tempo|Atlanta Dream,total,,181.5,"-127,-102",1
+2026-07-17T00:42:32Z,Toronto Tempo|Atlanta Dream,total,,182.0,"-121,-107",1
+2026-07-17T00:42:32Z,Toronto Tempo|Atlanta Dream,total,,182.5,"-116,-113",1
+2026-07-17T00:42:32Z,Toronto Tempo|Atlanta Dream,total,,183.5,"-104,-125",1
+2026-07-17T00:42:32Z,Toronto Tempo|Atlanta Dream,total,,184.0,"101,-131",1
+2026-07-17T00:42:32Z,Toronto Tempo|Atlanta Dream,total,,184.5,"105,-137",1
+2026-07-17T00:43:47Z,Washington Mystics|Portland Fire,moneyline,,,"976,-2498",0
+2026-07-17T00:43:47Z,Washington Mystics|Portland Fire,team_total,home,67.5,"-125,-106",0
+2026-07-17T00:43:47Z,Washington Mystics|Portland Fire,team_total,home,66.5,"-166,125",1
+2026-07-17T00:43:47Z,Washington Mystics|Portland Fire,team_total,home,68.5,"105,-139",1
+2026-07-17T00:43:47Z,Washington Mystics|Portland Fire,team_total,away,77.5,"-126,-105",0
+2026-07-17T00:43:47Z,Washington Mystics|Portland Fire,team_total,away,76.5,"-178,133",1
+2026-07-17T00:43:47Z,Washington Mystics|Portland Fire,team_total,away,78.5,"109,-145",1
+2026-07-17T00:43:47Z,Washington Mystics|Portland Fire,spread,,10.0,"-111,-119",0
+2026-07-17T00:43:47Z,Washington Mystics|Portland Fire,spread,,11.0,"-152,113",1
+2026-07-17T00:43:47Z,Washington Mystics|Portland Fire,spread,,10.5,"-130,-103",1
+2026-07-17T00:43:47Z,Washington Mystics|Portland Fire,spread,,9.5,"104,-139",1
+2026-07-17T00:43:47Z,Washington Mystics|Portland Fire,spread,,9.0,"120,-163",1
+2026-07-17T00:43:47Z,Washington Mystics|Portland Fire,total,,145.5,"-111,-119",0
+2026-07-17T00:43:47Z,Washington Mystics|Portland Fire,total,,144.5,"-138,102",1
+2026-07-17T00:43:47Z,Washington Mystics|Portland Fire,total,,145.0,"-124,-107",1
+2026-07-17T00:43:47Z,Washington Mystics|Portland Fire,total,,146.0,"-101,-132",1
+2026-07-17T00:43:47Z,Washington Mystics|Portland Fire,total,,146.5,"108,-145",1
+2026-07-17T00:43:47Z,Phoenix Mercury|Connecticut Sun,moneyline,,,"-210,170",0
+2026-07-17T00:43:47Z,Phoenix Mercury|Connecticut Sun,team_total,home,84.0,"-112,-112",0
+2026-07-17T00:43:47Z,Phoenix Mercury|Connecticut Sun,team_total,away,79.5,"-116,-108",0
+2026-07-17T00:43:47Z,Phoenix Mercury|Connecticut Sun,spread,,-5.0,"-111,-109",0
+2026-07-17T00:43:47Z,Phoenix Mercury|Connecticut Sun,spread,,-3.5,"-146,116",1
+2026-07-17T00:43:47Z,Phoenix Mercury|Connecticut Sun,spread,,-4.0,"-135,107",1
+2026-07-17T00:43:47Z,Phoenix Mercury|Connecticut Sun,spread,,-4.5,"-124,-101",1
+2026-07-17T00:43:47Z,Phoenix Mercury|Connecticut Sun,spread,,-5.5,"-103,-122",1
+2026-07-17T00:43:47Z,Phoenix Mercury|Connecticut Sun,spread,,-6.0,"105,-132",1
+2026-07-17T00:43:47Z,Phoenix Mercury|Connecticut Sun,spread,,-6.5,"114,-143",1
+2026-07-17T00:43:47Z,Phoenix Mercury|Connecticut Sun,total,,163.5,"-112,-112",0
+2026-07-17T00:43:47Z,Phoenix Mercury|Connecticut Sun,total,,162.0,"-134,102",1
+2026-07-17T00:43:47Z,Phoenix Mercury|Connecticut Sun,total,,162.5,"-127,-103",1
+2026-07-17T00:43:47Z,Phoenix Mercury|Connecticut Sun,total,,163.0,"-120,-108",1
+2026-07-17T00:43:47Z,Phoenix Mercury|Connecticut Sun,total,,164.0,"-108,-120",1
+2026-07-17T00:43:47Z,Phoenix Mercury|Connecticut Sun,total,,164.5,"-103,-126",1
+2026-07-17T00:43:47Z,Phoenix Mercury|Connecticut Sun,total,,165.0,"102,-133",1
+2026-07-17T00:43:47Z,Indiana Fever|Seattle Storm,moneyline,,,"-400,305",0
+2026-07-17T00:43:47Z,Indiana Fever|Seattle Storm,team_total,home,92.0,"-108,-116",0
+2026-07-17T00:43:47Z,Indiana Fever|Seattle Storm,team_total,away,83.5,"-109,-115",0
+2026-07-17T00:43:47Z,Indiana Fever|Seattle Storm,spread,,-9.0,"-109,-111",0
+2026-07-17T00:43:47Z,Indiana Fever|Seattle Storm,spread,,-7.5,"-144,114",1
+2026-07-17T00:43:47Z,Indiana Fever|Seattle Storm,spread,,-8.0,"-133,106",1
+2026-07-17T00:43:47Z,Indiana Fever|Seattle Storm,spread,,-8.5,"-122,-103",1
+2026-07-17T00:43:47Z,Indiana Fever|Seattle Storm,spread,,-9.5,"-102,-123",1
+2026-07-17T00:43:47Z,Indiana Fever|Seattle Storm,spread,,-10.0,"107,-134",1
+2026-07-17T00:43:47Z,Indiana Fever|Seattle Storm,spread,,-10.5,"115,-145",1
+2026-07-17T00:43:47Z,Indiana Fever|Seattle Storm,total,,175.0,"-112,-112",0
+2026-07-17T00:43:47Z,Indiana Fever|Seattle Storm,total,,173.5,"-132,101",1
+2026-07-17T00:43:47Z,Indiana Fever|Seattle Storm,total,,174.0,"-126,-103",1
+2026-07-17T00:43:47Z,Indiana Fever|Seattle Storm,total,,174.5,"-120,-109",1
+2026-07-17T00:43:47Z,Indiana Fever|Seattle Storm,total,,175.5,"-108,-121",1
+2026-07-17T00:43:47Z,Indiana Fever|Seattle Storm,total,,176.0,"-103,-127",1
+2026-07-17T00:43:47Z,Indiana Fever|Seattle Storm,total,,176.5,"102,-133",1
+2026-07-17T00:43:47Z,Chicago Sky|Los Angeles Sparks,moneyline,,,"-118,-103",0
+2026-07-17T00:43:47Z,Chicago Sky|Los Angeles Sparks,team_total,home,93.0,"-111,-113",0
+2026-07-17T00:43:47Z,Chicago Sky|Los Angeles Sparks,team_total,away,92.5,"-112,-112",0
+2026-07-17T00:43:47Z,Chicago Sky|Los Angeles Sparks,spread,,-1.0,"-110,-110",0
+2026-07-17T00:43:47Z,Chicago Sky|Los Angeles Sparks,spread,,2.0,"-144,114",1
+2026-07-17T00:43:47Z,Chicago Sky|Los Angeles Sparks,spread,,1.5,"-134,107",1
+2026-07-17T00:43:47Z,Chicago Sky|Los Angeles Sparks,spread,,1.0,"-127,101",1
+2026-07-17T00:43:47Z,Chicago Sky|Los Angeles Sparks,spread,,-1.5,"-106,-119",1
+2026-07-17T00:43:47Z,Chicago Sky|Los Angeles Sparks,spread,,-2.0,"102,-128",1
+2026-07-17T00:43:47Z,Chicago Sky|Los Angeles Sparks,spread,,-2.5,"110,-138",1
+2026-07-17T00:43:47Z,Chicago Sky|Los Angeles Sparks,total,,185.0,"-114,-110",0
+2026-07-17T00:43:47Z,Chicago Sky|Los Angeles Sparks,total,,183.5,"-135,104",1
+2026-07-17T00:43:47Z,Chicago Sky|Los Angeles Sparks,total,,184.0,"-129,-101",1
+2026-07-17T00:43:47Z,Chicago Sky|Los Angeles Sparks,total,,184.5,"-122,-106",1
+2026-07-17T00:43:47Z,Chicago Sky|Los Angeles Sparks,total,,185.5,"-110,-118",1
+2026-07-17T00:43:47Z,Chicago Sky|Los Angeles Sparks,total,,186.0,"-105,-124",1
+2026-07-17T00:43:47Z,Chicago Sky|Los Angeles Sparks,total,,186.5,"-100,-130",1
+2026-07-17T00:43:47Z,Toronto Tempo|Atlanta Dream,moneyline,,,"256,-327",0
+2026-07-17T00:43:47Z,Toronto Tempo|Atlanta Dream,team_total,home,88.0,"-109,-115",0
+2026-07-17T00:43:47Z,Toronto Tempo|Atlanta Dream,team_total,away,95.0,"-112,-112",0
+2026-07-17T00:43:47Z,Toronto Tempo|Atlanta Dream,spread,,7.5,"-104,-116",0
+2026-07-17T00:43:47Z,Toronto Tempo|Atlanta Dream,spread,,9.0,"-137,109",1
+2026-07-17T00:43:47Z,Toronto Tempo|Atlanta Dream,spread,,8.5,"-127,101",1
+2026-07-17T00:43:47Z,Toronto Tempo|Atlanta Dream,spread,,8.0,"-116,-108",1
+2026-07-17T00:43:47Z,Toronto Tempo|Atlanta Dream,spread,,7.0,"103,-130",1
+2026-07-17T00:43:47Z,Toronto Tempo|Atlanta Dream,spread,,6.5,"112,-141",1
+2026-07-17T00:43:47Z,Toronto Tempo|Atlanta Dream,spread,,6.0,"121,-153",1
+2026-07-17T00:43:47Z,Toronto Tempo|Atlanta Dream,total,,183.0,"-108,-116",0
+2026-07-17T00:43:47Z,Toronto Tempo|Atlanta Dream,total,,181.5,"-127,-102",1
+2026-07-17T00:43:47Z,Toronto Tempo|Atlanta Dream,total,,182.0,"-121,-107",1
+2026-07-17T00:43:47Z,Toronto Tempo|Atlanta Dream,total,,182.5,"-116,-113",1
+2026-07-17T00:43:47Z,Toronto Tempo|Atlanta Dream,total,,183.5,"-104,-125",1
+2026-07-17T00:43:47Z,Toronto Tempo|Atlanta Dream,total,,184.0,"101,-131",1
+2026-07-17T00:43:47Z,Toronto Tempo|Atlanta Dream,total,,184.5,"105,-137",1
+2026-07-17T00:45:03Z,Washington Mystics|Portland Fire,moneyline,,,"976,-2498",0
+2026-07-17T00:45:03Z,Washington Mystics|Portland Fire,team_total,home,67.5,"-125,-106",0
+2026-07-17T00:45:03Z,Washington Mystics|Portland Fire,team_total,home,66.5,"-166,125",1
+2026-07-17T00:45:03Z,Washington Mystics|Portland Fire,team_total,home,68.5,"105,-139",1
+2026-07-17T00:45:03Z,Washington Mystics|Portland Fire,team_total,away,77.5,"-126,-105",0
+2026-07-17T00:45:03Z,Washington Mystics|Portland Fire,team_total,away,76.5,"-178,133",1
+2026-07-17T00:45:03Z,Washington Mystics|Portland Fire,team_total,away,78.5,"109,-145",1
+2026-07-17T00:45:03Z,Washington Mystics|Portland Fire,spread,,10.0,"-111,-119",0
+2026-07-17T00:45:03Z,Washington Mystics|Portland Fire,spread,,11.0,"-152,113",1
+2026-07-17T00:45:03Z,Washington Mystics|Portland Fire,spread,,10.5,"-130,-103",1
+2026-07-17T00:45:03Z,Washington Mystics|Portland Fire,spread,,9.5,"104,-139",1
+2026-07-17T00:45:03Z,Washington Mystics|Portland Fire,spread,,9.0,"120,-163",1
+2026-07-17T00:45:03Z,Washington Mystics|Portland Fire,total,,145.5,"-111,-119",0
+2026-07-17T00:45:03Z,Washington Mystics|Portland Fire,total,,144.5,"-138,102",1
+2026-07-17T00:45:03Z,Washington Mystics|Portland Fire,total,,145.0,"-124,-107",1
+2026-07-17T00:45:03Z,Washington Mystics|Portland Fire,total,,146.0,"-101,-132",1
+2026-07-17T00:45:03Z,Washington Mystics|Portland Fire,total,,146.5,"108,-145",1
+2026-07-17T00:45:03Z,Phoenix Mercury|Connecticut Sun,moneyline,,,"-210,170",0
+2026-07-17T00:45:03Z,Phoenix Mercury|Connecticut Sun,team_total,home,84.0,"-112,-112",0
+2026-07-17T00:45:03Z,Phoenix Mercury|Connecticut Sun,team_total,away,79.5,"-116,-108",0
+2026-07-17T00:45:03Z,Phoenix Mercury|Connecticut Sun,spread,,-5.0,"-111,-109",0
+2026-07-17T00:45:03Z,Phoenix Mercury|Connecticut Sun,spread,,-3.5,"-146,116",1
+2026-07-17T00:45:03Z,Phoenix Mercury|Connecticut Sun,spread,,-4.0,"-135,107",1
+2026-07-17T00:45:03Z,Phoenix Mercury|Connecticut Sun,spread,,-4.5,"-124,-101",1
+2026-07-17T00:45:03Z,Phoenix Mercury|Connecticut Sun,spread,,-5.5,"-103,-122",1
+2026-07-17T00:45:03Z,Phoenix Mercury|Connecticut Sun,spread,,-6.0,"105,-132",1
+2026-07-17T00:45:03Z,Phoenix Mercury|Connecticut Sun,spread,,-6.5,"114,-143",1
+2026-07-17T00:45:03Z,Phoenix Mercury|Connecticut Sun,total,,163.5,"-112,-112",0
+2026-07-17T00:45:03Z,Phoenix Mercury|Connecticut Sun,total,,162.0,"-134,102",1
+2026-07-17T00:45:03Z,Phoenix Mercury|Connecticut Sun,total,,162.5,"-127,-103",1
+2026-07-17T00:45:03Z,Phoenix Mercury|Connecticut Sun,total,,163.0,"-120,-108",1
+2026-07-17T00:45:03Z,Phoenix Mercury|Connecticut Sun,total,,164.0,"-108,-120",1
+2026-07-17T00:45:03Z,Phoenix Mercury|Connecticut Sun,total,,164.5,"-103,-126",1
+2026-07-17T00:45:03Z,Phoenix Mercury|Connecticut Sun,total,,165.0,"102,-133",1
+2026-07-17T00:45:03Z,Indiana Fever|Seattle Storm,moneyline,,,"-400,305",0
+2026-07-17T00:45:03Z,Indiana Fever|Seattle Storm,team_total,home,92.0,"-108,-116",0
+2026-07-17T00:45:03Z,Indiana Fever|Seattle Storm,team_total,away,83.5,"-109,-115",0
+2026-07-17T00:45:03Z,Indiana Fever|Seattle Storm,spread,,-9.0,"-109,-111",0
+2026-07-17T00:45:03Z,Indiana Fever|Seattle Storm,spread,,-7.5,"-144,114",1
+2026-07-17T00:45:03Z,Indiana Fever|Seattle Storm,spread,,-8.0,"-133,106",1
+2026-07-17T00:45:03Z,Indiana Fever|Seattle Storm,spread,,-8.5,"-122,-103",1
+2026-07-17T00:45:03Z,Indiana Fever|Seattle Storm,spread,,-9.5,"-102,-123",1
+2026-07-17T00:45:03Z,Indiana Fever|Seattle Storm,spread,,-10.0,"107,-134",1
+2026-07-17T00:45:03Z,Indiana Fever|Seattle Storm,spread,,-10.5,"115,-145",1
+2026-07-17T00:45:03Z,Indiana Fever|Seattle Storm,total,,175.0,"-112,-112",0
+2026-07-17T00:45:03Z,Indiana Fever|Seattle Storm,total,,173.5,"-132,101",1
+2026-07-17T00:45:03Z,Indiana Fever|Seattle Storm,total,,174.0,"-126,-103",1
+2026-07-17T00:45:03Z,Indiana Fever|Seattle Storm,total,,174.5,"-120,-109",1
+2026-07-17T00:45:03Z,Indiana Fever|Seattle Storm,total,,175.5,"-108,-121",1
+2026-07-17T00:45:03Z,Indiana Fever|Seattle Storm,total,,176.0,"-103,-127",1
+2026-07-17T00:45:03Z,Indiana Fever|Seattle Storm,total,,176.5,"102,-133",1
+2026-07-17T00:45:03Z,Chicago Sky|Los Angeles Sparks,moneyline,,,"-118,-103",0
+2026-07-17T00:45:03Z,Chicago Sky|Los Angeles Sparks,team_total,home,93.0,"-111,-113",0
+2026-07-17T00:45:03Z,Chicago Sky|Los Angeles Sparks,team_total,away,92.5,"-112,-112",0
+2026-07-17T00:45:03Z,Chicago Sky|Los Angeles Sparks,spread,,-1.0,"-110,-110",0
+2026-07-17T00:45:03Z,Chicago Sky|Los Angeles Sparks,spread,,2.0,"-144,114",1
+2026-07-17T00:45:03Z,Chicago Sky|Los Angeles Sparks,spread,,1.5,"-134,107",1
+2026-07-17T00:45:03Z,Chicago Sky|Los Angeles Sparks,spread,,1.0,"-127,101",1
+2026-07-17T00:45:03Z,Chicago Sky|Los Angeles Sparks,spread,,-1.5,"-106,-119",1
+2026-07-17T00:45:03Z,Chicago Sky|Los Angeles Sparks,spread,,-2.0,"102,-128",1
+2026-07-17T00:45:03Z,Chicago Sky|Los Angeles Sparks,spread,,-2.5,"110,-138",1
+2026-07-17T00:45:03Z,Chicago Sky|Los Angeles Sparks,total,,185.0,"-114,-110",0
+2026-07-17T00:45:03Z,Chicago Sky|Los Angeles Sparks,total,,183.5,"-135,104",1
+2026-07-17T00:45:03Z,Chicago Sky|Los Angeles Sparks,total,,184.0,"-129,-101",1
+2026-07-17T00:45:03Z,Chicago Sky|Los Angeles Sparks,total,,184.5,"-122,-106",1
+2026-07-17T00:45:03Z,Chicago Sky|Los Angeles Sparks,total,,185.5,"-110,-118",1
+2026-07-17T00:45:03Z,Chicago Sky|Los Angeles Sparks,total,,186.0,"-105,-124",1
+2026-07-17T00:45:03Z,Chicago Sky|Los Angeles Sparks,total,,186.5,"-100,-130",1
+2026-07-17T00:45:03Z,Toronto Tempo|Atlanta Dream,moneyline,,,"256,-327",0
+2026-07-17T00:45:03Z,Toronto Tempo|Atlanta Dream,team_total,home,88.0,"-109,-115",0
+2026-07-17T00:45:03Z,Toronto Tempo|Atlanta Dream,team_total,away,95.0,"-112,-112",0
+2026-07-17T00:45:03Z,Toronto Tempo|Atlanta Dream,spread,,7.5,"-104,-116",0
+2026-07-17T00:45:03Z,Toronto Tempo|Atlanta Dream,spread,,9.0,"-137,109",1
+2026-07-17T00:45:03Z,Toronto Tempo|Atlanta Dream,spread,,8.5,"-127,101",1
+2026-07-17T00:45:03Z,Toronto Tempo|Atlanta Dream,spread,,8.0,"-116,-108",1
+2026-07-17T00:45:03Z,Toronto Tempo|Atlanta Dream,spread,,7.0,"103,-130",1
+2026-07-17T00:45:03Z,Toronto Tempo|Atlanta Dream,spread,,6.5,"112,-141",1
+2026-07-17T00:45:03Z,Toronto Tempo|Atlanta Dream,spread,,6.0,"121,-153",1
+2026-07-17T00:45:03Z,Toronto Tempo|Atlanta Dream,total,,183.0,"-108,-116",0
+2026-07-17T00:45:03Z,Toronto Tempo|Atlanta Dream,total,,181.5,"-127,-102",1
+2026-07-17T00:45:03Z,Toronto Tempo|Atlanta Dream,total,,182.0,"-121,-107",1
+2026-07-17T00:45:03Z,Toronto Tempo|Atlanta Dream,total,,182.5,"-116,-113",1
+2026-07-17T00:45:03Z,Toronto Tempo|Atlanta Dream,total,,183.5,"-104,-125",1
+2026-07-17T00:45:03Z,Toronto Tempo|Atlanta Dream,total,,184.0,"101,-131",1
+2026-07-17T00:45:03Z,Toronto Tempo|Atlanta Dream,total,,184.5,"105,-137",1
+2026-07-17T00:46:18Z,Washington Mystics|Portland Fire,moneyline,,,"976,-2498",0
+2026-07-17T00:46:18Z,Washington Mystics|Portland Fire,team_total,home,67.5,"-125,-106",0
+2026-07-17T00:46:18Z,Washington Mystics|Portland Fire,team_total,home,66.5,"-166,125",1
+2026-07-17T00:46:18Z,Washington Mystics|Portland Fire,team_total,home,68.5,"105,-139",1
+2026-07-17T00:46:18Z,Washington Mystics|Portland Fire,team_total,away,77.5,"-126,-105",0
+2026-07-17T00:46:18Z,Washington Mystics|Portland Fire,team_total,away,76.5,"-178,133",1
+2026-07-17T00:46:18Z,Washington Mystics|Portland Fire,team_total,away,78.5,"109,-145",1
+2026-07-17T00:46:18Z,Washington Mystics|Portland Fire,spread,,10.0,"-111,-119",0
+2026-07-17T00:46:18Z,Washington Mystics|Portland Fire,spread,,11.0,"-152,113",1
+2026-07-17T00:46:18Z,Washington Mystics|Portland Fire,spread,,10.5,"-130,-103",1
+2026-07-17T00:46:18Z,Washington Mystics|Portland Fire,spread,,9.5,"104,-139",1
+2026-07-17T00:46:18Z,Washington Mystics|Portland Fire,spread,,9.0,"120,-163",1
+2026-07-17T00:46:18Z,Washington Mystics|Portland Fire,total,,145.5,"-111,-119",0
+2026-07-17T00:46:18Z,Washington Mystics|Portland Fire,total,,144.5,"-138,102",1
+2026-07-17T00:46:18Z,Washington Mystics|Portland Fire,total,,145.0,"-124,-107",1
+2026-07-17T00:46:18Z,Washington Mystics|Portland Fire,total,,146.0,"-101,-132",1
+2026-07-17T00:46:18Z,Washington Mystics|Portland Fire,total,,146.5,"108,-145",1
+2026-07-17T00:46:18Z,Phoenix Mercury|Connecticut Sun,moneyline,,,"-210,170",0
+2026-07-17T00:46:18Z,Phoenix Mercury|Connecticut Sun,team_total,home,84.0,"-112,-112",0
+2026-07-17T00:46:18Z,Phoenix Mercury|Connecticut Sun,team_total,away,79.5,"-116,-108",0
+2026-07-17T00:46:18Z,Phoenix Mercury|Connecticut Sun,spread,,-5.0,"-111,-109",0
+2026-07-17T00:46:18Z,Phoenix Mercury|Connecticut Sun,spread,,-3.5,"-146,116",1
+2026-07-17T00:46:18Z,Phoenix Mercury|Connecticut Sun,spread,,-4.0,"-135,107",1
+2026-07-17T00:46:18Z,Phoenix Mercury|Connecticut Sun,spread,,-4.5,"-124,-101",1
+2026-07-17T00:46:18Z,Phoenix Mercury|Connecticut Sun,spread,,-5.5,"-103,-122",1
+2026-07-17T00:46:18Z,Phoenix Mercury|Connecticut Sun,spread,,-6.0,"105,-132",1
+2026-07-17T00:46:18Z,Phoenix Mercury|Connecticut Sun,spread,,-6.5,"114,-143",1
+2026-07-17T00:46:18Z,Phoenix Mercury|Connecticut Sun,total,,163.5,"-112,-112",0
+2026-07-17T00:46:18Z,Phoenix Mercury|Connecticut Sun,total,,162.0,"-134,102",1
+2026-07-17T00:46:18Z,Phoenix Mercury|Connecticut Sun,total,,162.5,"-127,-103",1
+2026-07-17T00:46:18Z,Phoenix Mercury|Connecticut Sun,total,,163.0,"-120,-108",1
+2026-07-17T00:46:18Z,Phoenix Mercury|Connecticut Sun,total,,164.0,"-108,-120",1
+2026-07-17T00:46:18Z,Phoenix Mercury|Connecticut Sun,total,,164.5,"-103,-126",1
+2026-07-17T00:46:18Z,Phoenix Mercury|Connecticut Sun,total,,165.0,"102,-133",1
+2026-07-17T00:46:18Z,Indiana Fever|Seattle Storm,moneyline,,,"-400,305",0
+2026-07-17T00:46:18Z,Indiana Fever|Seattle Storm,team_total,home,92.0,"-108,-116",0
+2026-07-17T00:46:18Z,Indiana Fever|Seattle Storm,team_total,away,83.5,"-109,-115",0
+2026-07-17T00:46:18Z,Indiana Fever|Seattle Storm,spread,,-9.0,"-109,-111",0
+2026-07-17T00:46:18Z,Indiana Fever|Seattle Storm,spread,,-7.5,"-144,114",1
+2026-07-17T00:46:18Z,Indiana Fever|Seattle Storm,spread,,-8.0,"-133,106",1
+2026-07-17T00:46:18Z,Indiana Fever|Seattle Storm,spread,,-8.5,"-122,-103",1
+2026-07-17T00:46:18Z,Indiana Fever|Seattle Storm,spread,,-9.5,"-102,-123",1
+2026-07-17T00:46:18Z,Indiana Fever|Seattle Storm,spread,,-10.0,"107,-134",1
+2026-07-17T00:46:18Z,Indiana Fever|Seattle Storm,spread,,-10.5,"115,-145",1
+2026-07-17T00:46:18Z,Indiana Fever|Seattle Storm,total,,175.0,"-112,-112",0
+2026-07-17T00:46:18Z,Indiana Fever|Seattle Storm,total,,173.5,"-132,101",1
+2026-07-17T00:46:18Z,Indiana Fever|Seattle Storm,total,,174.0,"-126,-103",1
+2026-07-17T00:46:18Z,Indiana Fever|Seattle Storm,total,,174.5,"-120,-109",1
+2026-07-17T00:46:18Z,Indiana Fever|Seattle Storm,total,,175.5,"-108,-121",1
+2026-07-17T00:46:18Z,Indiana Fever|Seattle Storm,total,,176.0,"-103,-127",1
+2026-07-17T00:46:18Z,Indiana Fever|Seattle Storm,total,,176.5,"102,-133",1
+2026-07-17T00:46:18Z,Chicago Sky|Los Angeles Sparks,moneyline,,,"-118,-103",0
+2026-07-17T00:46:18Z,Chicago Sky|Los Angeles Sparks,team_total,home,93.0,"-111,-113",0
+2026-07-17T00:46:18Z,Chicago Sky|Los Angeles Sparks,team_total,away,92.5,"-112,-112",0
+2026-07-17T00:46:18Z,Chicago Sky|Los Angeles Sparks,spread,,-1.0,"-110,-110",0
+2026-07-17T00:46:18Z,Chicago Sky|Los Angeles Sparks,spread,,2.0,"-144,114",1
+2026-07-17T00:46:18Z,Chicago Sky|Los Angeles Sparks,spread,,1.5,"-134,107",1
+2026-07-17T00:46:18Z,Chicago Sky|Los Angeles Sparks,spread,,1.0,"-127,101",1
+2026-07-17T00:46:18Z,Chicago Sky|Los Angeles Sparks,spread,,-1.5,"-106,-119",1
+2026-07-17T00:46:18Z,Chicago Sky|Los Angeles Sparks,spread,,-2.0,"102,-128",1
+2026-07-17T00:46:18Z,Chicago Sky|Los Angeles Sparks,spread,,-2.5,"110,-138",1
+2026-07-17T00:46:18Z,Chicago Sky|Los Angeles Sparks,total,,185.0,"-114,-110",0
+2026-07-17T00:46:18Z,Chicago Sky|Los Angeles Sparks,total,,183.5,"-135,104",1
+2026-07-17T00:46:18Z,Chicago Sky|Los Angeles Sparks,total,,184.0,"-129,-101",1
+2026-07-17T00:46:18Z,Chicago Sky|Los Angeles Sparks,total,,184.5,"-122,-106",1
+2026-07-17T00:46:18Z,Chicago Sky|Los Angeles Sparks,total,,185.5,"-110,-118",1
+2026-07-17T00:46:18Z,Chicago Sky|Los Angeles Sparks,total,,186.0,"-105,-124",1
+2026-07-17T00:46:18Z,Chicago Sky|Los Angeles Sparks,total,,186.5,"-100,-130",1
+2026-07-17T00:46:18Z,Toronto Tempo|Atlanta Dream,moneyline,,,"256,-327",0
+2026-07-17T00:46:18Z,Toronto Tempo|Atlanta Dream,team_total,home,88.0,"-109,-115",0
+2026-07-17T00:46:18Z,Toronto Tempo|Atlanta Dream,team_total,away,95.0,"-112,-112",0
+2026-07-17T00:46:18Z,Toronto Tempo|Atlanta Dream,spread,,7.5,"-104,-116",0
+2026-07-17T00:46:18Z,Toronto Tempo|Atlanta Dream,spread,,9.0,"-137,109",1
+2026-07-17T00:46:18Z,Toronto Tempo|Atlanta Dream,spread,,8.5,"-127,101",1
+2026-07-17T00:46:18Z,Toronto Tempo|Atlanta Dream,spread,,8.0,"-116,-108",1
+2026-07-17T00:46:18Z,Toronto Tempo|Atlanta Dream,spread,,7.0,"103,-130",1
+2026-07-17T00:46:18Z,Toronto Tempo|Atlanta Dream,spread,,6.5,"112,-141",1
+2026-07-17T00:46:18Z,Toronto Tempo|Atlanta Dream,spread,,6.0,"121,-153",1
+2026-07-17T00:46:18Z,Toronto Tempo|Atlanta Dream,total,,183.0,"-108,-116",0
+2026-07-17T00:46:18Z,Toronto Tempo|Atlanta Dream,total,,181.5,"-127,-102",1
+2026-07-17T00:46:18Z,Toronto Tempo|Atlanta Dream,total,,182.0,"-121,-107",1
+2026-07-17T00:46:18Z,Toronto Tempo|Atlanta Dream,total,,182.5,"-116,-113",1
+2026-07-17T00:46:18Z,Toronto Tempo|Atlanta Dream,total,,183.5,"-104,-125",1
+2026-07-17T00:46:18Z,Toronto Tempo|Atlanta Dream,total,,184.0,"101,-131",1
+2026-07-17T00:46:18Z,Toronto Tempo|Atlanta Dream,total,,184.5,"105,-137",1
+2026-07-17T00:47:33Z,Washington Mystics|Portland Fire,moneyline,,,"976,-2498",0
+2026-07-17T00:47:33Z,Washington Mystics|Portland Fire,team_total,home,67.5,"-125,-106",0
+2026-07-17T00:47:33Z,Washington Mystics|Portland Fire,team_total,home,66.5,"-166,125",1
+2026-07-17T00:47:33Z,Washington Mystics|Portland Fire,team_total,home,68.5,"105,-139",1
+2026-07-17T00:47:33Z,Washington Mystics|Portland Fire,team_total,away,77.5,"-126,-105",0
+2026-07-17T00:47:33Z,Washington Mystics|Portland Fire,team_total,away,76.5,"-178,133",1
+2026-07-17T00:47:33Z,Washington Mystics|Portland Fire,team_total,away,78.5,"109,-145",1
+2026-07-17T00:47:33Z,Washington Mystics|Portland Fire,spread,,10.0,"-111,-119",0
+2026-07-17T00:47:33Z,Washington Mystics|Portland Fire,spread,,11.0,"-152,113",1
+2026-07-17T00:47:33Z,Washington Mystics|Portland Fire,spread,,10.5,"-130,-103",1
+2026-07-17T00:47:33Z,Washington Mystics|Portland Fire,spread,,9.5,"104,-139",1
+2026-07-17T00:47:33Z,Washington Mystics|Portland Fire,spread,,9.0,"120,-163",1
+2026-07-17T00:47:33Z,Washington Mystics|Portland Fire,total,,145.5,"-111,-119",0
+2026-07-17T00:47:33Z,Washington Mystics|Portland Fire,total,,144.5,"-138,102",1
+2026-07-17T00:47:33Z,Washington Mystics|Portland Fire,total,,145.0,"-124,-107",1
+2026-07-17T00:47:33Z,Washington Mystics|Portland Fire,total,,146.0,"-101,-132",1
+2026-07-17T00:47:33Z,Washington Mystics|Portland Fire,total,,146.5,"108,-145",1
+2026-07-17T00:47:33Z,Phoenix Mercury|Connecticut Sun,moneyline,,,"-210,170",0
+2026-07-17T00:47:33Z,Phoenix Mercury|Connecticut Sun,team_total,home,84.0,"-112,-112",0
+2026-07-17T00:47:33Z,Phoenix Mercury|Connecticut Sun,team_total,away,79.5,"-116,-108",0
+2026-07-17T00:47:33Z,Phoenix Mercury|Connecticut Sun,spread,,-5.0,"-111,-109",0
+2026-07-17T00:47:33Z,Phoenix Mercury|Connecticut Sun,spread,,-3.5,"-146,116",1
+2026-07-17T00:47:33Z,Phoenix Mercury|Connecticut Sun,spread,,-4.0,"-135,107",1
+2026-07-17T00:47:33Z,Phoenix Mercury|Connecticut Sun,spread,,-4.5,"-124,-101",1
+2026-07-17T00:47:33Z,Phoenix Mercury|Connecticut Sun,spread,,-5.5,"-103,-122",1
+2026-07-17T00:47:33Z,Phoenix Mercury|Connecticut Sun,spread,,-6.0,"105,-132",1
+2026-07-17T00:47:33Z,Phoenix Mercury|Connecticut Sun,spread,,-6.5,"114,-143",1
+2026-07-17T00:47:33Z,Phoenix Mercury|Connecticut Sun,total,,163.5,"-112,-112",0
+2026-07-17T00:47:33Z,Phoenix Mercury|Connecticut Sun,total,,162.0,"-134,102",1
+2026-07-17T00:47:33Z,Phoenix Mercury|Connecticut Sun,total,,162.5,"-127,-103",1
+2026-07-17T00:47:33Z,Phoenix Mercury|Connecticut Sun,total,,163.0,"-120,-108",1
+2026-07-17T00:47:33Z,Phoenix Mercury|Connecticut Sun,total,,164.0,"-108,-120",1
+2026-07-17T00:47:33Z,Phoenix Mercury|Connecticut Sun,total,,164.5,"-103,-126",1
+2026-07-17T00:47:33Z,Phoenix Mercury|Connecticut Sun,total,,165.0,"102,-133",1
+2026-07-17T00:47:33Z,Indiana Fever|Seattle Storm,moneyline,,,"-400,305",0
+2026-07-17T00:47:33Z,Indiana Fever|Seattle Storm,team_total,home,92.0,"-108,-116",0
+2026-07-17T00:47:33Z,Indiana Fever|Seattle Storm,team_total,away,83.5,"-109,-115",0
+2026-07-17T00:47:33Z,Indiana Fever|Seattle Storm,spread,,-9.0,"-109,-111",0
+2026-07-17T00:47:33Z,Indiana Fever|Seattle Storm,spread,,-7.5,"-144,114",1
+2026-07-17T00:47:33Z,Indiana Fever|Seattle Storm,spread,,-8.0,"-133,106",1
+2026-07-17T00:47:33Z,Indiana Fever|Seattle Storm,spread,,-8.5,"-122,-103",1
+2026-07-17T00:47:33Z,Indiana Fever|Seattle Storm,spread,,-9.5,"-102,-123",1
+2026-07-17T00:47:33Z,Indiana Fever|Seattle Storm,spread,,-10.0,"107,-134",1
+2026-07-17T00:47:33Z,Indiana Fever|Seattle Storm,spread,,-10.5,"115,-145",1
+2026-07-17T00:47:33Z,Indiana Fever|Seattle Storm,total,,175.0,"-112,-112",0
+2026-07-17T00:47:33Z,Indiana Fever|Seattle Storm,total,,173.5,"-132,101",1
+2026-07-17T00:47:33Z,Indiana Fever|Seattle Storm,total,,174.0,"-126,-103",1
+2026-07-17T00:47:33Z,Indiana Fever|Seattle Storm,total,,174.5,"-120,-109",1
+2026-07-17T00:47:33Z,Indiana Fever|Seattle Storm,total,,175.5,"-108,-121",1
+2026-07-17T00:47:33Z,Indiana Fever|Seattle Storm,total,,176.0,"-103,-127",1
+2026-07-17T00:47:33Z,Indiana Fever|Seattle Storm,total,,176.5,"102,-133",1
+2026-07-17T00:47:33Z,Chicago Sky|Los Angeles Sparks,moneyline,,,"-118,-103",0
+2026-07-17T00:47:33Z,Chicago Sky|Los Angeles Sparks,team_total,home,93.0,"-111,-113",0
+2026-07-17T00:47:33Z,Chicago Sky|Los Angeles Sparks,team_total,away,92.5,"-112,-112",0
+2026-07-17T00:47:33Z,Chicago Sky|Los Angeles Sparks,spread,,-1.0,"-110,-110",0
+2026-07-17T00:47:33Z,Chicago Sky|Los Angeles Sparks,spread,,2.0,"-144,114",1
+2026-07-17T00:47:33Z,Chicago Sky|Los Angeles Sparks,spread,,1.5,"-134,107",1
+2026-07-17T00:47:33Z,Chicago Sky|Los Angeles Sparks,spread,,1.0,"-127,101",1
+2026-07-17T00:47:33Z,Chicago Sky|Los Angeles Sparks,spread,,-1.5,"-106,-119",1
+2026-07-17T00:47:33Z,Chicago Sky|Los Angeles Sparks,spread,,-2.0,"102,-128",1
+2026-07-17T00:47:33Z,Chicago Sky|Los Angeles Sparks,spread,,-2.5,"110,-138",1
+2026-07-17T00:47:33Z,Chicago Sky|Los Angeles Sparks,total,,185.0,"-114,-110",0
+2026-07-17T00:47:33Z,Chicago Sky|Los Angeles Sparks,total,,183.5,"-135,104",1
+2026-07-17T00:47:33Z,Chicago Sky|Los Angeles Sparks,total,,184.0,"-129,-101",1
+2026-07-17T00:47:33Z,Chicago Sky|Los Angeles Sparks,total,,184.5,"-122,-106",1
+2026-07-17T00:47:33Z,Chicago Sky|Los Angeles Sparks,total,,185.5,"-110,-118",1
+2026-07-17T00:47:33Z,Chicago Sky|Los Angeles Sparks,total,,186.0,"-105,-124",1
+2026-07-17T00:47:33Z,Chicago Sky|Los Angeles Sparks,total,,186.5,"-100,-130",1
+2026-07-17T00:47:33Z,Toronto Tempo|Atlanta Dream,moneyline,,,"256,-327",0
+2026-07-17T00:47:33Z,Toronto Tempo|Atlanta Dream,team_total,home,88.0,"-109,-115",0
+2026-07-17T00:47:33Z,Toronto Tempo|Atlanta Dream,team_total,away,95.0,"-112,-112",0
+2026-07-17T00:47:33Z,Toronto Tempo|Atlanta Dream,spread,,7.5,"-104,-116",0
+2026-07-17T00:47:33Z,Toronto Tempo|Atlanta Dream,spread,,9.0,"-137,109",1
+2026-07-17T00:47:33Z,Toronto Tempo|Atlanta Dream,spread,,8.5,"-127,101",1
+2026-07-17T00:47:33Z,Toronto Tempo|Atlanta Dream,spread,,8.0,"-116,-108",1
+2026-07-17T00:47:33Z,Toronto Tempo|Atlanta Dream,spread,,7.0,"103,-130",1
+2026-07-17T00:47:33Z,Toronto Tempo|Atlanta Dream,spread,,6.5,"112,-141",1
+2026-07-17T00:47:33Z,Toronto Tempo|Atlanta Dream,spread,,6.0,"121,-153",1
+2026-07-17T00:47:33Z,Toronto Tempo|Atlanta Dream,total,,183.0,"-108,-116",0
+2026-07-17T00:47:33Z,Toronto Tempo|Atlanta Dream,total,,181.5,"-127,-102",1
+2026-07-17T00:47:33Z,Toronto Tempo|Atlanta Dream,total,,182.0,"-121,-107",1
+2026-07-17T00:47:33Z,Toronto Tempo|Atlanta Dream,total,,182.5,"-116,-113",1
+2026-07-17T00:47:33Z,Toronto Tempo|Atlanta Dream,total,,183.5,"-104,-125",1
+2026-07-17T00:47:33Z,Toronto Tempo|Atlanta Dream,total,,184.0,"101,-131",1
+2026-07-17T00:47:33Z,Toronto Tempo|Atlanta Dream,total,,184.5,"105,-137",1
+2026-07-17T00:48:49Z,Washington Mystics|Portland Fire,moneyline,,,"976,-2498",0
+2026-07-17T00:48:49Z,Washington Mystics|Portland Fire,team_total,home,67.5,"-125,-106",0
+2026-07-17T00:48:49Z,Washington Mystics|Portland Fire,team_total,home,66.5,"-166,125",1
+2026-07-17T00:48:49Z,Washington Mystics|Portland Fire,team_total,home,68.5,"105,-139",1
+2026-07-17T00:48:49Z,Washington Mystics|Portland Fire,team_total,away,77.5,"-126,-105",0
+2026-07-17T00:48:49Z,Washington Mystics|Portland Fire,team_total,away,76.5,"-178,133",1
+2026-07-17T00:48:49Z,Washington Mystics|Portland Fire,team_total,away,78.5,"109,-145",1
+2026-07-17T00:48:49Z,Washington Mystics|Portland Fire,spread,,10.0,"-111,-119",0
+2026-07-17T00:48:49Z,Washington Mystics|Portland Fire,spread,,11.0,"-152,113",1
+2026-07-17T00:48:49Z,Washington Mystics|Portland Fire,spread,,10.5,"-130,-103",1
+2026-07-17T00:48:49Z,Washington Mystics|Portland Fire,spread,,9.5,"104,-139",1
+2026-07-17T00:48:49Z,Washington Mystics|Portland Fire,spread,,9.0,"120,-163",1
+2026-07-17T00:48:49Z,Washington Mystics|Portland Fire,total,,145.5,"-111,-119",0
+2026-07-17T00:48:49Z,Washington Mystics|Portland Fire,total,,144.5,"-138,102",1
+2026-07-17T00:48:49Z,Washington Mystics|Portland Fire,total,,145.0,"-124,-107",1
+2026-07-17T00:48:49Z,Washington Mystics|Portland Fire,total,,146.0,"-101,-132",1
+2026-07-17T00:48:49Z,Washington Mystics|Portland Fire,total,,146.5,"108,-145",1
+2026-07-17T00:48:49Z,Phoenix Mercury|Connecticut Sun,moneyline,,,"-210,170",0
+2026-07-17T00:48:49Z,Phoenix Mercury|Connecticut Sun,team_total,home,84.0,"-112,-112",0
+2026-07-17T00:48:49Z,Phoenix Mercury|Connecticut Sun,team_total,away,79.5,"-116,-108",0
+2026-07-17T00:48:49Z,Phoenix Mercury|Connecticut Sun,spread,,-5.0,"-111,-109",0
+2026-07-17T00:48:49Z,Phoenix Mercury|Connecticut Sun,spread,,-3.5,"-146,116",1
+2026-07-17T00:48:49Z,Phoenix Mercury|Connecticut Sun,spread,,-4.0,"-135,107",1
+2026-07-17T00:48:49Z,Phoenix Mercury|Connecticut Sun,spread,,-4.5,"-124,-101",1
+2026-07-17T00:48:49Z,Phoenix Mercury|Connecticut Sun,spread,,-5.5,"-103,-122",1
+2026-07-17T00:48:49Z,Phoenix Mercury|Connecticut Sun,spread,,-6.0,"105,-132",1
+2026-07-17T00:48:49Z,Phoenix Mercury|Connecticut Sun,spread,,-6.5,"114,-143",1
+2026-07-17T00:48:49Z,Phoenix Mercury|Connecticut Sun,total,,163.5,"-112,-112",0
+2026-07-17T00:48:49Z,Phoenix Mercury|Connecticut Sun,total,,162.0,"-134,102",1
+2026-07-17T00:48:49Z,Phoenix Mercury|Connecticut Sun,total,,162.5,"-127,-103",1
+2026-07-17T00:48:49Z,Phoenix Mercury|Connecticut Sun,total,,163.0,"-120,-108",1
+2026-07-17T00:48:49Z,Phoenix Mercury|Connecticut Sun,total,,164.0,"-108,-120",1
+2026-07-17T00:48:49Z,Phoenix Mercury|Connecticut Sun,total,,164.5,"-103,-126",1
+2026-07-17T00:48:49Z,Phoenix Mercury|Connecticut Sun,total,,165.0,"102,-133",1
+2026-07-17T00:48:49Z,Indiana Fever|Seattle Storm,moneyline,,,"-400,305",0
+2026-07-17T00:48:49Z,Indiana Fever|Seattle Storm,team_total,home,92.0,"-108,-116",0
+2026-07-17T00:48:49Z,Indiana Fever|Seattle Storm,team_total,away,83.5,"-109,-115",0
+2026-07-17T00:48:49Z,Indiana Fever|Seattle Storm,spread,,-9.0,"-109,-111",0
+2026-07-17T00:48:49Z,Indiana Fever|Seattle Storm,spread,,-7.5,"-144,114",1
+2026-07-17T00:48:49Z,Indiana Fever|Seattle Storm,spread,,-8.0,"-133,106",1
+2026-07-17T00:48:49Z,Indiana Fever|Seattle Storm,spread,,-8.5,"-122,-103",1
+2026-07-17T00:48:49Z,Indiana Fever|Seattle Storm,spread,,-9.5,"-102,-123",1
+2026-07-17T00:48:49Z,Indiana Fever|Seattle Storm,spread,,-10.0,"107,-134",1
+2026-07-17T00:48:49Z,Indiana Fever|Seattle Storm,spread,,-10.5,"115,-145",1
+2026-07-17T00:48:49Z,Indiana Fever|Seattle Storm,total,,175.0,"-112,-112",0
+2026-07-17T00:48:49Z,Indiana Fever|Seattle Storm,total,,173.5,"-132,101",1
+2026-07-17T00:48:49Z,Indiana Fever|Seattle Storm,total,,174.0,"-126,-103",1
+2026-07-17T00:48:49Z,Indiana Fever|Seattle Storm,total,,174.5,"-120,-109",1
+2026-07-17T00:48:49Z,Indiana Fever|Seattle Storm,total,,175.5,"-108,-121",1
+2026-07-17T00:48:49Z,Indiana Fever|Seattle Storm,total,,176.0,"-103,-127",1
+2026-07-17T00:48:49Z,Indiana Fever|Seattle Storm,total,,176.5,"102,-133",1
+2026-07-17T00:48:49Z,Chicago Sky|Los Angeles Sparks,moneyline,,,"-118,-103",0
+2026-07-17T00:48:49Z,Chicago Sky|Los Angeles Sparks,team_total,home,93.0,"-111,-113",0
+2026-07-17T00:48:49Z,Chicago Sky|Los Angeles Sparks,team_total,away,92.5,"-112,-112",0
+2026-07-17T00:48:49Z,Chicago Sky|Los Angeles Sparks,spread,,-1.0,"-110,-110",0
+2026-07-17T00:48:49Z,Chicago Sky|Los Angeles Sparks,spread,,2.0,"-144,114",1
+2026-07-17T00:48:49Z,Chicago Sky|Los Angeles Sparks,spread,,1.5,"-134,107",1
+2026-07-17T00:48:49Z,Chicago Sky|Los Angeles Sparks,spread,,1.0,"-127,101",1
+2026-07-17T00:48:49Z,Chicago Sky|Los Angeles Sparks,spread,,-1.5,"-106,-119",1
+2026-07-17T00:48:49Z,Chicago Sky|Los Angeles Sparks,spread,,-2.0,"102,-128",1
+2026-07-17T00:48:49Z,Chicago Sky|Los Angeles Sparks,spread,,-2.5,"110,-138",1
+2026-07-17T00:48:49Z,Chicago Sky|Los Angeles Sparks,total,,185.0,"-114,-110",0
+2026-07-17T00:48:49Z,Chicago Sky|Los Angeles Sparks,total,,183.5,"-135,104",1
+2026-07-17T00:48:49Z,Chicago Sky|Los Angeles Sparks,total,,184.0,"-129,-101",1
+2026-07-17T00:48:49Z,Chicago Sky|Los Angeles Sparks,total,,184.5,"-122,-106",1
+2026-07-17T00:48:49Z,Chicago Sky|Los Angeles Sparks,total,,185.5,"-110,-118",1
+2026-07-17T00:48:49Z,Chicago Sky|Los Angeles Sparks,total,,186.0,"-105,-124",1
+2026-07-17T00:48:49Z,Chicago Sky|Los Angeles Sparks,total,,186.5,"-100,-130",1
+2026-07-17T00:48:49Z,Toronto Tempo|Atlanta Dream,moneyline,,,"256,-327",0
+2026-07-17T00:48:49Z,Toronto Tempo|Atlanta Dream,team_total,home,88.0,"-109,-115",0
+2026-07-17T00:48:49Z,Toronto Tempo|Atlanta Dream,team_total,away,95.0,"-112,-112",0
+2026-07-17T00:48:49Z,Toronto Tempo|Atlanta Dream,spread,,7.5,"-104,-116",0
+2026-07-17T00:48:49Z,Toronto Tempo|Atlanta Dream,spread,,9.0,"-137,109",1
+2026-07-17T00:48:49Z,Toronto Tempo|Atlanta Dream,spread,,8.5,"-127,101",1
+2026-07-17T00:48:49Z,Toronto Tempo|Atlanta Dream,spread,,8.0,"-116,-108",1
+2026-07-17T00:48:49Z,Toronto Tempo|Atlanta Dream,spread,,7.0,"103,-130",1
+2026-07-17T00:48:49Z,Toronto Tempo|Atlanta Dream,spread,,6.5,"112,-141",1
+2026-07-17T00:48:49Z,Toronto Tempo|Atlanta Dream,spread,,6.0,"121,-153",1
+2026-07-17T00:48:49Z,Toronto Tempo|Atlanta Dream,total,,183.0,"-108,-116",0
+2026-07-17T00:48:49Z,Toronto Tempo|Atlanta Dream,total,,181.5,"-127,-102",1
+2026-07-17T00:48:49Z,Toronto Tempo|Atlanta Dream,total,,182.0,"-121,-107",1
+2026-07-17T00:48:49Z,Toronto Tempo|Atlanta Dream,total,,182.5,"-116,-113",1
+2026-07-17T00:48:49Z,Toronto Tempo|Atlanta Dream,total,,183.5,"-104,-125",1
+2026-07-17T00:48:49Z,Toronto Tempo|Atlanta Dream,total,,184.0,"101,-131",1
+2026-07-17T00:48:49Z,Toronto Tempo|Atlanta Dream,total,,184.5,"105,-137",1
