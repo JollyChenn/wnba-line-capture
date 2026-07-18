@@ -411,7 +411,9 @@ date,player,market,side,line,odds,tier,actual,result,pnl,odds_clv,line_clv,sharp
 20260717,Angel Reese,pts,Under,16.5,1.8,THIN,23.0,loss,-1.0,-0.037,0.0,0.0,-0.03,newunder,2026-07-16
 20260717,Ariel Atkins,pra,Over,15.5,2.0,CASC,16.0,WIN,1.0,0.091,1.0,,,cascade,2026-07-16
 20260717,Azura Stevens,pts,Under,14.5,2.0,STRONG,12.0,WIN,1.0,0.048,0.0,0.0,-0.032,newunder,2026-07-16
+20260717,Brittney Griner,pr,Over,19.5,1.73,STRONG,18.0,loss,-1.0,0.0,0.0,,,overshoot,2026-07-17
 20260717,Caitlin Clark,pa,Over,23.5,1.83,STRONG,55.0,WIN,0.83,0.0,1.0,,,flip,2026-07-16
+20260717,Charlisse Leger-Walker,pts,Under,8.5,1.87,SOLID,4.0,WIN,0.87,0.02,0.0,,,newunder,2026-07-16
 20260717,Dearica Hamby,pra,Over,22.5,1.75,CASC,26.0,WIN,0.75,0.0,0.0,,,cascade,2026-07-16
 20260717,Dearica Hamby,pts,Under,14.5,1.83,SOLID,18.0,loss,-1.0,-0.021,-1.0,,,newunder,2026-07-16
 20260717,Dominique Malonga,pts,Under,16.5,1.909,STRONG,28.0,loss,-1.0,0.032,0.0,,,model,2026-07-16
@@ -420,12 +422,15 @@ date,player,market,side,line,odds,tier,actual,result,pnl,odds_clv,line_clv,sharp
 20260717,Isabelle Harrison,pts,Under,12.5,1.833,THIN,10.0,WIN,0.83,0.018,0.0,1.0,,newunder,2026-07-16
 20260717,Jade Melbourne,pra,Over,13.5,1.67,SOLID,21.0,WIN,0.67,-0.056,0.0,,,overshoot,2026-07-17
 20260717,Jordin Canada,pts,Under,11.5,1.909,SOLID,18.0,loss,-1.0,0.0,0.0,-1.0,,newunder,2026-07-16
+20260717,Kahleah Copper,pts,Over,19.5,1.833,STRONG,21.0,WIN,0.83,0.0,1.0,,,flip,2026-07-16
 20260717,Kamilla Cardoso,pts,Under,15.5,1.82,THIN,13.0,WIN,0.82,-0.068,0.0,,,newunder,2026-07-14
 20260717,Kelsey Mitchell,pts,Over,21.5,1.8,STRONG,30.0,WIN,0.8,-0.016,1.0,,,flip_paper,2026-07-16
+20260717,Leila Lacan,pts,Under,12.5,1.87,THIN,26.0,loss,-1.0,-0.02,0.0,0.0,-0.025,newunder,2026-07-16
 20260717,Maria Conde,pra,Over,16.5,2.0,STRONG,22.0,WIN,1.0,0.0,-1.0,,,overshoot,2026-07-16
 20260717,Natisha Hiedeman,pts,Over,17.5,2.0,THIN,15.0,loss,-1.0,,-2.0,,,flip_paper,2026-07-16
 20260717,Nneka Ogwumike,pa,Over,19.5,1.8,STRONG,22.0,WIN,0.8,0.04,0.0,,,overshoot,2026-07-16
 20260717,Nyara Sabally,pts,Over,10.5,1.74,SOLID,16.0,WIN,0.74,,,,,flip_paper,2026-07-16
+20260717,Olivia Nelson-Ododa,pts,Under,11.5,1.909,THIN,6.0,WIN,0.91,0.0,0.0,0.0,-0.086,newunder,2026-07-16
 20260717,Rae Burrell,pra,Over,20.5,2.0,CASC,15.0,loss,-1.0,0.07,0.0,,,cascade,2026-07-16
 20260717,Rae Burrell,pts,Over,14.5,1.73,SOLID,9.0,loss,-1.0,-0.039,0.0,1.0,,flip_paper,2026-07-16
 20260717,Rhyne Howard,pts,Under,19.5,1.833,SOLID,10.0,WIN,0.83,0.018,0.0,0.0,-0.028,newunder,2026-07-16
