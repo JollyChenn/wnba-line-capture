@@ -4,16 +4,16 @@ _Auto-updated after each slate settles. Raw data: `graded_bets.csv`. CLV>0 = we 
 _**sharp-odds** = vs Pinnacle's vig-free fair price (TRUE edge test) · **sharp-line** = pts vs Pinnacle's line · **self** = vs 1xbet's own close (weak)._
 
 ```
-📊 WNBA BOT — TRACK RECORD (22 settled · PROVEN signals only)
-  Record  : 10-12  (45% hit)
-  Net P&L : -3.19u  (ROI -14.5%/bet)
+📊 WNBA BOT — TRACK RECORD (23 settled · PROVEN signals only)
+  Record  : 10-13  (43% hit)
+  Net P&L : -4.19u  (ROI -18.2%/bet)
   ★ SHARP ODDS-CLV: -6.3% | beat fair 0/6 (0%)  ← TRUE edge (vs Pinnacle fair price)
   SHARP LINE-CLV : +0.06 pts | n=9  ← better number than the sharp
-  self ODDS-CLV  : -0.5% | beat 5/20 (25%)  (1xbet's own close = weak)
-  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 33/61 (-0.3u) · FLIP UNDER 9/19 (-2.6u) · FLIP UNDER(paper) 24/36 (+8.7u) · FTUNDER 66/151 (-29.2u) · HOT OVER 11/20 (+0.6u) · STAR-OUT CASCADE 53/93 (-0.1u) · starout 0/6 (-6.0u)
+  self ODDS-CLV  : -0.3% | beat 6/21 (29%)  (1xbet's own close = weak)
+  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 36/64 (+2.2u) · FLIP UNDER 10/20 (-1.7u) · FLIP UNDER(paper) 26/40 (+8.3u) · FTUNDER 71/161 (-29.8u) · HOT OVER 11/20 (+0.6u) · STAR-OUT CASCADE 56/97 (+1.5u) · starout 0/6 (-6.0u)
   VERDICT : ⚠️ NEUTRAL self CLV — winning on outcomes, not beating the line. Unproven; keep collecting.
-  by tier: SOLID 4/11 (-3.3u) · STRONG 5/9 (+0.1u) · THIN 1/2 (+0.0u)
-  by market: pr Under 1/3 (-1.0u) · pra Under 1/7 (-5.3u) · pts Under 8/12 (+3.1u)
+  by tier: SOLID 4/11 (-3.3u) · STRONG 5/10 (-0.9u) · THIN 1/2 (+0.0u)
+  by market: pr Under 1/3 (-1.0u) · pra Under 1/7 (-5.3u) · pts Under 8/13 (+2.1u)
 ```
 
 ## Per-bet
@@ -430,3 +430,26 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260716 | Carla Leite | PTS Under 15.5 @ 1.87 | FTUNDER | WIN | — | — | +0% |
 | 20260716 | Emily Engstler | PRA Over 18.5 @ 1.83 | HOT OVER | loss | — | — | -2% |
 | 20260716 | Sonia Citron | PTS Under 18.5 @ 1.8 | FTUNDER | WIN | — | — | +0% |
+| 20260717 | Allisha Gray | PTS Under 19.5 @ 1.909 | FTUNDER | WIN | -4% | +0.0 | +2% |
+| 20260717 | Angel Reese | PTS Under 16.5 @ 1.8 | FTUNDER | loss | -3% | +0.0 | -4% |
+| 20260717 | Ariel Atkins | PRA Over 15.5 @ 2.0 | STAR-OUT CASCADE | WIN | — | — | +9% |
+| 20260717 | Azura Stevens | PTS Under 14.5 @ 2.0 | FTUNDER | WIN | -3% | +0.0 | +5% |
+| 20260717 | Caitlin Clark | PA Over 23.5 @ 1.83 | FLIP UNDER | WIN | — | — | +0% |
+| 20260717 | Dearica Hamby | PRA Over 22.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
+| 20260717 | Dearica Hamby | PTS Under 14.5 @ 1.83 | FTUNDER | loss | — | — | -2% |
+| 20260717 | Dominique Malonga | PTS Under 16.5 @ 1.909 | COLD/SHRINK/STINGY | loss | — | — | +3% |
+| 20260717 | Erica Wheeler | PRA Over 16.5 @ 1.83 | STAR-OUT CASCADE | WIN | — | — | +2% |
+| 20260717 | Erica Wheeler | PTS Under 9.5 @ 1.769 | FTUNDER | loss | -17% | +0.0 | -7% |
+| 20260717 | Isabelle Harrison | PTS Under 12.5 @ 1.833 | FTUNDER | WIN | — | +1.0 | +2% |
+| 20260717 | Jade Melbourne | PRA Over 13.5 @ 1.67 | BOOK OVERSHOOT | WIN | — | — | -6% |
+| 20260717 | Jordin Canada | PTS Under 11.5 @ 1.909 | FTUNDER | loss | — | -1.0 | +0% |
+| 20260717 | Kamilla Cardoso | PTS Under 15.5 @ 1.82 | FTUNDER | WIN | — | — | -7% |
+| 20260717 | Kelsey Mitchell | PTS Over 21.5 @ 1.8 | FLIP UNDER(paper) | WIN | — | — | -2% |
+| 20260717 | Maria Conde | PRA Over 16.5 @ 2.0 | BOOK OVERSHOOT | WIN | — | — | +0% |
+| 20260717 | Natisha Hiedeman | PTS Over 17.5 @ 2.0 | FLIP UNDER(paper) | loss | — | — | — |
+| 20260717 | Nneka Ogwumike | PA Over 19.5 @ 1.8 | BOOK OVERSHOOT | WIN | — | — | +4% |
+| 20260717 | Nyara Sabally | PTS Over 10.5 @ 1.74 | FLIP UNDER(paper) | WIN | — | — | — |
+| 20260717 | Rae Burrell | PRA Over 20.5 @ 2.0 | STAR-OUT CASCADE | loss | — | — | +7% |
+| 20260717 | Rae Burrell | PTS Over 14.5 @ 1.73 | FLIP UNDER(paper) | loss | — | +1.0 | -4% |
+| 20260717 | Rhyne Howard | PTS Under 19.5 @ 1.833 | FTUNDER | WIN | -3% | +0.0 | +2% |
+| 20260717 | Sydney Taylor | PTS Under 15.5 @ 2.0 | FTUNDER | loss | — | — | +0% |
