@@ -2,7 +2,7 @@
 
 _Stingy-D threshold (trailing-10 allowed, bottom quartile): 87_
 
-_🩹 OUT/doubtful (excluded from ALL picks): Aneesah Morrow, Brittney Sykes, Holly Winterburn, Jovana Nogic, Juste Jocyte, Karlie Samuelson, Katie Lou Samuelson, Kelsey Plum, Kierstan Bell, Kiki Rice, Leonie Fiebich, Liatu King, Marine Johannes, Megan Gustafson, Natasha Mack, Satou Sabally, Skylar Diggins, Ta'Niya Latson, Te-Hina Paopao_
+_🩹 OUT/doubtful (excluded from ALL picks): Alanna Smith, Aneesah Morrow, Brittney Sykes, Jovana Nogic, Kelsey Plum, Kiana Williams, Kierstan Bell, Kiki Rice, Leonie Fiebich, Natasha Mack, Satou Sabally, Skylar Diggins, Ta'Niya Latson, Te-Hina Paopao_
 
 ## 💰 REAL-MONEY — UNDER (cold/shrink + stingy · pts/PR/PA/PRA · flat 1u)
 
@@ -27,15 +27,15 @@ _🩹 OUT/doubtful (excluded from ALL picks): Aneesah Morrow, Brittney Sykes, Ho
 ## CASCADE contingencies — fire ONLY on scratch news (PRA OVER rank-3-6, flat 1u)
 
 - Los Angeles Sparks: if **Kelsey Plum** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Dearica Hamby OVER 22.5 PRA, Rae Burrell OVER 22.5 PRA, Erica Wheeler OVER 19.5 PRA, Ariel Atkins OVER 15.5 PRA
-- Dallas Wings: if **Paige Bueckers** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Azzi Fudd OVER 18.5 PRA, Arike Ogunbowale OVER 13.5 PRA, Odyssey Sims OVER 5.5 PRA, Alanna Smith OVER 6.5 PRA
+- Dallas Wings: if **Paige Bueckers** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Azzi Fudd OVER 18.5 PRA, Arike Ogunbowale OVER 13.5 PRA, Odyssey Sims OVER 5.5 PRA
 - Chicago Sky: if **Sydney Taylor** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Kamilla Cardoso OVER 28.5 PRA, Natasha Cloud OVER 18.5 PRA, Gabriela Jaquez OVER 9.5 PRA
 - Atlanta Dream: if **Angel Reese** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Rhyne Howard OVER 22.5 PRA, Jordin Canada OVER 25.5 PRA, Naz Hillmon OVER 10.5 PRA, Madina Okot OVER 11.5 PRA
 - Connecticut Sun: if **Brittney Griner** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Olivia Nelson-Ododa OVER 20.5 PRA, Diamond Miller OVER 12.5 PRA, Charlisse Leger-Walker OVER 14.5 PRA, Aaliyah Edwards OVER 12.5 PRA
 - Phoenix Mercury: if **Kahleah Copper** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Monique Akoa Makani OVER 12.5 PRA, DeWanna Bonner OVER 18.5 PRA, Valeriane Ayayi OVER 15.5 PRA
 - Las Vegas Aces: if **A'ja Wilson** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Jackie Young OVER 29.5 PRA, NaLyssa Smith OVER 16.5 PRA, Jewell Loyd OVER 12.5 PRA, Chennedy Carter OVER 9.5 PRA
 - Toronto Tempo: if **Marina Mabrey** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Isabelle Harrison OVER 18.5 PRA, Laura Juskaite OVER 12.5 PRA, Maria Conde OVER 19.5 PRA
-- New York Liberty: if **Breanna Stewart** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Jonquel Jones OVER 28.5 PRA, Pauline Astier OVER 13.5 PRA
-- Dallas Wings: if **Paige Bueckers** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Azzi Fudd OVER 18.5 PRA, Arike Ogunbowale OVER 13.5 PRA, Odyssey Sims OVER 5.5 PRA, Alanna Smith OVER 6.5 PRA
+- New York Liberty: if **Breanna Stewart** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Jonquel Jones OVER 28.5 PRA, Marine Johannes OVER 10.5 PRA, Pauline Astier OVER 13.5 PRA
+- Dallas Wings: if **Paige Bueckers** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Azzi Fudd OVER 18.5 PRA, Arike Ogunbowale OVER 13.5 PRA, Odyssey Sims OVER 5.5 PRA
 - Washington Mystics: if **Shakira Austin** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Kiki Iriafen OVER 25.5 PRA, Georgia Amoore OVER 10.5 PRA, Michaela Onyenwere OVER 9.5 PRA, Cotie McMahon OVER 10.5 PRA
 - Golden State Valkyries: if **Gabby Williams** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Kaitlyn Chen OVER 12.5 PRA, Veronica Burton OVER 16.5 PRA, Cecilia Zandalasini OVER 10.5 PRA, Kayla Thornton OVER 10.5 PRA
 - Minnesota Lynx: if **Olivia Miles** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Courtney Williams OVER 23.5 PRA, Natasha Howard OVER 26.5 PRA, Nia Coffey OVER 13.5 PRA, Anastasiia Olairi Kosu OVER 3.5 PRA
