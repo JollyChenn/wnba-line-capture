@@ -2,7 +2,7 @@
 
 _Stingy-D threshold (trailing-10 allowed, bottom quartile): 87_
 
-_🩹 OUT/doubtful (excluded from ALL picks): Aaliyah Edwards, Aneesah Morrow, Angel Reese, Ashlon Jackson, Brittney Sykes, Holly Winterburn, Indya Nivar, Jovana Nogic, Karlie Samuelson, Katie Lou Samuelson, Kelsey Plum, Kiana Williams, Kierstan Bell, Kiki Rice, Leonie Fiebich, Megan Gustafson, Nyara Sabally, Quionche Carter, Saniya Rivers, Satou Sabally, Skylar Diggins, Te-Hina Paopao_
+_🩹 OUT/doubtful (excluded from ALL picks): Aaliyah Edwards, Aneesah Morrow, Angel Reese, Ashlon Jackson, Brittney Sykes, Holly Winterburn, Indya Nivar, Jovana Nogic, Karlie Samuelson, Katie Lou Samuelson, Kelsey Plum, Kiana Williams, Kierstan Bell, Kiki Rice, Leonie Fiebich, Marine Johannes, Megan Gustafson, Nyara Sabally, Paige Bueckers, Quionche Carter, Saniya Rivers, Satou Sabally, Skylar Diggins, Te-Hina Paopao_
 
 ## 💰 REAL-MONEY — UNDER (cold/shrink + stingy · pts/PR/PA/PRA · flat 1u)
 
@@ -14,13 +14,12 @@ _🩹 OUT/doubtful (excluded from ALL picks): Aaliyah Edwards, Aneesah Morrow, A
 
 - **Arike Ogunbowale** (Dallas Wings, New York Liberty @ Dallas Wings): **PRA OVER** median~14→proj~16.3 fair[16.5=2.05 15.5=1.85 14.5=1.68] · [hot+leaky] · last5 mins [27 32 30 30 31] oppDef 91 · OVER value zone = book line between median and proj (MAX edge near median)
 - **Sabrina Ionescu** (New York Liberty, New York Liberty @ Dallas Wings): **PRA OVER** median~24→proj~24.9 fair[25.0=2.02 24.0=1.88 23.0=1.76] · [hot+expand] · last5 mins [35 33 35 33 34] oppDef 86 · OVER value zone = book line between median and proj (MAX edge near median)
-- **Paige Bueckers** (Dallas Wings, New York Liberty @ Dallas Wings): **PRA OVER** median~34→proj~35.5 fair[35.5=1.99 34.5=1.72 33.5=1.52] · [hot+leaky] · last5 mins [31 33 38 36 32] oppDef 91 · OVER value zone = book line between median and proj (MAX edge near median)
 
 ## CASCADE contingencies — fire ONLY on scratch news (PRA OVER rank-3-6, flat 1u)
 
 - Las Vegas Aces: if **A'ja Wilson** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Jackie Young OVER 29.5 PRA, NaLyssa Smith OVER 16.5 PRA, Jewell Loyd OVER 12.5 PRA, Chennedy Carter OVER 9.5 PRA
 - Toronto Tempo: if **Marina Mabrey** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Isabelle Harrison OVER 18.5 PRA, Laura Juskaite OVER 12.5 PRA, Maria Conde OVER 19.5 PRA
-- New York Liberty: if **Breanna Stewart** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Jonquel Jones OVER 28.5 PRA, Marine Johannes OVER 10.5 PRA, Pauline Astier OVER 13.5 PRA
+- New York Liberty: if **Breanna Stewart** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Jonquel Jones OVER 28.5 PRA, Pauline Astier OVER 13.5 PRA
 - Dallas Wings: if **Paige Bueckers** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Arike Ogunbowale OVER 13.5 PRA, Azzi Fudd OVER 18.5 PRA, Odyssey Sims OVER 5.5 PRA, Alanna Smith OVER 6.5 PRA
 - Washington Mystics: if **Shakira Austin** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Kiki Iriafen OVER 25.5 PRA, Georgia Amoore OVER 10.5 PRA, Michaela Onyenwere OVER 9.5 PRA, Cotie McMahon OVER 10.5 PRA
 - Golden State Valkyries: if **Gabby Williams** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Kaitlyn Chen OVER 12.5 PRA, Veronica Burton OVER 16.5 PRA, Cecilia Zandalasini OVER 10.5 PRA, Kayla Thornton OVER 10.5 PRA
@@ -36,7 +35,6 @@ _ft_volume_drought 58.9% / steady+streak 58.6% OOS vs a synthetic line — prove
 - **Jackie Young** (Las Vegas Aces, Las Vegas Aces @ Toronto Tempo): PTS UNDER ~18.5 [steady · PAPER] median~19→proj~17.5 · last5 mins [39 33 31 24 32]
 - **Breanna Stewart** (New York Liberty, New York Liberty @ Dallas Wings): PTS UNDER ~20.5 [steady · PAPER] median~21→proj~19.4 · last5 mins [36 33 37 34 32]
 - **Jessica Shepard** (Dallas Wings, New York Liberty @ Dallas Wings): PTS UNDER ~16.5 [steady · PAPER] median~16→proj~15.7 · last5 mins [32 37 40 34 38]
-- **Paige Bueckers** (Dallas Wings, New York Liberty @ Dallas Wings): PTS UNDER ~24.5 [steady · PAPER] median~25→proj~23.7 · last5 mins [31 33 38 36 32]
 - **Azzi Fudd** (Dallas Wings, New York Liberty @ Dallas Wings): PTS UNDER ~12.5 [ftdrought · PAPER] median~13→proj~11.1 · last5 mins [30 34 36 35 33]
 - **Natasha Howard** (Minnesota Lynx, Minnesota Lynx @ Seattle Storm): PTS UNDER ~15.5 [steady · PAPER] median~16→proj~14.7 · last5 mins [31 36 35 32 25]
 - **Kayla McBride** (Minnesota Lynx, Minnesota Lynx @ Seattle Storm): PTS UNDER ~23.5 [steady · PAPER] median~24→proj~22.4 · last5 mins [38 33 35 31 32]
