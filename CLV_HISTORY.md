@@ -10,7 +10,7 @@ _**sharp-odds** = vs Pinnacle's vig-free fair price (TRUE edge test) · **sharp-
   ★ SHARP ODDS-CLV: -6.3% | beat fair 0/6 (0%)  ← TRUE edge (vs Pinnacle fair price)
   SHARP LINE-CLV : +0.06 pts | n=9  ← better number than the sharp
   self ODDS-CLV  : -0.3% | beat 6/22 (27%)  (1xbet's own close = weak)
-  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 37/69 (-1.0u) · FLIP UNDER 11/23 (-2.9u) · FLIP UNDER(paper) 27/43 (+7.1u) · FTUNDER 77/172 (-29.8u) · HOT OVER 14/25 (+1.3u) · STAR-OUT CASCADE 60/105 (+0.5u) · starout 1/8 (-6.0u)
+  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 37/69 (-1.0u) · FLIP UNDER 11/24 (-3.9u) · FLIP UNDER(paper) 27/43 (+7.1u) · FTUNDER 80/175 (-27.5u) · HOT OVER 14/25 (+1.3u) · STAR-OUT CASCADE 60/105 (+0.5u) · starout 1/8 (-6.0u)
   VERDICT : ⚠️ NEUTRAL self CLV — winning on outcomes, not beating the line. Unproven; keep collecting.
   by tier: SOLID 4/11 (-3.3u) · STRONG 5/10 (-0.9u) · THIN 1/3 (-1.0u)
   by market: pa Under 0/1 (-1.0u) · pr Under 1/3 (-1.0u) · pra Under 1/7 (-5.3u) · pts Under 8/13 (+2.1u)
@@ -476,16 +476,20 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260718 | Shakira Austin | PRA Over 25.5 @ 2.0 | HOT OVER | WIN | — | — | — |
 | 20260718 | Sonia Citron | PR Over 18.5 @ 1.83 | FLIP UNDER | loss | — | — | -4% |
 | 20260719 | Allisha Gray | PTS Under 18.5 @ 2.0 | FTUNDER | loss | -6% | +0.0 | +3% |
+| 20260719 | Alyssa Thomas | PTS Under 14.5 @ 1.83 | FTUNDER | WIN | -6% | +0.0 | +6% |
 | 20260719 | Angel Reese | PTS Under 16.5 @ 1.91 | FTUNDER | WIN | -7% | +0.0 | -2% |
 | 20260719 | Ariel Atkins | PRA Over 15.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
 | 20260719 | Azura Stevens | PTS Under 11.5 @ 1.91 | FTUNDER | loss | -6% | +0.0 | +0% |
 | 20260719 | Azzi Fudd | PTS Under 14.5 @ 1.769 | FTUNDER | WIN | -16% | +0.0 | -8% |
+| 20260719 | Charlisse Leger-Walker | PTS Under 8.5 @ 1.75 | FTUNDER | WIN | — | — | +0% |
 | 20260719 | Dearica Hamby | PRA Over 22.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260719 | Dearica Hamby | PTS Under 15.5 @ 1.73 | FTUNDER | loss | -7% | +0.0 | -7% |
 | 20260719 | Erica Wheeler | PRA Over 19.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260719 | Jessica Shepard | PRA Over 32.5 @ 1.8 | HOT OVER | loss | — | +0.0 | -2% |
 | 20260719 | Jordin Canada | PTS Under 12.5 @ 1.8 | FTUNDER | WIN | -5% | +0.0 | +3% |
+| 20260719 | Kahleah Copper | PR Over 24.5 @ 1.73 | FLIP UNDER | loss | — | — | -6% |
 | 20260719 | Kamilla Cardoso | PRA Over 23.5 @ 1.8 | BOOK OVERSHOOT | loss | — | — | +0% |
+| 20260719 | Leila Lacan | PTS Under 14.5 @ 1.73 | FTUNDER | WIN | — | +1.0 | +0% |
 | 20260719 | Nneka Ogwumike | PTS Over 17.5 @ 1.8 | FLIP UNDER | loss | -10% | +0.0 | -3% |
 | 20260719 | Paige Bueckers | PTS Over 21.5 @ 1.833 | FLIP UNDER(paper) | WIN | -11% | — | -2% |
 | 20260719 | Rae Burrell | PRA Over 20.5 @ 1.8 | STAR-OUT CASCADE | loss | — | — | -4% |
