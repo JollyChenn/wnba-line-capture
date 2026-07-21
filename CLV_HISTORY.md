@@ -10,7 +10,7 @@ _**sharp-odds** = vs Pinnacle's vig-free fair price (TRUE edge test) · **sharp-
   ★ SHARP ODDS-CLV: -6.3% | beat fair 0/6 (0%)  ← TRUE edge (vs Pinnacle fair price)
   SHARP LINE-CLV : +0.06 pts | n=9  ← better number than the sharp
   self ODDS-CLV  : -0.3% | beat 6/22 (27%)  (1xbet's own close = weak)
-  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 37/69 (-1.0u) · FLIP UNDER 11/24 (-3.9u) · FLIP UNDER(paper) 27/43 (+7.1u) · FTUNDER 80/175 (-27.5u) · HOT OVER 14/25 (+1.3u) · STAR-OUT CASCADE 60/105 (+0.5u) · starout 1/8 (-6.0u)
+  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 37/69 (-1.0u) · FLIP UNDER 12/25 (-3.0u) · FLIP UNDER(paper) 29/45 (+8.7u) · FTUNDER 80/177 (-29.5u) · HOT OVER 14/25 (+1.3u) · STAR-OUT CASCADE 62/108 (+1.0u) · starout 3/10 (-4.3u)
   VERDICT : ⚠️ NEUTRAL self CLV — winning on outcomes, not beating the line. Unproven; keep collecting.
   by tier: SOLID 4/11 (-3.3u) · STRONG 5/10 (-0.9u) · THIN 1/3 (-1.0u)
   by market: pa Under 0/1 (-1.0u) · pr Under 1/3 (-1.0u) · pra Under 1/7 (-5.3u) · pts Under 8/13 (+2.1u)
@@ -495,3 +495,13 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260719 | Rae Burrell | PRA Over 20.5 @ 1.8 | STAR-OUT CASCADE | loss | — | — | -4% |
 | 20260719 | Rae Burrell | PTS Over 15.5 @ 2.0 | FLIP UNDER(paper) | loss | -4% | +0.0 | +1% |
 | 20260719 | Rhyne Howard | PTS Under 18.5 @ 1.8 | FTUNDER | WIN | -7% | +0.0 | -3% |
+| 20260720 | Arike Ogunbowale | PRA Over 13.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
+| 20260720 | Azzi Fudd | PRA Over 18.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
+| 20260720 | Azzi Fudd | PTS Under 17.5 @ 1.86 | starout | WIN | — | +1.0 | +3% |
+| 20260720 | Breanna Stewart | PTS Under 20.5 @ 2.0 | FTUNDER | loss | — | -1.0 | +3% |
+| 20260720 | Chelsea Gray | PTS Under 11.5 @ 1.93 | FTUNDER | loss | -5% | +0.0 | +0% |
+| 20260720 | Isabelle Harrison | PTS Over 10.5 @ 1.74 | FLIP UNDER(paper) | WIN | — | — | +0% |
+| 20260720 | Jackie Young | PTS Over 16.5 @ 1.87 | FLIP UNDER(paper) | WIN | -13% | +0.0 | -3% |
+| 20260720 | Jessica Shepard | PTS Under 16.5 @ 1.85 | starout | WIN | — | +1.0 | +3% |
+| 20260720 | Jonquel Jones | PR Over 23.5 @ 1.952 | FLIP UNDER | WIN | — | +0.5 | +0% |
+| 20260720 | Odyssey Sims | PRA Over 5.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
