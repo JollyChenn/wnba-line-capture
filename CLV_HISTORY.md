@@ -10,7 +10,7 @@ _**sharp-odds** = vs Pinnacle's vig-free fair price (TRUE edge test) · **sharp-
   ★ SHARP ODDS-CLV: -6.3% | beat fair 0/6 (0%)  ← TRUE edge (vs Pinnacle fair price)
   SHARP LINE-CLV : +0.06 pts | n=9  ← better number than the sharp
   self ODDS-CLV  : -0.3% | beat 6/23 (26%)  (1xbet's own close = weak)
-  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 39/72 (-0.4u) · FLIP UNDER 14/27 (-1.1u) · FLIP UNDER(paper) 29/45 (+8.7u) · FTUNDER 82/180 (-28.7u) · HOT OVER 14/25 (+1.3u) · STAR-OUT CASCADE 62/108 (+1.0u) · starout 3/10 (-4.3u)
+  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 42/76 (+1.0u) · FLIP UNDER 14/27 (-1.1u) · FLIP UNDER(paper) 32/51 (+8.5u) · FTUNDER 84/182 (-26.9u) · HOT OVER 14/25 (+1.3u) · STAR-OUT CASCADE 65/112 (+2.4u) · starout 3/10 (-4.3u)
   VERDICT : ⚠️ NEUTRAL self CLV — winning on outcomes, not beating the line. Unproven; keep collecting.
   by tier: SOLID 4/11 (-3.3u) · STRONG 5/10 (-0.9u) · THIN 2/4 (+0.0u)
   by market: pa Under 1/2 (+0.0u) · pr Under 1/3 (-1.0u) · pra Under 1/7 (-5.3u) · pts Under 8/13 (+2.1u)
@@ -514,3 +514,19 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260720 | Olivia Miles | PRA Over 27.5 @ 1.87 | BOOK OVERSHOOT | WIN | — | — | — |
 | 20260720 | Shakira Austin | PR Over 22.5 @ 1.73 | BOOK OVERSHOOT | WIN | — | — | +0% |
 | 20260720 | Sonia Citron | PR Over 17.5 @ 2.0 | FLIP UNDER | WIN | — | +0.5 | +5% |
+| 20260722 | Ariel Atkins | PRA Over 15.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
+| 20260722 | Courtney Williams | PTS Under 15.5 @ 1.95 | FTUNDER | WIN | +4% | +0.0 | +11% |
+| 20260722 | Dearica Hamby | PRA Over 24.5 @ 1.91 | STAR-OUT CASCADE | WIN | — | — | +4% |
+| 20260722 | Dearica Hamby | PTS Over 14.5 @ 1.952 | FLIP UNDER(paper) | WIN | -3% | +0.0 | +6% |
+| 20260722 | Dewanna Bonner | PR Over 14.5 @ 1.73 | BOOK OVERSHOOT | WIN | — | — | -4% |
+| 20260722 | Erica Wheeler | PRA Over 21.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
+| 20260722 | Flau'Jae Johnson | PA Over 16.5 @ 1.73 | BOOK OVERSHOOT | WIN | — | — | +0% |
+| 20260722 | Jade Melbourne | PTS Over 7.5 @ 1.86 | FLIP UNDER(paper) | loss | -11% | +0.0 | +3% |
+| 20260722 | Kahleah Copper | PTS Over 20.5 @ 1.909 | BOOK OVERSHOOT | WIN | — | — | +2% |
+| 20260722 | Kayla McBride | PTS Over 19.5 @ 1.95 | FLIP UNDER(paper) | WIN | — | — | +4% |
+| 20260722 | Natasha Howard | PTS Over 12.5 @ 1.82 | FLIP UNDER(paper) | loss | -12% | — | — |
+| 20260722 | Natisha Hiedeman | PTS Under 14.5 @ 1.84 | FTUNDER | WIN | -8% | +0.0 | -0% |
+| 20260722 | Nneka Ogwumike | PA Over 20.5 @ 1.91 | BOOK OVERSHOOT | loss | — | — | +0% |
+| 20260722 | Olivia Miles | PTS Over 17.5 @ 1.97 | FLIP UNDER(paper) | loss | +0% | +0.0 | +8% |
+| 20260722 | Rae Burrell | PRA Over 22.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
+| 20260722 | Rae Burrell | PTS Over 14.5 @ 1.87 | FLIP UNDER(paper) | WIN | -1% | +0.0 | +0% |
