@@ -9058,3 +9058,15 @@ captured_utc,date,player,market,side,line,odds,tier,ev,pinn,src
 2026-07-22T22:41:16+00:00,2026-07-22,Kelsey Mitchell,pr,Over,23.5,1.8,STRONG,0.704,,overshoot
 2026-07-22T22:41:16+00:00,2026-07-22,Shakira Austin,pra,Over,26.5,1.73,STRONG,0.447,,overshoot
 2026-07-22T22:41:16+00:00,2026-07-22,Kamilla Cardoso,pra,Over,22.5,1.8,STRONG,0.346,,overshoot
+2026-07-22T23:41:25+00:00,2026-07-22,Olivia Nelson-Ododa,pts,Under,11.5,1.85,THIN,0.047,12.5,starout
+2026-07-22T23:41:25+00:00,2026-07-22,Aliyah Boston,pts,Over,14.5,1.9,STRONG,0.307,14.5,flip_paper
+2026-07-22T23:41:25+00:00,2026-07-22,Paige Bueckers,pts,Over,20.5,1.9,STRONG,0.402,19.5,flip
+2026-07-22T23:41:25+00:00,2026-07-22,Jessica Shepard,pts,Under,15.5,1.95,STRONG,0.405,15.5,newunder
+2026-07-22T23:41:25+00:00,2026-07-22,Bridget Carleton,pts,Under,13.5,1.8,SOLID,0.17,13.5,newunder
+2026-07-22T23:41:25+00:00,2026-07-22,Azzi Fudd,pts,Under,15.5,1.85,STRONG,0.299,15.5,newunder
+2026-07-22T23:41:25+00:00,2026-07-22,Carla Leite,pts,Over,15.5,2.0,THIN,0.129,15.5,flip_paper
+2026-07-22T23:41:25+00:00,2026-07-22,Diamond Miller,pra,Over,13.5,1.75,CASC,0.0,,cascade
+2026-07-22T23:41:25+00:00,2026-07-22,Olivia Nelson-Ododa,pra,Over,21.5,1.75,CASC,0.0,,cascade
+2026-07-22T23:41:25+00:00,2026-07-22,Charlisse Leger-Walker,pra,Over,14.5,1.75,CASC,0.0,,cascade
+2026-07-22T23:41:25+00:00,2026-07-22,Aneesah Morrow,pra,Over,22.5,1.75,CASC,0.0,,cascade
+2026-07-22T23:41:25+00:00,2026-07-22,Kelsey Mitchell,pr,Over,23.5,1.8,STRONG,0.704,,overshoot
