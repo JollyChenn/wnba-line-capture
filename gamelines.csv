@@ -7681,3 +7681,6 @@ captured_utc,matchup_id,start,teams,type,side,points,prices
 2026-07-25T16:31:45Z,1632802078,2026-07-26T00:30,Team Cooper|Team Weatherspoon,total,,280.5,"-105,-116"
 2026-07-25T17:39:44Z,1632802078,2026-07-26T00:30,Team Cooper|Team Weatherspoon,spread,,4.0,"-109,-107"
 2026-07-25T18:38:32Z,1632802078,2026-07-26T00:30,Team Cooper|Team Weatherspoon,total,,280.5,"-105,-115"
+2026-07-25T19:33:56Z,1632802078,2026-07-26T00:30,Team Cooper|Team Weatherspoon,moneyline,,,"144,-170"
+2026-07-25T19:33:56Z,1632802078,2026-07-26T00:30,Team Cooper|Team Weatherspoon,spread,,4.0,"-111,-105"
+2026-07-25T19:33:56Z,1632802078,2026-07-26T00:30,Team Cooper|Team Weatherspoon,total,,280.5,"100,-122"
