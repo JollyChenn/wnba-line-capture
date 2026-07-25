@@ -1,4 +1,4 @@
-# WNBA core picks — 2026-07-24
+# WNBA core picks — 2026-07-25
 
 _Stingy-D threshold (trailing-10 allowed, bottom quartile): 87_
 
