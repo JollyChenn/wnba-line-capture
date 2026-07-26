@@ -9202,3 +9202,10 @@ game_id,period,clock,team_txt
 401857091,4,1:21,Fire Full timeout
 401857091,4,32.0,Wings Full timeout
 401857091,4,0.7,Fire Full timeout
+401857320,1,3:31,Official timeout
+401857320,2,5:47,Team Coop Full timeout
+401857320,2,1:39,Team Spoon Full timeout
+401857320,3,8:12,Team Spoon Full timeout
+401857320,3,8:12,(08:12) [Team Spoon] COACH'S CHALLENGE (
+401857320,4,7:14,Team Coop Full timeout
+401857320,4,5:32,Team Spoon Full timeout
