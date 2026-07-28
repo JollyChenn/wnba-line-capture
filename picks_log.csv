@@ -1513,3 +1513,36 @@ pick_date,game_id,player,team,opp,market,anchor,signals,fair_p,fair_odds,proj,sd
 2026-07-27,401857096,Sabrina Ionescu,New York Liberty,Los Angeles Sparks,pts_under,18.5,steady,0.563,1.78,17.4,7.23
 2026-07-27,401857096,Rae Burrell,Los Angeles Sparks,New York Liberty,pts_under,16.5,steady,0.563,1.78,15.5,6.32
 2026-07-27,401857096,Sabrina Ionescu,New York Liberty,Los Angeles Sparks,ast_over,4.5,usgshock,0.591,1.69,4.9,1.78
+2026-07-28,401857092,Aneesah Morrow,Connecticut Sun,Washington Mystics,pts_under,8.5,mins-dip+cold+stingy,0.6,1.67,7.0,5.78
+2026-07-28,401857092,Aneesah Morrow,Connecticut Sun,Washington Mystics,pr_under,19.5,mins-dip+cold+stingy,0.59,1.69,17.2,10.26
+2026-07-28,401857092,Aneesah Morrow,Connecticut Sun,Washington Mystics,pa_under,11.5,mins-dip+cold+stingy,0.61,1.64,9.7,6.33
+2026-07-28,401857092,Aneesah Morrow,Connecticut Sun,Washington Mystics,ra_under,12.5,mins-dip+cold,0.61,1.64,10.8,6.14
+2026-07-28,401857092,Aneesah Morrow,Connecticut Sun,Washington Mystics,pra_under,22.5,mins-dip+cold+stingy,0.6,1.67,19.7,10.95
+2026-07-28,401857092,Aneesah Morrow,Connecticut Sun,Washington Mystics,reb_under,9.5,mins-dip+cold,0.58,1.72,8.4,5.29
+2026-07-28,401857092,Shakira Austin,Washington Mystics,Connecticut Sun,pts_under,17.5,steady,0.563,1.78,16.4,6.75
+2026-07-28,401857092,Olivia Nelson-Ododa,Connecticut Sun,Washington Mystics,pts_under,11.5,steady,0.563,1.78,11.0,3.0
+2026-07-28,401857092,Leila Lacan,Connecticut Sun,Washington Mystics,pts_under,12.5,steady,0.563,1.78,11.6,5.46
+2026-07-28,401857093,Kayla McBride,Minnesota Lynx,Toronto Tempo,pts_under,23.5,steady,0.563,1.78,22.5,6.33
+2026-07-28,401857093,Isabelle Harrison,Toronto Tempo,Minnesota Lynx,pts_under,12.5,steady,0.563,1.78,11.4,6.72
+2026-07-28,401857094,Natisha Hiedeman,Seattle Storm,Indiana Fever,pts_under,14.5,steady,0.563,1.78,13.4,6.67
+2026-07-28,401857094,Tyasha Harris,Indiana Fever,Seattle Storm,pts_under,9.5,ftdrought,0.589,1.7,8.3,5.14
+2026-07-28,401857094,Awa Fam,Seattle Storm,Indiana Fever,pts_under,10.5,ftdrought,0.589,1.7,9.3,5.27
+2026-07-28,401857095,Chelsea Gray,Las Vegas Aces,Portland Fire,pts_under,12.5,steady,0.563,1.78,11.8,4.45
+2026-07-28,401857095,Bridget Carleton,Portland Fire,Las Vegas Aces,pts_under,12.5,ftdrought,0.589,1.7,11.3,5.42
+2026-07-28,401857095,Megan DiLeo,Portland Fire,Las Vegas Aces,pts_under,13.5,steady,0.563,1.78,12.8,4.61
+2026-07-28,401857095,Carla Leite,Portland Fire,Las Vegas Aces,pts_under,15.5,steady,0.563,1.78,14.5,6.38
+2026-07-28,401857096,Dearica Hamby,Los Angeles Sparks,New York Liberty,pts_under,16.5,steady,0.563,1.78,15.9,3.5
+2026-07-28,401857096,Sabrina Ionescu,New York Liberty,Los Angeles Sparks,pts_under,18.5,steady,0.563,1.78,17.4,7.23
+2026-07-28,401857096,Rae Burrell,Los Angeles Sparks,New York Liberty,pts_under,16.5,steady,0.563,1.78,15.5,6.32
+2026-07-28,401857096,Sabrina Ionescu,New York Liberty,Los Angeles Sparks,ast_over,4.5,usgshock,0.591,1.69,4.9,1.78
+2026-07-28,401857097,Jordin Canada,Atlanta Dream,Dallas Wings,pts_under,9.5,steady,0.563,1.78,8.7,5.21
+2026-07-28,401857097,Azzi Fudd,Dallas Wings,Atlanta Dream,pts_under,12.5,ftdrought,0.589,1.7,11.4,4.92
+2026-07-28,401857098,Valeriane Ayayi,Phoenix Mercury,Golden State Valkyries,pts_under,9.5,declining+stingy,0.642,1.56,7.1,6.55
+2026-07-28,401857098,Valeriane Ayayi,Phoenix Mercury,Golden State Valkyries,pr_under,12.5,declining+cold+stingy,0.59,1.69,10.9,7.16
+2026-07-28,401857098,Valeriane Ayayi,Phoenix Mercury,Golden State Valkyries,pra_under,14.5,declining+cold+stingy,0.66,1.52,11.3,7.65
+2026-07-28,401857098,Natasha Mack,Phoenix Mercury,Golden State Valkyries,pts_under,9.5,declining+stingy,0.642,1.56,7.6,5.12
+2026-07-28,401857098,Natasha Mack,Phoenix Mercury,Golden State Valkyries,pr_under,15.5,declining+cold+stingy,0.59,1.69,14.1,6.26
+2026-07-28,401857098,Natasha Mack,Phoenix Mercury,Golden State Valkyries,pra_under,16.5,declining+cold+stingy,0.66,1.52,13.5,7.18
+2026-07-28,401857098,Natasha Mack,Phoenix Mercury,Golden State Valkyries,reb_under,7.5,declining+cold,0.58,1.72,6.9,3.16
+2026-07-28,401857098,Alyssa Thomas,Phoenix Mercury,Golden State Valkyries,pts_under,17.5,steady,0.563,1.78,16.5,6.33
+2026-07-28,401857098,Monique Akoa Makani,Phoenix Mercury,Golden State Valkyries,pts_under,9.5,ftdrought,0.589,1.7,8.3,5.52
