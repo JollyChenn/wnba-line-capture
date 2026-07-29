@@ -1546,3 +1546,41 @@ pick_date,game_id,player,team,opp,market,anchor,signals,fair_p,fair_odds,proj,sd
 2026-07-28,401857098,Natasha Mack,Phoenix Mercury,Golden State Valkyries,reb_under,7.5,declining+cold,0.58,1.72,6.9,3.16
 2026-07-28,401857098,Alyssa Thomas,Phoenix Mercury,Golden State Valkyries,pts_under,17.5,steady,0.563,1.78,16.5,6.33
 2026-07-28,401857098,Monique Akoa Makani,Phoenix Mercury,Golden State Valkyries,pts_under,9.5,ftdrought,0.589,1.7,8.3,5.52
+2026-07-29,401857097,Jordin Canada,Atlanta Dream,Dallas Wings,pts_under,9.5,steady,0.563,1.78,8.7,5.21
+2026-07-29,401857097,Azzi Fudd,Dallas Wings,Atlanta Dream,pts_under,12.5,ftdrought,0.589,1.7,11.4,4.92
+2026-07-29,401857098,Valeriane Ayayi,Phoenix Mercury,Golden State Valkyries,pts_under,9.5,declining+stingy,0.642,1.56,7.1,6.55
+2026-07-29,401857098,Valeriane Ayayi,Phoenix Mercury,Golden State Valkyries,pr_under,12.5,declining+cold+stingy,0.59,1.69,10.9,7.16
+2026-07-29,401857098,Valeriane Ayayi,Phoenix Mercury,Golden State Valkyries,pra_under,14.5,declining+cold+stingy,0.66,1.52,11.3,7.65
+2026-07-29,401857098,Natasha Mack,Phoenix Mercury,Golden State Valkyries,pts_under,9.5,declining+stingy,0.642,1.56,7.6,5.12
+2026-07-29,401857098,Natasha Mack,Phoenix Mercury,Golden State Valkyries,pr_under,15.5,declining+cold+stingy,0.59,1.69,14.1,6.26
+2026-07-29,401857098,Natasha Mack,Phoenix Mercury,Golden State Valkyries,pra_under,16.5,declining+cold+stingy,0.66,1.52,13.5,7.18
+2026-07-29,401857098,Natasha Mack,Phoenix Mercury,Golden State Valkyries,reb_under,7.5,declining+cold,0.58,1.72,6.9,3.16
+2026-07-29,401857098,Alyssa Thomas,Phoenix Mercury,Golden State Valkyries,pts_under,17.5,steady,0.563,1.78,16.5,6.33
+2026-07-29,401857098,Monique Akoa Makani,Phoenix Mercury,Golden State Valkyries,pts_under,9.5,ftdrought,0.589,1.7,8.3,5.52
+2026-07-29,401857099,Courtney Williams,Minnesota Lynx,Toronto Tempo,pts_under,11.5,declining+cold,0.684,1.46,8.1,7.18
+2026-07-29,401857099,Courtney Williams,Minnesota Lynx,Toronto Tempo,pr_under,16.5,declining+cold,0.59,1.69,14.7,8.01
+2026-07-29,401857099,Courtney Williams,Minnesota Lynx,Toronto Tempo,pa_under,18.5,declining+cold,0.61,1.64,16.4,7.43
+2026-07-29,401857099,Courtney Williams,Minnesota Lynx,Toronto Tempo,pra_under,23.5,declining+cold,0.641,1.56,20.7,7.71
+2026-07-29,401857099,Natasha Howard,Minnesota Lynx,Toronto Tempo,pra_under,23.5,declining+cold,0.641,1.56,21.8,4.72
+2026-07-29,401857099,Kayla McBride,Minnesota Lynx,Toronto Tempo,pts_under,23.5,steady,0.563,1.78,22.5,6.2
+2026-07-29,401857099,Julie Allemand,Toronto Tempo,Minnesota Lynx,pts_under,8.5,ftdrought,0.589,1.7,7.5,4.36
+2026-07-29,401857099,Olivia Miles,Minnesota Lynx,Toronto Tempo,pts_under,19.5,steady,0.563,1.78,18.3,7.78
+2026-07-29,401857099,Kiki Rice,Toronto Tempo,Minnesota Lynx,pts_under,12.5,steady,0.563,1.78,11.8,4.7
+2026-07-29,401857100,Aneesah Morrow,Connecticut Sun,Chicago Sky,ra_under,10.5,mins-dip+cold,0.61,1.64,8.8,6.11
+2026-07-29,401857100,Aneesah Morrow,Connecticut Sun,Chicago Sky,pra_under,22.5,mins-dip+cold,0.6,1.67,19.7,11.09
+2026-07-29,401857100,Aneesah Morrow,Connecticut Sun,Chicago Sky,reb_under,8.5,mins-dip+cold,0.58,1.72,7.4,5.36
+2026-07-29,401857100,Natasha Cloud,Chicago Sky,Connecticut Sun,pts_under,9.5,steady,0.563,1.78,8.8,4.42
+2026-07-29,401857100,Azura Stevens,Chicago Sky,Connecticut Sun,pts_under,11.5,steady,0.563,1.78,10.6,5.58
+2026-07-29,401857100,Kennedy Burke,Connecticut Sun,Chicago Sky,pts_under,8.5,ftdrought,0.589,1.7,7.3,5.13
+2026-07-29,401857100,Olivia Nelson-Ododa,Connecticut Sun,Chicago Sky,pts_under,11.5,steady,0.563,1.78,11.0,3.0
+2026-07-29,401857100,Kamilla Cardoso,Chicago Sky,Connecticut Sun,pts_under,13.5,steady,0.563,1.78,12.5,6.5
+2026-07-29,401857100,Sydney Taylor,Chicago Sky,Connecticut Sun,pts_under,17.5,steady,0.563,1.78,16.4,7.2
+2026-07-29,401857100,Leila Lacan,Connecticut Sun,Chicago Sky,pts_under,12.5,steady,0.563,1.78,11.6,5.63
+2026-07-29,401857101,Breanna Stewart,New York Liberty,Las Vegas Aces,pts_under,25.5,cold+stingy,0.626,1.6,22.7,8.64
+2026-07-29,401857101,Breanna Stewart,New York Liberty,Las Vegas Aces,pr_under,33.5,cold+stingy,0.59,1.69,31.6,8.2
+2026-07-29,401857101,Breanna Stewart,New York Liberty,Las Vegas Aces,pa_under,28.5,cold+stingy,0.61,1.64,26.1,8.45
+2026-07-29,401857101,Breanna Stewart,New York Liberty,Las Vegas Aces,pra_under,38.5,cold+stingy,0.621,1.61,35.9,8.36
+2026-07-29,401857101,Chelsea Gray,Las Vegas Aces,New York Liberty,pts_under,14.5,steady,0.563,1.78,13.8,4.6
+2026-07-29,401857101,Jonquel Jones,New York Liberty,Las Vegas Aces,pts_under,13.5,steady,0.563,1.78,12.9,3.95
+2026-07-29,401857101,A'ja Wilson,Las Vegas Aces,New York Liberty,pts_under,26.5,steady,0.563,1.78,25.2,8.1
+2026-07-29,401857101,Sabrina Ionescu,New York Liberty,Las Vegas Aces,pts_under,22.5,steady,0.563,1.78,21.3,7.3
