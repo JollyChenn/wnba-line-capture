@@ -2,7 +2,7 @@
 
 _Stingy-D threshold (trailing-10 allowed, bottom quartile): 87_
 
-_🩹 OUT/doubtful (excluded from ALL picks): Aaliyah Edwards, Aliyah Boston, Ashlon Jackson, Azura Stevens, Brittney Griner, Brittney Sykes, Cheyenne Parker-Tyus, Damiris Dantas, Dominique Malonga, Gabby Williams, Hailey Van Lith, Indya Nivar, Jovana Nogic, Kelsey Plum, Kierstan Bell, Leonie Fiebich, Marine Johannes, Nyara Sabally, Sarah Ashlee Barker, Satou Sabally, Skylar Diggins, Te-Hina Paopao_
+_🩹 OUT/doubtful (excluded from ALL picks): Aaliyah Edwards, Aliyah Boston, Azura Stevens, Brittney Griner, Brittney Sykes, Cheyenne Parker-Tyus, Damiris Dantas, Dominique Malonga, Gabby Williams, Indya Nivar, Jovana Nogic, Kelsey Plum, Kierstan Bell, Leonie Fiebich, Marine Johannes, Nyara Sabally, Sarah Ashlee Barker, Satou Sabally, Skylar Diggins, Te-Hina Paopao_
 
 ## 💰 REAL-MONEY — UNDER (cold/shrink + stingy · pts/PR/PA/PRA · flat 1u)
 
