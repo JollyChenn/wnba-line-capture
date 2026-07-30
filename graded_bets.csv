@@ -553,3 +553,5 @@ date,player,market,side,line,odds,tier,actual,result,pnl,odds_clv,line_clv,sharp
 20260728,Rae Burrell,pts,Over,14.5,1.8,THIN,24.0,WIN,0.8,0.0,0.0,,,flip_paper,2026-07-28
 20260728,Sabrina Ionescu,pts,Under,18.5,1.8,THIN,27.0,loss,-1.0,-0.122,-1.0,0.0,-0.066,newunder,2026-07-27
 20260728,Shakira Austin,pra,Over,27.5,1.8,STRONG,24.0,loss,-1.0,0.0,0.0,,,overshoot,2026-07-27
+20260729,Azzi Fudd,pts,Under,13.5,1.833,STRONG,20.0,loss,-1.0,0.0,1.0,,-0.062,newunder,2026-07-28
+20260729,Jordin Canada,pts,Under,11.5,1.87,STRONG,3.0,WIN,0.87,0.0,-1.0,,-0.077,newunder,2026-07-28
