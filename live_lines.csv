@@ -34574,3 +34574,883 @@ ts,teams,type,side,points,prices,alt
 2026-07-31T00:54:50Z,Chicago Sky|Connecticut Sun,total,,178.5,"-106,-126",1
 2026-07-31T00:54:50Z,Chicago Sky|Connecticut Sun,total,,179.0,"101,-136",1
 2026-07-31T00:54:50Z,Chicago Sky|Connecticut Sun,total,,179.5,"107,-146",1
+2026-07-31T00:56:07Z,Atlanta Dream|Seattle Storm,moneyline,,,"-800,552",0
+2026-07-31T00:56:07Z,Atlanta Dream|Seattle Storm,team_total,home,94.5,"-115,-109",0
+2026-07-31T00:56:07Z,Atlanta Dream|Seattle Storm,team_total,away,82.0,"-114,-110",0
+2026-07-31T00:56:07Z,Atlanta Dream|Seattle Storm,spread,,-12.5,"-110,-110",0
+2026-07-31T00:56:07Z,Atlanta Dream|Seattle Storm,spread,,-11.0,"-144,114",1
+2026-07-31T00:56:07Z,Atlanta Dream|Seattle Storm,spread,,-11.5,"-133,106",1
+2026-07-31T00:56:07Z,Atlanta Dream|Seattle Storm,spread,,-12.0,"-122,-103",1
+2026-07-31T00:56:07Z,Atlanta Dream|Seattle Storm,spread,,-13.0,"-102,-123",1
+2026-07-31T00:56:07Z,Atlanta Dream|Seattle Storm,spread,,-13.5,"106,-134",1
+2026-07-31T00:56:07Z,Atlanta Dream|Seattle Storm,spread,,-14.0,"115,-145",1
+2026-07-31T00:56:07Z,Atlanta Dream|Seattle Storm,total,,176.5,"-115,-109",0
+2026-07-31T00:56:07Z,Atlanta Dream|Seattle Storm,total,,175.0,"-137,105",1
+2026-07-31T00:56:07Z,Atlanta Dream|Seattle Storm,total,,175.5,"-129,-101",1
+2026-07-31T00:56:07Z,Atlanta Dream|Seattle Storm,total,,176.0,"-123,-106",1
+2026-07-31T00:56:07Z,Atlanta Dream|Seattle Storm,total,,177.0,"-111,-117",1
+2026-07-31T00:56:07Z,Atlanta Dream|Seattle Storm,total,,177.5,"-105,-123",1
+2026-07-31T00:56:07Z,Atlanta Dream|Seattle Storm,total,,178.0,"-100,-130",1
+2026-07-31T00:56:07Z,Toronto Tempo|Minnesota Lynx,moneyline,,,"701,-1481",0
+2026-07-31T00:56:07Z,Toronto Tempo|Minnesota Lynx,team_total,home,82.5,"-109,-121",0
+2026-07-31T00:56:07Z,Toronto Tempo|Minnesota Lynx,team_total,home,81.5,"-132,-100",1
+2026-07-31T00:56:07Z,Toronto Tempo|Minnesota Lynx,team_total,home,83.5,"111,-147",1
+2026-07-31T00:56:07Z,Toronto Tempo|Minnesota Lynx,team_total,away,95.5,"-111,-120",0
+2026-07-31T00:56:07Z,Toronto Tempo|Minnesota Lynx,team_total,away,94.5,"-137,104",1
+2026-07-31T00:56:07Z,Toronto Tempo|Minnesota Lynx,team_total,away,96.5,"112,-148",1
+2026-07-31T00:56:07Z,Toronto Tempo|Minnesota Lynx,spread,,13.0,"-119,-111",0
+2026-07-31T00:56:07Z,Toronto Tempo|Minnesota Lynx,spread,,14.5,"-160,117",1
+2026-07-31T00:56:07Z,Toronto Tempo|Minnesota Lynx,spread,,14.0,"-147,109",1
+2026-07-31T00:56:07Z,Toronto Tempo|Minnesota Lynx,spread,,13.5,"-131,-102",1
+2026-07-31T00:56:07Z,Toronto Tempo|Minnesota Lynx,spread,,12.5,"-108,-124",1
+2026-07-31T00:56:07Z,Toronto Tempo|Minnesota Lynx,spread,,12.0,"101,-137",1
+2026-07-31T00:56:07Z,Toronto Tempo|Minnesota Lynx,spread,,11.5,"109,-149",1
+2026-07-31T00:56:07Z,Toronto Tempo|Minnesota Lynx,total,,177.5,"-116,-114",0
+2026-07-31T00:56:07Z,Toronto Tempo|Minnesota Lynx,total,,176.0,"-144,106",1
+2026-07-31T00:56:07Z,Toronto Tempo|Minnesota Lynx,total,,176.5,"-133,-101",1
+2026-07-31T00:56:07Z,Toronto Tempo|Minnesota Lynx,total,,177.0,"-125,-107",1
+2026-07-31T00:56:07Z,Toronto Tempo|Minnesota Lynx,total,,178.0,"-109,-122",1
+2026-07-31T00:56:07Z,Toronto Tempo|Minnesota Lynx,total,,178.5,"-103,-130",1
+2026-07-31T00:56:07Z,Toronto Tempo|Minnesota Lynx,total,,179.0,"104,-141",1
+2026-07-31T00:56:07Z,Las Vegas Aces|New York Liberty,moneyline,,,"-179,152",0
+2026-07-31T00:56:07Z,Las Vegas Aces|New York Liberty,team_total,home,92.5,"-112,-108",0
+2026-07-31T00:56:07Z,Las Vegas Aces|New York Liberty,team_total,away,89.0,"-113,-107",0
+2026-07-31T00:56:07Z,Las Vegas Aces|New York Liberty,spread,,-4.0,"-107,-109",0
+2026-07-31T00:56:07Z,Las Vegas Aces|New York Liberty,spread,,-2.5,"-141,116",1
+2026-07-31T00:56:07Z,Las Vegas Aces|New York Liberty,spread,,-3.0,"-130,107",1
+2026-07-31T00:56:07Z,Las Vegas Aces|New York Liberty,spread,,-3.5,"-120,-101",1
+2026-07-31T00:56:07Z,Las Vegas Aces|New York Liberty,spread,,-4.5,"-100,-121",1
+2026-07-31T00:56:07Z,Las Vegas Aces|New York Liberty,spread,,-5.0,"109,-132",1
+2026-07-31T00:56:07Z,Las Vegas Aces|New York Liberty,spread,,-5.5,"117,-142",1
+2026-07-31T00:56:07Z,Las Vegas Aces|New York Liberty,total,,181.5,"-112,-108",0
+2026-07-31T00:56:07Z,Las Vegas Aces|New York Liberty,total,,180.0,"-136,108",1
+2026-07-31T00:56:07Z,Las Vegas Aces|New York Liberty,total,,180.5,"-129,103",1
+2026-07-31T00:56:07Z,Las Vegas Aces|New York Liberty,total,,181.0,"-121,-103",1
+2026-07-31T00:56:07Z,Las Vegas Aces|New York Liberty,total,,182.0,"-107,-117",1
+2026-07-31T00:56:07Z,Las Vegas Aces|New York Liberty,total,,182.5,"-101,-125",1
+2026-07-31T00:56:07Z,Las Vegas Aces|New York Liberty,total,,183.0,"105,-132",1
+2026-07-31T00:56:07Z,Washington Mystics|Dallas Wings,moneyline,,,"121,-147",0
+2026-07-31T00:56:07Z,Washington Mystics|Dallas Wings,team_total,home,83.5,"-114,-110",0
+2026-07-31T00:56:07Z,Washington Mystics|Dallas Wings,team_total,away,85.5,"-114,-110",0
+2026-07-31T00:56:07Z,Washington Mystics|Dallas Wings,spread,,2.5,"-109,-111",0
+2026-07-31T00:56:07Z,Washington Mystics|Dallas Wings,spread,,4.0,"-143,114",1
+2026-07-31T00:56:07Z,Washington Mystics|Dallas Wings,spread,,3.5,"-132,105",1
+2026-07-31T00:56:07Z,Washington Mystics|Dallas Wings,spread,,3.0,"-122,-103",1
+2026-07-31T00:56:07Z,Washington Mystics|Dallas Wings,spread,,2.0,"-102,-123",1
+2026-07-31T00:56:07Z,Washington Mystics|Dallas Wings,spread,,1.5,"105,-132",1
+2026-07-31T00:56:07Z,Washington Mystics|Dallas Wings,spread,,1.0,"111,-140",1
+2026-07-31T00:56:07Z,Washington Mystics|Dallas Wings,total,,169.0,"-112,-112",0
+2026-07-31T00:56:07Z,Washington Mystics|Dallas Wings,total,,167.5,"-132,101",1
+2026-07-31T00:56:07Z,Washington Mystics|Dallas Wings,total,,168.0,"-126,-103",1
+2026-07-31T00:56:07Z,Washington Mystics|Dallas Wings,total,,168.5,"-120,-109",1
+2026-07-31T00:56:07Z,Washington Mystics|Dallas Wings,total,,169.5,"-108,-121",1
+2026-07-31T00:56:07Z,Washington Mystics|Dallas Wings,total,,170.0,"-103,-127",1
+2026-07-31T00:56:07Z,Washington Mystics|Dallas Wings,total,,170.5,"102,-133",1
+2026-07-31T00:56:07Z,Portland Fire|Indiana Fever,moneyline,,,"236,-300",0
+2026-07-31T00:56:07Z,Portland Fire|Indiana Fever,team_total,home,90.5,"-112,-112",0
+2026-07-31T00:56:07Z,Portland Fire|Indiana Fever,team_total,away,97.0,"-116,-108",0
+2026-07-31T00:56:07Z,Portland Fire|Indiana Fever,spread,,7.5,"-111,-109",0
+2026-07-31T00:56:07Z,Portland Fire|Indiana Fever,spread,,9.0,"-146,116",1
+2026-07-31T00:56:07Z,Portland Fire|Indiana Fever,spread,,8.5,"-135,107",1
+2026-07-31T00:56:07Z,Portland Fire|Indiana Fever,spread,,8.0,"-124,-101",1
+2026-07-31T00:56:07Z,Portland Fire|Indiana Fever,spread,,7.0,"-103,-122",1
+2026-07-31T00:56:07Z,Portland Fire|Indiana Fever,spread,,6.5,"105,-132",1
+2026-07-31T00:56:07Z,Portland Fire|Indiana Fever,spread,,6.0,"114,-143",1
+2026-07-31T00:56:07Z,Portland Fire|Indiana Fever,total,,187.5,"-111,-113",0
+2026-07-31T00:56:07Z,Portland Fire|Indiana Fever,total,,186.0,"-133,102",1
+2026-07-31T00:56:07Z,Portland Fire|Indiana Fever,total,,186.5,"-126,-103",1
+2026-07-31T00:56:07Z,Portland Fire|Indiana Fever,total,,187.0,"-120,-109",1
+2026-07-31T00:56:07Z,Portland Fire|Indiana Fever,total,,188.0,"-108,-120",1
+2026-07-31T00:56:07Z,Portland Fire|Indiana Fever,total,,188.5,"-103,-126",1
+2026-07-31T00:56:07Z,Portland Fire|Indiana Fever,total,,189.0,"103,-134",1
+2026-07-31T00:56:07Z,Chicago Sky|Connecticut Sun,moneyline,,,"199,-279",0
+2026-07-31T00:56:07Z,Chicago Sky|Connecticut Sun,team_total,home,86.5,"-106,-124",0
+2026-07-31T00:56:07Z,Chicago Sky|Connecticut Sun,team_total,home,85.5,"-128,-103",1
+2026-07-31T00:56:07Z,Chicago Sky|Connecticut Sun,team_total,home,87.5,"113,-150",1
+2026-07-31T00:56:07Z,Chicago Sky|Connecticut Sun,team_total,away,91.5,"-125,-105",0
+2026-07-31T00:56:07Z,Chicago Sky|Connecticut Sun,team_total,away,90.5,"-155,117",1
+2026-07-31T00:56:07Z,Chicago Sky|Connecticut Sun,team_total,away,92.5,"-102,-130",1
+2026-07-31T00:56:07Z,Chicago Sky|Connecticut Sun,spread,,6.5,"-117,-113",0
+2026-07-31T00:56:07Z,Chicago Sky|Connecticut Sun,spread,,8.0,"-154,113",1
+2026-07-31T00:56:07Z,Chicago Sky|Connecticut Sun,spread,,7.5,"-139,103",1
+2026-07-31T00:56:07Z,Chicago Sky|Connecticut Sun,spread,,7.0,"-128,-104",1
+2026-07-31T00:56:07Z,Chicago Sky|Connecticut Sun,spread,,6.0,"-109,-123",1
+2026-07-31T00:56:07Z,Chicago Sky|Connecticut Sun,spread,,5.5,"-102,-133",1
+2026-07-31T00:56:07Z,Chicago Sky|Connecticut Sun,spread,,5.0,"106,-144",1
+2026-07-31T00:56:07Z,Chicago Sky|Connecticut Sun,total,,178.0,"-112,-118",0
+2026-07-31T00:56:07Z,Chicago Sky|Connecticut Sun,total,,176.5,"-138,102",1
+2026-07-31T00:56:07Z,Chicago Sky|Connecticut Sun,total,,177.0,"-129,-104",1
+2026-07-31T00:56:07Z,Chicago Sky|Connecticut Sun,total,,177.5,"-119,-112",1
+2026-07-31T00:56:07Z,Chicago Sky|Connecticut Sun,total,,178.5,"-106,-126",1
+2026-07-31T00:56:07Z,Chicago Sky|Connecticut Sun,total,,179.0,"101,-136",1
+2026-07-31T00:56:07Z,Chicago Sky|Connecticut Sun,total,,179.5,"107,-146",1
+2026-07-31T00:57:22Z,Atlanta Dream|Seattle Storm,moneyline,,,"-800,552",0
+2026-07-31T00:57:22Z,Atlanta Dream|Seattle Storm,team_total,home,94.5,"-115,-109",0
+2026-07-31T00:57:22Z,Atlanta Dream|Seattle Storm,team_total,away,82.0,"-114,-110",0
+2026-07-31T00:57:22Z,Atlanta Dream|Seattle Storm,spread,,-12.5,"-110,-110",0
+2026-07-31T00:57:22Z,Atlanta Dream|Seattle Storm,spread,,-11.0,"-144,114",1
+2026-07-31T00:57:22Z,Atlanta Dream|Seattle Storm,spread,,-11.5,"-133,106",1
+2026-07-31T00:57:22Z,Atlanta Dream|Seattle Storm,spread,,-12.0,"-122,-103",1
+2026-07-31T00:57:22Z,Atlanta Dream|Seattle Storm,spread,,-13.0,"-102,-123",1
+2026-07-31T00:57:22Z,Atlanta Dream|Seattle Storm,spread,,-13.5,"106,-134",1
+2026-07-31T00:57:22Z,Atlanta Dream|Seattle Storm,spread,,-14.0,"115,-145",1
+2026-07-31T00:57:22Z,Atlanta Dream|Seattle Storm,total,,176.5,"-115,-109",0
+2026-07-31T00:57:22Z,Atlanta Dream|Seattle Storm,total,,175.0,"-137,105",1
+2026-07-31T00:57:22Z,Atlanta Dream|Seattle Storm,total,,175.5,"-129,-101",1
+2026-07-31T00:57:22Z,Atlanta Dream|Seattle Storm,total,,176.0,"-123,-106",1
+2026-07-31T00:57:22Z,Atlanta Dream|Seattle Storm,total,,177.0,"-111,-117",1
+2026-07-31T00:57:22Z,Atlanta Dream|Seattle Storm,total,,177.5,"-105,-123",1
+2026-07-31T00:57:22Z,Atlanta Dream|Seattle Storm,total,,178.0,"-100,-130",1
+2026-07-31T00:57:22Z,Toronto Tempo|Minnesota Lynx,moneyline,,,"701,-1481",0
+2026-07-31T00:57:22Z,Toronto Tempo|Minnesota Lynx,team_total,home,82.5,"-109,-121",0
+2026-07-31T00:57:22Z,Toronto Tempo|Minnesota Lynx,team_total,home,81.5,"-132,-100",1
+2026-07-31T00:57:22Z,Toronto Tempo|Minnesota Lynx,team_total,home,83.5,"111,-147",1
+2026-07-31T00:57:22Z,Toronto Tempo|Minnesota Lynx,team_total,away,95.5,"-111,-120",0
+2026-07-31T00:57:22Z,Toronto Tempo|Minnesota Lynx,team_total,away,94.5,"-137,104",1
+2026-07-31T00:57:22Z,Toronto Tempo|Minnesota Lynx,team_total,away,96.5,"112,-148",1
+2026-07-31T00:57:22Z,Toronto Tempo|Minnesota Lynx,spread,,13.0,"-119,-111",0
+2026-07-31T00:57:22Z,Toronto Tempo|Minnesota Lynx,spread,,14.5,"-160,117",1
+2026-07-31T00:57:22Z,Toronto Tempo|Minnesota Lynx,spread,,14.0,"-147,109",1
+2026-07-31T00:57:22Z,Toronto Tempo|Minnesota Lynx,spread,,13.5,"-131,-102",1
+2026-07-31T00:57:22Z,Toronto Tempo|Minnesota Lynx,spread,,12.5,"-108,-124",1
+2026-07-31T00:57:22Z,Toronto Tempo|Minnesota Lynx,spread,,12.0,"101,-137",1
+2026-07-31T00:57:22Z,Toronto Tempo|Minnesota Lynx,spread,,11.5,"109,-149",1
+2026-07-31T00:57:22Z,Toronto Tempo|Minnesota Lynx,total,,177.5,"-116,-114",0
+2026-07-31T00:57:22Z,Toronto Tempo|Minnesota Lynx,total,,176.0,"-144,106",1
+2026-07-31T00:57:22Z,Toronto Tempo|Minnesota Lynx,total,,176.5,"-133,-101",1
+2026-07-31T00:57:22Z,Toronto Tempo|Minnesota Lynx,total,,177.0,"-125,-107",1
+2026-07-31T00:57:22Z,Toronto Tempo|Minnesota Lynx,total,,178.0,"-109,-122",1
+2026-07-31T00:57:22Z,Toronto Tempo|Minnesota Lynx,total,,178.5,"-103,-130",1
+2026-07-31T00:57:22Z,Toronto Tempo|Minnesota Lynx,total,,179.0,"104,-141",1
+2026-07-31T00:57:22Z,Las Vegas Aces|New York Liberty,moneyline,,,"-179,152",0
+2026-07-31T00:57:22Z,Las Vegas Aces|New York Liberty,team_total,home,92.5,"-112,-108",0
+2026-07-31T00:57:22Z,Las Vegas Aces|New York Liberty,team_total,away,89.0,"-113,-107",0
+2026-07-31T00:57:22Z,Las Vegas Aces|New York Liberty,spread,,-4.0,"-107,-109",0
+2026-07-31T00:57:22Z,Las Vegas Aces|New York Liberty,spread,,-2.5,"-141,116",1
+2026-07-31T00:57:22Z,Las Vegas Aces|New York Liberty,spread,,-3.0,"-130,107",1
+2026-07-31T00:57:22Z,Las Vegas Aces|New York Liberty,spread,,-3.5,"-120,-101",1
+2026-07-31T00:57:22Z,Las Vegas Aces|New York Liberty,spread,,-4.5,"-100,-121",1
+2026-07-31T00:57:22Z,Las Vegas Aces|New York Liberty,spread,,-5.0,"109,-132",1
+2026-07-31T00:57:22Z,Las Vegas Aces|New York Liberty,spread,,-5.5,"117,-142",1
+2026-07-31T00:57:22Z,Las Vegas Aces|New York Liberty,total,,181.5,"-112,-108",0
+2026-07-31T00:57:22Z,Las Vegas Aces|New York Liberty,total,,180.0,"-136,108",1
+2026-07-31T00:57:22Z,Las Vegas Aces|New York Liberty,total,,180.5,"-129,103",1
+2026-07-31T00:57:22Z,Las Vegas Aces|New York Liberty,total,,181.0,"-121,-103",1
+2026-07-31T00:57:22Z,Las Vegas Aces|New York Liberty,total,,182.0,"-107,-117",1
+2026-07-31T00:57:22Z,Las Vegas Aces|New York Liberty,total,,182.5,"-101,-125",1
+2026-07-31T00:57:22Z,Las Vegas Aces|New York Liberty,total,,183.0,"105,-132",1
+2026-07-31T00:57:22Z,Washington Mystics|Dallas Wings,moneyline,,,"121,-147",0
+2026-07-31T00:57:22Z,Washington Mystics|Dallas Wings,team_total,home,83.5,"-114,-110",0
+2026-07-31T00:57:22Z,Washington Mystics|Dallas Wings,team_total,away,85.5,"-114,-110",0
+2026-07-31T00:57:22Z,Washington Mystics|Dallas Wings,spread,,2.5,"-109,-111",0
+2026-07-31T00:57:22Z,Washington Mystics|Dallas Wings,spread,,4.0,"-143,114",1
+2026-07-31T00:57:22Z,Washington Mystics|Dallas Wings,spread,,3.5,"-132,105",1
+2026-07-31T00:57:22Z,Washington Mystics|Dallas Wings,spread,,3.0,"-122,-103",1
+2026-07-31T00:57:22Z,Washington Mystics|Dallas Wings,spread,,2.0,"-102,-123",1
+2026-07-31T00:57:22Z,Washington Mystics|Dallas Wings,spread,,1.5,"105,-132",1
+2026-07-31T00:57:22Z,Washington Mystics|Dallas Wings,spread,,1.0,"111,-140",1
+2026-07-31T00:57:22Z,Washington Mystics|Dallas Wings,total,,169.0,"-112,-112",0
+2026-07-31T00:57:22Z,Washington Mystics|Dallas Wings,total,,167.5,"-132,101",1
+2026-07-31T00:57:22Z,Washington Mystics|Dallas Wings,total,,168.0,"-126,-103",1
+2026-07-31T00:57:22Z,Washington Mystics|Dallas Wings,total,,168.5,"-120,-109",1
+2026-07-31T00:57:22Z,Washington Mystics|Dallas Wings,total,,169.5,"-108,-121",1
+2026-07-31T00:57:22Z,Washington Mystics|Dallas Wings,total,,170.0,"-103,-127",1
+2026-07-31T00:57:22Z,Washington Mystics|Dallas Wings,total,,170.5,"102,-133",1
+2026-07-31T00:57:22Z,Portland Fire|Indiana Fever,moneyline,,,"236,-300",0
+2026-07-31T00:57:22Z,Portland Fire|Indiana Fever,team_total,home,90.5,"-112,-112",0
+2026-07-31T00:57:22Z,Portland Fire|Indiana Fever,team_total,away,97.0,"-116,-108",0
+2026-07-31T00:57:22Z,Portland Fire|Indiana Fever,spread,,7.5,"-111,-109",0
+2026-07-31T00:57:22Z,Portland Fire|Indiana Fever,spread,,9.0,"-146,116",1
+2026-07-31T00:57:22Z,Portland Fire|Indiana Fever,spread,,8.5,"-135,107",1
+2026-07-31T00:57:22Z,Portland Fire|Indiana Fever,spread,,8.0,"-124,-101",1
+2026-07-31T00:57:22Z,Portland Fire|Indiana Fever,spread,,7.0,"-103,-122",1
+2026-07-31T00:57:22Z,Portland Fire|Indiana Fever,spread,,6.5,"105,-132",1
+2026-07-31T00:57:22Z,Portland Fire|Indiana Fever,spread,,6.0,"114,-143",1
+2026-07-31T00:57:22Z,Portland Fire|Indiana Fever,total,,187.5,"-111,-113",0
+2026-07-31T00:57:22Z,Portland Fire|Indiana Fever,total,,186.0,"-133,102",1
+2026-07-31T00:57:22Z,Portland Fire|Indiana Fever,total,,186.5,"-126,-103",1
+2026-07-31T00:57:22Z,Portland Fire|Indiana Fever,total,,187.0,"-120,-109",1
+2026-07-31T00:57:22Z,Portland Fire|Indiana Fever,total,,188.0,"-108,-120",1
+2026-07-31T00:57:22Z,Portland Fire|Indiana Fever,total,,188.5,"-103,-126",1
+2026-07-31T00:57:22Z,Portland Fire|Indiana Fever,total,,189.0,"103,-134",1
+2026-07-31T00:57:22Z,Chicago Sky|Connecticut Sun,moneyline,,,"199,-279",0
+2026-07-31T00:57:22Z,Chicago Sky|Connecticut Sun,team_total,home,86.5,"-106,-124",0
+2026-07-31T00:57:22Z,Chicago Sky|Connecticut Sun,team_total,home,85.5,"-128,-103",1
+2026-07-31T00:57:22Z,Chicago Sky|Connecticut Sun,team_total,home,87.5,"113,-150",1
+2026-07-31T00:57:22Z,Chicago Sky|Connecticut Sun,team_total,away,91.5,"-125,-105",0
+2026-07-31T00:57:22Z,Chicago Sky|Connecticut Sun,team_total,away,90.5,"-155,117",1
+2026-07-31T00:57:22Z,Chicago Sky|Connecticut Sun,team_total,away,92.5,"-102,-130",1
+2026-07-31T00:57:22Z,Chicago Sky|Connecticut Sun,spread,,6.5,"-117,-113",0
+2026-07-31T00:57:22Z,Chicago Sky|Connecticut Sun,spread,,8.0,"-154,113",1
+2026-07-31T00:57:22Z,Chicago Sky|Connecticut Sun,spread,,7.5,"-139,103",1
+2026-07-31T00:57:22Z,Chicago Sky|Connecticut Sun,spread,,7.0,"-128,-104",1
+2026-07-31T00:57:22Z,Chicago Sky|Connecticut Sun,spread,,6.0,"-109,-123",1
+2026-07-31T00:57:22Z,Chicago Sky|Connecticut Sun,spread,,5.5,"-102,-133",1
+2026-07-31T00:57:22Z,Chicago Sky|Connecticut Sun,spread,,5.0,"106,-144",1
+2026-07-31T00:57:22Z,Chicago Sky|Connecticut Sun,total,,178.0,"-112,-118",0
+2026-07-31T00:57:22Z,Chicago Sky|Connecticut Sun,total,,176.5,"-138,102",1
+2026-07-31T00:57:22Z,Chicago Sky|Connecticut Sun,total,,177.0,"-129,-104",1
+2026-07-31T00:57:22Z,Chicago Sky|Connecticut Sun,total,,177.5,"-119,-112",1
+2026-07-31T00:57:22Z,Chicago Sky|Connecticut Sun,total,,178.5,"-106,-126",1
+2026-07-31T00:57:22Z,Chicago Sky|Connecticut Sun,total,,179.0,"101,-136",1
+2026-07-31T00:57:22Z,Chicago Sky|Connecticut Sun,total,,179.5,"107,-146",1
+2026-07-31T00:58:37Z,Atlanta Dream|Seattle Storm,moneyline,,,"-800,552",0
+2026-07-31T00:58:37Z,Atlanta Dream|Seattle Storm,team_total,home,94.5,"-115,-109",0
+2026-07-31T00:58:37Z,Atlanta Dream|Seattle Storm,team_total,away,82.0,"-114,-110",0
+2026-07-31T00:58:37Z,Atlanta Dream|Seattle Storm,spread,,-12.5,"-110,-110",0
+2026-07-31T00:58:37Z,Atlanta Dream|Seattle Storm,spread,,-11.0,"-144,114",1
+2026-07-31T00:58:37Z,Atlanta Dream|Seattle Storm,spread,,-11.5,"-133,106",1
+2026-07-31T00:58:37Z,Atlanta Dream|Seattle Storm,spread,,-12.0,"-122,-103",1
+2026-07-31T00:58:37Z,Atlanta Dream|Seattle Storm,spread,,-13.0,"-102,-123",1
+2026-07-31T00:58:37Z,Atlanta Dream|Seattle Storm,spread,,-13.5,"106,-134",1
+2026-07-31T00:58:37Z,Atlanta Dream|Seattle Storm,spread,,-14.0,"115,-145",1
+2026-07-31T00:58:37Z,Atlanta Dream|Seattle Storm,total,,176.5,"-115,-109",0
+2026-07-31T00:58:37Z,Atlanta Dream|Seattle Storm,total,,175.0,"-137,105",1
+2026-07-31T00:58:37Z,Atlanta Dream|Seattle Storm,total,,175.5,"-129,-101",1
+2026-07-31T00:58:37Z,Atlanta Dream|Seattle Storm,total,,176.0,"-123,-106",1
+2026-07-31T00:58:37Z,Atlanta Dream|Seattle Storm,total,,177.0,"-111,-117",1
+2026-07-31T00:58:37Z,Atlanta Dream|Seattle Storm,total,,177.5,"-105,-123",1
+2026-07-31T00:58:37Z,Atlanta Dream|Seattle Storm,total,,178.0,"-100,-130",1
+2026-07-31T00:58:37Z,Toronto Tempo|Minnesota Lynx,moneyline,,,"701,-1481",0
+2026-07-31T00:58:37Z,Toronto Tempo|Minnesota Lynx,team_total,home,82.5,"-109,-121",0
+2026-07-31T00:58:37Z,Toronto Tempo|Minnesota Lynx,team_total,home,81.5,"-132,-100",1
+2026-07-31T00:58:37Z,Toronto Tempo|Minnesota Lynx,team_total,home,83.5,"111,-147",1
+2026-07-31T00:58:37Z,Toronto Tempo|Minnesota Lynx,team_total,away,95.5,"-111,-120",0
+2026-07-31T00:58:37Z,Toronto Tempo|Minnesota Lynx,team_total,away,94.5,"-137,104",1
+2026-07-31T00:58:37Z,Toronto Tempo|Minnesota Lynx,team_total,away,96.5,"112,-148",1
+2026-07-31T00:58:37Z,Toronto Tempo|Minnesota Lynx,spread,,13.0,"-119,-111",0
+2026-07-31T00:58:37Z,Toronto Tempo|Minnesota Lynx,spread,,14.5,"-160,117",1
+2026-07-31T00:58:37Z,Toronto Tempo|Minnesota Lynx,spread,,14.0,"-147,109",1
+2026-07-31T00:58:37Z,Toronto Tempo|Minnesota Lynx,spread,,13.5,"-131,-102",1
+2026-07-31T00:58:37Z,Toronto Tempo|Minnesota Lynx,spread,,12.5,"-108,-124",1
+2026-07-31T00:58:37Z,Toronto Tempo|Minnesota Lynx,spread,,12.0,"101,-137",1
+2026-07-31T00:58:37Z,Toronto Tempo|Minnesota Lynx,spread,,11.5,"109,-149",1
+2026-07-31T00:58:37Z,Toronto Tempo|Minnesota Lynx,total,,177.5,"-116,-114",0
+2026-07-31T00:58:37Z,Toronto Tempo|Minnesota Lynx,total,,176.0,"-144,106",1
+2026-07-31T00:58:37Z,Toronto Tempo|Minnesota Lynx,total,,176.5,"-133,-101",1
+2026-07-31T00:58:37Z,Toronto Tempo|Minnesota Lynx,total,,177.0,"-125,-107",1
+2026-07-31T00:58:37Z,Toronto Tempo|Minnesota Lynx,total,,178.0,"-109,-122",1
+2026-07-31T00:58:37Z,Toronto Tempo|Minnesota Lynx,total,,178.5,"-103,-130",1
+2026-07-31T00:58:37Z,Toronto Tempo|Minnesota Lynx,total,,179.0,"104,-141",1
+2026-07-31T00:58:37Z,Las Vegas Aces|New York Liberty,moneyline,,,"-179,152",0
+2026-07-31T00:58:37Z,Las Vegas Aces|New York Liberty,team_total,home,92.5,"-112,-108",0
+2026-07-31T00:58:37Z,Las Vegas Aces|New York Liberty,team_total,away,89.0,"-113,-107",0
+2026-07-31T00:58:37Z,Las Vegas Aces|New York Liberty,spread,,-4.0,"-107,-109",0
+2026-07-31T00:58:37Z,Las Vegas Aces|New York Liberty,spread,,-2.5,"-141,116",1
+2026-07-31T00:58:37Z,Las Vegas Aces|New York Liberty,spread,,-3.0,"-130,107",1
+2026-07-31T00:58:37Z,Las Vegas Aces|New York Liberty,spread,,-3.5,"-120,-101",1
+2026-07-31T00:58:37Z,Las Vegas Aces|New York Liberty,spread,,-4.5,"-100,-121",1
+2026-07-31T00:58:37Z,Las Vegas Aces|New York Liberty,spread,,-5.0,"109,-132",1
+2026-07-31T00:58:37Z,Las Vegas Aces|New York Liberty,spread,,-5.5,"117,-142",1
+2026-07-31T00:58:37Z,Las Vegas Aces|New York Liberty,total,,181.5,"-112,-108",0
+2026-07-31T00:58:37Z,Las Vegas Aces|New York Liberty,total,,180.0,"-136,108",1
+2026-07-31T00:58:37Z,Las Vegas Aces|New York Liberty,total,,180.5,"-129,103",1
+2026-07-31T00:58:37Z,Las Vegas Aces|New York Liberty,total,,181.0,"-121,-103",1
+2026-07-31T00:58:37Z,Las Vegas Aces|New York Liberty,total,,182.0,"-107,-117",1
+2026-07-31T00:58:37Z,Las Vegas Aces|New York Liberty,total,,182.5,"-101,-125",1
+2026-07-31T00:58:37Z,Las Vegas Aces|New York Liberty,total,,183.0,"105,-132",1
+2026-07-31T00:58:37Z,Washington Mystics|Dallas Wings,moneyline,,,"121,-147",0
+2026-07-31T00:58:37Z,Washington Mystics|Dallas Wings,team_total,home,83.5,"-114,-110",0
+2026-07-31T00:58:37Z,Washington Mystics|Dallas Wings,team_total,away,85.5,"-114,-110",0
+2026-07-31T00:58:37Z,Washington Mystics|Dallas Wings,spread,,2.5,"-109,-111",0
+2026-07-31T00:58:37Z,Washington Mystics|Dallas Wings,spread,,4.0,"-143,114",1
+2026-07-31T00:58:37Z,Washington Mystics|Dallas Wings,spread,,3.5,"-132,105",1
+2026-07-31T00:58:37Z,Washington Mystics|Dallas Wings,spread,,3.0,"-122,-103",1
+2026-07-31T00:58:37Z,Washington Mystics|Dallas Wings,spread,,2.0,"-102,-123",1
+2026-07-31T00:58:37Z,Washington Mystics|Dallas Wings,spread,,1.5,"105,-132",1
+2026-07-31T00:58:37Z,Washington Mystics|Dallas Wings,spread,,1.0,"111,-140",1
+2026-07-31T00:58:37Z,Washington Mystics|Dallas Wings,total,,169.0,"-112,-112",0
+2026-07-31T00:58:37Z,Washington Mystics|Dallas Wings,total,,167.5,"-132,101",1
+2026-07-31T00:58:37Z,Washington Mystics|Dallas Wings,total,,168.0,"-126,-103",1
+2026-07-31T00:58:37Z,Washington Mystics|Dallas Wings,total,,168.5,"-120,-109",1
+2026-07-31T00:58:37Z,Washington Mystics|Dallas Wings,total,,169.5,"-108,-121",1
+2026-07-31T00:58:37Z,Washington Mystics|Dallas Wings,total,,170.0,"-103,-127",1
+2026-07-31T00:58:37Z,Washington Mystics|Dallas Wings,total,,170.5,"102,-133",1
+2026-07-31T00:58:37Z,Portland Fire|Indiana Fever,moneyline,,,"236,-300",0
+2026-07-31T00:58:37Z,Portland Fire|Indiana Fever,team_total,home,90.5,"-112,-112",0
+2026-07-31T00:58:37Z,Portland Fire|Indiana Fever,team_total,away,97.0,"-116,-108",0
+2026-07-31T00:58:37Z,Portland Fire|Indiana Fever,spread,,7.5,"-111,-109",0
+2026-07-31T00:58:37Z,Portland Fire|Indiana Fever,spread,,9.0,"-146,116",1
+2026-07-31T00:58:37Z,Portland Fire|Indiana Fever,spread,,8.5,"-135,107",1
+2026-07-31T00:58:37Z,Portland Fire|Indiana Fever,spread,,8.0,"-124,-101",1
+2026-07-31T00:58:37Z,Portland Fire|Indiana Fever,spread,,7.0,"-103,-122",1
+2026-07-31T00:58:37Z,Portland Fire|Indiana Fever,spread,,6.5,"105,-132",1
+2026-07-31T00:58:37Z,Portland Fire|Indiana Fever,spread,,6.0,"114,-143",1
+2026-07-31T00:58:37Z,Portland Fire|Indiana Fever,total,,187.5,"-111,-113",0
+2026-07-31T00:58:37Z,Portland Fire|Indiana Fever,total,,186.0,"-133,102",1
+2026-07-31T00:58:37Z,Portland Fire|Indiana Fever,total,,186.5,"-126,-103",1
+2026-07-31T00:58:37Z,Portland Fire|Indiana Fever,total,,187.0,"-120,-109",1
+2026-07-31T00:58:37Z,Portland Fire|Indiana Fever,total,,188.0,"-108,-120",1
+2026-07-31T00:58:37Z,Portland Fire|Indiana Fever,total,,188.5,"-103,-126",1
+2026-07-31T00:58:37Z,Portland Fire|Indiana Fever,total,,189.0,"103,-134",1
+2026-07-31T00:58:37Z,Chicago Sky|Connecticut Sun,moneyline,,,"199,-279",0
+2026-07-31T00:58:37Z,Chicago Sky|Connecticut Sun,team_total,home,86.5,"-106,-124",0
+2026-07-31T00:58:37Z,Chicago Sky|Connecticut Sun,team_total,home,85.5,"-128,-103",1
+2026-07-31T00:58:37Z,Chicago Sky|Connecticut Sun,team_total,home,87.5,"113,-150",1
+2026-07-31T00:58:37Z,Chicago Sky|Connecticut Sun,team_total,away,91.5,"-125,-105",0
+2026-07-31T00:58:37Z,Chicago Sky|Connecticut Sun,team_total,away,90.5,"-155,117",1
+2026-07-31T00:58:37Z,Chicago Sky|Connecticut Sun,team_total,away,92.5,"-102,-130",1
+2026-07-31T00:58:37Z,Chicago Sky|Connecticut Sun,spread,,6.5,"-117,-113",0
+2026-07-31T00:58:37Z,Chicago Sky|Connecticut Sun,spread,,8.0,"-154,113",1
+2026-07-31T00:58:37Z,Chicago Sky|Connecticut Sun,spread,,7.5,"-139,103",1
+2026-07-31T00:58:37Z,Chicago Sky|Connecticut Sun,spread,,7.0,"-128,-104",1
+2026-07-31T00:58:37Z,Chicago Sky|Connecticut Sun,spread,,6.0,"-109,-123",1
+2026-07-31T00:58:37Z,Chicago Sky|Connecticut Sun,spread,,5.5,"-102,-133",1
+2026-07-31T00:58:37Z,Chicago Sky|Connecticut Sun,spread,,5.0,"106,-144",1
+2026-07-31T00:58:37Z,Chicago Sky|Connecticut Sun,total,,178.0,"-112,-118",0
+2026-07-31T00:58:37Z,Chicago Sky|Connecticut Sun,total,,176.5,"-138,102",1
+2026-07-31T00:58:37Z,Chicago Sky|Connecticut Sun,total,,177.0,"-129,-104",1
+2026-07-31T00:58:37Z,Chicago Sky|Connecticut Sun,total,,177.5,"-119,-112",1
+2026-07-31T00:58:37Z,Chicago Sky|Connecticut Sun,total,,178.5,"-106,-126",1
+2026-07-31T00:58:37Z,Chicago Sky|Connecticut Sun,total,,179.0,"101,-136",1
+2026-07-31T00:58:37Z,Chicago Sky|Connecticut Sun,total,,179.5,"107,-146",1
+2026-07-31T00:59:52Z,Atlanta Dream|Seattle Storm,moneyline,,,"-800,552",0
+2026-07-31T00:59:52Z,Atlanta Dream|Seattle Storm,team_total,home,94.5,"-115,-109",0
+2026-07-31T00:59:52Z,Atlanta Dream|Seattle Storm,team_total,away,82.0,"-114,-110",0
+2026-07-31T00:59:52Z,Atlanta Dream|Seattle Storm,spread,,-12.5,"-110,-110",0
+2026-07-31T00:59:52Z,Atlanta Dream|Seattle Storm,spread,,-11.0,"-144,114",1
+2026-07-31T00:59:52Z,Atlanta Dream|Seattle Storm,spread,,-11.5,"-133,106",1
+2026-07-31T00:59:52Z,Atlanta Dream|Seattle Storm,spread,,-12.0,"-122,-103",1
+2026-07-31T00:59:52Z,Atlanta Dream|Seattle Storm,spread,,-13.0,"-102,-123",1
+2026-07-31T00:59:52Z,Atlanta Dream|Seattle Storm,spread,,-13.5,"106,-134",1
+2026-07-31T00:59:52Z,Atlanta Dream|Seattle Storm,spread,,-14.0,"115,-145",1
+2026-07-31T00:59:52Z,Atlanta Dream|Seattle Storm,total,,176.5,"-115,-109",0
+2026-07-31T00:59:52Z,Atlanta Dream|Seattle Storm,total,,175.0,"-137,105",1
+2026-07-31T00:59:52Z,Atlanta Dream|Seattle Storm,total,,175.5,"-129,-101",1
+2026-07-31T00:59:52Z,Atlanta Dream|Seattle Storm,total,,176.0,"-123,-106",1
+2026-07-31T00:59:52Z,Atlanta Dream|Seattle Storm,total,,177.0,"-111,-117",1
+2026-07-31T00:59:52Z,Atlanta Dream|Seattle Storm,total,,177.5,"-105,-123",1
+2026-07-31T00:59:52Z,Atlanta Dream|Seattle Storm,total,,178.0,"-100,-130",1
+2026-07-31T00:59:52Z,Toronto Tempo|Minnesota Lynx,moneyline,,,"701,-1481",0
+2026-07-31T00:59:52Z,Toronto Tempo|Minnesota Lynx,team_total,home,82.5,"-109,-121",0
+2026-07-31T00:59:52Z,Toronto Tempo|Minnesota Lynx,team_total,home,81.5,"-132,-100",1
+2026-07-31T00:59:52Z,Toronto Tempo|Minnesota Lynx,team_total,home,83.5,"111,-147",1
+2026-07-31T00:59:52Z,Toronto Tempo|Minnesota Lynx,team_total,away,95.5,"-111,-120",0
+2026-07-31T00:59:52Z,Toronto Tempo|Minnesota Lynx,team_total,away,94.5,"-137,104",1
+2026-07-31T00:59:52Z,Toronto Tempo|Minnesota Lynx,team_total,away,96.5,"112,-148",1
+2026-07-31T00:59:52Z,Toronto Tempo|Minnesota Lynx,spread,,13.0,"-119,-111",0
+2026-07-31T00:59:52Z,Toronto Tempo|Minnesota Lynx,spread,,14.5,"-160,117",1
+2026-07-31T00:59:52Z,Toronto Tempo|Minnesota Lynx,spread,,14.0,"-147,109",1
+2026-07-31T00:59:52Z,Toronto Tempo|Minnesota Lynx,spread,,13.5,"-131,-102",1
+2026-07-31T00:59:52Z,Toronto Tempo|Minnesota Lynx,spread,,12.5,"-108,-124",1
+2026-07-31T00:59:52Z,Toronto Tempo|Minnesota Lynx,spread,,12.0,"101,-137",1
+2026-07-31T00:59:52Z,Toronto Tempo|Minnesota Lynx,spread,,11.5,"109,-149",1
+2026-07-31T00:59:52Z,Toronto Tempo|Minnesota Lynx,total,,177.5,"-116,-114",0
+2026-07-31T00:59:52Z,Toronto Tempo|Minnesota Lynx,total,,176.0,"-144,106",1
+2026-07-31T00:59:52Z,Toronto Tempo|Minnesota Lynx,total,,176.5,"-133,-101",1
+2026-07-31T00:59:52Z,Toronto Tempo|Minnesota Lynx,total,,177.0,"-125,-107",1
+2026-07-31T00:59:52Z,Toronto Tempo|Minnesota Lynx,total,,178.0,"-109,-122",1
+2026-07-31T00:59:52Z,Toronto Tempo|Minnesota Lynx,total,,178.5,"-103,-130",1
+2026-07-31T00:59:52Z,Toronto Tempo|Minnesota Lynx,total,,179.0,"104,-141",1
+2026-07-31T00:59:52Z,Las Vegas Aces|New York Liberty,moneyline,,,"-179,152",0
+2026-07-31T00:59:52Z,Las Vegas Aces|New York Liberty,team_total,home,92.5,"-112,-108",0
+2026-07-31T00:59:52Z,Las Vegas Aces|New York Liberty,team_total,away,89.0,"-113,-107",0
+2026-07-31T00:59:52Z,Las Vegas Aces|New York Liberty,spread,,-4.0,"-107,-109",0
+2026-07-31T00:59:52Z,Las Vegas Aces|New York Liberty,spread,,-2.5,"-141,116",1
+2026-07-31T00:59:52Z,Las Vegas Aces|New York Liberty,spread,,-3.0,"-130,107",1
+2026-07-31T00:59:52Z,Las Vegas Aces|New York Liberty,spread,,-3.5,"-120,-101",1
+2026-07-31T00:59:52Z,Las Vegas Aces|New York Liberty,spread,,-4.5,"-100,-121",1
+2026-07-31T00:59:52Z,Las Vegas Aces|New York Liberty,spread,,-5.0,"109,-132",1
+2026-07-31T00:59:52Z,Las Vegas Aces|New York Liberty,spread,,-5.5,"117,-142",1
+2026-07-31T00:59:52Z,Las Vegas Aces|New York Liberty,total,,181.5,"-112,-108",0
+2026-07-31T00:59:52Z,Las Vegas Aces|New York Liberty,total,,180.0,"-136,108",1
+2026-07-31T00:59:52Z,Las Vegas Aces|New York Liberty,total,,180.5,"-129,103",1
+2026-07-31T00:59:52Z,Las Vegas Aces|New York Liberty,total,,181.0,"-121,-103",1
+2026-07-31T00:59:52Z,Las Vegas Aces|New York Liberty,total,,182.0,"-107,-117",1
+2026-07-31T00:59:52Z,Las Vegas Aces|New York Liberty,total,,182.5,"-101,-125",1
+2026-07-31T00:59:52Z,Las Vegas Aces|New York Liberty,total,,183.0,"105,-132",1
+2026-07-31T00:59:52Z,Washington Mystics|Dallas Wings,moneyline,,,"121,-147",0
+2026-07-31T00:59:52Z,Washington Mystics|Dallas Wings,team_total,home,83.5,"-114,-110",0
+2026-07-31T00:59:52Z,Washington Mystics|Dallas Wings,team_total,away,85.5,"-114,-110",0
+2026-07-31T00:59:52Z,Washington Mystics|Dallas Wings,spread,,2.5,"-109,-111",0
+2026-07-31T00:59:52Z,Washington Mystics|Dallas Wings,spread,,4.0,"-143,114",1
+2026-07-31T00:59:52Z,Washington Mystics|Dallas Wings,spread,,3.5,"-132,105",1
+2026-07-31T00:59:52Z,Washington Mystics|Dallas Wings,spread,,3.0,"-122,-103",1
+2026-07-31T00:59:52Z,Washington Mystics|Dallas Wings,spread,,2.0,"-102,-123",1
+2026-07-31T00:59:52Z,Washington Mystics|Dallas Wings,spread,,1.5,"105,-132",1
+2026-07-31T00:59:52Z,Washington Mystics|Dallas Wings,spread,,1.0,"111,-140",1
+2026-07-31T00:59:52Z,Washington Mystics|Dallas Wings,total,,169.0,"-112,-112",0
+2026-07-31T00:59:52Z,Washington Mystics|Dallas Wings,total,,167.5,"-132,101",1
+2026-07-31T00:59:52Z,Washington Mystics|Dallas Wings,total,,168.0,"-126,-103",1
+2026-07-31T00:59:52Z,Washington Mystics|Dallas Wings,total,,168.5,"-120,-109",1
+2026-07-31T00:59:52Z,Washington Mystics|Dallas Wings,total,,169.5,"-108,-121",1
+2026-07-31T00:59:52Z,Washington Mystics|Dallas Wings,total,,170.0,"-103,-127",1
+2026-07-31T00:59:52Z,Washington Mystics|Dallas Wings,total,,170.5,"102,-133",1
+2026-07-31T00:59:52Z,Portland Fire|Indiana Fever,moneyline,,,"236,-300",0
+2026-07-31T00:59:52Z,Portland Fire|Indiana Fever,team_total,home,90.5,"-112,-112",0
+2026-07-31T00:59:52Z,Portland Fire|Indiana Fever,team_total,away,97.0,"-116,-108",0
+2026-07-31T00:59:52Z,Portland Fire|Indiana Fever,spread,,7.5,"-111,-109",0
+2026-07-31T00:59:52Z,Portland Fire|Indiana Fever,spread,,9.0,"-146,116",1
+2026-07-31T00:59:52Z,Portland Fire|Indiana Fever,spread,,8.5,"-135,107",1
+2026-07-31T00:59:52Z,Portland Fire|Indiana Fever,spread,,8.0,"-124,-101",1
+2026-07-31T00:59:52Z,Portland Fire|Indiana Fever,spread,,7.0,"-103,-122",1
+2026-07-31T00:59:52Z,Portland Fire|Indiana Fever,spread,,6.5,"105,-132",1
+2026-07-31T00:59:52Z,Portland Fire|Indiana Fever,spread,,6.0,"114,-143",1
+2026-07-31T00:59:52Z,Portland Fire|Indiana Fever,total,,187.5,"-111,-113",0
+2026-07-31T00:59:52Z,Portland Fire|Indiana Fever,total,,186.0,"-133,102",1
+2026-07-31T00:59:52Z,Portland Fire|Indiana Fever,total,,186.5,"-126,-103",1
+2026-07-31T00:59:52Z,Portland Fire|Indiana Fever,total,,187.0,"-120,-109",1
+2026-07-31T00:59:52Z,Portland Fire|Indiana Fever,total,,188.0,"-108,-120",1
+2026-07-31T00:59:52Z,Portland Fire|Indiana Fever,total,,188.5,"-103,-126",1
+2026-07-31T00:59:52Z,Portland Fire|Indiana Fever,total,,189.0,"103,-134",1
+2026-07-31T00:59:52Z,Chicago Sky|Connecticut Sun,moneyline,,,"199,-279",0
+2026-07-31T00:59:52Z,Chicago Sky|Connecticut Sun,team_total,home,86.5,"-106,-124",0
+2026-07-31T00:59:52Z,Chicago Sky|Connecticut Sun,team_total,home,85.5,"-128,-103",1
+2026-07-31T00:59:52Z,Chicago Sky|Connecticut Sun,team_total,home,87.5,"113,-150",1
+2026-07-31T00:59:52Z,Chicago Sky|Connecticut Sun,team_total,away,91.5,"-125,-105",0
+2026-07-31T00:59:52Z,Chicago Sky|Connecticut Sun,team_total,away,90.5,"-155,117",1
+2026-07-31T00:59:52Z,Chicago Sky|Connecticut Sun,team_total,away,92.5,"-102,-130",1
+2026-07-31T00:59:52Z,Chicago Sky|Connecticut Sun,spread,,6.5,"-117,-113",0
+2026-07-31T00:59:52Z,Chicago Sky|Connecticut Sun,spread,,8.0,"-154,113",1
+2026-07-31T00:59:52Z,Chicago Sky|Connecticut Sun,spread,,7.5,"-139,103",1
+2026-07-31T00:59:52Z,Chicago Sky|Connecticut Sun,spread,,7.0,"-128,-104",1
+2026-07-31T00:59:52Z,Chicago Sky|Connecticut Sun,spread,,6.0,"-109,-123",1
+2026-07-31T00:59:52Z,Chicago Sky|Connecticut Sun,spread,,5.5,"-102,-133",1
+2026-07-31T00:59:52Z,Chicago Sky|Connecticut Sun,spread,,5.0,"106,-144",1
+2026-07-31T00:59:52Z,Chicago Sky|Connecticut Sun,total,,178.0,"-112,-118",0
+2026-07-31T00:59:52Z,Chicago Sky|Connecticut Sun,total,,176.5,"-138,102",1
+2026-07-31T00:59:52Z,Chicago Sky|Connecticut Sun,total,,177.0,"-129,-104",1
+2026-07-31T00:59:52Z,Chicago Sky|Connecticut Sun,total,,177.5,"-119,-112",1
+2026-07-31T00:59:52Z,Chicago Sky|Connecticut Sun,total,,178.5,"-106,-126",1
+2026-07-31T00:59:52Z,Chicago Sky|Connecticut Sun,total,,179.0,"101,-136",1
+2026-07-31T00:59:52Z,Chicago Sky|Connecticut Sun,total,,179.5,"107,-146",1
+2026-07-31T01:01:08Z,Atlanta Dream|Seattle Storm,moneyline,,,"-800,552",0
+2026-07-31T01:01:08Z,Atlanta Dream|Seattle Storm,team_total,home,94.5,"-115,-109",0
+2026-07-31T01:01:08Z,Atlanta Dream|Seattle Storm,team_total,away,82.0,"-114,-110",0
+2026-07-31T01:01:08Z,Atlanta Dream|Seattle Storm,spread,,-12.5,"-110,-110",0
+2026-07-31T01:01:08Z,Atlanta Dream|Seattle Storm,spread,,-11.0,"-144,114",1
+2026-07-31T01:01:08Z,Atlanta Dream|Seattle Storm,spread,,-11.5,"-133,106",1
+2026-07-31T01:01:08Z,Atlanta Dream|Seattle Storm,spread,,-12.0,"-122,-103",1
+2026-07-31T01:01:08Z,Atlanta Dream|Seattle Storm,spread,,-13.0,"-102,-123",1
+2026-07-31T01:01:08Z,Atlanta Dream|Seattle Storm,spread,,-13.5,"106,-134",1
+2026-07-31T01:01:08Z,Atlanta Dream|Seattle Storm,spread,,-14.0,"115,-145",1
+2026-07-31T01:01:08Z,Atlanta Dream|Seattle Storm,total,,176.5,"-115,-109",0
+2026-07-31T01:01:08Z,Atlanta Dream|Seattle Storm,total,,175.0,"-137,105",1
+2026-07-31T01:01:08Z,Atlanta Dream|Seattle Storm,total,,175.5,"-129,-101",1
+2026-07-31T01:01:08Z,Atlanta Dream|Seattle Storm,total,,176.0,"-123,-106",1
+2026-07-31T01:01:08Z,Atlanta Dream|Seattle Storm,total,,177.0,"-111,-117",1
+2026-07-31T01:01:08Z,Atlanta Dream|Seattle Storm,total,,177.5,"-105,-123",1
+2026-07-31T01:01:08Z,Atlanta Dream|Seattle Storm,total,,178.0,"-100,-130",1
+2026-07-31T01:01:08Z,Toronto Tempo|Minnesota Lynx,moneyline,,,"701,-1481",0
+2026-07-31T01:01:08Z,Toronto Tempo|Minnesota Lynx,team_total,home,82.5,"-109,-121",0
+2026-07-31T01:01:08Z,Toronto Tempo|Minnesota Lynx,team_total,home,81.5,"-132,-100",1
+2026-07-31T01:01:08Z,Toronto Tempo|Minnesota Lynx,team_total,home,83.5,"111,-147",1
+2026-07-31T01:01:08Z,Toronto Tempo|Minnesota Lynx,team_total,away,95.5,"-111,-120",0
+2026-07-31T01:01:08Z,Toronto Tempo|Minnesota Lynx,team_total,away,94.5,"-137,104",1
+2026-07-31T01:01:08Z,Toronto Tempo|Minnesota Lynx,team_total,away,96.5,"112,-148",1
+2026-07-31T01:01:08Z,Toronto Tempo|Minnesota Lynx,spread,,13.0,"-119,-111",0
+2026-07-31T01:01:08Z,Toronto Tempo|Minnesota Lynx,spread,,14.5,"-160,117",1
+2026-07-31T01:01:08Z,Toronto Tempo|Minnesota Lynx,spread,,14.0,"-147,109",1
+2026-07-31T01:01:08Z,Toronto Tempo|Minnesota Lynx,spread,,13.5,"-131,-102",1
+2026-07-31T01:01:08Z,Toronto Tempo|Minnesota Lynx,spread,,12.5,"-108,-124",1
+2026-07-31T01:01:08Z,Toronto Tempo|Minnesota Lynx,spread,,12.0,"101,-137",1
+2026-07-31T01:01:08Z,Toronto Tempo|Minnesota Lynx,spread,,11.5,"109,-149",1
+2026-07-31T01:01:08Z,Toronto Tempo|Minnesota Lynx,total,,177.5,"-116,-114",0
+2026-07-31T01:01:08Z,Toronto Tempo|Minnesota Lynx,total,,176.0,"-144,106",1
+2026-07-31T01:01:08Z,Toronto Tempo|Minnesota Lynx,total,,176.5,"-133,-101",1
+2026-07-31T01:01:08Z,Toronto Tempo|Minnesota Lynx,total,,177.0,"-125,-107",1
+2026-07-31T01:01:08Z,Toronto Tempo|Minnesota Lynx,total,,178.0,"-109,-122",1
+2026-07-31T01:01:08Z,Toronto Tempo|Minnesota Lynx,total,,178.5,"-103,-130",1
+2026-07-31T01:01:08Z,Toronto Tempo|Minnesota Lynx,total,,179.0,"104,-141",1
+2026-07-31T01:01:08Z,Las Vegas Aces|New York Liberty,moneyline,,,"-179,152",0
+2026-07-31T01:01:08Z,Las Vegas Aces|New York Liberty,team_total,home,92.5,"-112,-108",0
+2026-07-31T01:01:08Z,Las Vegas Aces|New York Liberty,team_total,away,89.0,"-113,-107",0
+2026-07-31T01:01:08Z,Las Vegas Aces|New York Liberty,spread,,-4.0,"-107,-109",0
+2026-07-31T01:01:08Z,Las Vegas Aces|New York Liberty,spread,,-2.5,"-141,116",1
+2026-07-31T01:01:08Z,Las Vegas Aces|New York Liberty,spread,,-3.0,"-130,107",1
+2026-07-31T01:01:08Z,Las Vegas Aces|New York Liberty,spread,,-3.5,"-120,-101",1
+2026-07-31T01:01:08Z,Las Vegas Aces|New York Liberty,spread,,-4.5,"-100,-121",1
+2026-07-31T01:01:08Z,Las Vegas Aces|New York Liberty,spread,,-5.0,"109,-132",1
+2026-07-31T01:01:08Z,Las Vegas Aces|New York Liberty,spread,,-5.5,"117,-142",1
+2026-07-31T01:01:08Z,Las Vegas Aces|New York Liberty,total,,181.5,"-112,-108",0
+2026-07-31T01:01:08Z,Las Vegas Aces|New York Liberty,total,,180.0,"-136,108",1
+2026-07-31T01:01:08Z,Las Vegas Aces|New York Liberty,total,,180.5,"-129,103",1
+2026-07-31T01:01:08Z,Las Vegas Aces|New York Liberty,total,,181.0,"-121,-103",1
+2026-07-31T01:01:08Z,Las Vegas Aces|New York Liberty,total,,182.0,"-107,-117",1
+2026-07-31T01:01:08Z,Las Vegas Aces|New York Liberty,total,,182.5,"-101,-125",1
+2026-07-31T01:01:08Z,Las Vegas Aces|New York Liberty,total,,183.0,"105,-132",1
+2026-07-31T01:01:08Z,Washington Mystics|Dallas Wings,moneyline,,,"121,-147",0
+2026-07-31T01:01:08Z,Washington Mystics|Dallas Wings,team_total,home,83.5,"-114,-110",0
+2026-07-31T01:01:08Z,Washington Mystics|Dallas Wings,team_total,away,85.5,"-114,-110",0
+2026-07-31T01:01:08Z,Washington Mystics|Dallas Wings,spread,,2.5,"-109,-111",0
+2026-07-31T01:01:08Z,Washington Mystics|Dallas Wings,spread,,4.0,"-143,114",1
+2026-07-31T01:01:08Z,Washington Mystics|Dallas Wings,spread,,3.5,"-132,105",1
+2026-07-31T01:01:08Z,Washington Mystics|Dallas Wings,spread,,3.0,"-122,-103",1
+2026-07-31T01:01:08Z,Washington Mystics|Dallas Wings,spread,,2.0,"-102,-123",1
+2026-07-31T01:01:08Z,Washington Mystics|Dallas Wings,spread,,1.5,"105,-132",1
+2026-07-31T01:01:08Z,Washington Mystics|Dallas Wings,spread,,1.0,"111,-140",1
+2026-07-31T01:01:08Z,Washington Mystics|Dallas Wings,total,,169.0,"-112,-112",0
+2026-07-31T01:01:08Z,Washington Mystics|Dallas Wings,total,,167.5,"-132,101",1
+2026-07-31T01:01:08Z,Washington Mystics|Dallas Wings,total,,168.0,"-126,-103",1
+2026-07-31T01:01:08Z,Washington Mystics|Dallas Wings,total,,168.5,"-120,-109",1
+2026-07-31T01:01:08Z,Washington Mystics|Dallas Wings,total,,169.5,"-108,-121",1
+2026-07-31T01:01:08Z,Washington Mystics|Dallas Wings,total,,170.0,"-103,-127",1
+2026-07-31T01:01:08Z,Washington Mystics|Dallas Wings,total,,170.5,"102,-133",1
+2026-07-31T01:01:08Z,Portland Fire|Indiana Fever,moneyline,,,"236,-300",0
+2026-07-31T01:01:08Z,Portland Fire|Indiana Fever,team_total,home,90.5,"-112,-112",0
+2026-07-31T01:01:08Z,Portland Fire|Indiana Fever,team_total,away,97.0,"-116,-108",0
+2026-07-31T01:01:08Z,Portland Fire|Indiana Fever,spread,,7.5,"-111,-109",0
+2026-07-31T01:01:08Z,Portland Fire|Indiana Fever,spread,,9.0,"-146,116",1
+2026-07-31T01:01:08Z,Portland Fire|Indiana Fever,spread,,8.5,"-135,107",1
+2026-07-31T01:01:08Z,Portland Fire|Indiana Fever,spread,,8.0,"-124,-101",1
+2026-07-31T01:01:08Z,Portland Fire|Indiana Fever,spread,,7.0,"-103,-122",1
+2026-07-31T01:01:08Z,Portland Fire|Indiana Fever,spread,,6.5,"105,-132",1
+2026-07-31T01:01:08Z,Portland Fire|Indiana Fever,spread,,6.0,"114,-143",1
+2026-07-31T01:01:08Z,Portland Fire|Indiana Fever,total,,187.5,"-111,-113",0
+2026-07-31T01:01:08Z,Portland Fire|Indiana Fever,total,,186.0,"-133,102",1
+2026-07-31T01:01:08Z,Portland Fire|Indiana Fever,total,,186.5,"-126,-103",1
+2026-07-31T01:01:08Z,Portland Fire|Indiana Fever,total,,187.0,"-120,-109",1
+2026-07-31T01:01:08Z,Portland Fire|Indiana Fever,total,,188.0,"-108,-120",1
+2026-07-31T01:01:08Z,Portland Fire|Indiana Fever,total,,188.5,"-103,-126",1
+2026-07-31T01:01:08Z,Portland Fire|Indiana Fever,total,,189.0,"103,-134",1
+2026-07-31T01:01:08Z,Chicago Sky|Connecticut Sun,moneyline,,,"199,-279",0
+2026-07-31T01:01:08Z,Chicago Sky|Connecticut Sun,team_total,home,86.5,"-106,-124",0
+2026-07-31T01:01:08Z,Chicago Sky|Connecticut Sun,team_total,home,85.5,"-128,-103",1
+2026-07-31T01:01:08Z,Chicago Sky|Connecticut Sun,team_total,home,87.5,"113,-150",1
+2026-07-31T01:01:08Z,Chicago Sky|Connecticut Sun,team_total,away,91.5,"-125,-105",0
+2026-07-31T01:01:08Z,Chicago Sky|Connecticut Sun,team_total,away,90.5,"-155,117",1
+2026-07-31T01:01:08Z,Chicago Sky|Connecticut Sun,team_total,away,92.5,"-102,-130",1
+2026-07-31T01:01:08Z,Chicago Sky|Connecticut Sun,spread,,6.5,"-117,-113",0
+2026-07-31T01:01:08Z,Chicago Sky|Connecticut Sun,spread,,8.0,"-154,113",1
+2026-07-31T01:01:08Z,Chicago Sky|Connecticut Sun,spread,,7.5,"-139,103",1
+2026-07-31T01:01:08Z,Chicago Sky|Connecticut Sun,spread,,7.0,"-128,-104",1
+2026-07-31T01:01:08Z,Chicago Sky|Connecticut Sun,spread,,6.0,"-109,-123",1
+2026-07-31T01:01:08Z,Chicago Sky|Connecticut Sun,spread,,5.5,"-102,-133",1
+2026-07-31T01:01:08Z,Chicago Sky|Connecticut Sun,spread,,5.0,"106,-144",1
+2026-07-31T01:01:08Z,Chicago Sky|Connecticut Sun,total,,178.0,"-112,-118",0
+2026-07-31T01:01:08Z,Chicago Sky|Connecticut Sun,total,,176.5,"-138,102",1
+2026-07-31T01:01:08Z,Chicago Sky|Connecticut Sun,total,,177.0,"-129,-104",1
+2026-07-31T01:01:08Z,Chicago Sky|Connecticut Sun,total,,177.5,"-119,-112",1
+2026-07-31T01:01:08Z,Chicago Sky|Connecticut Sun,total,,178.5,"-106,-126",1
+2026-07-31T01:01:08Z,Chicago Sky|Connecticut Sun,total,,179.0,"101,-136",1
+2026-07-31T01:01:08Z,Chicago Sky|Connecticut Sun,total,,179.5,"107,-146",1
+2026-07-31T01:02:23Z,Chicago Sky|Connecticut Sun,moneyline,,,"151,-185",0
+2026-07-31T01:02:23Z,Chicago Sky|Connecticut Sun,team_total,home,85.5,"-113,-107",0
+2026-07-31T01:02:23Z,Chicago Sky|Connecticut Sun,team_total,home,84.5,"-137,113",1
+2026-07-31T01:02:23Z,Chicago Sky|Connecticut Sun,team_total,home,86.5,"107,-130",1
+2026-07-31T01:02:23Z,Chicago Sky|Connecticut Sun,team_total,away,89.5,"-101,-120",0
+2026-07-31T01:02:23Z,Chicago Sky|Connecticut Sun,team_total,away,88.5,"-124,103",1
+2026-07-31T01:02:23Z,Chicago Sky|Connecticut Sun,team_total,away,90.5,"122,-148",1
+2026-07-31T01:02:23Z,Chicago Sky|Connecticut Sun,spread,,4.0,"-110,-110",0
+2026-07-31T01:02:23Z,Chicago Sky|Connecticut Sun,spread,,5.5,"-140,113",1
+2026-07-31T01:02:23Z,Chicago Sky|Connecticut Sun,spread,,5.0,"-130,106",1
+2026-07-31T01:02:23Z,Chicago Sky|Connecticut Sun,spread,,4.5,"-119,-102",1
+2026-07-31T01:02:23Z,Chicago Sky|Connecticut Sun,spread,,3.5,"-103,-118",1
+2026-07-31T01:02:23Z,Chicago Sky|Connecticut Sun,spread,,3.0,"104,-128",1
+2026-07-31T01:02:23Z,Chicago Sky|Connecticut Sun,spread,,2.5,"111,-138",1
+2026-07-31T01:02:23Z,Chicago Sky|Connecticut Sun,total,,175.0,"-108,-112",0
+2026-07-31T01:02:23Z,Chicago Sky|Connecticut Sun,total,,173.5,"-135,109",1
+2026-07-31T01:02:23Z,Chicago Sky|Connecticut Sun,total,,174.0,"-126,102",1
+2026-07-31T01:02:23Z,Chicago Sky|Connecticut Sun,total,,174.5,"-117,-105",1
+2026-07-31T01:02:23Z,Chicago Sky|Connecticut Sun,total,,175.5,"-100,-122",1
+2026-07-31T01:02:23Z,Chicago Sky|Connecticut Sun,total,,176.0,"107,-132",1
+2026-07-31T01:02:23Z,Chicago Sky|Connecticut Sun,total,,176.5,"114,-141",1
+2026-07-31T01:02:23Z,Toronto Tempo|Minnesota Lynx,moneyline,,,"925,-1615",0
+2026-07-31T01:02:23Z,Toronto Tempo|Minnesota Lynx,team_total,home,83.5,"-111,-109",0
+2026-07-31T01:02:23Z,Toronto Tempo|Minnesota Lynx,team_total,home,82.5,"-137,113",1
+2026-07-31T01:02:23Z,Toronto Tempo|Minnesota Lynx,team_total,home,84.5,"110,-134",1
+2026-07-31T01:02:23Z,Toronto Tempo|Minnesota Lynx,team_total,away,96.5,"-119,-101",0
+2026-07-31T01:02:23Z,Toronto Tempo|Minnesota Lynx,team_total,away,95.5,"-151,125",1
+2026-07-31T01:02:23Z,Toronto Tempo|Minnesota Lynx,team_total,away,97.5,"106,-128",1
+2026-07-31T01:02:23Z,Toronto Tempo|Minnesota Lynx,spread,,13.0,"-109,-111",0
+2026-07-31T01:02:23Z,Toronto Tempo|Minnesota Lynx,spread,,14.5,"-149,119",1
+2026-07-31T01:02:23Z,Toronto Tempo|Minnesota Lynx,spread,,14.0,"-136,110",1
+2026-07-31T01:02:23Z,Toronto Tempo|Minnesota Lynx,spread,,13.5,"-121,-101",1
+2026-07-31T01:02:23Z,Toronto Tempo|Minnesota Lynx,spread,,12.5,"101,-124",1
+2026-07-31T01:02:23Z,Toronto Tempo|Minnesota Lynx,spread,,12.0,"111,-137",1
+2026-07-31T01:02:23Z,Toronto Tempo|Minnesota Lynx,spread,,11.5,"120,-150",1
+2026-07-31T01:02:23Z,Toronto Tempo|Minnesota Lynx,total,,180.5,"-112,-108",0
+2026-07-31T01:02:23Z,Toronto Tempo|Minnesota Lynx,total,,179.0,"-141,113",1
+2026-07-31T01:02:23Z,Toronto Tempo|Minnesota Lynx,total,,179.5,"-130,105",1
+2026-07-31T01:02:23Z,Toronto Tempo|Minnesota Lynx,total,,180.0,"-121,-101",1
+2026-07-31T01:02:23Z,Toronto Tempo|Minnesota Lynx,total,,181.0,"-104,-118",1
+2026-07-31T01:02:23Z,Toronto Tempo|Minnesota Lynx,total,,181.5,"103,-127",1
+2026-07-31T01:02:23Z,Toronto Tempo|Minnesota Lynx,total,,182.0,"111,-138",1
+2026-07-31T01:02:23Z,Atlanta Dream|Seattle Storm,moneyline,,,"-800,552",0
+2026-07-31T01:02:23Z,Atlanta Dream|Seattle Storm,team_total,home,94.5,"-115,-109",0
+2026-07-31T01:02:23Z,Atlanta Dream|Seattle Storm,team_total,away,82.0,"-114,-110",0
+2026-07-31T01:02:23Z,Atlanta Dream|Seattle Storm,spread,,-12.5,"-110,-110",0
+2026-07-31T01:02:23Z,Atlanta Dream|Seattle Storm,spread,,-11.0,"-144,114",1
+2026-07-31T01:02:23Z,Atlanta Dream|Seattle Storm,spread,,-11.5,"-133,106",1
+2026-07-31T01:02:23Z,Atlanta Dream|Seattle Storm,spread,,-12.0,"-122,-103",1
+2026-07-31T01:02:23Z,Atlanta Dream|Seattle Storm,spread,,-13.0,"-102,-123",1
+2026-07-31T01:02:23Z,Atlanta Dream|Seattle Storm,spread,,-13.5,"106,-134",1
+2026-07-31T01:02:23Z,Atlanta Dream|Seattle Storm,spread,,-14.0,"115,-145",1
+2026-07-31T01:02:23Z,Atlanta Dream|Seattle Storm,total,,176.5,"-115,-109",0
+2026-07-31T01:02:23Z,Atlanta Dream|Seattle Storm,total,,175.0,"-137,105",1
+2026-07-31T01:02:23Z,Atlanta Dream|Seattle Storm,total,,175.5,"-129,-101",1
+2026-07-31T01:02:23Z,Atlanta Dream|Seattle Storm,total,,176.0,"-123,-106",1
+2026-07-31T01:02:23Z,Atlanta Dream|Seattle Storm,total,,177.0,"-111,-117",1
+2026-07-31T01:02:23Z,Atlanta Dream|Seattle Storm,total,,177.5,"-105,-123",1
+2026-07-31T01:02:23Z,Atlanta Dream|Seattle Storm,total,,178.0,"-100,-130",1
+2026-07-31T01:02:23Z,Las Vegas Aces|New York Liberty,moneyline,,,"-181,153",0
+2026-07-31T01:02:23Z,Las Vegas Aces|New York Liberty,team_total,home,92.5,"-112,-108",0
+2026-07-31T01:02:23Z,Las Vegas Aces|New York Liberty,team_total,away,89.0,"-113,-107",0
+2026-07-31T01:02:23Z,Las Vegas Aces|New York Liberty,spread,,-4.0,"-109,-107",0
+2026-07-31T01:02:23Z,Las Vegas Aces|New York Liberty,spread,,-2.5,"-142,117",1
+2026-07-31T01:02:23Z,Las Vegas Aces|New York Liberty,spread,,-3.0,"-132,109",1
+2026-07-31T01:02:23Z,Las Vegas Aces|New York Liberty,spread,,-3.5,"-121,100",1
+2026-07-31T01:02:23Z,Las Vegas Aces|New York Liberty,spread,,-4.5,"-101,-120",1
+2026-07-31T01:02:23Z,Las Vegas Aces|New York Liberty,spread,,-5.0,"107,-130",1
+2026-07-31T01:02:23Z,Las Vegas Aces|New York Liberty,spread,,-5.5,"116,-141",1
+2026-07-31T01:02:23Z,Las Vegas Aces|New York Liberty,total,,181.5,"-112,-108",0
+2026-07-31T01:02:23Z,Las Vegas Aces|New York Liberty,total,,180.0,"-136,108",1
+2026-07-31T01:02:23Z,Las Vegas Aces|New York Liberty,total,,180.5,"-129,103",1
+2026-07-31T01:02:23Z,Las Vegas Aces|New York Liberty,total,,181.0,"-122,-103",1
+2026-07-31T01:02:23Z,Las Vegas Aces|New York Liberty,total,,182.0,"-107,-117",1
+2026-07-31T01:02:23Z,Las Vegas Aces|New York Liberty,total,,182.5,"-101,-125",1
+2026-07-31T01:02:23Z,Las Vegas Aces|New York Liberty,total,,183.0,"105,-132",1
+2026-07-31T01:02:23Z,Portland Fire|Indiana Fever,moneyline,,,"236,-300",0
+2026-07-31T01:02:23Z,Portland Fire|Indiana Fever,team_total,home,90.5,"-112,-112",0
+2026-07-31T01:02:23Z,Portland Fire|Indiana Fever,team_total,away,97.0,"-116,-108",0
+2026-07-31T01:02:23Z,Portland Fire|Indiana Fever,spread,,7.5,"-111,-109",0
+2026-07-31T01:02:23Z,Portland Fire|Indiana Fever,spread,,9.0,"-146,116",1
+2026-07-31T01:02:23Z,Portland Fire|Indiana Fever,spread,,8.5,"-135,107",1
+2026-07-31T01:02:23Z,Portland Fire|Indiana Fever,spread,,8.0,"-124,-101",1
+2026-07-31T01:02:23Z,Portland Fire|Indiana Fever,spread,,7.0,"-103,-122",1
+2026-07-31T01:02:23Z,Portland Fire|Indiana Fever,spread,,6.5,"105,-132",1
+2026-07-31T01:02:23Z,Portland Fire|Indiana Fever,spread,,6.0,"114,-143",1
+2026-07-31T01:02:23Z,Portland Fire|Indiana Fever,total,,187.5,"-111,-113",0
+2026-07-31T01:02:23Z,Portland Fire|Indiana Fever,total,,186.0,"-133,102",1
+2026-07-31T01:02:23Z,Portland Fire|Indiana Fever,total,,186.5,"-126,-103",1
+2026-07-31T01:02:23Z,Portland Fire|Indiana Fever,total,,187.0,"-120,-109",1
+2026-07-31T01:02:23Z,Portland Fire|Indiana Fever,total,,188.0,"-108,-120",1
+2026-07-31T01:02:23Z,Portland Fire|Indiana Fever,total,,188.5,"-103,-126",1
+2026-07-31T01:02:23Z,Portland Fire|Indiana Fever,total,,189.0,"103,-134",1
+2026-07-31T01:02:23Z,Washington Mystics|Dallas Wings,moneyline,,,"121,-147",0
+2026-07-31T01:02:23Z,Washington Mystics|Dallas Wings,team_total,home,83.5,"-114,-110",0
+2026-07-31T01:02:23Z,Washington Mystics|Dallas Wings,team_total,away,85.5,"-114,-110",0
+2026-07-31T01:02:23Z,Washington Mystics|Dallas Wings,spread,,2.5,"-109,-111",0
+2026-07-31T01:02:23Z,Washington Mystics|Dallas Wings,spread,,4.0,"-143,114",1
+2026-07-31T01:02:23Z,Washington Mystics|Dallas Wings,spread,,3.5,"-132,105",1
+2026-07-31T01:02:23Z,Washington Mystics|Dallas Wings,spread,,3.0,"-122,-103",1
+2026-07-31T01:02:23Z,Washington Mystics|Dallas Wings,spread,,2.0,"-102,-123",1
+2026-07-31T01:02:23Z,Washington Mystics|Dallas Wings,spread,,1.5,"105,-132",1
+2026-07-31T01:02:23Z,Washington Mystics|Dallas Wings,spread,,1.0,"111,-140",1
+2026-07-31T01:02:23Z,Washington Mystics|Dallas Wings,total,,169.0,"-112,-112",0
+2026-07-31T01:02:23Z,Washington Mystics|Dallas Wings,total,,167.5,"-132,101",1
+2026-07-31T01:02:23Z,Washington Mystics|Dallas Wings,total,,168.0,"-126,-103",1
+2026-07-31T01:02:23Z,Washington Mystics|Dallas Wings,total,,168.5,"-120,-109",1
+2026-07-31T01:02:23Z,Washington Mystics|Dallas Wings,total,,169.5,"-108,-121",1
+2026-07-31T01:02:23Z,Washington Mystics|Dallas Wings,total,,170.0,"-103,-127",1
+2026-07-31T01:02:23Z,Washington Mystics|Dallas Wings,total,,170.5,"102,-133",1
+2026-07-31T01:03:39Z,Chicago Sky|Connecticut Sun,moneyline,,,"151,-185",0
+2026-07-31T01:03:39Z,Chicago Sky|Connecticut Sun,team_total,home,85.5,"-113,-107",0
+2026-07-31T01:03:39Z,Chicago Sky|Connecticut Sun,team_total,home,84.5,"-137,113",1
+2026-07-31T01:03:39Z,Chicago Sky|Connecticut Sun,team_total,home,86.5,"107,-130",1
+2026-07-31T01:03:39Z,Chicago Sky|Connecticut Sun,team_total,away,89.5,"-101,-120",0
+2026-07-31T01:03:39Z,Chicago Sky|Connecticut Sun,team_total,away,88.5,"-124,103",1
+2026-07-31T01:03:39Z,Chicago Sky|Connecticut Sun,team_total,away,90.5,"122,-148",1
+2026-07-31T01:03:39Z,Chicago Sky|Connecticut Sun,spread,,4.0,"-110,-110",0
+2026-07-31T01:03:39Z,Chicago Sky|Connecticut Sun,spread,,5.5,"-140,113",1
+2026-07-31T01:03:39Z,Chicago Sky|Connecticut Sun,spread,,5.0,"-130,106",1
+2026-07-31T01:03:39Z,Chicago Sky|Connecticut Sun,spread,,4.5,"-119,-102",1
+2026-07-31T01:03:39Z,Chicago Sky|Connecticut Sun,spread,,3.5,"-103,-118",1
+2026-07-31T01:03:39Z,Chicago Sky|Connecticut Sun,spread,,3.0,"104,-128",1
+2026-07-31T01:03:39Z,Chicago Sky|Connecticut Sun,spread,,2.5,"111,-138",1
+2026-07-31T01:03:39Z,Chicago Sky|Connecticut Sun,total,,175.0,"-108,-112",0
+2026-07-31T01:03:39Z,Chicago Sky|Connecticut Sun,total,,173.5,"-135,109",1
+2026-07-31T01:03:39Z,Chicago Sky|Connecticut Sun,total,,174.0,"-126,102",1
+2026-07-31T01:03:39Z,Chicago Sky|Connecticut Sun,total,,174.5,"-117,-105",1
+2026-07-31T01:03:39Z,Chicago Sky|Connecticut Sun,total,,175.5,"-100,-122",1
+2026-07-31T01:03:39Z,Chicago Sky|Connecticut Sun,total,,176.0,"107,-132",1
+2026-07-31T01:03:39Z,Chicago Sky|Connecticut Sun,total,,176.5,"114,-141",1
+2026-07-31T01:03:39Z,Toronto Tempo|Minnesota Lynx,moneyline,,,"925,-1615",0
+2026-07-31T01:03:39Z,Toronto Tempo|Minnesota Lynx,team_total,home,83.5,"-111,-109",0
+2026-07-31T01:03:39Z,Toronto Tempo|Minnesota Lynx,team_total,home,82.5,"-137,113",1
+2026-07-31T01:03:39Z,Toronto Tempo|Minnesota Lynx,team_total,home,84.5,"110,-134",1
+2026-07-31T01:03:39Z,Toronto Tempo|Minnesota Lynx,team_total,away,96.5,"-119,-101",0
+2026-07-31T01:03:39Z,Toronto Tempo|Minnesota Lynx,team_total,away,95.5,"-151,125",1
+2026-07-31T01:03:39Z,Toronto Tempo|Minnesota Lynx,team_total,away,97.5,"106,-128",1
+2026-07-31T01:03:39Z,Toronto Tempo|Minnesota Lynx,spread,,13.0,"-109,-111",0
+2026-07-31T01:03:39Z,Toronto Tempo|Minnesota Lynx,spread,,14.5,"-149,119",1
+2026-07-31T01:03:39Z,Toronto Tempo|Minnesota Lynx,spread,,14.0,"-136,110",1
+2026-07-31T01:03:39Z,Toronto Tempo|Minnesota Lynx,spread,,13.5,"-121,-101",1
+2026-07-31T01:03:39Z,Toronto Tempo|Minnesota Lynx,spread,,12.5,"101,-124",1
+2026-07-31T01:03:39Z,Toronto Tempo|Minnesota Lynx,spread,,12.0,"111,-137",1
+2026-07-31T01:03:39Z,Toronto Tempo|Minnesota Lynx,spread,,11.5,"120,-150",1
+2026-07-31T01:03:39Z,Toronto Tempo|Minnesota Lynx,total,,180.5,"-112,-108",0
+2026-07-31T01:03:39Z,Toronto Tempo|Minnesota Lynx,total,,179.0,"-141,113",1
+2026-07-31T01:03:39Z,Toronto Tempo|Minnesota Lynx,total,,179.5,"-130,105",1
+2026-07-31T01:03:39Z,Toronto Tempo|Minnesota Lynx,total,,180.0,"-121,-101",1
+2026-07-31T01:03:39Z,Toronto Tempo|Minnesota Lynx,total,,181.0,"-104,-118",1
+2026-07-31T01:03:39Z,Toronto Tempo|Minnesota Lynx,total,,181.5,"103,-127",1
+2026-07-31T01:03:39Z,Toronto Tempo|Minnesota Lynx,total,,182.0,"111,-138",1
+2026-07-31T01:03:39Z,Atlanta Dream|Seattle Storm,moneyline,,,"-800,552",0
+2026-07-31T01:03:39Z,Atlanta Dream|Seattle Storm,team_total,home,94.5,"-115,-109",0
+2026-07-31T01:03:39Z,Atlanta Dream|Seattle Storm,team_total,away,82.0,"-114,-110",0
+2026-07-31T01:03:39Z,Atlanta Dream|Seattle Storm,spread,,-12.5,"-110,-110",0
+2026-07-31T01:03:39Z,Atlanta Dream|Seattle Storm,spread,,-11.0,"-144,114",1
+2026-07-31T01:03:39Z,Atlanta Dream|Seattle Storm,spread,,-11.5,"-133,106",1
+2026-07-31T01:03:39Z,Atlanta Dream|Seattle Storm,spread,,-12.0,"-122,-103",1
+2026-07-31T01:03:39Z,Atlanta Dream|Seattle Storm,spread,,-13.0,"-102,-123",1
+2026-07-31T01:03:39Z,Atlanta Dream|Seattle Storm,spread,,-13.5,"106,-134",1
+2026-07-31T01:03:39Z,Atlanta Dream|Seattle Storm,spread,,-14.0,"115,-145",1
+2026-07-31T01:03:39Z,Atlanta Dream|Seattle Storm,total,,176.5,"-115,-109",0
+2026-07-31T01:03:39Z,Atlanta Dream|Seattle Storm,total,,175.0,"-137,105",1
+2026-07-31T01:03:39Z,Atlanta Dream|Seattle Storm,total,,175.5,"-129,-101",1
+2026-07-31T01:03:39Z,Atlanta Dream|Seattle Storm,total,,176.0,"-123,-106",1
+2026-07-31T01:03:39Z,Atlanta Dream|Seattle Storm,total,,177.0,"-111,-117",1
+2026-07-31T01:03:39Z,Atlanta Dream|Seattle Storm,total,,177.5,"-105,-123",1
+2026-07-31T01:03:39Z,Atlanta Dream|Seattle Storm,total,,178.0,"-100,-130",1
+2026-07-31T01:03:39Z,Las Vegas Aces|New York Liberty,moneyline,,,"-181,153",0
+2026-07-31T01:03:39Z,Las Vegas Aces|New York Liberty,team_total,home,92.5,"-112,-108",0
+2026-07-31T01:03:39Z,Las Vegas Aces|New York Liberty,team_total,away,89.0,"-113,-107",0
+2026-07-31T01:03:39Z,Las Vegas Aces|New York Liberty,spread,,-4.0,"-109,-107",0
+2026-07-31T01:03:39Z,Las Vegas Aces|New York Liberty,spread,,-2.5,"-142,117",1
+2026-07-31T01:03:39Z,Las Vegas Aces|New York Liberty,spread,,-3.0,"-132,109",1
+2026-07-31T01:03:39Z,Las Vegas Aces|New York Liberty,spread,,-3.5,"-121,100",1
+2026-07-31T01:03:39Z,Las Vegas Aces|New York Liberty,spread,,-4.5,"-101,-120",1
+2026-07-31T01:03:39Z,Las Vegas Aces|New York Liberty,spread,,-5.0,"107,-130",1
+2026-07-31T01:03:39Z,Las Vegas Aces|New York Liberty,spread,,-5.5,"116,-141",1
+2026-07-31T01:03:39Z,Las Vegas Aces|New York Liberty,total,,181.5,"-112,-108",0
+2026-07-31T01:03:39Z,Las Vegas Aces|New York Liberty,total,,180.0,"-136,108",1
+2026-07-31T01:03:39Z,Las Vegas Aces|New York Liberty,total,,180.5,"-129,103",1
+2026-07-31T01:03:39Z,Las Vegas Aces|New York Liberty,total,,181.0,"-122,-103",1
+2026-07-31T01:03:39Z,Las Vegas Aces|New York Liberty,total,,182.0,"-107,-117",1
+2026-07-31T01:03:39Z,Las Vegas Aces|New York Liberty,total,,182.5,"-101,-125",1
+2026-07-31T01:03:39Z,Las Vegas Aces|New York Liberty,total,,183.0,"105,-132",1
+2026-07-31T01:03:39Z,Portland Fire|Indiana Fever,moneyline,,,"236,-300",0
+2026-07-31T01:03:39Z,Portland Fire|Indiana Fever,team_total,home,90.5,"-112,-112",0
+2026-07-31T01:03:39Z,Portland Fire|Indiana Fever,team_total,away,97.0,"-116,-108",0
+2026-07-31T01:03:39Z,Portland Fire|Indiana Fever,spread,,7.5,"-111,-109",0
+2026-07-31T01:03:39Z,Portland Fire|Indiana Fever,spread,,9.0,"-146,116",1
+2026-07-31T01:03:39Z,Portland Fire|Indiana Fever,spread,,8.5,"-135,107",1
+2026-07-31T01:03:39Z,Portland Fire|Indiana Fever,spread,,8.0,"-124,-101",1
+2026-07-31T01:03:39Z,Portland Fire|Indiana Fever,spread,,7.0,"-103,-122",1
+2026-07-31T01:03:39Z,Portland Fire|Indiana Fever,spread,,6.5,"105,-132",1
+2026-07-31T01:03:39Z,Portland Fire|Indiana Fever,spread,,6.0,"114,-143",1
+2026-07-31T01:03:39Z,Portland Fire|Indiana Fever,total,,187.5,"-111,-113",0
+2026-07-31T01:03:39Z,Portland Fire|Indiana Fever,total,,186.0,"-133,102",1
+2026-07-31T01:03:39Z,Portland Fire|Indiana Fever,total,,186.5,"-126,-103",1
+2026-07-31T01:03:39Z,Portland Fire|Indiana Fever,total,,187.0,"-120,-109",1
+2026-07-31T01:03:39Z,Portland Fire|Indiana Fever,total,,188.0,"-108,-120",1
+2026-07-31T01:03:39Z,Portland Fire|Indiana Fever,total,,188.5,"-103,-126",1
+2026-07-31T01:03:39Z,Portland Fire|Indiana Fever,total,,189.0,"103,-134",1
+2026-07-31T01:03:39Z,Washington Mystics|Dallas Wings,moneyline,,,"121,-147",0
+2026-07-31T01:03:39Z,Washington Mystics|Dallas Wings,team_total,home,83.5,"-114,-110",0
+2026-07-31T01:03:39Z,Washington Mystics|Dallas Wings,team_total,away,85.5,"-114,-110",0
+2026-07-31T01:03:39Z,Washington Mystics|Dallas Wings,spread,,2.5,"-109,-111",0
+2026-07-31T01:03:39Z,Washington Mystics|Dallas Wings,spread,,4.0,"-143,114",1
+2026-07-31T01:03:39Z,Washington Mystics|Dallas Wings,spread,,3.5,"-132,105",1
+2026-07-31T01:03:39Z,Washington Mystics|Dallas Wings,spread,,3.0,"-122,-103",1
+2026-07-31T01:03:39Z,Washington Mystics|Dallas Wings,spread,,2.0,"-102,-123",1
+2026-07-31T01:03:39Z,Washington Mystics|Dallas Wings,spread,,1.5,"105,-132",1
+2026-07-31T01:03:39Z,Washington Mystics|Dallas Wings,spread,,1.0,"111,-140",1
+2026-07-31T01:03:39Z,Washington Mystics|Dallas Wings,total,,169.0,"-112,-112",0
+2026-07-31T01:03:39Z,Washington Mystics|Dallas Wings,total,,167.5,"-132,101",1
+2026-07-31T01:03:39Z,Washington Mystics|Dallas Wings,total,,168.0,"-126,-103",1
+2026-07-31T01:03:39Z,Washington Mystics|Dallas Wings,total,,168.5,"-120,-109",1
+2026-07-31T01:03:39Z,Washington Mystics|Dallas Wings,total,,169.5,"-108,-121",1
+2026-07-31T01:03:39Z,Washington Mystics|Dallas Wings,total,,170.0,"-103,-127",1
+2026-07-31T01:03:39Z,Washington Mystics|Dallas Wings,total,,170.5,"102,-133",1
+2026-07-31T01:04:54Z,Chicago Sky|Connecticut Sun,moneyline,,,"151,-185",0
+2026-07-31T01:04:54Z,Chicago Sky|Connecticut Sun,team_total,home,85.5,"-113,-107",0
+2026-07-31T01:04:54Z,Chicago Sky|Connecticut Sun,team_total,home,84.5,"-137,113",1
+2026-07-31T01:04:54Z,Chicago Sky|Connecticut Sun,team_total,home,86.5,"107,-130",1
+2026-07-31T01:04:54Z,Chicago Sky|Connecticut Sun,team_total,away,89.5,"-101,-120",0
+2026-07-31T01:04:54Z,Chicago Sky|Connecticut Sun,team_total,away,88.5,"-124,103",1
+2026-07-31T01:04:54Z,Chicago Sky|Connecticut Sun,team_total,away,90.5,"122,-148",1
+2026-07-31T01:04:54Z,Chicago Sky|Connecticut Sun,spread,,4.0,"-110,-110",0
+2026-07-31T01:04:54Z,Chicago Sky|Connecticut Sun,spread,,5.5,"-140,113",1
+2026-07-31T01:04:54Z,Chicago Sky|Connecticut Sun,spread,,5.0,"-130,106",1
+2026-07-31T01:04:54Z,Chicago Sky|Connecticut Sun,spread,,4.5,"-119,-102",1
+2026-07-31T01:04:54Z,Chicago Sky|Connecticut Sun,spread,,3.5,"-103,-118",1
+2026-07-31T01:04:54Z,Chicago Sky|Connecticut Sun,spread,,3.0,"104,-128",1
+2026-07-31T01:04:54Z,Chicago Sky|Connecticut Sun,spread,,2.5,"111,-138",1
+2026-07-31T01:04:54Z,Chicago Sky|Connecticut Sun,total,,175.0,"-108,-112",0
+2026-07-31T01:04:54Z,Chicago Sky|Connecticut Sun,total,,173.5,"-135,109",1
+2026-07-31T01:04:54Z,Chicago Sky|Connecticut Sun,total,,174.0,"-126,102",1
+2026-07-31T01:04:54Z,Chicago Sky|Connecticut Sun,total,,174.5,"-117,-105",1
+2026-07-31T01:04:54Z,Chicago Sky|Connecticut Sun,total,,175.5,"-100,-122",1
+2026-07-31T01:04:54Z,Chicago Sky|Connecticut Sun,total,,176.0,"107,-132",1
+2026-07-31T01:04:54Z,Chicago Sky|Connecticut Sun,total,,176.5,"114,-141",1
+2026-07-31T01:04:54Z,Toronto Tempo|Minnesota Lynx,moneyline,,,"925,-1615",0
+2026-07-31T01:04:54Z,Toronto Tempo|Minnesota Lynx,team_total,home,83.5,"-111,-109",0
+2026-07-31T01:04:54Z,Toronto Tempo|Minnesota Lynx,team_total,home,82.5,"-137,113",1
+2026-07-31T01:04:54Z,Toronto Tempo|Minnesota Lynx,team_total,home,84.5,"110,-134",1
+2026-07-31T01:04:54Z,Toronto Tempo|Minnesota Lynx,team_total,away,96.5,"-119,-101",0
+2026-07-31T01:04:54Z,Toronto Tempo|Minnesota Lynx,team_total,away,95.5,"-151,125",1
+2026-07-31T01:04:54Z,Toronto Tempo|Minnesota Lynx,team_total,away,97.5,"106,-128",1
+2026-07-31T01:04:54Z,Toronto Tempo|Minnesota Lynx,spread,,13.0,"-109,-111",0
+2026-07-31T01:04:54Z,Toronto Tempo|Minnesota Lynx,spread,,14.5,"-149,119",1
+2026-07-31T01:04:54Z,Toronto Tempo|Minnesota Lynx,spread,,14.0,"-136,110",1
+2026-07-31T01:04:54Z,Toronto Tempo|Minnesota Lynx,spread,,13.5,"-121,-101",1
+2026-07-31T01:04:54Z,Toronto Tempo|Minnesota Lynx,spread,,12.5,"101,-124",1
+2026-07-31T01:04:54Z,Toronto Tempo|Minnesota Lynx,spread,,12.0,"111,-137",1
+2026-07-31T01:04:54Z,Toronto Tempo|Minnesota Lynx,spread,,11.5,"120,-150",1
+2026-07-31T01:04:54Z,Toronto Tempo|Minnesota Lynx,total,,180.5,"-112,-108",0
+2026-07-31T01:04:54Z,Toronto Tempo|Minnesota Lynx,total,,179.0,"-141,113",1
+2026-07-31T01:04:54Z,Toronto Tempo|Minnesota Lynx,total,,179.5,"-130,105",1
+2026-07-31T01:04:54Z,Toronto Tempo|Minnesota Lynx,total,,180.0,"-121,-101",1
+2026-07-31T01:04:54Z,Toronto Tempo|Minnesota Lynx,total,,181.0,"-104,-118",1
+2026-07-31T01:04:54Z,Toronto Tempo|Minnesota Lynx,total,,181.5,"103,-127",1
+2026-07-31T01:04:54Z,Toronto Tempo|Minnesota Lynx,total,,182.0,"111,-138",1
+2026-07-31T01:04:54Z,Atlanta Dream|Seattle Storm,moneyline,,,"-800,552",0
+2026-07-31T01:04:54Z,Atlanta Dream|Seattle Storm,team_total,home,94.5,"-115,-109",0
+2026-07-31T01:04:54Z,Atlanta Dream|Seattle Storm,team_total,away,82.0,"-114,-110",0
+2026-07-31T01:04:54Z,Atlanta Dream|Seattle Storm,spread,,-12.5,"-110,-110",0
+2026-07-31T01:04:54Z,Atlanta Dream|Seattle Storm,spread,,-11.0,"-144,114",1
+2026-07-31T01:04:54Z,Atlanta Dream|Seattle Storm,spread,,-11.5,"-133,106",1
+2026-07-31T01:04:54Z,Atlanta Dream|Seattle Storm,spread,,-12.0,"-122,-103",1
+2026-07-31T01:04:54Z,Atlanta Dream|Seattle Storm,spread,,-13.0,"-102,-123",1
+2026-07-31T01:04:54Z,Atlanta Dream|Seattle Storm,spread,,-13.5,"106,-134",1
+2026-07-31T01:04:54Z,Atlanta Dream|Seattle Storm,spread,,-14.0,"115,-145",1
+2026-07-31T01:04:54Z,Atlanta Dream|Seattle Storm,total,,176.5,"-115,-109",0
+2026-07-31T01:04:54Z,Atlanta Dream|Seattle Storm,total,,175.0,"-137,105",1
+2026-07-31T01:04:54Z,Atlanta Dream|Seattle Storm,total,,175.5,"-129,-101",1
+2026-07-31T01:04:54Z,Atlanta Dream|Seattle Storm,total,,176.0,"-123,-106",1
+2026-07-31T01:04:54Z,Atlanta Dream|Seattle Storm,total,,177.0,"-111,-117",1
+2026-07-31T01:04:54Z,Atlanta Dream|Seattle Storm,total,,177.5,"-105,-123",1
+2026-07-31T01:04:54Z,Atlanta Dream|Seattle Storm,total,,178.0,"-100,-130",1
+2026-07-31T01:04:54Z,Las Vegas Aces|New York Liberty,moneyline,,,"-181,153",0
+2026-07-31T01:04:54Z,Las Vegas Aces|New York Liberty,team_total,home,92.5,"-112,-108",0
+2026-07-31T01:04:54Z,Las Vegas Aces|New York Liberty,team_total,away,89.0,"-113,-107",0
+2026-07-31T01:04:54Z,Las Vegas Aces|New York Liberty,spread,,-4.0,"-109,-107",0
+2026-07-31T01:04:54Z,Las Vegas Aces|New York Liberty,spread,,-2.5,"-142,117",1
+2026-07-31T01:04:54Z,Las Vegas Aces|New York Liberty,spread,,-3.0,"-132,109",1
+2026-07-31T01:04:54Z,Las Vegas Aces|New York Liberty,spread,,-3.5,"-121,100",1
+2026-07-31T01:04:54Z,Las Vegas Aces|New York Liberty,spread,,-4.5,"-101,-120",1
+2026-07-31T01:04:54Z,Las Vegas Aces|New York Liberty,spread,,-5.0,"107,-130",1
+2026-07-31T01:04:54Z,Las Vegas Aces|New York Liberty,spread,,-5.5,"116,-141",1
+2026-07-31T01:04:54Z,Las Vegas Aces|New York Liberty,total,,181.5,"-112,-108",0
+2026-07-31T01:04:54Z,Las Vegas Aces|New York Liberty,total,,180.0,"-136,108",1
+2026-07-31T01:04:54Z,Las Vegas Aces|New York Liberty,total,,180.5,"-129,103",1
+2026-07-31T01:04:54Z,Las Vegas Aces|New York Liberty,total,,181.0,"-122,-103",1
+2026-07-31T01:04:54Z,Las Vegas Aces|New York Liberty,total,,182.0,"-107,-117",1
+2026-07-31T01:04:54Z,Las Vegas Aces|New York Liberty,total,,182.5,"-101,-125",1
+2026-07-31T01:04:54Z,Las Vegas Aces|New York Liberty,total,,183.0,"105,-132",1
+2026-07-31T01:04:54Z,Portland Fire|Indiana Fever,moneyline,,,"236,-300",0
+2026-07-31T01:04:54Z,Portland Fire|Indiana Fever,team_total,home,90.5,"-112,-112",0
+2026-07-31T01:04:54Z,Portland Fire|Indiana Fever,team_total,away,97.0,"-116,-108",0
+2026-07-31T01:04:54Z,Portland Fire|Indiana Fever,spread,,7.5,"-111,-109",0
+2026-07-31T01:04:54Z,Portland Fire|Indiana Fever,spread,,9.0,"-146,116",1
+2026-07-31T01:04:54Z,Portland Fire|Indiana Fever,spread,,8.5,"-135,107",1
+2026-07-31T01:04:54Z,Portland Fire|Indiana Fever,spread,,8.0,"-124,-101",1
+2026-07-31T01:04:54Z,Portland Fire|Indiana Fever,spread,,7.0,"-103,-122",1
+2026-07-31T01:04:54Z,Portland Fire|Indiana Fever,spread,,6.5,"105,-132",1
+2026-07-31T01:04:54Z,Portland Fire|Indiana Fever,spread,,6.0,"114,-143",1
+2026-07-31T01:04:54Z,Portland Fire|Indiana Fever,total,,187.5,"-111,-113",0
+2026-07-31T01:04:54Z,Portland Fire|Indiana Fever,total,,186.0,"-133,102",1
+2026-07-31T01:04:54Z,Portland Fire|Indiana Fever,total,,186.5,"-126,-103",1
+2026-07-31T01:04:54Z,Portland Fire|Indiana Fever,total,,187.0,"-120,-109",1
+2026-07-31T01:04:54Z,Portland Fire|Indiana Fever,total,,188.0,"-108,-120",1
+2026-07-31T01:04:54Z,Portland Fire|Indiana Fever,total,,188.5,"-103,-126",1
+2026-07-31T01:04:54Z,Portland Fire|Indiana Fever,total,,189.0,"103,-134",1
+2026-07-31T01:04:54Z,Washington Mystics|Dallas Wings,moneyline,,,"121,-147",0
+2026-07-31T01:04:54Z,Washington Mystics|Dallas Wings,team_total,home,83.5,"-114,-110",0
+2026-07-31T01:04:54Z,Washington Mystics|Dallas Wings,team_total,away,85.5,"-114,-110",0
+2026-07-31T01:04:54Z,Washington Mystics|Dallas Wings,spread,,2.5,"-109,-111",0
+2026-07-31T01:04:54Z,Washington Mystics|Dallas Wings,spread,,4.0,"-143,114",1
+2026-07-31T01:04:54Z,Washington Mystics|Dallas Wings,spread,,3.5,"-132,105",1
+2026-07-31T01:04:54Z,Washington Mystics|Dallas Wings,spread,,3.0,"-122,-103",1
+2026-07-31T01:04:54Z,Washington Mystics|Dallas Wings,spread,,2.0,"-102,-123",1
+2026-07-31T01:04:54Z,Washington Mystics|Dallas Wings,spread,,1.5,"105,-132",1
+2026-07-31T01:04:54Z,Washington Mystics|Dallas Wings,spread,,1.0,"111,-140",1
+2026-07-31T01:04:54Z,Washington Mystics|Dallas Wings,total,,169.0,"-112,-112",0
+2026-07-31T01:04:54Z,Washington Mystics|Dallas Wings,total,,167.5,"-132,101",1
+2026-07-31T01:04:54Z,Washington Mystics|Dallas Wings,total,,168.0,"-126,-103",1
+2026-07-31T01:04:54Z,Washington Mystics|Dallas Wings,total,,168.5,"-120,-109",1
+2026-07-31T01:04:54Z,Washington Mystics|Dallas Wings,total,,169.5,"-108,-121",1
+2026-07-31T01:04:54Z,Washington Mystics|Dallas Wings,total,,170.0,"-103,-127",1
+2026-07-31T01:04:54Z,Washington Mystics|Dallas Wings,total,,170.5,"102,-133",1
