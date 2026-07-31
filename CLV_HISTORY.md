@@ -10,7 +10,7 @@ _**sharp-odds** = vs Pinnacle's vig-free fair price (TRUE edge test) · **sharp-
   ★ SHARP ODDS-CLV: -6.7% | beat fair 0/7 (0%)  ← TRUE edge (vs Pinnacle fair price)
   SHARP LINE-CLV : +0.21 pts | n=12  ← better number than the sharp
   self ODDS-CLV  : -0.1% | beat 8/27 (30%)  (1xbet's own close = weak)
-  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 47/88 (-1.7u) · FLIP UNDER 18/31 (+2.5u) · FLIP UNDER(paper) 34/55 (+8.0u) · FTUNDER 94/204 (-29.8u) · HOT OVER 14/26 (+0.3u) · STAR-OUT CASCADE 76/130 (+3.6u) · starout 3/10 (-4.3u)
+  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 48/89 (-1.0u) · FLIP UNDER 18/31 (+2.5u) · FLIP UNDER(paper) 35/57 (+7.8u) · FTUNDER 95/205 (-29.0u) · HOT OVER 14/26 (+0.3u) · STAR-OUT CASCADE 76/130 (+3.6u) · starout 3/10 (-4.3u)
   VERDICT : ⚠️ NEUTRAL self CLV — winning on outcomes, not beating the line. Unproven; keep collecting.
   by tier: SOLID 5/12 (-2.3u) · STRONG 5/12 (-2.9u) · THIN 3/5 (+0.9u)
   by market: pa Under 1/2 (+0.0u) · pr Under 1/3 (-1.0u) · pra Under 2/8 (-4.4u) · pts Under 9/16 (+1.1u)
@@ -582,8 +582,11 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260729 | Jordin Canada | PTS Under 11.5 @ 1.87 | FTUNDER | WIN | -8% | — | +0% |
 | 20260729 | Monique Akoa Makani | PTS Under 9.5 @ 1.833 | FTUNDER | WIN | -6% | +0.0 | -9% |
 | 20260730 | Aneesah Morrow | PRA Over 22.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
+| 20260730 | Breanna Stewart | PTS Over 20.5 @ 1.73 | BOOK OVERSHOOT | WIN | — | — | -6% |
+| 20260730 | Chelsea Gray | PTS Over 11.5 @ 1.8 | FLIP UNDER(paper) | WIN | -5% | +0.0 | +0% |
 | 20260730 | Courtney Williams | PTS Under 11.5 @ 1.769 | COLD/SHRINK/STINGY | loss | -9% | +0.0 | +2% |
 | 20260730 | Diamond Miller | PRA Over 13.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
+| 20260730 | Jonquel Jones | PTS Under 13.5 @ 1.85 | FTUNDER | WIN | -8% | +0.0 | -1% |
 | 20260730 | Kamilla Cardoso | PTS Under 13.5 @ 1.91 | FTUNDER | loss | — | — | -4% |
 | 20260730 | Kayla McBride | PTS Over 17.5 @ 1.83 | FLIP UNDER(paper) | loss | -8% | +0.0 | +0% |
 | 20260730 | Leila Lacan | PTS Under 12.5 @ 1.83 | FTUNDER | WIN | -14% | +0.0 | +2% |
@@ -593,5 +596,6 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260730 | Olivia Miles | PTS Over 17.5 @ 1.73 | BOOK OVERSHOOT | loss | — | — | -2% |
 | 20260730 | Olivia Nelson-Ododa | PRA Over 21.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260730 | Olivia Nelson-Ododa | PTS Under 11.5 @ 1.83 | FTUNDER | loss | — | +0.0 | -2% |
+| 20260730 | Sabrina Ionescu | PTS Over 18.5 @ 1.78 | FLIP UNDER(paper) | loss | -12% | +0.0 | -1% |
 | 20260730 | Saniya Rivers | PRA Over 8.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260730 | Sydney Taylor | PTS Under 17.5 @ 2.0 | FTUNDER | WIN | -2% | +0.0 | +5% |
