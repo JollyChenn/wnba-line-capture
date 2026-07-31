@@ -10110,3 +10110,13 @@ captured_utc,date,player,market,side,line,odds,tier,ev,pinn,src
 2026-07-30T22:45:00+00:00,2026-07-30,Aneesah Morrow,pra,Over,22.5,1.75,CASC,0.0,,cascade
 2026-07-30T22:45:00+00:00,2026-07-30,Saniya Rivers,pra,Over,8.5,1.75,CASC,0.0,,cascade
 2026-07-30T22:45:00+00:00,2026-07-30,Flau'Jae Johnson,pa,Over,16.5,2.0,STRONG,0.376,,overshoot
+2026-07-31T03:48:32+00:00,2026-07-30,Angel Reese,ra,Under,14.5,1.8,STRONG,0.286,,model
+2026-07-31T03:48:32+00:00,2026-07-30,Allisha Gray,pts,Under,19.5,1.9,THIN,0.062,,newunder
+2026-07-31T03:48:32+00:00,2026-07-30,Sonia Citron,pa,Under,20.5,1.73,STRONG,0.256,,model
+2026-07-31T03:48:32+00:00,2026-07-30,Paige Bueckers,pra,Under,30.5,1.8,THIN,0.022,,model
+2026-07-31T03:48:32+00:00,2026-07-30,Jessica Shepard,pr,Over,25.5,1.83,THIN,0.045,,flip
+2026-07-31T03:48:32+00:00,2026-07-30,Arike Ogunbowale,pra,Over,20.5,1.73,SOLID,0.027,,hotover
+2026-07-31T03:48:32+00:00,2026-07-30,Shakira Austin,pts,Over,15.5,1.833,THIN,0.059,,flip_paper
+2026-07-31T03:48:32+00:00,2026-07-30,Kelsey Mitchell,pts,Over,23.5,1.85,STRONG,0.527,,flip_paper
+2026-07-31T03:48:32+00:00,2026-07-30,Carla Leite,pts,Under,15.5,1.79,THIN,0.008,,newunder
+2026-07-31T03:48:32+00:00,2026-07-30,Flau'Jae Johnson,pa,Over,16.5,2.0,STRONG,0.376,,overshoot
