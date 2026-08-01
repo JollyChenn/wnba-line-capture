@@ -210,3 +210,11 @@ plays + timeout events; sentinel coords like -214748340 filtered out)
   -> no standalone 1xbet props edge. Consistent w/ big-gap inversion. Brief's other laws align w/
   ours (opportunity>conversion 4-5x = our minutes/usage finding; matchup-3P% weak = our zone null).
   Portable ideas still open: usage-slope per player, RD-as-tradable-uncertainty, middling/hedge math.
+- MY-TURN EDGE HUNT (2026-08-01): (A) SHARP-vs-SOFT props (pinn line vs 1xbet line >=1 -> take pinn
+  side at 1xbet): 13-9 59% +1.0u n=22 — the right mechanism, thin pinn coverage; ACCUMULATING candidate.
+  (B) BLEND INFO TEST (n=171): margin ~ 0.74*DKline + 0.06*model, model residual corr +0.013 z+0.2 —
+  the model adds ~NOTHING beyond DK's close on the full sample -> treat filtered-ATS 57% with extra
+  skepticism. Situationals: home dogs 54% z+0.7 (weak), rest/b2b/big-fav dead. (C) REF CREWS: raw
+  split-half persistence was the SCORING-DRIFT CONFOUND; de-trended corr +0.13, top-crew residual ~+3
+  pts = garnish not edge (and crews only known post-game). (D) LIVE: snapshots+lines accumulating,
+  first mispricing study when ~50+ games captured.
