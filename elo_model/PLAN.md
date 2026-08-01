@@ -218,3 +218,12 @@ plays + timeout events; sentinel coords like -214748340 filtered out)
   split-half persistence was the SCORING-DRIFT CONFOUND; de-trended corr +0.13, top-crew residual ~+3
   pts = garnish not edge (and crews only known post-game). (D) LIVE: snapshots+lines accumulating,
   first mispricing study when ~50+ games captured.
+- DEEP AUDIT (2026-08-01b): WINNERS-vs-LOSERS on filtered ATS: edge is ENTIRELY dog-side (dogs 47-34
+  58%, favs 6-6; DOGS vs BIG spreads >8 = 21-10 68% z1.7 = hot core). INDEPENDENT VALIDATION on
+  scraped BetExplorer 2026 ML odds (206 games): model DOG-picks 11-10 +5.5u; model FAV-picks 94-44
+  hit 68% but -7.3u (odds too short -> NEVER ML favorites). Triangulation: DK ML dogs +1.9u, BE ML
+  dogs +5.5u, ATS dogs 58%, big-spread dogs 68% - four looks, one direction: **MODEL-BACKED DOGS =
+  the edge pocket** (big-fav overpricing, classic low-liquidity bias). All n small; forward log grades
+  it nightly. Historical odds sources: SBRO dead; BetExplorer/OddsPortal need Playwright for
+  spreads/totals+pagination (FUTURE TASK: OddsHarvester); Kaggle zachht/wnba-odds-history needs login;
+  BigDataBall paid. BE results pages give last-round ML only server-side (2026 full = 206 via current page).
