@@ -199,3 +199,8 @@ plays + timeout events; sentinel coords like -214748340 filtered out)
 - Ref×team familiarity, ref home-bias; commissioner's-cup/tanking spots; national-TV effect;
   season-phase pace drift (env feature exists); GAME-CODE keyword mining of pbp text (e.g. "fast break",
   "turnover leads to", "and one") for style fingerprints beyond zones.
+- PROPS-MODEL v1 (2026-08-01, pregame-only, real 1xbet odds): baseline rate*min 55% +0.4u n=113 (breakeven);
+  opp-D/pace/usage-vacuum upgrades ADD VOLUME NOT ACCURACY (54% n=264); damped version INVERTS with
+  threshold (th3 -> 49%) = big model-book gaps mean the BOOK knows (role/news), not us. Lesson: naive
+  stat projection ~= line; improvement path = blend line + lineup/minutes-restriction news, not more stats.
+  (Raw all-captures 58% +9u was LIVE-LINE CONTAMINATION - always filter pregame.)
