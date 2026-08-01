@@ -4,16 +4,16 @@ _Auto-updated after each slate settles. Raw data: `graded_bets.csv`. CLV>0 = we 
 _**sharp-odds** = vs Pinnacle's vig-free fair price (TRUE edge test) · **sharp-line** = pts vs Pinnacle's line · **self** = vs 1xbet's own close (weak)._
 
 ```
-📊 WNBA BOT — TRACK RECORD (29 settled · PROVEN signals only)
-  Record  : 13-16  (45% hit)
-  Net P&L : -4.33u  (ROI -14.9%/bet)
+📊 WNBA BOT — TRACK RECORD (31 settled · PROVEN signals only)
+  Record  : 13-18  (42% hit)
+  Net P&L : -6.33u  (ROI -20.4%/bet)
   ★ SHARP ODDS-CLV: -6.7% | beat fair 0/7 (0%)  ← TRUE edge (vs Pinnacle fair price)
   SHARP LINE-CLV : +0.21 pts | n=12  ← better number than the sharp
-  self ODDS-CLV  : -0.1% | beat 8/27 (30%)  (1xbet's own close = weak)
-  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 48/89 (-1.0u) · FLIP UNDER 18/31 (+2.5u) · FLIP UNDER(paper) 35/57 (+7.8u) · FTUNDER 95/205 (-29.0u) · HOT OVER 14/26 (+0.3u) · STAR-OUT CASCADE 76/130 (+3.6u) · starout 3/10 (-4.3u)
+  self ODDS-CLV  : -0.2% | beat 8/29 (28%)  (1xbet's own close = weak)
+  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 51/93 (+0.2u) · FLIP UNDER 18/32 (+1.5u) · FLIP UNDER(paper) 35/57 (+7.8u) · FTUNDER 98/208 (-26.5u) · HOT OVER 14/26 (+0.3u) · STAR-OUT CASCADE 77/131 (+4.4u) · starout 3/10 (-4.3u)
   VERDICT : ⚠️ NEUTRAL self CLV — winning on outcomes, not beating the line. Unproven; keep collecting.
-  by tier: SOLID 5/12 (-2.3u) · STRONG 5/12 (-2.9u) · THIN 3/5 (+0.9u)
-  by market: pa Under 1/2 (+0.0u) · pr Under 1/3 (-1.0u) · pra Under 2/8 (-4.4u) · pts Under 9/16 (+1.1u)
+  by tier: SOLID 5/12 (-2.3u) · STRONG 5/14 (-4.9u) · THIN 3/5 (+0.9u)
+  by market: pa Under 1/3 (-1.0u) · pr Under 1/3 (-1.0u) · pra Under 2/8 (-4.4u) · pts Under 9/16 (+1.1u) · ra Under 0/1 (-1.0u)
 ```
 
 ## Per-bet
@@ -599,3 +599,14 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260730 | Sabrina Ionescu | PTS Over 18.5 @ 1.78 | FLIP UNDER(paper) | loss | -12% | +0.0 | -1% |
 | 20260730 | Saniya Rivers | PRA Over 8.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260730 | Sydney Taylor | PTS Under 17.5 @ 2.0 | FTUNDER | WIN | -2% | +0.0 | +5% |
+| 20260731 | Alanna Smith | PRA Over 6.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
+| 20260731 | Allisha Gray | PTS Under 19.5 @ 1.87 | FTUNDER | WIN | -5% | +0.0 | -4% |
+| 20260731 | Angel Reese | RA Under 14.5 @ 1.8 | COLD/SHRINK/STINGY | loss | — | — | +0% |
+| 20260731 | Arike Ogunbowale | PTS Over 14.5 @ 1.73 | BOOK OVERSHOOT | WIN | — | — | -2% |
+| 20260731 | Azzi Fudd | PTS Under 12.5 @ 1.8 | FTUNDER | WIN | — | — | -2% |
+| 20260731 | Flau'Jae Johnson | PA Over 16.5 @ 1.73 | BOOK OVERSHOOT | loss | — | — | +0% |
+| 20260731 | Jessica Shepard | PR Over 26.5 @ 2.0 | FLIP UNDER | loss | — | — | +0% |
+| 20260731 | Jordin Canada | PTS Under 10.5 @ 1.8 | FTUNDER | WIN | — | — | -2% |
+| 20260731 | Paige Bueckers | PTS Over 19.5 @ 1.73 | BOOK OVERSHOOT | WIN | — | — | -2% |
+| 20260731 | Shakira Austin | PR Over 24.5 @ 1.73 | BOOK OVERSHOOT | WIN | — | — | +0% |
+| 20260731 | Sonia Citron | PA Under 19.5 @ 1.91 | COLD/SHRINK/STINGY | loss | — | — | -4% |
