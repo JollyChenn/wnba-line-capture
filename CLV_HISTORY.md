@@ -10,7 +10,7 @@ _**sharp-odds** = vs Pinnacle's vig-free fair price (TRUE edge test) · **sharp-
   ★ SHARP ODDS-CLV: -6.7% | beat fair 0/7 (0%)  ← TRUE edge (vs Pinnacle fair price)
   SHARP LINE-CLV : +0.21 pts | n=12  ← better number than the sharp
   self ODDS-CLV  : -0.2% | beat 8/29 (28%)  (1xbet's own close = weak)
-  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 52/94 (+1.2u) · FLIP UNDER 18/32 (+1.5u) · FLIP UNDER(paper) 36/60 (+6.6u) · FTUNDER 99/212 (-28.7u) · HOT OVER 14/26 (+0.3u) · STAR-OUT CASCADE 77/131 (+4.4u) · starout 3/10 (-4.3u)
+  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 52/95 (+0.2u) · FLIP UNDER 18/32 (+1.5u) · FLIP UNDER(paper) 37/61 (+7.3u) · FTUNDER 100/215 (-29.7u) · HOT OVER 14/27 (-0.7u) · STAR-OUT CASCADE 77/131 (+4.4u) · starout 3/10 (-4.3u)
   VERDICT : ⚠️ NEUTRAL self CLV — winning on outcomes, not beating the line. Unproven; keep collecting.
   by tier: SOLID 5/12 (-2.3u) · STRONG 5/14 (-4.9u) · THIN 3/5 (+0.9u)
   by market: pa Under 1/3 (-1.0u) · pr Under 1/3 (-1.0u) · pra Under 2/8 (-4.4u) · pts Under 9/16 (+1.1u) · ra Under 0/1 (-1.0u)
@@ -614,7 +614,13 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260731 | Paige Bueckers | PTS Over 19.5 @ 1.73 | BOOK OVERSHOOT | WIN | — | — | -2% |
 | 20260731 | Shakira Austin | PR Over 24.5 @ 1.73 | BOOK OVERSHOOT | WIN | — | — | +0% |
 | 20260731 | Sonia Citron | PA Under 19.5 @ 1.91 | COLD/SHRINK/STINGY | loss | — | — | -4% |
+| 20260801 | Alyssa Thomas | PRA Over 31.5 @ 1.83 | HOT OVER | loss | — | -1.0 | -0% |
+| 20260801 | Breanna Stewart | PR Over 30.5 @ 1.8 | BOOK OVERSHOOT | loss | — | — | +0% |
 | 20260801 | Chelsea Gray | PTS Over 12.5 @ 1.83 | FLIP UNDER(paper) | loss | -13% | +0.0 | -6% |
+| 20260801 | Jonquel Jones | PTS Under 13.5 @ 2.0 | FTUNDER | loss | +0% | +0.0 | +11% |
+| 20260801 | Kahleah Copper | PTS Under 21.5 @ 1.82 | FTUNDER | loss | -13% | — | -0% |
 | 20260801 | Kamilla Cardoso | PTS Under 13.5 @ 1.8 | FTUNDER | WIN | — | — | -4% |
+| 20260801 | Monique Akoa Makani | PTS Under 8.5 @ 2.0 | FTUNDER | WIN | -10% | — | — |
 | 20260801 | Natasha Cloud | PTS Over 8.5 @ 1.78 | FLIP UNDER(paper) | WIN | — | — | +0% |
+| 20260801 | Sabrina Ionescu | PTS Over 19.5 @ 1.73 | FLIP UNDER(paper) | WIN | -20% | +0.0 | +1% |
 | 20260801 | Sydney Taylor | PTS Under 16.5 @ 1.8 | FTUNDER | loss | -4% | +0.0 | -3% |
