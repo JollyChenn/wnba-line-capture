@@ -10387,3 +10387,23 @@ captured_utc,date,player,market,side,line,odds,tier,ev,pinn,src
 2026-08-01T08:33:21+00:00,2026-08-01,Nneka Ogwumike,pra,Over,27.5,1.73,STRONG,0.348,,overshoot
 2026-08-01T08:33:21+00:00,2026-08-01,Kelsey Plum,pts,Over,14.5,2.1,STRONG,0.635,,overshoot
 2026-08-01T08:33:21+00:00,2026-08-01,Rae Burrell,pa,Over,16.5,1.73,STRONG,0.292,,overshoot
+2026-08-01T10:47:48+00:00,2026-08-01,Paige Bueckers,pra,Under,30.5,1.91,THIN,0.085,,model
+2026-08-01T10:47:48+00:00,2026-08-01,Jessica Shepard,pr,Over,25.5,1.8,THIN,0.028,,flip
+2026-08-01T10:47:48+00:00,2026-08-01,Arike Ogunbowale,pra,Over,21.5,1.8,THIN,0.005,,hotover
+2026-08-01T10:47:48+00:00,2026-08-01,Azzi Fudd,pts,Under,12.5,2.0,THIN,0.016,,newunder
+2026-08-01T10:47:48+00:00,2026-08-01,Aliyah Boston,reb,Under,8.5,1.83,STRONG,0.458,,fragile
+2026-08-01T10:47:48+00:00,2026-08-01,Kelsey Mitchell,pts,Over,22.5,1.92,STRONG,0.704,,flip_paper
+2026-08-01T10:47:48+00:00,2026-08-01,Bridget Carleton,pts,Under,13.5,1.92,SOLID,0.13,,newunder
+2026-08-01T10:47:48+00:00,2026-08-01,Natasha Mack,reb,Under,5.5,1.833,SOLID,0.072,5.5,fragile
+2026-08-01T10:47:48+00:00,2026-08-01,Alyssa Thomas,pra,Over,31.5,1.833,SOLID,0.207,30.5,hotover
+2026-08-01T10:47:48+00:00,2026-08-01,Sabrina Ionescu,pts,Over,20.5,1.85,THIN,0.039,19.5,flip_paper
+2026-08-01T10:47:48+00:00,2026-08-01,Monique Akoa Makani,pts,Under,9.5,1.73,SOLID,0.018,8.5,newunder
+2026-08-01T10:47:48+00:00,2026-08-01,Diamond Miller,pra,Over,14.5,1.75,CASC,0.0,,cascade
+2026-08-01T10:47:48+00:00,2026-08-01,Olivia Nelson-Ododa,pra,Over,21.5,1.75,CASC,0.0,,cascade
+2026-08-01T10:47:48+00:00,2026-08-01,Aneesah Morrow,pra,Over,22.5,1.75,CASC,0.0,,cascade
+2026-08-01T10:47:48+00:00,2026-08-01,Charlisse Leger-Walker,pra,Over,13.5,1.75,CASC,0.0,,cascade
+2026-08-01T10:47:48+00:00,2026-08-01,Laura Juskaite,pra,Over,12.5,1.75,CASC,0.0,,cascade
+2026-08-01T10:47:48+00:00,2026-08-01,Kiki Rice,pra,Over,22.5,1.75,CASC,0.0,,cascade
+2026-08-01T10:47:48+00:00,2026-08-01,Maria Conde,pra,Over,20.5,1.75,CASC,0.0,,cascade
+2026-08-01T10:47:48+00:00,2026-08-01,Nneka Ogwumike,pra,Over,27.5,1.73,STRONG,0.348,,overshoot
+2026-08-01T10:47:48+00:00,2026-08-01,Rae Burrell,pa,Over,16.5,1.73,STRONG,0.292,,overshoot
