@@ -204,3 +204,9 @@ plays + timeout events; sentinel coords like -214748340 filtered out)
   threshold (th3 -> 49%) = big model-book gaps mean the BOOK knows (role/news), not us. Lesson: naive
   stat projection ~= line; improvement path = blend line + lineup/minutes-restriction news, not more stats.
   (Raw all-captures 58% +9u was LIVE-LINE CONTAMINATION - always filter pregame.)
+- USAGE-REDISTRIBUTION MATRIX (2026-08-01, from the external betting-engine brief): built from
+  box history (teammate pts-delta per absent rotation player, n>=3 pairs). OUT-day props test
+  (pregame 1xbet odds): baseline 51% -> matrix 52-53% = matrix helps the MODEL but book prices outs
+  -> no standalone 1xbet props edge. Consistent w/ big-gap inversion. Brief's other laws align w/
+  ours (opportunity>conversion 4-5x = our minutes/usage finding; matchup-3P% weak = our zone null).
+  Portable ideas still open: usage-slope per player, RD-as-tradable-uncertainty, middling/hedge math.
