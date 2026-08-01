@@ -591,3 +591,7 @@ date,player,market,side,line,odds,tier,actual,result,pnl,odds_clv,line_clv,sharp
 20260731,Paige Bueckers,pts,Over,19.5,1.73,STRONG,23.0,WIN,0.73,-0.022,0.0,,,overshoot,2026-07-30
 20260731,Shakira Austin,pr,Over,24.5,1.73,STRONG,38.0,WIN,0.73,0.0,0.0,,,overshoot,2026-07-30
 20260731,Sonia Citron,pa,Under,19.5,1.91,STRONG,21.0,loss,-1.0,-0.045,-1.0,,,model,2026-07-30
+20260801,Chelsea Gray,pts,Over,12.5,1.83,SOLID,5.0,loss,-1.0,-0.062,0.0,0.0,-0.128,flip_paper,2026-07-31
+20260801,Kamilla Cardoso,pts,Under,13.5,1.8,THIN,8.0,WIN,0.8,-0.037,-1.0,,,newunder,2026-07-31
+20260801,Natasha Cloud,pts,Over,8.5,1.78,STRONG,11.0,WIN,0.78,0.0,0.0,,,flip_paper,2026-07-31
+20260801,Sydney Taylor,pts,Under,16.5,1.8,THIN,29.0,loss,-1.0,-0.032,0.0,0.0,-0.037,newunder,2026-07-31
