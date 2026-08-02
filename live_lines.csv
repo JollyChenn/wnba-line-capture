@@ -50260,3 +50260,345 @@ ts,teams,type,side,points,prices,alt
 2026-08-01T01:23:13Z,Washington Mystics|Dallas Wings,total,,150.0,"-117,-113",0
 2026-08-01T01:23:13Z,Washington Mystics|Dallas Wings,total,,149.5,"-131,-102",1
 2026-08-01T01:23:13Z,Washington Mystics|Dallas Wings,total,,150.5,"-106,-126",1
+2026-08-02T23:49:14Z,Golden State Valkyries|Toronto Tempo,moneyline,,,"-859,628",0
+2026-08-02T23:49:14Z,Golden State Valkyries|Toronto Tempo,team_total,home,88.5,"-117,-103",0
+2026-08-02T23:49:14Z,Golden State Valkyries|Toronto Tempo,team_total,away,75.5,"-111,-109",0
+2026-08-02T23:49:14Z,Golden State Valkyries|Toronto Tempo,spread,,-13.5,"-107,-109",0
+2026-08-02T23:49:14Z,Golden State Valkyries|Toronto Tempo,spread,,-12.0,"-140,115",1
+2026-08-02T23:49:14Z,Golden State Valkyries|Toronto Tempo,spread,,-12.5,"-130,107",1
+2026-08-02T23:49:14Z,Golden State Valkyries|Toronto Tempo,spread,,-13.0,"-119,-102",1
+2026-08-02T23:49:14Z,Golden State Valkyries|Toronto Tempo,spread,,-14.0,"101,-122",1
+2026-08-02T23:49:14Z,Golden State Valkyries|Toronto Tempo,spread,,-14.5,"109,-132",1
+2026-08-02T23:49:14Z,Golden State Valkyries|Toronto Tempo,spread,,-15.0,"118,-143",1
+2026-08-02T23:49:14Z,Golden State Valkyries|Toronto Tempo,total,,164.0,"-111,-109",0
+2026-08-02T23:49:14Z,Golden State Valkyries|Toronto Tempo,total,,162.5,"-135,107",1
+2026-08-02T23:49:14Z,Golden State Valkyries|Toronto Tempo,total,,163.0,"-128,102",1
+2026-08-02T23:49:14Z,Golden State Valkyries|Toronto Tempo,total,,163.5,"-120,-104",1
+2026-08-02T23:49:14Z,Golden State Valkyries|Toronto Tempo,total,,164.5,"-107,-117",1
+2026-08-02T23:49:14Z,Golden State Valkyries|Toronto Tempo,total,,165.0,"-100,-126",1
+2026-08-02T23:49:14Z,Golden State Valkyries|Toronto Tempo,total,,165.5,"106,-134",1
+2026-08-02T23:49:14Z,Dallas Wings|Connecticut Sun,moneyline,,,"-1862,813",0
+2026-08-02T23:49:14Z,Dallas Wings|Connecticut Sun,team_total,home,88.5,"-108,-122",0
+2026-08-02T23:49:14Z,Dallas Wings|Connecticut Sun,team_total,home,87.5,"-135,102",1
+2026-08-02T23:49:14Z,Dallas Wings|Connecticut Sun,team_total,home,89.5,"115,-153",1
+2026-08-02T23:49:14Z,Dallas Wings|Connecticut Sun,team_total,away,74.5,"-121,-109",0
+2026-08-02T23:49:14Z,Dallas Wings|Connecticut Sun,team_total,away,73.5,"-149,113",1
+2026-08-02T23:49:14Z,Dallas Wings|Connecticut Sun,team_total,away,75.5,"101,-134",1
+2026-08-02T23:49:14Z,Dallas Wings|Connecticut Sun,spread,,-13.0,"-118,-112",0
+2026-08-02T23:49:14Z,Dallas Wings|Connecticut Sun,spread,,-11.5,"-159,116",1
+2026-08-02T23:49:14Z,Dallas Wings|Connecticut Sun,spread,,-12.0,"-146,108",1
+2026-08-02T23:49:14Z,Dallas Wings|Connecticut Sun,spread,,-12.5,"-131,-101",1
+2026-08-02T23:49:14Z,Dallas Wings|Connecticut Sun,spread,,-13.5,"-107,-125",1
+2026-08-02T23:49:14Z,Dallas Wings|Connecticut Sun,spread,,-14.0,"104,-140",1
+2026-08-02T23:49:14Z,Dallas Wings|Connecticut Sun,spread,,-14.5,"113,-154",1
+2026-08-02T23:49:14Z,Dallas Wings|Connecticut Sun,total,,163.0,"-114,-116",0
+2026-08-02T23:49:14Z,Dallas Wings|Connecticut Sun,total,,161.5,"-142,105",1
+2026-08-02T23:49:14Z,Dallas Wings|Connecticut Sun,total,,162.0,"-133,-101",1
+2026-08-02T23:49:14Z,Dallas Wings|Connecticut Sun,total,,162.5,"-123,-108",1
+2026-08-02T23:49:14Z,Dallas Wings|Connecticut Sun,total,,163.5,"-107,-125",1
+2026-08-02T23:49:14Z,Dallas Wings|Connecticut Sun,total,,164.0,"100,-135",1
+2026-08-02T23:49:14Z,Dallas Wings|Connecticut Sun,total,,164.5,"106,-145",1
+2026-08-02T23:50:30Z,Golden State Valkyries|Toronto Tempo,moneyline,,,"-859,628",0
+2026-08-02T23:50:30Z,Golden State Valkyries|Toronto Tempo,team_total,home,88.5,"-117,-103",0
+2026-08-02T23:50:30Z,Golden State Valkyries|Toronto Tempo,team_total,away,75.5,"-111,-109",0
+2026-08-02T23:50:30Z,Golden State Valkyries|Toronto Tempo,spread,,-13.5,"-107,-109",0
+2026-08-02T23:50:30Z,Golden State Valkyries|Toronto Tempo,spread,,-12.0,"-140,115",1
+2026-08-02T23:50:30Z,Golden State Valkyries|Toronto Tempo,spread,,-12.5,"-130,107",1
+2026-08-02T23:50:30Z,Golden State Valkyries|Toronto Tempo,spread,,-13.0,"-119,-102",1
+2026-08-02T23:50:30Z,Golden State Valkyries|Toronto Tempo,spread,,-14.0,"101,-122",1
+2026-08-02T23:50:30Z,Golden State Valkyries|Toronto Tempo,spread,,-14.5,"109,-132",1
+2026-08-02T23:50:30Z,Golden State Valkyries|Toronto Tempo,spread,,-15.0,"118,-143",1
+2026-08-02T23:50:30Z,Golden State Valkyries|Toronto Tempo,total,,164.0,"-111,-109",0
+2026-08-02T23:50:30Z,Golden State Valkyries|Toronto Tempo,total,,162.5,"-135,107",1
+2026-08-02T23:50:30Z,Golden State Valkyries|Toronto Tempo,total,,163.0,"-128,102",1
+2026-08-02T23:50:30Z,Golden State Valkyries|Toronto Tempo,total,,163.5,"-120,-104",1
+2026-08-02T23:50:30Z,Golden State Valkyries|Toronto Tempo,total,,164.5,"-107,-117",1
+2026-08-02T23:50:30Z,Golden State Valkyries|Toronto Tempo,total,,165.0,"-100,-126",1
+2026-08-02T23:50:30Z,Golden State Valkyries|Toronto Tempo,total,,165.5,"106,-134",1
+2026-08-02T23:50:30Z,Dallas Wings|Connecticut Sun,moneyline,,,"-1862,813",0
+2026-08-02T23:50:30Z,Dallas Wings|Connecticut Sun,team_total,home,88.5,"-108,-122",0
+2026-08-02T23:50:30Z,Dallas Wings|Connecticut Sun,team_total,home,87.5,"-135,102",1
+2026-08-02T23:50:30Z,Dallas Wings|Connecticut Sun,team_total,home,89.5,"115,-153",1
+2026-08-02T23:50:30Z,Dallas Wings|Connecticut Sun,team_total,away,74.5,"-121,-109",0
+2026-08-02T23:50:30Z,Dallas Wings|Connecticut Sun,team_total,away,73.5,"-149,113",1
+2026-08-02T23:50:30Z,Dallas Wings|Connecticut Sun,team_total,away,75.5,"101,-134",1
+2026-08-02T23:50:30Z,Dallas Wings|Connecticut Sun,spread,,-13.0,"-118,-112",0
+2026-08-02T23:50:30Z,Dallas Wings|Connecticut Sun,spread,,-11.5,"-159,116",1
+2026-08-02T23:50:30Z,Dallas Wings|Connecticut Sun,spread,,-12.0,"-146,108",1
+2026-08-02T23:50:30Z,Dallas Wings|Connecticut Sun,spread,,-12.5,"-131,-101",1
+2026-08-02T23:50:30Z,Dallas Wings|Connecticut Sun,spread,,-13.5,"-107,-125",1
+2026-08-02T23:50:30Z,Dallas Wings|Connecticut Sun,spread,,-14.0,"104,-140",1
+2026-08-02T23:50:30Z,Dallas Wings|Connecticut Sun,spread,,-14.5,"113,-154",1
+2026-08-02T23:50:30Z,Dallas Wings|Connecticut Sun,total,,163.0,"-114,-116",0
+2026-08-02T23:50:30Z,Dallas Wings|Connecticut Sun,total,,161.5,"-142,105",1
+2026-08-02T23:50:30Z,Dallas Wings|Connecticut Sun,total,,162.0,"-133,-101",1
+2026-08-02T23:50:30Z,Dallas Wings|Connecticut Sun,total,,162.5,"-123,-108",1
+2026-08-02T23:50:30Z,Dallas Wings|Connecticut Sun,total,,163.5,"-107,-125",1
+2026-08-02T23:50:30Z,Dallas Wings|Connecticut Sun,total,,164.0,"100,-135",1
+2026-08-02T23:50:30Z,Dallas Wings|Connecticut Sun,total,,164.5,"106,-145",1
+2026-08-02T23:51:45Z,Golden State Valkyries|Toronto Tempo,moneyline,,,"-859,628",0
+2026-08-02T23:51:45Z,Golden State Valkyries|Toronto Tempo,team_total,home,88.5,"-117,-103",0
+2026-08-02T23:51:45Z,Golden State Valkyries|Toronto Tempo,team_total,away,75.5,"-111,-109",0
+2026-08-02T23:51:45Z,Golden State Valkyries|Toronto Tempo,spread,,-13.5,"-107,-109",0
+2026-08-02T23:51:45Z,Golden State Valkyries|Toronto Tempo,spread,,-12.0,"-140,115",1
+2026-08-02T23:51:45Z,Golden State Valkyries|Toronto Tempo,spread,,-12.5,"-130,107",1
+2026-08-02T23:51:45Z,Golden State Valkyries|Toronto Tempo,spread,,-13.0,"-119,-102",1
+2026-08-02T23:51:45Z,Golden State Valkyries|Toronto Tempo,spread,,-14.0,"101,-122",1
+2026-08-02T23:51:45Z,Golden State Valkyries|Toronto Tempo,spread,,-14.5,"109,-132",1
+2026-08-02T23:51:45Z,Golden State Valkyries|Toronto Tempo,spread,,-15.0,"118,-143",1
+2026-08-02T23:51:45Z,Golden State Valkyries|Toronto Tempo,total,,164.0,"-111,-109",0
+2026-08-02T23:51:45Z,Golden State Valkyries|Toronto Tempo,total,,162.5,"-135,107",1
+2026-08-02T23:51:45Z,Golden State Valkyries|Toronto Tempo,total,,163.0,"-128,102",1
+2026-08-02T23:51:45Z,Golden State Valkyries|Toronto Tempo,total,,163.5,"-120,-104",1
+2026-08-02T23:51:45Z,Golden State Valkyries|Toronto Tempo,total,,164.5,"-107,-117",1
+2026-08-02T23:51:45Z,Golden State Valkyries|Toronto Tempo,total,,165.0,"-100,-126",1
+2026-08-02T23:51:45Z,Golden State Valkyries|Toronto Tempo,total,,165.5,"106,-134",1
+2026-08-02T23:51:45Z,Dallas Wings|Connecticut Sun,moneyline,,,"-1862,813",0
+2026-08-02T23:51:45Z,Dallas Wings|Connecticut Sun,team_total,home,88.5,"-108,-122",0
+2026-08-02T23:51:45Z,Dallas Wings|Connecticut Sun,team_total,home,87.5,"-135,102",1
+2026-08-02T23:51:45Z,Dallas Wings|Connecticut Sun,team_total,home,89.5,"115,-153",1
+2026-08-02T23:51:45Z,Dallas Wings|Connecticut Sun,team_total,away,74.5,"-121,-109",0
+2026-08-02T23:51:45Z,Dallas Wings|Connecticut Sun,team_total,away,73.5,"-149,113",1
+2026-08-02T23:51:45Z,Dallas Wings|Connecticut Sun,team_total,away,75.5,"101,-134",1
+2026-08-02T23:51:45Z,Dallas Wings|Connecticut Sun,spread,,-13.0,"-118,-112",0
+2026-08-02T23:51:45Z,Dallas Wings|Connecticut Sun,spread,,-11.5,"-159,116",1
+2026-08-02T23:51:45Z,Dallas Wings|Connecticut Sun,spread,,-12.0,"-146,108",1
+2026-08-02T23:51:45Z,Dallas Wings|Connecticut Sun,spread,,-12.5,"-131,-101",1
+2026-08-02T23:51:45Z,Dallas Wings|Connecticut Sun,spread,,-13.5,"-107,-125",1
+2026-08-02T23:51:45Z,Dallas Wings|Connecticut Sun,spread,,-14.0,"104,-140",1
+2026-08-02T23:51:45Z,Dallas Wings|Connecticut Sun,spread,,-14.5,"113,-154",1
+2026-08-02T23:51:45Z,Dallas Wings|Connecticut Sun,total,,163.0,"-114,-116",0
+2026-08-02T23:51:45Z,Dallas Wings|Connecticut Sun,total,,161.5,"-142,105",1
+2026-08-02T23:51:45Z,Dallas Wings|Connecticut Sun,total,,162.0,"-133,-101",1
+2026-08-02T23:51:45Z,Dallas Wings|Connecticut Sun,total,,162.5,"-123,-108",1
+2026-08-02T23:51:45Z,Dallas Wings|Connecticut Sun,total,,163.5,"-107,-125",1
+2026-08-02T23:51:45Z,Dallas Wings|Connecticut Sun,total,,164.0,"100,-135",1
+2026-08-02T23:51:45Z,Dallas Wings|Connecticut Sun,total,,164.5,"106,-145",1
+2026-08-02T23:53:01Z,Golden State Valkyries|Toronto Tempo,moneyline,,,"-859,628",0
+2026-08-02T23:53:01Z,Golden State Valkyries|Toronto Tempo,team_total,home,88.5,"-117,-103",0
+2026-08-02T23:53:01Z,Golden State Valkyries|Toronto Tempo,team_total,away,75.5,"-111,-109",0
+2026-08-02T23:53:01Z,Golden State Valkyries|Toronto Tempo,spread,,-13.5,"-107,-109",0
+2026-08-02T23:53:01Z,Golden State Valkyries|Toronto Tempo,spread,,-12.0,"-140,115",1
+2026-08-02T23:53:01Z,Golden State Valkyries|Toronto Tempo,spread,,-12.5,"-130,107",1
+2026-08-02T23:53:01Z,Golden State Valkyries|Toronto Tempo,spread,,-13.0,"-119,-102",1
+2026-08-02T23:53:01Z,Golden State Valkyries|Toronto Tempo,spread,,-14.0,"101,-122",1
+2026-08-02T23:53:01Z,Golden State Valkyries|Toronto Tempo,spread,,-14.5,"109,-132",1
+2026-08-02T23:53:01Z,Golden State Valkyries|Toronto Tempo,spread,,-15.0,"118,-143",1
+2026-08-02T23:53:01Z,Golden State Valkyries|Toronto Tempo,total,,164.0,"-111,-109",0
+2026-08-02T23:53:01Z,Golden State Valkyries|Toronto Tempo,total,,162.5,"-135,107",1
+2026-08-02T23:53:01Z,Golden State Valkyries|Toronto Tempo,total,,163.0,"-128,102",1
+2026-08-02T23:53:01Z,Golden State Valkyries|Toronto Tempo,total,,163.5,"-120,-104",1
+2026-08-02T23:53:01Z,Golden State Valkyries|Toronto Tempo,total,,164.5,"-107,-117",1
+2026-08-02T23:53:01Z,Golden State Valkyries|Toronto Tempo,total,,165.0,"-100,-126",1
+2026-08-02T23:53:01Z,Golden State Valkyries|Toronto Tempo,total,,165.5,"106,-134",1
+2026-08-02T23:53:01Z,Dallas Wings|Connecticut Sun,moneyline,,,"-1862,813",0
+2026-08-02T23:53:01Z,Dallas Wings|Connecticut Sun,team_total,home,88.5,"-108,-122",0
+2026-08-02T23:53:01Z,Dallas Wings|Connecticut Sun,team_total,home,87.5,"-135,102",1
+2026-08-02T23:53:01Z,Dallas Wings|Connecticut Sun,team_total,home,89.5,"115,-153",1
+2026-08-02T23:53:01Z,Dallas Wings|Connecticut Sun,team_total,away,74.5,"-121,-109",0
+2026-08-02T23:53:01Z,Dallas Wings|Connecticut Sun,team_total,away,73.5,"-149,113",1
+2026-08-02T23:53:01Z,Dallas Wings|Connecticut Sun,team_total,away,75.5,"101,-134",1
+2026-08-02T23:53:01Z,Dallas Wings|Connecticut Sun,spread,,-13.0,"-118,-112",0
+2026-08-02T23:53:01Z,Dallas Wings|Connecticut Sun,spread,,-11.5,"-159,116",1
+2026-08-02T23:53:01Z,Dallas Wings|Connecticut Sun,spread,,-12.0,"-146,108",1
+2026-08-02T23:53:01Z,Dallas Wings|Connecticut Sun,spread,,-12.5,"-131,-101",1
+2026-08-02T23:53:01Z,Dallas Wings|Connecticut Sun,spread,,-13.5,"-107,-125",1
+2026-08-02T23:53:01Z,Dallas Wings|Connecticut Sun,spread,,-14.0,"104,-140",1
+2026-08-02T23:53:01Z,Dallas Wings|Connecticut Sun,spread,,-14.5,"113,-154",1
+2026-08-02T23:53:01Z,Dallas Wings|Connecticut Sun,total,,163.0,"-114,-116",0
+2026-08-02T23:53:01Z,Dallas Wings|Connecticut Sun,total,,161.5,"-142,105",1
+2026-08-02T23:53:01Z,Dallas Wings|Connecticut Sun,total,,162.0,"-133,-101",1
+2026-08-02T23:53:01Z,Dallas Wings|Connecticut Sun,total,,162.5,"-123,-108",1
+2026-08-02T23:53:01Z,Dallas Wings|Connecticut Sun,total,,163.5,"-107,-125",1
+2026-08-02T23:53:01Z,Dallas Wings|Connecticut Sun,total,,164.0,"100,-135",1
+2026-08-02T23:53:01Z,Dallas Wings|Connecticut Sun,total,,164.5,"106,-145",1
+2026-08-02T23:54:16Z,Golden State Valkyries|Toronto Tempo,moneyline,,,"-859,628",0
+2026-08-02T23:54:16Z,Golden State Valkyries|Toronto Tempo,team_total,home,88.5,"-117,-103",0
+2026-08-02T23:54:16Z,Golden State Valkyries|Toronto Tempo,team_total,away,75.5,"-111,-109",0
+2026-08-02T23:54:16Z,Golden State Valkyries|Toronto Tempo,spread,,-13.5,"-107,-109",0
+2026-08-02T23:54:16Z,Golden State Valkyries|Toronto Tempo,spread,,-12.0,"-140,115",1
+2026-08-02T23:54:16Z,Golden State Valkyries|Toronto Tempo,spread,,-12.5,"-130,107",1
+2026-08-02T23:54:16Z,Golden State Valkyries|Toronto Tempo,spread,,-13.0,"-119,-102",1
+2026-08-02T23:54:16Z,Golden State Valkyries|Toronto Tempo,spread,,-14.0,"101,-122",1
+2026-08-02T23:54:16Z,Golden State Valkyries|Toronto Tempo,spread,,-14.5,"109,-132",1
+2026-08-02T23:54:16Z,Golden State Valkyries|Toronto Tempo,spread,,-15.0,"118,-143",1
+2026-08-02T23:54:16Z,Golden State Valkyries|Toronto Tempo,total,,164.0,"-111,-109",0
+2026-08-02T23:54:16Z,Golden State Valkyries|Toronto Tempo,total,,162.5,"-135,107",1
+2026-08-02T23:54:16Z,Golden State Valkyries|Toronto Tempo,total,,163.0,"-128,102",1
+2026-08-02T23:54:16Z,Golden State Valkyries|Toronto Tempo,total,,163.5,"-120,-104",1
+2026-08-02T23:54:16Z,Golden State Valkyries|Toronto Tempo,total,,164.5,"-107,-117",1
+2026-08-02T23:54:16Z,Golden State Valkyries|Toronto Tempo,total,,165.0,"-100,-126",1
+2026-08-02T23:54:16Z,Golden State Valkyries|Toronto Tempo,total,,165.5,"106,-134",1
+2026-08-02T23:54:16Z,Dallas Wings|Connecticut Sun,moneyline,,,"-1862,813",0
+2026-08-02T23:54:16Z,Dallas Wings|Connecticut Sun,team_total,home,88.5,"-108,-122",0
+2026-08-02T23:54:16Z,Dallas Wings|Connecticut Sun,team_total,home,87.5,"-135,102",1
+2026-08-02T23:54:16Z,Dallas Wings|Connecticut Sun,team_total,home,89.5,"115,-153",1
+2026-08-02T23:54:16Z,Dallas Wings|Connecticut Sun,team_total,away,74.5,"-121,-109",0
+2026-08-02T23:54:16Z,Dallas Wings|Connecticut Sun,team_total,away,73.5,"-149,113",1
+2026-08-02T23:54:16Z,Dallas Wings|Connecticut Sun,team_total,away,75.5,"101,-134",1
+2026-08-02T23:54:16Z,Dallas Wings|Connecticut Sun,spread,,-13.0,"-118,-112",0
+2026-08-02T23:54:16Z,Dallas Wings|Connecticut Sun,spread,,-11.5,"-159,116",1
+2026-08-02T23:54:16Z,Dallas Wings|Connecticut Sun,spread,,-12.0,"-146,108",1
+2026-08-02T23:54:16Z,Dallas Wings|Connecticut Sun,spread,,-12.5,"-131,-101",1
+2026-08-02T23:54:16Z,Dallas Wings|Connecticut Sun,spread,,-13.5,"-107,-125",1
+2026-08-02T23:54:16Z,Dallas Wings|Connecticut Sun,spread,,-14.0,"104,-140",1
+2026-08-02T23:54:16Z,Dallas Wings|Connecticut Sun,spread,,-14.5,"113,-154",1
+2026-08-02T23:54:16Z,Dallas Wings|Connecticut Sun,total,,163.0,"-114,-116",0
+2026-08-02T23:54:16Z,Dallas Wings|Connecticut Sun,total,,161.5,"-142,105",1
+2026-08-02T23:54:16Z,Dallas Wings|Connecticut Sun,total,,162.0,"-133,-101",1
+2026-08-02T23:54:16Z,Dallas Wings|Connecticut Sun,total,,162.5,"-123,-108",1
+2026-08-02T23:54:16Z,Dallas Wings|Connecticut Sun,total,,163.5,"-107,-125",1
+2026-08-02T23:54:16Z,Dallas Wings|Connecticut Sun,total,,164.0,"100,-135",1
+2026-08-02T23:54:16Z,Dallas Wings|Connecticut Sun,total,,164.5,"106,-145",1
+2026-08-02T23:55:31Z,Golden State Valkyries|Toronto Tempo,moneyline,,,"-859,628",0
+2026-08-02T23:55:31Z,Golden State Valkyries|Toronto Tempo,team_total,home,88.5,"-117,-103",0
+2026-08-02T23:55:31Z,Golden State Valkyries|Toronto Tempo,team_total,away,75.5,"-111,-109",0
+2026-08-02T23:55:31Z,Golden State Valkyries|Toronto Tempo,spread,,-13.5,"-107,-109",0
+2026-08-02T23:55:31Z,Golden State Valkyries|Toronto Tempo,spread,,-12.0,"-140,115",1
+2026-08-02T23:55:31Z,Golden State Valkyries|Toronto Tempo,spread,,-12.5,"-130,107",1
+2026-08-02T23:55:31Z,Golden State Valkyries|Toronto Tempo,spread,,-13.0,"-119,-102",1
+2026-08-02T23:55:31Z,Golden State Valkyries|Toronto Tempo,spread,,-14.0,"101,-122",1
+2026-08-02T23:55:31Z,Golden State Valkyries|Toronto Tempo,spread,,-14.5,"109,-132",1
+2026-08-02T23:55:31Z,Golden State Valkyries|Toronto Tempo,spread,,-15.0,"118,-143",1
+2026-08-02T23:55:31Z,Golden State Valkyries|Toronto Tempo,total,,164.0,"-111,-109",0
+2026-08-02T23:55:31Z,Golden State Valkyries|Toronto Tempo,total,,162.5,"-135,107",1
+2026-08-02T23:55:31Z,Golden State Valkyries|Toronto Tempo,total,,163.0,"-128,102",1
+2026-08-02T23:55:31Z,Golden State Valkyries|Toronto Tempo,total,,163.5,"-120,-104",1
+2026-08-02T23:55:31Z,Golden State Valkyries|Toronto Tempo,total,,164.5,"-107,-117",1
+2026-08-02T23:55:31Z,Golden State Valkyries|Toronto Tempo,total,,165.0,"-100,-126",1
+2026-08-02T23:55:31Z,Golden State Valkyries|Toronto Tempo,total,,165.5,"106,-134",1
+2026-08-02T23:55:31Z,Dallas Wings|Connecticut Sun,moneyline,,,"-1862,813",0
+2026-08-02T23:55:31Z,Dallas Wings|Connecticut Sun,team_total,home,88.5,"-108,-122",0
+2026-08-02T23:55:31Z,Dallas Wings|Connecticut Sun,team_total,home,87.5,"-135,102",1
+2026-08-02T23:55:31Z,Dallas Wings|Connecticut Sun,team_total,home,89.5,"115,-153",1
+2026-08-02T23:55:31Z,Dallas Wings|Connecticut Sun,team_total,away,74.5,"-121,-109",0
+2026-08-02T23:55:31Z,Dallas Wings|Connecticut Sun,team_total,away,73.5,"-149,113",1
+2026-08-02T23:55:31Z,Dallas Wings|Connecticut Sun,team_total,away,75.5,"101,-134",1
+2026-08-02T23:55:31Z,Dallas Wings|Connecticut Sun,spread,,-13.0,"-118,-112",0
+2026-08-02T23:55:31Z,Dallas Wings|Connecticut Sun,spread,,-11.5,"-159,116",1
+2026-08-02T23:55:31Z,Dallas Wings|Connecticut Sun,spread,,-12.0,"-146,108",1
+2026-08-02T23:55:31Z,Dallas Wings|Connecticut Sun,spread,,-12.5,"-131,-101",1
+2026-08-02T23:55:31Z,Dallas Wings|Connecticut Sun,spread,,-13.5,"-107,-125",1
+2026-08-02T23:55:31Z,Dallas Wings|Connecticut Sun,spread,,-14.0,"104,-140",1
+2026-08-02T23:55:31Z,Dallas Wings|Connecticut Sun,spread,,-14.5,"113,-154",1
+2026-08-02T23:55:31Z,Dallas Wings|Connecticut Sun,total,,163.0,"-114,-116",0
+2026-08-02T23:55:31Z,Dallas Wings|Connecticut Sun,total,,161.5,"-142,105",1
+2026-08-02T23:55:31Z,Dallas Wings|Connecticut Sun,total,,162.0,"-133,-101",1
+2026-08-02T23:55:31Z,Dallas Wings|Connecticut Sun,total,,162.5,"-123,-108",1
+2026-08-02T23:55:31Z,Dallas Wings|Connecticut Sun,total,,163.5,"-107,-125",1
+2026-08-02T23:55:31Z,Dallas Wings|Connecticut Sun,total,,164.0,"100,-135",1
+2026-08-02T23:55:31Z,Dallas Wings|Connecticut Sun,total,,164.5,"106,-145",1
+2026-08-02T23:56:46Z,Golden State Valkyries|Toronto Tempo,moneyline,,,"-859,628",0
+2026-08-02T23:56:46Z,Golden State Valkyries|Toronto Tempo,team_total,home,88.5,"-117,-103",0
+2026-08-02T23:56:46Z,Golden State Valkyries|Toronto Tempo,team_total,away,75.5,"-111,-109",0
+2026-08-02T23:56:46Z,Golden State Valkyries|Toronto Tempo,spread,,-13.5,"-107,-109",0
+2026-08-02T23:56:46Z,Golden State Valkyries|Toronto Tempo,spread,,-12.0,"-140,115",1
+2026-08-02T23:56:46Z,Golden State Valkyries|Toronto Tempo,spread,,-12.5,"-130,107",1
+2026-08-02T23:56:46Z,Golden State Valkyries|Toronto Tempo,spread,,-13.0,"-119,-102",1
+2026-08-02T23:56:46Z,Golden State Valkyries|Toronto Tempo,spread,,-14.0,"101,-122",1
+2026-08-02T23:56:46Z,Golden State Valkyries|Toronto Tempo,spread,,-14.5,"109,-132",1
+2026-08-02T23:56:46Z,Golden State Valkyries|Toronto Tempo,spread,,-15.0,"118,-143",1
+2026-08-02T23:56:46Z,Golden State Valkyries|Toronto Tempo,total,,164.0,"-111,-109",0
+2026-08-02T23:56:46Z,Golden State Valkyries|Toronto Tempo,total,,162.5,"-135,107",1
+2026-08-02T23:56:46Z,Golden State Valkyries|Toronto Tempo,total,,163.0,"-128,102",1
+2026-08-02T23:56:46Z,Golden State Valkyries|Toronto Tempo,total,,163.5,"-120,-104",1
+2026-08-02T23:56:46Z,Golden State Valkyries|Toronto Tempo,total,,164.5,"-107,-117",1
+2026-08-02T23:56:46Z,Golden State Valkyries|Toronto Tempo,total,,165.0,"-100,-126",1
+2026-08-02T23:56:46Z,Golden State Valkyries|Toronto Tempo,total,,165.5,"106,-134",1
+2026-08-02T23:56:46Z,Dallas Wings|Connecticut Sun,moneyline,,,"-1862,813",0
+2026-08-02T23:56:46Z,Dallas Wings|Connecticut Sun,team_total,home,88.5,"-108,-122",0
+2026-08-02T23:56:46Z,Dallas Wings|Connecticut Sun,team_total,home,87.5,"-135,102",1
+2026-08-02T23:56:46Z,Dallas Wings|Connecticut Sun,team_total,home,89.5,"115,-153",1
+2026-08-02T23:56:46Z,Dallas Wings|Connecticut Sun,team_total,away,74.5,"-121,-109",0
+2026-08-02T23:56:46Z,Dallas Wings|Connecticut Sun,team_total,away,73.5,"-149,113",1
+2026-08-02T23:56:46Z,Dallas Wings|Connecticut Sun,team_total,away,75.5,"101,-134",1
+2026-08-02T23:56:46Z,Dallas Wings|Connecticut Sun,spread,,-13.0,"-118,-112",0
+2026-08-02T23:56:46Z,Dallas Wings|Connecticut Sun,spread,,-11.5,"-159,116",1
+2026-08-02T23:56:46Z,Dallas Wings|Connecticut Sun,spread,,-12.0,"-146,108",1
+2026-08-02T23:56:46Z,Dallas Wings|Connecticut Sun,spread,,-12.5,"-131,-101",1
+2026-08-02T23:56:46Z,Dallas Wings|Connecticut Sun,spread,,-13.5,"-107,-125",1
+2026-08-02T23:56:46Z,Dallas Wings|Connecticut Sun,spread,,-14.0,"104,-140",1
+2026-08-02T23:56:46Z,Dallas Wings|Connecticut Sun,spread,,-14.5,"113,-154",1
+2026-08-02T23:56:46Z,Dallas Wings|Connecticut Sun,total,,163.0,"-114,-116",0
+2026-08-02T23:56:46Z,Dallas Wings|Connecticut Sun,total,,161.5,"-142,105",1
+2026-08-02T23:56:46Z,Dallas Wings|Connecticut Sun,total,,162.0,"-133,-101",1
+2026-08-02T23:56:46Z,Dallas Wings|Connecticut Sun,total,,162.5,"-123,-108",1
+2026-08-02T23:56:46Z,Dallas Wings|Connecticut Sun,total,,163.5,"-107,-125",1
+2026-08-02T23:56:46Z,Dallas Wings|Connecticut Sun,total,,164.0,"100,-135",1
+2026-08-02T23:56:46Z,Dallas Wings|Connecticut Sun,total,,164.5,"106,-145",1
+2026-08-02T23:58:01Z,Golden State Valkyries|Toronto Tempo,moneyline,,,"-859,628",0
+2026-08-02T23:58:01Z,Golden State Valkyries|Toronto Tempo,team_total,home,88.5,"-117,-103",0
+2026-08-02T23:58:01Z,Golden State Valkyries|Toronto Tempo,team_total,away,75.5,"-111,-109",0
+2026-08-02T23:58:01Z,Golden State Valkyries|Toronto Tempo,spread,,-13.5,"-107,-109",0
+2026-08-02T23:58:01Z,Golden State Valkyries|Toronto Tempo,spread,,-12.0,"-140,115",1
+2026-08-02T23:58:01Z,Golden State Valkyries|Toronto Tempo,spread,,-12.5,"-130,107",1
+2026-08-02T23:58:01Z,Golden State Valkyries|Toronto Tempo,spread,,-13.0,"-119,-102",1
+2026-08-02T23:58:01Z,Golden State Valkyries|Toronto Tempo,spread,,-14.0,"101,-122",1
+2026-08-02T23:58:01Z,Golden State Valkyries|Toronto Tempo,spread,,-14.5,"109,-132",1
+2026-08-02T23:58:01Z,Golden State Valkyries|Toronto Tempo,spread,,-15.0,"118,-143",1
+2026-08-02T23:58:01Z,Golden State Valkyries|Toronto Tempo,total,,164.0,"-111,-109",0
+2026-08-02T23:58:01Z,Golden State Valkyries|Toronto Tempo,total,,162.5,"-135,107",1
+2026-08-02T23:58:01Z,Golden State Valkyries|Toronto Tempo,total,,163.0,"-128,102",1
+2026-08-02T23:58:01Z,Golden State Valkyries|Toronto Tempo,total,,163.5,"-120,-104",1
+2026-08-02T23:58:01Z,Golden State Valkyries|Toronto Tempo,total,,164.5,"-107,-117",1
+2026-08-02T23:58:01Z,Golden State Valkyries|Toronto Tempo,total,,165.0,"-100,-126",1
+2026-08-02T23:58:01Z,Golden State Valkyries|Toronto Tempo,total,,165.5,"106,-134",1
+2026-08-02T23:58:01Z,Dallas Wings|Connecticut Sun,moneyline,,,"-1862,813",0
+2026-08-02T23:58:01Z,Dallas Wings|Connecticut Sun,team_total,home,88.5,"-108,-122",0
+2026-08-02T23:58:01Z,Dallas Wings|Connecticut Sun,team_total,home,87.5,"-135,102",1
+2026-08-02T23:58:01Z,Dallas Wings|Connecticut Sun,team_total,home,89.5,"115,-153",1
+2026-08-02T23:58:01Z,Dallas Wings|Connecticut Sun,team_total,away,74.5,"-121,-109",0
+2026-08-02T23:58:01Z,Dallas Wings|Connecticut Sun,team_total,away,73.5,"-149,113",1
+2026-08-02T23:58:01Z,Dallas Wings|Connecticut Sun,team_total,away,75.5,"101,-134",1
+2026-08-02T23:58:01Z,Dallas Wings|Connecticut Sun,spread,,-13.0,"-118,-112",0
+2026-08-02T23:58:01Z,Dallas Wings|Connecticut Sun,spread,,-11.5,"-159,116",1
+2026-08-02T23:58:01Z,Dallas Wings|Connecticut Sun,spread,,-12.0,"-146,108",1
+2026-08-02T23:58:01Z,Dallas Wings|Connecticut Sun,spread,,-12.5,"-131,-101",1
+2026-08-02T23:58:01Z,Dallas Wings|Connecticut Sun,spread,,-13.5,"-107,-125",1
+2026-08-02T23:58:01Z,Dallas Wings|Connecticut Sun,spread,,-14.0,"104,-140",1
+2026-08-02T23:58:01Z,Dallas Wings|Connecticut Sun,spread,,-14.5,"113,-154",1
+2026-08-02T23:58:01Z,Dallas Wings|Connecticut Sun,total,,163.0,"-114,-116",0
+2026-08-02T23:58:01Z,Dallas Wings|Connecticut Sun,total,,161.5,"-142,105",1
+2026-08-02T23:58:01Z,Dallas Wings|Connecticut Sun,total,,162.0,"-133,-101",1
+2026-08-02T23:58:01Z,Dallas Wings|Connecticut Sun,total,,162.5,"-123,-108",1
+2026-08-02T23:58:01Z,Dallas Wings|Connecticut Sun,total,,163.5,"-107,-125",1
+2026-08-02T23:58:01Z,Dallas Wings|Connecticut Sun,total,,164.0,"100,-135",1
+2026-08-02T23:58:01Z,Dallas Wings|Connecticut Sun,total,,164.5,"106,-145",1
+2026-08-02T23:59:16Z,Dallas Wings|Connecticut Sun,moneyline,,,"-2086,1115",0
+2026-08-02T23:59:16Z,Dallas Wings|Connecticut Sun,team_total,home,91.5,"-106,-114",0
+2026-08-02T23:59:16Z,Dallas Wings|Connecticut Sun,team_total,home,90.5,"-135,111",1
+2026-08-02T23:59:16Z,Dallas Wings|Connecticut Sun,team_total,home,92.5,"119,-145",1
+2026-08-02T23:59:16Z,Dallas Wings|Connecticut Sun,team_total,away,77.5,"101,-122",0
+2026-08-02T23:59:16Z,Dallas Wings|Connecticut Sun,team_total,away,76.5,"-123,102",1
+2026-08-02T23:59:16Z,Dallas Wings|Connecticut Sun,team_total,away,78.5,"124,-150",1
+2026-08-02T23:59:16Z,Dallas Wings|Connecticut Sun,spread,,-14.0,"-113,-107",0
+2026-08-02T23:59:16Z,Dallas Wings|Connecticut Sun,spread,,-12.5,"-155,124",1
+2026-08-02T23:59:16Z,Dallas Wings|Connecticut Sun,spread,,-13.0,"-141,115",1
+2026-08-02T23:59:16Z,Dallas Wings|Connecticut Sun,spread,,-13.5,"-126,103",1
+2026-08-02T23:59:16Z,Dallas Wings|Connecticut Sun,spread,,-14.5,"-102,-120",1
+2026-08-02T23:59:16Z,Dallas Wings|Connecticut Sun,spread,,-15.0,"109,-134",1
+2026-08-02T23:59:16Z,Dallas Wings|Connecticut Sun,spread,,-15.5,"118,-147",1
+2026-08-02T23:59:16Z,Dallas Wings|Connecticut Sun,total,,168.5,"-109,-111",0
+2026-08-02T23:59:16Z,Dallas Wings|Connecticut Sun,total,,167.0,"-136,110",1
+2026-08-02T23:59:16Z,Dallas Wings|Connecticut Sun,total,,167.5,"-126,102",1
+2026-08-02T23:59:16Z,Dallas Wings|Connecticut Sun,total,,168.0,"-117,-104",1
+2026-08-02T23:59:16Z,Dallas Wings|Connecticut Sun,total,,169.0,"-102,-120",1
+2026-08-02T23:59:16Z,Dallas Wings|Connecticut Sun,total,,169.5,"105,-129",1
+2026-08-02T23:59:16Z,Dallas Wings|Connecticut Sun,total,,170.0,"112,-140",1
+2026-08-02T23:59:16Z,Golden State Valkyries|Toronto Tempo,moneyline,,,"-869,634",0
+2026-08-02T23:59:16Z,Golden State Valkyries|Toronto Tempo,team_total,home,88.5,"-117,-104",0
+2026-08-02T23:59:16Z,Golden State Valkyries|Toronto Tempo,team_total,away,75.5,"-108,-112",0
+2026-08-02T23:59:16Z,Golden State Valkyries|Toronto Tempo,spread,,-13.5,"-108,-108",0
+2026-08-02T23:59:16Z,Golden State Valkyries|Toronto Tempo,spread,,-12.0,"-142,117",1
+2026-08-02T23:59:16Z,Golden State Valkyries|Toronto Tempo,spread,,-12.5,"-131,108",1
+2026-08-02T23:59:16Z,Golden State Valkyries|Toronto Tempo,spread,,-13.0,"-121,-100",1
+2026-08-02T23:59:16Z,Golden State Valkyries|Toronto Tempo,spread,,-14.0,"-101,-120",1
+2026-08-02T23:59:16Z,Golden State Valkyries|Toronto Tempo,spread,,-14.5,"108,-131",1
+2026-08-02T23:59:16Z,Golden State Valkyries|Toronto Tempo,spread,,-15.0,"116,-141",1
+2026-08-02T23:59:16Z,Golden State Valkyries|Toronto Tempo,total,,164.0,"-110,-110",0
+2026-08-02T23:59:16Z,Golden State Valkyries|Toronto Tempo,total,,162.5,"-133,106",1
+2026-08-02T23:59:16Z,Golden State Valkyries|Toronto Tempo,total,,163.0,"-126,101",1
+2026-08-02T23:59:16Z,Golden State Valkyries|Toronto Tempo,total,,163.5,"-119,-106",1
+2026-08-02T23:59:16Z,Golden State Valkyries|Toronto Tempo,total,,164.5,"-106,-119",1
+2026-08-02T23:59:16Z,Golden State Valkyries|Toronto Tempo,total,,165.0,"101,-127",1
+2026-08-02T23:59:16Z,Golden State Valkyries|Toronto Tempo,total,,165.5,"108,-135",1
