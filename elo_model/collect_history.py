@@ -41,7 +41,7 @@ def num(s):
     except Exception: return ""
 
 SHOT_RE = re.compile(r"^(.*?) (makes|misses)")
-for yr in (2023, 2024, 2025, 2026):
+for yr in (2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026):
     seen_dates = 0
     for ds in season_dates(yr):
         sb = getj(B + "scoreboard?dates=" + ds)
