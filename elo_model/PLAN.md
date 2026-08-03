@@ -237,3 +237,13 @@ plays + timeout events; sentinel coords like -214748340 filtered out)
   under's odds DRIFTED against it = +19.2% ROI (n=74 t+1.67); steady +10.9%; when odds SHORTENED
   (money came on the under) fading LOSES -15.3%. Mechanism = steam/late money is informative; fade only
   the unders the market didn't back. FORWARD-TESTABLE at close.
+- PRICE-BAND SWEEP (ML, 1455 bets): monotone in price! 1.0-1.3 -4.9%(t-2.53) | 1.3-1.5 -7.5%(t-2.17) |
+  1.5-1.7 -3.0% | 1.7-2.0 -0.0% | 2.0-2.5 +7.7% | 2.5-3.5 +18.7%. NO favorite band profits, and no
+  filter rescues them (edge>=2 -1.9%, edge>=4 -1.6%, home -4.4%, away -5.2%) -> favorites are
+  structurally dead, not fixable. Best cell: **AWAY DOGS +21.8% ROI n=83 t+1.71** (home dogs -6.1%!)
+  = away-underdog overpricing; volume ~14/season.
+- FADE-FTUNDER on REAL captured complement odds (122 of 218 priced): +0.9% ROI +1.1u t=+0.11 =
+  BREAKEVEN. My +6% figure used a devig APPROXIMATION (assumed 1.96, real avg 1.87) - the original
+  "breakeven noise" call was correct; retracting the correction. BUT the ODDS-MOVEMENT gradient holds
+  on real odds and is stronger: DRIFTED-against +23.1% (n=45 t+1.78) | steady +2.2% (n=33) |
+  SHORTENED-on-us -22.8% (n=39 t-1.53). Monotone, mechanism = late money informative. n small.
