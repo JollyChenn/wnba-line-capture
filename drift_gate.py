@@ -23,13 +23,18 @@ def ts(s):
 def main():
     today = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d")
     la = (datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(hours=7)).strftime("%Y-%m-%d")
-    # our signals today, with their price series
-    series = defaultdict(list)
-    meta = {}
     p = os.path.join(D, "bets_log.csv")
     if not os.path.exists(p): print("no bets_log"); return
+    alld = {r.get("date") for r in csv.DictReader(open(p, encoding="utf-8")) if r.get("date")}
+    want = {today, la}
+    if not (want & alld):          # quiet window (between slates) -> show the most recent slate instead
+        want = {max(alld)} if alld else set()
+        print(f"[no captures yet for {today}; showing most recent slate {max(alld) if alld else '-'}]")
+    # our signals for the target slate, with their price series
+    series = defaultdict(list)
+    meta = {}
     for r in csv.DictReader(open(p, encoding="utf-8")):
-        if r.get("date") not in (today, la): continue
+        if r.get("date") not in want: continue
         t = ts(r.get("captured_utc")); o = f(r.get("odds"))
         if not t or not o: continue
         k = (r["player"], r["market"], r["side"], r.get("line"))
