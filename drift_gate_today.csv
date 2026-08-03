@@ -1,18 +1,18 @@
 date,player,market,side,line,src,open_odds,now_odds,move_pct,verdict,confidence,line_moved,fade_side,fade_price,captures
 2026-08-03,Kamilla Cardoso,pts,Under,13.5,newunder,1.96,1.833,-6.5,BET (money agrees),BET NOW 93%,,,,2
 2026-08-03,Angel Reese,reb,Under,11.5,fragile,2.0,2.0,0.0,BET (steady),NO READ (new line),,,,1
-2026-08-03,Chelsea Gray,pts,Over,12.5,flip_paper,1.85,1.85,0.0,BET (steady),NO READ (new line),11.5->12.5,,,1
-2026-08-03,Jordin Canada,pts,Under,11.5,newunder,1.68,1.68,0.0,BET (steady),NO READ (new line),10.5->11.5,,,1
+2026-08-03,Chelsea Gray,pts,Over,12.5,flip_paper,1.85,1.85,0.0,BET (steady),ok 85%,11.5->12.5,,,2
+2026-08-03,Jordin Canada,pts,Under,11.5,newunder,1.68,1.68,0.0,BET (steady),ok 85%,10.5->11.5,,,2
 2026-08-03,Jackie Young,pts,Under,19.5,newunder,1.87,1.87,0.0,BET (steady),NO READ (new line),,,,1
 2026-08-03,Rhyne Howard,pts,Under,16.5,newunder,1.91,1.91,0.0,BET (steady),NO READ (new line),,,,1
-2026-08-03,Natisha Hiedeman,pra,Over,25.5,hotover,2.0,2.0,0.0,BET (steady),ok 85%,,,,2
-2026-08-03,Sabrina Ionescu,pts,Over,20.5,flip_paper,1.8,1.8,0.0,BET (steady),NO READ (new line),19.5->20.5,,,1
+2026-08-03,Natisha Hiedeman,pra,Over,24.5,hotover,1.73,1.73,0.0,BET (steady),NO READ (new line),25.5->24.5,,,1
+2026-08-03,Sabrina Ionescu,pts,Over,20.5,flip_paper,1.8,1.8,0.0,BET (steady),ok 85%,19.5->20.5,,,2
 2026-08-03,Kahleah Copper,pts,Under,22.5,newunder,1.769,1.769,0.0,BET (steady),NO READ (new line),21.5->22.5,,,1
 2026-08-03,Sydney Taylor,pts,Under,17.5,newunder,1.91,1.909,-0.1,BET (steady),ok 85%,,,,2
-2026-08-03,Laura Juskaite,pra,Over,17.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,2
-2026-08-03,Maria Conde,pra,Over,19.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,2
-2026-08-03,Nyara Sabally,pra,Over,18.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,2
-2026-08-03,Kiki Rice,pra,Over,23.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,2
-2026-08-03,Dominique Malonga,pra,Over,24.5,overshoot,1.83,1.83,0.0,BET (steady),ok 85%,,,,2
-2026-08-03,Angel Reese,pts,Under,17.5,model,1.75,1.75,0.0,BET (steady),NO READ (new line),,,,1
-2026-08-03,Natasha Cloud,pts,Under,10.5,newunder,1.81,1.833,1.3,SKIP-drift,WAIT 70%,,Over,1.909,2
+2026-08-03,Laura Juskaite,pra,Over,17.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,3
+2026-08-03,Maria Conde,pra,Over,19.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,3
+2026-08-03,Nyara Sabally,pra,Over,18.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,3
+2026-08-03,Kiki Rice,pra,Over,23.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,3
+2026-08-03,Dominique Malonga,pra,Over,24.5,overshoot,1.83,1.83,0.0,BET (steady),ok 85%,,,,3
+2026-08-03,Angel Reese,pts,Under,17.5,model,1.75,1.75,0.0,BET (steady),ok 85%,,,,2
+2026-08-03,Natasha Cloud,pts,Under,10.5,newunder,1.81,2.02,11.6,SKIP-drift,WAIT 70%,,Over,1.7,3
