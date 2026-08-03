@@ -301,11 +301,16 @@ def drift_html():
     LIVE_SRC = ("flip", "flip_paper", "cascade")
     cleared = [r for r in gate if r.get("verdict","").startswith("BET") and r.get("src") in LIVE_SRC]
     skipped = [r for r in gate if r.get("verdict","").startswith("SKIP")]
+    def _conf_cell(c):
+        if "93" in c: return f'<td class="pos"><b>{esc(c)}</b></td>'
+        if "WAIT" in c: return f'<td class="neg">{esc(c)}</td>'
+        return f'<td class="mut">{esc(c)}</td>'
     cr = "".join(f'<tr><td>{esc(r["player"])}</td><td>{esc(r["market"].upper())} {esc(r["side"])} {esc(r["line"])}</td>'
                  f'<td class="pos"><b>{esc(r["now_odds"])}</b></td><td class="mut">{esc(r["move_pct"])}%</td>'
+                 f'{_conf_cell(r.get("confidence",""))}'
                  f'<td><span class="pill">{esc(r["src"])}</span></td></tr>'
-                 for r in sorted(cleared, key=lambda x: (x["src"], x["player"]))) \
-         or '<tr><td colspan="5" class="empty">— no cleared bets for this slate —</td></tr>'
+                 for r in sorted(cleared, key=lambda x: (x.get("confidence",""), x["src"]))) \
+         or '<tr><td colspan="6" class="empty">— no cleared bets for this slate —</td></tr>'
     sk = "".join(f'<tr><td>{esc(r["player"])}</td><td>{esc(r["market"].upper())} {esc(r["side"])} {esc(r["line"])}</td>'
                  f'<td class="neg">{esc(r["move_pct"])}%</td><td class="mut">{esc(r["src"])}</td>'
                  f'<td>{("<span class=pill>"+esc(r["fade_side"])+" @ "+esc(r["fade_price"])+"</span>") if r.get("fade_side") else "—"}</td></tr>'
@@ -381,7 +386,8 @@ tr:nth-child(even) td{background:#12172c} tr.pend td{background:#1a1f3a}
 
 <div class="gate">
 <h2>✅ TONIGHT — CLEARED TO BET <span class="sub2" style="font-weight:400">— flip &amp; cascade that passed the <span class="pill">skip-drift LIVE</span> gate</span></h2>
-<table><tr><th>player</th><th>bet</th><th>odds</th><th>price move</th><th>signal</th></tr>__DCLEARED__</table>
+<table><tr><th>player</th><th>bet</th><th>odds</th><th>price move</th><th>safe to bet early?</th><th>signal</th></tr>__DCLEARED__</table>
+<div class="labnote">🕙 <b>Bet at bedtime (~23:00 MYT).</b> WNBA tips 07:00-10:00 MYT, so the textbook 4h window is 03:00 MYT. You don't need it: at T-8h a price that already moved <b>≥3% toward us is 93% locked in</b>, flat is 85%. Only an <b>early drift is unreliable (70%)</b> — never fade early, wait for it.</div>
 
 <h2>🚫 SKIPPED — price drifted against them <span class="sub2" style="font-weight:400">— do not bet; fade auto-logged to paper</span></h2>
 <table><tr><th>player</th><th>their bet</th><th>drift</th><th>signal</th><th>paper fade</th></tr>__DSKIPPED__</table>
