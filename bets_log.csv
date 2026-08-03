@@ -11256,3 +11256,15 @@ captured_utc,date,player,market,side,line,odds,tier,ev,pinn,src
 2026-08-02T23:08:30+00:00,2026-08-02,Kiki Rice,pra,Over,22.5,1.75,CASC,0.0,,cascade
 2026-08-02T23:08:30+00:00,2026-08-02,Maria Conde,pra,Over,17.5,1.8,CASC,0.029,,cascade
 2026-08-02T23:08:30+00:00,2026-08-02,Breanna Stewart,pr,Over,30.5,1.73,SOLID,0.114,,overshoot
+2026-08-03T00:10:06+00:00,2026-08-02,Angel Reese,reb,Under,11.5,1.91,THIN,0.097,,fragile
+2026-08-03T00:10:06+00:00,2026-08-02,Chelsea Gray,pts,Over,12.5,2.0,SOLID,0.199,,flip_paper
+2026-08-03T00:10:06+00:00,2026-08-02,Jordin Canada,pts,Under,10.5,1.87,SOLID,0.216,,newunder
+2026-08-03T00:10:06+00:00,2026-08-02,Jackie Young,pts,Under,19.5,1.87,SOLID,0.145,,newunder
+2026-08-03T00:10:06+00:00,2026-08-02,Rhyne Howard,pts,Under,16.5,1.833,STRONG,0.655,,newunder
+2026-08-03T00:10:06+00:00,2026-08-02,Natisha Hiedeman,pra,Over,24.5,1.909,SOLID,0.181,,hotover
+2026-08-03T00:10:06+00:00,2026-08-02,Jonquel Jones,pts,Under,13.5,1.83,THIN,0.037,,newunder
+2026-08-03T00:10:06+00:00,2026-08-02,Sabrina Ionescu,pts,Over,19.5,1.83,SOLID,0.136,,flip_paper
+2026-08-03T00:10:06+00:00,2026-08-02,Kahleah Copper,pts,Under,22.5,1.769,SOLID,0.086,,newunder
+2026-08-03T00:10:06+00:00,2026-08-02,Kamilla Cardoso,pts,Under,14.5,1.87,SOLID,0.179,,newunder
+2026-08-03T00:10:06+00:00,2026-08-02,Sydney Taylor,pts,Under,17.5,1.87,THIN,0.049,,newunder
+2026-08-03T00:10:06+00:00,2026-08-02,Breanna Stewart,pr,Over,30.5,1.73,SOLID,0.114,,overshoot
