@@ -292,6 +292,58 @@ def filter_lab_html():
 
 filter_rows, overshoot_rows = filter_lab_html()
 
+# ---- DRIFT GATE: tonight's verdicts + the drift-bucket record (skip-drift is LIVE) ----
+def drift_html():
+    import subprocess as _sp
+    try: _sp.run([sys.executable, os.path.join(ROOT, "drift_gate.py")], capture_output=True, cwd=ROOT, timeout=180)
+    except Exception: pass
+    gate = load("drift_gate_today.csv")
+    LIVE_SRC = ("flip", "flip_paper", "cascade")
+    cleared = [r for r in gate if r.get("verdict","").startswith("BET") and r.get("src") in LIVE_SRC]
+    skipped = [r for r in gate if r.get("verdict","").startswith("SKIP")]
+    cr = "".join(f'<tr><td>{esc(r["player"])}</td><td>{esc(r["market"].upper())} {esc(r["side"])} {esc(r["line"])}</td>'
+                 f'<td class="pos"><b>{esc(r["now_odds"])}</b></td><td class="mut">{esc(r["move_pct"])}%</td>'
+                 f'<td><span class="pill">{esc(r["src"])}</span></td></tr>'
+                 for r in sorted(cleared, key=lambda x: (x["src"], x["player"]))) \
+         or '<tr><td colspan="5" class="empty">— no cleared bets for this slate —</td></tr>'
+    sk = "".join(f'<tr><td>{esc(r["player"])}</td><td>{esc(r["market"].upper())} {esc(r["side"])} {esc(r["line"])}</td>'
+                 f'<td class="neg">{esc(r["move_pct"])}%</td><td class="mut">{esc(r["src"])}</td>'
+                 f'<td>{("<span class=pill>"+esc(r["fade_side"])+" @ "+esc(r["fade_price"])+"</span>") if r.get("fade_side") else "—"}</td></tr>'
+                 for r in skipped) \
+         or '<tr><td colspan="5" class="empty">— nothing drifted this slate —</td></tr>'
+    # bucket record from graded bets
+    def bk(rows):
+        n = len(rows)
+        if not n: return "—"
+        w = sum(1 for r in rows if (r.get("result","") or "").upper() == "WIN")
+        pnl = sum(_f(r.get("pnl")) or 0 for r in rows)
+        cls = "pos" if pnl > 0 else "neg"
+        return f'<b>{w}–{n-w}</b> <span class="mut">({100*w/n:.0f}%)</span> <span class="{cls}">{pnl:+.1f}u</span>'
+    def dclv(r):
+        v = _f(r.get("odds_clv"))
+        return v if v is not None else 0
+    gr = [r for r in graded if (r.get("result","") or "").upper() in ("WIN","LOSS")]
+    rows = [("odds SHORTENED on us <span class=mut>(money agrees)</span>", [r for r in gr if dclv(r) > 0.01]),
+            ("steady", [r for r in gr if abs(dclv(r)) <= 0.01]),
+            ("odds DRIFTED against us <span class=mut>(market walked away)</span>", [r for r in gr if dclv(r) < -0.01]),
+            ("<b>WHOLE BOOK with skip-drift ON</b>", [r for r in gr if dclv(r) >= -0.01]),
+            ("<span class=mut>whole book, no filter (before)</span>", gr)]
+    br = "".join(f'<tr><td>{lbl}</td><td>{bk(rs_)}</td></tr>' for lbl, rs_ in rows)
+    # forward fade paper
+    fg = [r for r in load("fade_graded.csv") if r.get("result") in ("WIN","loss")]
+    if fg:
+        w = sum(1 for r in fg if r["result"] == "WIN")
+        pnl = sum(_f(r.get("ret")) or 0 for r in fg)
+        cls = "pos" if pnl > 0 else "neg"
+        fp = (f'<b>{w}–{len(fg)-w}</b> ({100*w/len(fg):.0f}%) <span class="{cls}">{pnl:+.1f}u</span> '
+              f'<span class="mut">· {len(fg)}/100 toward the go-live gate</span>')
+    else:
+        npend = sum(1 for r in load("fade_paper.csv"))
+        fp = f'<span class="mut">{npend} logged, awaiting results</span>'
+    return cr, sk, br, fp
+
+drift_cleared, drift_skipped, drift_buckets, fade_paper_line = drift_html()
+
 gen = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
 through = max((r.get("date","") for r in graded), default="—")
 slate = max((r.get("date","") for r in bets_log), default="—")
@@ -321,9 +373,24 @@ tr:nth-child(even) td{background:#12172c} tr.pend td{background:#1a1f3a}
 .lab{margin-top:42px;border-top:2px dashed #3a4170;padding-top:14px}
 .lab h2{color:#6fd3e0} .lab .labnote{color:#7e87b8;font-size:13px;margin:2px 0 10px}
 .lab .pill{background:#143a44;color:#7fe3f0}
+.gate{background:#101733;border:1px solid #2b6a4a;border-radius:12px;padding:4px 18px 18px;margin:18px 0 30px}
+.gate h2{color:#5fd07a}
 </style></head><body><div class="wrap">
 <h1>🏀 WNBA prop bot</h1><div class="sub2">latest slate __SLATE__ · settled through __THROUGH__ · generated __GEN__</div>
 <div class="banner">⚠️ <b>UNPROVEN — paper / tiny stakes only.</b> Every line is vs a synthetic median (predicts the SIDE, not that it beats the book). <b>CLV is the only proof</b> — real-money CLV is __CLVHEAD__ so far. Never auto-bet.</div>
+
+<div class="gate">
+<h2>✅ TONIGHT — CLEARED TO BET <span class="sub2" style="font-weight:400">— flip &amp; cascade that passed the <span class="pill">skip-drift LIVE</span> gate</span></h2>
+<table><tr><th>player</th><th>bet</th><th>odds</th><th>price move</th><th>signal</th></tr>__DCLEARED__</table>
+
+<h2>🚫 SKIPPED — price drifted against them <span class="sub2" style="font-weight:400">— do not bet; fade auto-logged to paper</span></h2>
+<table><tr><th>player</th><th>their bet</th><th>drift</th><th>signal</th><th>paper fade</th></tr>__DSKIPPED__</table>
+
+<h2>📐 THE DRIFT RULE <span class="sub2" style="font-weight:400">— why we skip them (all signals pooled)</span></h2>
+<div class="labnote">When the book lengthens our price nobody backed it — those bets run <b>−28% ROI (t−3.78)</b>. Skipping them is the one filter now <b>live</b>. Fading them is <b>paper</b> until n≥100.</div>
+<table><tr><th>bucket</th><th>record · P&amp;L (flat 1u)</th></tr>__DBUCKETS__
+<tr><td>FADE-DRIFT · <span class="pill">forward paper</span></td><td>__FADEPAPER__</td></tr></table>
+</div>
 
 <h2>📊 BY SIGNAL <span class="sub2" style="font-weight:400">— each model's W–L · P&amp;L · CLV (take-on-sight, flat 1u — the signal record, not your placed bets)</span></h2>
 <table><tr><th>signal</th><th>W–L</th><th>hit</th><th>P&amp;L</th><th>CLV</th><th>pend</th></tr>__SCOREBOARD__</table>
@@ -359,7 +426,9 @@ page = (TEMPLATE.replace("__RSUMM__", summ_line(rs, "real")).replace("__RROWS__"
         .replace("__SCOREBOARD__", scoreboard_html())
         .replace("__SIGCLVALL__", sig_clv_html(sig))
         .replace("__MODELSUMM__", signal_summ(sig)).replace("__MODELROWS__", model_rows)
-        .replace("__FILTERROWS__", filter_rows).replace("__OVERROWS__", overshoot_rows))
+        .replace("__FILTERROWS__", filter_rows).replace("__OVERROWS__", overshoot_rows)
+        .replace("__DCLEARED__", drift_cleared).replace("__DSKIPPED__", drift_skipped)
+        .replace("__DBUCKETS__", drift_buckets).replace("__FADEPAPER__", fade_paper_line))
 
 with open(os.path.join(ROOT, "dashboard.html"), "w", encoding="utf-8") as f:
     f.write(page)
