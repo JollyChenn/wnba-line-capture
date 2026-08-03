@@ -37,8 +37,9 @@ def main():
         if r.get("date") not in want: continue
         t = ts(r.get("captured_utc")); o = f(r.get("odds"))
         if not t or not o: continue
-        k = (r["player"], r["market"], r["side"], r.get("line"))
-        series[k].append((t, o)); meta[k] = r
+        # key WITHOUT the line: a line move (21% of bets) must not look like a brand-new bet with no history
+        k = (r["player"], r["market"], r["side"])
+        series[k].append((t, f(r.get("line")), o)); meta[k] = r
     # the two-sided board, for the fade price
     board = defaultdict(list)
     bp = os.path.join(D, "xbet_board.csv")
@@ -51,29 +52,37 @@ def main():
     rows, fades = [], []
     for k, ser in series.items():
         ser.sort()
-        first, last = ser[0][1], ser[-1][1]
+        cur_line = ser[-1][1]                       # the line the book is offering NOW
+        opened_line = ser[0][1]
+        line_moved = (opened_line is not None and cur_line is not None
+                      and abs(cur_line - opened_line) >= 0.25)
+        # odds drift is only meaningful WITHIN one line — measure it on the current line's captures
+        cl = [x for x in ser if x[1] == cur_line]
+        first, last = cl[0][2], cl[-1][2]
         move = last / first - 1
-        r = meta[k]
+        r = dict(meta[k]); r["line"] = cur_line     # always quote the CURRENT line, not the stale one
         drifted = move >= DRIFT
         verdict = "SKIP-drift" if drifted else ("BET (money agrees)" if move <= -DRIFT else "BET (steady)")
         # CONFIDENCE: how often a read this shape is still final at tip (measured at T-8h on 670 bets).
         # Lets you bet at bedtime instead of 3am: strong money-on-us is 93% locked in already.
-        if move <= -0.03:   conf = "BET NOW 93%"       # money already piled on our side - rarely reverses
+        if len(cl) < 2:     conf = "NO READ (new line)"  # line just moved / first capture: no odds history yet
+        elif move <= -0.03: conf = "BET NOW 93%"       # money already piled on our side - rarely reverses
         elif move < -0.005: conf = "bet now 81%"
         elif move < DRIFT:  conf = "ok 85%"            # flat: no news either way
         else:               conf = "WAIT 70%"          # early drift is the LEAST stable read - confirm late
         fade_side = fade_price = ""
         if drifted:
             other = "Over" if r["side"] == "Under" else "Under"
-            q = sorted(board.get((r["player"].lower(), r["market"], f(r.get("line")), other), []))
+            q = sorted(board.get((r["player"].lower(), r["market"], cur_line, other), []))
             if q:
                 fade_side, fade_price = other, q[-1][1]
                 fades.append([datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
                               r.get("date"), r["player"], r["market"], other, r.get("line"), fade_price,
                               r.get("src"), round(move, 4)])
-        rows.append([r.get("date"), r["player"], r["market"], r["side"], r.get("line"), r.get("src"),
-                     first, last, round(100 * move, 1), verdict, conf, fade_side, fade_price, len(ser)])
-    hdr = ["date","player","market","side","line","src","open_odds","now_odds","move_pct","verdict","confidence","fade_side","fade_price","captures"]
+        lm = f"{opened_line}->{cur_line}" if line_moved else ""
+        rows.append([r.get("date"), r["player"], r["market"], r["side"], cur_line, r.get("src"),
+                     first, last, round(100 * move, 1), verdict, conf, lm, fade_side, fade_price, len(cl)])
+    hdr = ["date","player","market","side","line","src","open_odds","now_odds","move_pct","verdict","confidence","line_moved","fade_side","fade_price","captures"]
     w = csv.writer(open(os.path.join(D, "drift_gate_today.csv"), "w", newline="", encoding="utf-8"))
     w.writerow(hdr); w.writerows(sorted(rows, key=lambda x: x[9]))
     # append fade paper bets, deduped on (date,player,market,side,line)
@@ -93,8 +102,9 @@ def main():
     print(f"drift gate {today}: {nb} CLEARED to bet, {ns} SKIPPED (drifted), +{len(new)} new fade paper bets")
     for x in sorted(rows, key=lambda x: x[9])[:12]:
         tag = "SKIP" if x[9].startswith("SKIP") else "BET "
-        extra = f" -> FADE {x[11]} @ {x[12]}" if x[11] else ""
-        print(f"  {tag} {x[1][:18]:18} {x[2]} {x[3]} {x[4]:>5} {x[6]}->{x[7]} ({x[8]:+.1f}%) [{x[10]}] [{x[5]}]{extra}")
+        extra = f" -> FADE {x[12]} @ {x[13]}" if x[12] else ""
+        lmv = f" LINE {x[11]}" if x[11] else ""
+        print(f"  {tag} {x[1][:18]:18} {x[2]} {x[3]} {x[4]:>5} {x[6]}->{x[7]} ({x[8]:+.1f}%) [{x[10]}]{lmv} [{x[5]}]{extra}")
 
 if __name__ == "__main__":
     try: main()

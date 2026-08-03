@@ -244,7 +244,7 @@ def scoreboard_html():
         out.append(f'<tr><td><b>{esc(nm)}</b>{real}</td><td><b>{a["w"]}–{a["l"]}</b></td><td class="muted">{hit}</td>'
                    f'<td class="{pcls}"><b>{a["pnl"]:+.2f}u</b></td><td class="muted">{clv}</td>'
                    f'<td class="muted">{a["pend"] or "—"}</td></tr>')
-    return "".join(out) or '<tr><td colspan="6" class="empty">— none yet —</td></tr>'
+    return "".join(out) or '<tr><td colspan="7" class="empty">— none yet —</td></tr>'
 
 # ---- FILTER LAB: candidate filters tracked as the sample grows (NOT applied to live bets) ----
 def filter_lab_html():
@@ -308,9 +308,10 @@ def drift_html():
     cr = "".join(f'<tr><td>{esc(r["player"])}</td><td>{esc(r["market"].upper())} {esc(r["side"])} {esc(r["line"])}</td>'
                  f'<td class="pos"><b>{esc(r["now_odds"])}</b></td><td class="mut">{esc(r["move_pct"])}%</td>'
                  f'{_conf_cell(r.get("confidence",""))}'
+                 f'<td class="mut">{("⇢ "+esc(r["line_moved"])) if r.get("line_moved") else "—"}</td>'
                  f'<td><span class="pill">{esc(r["src"])}</span></td></tr>'
                  for r in sorted(cleared, key=lambda x: (x.get("confidence",""), x["src"]))) \
-         or '<tr><td colspan="6" class="empty">— no cleared bets for this slate —</td></tr>'
+         or '<tr><td colspan="7" class="empty">— no cleared bets for this slate —</td></tr>'
     sk = "".join(f'<tr><td>{esc(r["player"])}</td><td>{esc(r["market"].upper())} {esc(r["side"])} {esc(r["line"])}</td>'
                  f'<td class="neg">{esc(r["move_pct"])}%</td><td class="mut">{esc(r["src"])}</td>'
                  f'<td>{("<span class=pill>"+esc(r["fade_side"])+" @ "+esc(r["fade_price"])+"</span>") if r.get("fade_side") else "—"}</td></tr>'
@@ -386,8 +387,8 @@ tr:nth-child(even) td{background:#12172c} tr.pend td{background:#1a1f3a}
 
 <div class="gate">
 <h2>✅ TONIGHT — CLEARED TO BET <span class="sub2" style="font-weight:400">— flip &amp; cascade that passed the <span class="pill">skip-drift LIVE</span> gate</span></h2>
-<table><tr><th>player</th><th>bet</th><th>odds</th><th>price move</th><th>safe to bet early?</th><th>signal</th></tr>__DCLEARED__</table>
-<div class="labnote">🕙 <b>Bet at bedtime (~23:00 MYT).</b> WNBA tips 07:00-10:00 MYT, so the textbook 4h window is 03:00 MYT. You don't need it: at T-8h a price that already moved <b>≥3% toward us is 93% locked in</b>, flat is 85%. Only an <b>early drift is unreliable (70%)</b> — never fade early, wait for it.</div>
+<table><tr><th>player</th><th>bet</th><th>odds</th><th>price move</th><th>safe to bet early?</th><th>line moved</th><th>signal</th></tr>__DCLEARED__</table>
+<div class="labnote">🕙 <b>Bet at bedtime (~23:00 MYT).</b> WNBA tips 07:00-10:00 MYT, so the textbook 4h window is 03:00 MYT. You don't need it: at T-8h a price that already moved <b>≥3% toward us is 93% locked in</b>, flat is 85%. Only an <b>early drift is unreliable (70%)</b> — never fade early, wait for it.<br>📏 <b>If the LINE moves</b> (21% of bets, ~1pt): the row re-quotes the NEW line and the odds read restarts — a fresh line shows <b>NO READ</b> until it has 2+ captures. A bet you already placed stays at your original line; the row is telling you what's available <i>now</i>.</div>
 
 <h2>🚫 SKIPPED — price drifted against them <span class="sub2" style="font-weight:400">— do not bet; fade auto-logged to paper</span></h2>
 <table><tr><th>player</th><th>their bet</th><th>drift</th><th>signal</th><th>paper fade</th></tr>__DSKIPPED__</table>
