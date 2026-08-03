@@ -227,3 +227,13 @@ plays + timeout events; sentinel coords like -214748340 filtered out)
   it nightly. Historical odds sources: SBRO dead; BetExplorer/OddsPortal need Playwright for
   spreads/totals+pagination (FUTURE TASK: OddsHarvester); Kaggle zachht/wnba-odds-history needs login;
   BigDataBall paid. BE results pages give last-round ML only server-side (2026 full = 206 via current page).
+- ML FAV vs DOG (full 1466g): backing model FAVORITES = 1268 bets, 71.1% hit, **-5.2% ROI, -65.8u,
+  t=-2.93 = SIGNIFICANTLY LOSING every season** -> NEVER bet ML favorites (the vig+overpricing is
+  mathematically fatal at short odds). Model DOGS +9.9% ROI t+1.20. Betting BOTH = -3.2%. The dog
+  filter isn't cosmetic - it's the entire strategy.
+- FADE-FTUNDER corrected: fade side gets BETTER prices (avg 1.96 because our unders were short-priced)
+  -> breakeven 51.0% not 53.5%; actual 54.1% = **+6.0% ROI +13.0u t=+0.90** (n=218). NOT breakeven-noise
+  as first stated. ODDS-MOVEMENT GRADIENT (monotone, the best structure found): fade when the original
+  under's odds DRIFTED against it = +19.2% ROI (n=74 t+1.67); steady +10.9%; when odds SHORTENED
+  (money came on the under) fading LOSES -15.3%. Mechanism = steam/late money is informative; fade only
+  the unders the market didn't back. FORWARD-TESTABLE at close.
