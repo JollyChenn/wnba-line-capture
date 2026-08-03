@@ -41,6 +41,8 @@ jobs:
         run: python grade_bets.py
       - name: drift tracker (skip-drift + fade-drift forward record)
         run: python drift_tracker.py || true
+      - name: grade fade-drift paper record
+        run: python fade_grade.py || true
       - name: Update CLV history (no Discord ping — the dashboard shows results now)
         run: python clv_reader.py || true   # DISCORD_WEBHOOK intentionally NOT passed -> clv_reader stays silent (results live on the dashboard); actionable BET pings still fire from capture-xbet
       - name: Rebuild HTML dashboard
@@ -51,7 +53,7 @@ jobs:
         run: |
           git config user.name "wnba-grade-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add graded_bets.csv drift_track.csv CLV_HISTORY.md dashboard.html FILTER_REPORT.md data/*.csv 2>/dev/null || true
+          git add graded_bets.csv drift_track.csv fade_graded.csv fade_paper.csv CLV_HISTORY.md dashboard.html FILTER_REPORT.md data/*.csv 2>/dev/null || true
           if git diff --staged --quiet; then
             echo "nothing to commit"
           else

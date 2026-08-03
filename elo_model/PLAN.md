@@ -247,3 +247,23 @@ plays + timeout events; sentinel coords like -214748340 filtered out)
   "breakeven noise" call was correct; retracting the correction. BUT the ODDS-MOVEMENT gradient holds
   on real odds and is stronger: DRIFTED-against +23.1% (n=45 t+1.78) | steady +2.2% (n=33) |
   SHORTENED-on-us -22.8% (n=39 t-1.53). Monotone, mechanism = late money informative. n small.
+
+## 12. FINAL BET MENU + PROOF STANDARD (2026-08-03)
+| play | W-L | WR | ROI | P&L | t | /night | status |
+|---|---|---|---|---|---|---|---|
+| skip-drift on whole book | 277-216 | 56% | +3.2% | +15.8u | +0.78 | keeps 11.7 | **LIVE** |
+| (same book, no filter) | 334-301 | 53% | -3.8% | -23.9u | -1.04 | 15.1 | superseded |
+| FLIP non-drifted | 51-31 | 62% | +15.6% | +12.8u | +1.56 | 2.0 | LIVE small |
+| CASCADE non-drifted | 81-53 | 60% | +6.3% | +8.4u | +0.85 | 3.2 | LIVE small |
+| FADE-DRIFT all signals | 56-28 | 67% | +23.5% | +19.7u | **+2.46** | 2.0 | **PAPER** |
+| - FTUNDER fades only | 30-15 | 67% | +22.1% | +10.0u | +1.72 | 1.1 | paper |
+| FTUNDER as a bet | 104-119 | 47% | -13.5% | -30.2u | -2.18 | - | NEVER |
+| ML favorites (any band/filter) | - | 71% | -5.2% | -65.8u | -2.93 | - | NEVER |
+| totals both sides | - | ~50% | ~0 | - | - | - | NEVER |
+PROOF STANDARD (agreed): t>=2.0 AND n>=100 forward AND ROI>+10% on data that did NOT generate the
+hypothesis. Backtest t counts for HALF (multiplicity: ~30 buckets tested this project). Negative
+results need |t|>=2 too - that's why "never bet ML favs" (t=-2.93) and "never bet FTUNDER" (t=-2.18)
+are ACTIONABLE while +2.46 fade is still paper.
+TRACKER CHAIN (all cloud, nightly): drift_gate.py (every capture; verdicts -> drift_gate_today.csv,
+paper bets -> fade_paper.csv) -> fade_grade.py (settles paper vs box -> fade_graded.csv) ->
+drift_tracker.py (retro buckets -> drift_track.csv). Verified end-to-end 2026-08-03.
