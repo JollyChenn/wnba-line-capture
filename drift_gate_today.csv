@@ -9,12 +9,14 @@ date,player,market,side,line,src,open_odds,now_odds,move_pct,verdict,confidence,
 2026-08-03,Sabrina Ionescu,pts,Over,20.5,flip_paper,1.8,1.8,0.0,BET (steady),ok 85%,19.5->20.5,,,8
 2026-08-03,Kahleah Copper,pts,Under,22.5,newunder,1.769,1.769,0.0,BET (steady),NO READ (new line),21.5->22.5,,,1
 2026-08-03,Sydney Taylor,pts,Under,17.5,newunder,1.91,1.909,-0.1,BET (steady),ok 85%,,,,2
-2026-08-03,Laura Juskaite,pra,Over,17.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,10
-2026-08-03,Maria Conde,pra,Over,19.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,10
-2026-08-03,Nyara Sabally,pra,Over,18.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,10
-2026-08-03,Kiki Rice,pra,Over,23.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,10
+2026-08-03,Laura Juskaite,pra,Over,17.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,11
+2026-08-03,Maria Conde,pra,Over,19.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,11
+2026-08-03,Nyara Sabally,pra,Over,18.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,11
+2026-08-03,Kiki Rice,pra,Over,23.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,11
 2026-08-03,Dominique Malonga,pra,Over,24.5,overshoot,1.83,1.833,0.2,BET (steady),ok 85%,,,,9
 2026-08-03,Angel Reese,pts,Under,17.5,model,1.75,1.75,0.0,BET (steady),ok 85%,,,,8
-2026-08-03,Kayla Thornton,pts,Under,8.5,newunder,1.91,1.91,0.0,BET (steady),ok 85%,,,,7
+2026-08-03,Kayla Thornton,pts,Under,8.5,newunder,1.91,1.91,0.0,BET (steady),ok 85%,,,,8
 2026-08-03,Kelsey Plum,pr,Over,16.5,overshoot,1.833,1.833,0.0,BET (steady),ok 85%,,,,3
+2026-08-03,Shakira Austin,pr,Over,25.5,overshoot,1.8,1.8,0.0,BET (steady),NO READ (new line),,,,1
+2026-08-03,Arike Ogunbowale,pts,Over,14.5,overshoot,2.0,2.0,0.0,BET (steady),NO READ (new line),,,,1
 2026-08-03,Natasha Cloud,pts,Under,10.5,newunder,1.81,2.02,11.6,SKIP-drift,WAIT 70%,,Over,1.7,10
