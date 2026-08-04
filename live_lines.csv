@@ -53410,3 +53410,579 @@ ts,teams,type,side,points,prices,alt
 2026-08-04T00:39:38Z,Atlanta Dream|Las Vegas Aces,total,,189.5,"-127,-105",1
 2026-08-04T00:39:38Z,Atlanta Dream|Las Vegas Aces,total,,190.5,"-109,-122",1
 2026-08-04T00:39:38Z,Atlanta Dream|Las Vegas Aces,total,,191.0,"-101,-133",1
+2026-08-04T00:40:55Z,Chicago Sky|Phoenix Mercury,moneyline,,,"110,-129",0
+2026-08-04T00:40:55Z,Chicago Sky|Phoenix Mercury,team_total,home,89.0,"-115,-105",0
+2026-08-04T00:40:55Z,Chicago Sky|Phoenix Mercury,team_total,away,90.0,"-118,-103",0
+2026-08-04T00:40:55Z,Chicago Sky|Phoenix Mercury,spread,,1.5,"-103,-113",0
+2026-08-04T00:40:55Z,Chicago Sky|Phoenix Mercury,spread,,3.0,"-133,109",1
+2026-08-04T00:40:55Z,Chicago Sky|Phoenix Mercury,spread,,2.5,"-123,101",1
+2026-08-04T00:40:55Z,Chicago Sky|Phoenix Mercury,spread,,2.0,"-114,-106",1
+2026-08-04T00:40:55Z,Chicago Sky|Phoenix Mercury,spread,,1.0,"101,-123",1
+2026-08-04T00:40:55Z,Chicago Sky|Phoenix Mercury,spread,,-1.0,"113,-137",1
+2026-08-04T00:40:55Z,Chicago Sky|Phoenix Mercury,spread,,-1.5,"119,-145",1
+2026-08-04T00:40:55Z,Chicago Sky|Phoenix Mercury,total,,179.5,"-112,-108",0
+2026-08-04T00:40:55Z,Chicago Sky|Phoenix Mercury,total,,178.0,"-133,106",1
+2026-08-04T00:40:55Z,Chicago Sky|Phoenix Mercury,total,,178.5,"-126,100",1
+2026-08-04T00:40:55Z,Chicago Sky|Phoenix Mercury,total,,179.0,"-120,-105",1
+2026-08-04T00:40:55Z,Chicago Sky|Phoenix Mercury,total,,180.0,"-108,-116",1
+2026-08-04T00:40:55Z,Chicago Sky|Phoenix Mercury,total,,180.5,"-103,-122",1
+2026-08-04T00:40:55Z,Chicago Sky|Phoenix Mercury,total,,181.0,"105,-132",1
+2026-08-04T00:40:55Z,New York Liberty|Seattle Storm,moneyline,,,"-3500,1602",0
+2026-08-04T00:40:55Z,New York Liberty|Seattle Storm,team_total,home,101.5,"-101,-119",0
+2026-08-04T00:40:55Z,New York Liberty|Seattle Storm,team_total,home,100.5,"-141,116",1
+2026-08-04T00:40:55Z,New York Liberty|Seattle Storm,team_total,home,102.5,"136,-166",1
+2026-08-04T00:40:55Z,New York Liberty|Seattle Storm,team_total,away,88.5,"-117,-103",0
+2026-08-04T00:40:55Z,New York Liberty|Seattle Storm,team_total,away,87.5,"-155,128",1
+2026-08-04T00:40:55Z,New York Liberty|Seattle Storm,team_total,away,89.5,"113,-136",1
+2026-08-04T00:40:55Z,New York Liberty|Seattle Storm,spread,,-12.5,"-108,-112",0
+2026-08-04T00:40:55Z,New York Liberty|Seattle Storm,spread,,-11.0,"-160,128",1
+2026-08-04T00:40:55Z,New York Liberty|Seattle Storm,spread,,-11.5,"-136,111",1
+2026-08-04T00:40:55Z,New York Liberty|Seattle Storm,spread,,-12.0,"-122,-100",1
+2026-08-04T00:40:55Z,New York Liberty|Seattle Storm,spread,,-13.0,"106,-130",1
+2026-08-04T00:40:55Z,New York Liberty|Seattle Storm,spread,,-13.5,"119,-147",1
+2026-08-04T00:40:55Z,New York Liberty|Seattle Storm,spread,,-14.0,"137,-172",1
+2026-08-04T00:40:55Z,New York Liberty|Seattle Storm,total,,190.0,"-110,-110",0
+2026-08-04T00:40:55Z,New York Liberty|Seattle Storm,total,,188.5,"-151,121",1
+2026-08-04T00:40:55Z,New York Liberty|Seattle Storm,total,,189.0,"-137,111",1
+2026-08-04T00:40:55Z,New York Liberty|Seattle Storm,total,,189.5,"-122,-100",1
+2026-08-04T00:40:55Z,New York Liberty|Seattle Storm,total,,190.5,"100,-122",1
+2026-08-04T00:40:55Z,New York Liberty|Seattle Storm,total,,191.0,"111,-137",1
+2026-08-04T00:40:55Z,New York Liberty|Seattle Storm,total,,191.5,"122,-152",1
+2026-08-04T00:40:55Z,Golden State Valkyries|Toronto Tempo,moneyline,,,"-836,573",0
+2026-08-04T00:40:55Z,Golden State Valkyries|Toronto Tempo,team_total,home,90.5,"-112,-112",0
+2026-08-04T00:40:55Z,Golden State Valkyries|Toronto Tempo,team_total,away,77.5,"-112,-112",0
+2026-08-04T00:40:55Z,Golden State Valkyries|Toronto Tempo,spread,,-13.0,"-108,-112",0
+2026-08-04T00:40:55Z,Golden State Valkyries|Toronto Tempo,spread,,-11.5,"-142,112",1
+2026-08-04T00:40:55Z,Golden State Valkyries|Toronto Tempo,spread,,-12.0,"-131,104",1
+2026-08-04T00:40:55Z,Golden State Valkyries|Toronto Tempo,spread,,-12.5,"-120,-104",1
+2026-08-04T00:40:55Z,Golden State Valkyries|Toronto Tempo,spread,,-13.5,"-100,-125",1
+2026-08-04T00:40:55Z,Golden State Valkyries|Toronto Tempo,spread,,-14.0,"108,-136",1
+2026-08-04T00:40:55Z,Golden State Valkyries|Toronto Tempo,spread,,-14.5,"117,-147",1
+2026-08-04T00:40:55Z,Golden State Valkyries|Toronto Tempo,total,,168.0,"-112,-112",0
+2026-08-04T00:40:55Z,Golden State Valkyries|Toronto Tempo,total,,166.5,"-133,102",1
+2026-08-04T00:40:55Z,Golden State Valkyries|Toronto Tempo,total,,167.0,"-127,-103",1
+2026-08-04T00:40:55Z,Golden State Valkyries|Toronto Tempo,total,,167.5,"-120,-108",1
+2026-08-04T00:40:55Z,Golden State Valkyries|Toronto Tempo,total,,168.5,"-108,-120",1
+2026-08-04T00:40:55Z,Golden State Valkyries|Toronto Tempo,total,,169.0,"-103,-127",1
+2026-08-04T00:40:55Z,Golden State Valkyries|Toronto Tempo,total,,169.5,"102,-133",1
+2026-08-04T00:40:55Z,Atlanta Dream|Las Vegas Aces,moneyline,,,"1032,-2741",0
+2026-08-04T00:40:55Z,Atlanta Dream|Las Vegas Aces,team_total,home,87.5,"-117,-113",0
+2026-08-04T00:40:55Z,Atlanta Dream|Las Vegas Aces,team_total,home,86.5,"-148,112",1
+2026-08-04T00:40:55Z,Atlanta Dream|Las Vegas Aces,team_total,home,88.5,"108,-143",1
+2026-08-04T00:40:55Z,Atlanta Dream|Las Vegas Aces,team_total,away,103.5,"-110,-120",0
+2026-08-04T00:40:55Z,Atlanta Dream|Las Vegas Aces,team_total,away,102.5,"-142,107",1
+2026-08-04T00:40:55Z,Atlanta Dream|Las Vegas Aces,team_total,away,104.5,"117,-155",1
+2026-08-04T00:40:55Z,Atlanta Dream|Las Vegas Aces,spread,,15.5,"-111,-119",0
+2026-08-04T00:40:55Z,Atlanta Dream|Las Vegas Aces,spread,,16.5,"-134,-101",1
+2026-08-04T00:40:55Z,Atlanta Dream|Las Vegas Aces,spread,,16.0,"-122,-109",1
+2026-08-04T00:40:55Z,Atlanta Dream|Las Vegas Aces,spread,,15.0,"-102,-131",1
+2026-08-04T00:40:55Z,Atlanta Dream|Las Vegas Aces,spread,,14.5,"106,-143",1
+2026-08-04T00:40:55Z,Atlanta Dream|Las Vegas Aces,total,,190.0,"-117,-113",0
+2026-08-04T00:40:55Z,Atlanta Dream|Las Vegas Aces,total,,189.0,"-138,103",1
+2026-08-04T00:40:55Z,Atlanta Dream|Las Vegas Aces,total,,189.5,"-127,-105",1
+2026-08-04T00:40:55Z,Atlanta Dream|Las Vegas Aces,total,,190.5,"-109,-122",1
+2026-08-04T00:40:55Z,Atlanta Dream|Las Vegas Aces,total,,191.0,"-101,-133",1
+2026-08-04T00:42:11Z,Chicago Sky|Phoenix Mercury,moneyline,,,"110,-129",0
+2026-08-04T00:42:11Z,Chicago Sky|Phoenix Mercury,team_total,home,89.0,"-115,-105",0
+2026-08-04T00:42:11Z,Chicago Sky|Phoenix Mercury,team_total,away,90.0,"-118,-103",0
+2026-08-04T00:42:11Z,Chicago Sky|Phoenix Mercury,spread,,1.5,"-103,-113",0
+2026-08-04T00:42:11Z,Chicago Sky|Phoenix Mercury,spread,,3.0,"-133,109",1
+2026-08-04T00:42:11Z,Chicago Sky|Phoenix Mercury,spread,,2.5,"-123,101",1
+2026-08-04T00:42:11Z,Chicago Sky|Phoenix Mercury,spread,,2.0,"-114,-106",1
+2026-08-04T00:42:11Z,Chicago Sky|Phoenix Mercury,spread,,1.0,"101,-123",1
+2026-08-04T00:42:11Z,Chicago Sky|Phoenix Mercury,spread,,-1.0,"113,-137",1
+2026-08-04T00:42:11Z,Chicago Sky|Phoenix Mercury,spread,,-1.5,"119,-145",1
+2026-08-04T00:42:11Z,Chicago Sky|Phoenix Mercury,total,,179.5,"-112,-108",0
+2026-08-04T00:42:11Z,Chicago Sky|Phoenix Mercury,total,,178.0,"-133,106",1
+2026-08-04T00:42:11Z,Chicago Sky|Phoenix Mercury,total,,178.5,"-126,100",1
+2026-08-04T00:42:11Z,Chicago Sky|Phoenix Mercury,total,,179.0,"-120,-105",1
+2026-08-04T00:42:11Z,Chicago Sky|Phoenix Mercury,total,,180.0,"-108,-116",1
+2026-08-04T00:42:11Z,Chicago Sky|Phoenix Mercury,total,,180.5,"-103,-122",1
+2026-08-04T00:42:11Z,Chicago Sky|Phoenix Mercury,total,,181.0,"105,-132",1
+2026-08-04T00:42:11Z,New York Liberty|Seattle Storm,moneyline,,,"-3500,1602",0
+2026-08-04T00:42:11Z,New York Liberty|Seattle Storm,team_total,home,101.5,"-101,-119",0
+2026-08-04T00:42:11Z,New York Liberty|Seattle Storm,team_total,home,100.5,"-141,116",1
+2026-08-04T00:42:11Z,New York Liberty|Seattle Storm,team_total,home,102.5,"136,-166",1
+2026-08-04T00:42:11Z,New York Liberty|Seattle Storm,team_total,away,88.5,"-117,-103",0
+2026-08-04T00:42:11Z,New York Liberty|Seattle Storm,team_total,away,87.5,"-155,128",1
+2026-08-04T00:42:11Z,New York Liberty|Seattle Storm,team_total,away,89.5,"113,-136",1
+2026-08-04T00:42:11Z,New York Liberty|Seattle Storm,spread,,-12.5,"-108,-112",0
+2026-08-04T00:42:11Z,New York Liberty|Seattle Storm,spread,,-11.0,"-160,128",1
+2026-08-04T00:42:11Z,New York Liberty|Seattle Storm,spread,,-11.5,"-136,111",1
+2026-08-04T00:42:11Z,New York Liberty|Seattle Storm,spread,,-12.0,"-122,-100",1
+2026-08-04T00:42:11Z,New York Liberty|Seattle Storm,spread,,-13.0,"106,-130",1
+2026-08-04T00:42:11Z,New York Liberty|Seattle Storm,spread,,-13.5,"119,-147",1
+2026-08-04T00:42:11Z,New York Liberty|Seattle Storm,spread,,-14.0,"137,-172",1
+2026-08-04T00:42:11Z,New York Liberty|Seattle Storm,total,,190.0,"-110,-110",0
+2026-08-04T00:42:11Z,New York Liberty|Seattle Storm,total,,188.5,"-151,121",1
+2026-08-04T00:42:11Z,New York Liberty|Seattle Storm,total,,189.0,"-137,111",1
+2026-08-04T00:42:11Z,New York Liberty|Seattle Storm,total,,189.5,"-122,-100",1
+2026-08-04T00:42:11Z,New York Liberty|Seattle Storm,total,,190.5,"100,-122",1
+2026-08-04T00:42:11Z,New York Liberty|Seattle Storm,total,,191.0,"111,-137",1
+2026-08-04T00:42:11Z,New York Liberty|Seattle Storm,total,,191.5,"122,-152",1
+2026-08-04T00:42:11Z,Golden State Valkyries|Toronto Tempo,moneyline,,,"-836,573",0
+2026-08-04T00:42:11Z,Golden State Valkyries|Toronto Tempo,team_total,home,90.5,"-112,-112",0
+2026-08-04T00:42:11Z,Golden State Valkyries|Toronto Tempo,team_total,away,77.5,"-112,-112",0
+2026-08-04T00:42:11Z,Golden State Valkyries|Toronto Tempo,spread,,-13.0,"-108,-112",0
+2026-08-04T00:42:11Z,Golden State Valkyries|Toronto Tempo,spread,,-11.5,"-142,112",1
+2026-08-04T00:42:11Z,Golden State Valkyries|Toronto Tempo,spread,,-12.0,"-131,104",1
+2026-08-04T00:42:11Z,Golden State Valkyries|Toronto Tempo,spread,,-12.5,"-120,-104",1
+2026-08-04T00:42:11Z,Golden State Valkyries|Toronto Tempo,spread,,-13.5,"-100,-125",1
+2026-08-04T00:42:11Z,Golden State Valkyries|Toronto Tempo,spread,,-14.0,"108,-136",1
+2026-08-04T00:42:11Z,Golden State Valkyries|Toronto Tempo,spread,,-14.5,"117,-147",1
+2026-08-04T00:42:11Z,Golden State Valkyries|Toronto Tempo,total,,168.0,"-112,-112",0
+2026-08-04T00:42:11Z,Golden State Valkyries|Toronto Tempo,total,,166.5,"-133,102",1
+2026-08-04T00:42:11Z,Golden State Valkyries|Toronto Tempo,total,,167.0,"-127,-103",1
+2026-08-04T00:42:11Z,Golden State Valkyries|Toronto Tempo,total,,167.5,"-120,-108",1
+2026-08-04T00:42:11Z,Golden State Valkyries|Toronto Tempo,total,,168.5,"-108,-120",1
+2026-08-04T00:42:11Z,Golden State Valkyries|Toronto Tempo,total,,169.0,"-103,-127",1
+2026-08-04T00:42:11Z,Golden State Valkyries|Toronto Tempo,total,,169.5,"102,-133",1
+2026-08-04T00:42:11Z,Atlanta Dream|Las Vegas Aces,moneyline,,,"1032,-2741",0
+2026-08-04T00:42:11Z,Atlanta Dream|Las Vegas Aces,team_total,home,87.5,"-117,-113",0
+2026-08-04T00:42:11Z,Atlanta Dream|Las Vegas Aces,team_total,home,86.5,"-148,112",1
+2026-08-04T00:42:11Z,Atlanta Dream|Las Vegas Aces,team_total,home,88.5,"108,-143",1
+2026-08-04T00:42:11Z,Atlanta Dream|Las Vegas Aces,team_total,away,103.5,"-110,-120",0
+2026-08-04T00:42:11Z,Atlanta Dream|Las Vegas Aces,team_total,away,102.5,"-142,107",1
+2026-08-04T00:42:11Z,Atlanta Dream|Las Vegas Aces,team_total,away,104.5,"117,-155",1
+2026-08-04T00:42:11Z,Atlanta Dream|Las Vegas Aces,spread,,15.5,"-111,-119",0
+2026-08-04T00:42:11Z,Atlanta Dream|Las Vegas Aces,spread,,16.5,"-134,-101",1
+2026-08-04T00:42:11Z,Atlanta Dream|Las Vegas Aces,spread,,16.0,"-122,-109",1
+2026-08-04T00:42:11Z,Atlanta Dream|Las Vegas Aces,spread,,15.0,"-102,-131",1
+2026-08-04T00:42:11Z,Atlanta Dream|Las Vegas Aces,spread,,14.5,"106,-143",1
+2026-08-04T00:42:11Z,Atlanta Dream|Las Vegas Aces,total,,190.0,"-117,-113",0
+2026-08-04T00:42:11Z,Atlanta Dream|Las Vegas Aces,total,,189.0,"-138,103",1
+2026-08-04T00:42:11Z,Atlanta Dream|Las Vegas Aces,total,,189.5,"-127,-105",1
+2026-08-04T00:42:11Z,Atlanta Dream|Las Vegas Aces,total,,190.5,"-109,-122",1
+2026-08-04T00:42:11Z,Atlanta Dream|Las Vegas Aces,total,,191.0,"-101,-133",1
+2026-08-04T00:43:26Z,Chicago Sky|Phoenix Mercury,moneyline,,,"110,-129",0
+2026-08-04T00:43:26Z,Chicago Sky|Phoenix Mercury,team_total,home,89.0,"-115,-105",0
+2026-08-04T00:43:26Z,Chicago Sky|Phoenix Mercury,team_total,away,90.0,"-118,-103",0
+2026-08-04T00:43:26Z,Chicago Sky|Phoenix Mercury,spread,,1.5,"-103,-113",0
+2026-08-04T00:43:26Z,Chicago Sky|Phoenix Mercury,spread,,3.0,"-133,109",1
+2026-08-04T00:43:26Z,Chicago Sky|Phoenix Mercury,spread,,2.5,"-123,101",1
+2026-08-04T00:43:26Z,Chicago Sky|Phoenix Mercury,spread,,2.0,"-114,-106",1
+2026-08-04T00:43:26Z,Chicago Sky|Phoenix Mercury,spread,,1.0,"101,-123",1
+2026-08-04T00:43:26Z,Chicago Sky|Phoenix Mercury,spread,,-1.0,"113,-137",1
+2026-08-04T00:43:26Z,Chicago Sky|Phoenix Mercury,spread,,-1.5,"119,-145",1
+2026-08-04T00:43:26Z,Chicago Sky|Phoenix Mercury,total,,179.5,"-112,-108",0
+2026-08-04T00:43:26Z,Chicago Sky|Phoenix Mercury,total,,178.0,"-133,106",1
+2026-08-04T00:43:26Z,Chicago Sky|Phoenix Mercury,total,,178.5,"-126,100",1
+2026-08-04T00:43:26Z,Chicago Sky|Phoenix Mercury,total,,179.0,"-120,-105",1
+2026-08-04T00:43:26Z,Chicago Sky|Phoenix Mercury,total,,180.0,"-108,-116",1
+2026-08-04T00:43:26Z,Chicago Sky|Phoenix Mercury,total,,180.5,"-103,-122",1
+2026-08-04T00:43:26Z,Chicago Sky|Phoenix Mercury,total,,181.0,"105,-132",1
+2026-08-04T00:43:26Z,New York Liberty|Seattle Storm,moneyline,,,"-3500,1602",0
+2026-08-04T00:43:26Z,New York Liberty|Seattle Storm,team_total,home,101.5,"-101,-119",0
+2026-08-04T00:43:26Z,New York Liberty|Seattle Storm,team_total,home,100.5,"-141,116",1
+2026-08-04T00:43:26Z,New York Liberty|Seattle Storm,team_total,home,102.5,"136,-166",1
+2026-08-04T00:43:26Z,New York Liberty|Seattle Storm,team_total,away,88.5,"-117,-103",0
+2026-08-04T00:43:26Z,New York Liberty|Seattle Storm,team_total,away,87.5,"-155,128",1
+2026-08-04T00:43:26Z,New York Liberty|Seattle Storm,team_total,away,89.5,"113,-136",1
+2026-08-04T00:43:26Z,New York Liberty|Seattle Storm,spread,,-12.5,"-108,-112",0
+2026-08-04T00:43:26Z,New York Liberty|Seattle Storm,spread,,-11.0,"-160,128",1
+2026-08-04T00:43:26Z,New York Liberty|Seattle Storm,spread,,-11.5,"-136,111",1
+2026-08-04T00:43:26Z,New York Liberty|Seattle Storm,spread,,-12.0,"-122,-100",1
+2026-08-04T00:43:26Z,New York Liberty|Seattle Storm,spread,,-13.0,"106,-130",1
+2026-08-04T00:43:26Z,New York Liberty|Seattle Storm,spread,,-13.5,"119,-147",1
+2026-08-04T00:43:26Z,New York Liberty|Seattle Storm,spread,,-14.0,"137,-172",1
+2026-08-04T00:43:26Z,New York Liberty|Seattle Storm,total,,190.0,"-110,-110",0
+2026-08-04T00:43:26Z,New York Liberty|Seattle Storm,total,,188.5,"-151,121",1
+2026-08-04T00:43:26Z,New York Liberty|Seattle Storm,total,,189.0,"-137,111",1
+2026-08-04T00:43:26Z,New York Liberty|Seattle Storm,total,,189.5,"-122,-100",1
+2026-08-04T00:43:26Z,New York Liberty|Seattle Storm,total,,190.5,"100,-122",1
+2026-08-04T00:43:26Z,New York Liberty|Seattle Storm,total,,191.0,"111,-137",1
+2026-08-04T00:43:26Z,New York Liberty|Seattle Storm,total,,191.5,"122,-152",1
+2026-08-04T00:43:26Z,Golden State Valkyries|Toronto Tempo,moneyline,,,"-836,573",0
+2026-08-04T00:43:26Z,Golden State Valkyries|Toronto Tempo,team_total,home,90.5,"-112,-112",0
+2026-08-04T00:43:26Z,Golden State Valkyries|Toronto Tempo,team_total,away,77.5,"-112,-112",0
+2026-08-04T00:43:26Z,Golden State Valkyries|Toronto Tempo,spread,,-13.0,"-108,-112",0
+2026-08-04T00:43:26Z,Golden State Valkyries|Toronto Tempo,spread,,-11.5,"-142,112",1
+2026-08-04T00:43:26Z,Golden State Valkyries|Toronto Tempo,spread,,-12.0,"-131,104",1
+2026-08-04T00:43:26Z,Golden State Valkyries|Toronto Tempo,spread,,-12.5,"-120,-104",1
+2026-08-04T00:43:26Z,Golden State Valkyries|Toronto Tempo,spread,,-13.5,"-100,-125",1
+2026-08-04T00:43:26Z,Golden State Valkyries|Toronto Tempo,spread,,-14.0,"108,-136",1
+2026-08-04T00:43:26Z,Golden State Valkyries|Toronto Tempo,spread,,-14.5,"117,-147",1
+2026-08-04T00:43:26Z,Golden State Valkyries|Toronto Tempo,total,,168.0,"-112,-112",0
+2026-08-04T00:43:26Z,Golden State Valkyries|Toronto Tempo,total,,166.5,"-133,102",1
+2026-08-04T00:43:26Z,Golden State Valkyries|Toronto Tempo,total,,167.0,"-127,-103",1
+2026-08-04T00:43:26Z,Golden State Valkyries|Toronto Tempo,total,,167.5,"-120,-108",1
+2026-08-04T00:43:26Z,Golden State Valkyries|Toronto Tempo,total,,168.5,"-108,-120",1
+2026-08-04T00:43:26Z,Golden State Valkyries|Toronto Tempo,total,,169.0,"-103,-127",1
+2026-08-04T00:43:26Z,Golden State Valkyries|Toronto Tempo,total,,169.5,"102,-133",1
+2026-08-04T00:43:26Z,Atlanta Dream|Las Vegas Aces,moneyline,,,"1032,-2741",0
+2026-08-04T00:43:26Z,Atlanta Dream|Las Vegas Aces,team_total,home,87.5,"-117,-113",0
+2026-08-04T00:43:26Z,Atlanta Dream|Las Vegas Aces,team_total,home,86.5,"-148,112",1
+2026-08-04T00:43:26Z,Atlanta Dream|Las Vegas Aces,team_total,home,88.5,"108,-143",1
+2026-08-04T00:43:26Z,Atlanta Dream|Las Vegas Aces,team_total,away,103.5,"-110,-120",0
+2026-08-04T00:43:26Z,Atlanta Dream|Las Vegas Aces,team_total,away,102.5,"-142,107",1
+2026-08-04T00:43:26Z,Atlanta Dream|Las Vegas Aces,team_total,away,104.5,"117,-155",1
+2026-08-04T00:43:26Z,Atlanta Dream|Las Vegas Aces,spread,,15.5,"-111,-119",0
+2026-08-04T00:43:26Z,Atlanta Dream|Las Vegas Aces,spread,,16.5,"-134,-101",1
+2026-08-04T00:43:26Z,Atlanta Dream|Las Vegas Aces,spread,,16.0,"-122,-109",1
+2026-08-04T00:43:26Z,Atlanta Dream|Las Vegas Aces,spread,,15.0,"-102,-131",1
+2026-08-04T00:43:26Z,Atlanta Dream|Las Vegas Aces,spread,,14.5,"106,-143",1
+2026-08-04T00:43:26Z,Atlanta Dream|Las Vegas Aces,total,,190.0,"-117,-113",0
+2026-08-04T00:43:26Z,Atlanta Dream|Las Vegas Aces,total,,189.0,"-138,103",1
+2026-08-04T00:43:26Z,Atlanta Dream|Las Vegas Aces,total,,189.5,"-127,-105",1
+2026-08-04T00:43:26Z,Atlanta Dream|Las Vegas Aces,total,,190.5,"-109,-122",1
+2026-08-04T00:43:26Z,Atlanta Dream|Las Vegas Aces,total,,191.0,"-101,-133",1
+2026-08-04T00:44:42Z,Chicago Sky|Phoenix Mercury,moneyline,,,"110,-129",0
+2026-08-04T00:44:42Z,Chicago Sky|Phoenix Mercury,team_total,home,89.0,"-115,-105",0
+2026-08-04T00:44:42Z,Chicago Sky|Phoenix Mercury,team_total,away,90.0,"-118,-103",0
+2026-08-04T00:44:42Z,Chicago Sky|Phoenix Mercury,spread,,1.5,"-103,-113",0
+2026-08-04T00:44:42Z,Chicago Sky|Phoenix Mercury,spread,,3.0,"-133,109",1
+2026-08-04T00:44:42Z,Chicago Sky|Phoenix Mercury,spread,,2.5,"-123,101",1
+2026-08-04T00:44:42Z,Chicago Sky|Phoenix Mercury,spread,,2.0,"-114,-106",1
+2026-08-04T00:44:42Z,Chicago Sky|Phoenix Mercury,spread,,1.0,"101,-123",1
+2026-08-04T00:44:42Z,Chicago Sky|Phoenix Mercury,spread,,-1.0,"113,-137",1
+2026-08-04T00:44:42Z,Chicago Sky|Phoenix Mercury,spread,,-1.5,"119,-145",1
+2026-08-04T00:44:42Z,Chicago Sky|Phoenix Mercury,total,,179.5,"-112,-108",0
+2026-08-04T00:44:42Z,Chicago Sky|Phoenix Mercury,total,,178.0,"-133,106",1
+2026-08-04T00:44:42Z,Chicago Sky|Phoenix Mercury,total,,178.5,"-126,100",1
+2026-08-04T00:44:42Z,Chicago Sky|Phoenix Mercury,total,,179.0,"-120,-105",1
+2026-08-04T00:44:42Z,Chicago Sky|Phoenix Mercury,total,,180.0,"-108,-116",1
+2026-08-04T00:44:42Z,Chicago Sky|Phoenix Mercury,total,,180.5,"-103,-122",1
+2026-08-04T00:44:42Z,Chicago Sky|Phoenix Mercury,total,,181.0,"105,-132",1
+2026-08-04T00:44:42Z,New York Liberty|Seattle Storm,moneyline,,,"-3500,1602",0
+2026-08-04T00:44:42Z,New York Liberty|Seattle Storm,team_total,home,101.5,"-101,-119",0
+2026-08-04T00:44:42Z,New York Liberty|Seattle Storm,team_total,home,100.5,"-141,116",1
+2026-08-04T00:44:42Z,New York Liberty|Seattle Storm,team_total,home,102.5,"136,-166",1
+2026-08-04T00:44:42Z,New York Liberty|Seattle Storm,team_total,away,88.5,"-117,-103",0
+2026-08-04T00:44:42Z,New York Liberty|Seattle Storm,team_total,away,87.5,"-155,128",1
+2026-08-04T00:44:42Z,New York Liberty|Seattle Storm,team_total,away,89.5,"113,-136",1
+2026-08-04T00:44:42Z,New York Liberty|Seattle Storm,spread,,-12.5,"-108,-112",0
+2026-08-04T00:44:42Z,New York Liberty|Seattle Storm,spread,,-11.0,"-160,128",1
+2026-08-04T00:44:42Z,New York Liberty|Seattle Storm,spread,,-11.5,"-136,111",1
+2026-08-04T00:44:42Z,New York Liberty|Seattle Storm,spread,,-12.0,"-122,-100",1
+2026-08-04T00:44:42Z,New York Liberty|Seattle Storm,spread,,-13.0,"106,-130",1
+2026-08-04T00:44:42Z,New York Liberty|Seattle Storm,spread,,-13.5,"119,-147",1
+2026-08-04T00:44:42Z,New York Liberty|Seattle Storm,spread,,-14.0,"137,-172",1
+2026-08-04T00:44:42Z,New York Liberty|Seattle Storm,total,,190.0,"-110,-110",0
+2026-08-04T00:44:42Z,New York Liberty|Seattle Storm,total,,188.5,"-151,121",1
+2026-08-04T00:44:42Z,New York Liberty|Seattle Storm,total,,189.0,"-137,111",1
+2026-08-04T00:44:42Z,New York Liberty|Seattle Storm,total,,189.5,"-122,-100",1
+2026-08-04T00:44:42Z,New York Liberty|Seattle Storm,total,,190.5,"100,-122",1
+2026-08-04T00:44:42Z,New York Liberty|Seattle Storm,total,,191.0,"111,-137",1
+2026-08-04T00:44:42Z,New York Liberty|Seattle Storm,total,,191.5,"122,-152",1
+2026-08-04T00:44:42Z,Golden State Valkyries|Toronto Tempo,moneyline,,,"-836,573",0
+2026-08-04T00:44:42Z,Golden State Valkyries|Toronto Tempo,team_total,home,90.5,"-112,-112",0
+2026-08-04T00:44:42Z,Golden State Valkyries|Toronto Tempo,team_total,away,77.5,"-112,-112",0
+2026-08-04T00:44:42Z,Golden State Valkyries|Toronto Tempo,spread,,-13.0,"-108,-112",0
+2026-08-04T00:44:42Z,Golden State Valkyries|Toronto Tempo,spread,,-11.5,"-142,112",1
+2026-08-04T00:44:42Z,Golden State Valkyries|Toronto Tempo,spread,,-12.0,"-131,104",1
+2026-08-04T00:44:42Z,Golden State Valkyries|Toronto Tempo,spread,,-12.5,"-120,-104",1
+2026-08-04T00:44:42Z,Golden State Valkyries|Toronto Tempo,spread,,-13.5,"-100,-125",1
+2026-08-04T00:44:42Z,Golden State Valkyries|Toronto Tempo,spread,,-14.0,"108,-136",1
+2026-08-04T00:44:42Z,Golden State Valkyries|Toronto Tempo,spread,,-14.5,"117,-147",1
+2026-08-04T00:44:42Z,Golden State Valkyries|Toronto Tempo,total,,168.0,"-112,-112",0
+2026-08-04T00:44:42Z,Golden State Valkyries|Toronto Tempo,total,,166.5,"-133,102",1
+2026-08-04T00:44:42Z,Golden State Valkyries|Toronto Tempo,total,,167.0,"-127,-103",1
+2026-08-04T00:44:42Z,Golden State Valkyries|Toronto Tempo,total,,167.5,"-120,-108",1
+2026-08-04T00:44:42Z,Golden State Valkyries|Toronto Tempo,total,,168.5,"-108,-120",1
+2026-08-04T00:44:42Z,Golden State Valkyries|Toronto Tempo,total,,169.0,"-103,-127",1
+2026-08-04T00:44:42Z,Golden State Valkyries|Toronto Tempo,total,,169.5,"102,-133",1
+2026-08-04T00:44:42Z,Atlanta Dream|Las Vegas Aces,moneyline,,,"1032,-2741",0
+2026-08-04T00:44:42Z,Atlanta Dream|Las Vegas Aces,team_total,home,87.5,"-117,-113",0
+2026-08-04T00:44:42Z,Atlanta Dream|Las Vegas Aces,team_total,home,86.5,"-148,112",1
+2026-08-04T00:44:42Z,Atlanta Dream|Las Vegas Aces,team_total,home,88.5,"108,-143",1
+2026-08-04T00:44:42Z,Atlanta Dream|Las Vegas Aces,team_total,away,103.5,"-110,-120",0
+2026-08-04T00:44:42Z,Atlanta Dream|Las Vegas Aces,team_total,away,102.5,"-142,107",1
+2026-08-04T00:44:42Z,Atlanta Dream|Las Vegas Aces,team_total,away,104.5,"117,-155",1
+2026-08-04T00:44:42Z,Atlanta Dream|Las Vegas Aces,spread,,15.5,"-111,-119",0
+2026-08-04T00:44:42Z,Atlanta Dream|Las Vegas Aces,spread,,16.5,"-134,-101",1
+2026-08-04T00:44:42Z,Atlanta Dream|Las Vegas Aces,spread,,16.0,"-122,-109",1
+2026-08-04T00:44:42Z,Atlanta Dream|Las Vegas Aces,spread,,15.0,"-102,-131",1
+2026-08-04T00:44:42Z,Atlanta Dream|Las Vegas Aces,spread,,14.5,"106,-143",1
+2026-08-04T00:44:42Z,Atlanta Dream|Las Vegas Aces,total,,190.0,"-117,-113",0
+2026-08-04T00:44:42Z,Atlanta Dream|Las Vegas Aces,total,,189.0,"-138,103",1
+2026-08-04T00:44:42Z,Atlanta Dream|Las Vegas Aces,total,,189.5,"-127,-105",1
+2026-08-04T00:44:42Z,Atlanta Dream|Las Vegas Aces,total,,190.5,"-109,-122",1
+2026-08-04T00:44:42Z,Atlanta Dream|Las Vegas Aces,total,,191.0,"-101,-133",1
+2026-08-04T00:45:57Z,Chicago Sky|Phoenix Mercury,moneyline,,,"110,-129",0
+2026-08-04T00:45:57Z,Chicago Sky|Phoenix Mercury,team_total,home,89.0,"-115,-105",0
+2026-08-04T00:45:57Z,Chicago Sky|Phoenix Mercury,team_total,away,90.0,"-118,-103",0
+2026-08-04T00:45:57Z,Chicago Sky|Phoenix Mercury,spread,,1.5,"-103,-113",0
+2026-08-04T00:45:57Z,Chicago Sky|Phoenix Mercury,spread,,3.0,"-133,109",1
+2026-08-04T00:45:57Z,Chicago Sky|Phoenix Mercury,spread,,2.5,"-123,101",1
+2026-08-04T00:45:57Z,Chicago Sky|Phoenix Mercury,spread,,2.0,"-114,-106",1
+2026-08-04T00:45:57Z,Chicago Sky|Phoenix Mercury,spread,,1.0,"101,-123",1
+2026-08-04T00:45:57Z,Chicago Sky|Phoenix Mercury,spread,,-1.0,"113,-137",1
+2026-08-04T00:45:57Z,Chicago Sky|Phoenix Mercury,spread,,-1.5,"119,-145",1
+2026-08-04T00:45:57Z,Chicago Sky|Phoenix Mercury,total,,179.5,"-112,-108",0
+2026-08-04T00:45:57Z,Chicago Sky|Phoenix Mercury,total,,178.0,"-133,106",1
+2026-08-04T00:45:57Z,Chicago Sky|Phoenix Mercury,total,,178.5,"-126,100",1
+2026-08-04T00:45:57Z,Chicago Sky|Phoenix Mercury,total,,179.0,"-120,-105",1
+2026-08-04T00:45:57Z,Chicago Sky|Phoenix Mercury,total,,180.0,"-108,-116",1
+2026-08-04T00:45:57Z,Chicago Sky|Phoenix Mercury,total,,180.5,"-103,-122",1
+2026-08-04T00:45:57Z,Chicago Sky|Phoenix Mercury,total,,181.0,"105,-132",1
+2026-08-04T00:45:57Z,New York Liberty|Seattle Storm,moneyline,,,"-3500,1602",0
+2026-08-04T00:45:57Z,New York Liberty|Seattle Storm,team_total,home,101.5,"-101,-119",0
+2026-08-04T00:45:57Z,New York Liberty|Seattle Storm,team_total,home,100.5,"-141,116",1
+2026-08-04T00:45:57Z,New York Liberty|Seattle Storm,team_total,home,102.5,"136,-166",1
+2026-08-04T00:45:57Z,New York Liberty|Seattle Storm,team_total,away,88.5,"-117,-103",0
+2026-08-04T00:45:57Z,New York Liberty|Seattle Storm,team_total,away,87.5,"-155,128",1
+2026-08-04T00:45:57Z,New York Liberty|Seattle Storm,team_total,away,89.5,"113,-136",1
+2026-08-04T00:45:57Z,New York Liberty|Seattle Storm,spread,,-12.5,"-108,-112",0
+2026-08-04T00:45:57Z,New York Liberty|Seattle Storm,spread,,-11.0,"-160,128",1
+2026-08-04T00:45:57Z,New York Liberty|Seattle Storm,spread,,-11.5,"-136,111",1
+2026-08-04T00:45:57Z,New York Liberty|Seattle Storm,spread,,-12.0,"-122,-100",1
+2026-08-04T00:45:57Z,New York Liberty|Seattle Storm,spread,,-13.0,"106,-130",1
+2026-08-04T00:45:57Z,New York Liberty|Seattle Storm,spread,,-13.5,"119,-147",1
+2026-08-04T00:45:57Z,New York Liberty|Seattle Storm,spread,,-14.0,"137,-172",1
+2026-08-04T00:45:57Z,New York Liberty|Seattle Storm,total,,190.0,"-110,-110",0
+2026-08-04T00:45:57Z,New York Liberty|Seattle Storm,total,,188.5,"-151,121",1
+2026-08-04T00:45:57Z,New York Liberty|Seattle Storm,total,,189.0,"-137,111",1
+2026-08-04T00:45:57Z,New York Liberty|Seattle Storm,total,,189.5,"-122,-100",1
+2026-08-04T00:45:57Z,New York Liberty|Seattle Storm,total,,190.5,"100,-122",1
+2026-08-04T00:45:57Z,New York Liberty|Seattle Storm,total,,191.0,"111,-137",1
+2026-08-04T00:45:57Z,New York Liberty|Seattle Storm,total,,191.5,"122,-152",1
+2026-08-04T00:45:57Z,Golden State Valkyries|Toronto Tempo,moneyline,,,"-836,573",0
+2026-08-04T00:45:57Z,Golden State Valkyries|Toronto Tempo,team_total,home,90.5,"-112,-112",0
+2026-08-04T00:45:57Z,Golden State Valkyries|Toronto Tempo,team_total,away,77.5,"-112,-112",0
+2026-08-04T00:45:57Z,Golden State Valkyries|Toronto Tempo,spread,,-13.0,"-108,-112",0
+2026-08-04T00:45:57Z,Golden State Valkyries|Toronto Tempo,spread,,-11.5,"-142,112",1
+2026-08-04T00:45:57Z,Golden State Valkyries|Toronto Tempo,spread,,-12.0,"-131,104",1
+2026-08-04T00:45:57Z,Golden State Valkyries|Toronto Tempo,spread,,-12.5,"-120,-104",1
+2026-08-04T00:45:57Z,Golden State Valkyries|Toronto Tempo,spread,,-13.5,"-100,-125",1
+2026-08-04T00:45:57Z,Golden State Valkyries|Toronto Tempo,spread,,-14.0,"108,-136",1
+2026-08-04T00:45:57Z,Golden State Valkyries|Toronto Tempo,spread,,-14.5,"117,-147",1
+2026-08-04T00:45:57Z,Golden State Valkyries|Toronto Tempo,total,,168.0,"-112,-112",0
+2026-08-04T00:45:57Z,Golden State Valkyries|Toronto Tempo,total,,166.5,"-133,102",1
+2026-08-04T00:45:57Z,Golden State Valkyries|Toronto Tempo,total,,167.0,"-127,-103",1
+2026-08-04T00:45:57Z,Golden State Valkyries|Toronto Tempo,total,,167.5,"-120,-108",1
+2026-08-04T00:45:57Z,Golden State Valkyries|Toronto Tempo,total,,168.5,"-108,-120",1
+2026-08-04T00:45:57Z,Golden State Valkyries|Toronto Tempo,total,,169.0,"-103,-127",1
+2026-08-04T00:45:57Z,Golden State Valkyries|Toronto Tempo,total,,169.5,"102,-133",1
+2026-08-04T00:45:57Z,Atlanta Dream|Las Vegas Aces,moneyline,,,"1032,-2741",0
+2026-08-04T00:45:57Z,Atlanta Dream|Las Vegas Aces,team_total,home,87.5,"-117,-113",0
+2026-08-04T00:45:57Z,Atlanta Dream|Las Vegas Aces,team_total,home,86.5,"-148,112",1
+2026-08-04T00:45:57Z,Atlanta Dream|Las Vegas Aces,team_total,home,88.5,"108,-143",1
+2026-08-04T00:45:57Z,Atlanta Dream|Las Vegas Aces,team_total,away,103.5,"-110,-120",0
+2026-08-04T00:45:57Z,Atlanta Dream|Las Vegas Aces,team_total,away,102.5,"-142,107",1
+2026-08-04T00:45:57Z,Atlanta Dream|Las Vegas Aces,team_total,away,104.5,"117,-155",1
+2026-08-04T00:45:57Z,Atlanta Dream|Las Vegas Aces,spread,,15.5,"-111,-119",0
+2026-08-04T00:45:57Z,Atlanta Dream|Las Vegas Aces,spread,,16.5,"-134,-101",1
+2026-08-04T00:45:57Z,Atlanta Dream|Las Vegas Aces,spread,,16.0,"-122,-109",1
+2026-08-04T00:45:57Z,Atlanta Dream|Las Vegas Aces,spread,,15.0,"-102,-131",1
+2026-08-04T00:45:57Z,Atlanta Dream|Las Vegas Aces,spread,,14.5,"106,-143",1
+2026-08-04T00:45:57Z,Atlanta Dream|Las Vegas Aces,total,,190.0,"-117,-113",0
+2026-08-04T00:45:57Z,Atlanta Dream|Las Vegas Aces,total,,189.0,"-138,103",1
+2026-08-04T00:45:57Z,Atlanta Dream|Las Vegas Aces,total,,189.5,"-127,-105",1
+2026-08-04T00:45:57Z,Atlanta Dream|Las Vegas Aces,total,,190.5,"-109,-122",1
+2026-08-04T00:45:57Z,Atlanta Dream|Las Vegas Aces,total,,191.0,"-101,-133",1
+2026-08-04T00:47:13Z,Chicago Sky|Phoenix Mercury,moneyline,,,"110,-129",0
+2026-08-04T00:47:13Z,Chicago Sky|Phoenix Mercury,team_total,home,89.0,"-115,-105",0
+2026-08-04T00:47:13Z,Chicago Sky|Phoenix Mercury,team_total,away,90.0,"-118,-103",0
+2026-08-04T00:47:13Z,Chicago Sky|Phoenix Mercury,spread,,1.5,"-103,-113",0
+2026-08-04T00:47:13Z,Chicago Sky|Phoenix Mercury,spread,,3.0,"-133,109",1
+2026-08-04T00:47:13Z,Chicago Sky|Phoenix Mercury,spread,,2.5,"-123,101",1
+2026-08-04T00:47:13Z,Chicago Sky|Phoenix Mercury,spread,,2.0,"-114,-106",1
+2026-08-04T00:47:13Z,Chicago Sky|Phoenix Mercury,spread,,1.0,"101,-123",1
+2026-08-04T00:47:13Z,Chicago Sky|Phoenix Mercury,spread,,-1.0,"113,-137",1
+2026-08-04T00:47:13Z,Chicago Sky|Phoenix Mercury,spread,,-1.5,"119,-145",1
+2026-08-04T00:47:13Z,Chicago Sky|Phoenix Mercury,total,,179.5,"-112,-108",0
+2026-08-04T00:47:13Z,Chicago Sky|Phoenix Mercury,total,,178.0,"-133,106",1
+2026-08-04T00:47:13Z,Chicago Sky|Phoenix Mercury,total,,178.5,"-126,100",1
+2026-08-04T00:47:13Z,Chicago Sky|Phoenix Mercury,total,,179.0,"-120,-105",1
+2026-08-04T00:47:13Z,Chicago Sky|Phoenix Mercury,total,,180.0,"-108,-116",1
+2026-08-04T00:47:13Z,Chicago Sky|Phoenix Mercury,total,,180.5,"-103,-122",1
+2026-08-04T00:47:13Z,Chicago Sky|Phoenix Mercury,total,,181.0,"105,-132",1
+2026-08-04T00:47:13Z,New York Liberty|Seattle Storm,moneyline,,,"-3500,1602",0
+2026-08-04T00:47:13Z,New York Liberty|Seattle Storm,team_total,home,101.5,"-101,-119",0
+2026-08-04T00:47:13Z,New York Liberty|Seattle Storm,team_total,home,100.5,"-141,116",1
+2026-08-04T00:47:13Z,New York Liberty|Seattle Storm,team_total,home,102.5,"136,-166",1
+2026-08-04T00:47:13Z,New York Liberty|Seattle Storm,team_total,away,88.5,"-117,-103",0
+2026-08-04T00:47:13Z,New York Liberty|Seattle Storm,team_total,away,87.5,"-155,128",1
+2026-08-04T00:47:13Z,New York Liberty|Seattle Storm,team_total,away,89.5,"113,-136",1
+2026-08-04T00:47:13Z,New York Liberty|Seattle Storm,spread,,-12.5,"-108,-112",0
+2026-08-04T00:47:13Z,New York Liberty|Seattle Storm,spread,,-11.0,"-160,128",1
+2026-08-04T00:47:13Z,New York Liberty|Seattle Storm,spread,,-11.5,"-136,111",1
+2026-08-04T00:47:13Z,New York Liberty|Seattle Storm,spread,,-12.0,"-122,-100",1
+2026-08-04T00:47:13Z,New York Liberty|Seattle Storm,spread,,-13.0,"106,-130",1
+2026-08-04T00:47:13Z,New York Liberty|Seattle Storm,spread,,-13.5,"119,-147",1
+2026-08-04T00:47:13Z,New York Liberty|Seattle Storm,spread,,-14.0,"137,-172",1
+2026-08-04T00:47:13Z,New York Liberty|Seattle Storm,total,,190.0,"-110,-110",0
+2026-08-04T00:47:13Z,New York Liberty|Seattle Storm,total,,188.5,"-151,121",1
+2026-08-04T00:47:13Z,New York Liberty|Seattle Storm,total,,189.0,"-137,111",1
+2026-08-04T00:47:13Z,New York Liberty|Seattle Storm,total,,189.5,"-122,-100",1
+2026-08-04T00:47:13Z,New York Liberty|Seattle Storm,total,,190.5,"100,-122",1
+2026-08-04T00:47:13Z,New York Liberty|Seattle Storm,total,,191.0,"111,-137",1
+2026-08-04T00:47:13Z,New York Liberty|Seattle Storm,total,,191.5,"122,-152",1
+2026-08-04T00:47:13Z,Golden State Valkyries|Toronto Tempo,moneyline,,,"-836,573",0
+2026-08-04T00:47:13Z,Golden State Valkyries|Toronto Tempo,team_total,home,90.5,"-112,-112",0
+2026-08-04T00:47:13Z,Golden State Valkyries|Toronto Tempo,team_total,away,77.5,"-112,-112",0
+2026-08-04T00:47:13Z,Golden State Valkyries|Toronto Tempo,spread,,-13.0,"-108,-112",0
+2026-08-04T00:47:13Z,Golden State Valkyries|Toronto Tempo,spread,,-11.5,"-142,112",1
+2026-08-04T00:47:13Z,Golden State Valkyries|Toronto Tempo,spread,,-12.0,"-131,104",1
+2026-08-04T00:47:13Z,Golden State Valkyries|Toronto Tempo,spread,,-12.5,"-120,-104",1
+2026-08-04T00:47:13Z,Golden State Valkyries|Toronto Tempo,spread,,-13.5,"-100,-125",1
+2026-08-04T00:47:13Z,Golden State Valkyries|Toronto Tempo,spread,,-14.0,"108,-136",1
+2026-08-04T00:47:13Z,Golden State Valkyries|Toronto Tempo,spread,,-14.5,"117,-147",1
+2026-08-04T00:47:13Z,Golden State Valkyries|Toronto Tempo,total,,168.0,"-112,-112",0
+2026-08-04T00:47:13Z,Golden State Valkyries|Toronto Tempo,total,,166.5,"-133,102",1
+2026-08-04T00:47:13Z,Golden State Valkyries|Toronto Tempo,total,,167.0,"-127,-103",1
+2026-08-04T00:47:13Z,Golden State Valkyries|Toronto Tempo,total,,167.5,"-120,-108",1
+2026-08-04T00:47:13Z,Golden State Valkyries|Toronto Tempo,total,,168.5,"-108,-120",1
+2026-08-04T00:47:13Z,Golden State Valkyries|Toronto Tempo,total,,169.0,"-103,-127",1
+2026-08-04T00:47:13Z,Golden State Valkyries|Toronto Tempo,total,,169.5,"102,-133",1
+2026-08-04T00:47:13Z,Atlanta Dream|Las Vegas Aces,moneyline,,,"1032,-2741",0
+2026-08-04T00:47:13Z,Atlanta Dream|Las Vegas Aces,team_total,home,87.5,"-117,-113",0
+2026-08-04T00:47:13Z,Atlanta Dream|Las Vegas Aces,team_total,home,86.5,"-148,112",1
+2026-08-04T00:47:13Z,Atlanta Dream|Las Vegas Aces,team_total,home,88.5,"108,-143",1
+2026-08-04T00:47:13Z,Atlanta Dream|Las Vegas Aces,team_total,away,103.5,"-110,-120",0
+2026-08-04T00:47:13Z,Atlanta Dream|Las Vegas Aces,team_total,away,102.5,"-142,107",1
+2026-08-04T00:47:13Z,Atlanta Dream|Las Vegas Aces,team_total,away,104.5,"117,-155",1
+2026-08-04T00:47:13Z,Atlanta Dream|Las Vegas Aces,spread,,15.5,"-111,-119",0
+2026-08-04T00:47:13Z,Atlanta Dream|Las Vegas Aces,spread,,16.5,"-134,-101",1
+2026-08-04T00:47:13Z,Atlanta Dream|Las Vegas Aces,spread,,16.0,"-122,-109",1
+2026-08-04T00:47:13Z,Atlanta Dream|Las Vegas Aces,spread,,15.0,"-102,-131",1
+2026-08-04T00:47:13Z,Atlanta Dream|Las Vegas Aces,spread,,14.5,"106,-143",1
+2026-08-04T00:47:13Z,Atlanta Dream|Las Vegas Aces,total,,190.0,"-117,-113",0
+2026-08-04T00:47:13Z,Atlanta Dream|Las Vegas Aces,total,,189.0,"-138,103",1
+2026-08-04T00:47:13Z,Atlanta Dream|Las Vegas Aces,total,,189.5,"-127,-105",1
+2026-08-04T00:47:13Z,Atlanta Dream|Las Vegas Aces,total,,190.5,"-109,-122",1
+2026-08-04T00:47:13Z,Atlanta Dream|Las Vegas Aces,total,,191.0,"-101,-133",1
+2026-08-04T00:48:29Z,Chicago Sky|Phoenix Mercury,moneyline,,,"110,-129",0
+2026-08-04T00:48:29Z,Chicago Sky|Phoenix Mercury,team_total,home,89.0,"-115,-105",0
+2026-08-04T00:48:29Z,Chicago Sky|Phoenix Mercury,team_total,away,90.0,"-118,-103",0
+2026-08-04T00:48:29Z,Chicago Sky|Phoenix Mercury,spread,,1.5,"-103,-113",0
+2026-08-04T00:48:29Z,Chicago Sky|Phoenix Mercury,spread,,3.0,"-133,109",1
+2026-08-04T00:48:29Z,Chicago Sky|Phoenix Mercury,spread,,2.5,"-123,101",1
+2026-08-04T00:48:29Z,Chicago Sky|Phoenix Mercury,spread,,2.0,"-114,-106",1
+2026-08-04T00:48:29Z,Chicago Sky|Phoenix Mercury,spread,,1.0,"101,-123",1
+2026-08-04T00:48:29Z,Chicago Sky|Phoenix Mercury,spread,,-1.0,"113,-137",1
+2026-08-04T00:48:29Z,Chicago Sky|Phoenix Mercury,spread,,-1.5,"119,-145",1
+2026-08-04T00:48:29Z,Chicago Sky|Phoenix Mercury,total,,179.5,"-112,-108",0
+2026-08-04T00:48:29Z,Chicago Sky|Phoenix Mercury,total,,178.0,"-133,106",1
+2026-08-04T00:48:29Z,Chicago Sky|Phoenix Mercury,total,,178.5,"-126,100",1
+2026-08-04T00:48:29Z,Chicago Sky|Phoenix Mercury,total,,179.0,"-120,-105",1
+2026-08-04T00:48:29Z,Chicago Sky|Phoenix Mercury,total,,180.0,"-108,-116",1
+2026-08-04T00:48:29Z,Chicago Sky|Phoenix Mercury,total,,180.5,"-103,-122",1
+2026-08-04T00:48:29Z,Chicago Sky|Phoenix Mercury,total,,181.0,"105,-132",1
+2026-08-04T00:48:29Z,New York Liberty|Seattle Storm,moneyline,,,"-3500,1602",0
+2026-08-04T00:48:29Z,New York Liberty|Seattle Storm,team_total,home,101.5,"-101,-119",0
+2026-08-04T00:48:29Z,New York Liberty|Seattle Storm,team_total,home,100.5,"-141,116",1
+2026-08-04T00:48:29Z,New York Liberty|Seattle Storm,team_total,home,102.5,"136,-166",1
+2026-08-04T00:48:29Z,New York Liberty|Seattle Storm,team_total,away,88.5,"-117,-103",0
+2026-08-04T00:48:29Z,New York Liberty|Seattle Storm,team_total,away,87.5,"-155,128",1
+2026-08-04T00:48:29Z,New York Liberty|Seattle Storm,team_total,away,89.5,"113,-136",1
+2026-08-04T00:48:29Z,New York Liberty|Seattle Storm,spread,,-12.5,"-108,-112",0
+2026-08-04T00:48:29Z,New York Liberty|Seattle Storm,spread,,-11.0,"-160,128",1
+2026-08-04T00:48:29Z,New York Liberty|Seattle Storm,spread,,-11.5,"-136,111",1
+2026-08-04T00:48:29Z,New York Liberty|Seattle Storm,spread,,-12.0,"-122,-100",1
+2026-08-04T00:48:29Z,New York Liberty|Seattle Storm,spread,,-13.0,"106,-130",1
+2026-08-04T00:48:29Z,New York Liberty|Seattle Storm,spread,,-13.5,"119,-147",1
+2026-08-04T00:48:29Z,New York Liberty|Seattle Storm,spread,,-14.0,"137,-172",1
+2026-08-04T00:48:29Z,New York Liberty|Seattle Storm,total,,190.0,"-110,-110",0
+2026-08-04T00:48:29Z,New York Liberty|Seattle Storm,total,,188.5,"-151,121",1
+2026-08-04T00:48:29Z,New York Liberty|Seattle Storm,total,,189.0,"-137,111",1
+2026-08-04T00:48:29Z,New York Liberty|Seattle Storm,total,,189.5,"-122,-100",1
+2026-08-04T00:48:29Z,New York Liberty|Seattle Storm,total,,190.5,"100,-122",1
+2026-08-04T00:48:29Z,New York Liberty|Seattle Storm,total,,191.0,"111,-137",1
+2026-08-04T00:48:29Z,New York Liberty|Seattle Storm,total,,191.5,"122,-152",1
+2026-08-04T00:48:29Z,Golden State Valkyries|Toronto Tempo,moneyline,,,"-836,573",0
+2026-08-04T00:48:29Z,Golden State Valkyries|Toronto Tempo,team_total,home,90.5,"-112,-112",0
+2026-08-04T00:48:29Z,Golden State Valkyries|Toronto Tempo,team_total,away,77.5,"-112,-112",0
+2026-08-04T00:48:29Z,Golden State Valkyries|Toronto Tempo,spread,,-13.0,"-108,-112",0
+2026-08-04T00:48:29Z,Golden State Valkyries|Toronto Tempo,spread,,-11.5,"-142,112",1
+2026-08-04T00:48:29Z,Golden State Valkyries|Toronto Tempo,spread,,-12.0,"-131,104",1
+2026-08-04T00:48:29Z,Golden State Valkyries|Toronto Tempo,spread,,-12.5,"-120,-104",1
+2026-08-04T00:48:29Z,Golden State Valkyries|Toronto Tempo,spread,,-13.5,"-100,-125",1
+2026-08-04T00:48:29Z,Golden State Valkyries|Toronto Tempo,spread,,-14.0,"108,-136",1
+2026-08-04T00:48:29Z,Golden State Valkyries|Toronto Tempo,spread,,-14.5,"117,-147",1
+2026-08-04T00:48:29Z,Golden State Valkyries|Toronto Tempo,total,,168.0,"-112,-112",0
+2026-08-04T00:48:29Z,Golden State Valkyries|Toronto Tempo,total,,166.5,"-133,102",1
+2026-08-04T00:48:29Z,Golden State Valkyries|Toronto Tempo,total,,167.0,"-127,-103",1
+2026-08-04T00:48:29Z,Golden State Valkyries|Toronto Tempo,total,,167.5,"-120,-108",1
+2026-08-04T00:48:29Z,Golden State Valkyries|Toronto Tempo,total,,168.5,"-108,-120",1
+2026-08-04T00:48:29Z,Golden State Valkyries|Toronto Tempo,total,,169.0,"-103,-127",1
+2026-08-04T00:48:29Z,Golden State Valkyries|Toronto Tempo,total,,169.5,"102,-133",1
+2026-08-04T00:48:29Z,Atlanta Dream|Las Vegas Aces,moneyline,,,"1032,-2741",0
+2026-08-04T00:48:29Z,Atlanta Dream|Las Vegas Aces,team_total,home,87.5,"-117,-113",0
+2026-08-04T00:48:29Z,Atlanta Dream|Las Vegas Aces,team_total,home,86.5,"-148,112",1
+2026-08-04T00:48:29Z,Atlanta Dream|Las Vegas Aces,team_total,home,88.5,"108,-143",1
+2026-08-04T00:48:29Z,Atlanta Dream|Las Vegas Aces,team_total,away,103.5,"-110,-120",0
+2026-08-04T00:48:29Z,Atlanta Dream|Las Vegas Aces,team_total,away,102.5,"-142,107",1
+2026-08-04T00:48:29Z,Atlanta Dream|Las Vegas Aces,team_total,away,104.5,"117,-155",1
+2026-08-04T00:48:29Z,Atlanta Dream|Las Vegas Aces,spread,,15.5,"-111,-119",0
+2026-08-04T00:48:29Z,Atlanta Dream|Las Vegas Aces,spread,,16.5,"-134,-101",1
+2026-08-04T00:48:29Z,Atlanta Dream|Las Vegas Aces,spread,,16.0,"-122,-109",1
+2026-08-04T00:48:29Z,Atlanta Dream|Las Vegas Aces,spread,,15.0,"-102,-131",1
+2026-08-04T00:48:29Z,Atlanta Dream|Las Vegas Aces,spread,,14.5,"106,-143",1
+2026-08-04T00:48:29Z,Atlanta Dream|Las Vegas Aces,total,,190.0,"-117,-113",0
+2026-08-04T00:48:29Z,Atlanta Dream|Las Vegas Aces,total,,189.0,"-138,103",1
+2026-08-04T00:48:29Z,Atlanta Dream|Las Vegas Aces,total,,189.5,"-127,-105",1
+2026-08-04T00:48:29Z,Atlanta Dream|Las Vegas Aces,total,,190.5,"-109,-122",1
+2026-08-04T00:48:29Z,Atlanta Dream|Las Vegas Aces,total,,191.0,"-101,-133",1
+2026-08-04T00:49:44Z,Chicago Sky|Phoenix Mercury,moneyline,,,"110,-129",0
+2026-08-04T00:49:44Z,Chicago Sky|Phoenix Mercury,team_total,home,89.0,"-115,-105",0
+2026-08-04T00:49:44Z,Chicago Sky|Phoenix Mercury,team_total,away,90.0,"-118,-103",0
+2026-08-04T00:49:44Z,Chicago Sky|Phoenix Mercury,spread,,1.5,"-103,-113",0
+2026-08-04T00:49:44Z,Chicago Sky|Phoenix Mercury,spread,,3.0,"-133,109",1
+2026-08-04T00:49:44Z,Chicago Sky|Phoenix Mercury,spread,,2.5,"-123,101",1
+2026-08-04T00:49:44Z,Chicago Sky|Phoenix Mercury,spread,,2.0,"-114,-106",1
+2026-08-04T00:49:44Z,Chicago Sky|Phoenix Mercury,spread,,1.0,"101,-123",1
+2026-08-04T00:49:44Z,Chicago Sky|Phoenix Mercury,spread,,-1.0,"113,-137",1
+2026-08-04T00:49:44Z,Chicago Sky|Phoenix Mercury,spread,,-1.5,"119,-145",1
+2026-08-04T00:49:44Z,Chicago Sky|Phoenix Mercury,total,,179.5,"-112,-108",0
+2026-08-04T00:49:44Z,Chicago Sky|Phoenix Mercury,total,,178.0,"-133,106",1
+2026-08-04T00:49:44Z,Chicago Sky|Phoenix Mercury,total,,178.5,"-126,100",1
+2026-08-04T00:49:44Z,Chicago Sky|Phoenix Mercury,total,,179.0,"-120,-105",1
+2026-08-04T00:49:44Z,Chicago Sky|Phoenix Mercury,total,,180.0,"-108,-116",1
+2026-08-04T00:49:44Z,Chicago Sky|Phoenix Mercury,total,,180.5,"-103,-122",1
+2026-08-04T00:49:44Z,Chicago Sky|Phoenix Mercury,total,,181.0,"105,-132",1
+2026-08-04T00:49:44Z,New York Liberty|Seattle Storm,moneyline,,,"-3500,1602",0
+2026-08-04T00:49:44Z,New York Liberty|Seattle Storm,team_total,home,101.5,"-101,-119",0
+2026-08-04T00:49:44Z,New York Liberty|Seattle Storm,team_total,home,100.5,"-141,116",1
+2026-08-04T00:49:44Z,New York Liberty|Seattle Storm,team_total,home,102.5,"136,-166",1
+2026-08-04T00:49:44Z,New York Liberty|Seattle Storm,team_total,away,88.5,"-117,-103",0
+2026-08-04T00:49:44Z,New York Liberty|Seattle Storm,team_total,away,87.5,"-155,128",1
+2026-08-04T00:49:44Z,New York Liberty|Seattle Storm,team_total,away,89.5,"113,-136",1
+2026-08-04T00:49:44Z,New York Liberty|Seattle Storm,spread,,-12.5,"-108,-112",0
+2026-08-04T00:49:44Z,New York Liberty|Seattle Storm,spread,,-11.0,"-160,128",1
+2026-08-04T00:49:44Z,New York Liberty|Seattle Storm,spread,,-11.5,"-136,111",1
+2026-08-04T00:49:44Z,New York Liberty|Seattle Storm,spread,,-12.0,"-122,-100",1
+2026-08-04T00:49:44Z,New York Liberty|Seattle Storm,spread,,-13.0,"106,-130",1
+2026-08-04T00:49:44Z,New York Liberty|Seattle Storm,spread,,-13.5,"119,-147",1
+2026-08-04T00:49:44Z,New York Liberty|Seattle Storm,spread,,-14.0,"137,-172",1
+2026-08-04T00:49:44Z,New York Liberty|Seattle Storm,total,,190.0,"-110,-110",0
+2026-08-04T00:49:44Z,New York Liberty|Seattle Storm,total,,188.5,"-151,121",1
+2026-08-04T00:49:44Z,New York Liberty|Seattle Storm,total,,189.0,"-137,111",1
+2026-08-04T00:49:44Z,New York Liberty|Seattle Storm,total,,189.5,"-122,-100",1
+2026-08-04T00:49:44Z,New York Liberty|Seattle Storm,total,,190.5,"100,-122",1
+2026-08-04T00:49:44Z,New York Liberty|Seattle Storm,total,,191.0,"111,-137",1
+2026-08-04T00:49:44Z,New York Liberty|Seattle Storm,total,,191.5,"122,-152",1
+2026-08-04T00:49:44Z,Golden State Valkyries|Toronto Tempo,moneyline,,,"-836,573",0
+2026-08-04T00:49:44Z,Golden State Valkyries|Toronto Tempo,team_total,home,90.5,"-112,-112",0
+2026-08-04T00:49:44Z,Golden State Valkyries|Toronto Tempo,team_total,away,77.5,"-112,-112",0
+2026-08-04T00:49:44Z,Golden State Valkyries|Toronto Tempo,spread,,-13.0,"-108,-112",0
+2026-08-04T00:49:44Z,Golden State Valkyries|Toronto Tempo,spread,,-11.5,"-142,112",1
+2026-08-04T00:49:44Z,Golden State Valkyries|Toronto Tempo,spread,,-12.0,"-131,104",1
+2026-08-04T00:49:44Z,Golden State Valkyries|Toronto Tempo,spread,,-12.5,"-120,-104",1
+2026-08-04T00:49:44Z,Golden State Valkyries|Toronto Tempo,spread,,-13.5,"-100,-125",1
+2026-08-04T00:49:44Z,Golden State Valkyries|Toronto Tempo,spread,,-14.0,"108,-136",1
+2026-08-04T00:49:44Z,Golden State Valkyries|Toronto Tempo,spread,,-14.5,"117,-147",1
+2026-08-04T00:49:44Z,Golden State Valkyries|Toronto Tempo,total,,168.0,"-112,-112",0
+2026-08-04T00:49:44Z,Golden State Valkyries|Toronto Tempo,total,,166.5,"-133,102",1
+2026-08-04T00:49:44Z,Golden State Valkyries|Toronto Tempo,total,,167.0,"-127,-103",1
+2026-08-04T00:49:44Z,Golden State Valkyries|Toronto Tempo,total,,167.5,"-120,-108",1
+2026-08-04T00:49:44Z,Golden State Valkyries|Toronto Tempo,total,,168.5,"-108,-120",1
+2026-08-04T00:49:44Z,Golden State Valkyries|Toronto Tempo,total,,169.0,"-103,-127",1
+2026-08-04T00:49:44Z,Golden State Valkyries|Toronto Tempo,total,,169.5,"102,-133",1
+2026-08-04T00:49:44Z,Atlanta Dream|Las Vegas Aces,moneyline,,,"1032,-2741",0
+2026-08-04T00:49:44Z,Atlanta Dream|Las Vegas Aces,team_total,home,87.5,"-117,-113",0
+2026-08-04T00:49:44Z,Atlanta Dream|Las Vegas Aces,team_total,home,86.5,"-148,112",1
+2026-08-04T00:49:44Z,Atlanta Dream|Las Vegas Aces,team_total,home,88.5,"108,-143",1
+2026-08-04T00:49:44Z,Atlanta Dream|Las Vegas Aces,team_total,away,103.5,"-110,-120",0
+2026-08-04T00:49:44Z,Atlanta Dream|Las Vegas Aces,team_total,away,102.5,"-142,107",1
+2026-08-04T00:49:44Z,Atlanta Dream|Las Vegas Aces,team_total,away,104.5,"117,-155",1
+2026-08-04T00:49:44Z,Atlanta Dream|Las Vegas Aces,spread,,15.5,"-111,-119",0
+2026-08-04T00:49:44Z,Atlanta Dream|Las Vegas Aces,spread,,16.5,"-134,-101",1
+2026-08-04T00:49:44Z,Atlanta Dream|Las Vegas Aces,spread,,16.0,"-122,-109",1
+2026-08-04T00:49:44Z,Atlanta Dream|Las Vegas Aces,spread,,15.0,"-102,-131",1
+2026-08-04T00:49:44Z,Atlanta Dream|Las Vegas Aces,spread,,14.5,"106,-143",1
+2026-08-04T00:49:44Z,Atlanta Dream|Las Vegas Aces,total,,190.0,"-117,-113",0
+2026-08-04T00:49:44Z,Atlanta Dream|Las Vegas Aces,total,,189.0,"-138,103",1
+2026-08-04T00:49:44Z,Atlanta Dream|Las Vegas Aces,total,,189.5,"-127,-105",1
+2026-08-04T00:49:44Z,Atlanta Dream|Las Vegas Aces,total,,190.5,"-109,-122",1
+2026-08-04T00:49:44Z,Atlanta Dream|Las Vegas Aces,total,,191.0,"-101,-133",1
