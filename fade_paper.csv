@@ -8,3 +8,6 @@ logged_utc,date,player,market,side,line,price,orig_src,orig_move
 2026-08-03T05:58:29Z,2026-08-02,Erica Wheeler,pra,Under,18.5,1.73,overshoot,0.0929
 2026-08-03T10:04:41Z,2026-08-03,Natasha Cloud,pts,Over,10.5,1.909,newunder,0.0127
 2026-08-04T03:35:55Z,2026-08-03,Sabrina Ionescu,pts,Under,19.5,1.8,flip_paper,0.0611
+2026-08-04T09:06:36Z,2026-08-04,Jordin Canada,pts,Over,10.5,1.85,newunder,0.0694
+2026-08-04T09:06:36Z,2026-08-04,Sabrina Ionescu,pts,Under,19.5,1.8,flip_paper,0.0437
+2026-08-04T09:06:36Z,2026-08-04,Kamilla Cardoso,pts,Over,15.5,1.87,starout,0.0694
