@@ -18,9 +18,9 @@ date,player,market,side,line,src,open_odds,now_odds,move_pct,verdict,confidence,
 2026-08-04,Erica Wheeler,pra,Over,18.5,overshoot,1.91,1.91,0.0,BET (steady),ok 85%,,,,4
 2026-08-04,Rae Burrell,pa,Over,18.5,overshoot,2.0,2.0,0.0,BET (steady),ok 85%,,,,4
 2026-08-04,Janelle Salaun,pts,Under,12.5,newunder,1.95,1.95,0.0,BET (steady),ok 85%,,,,3
-2026-08-04,Jordin Canada,pts,Under,10.5,newunder,1.73,1.769,2.3,SKIP-drift,WAIT 70%,,Over,2.0,4
-2026-08-04,Rhyne Howard,pts,Under,16.5,newunder,1.83,1.87,2.2,SKIP-drift,WAIT 70%,,Over,1.87,4
-2026-08-04,Jonquel Jones,pts,Under,14.5,newunder,1.8,1.833,1.8,SKIP-drift,WAIT 70%,,Over,1.909,4
-2026-08-04,Sabrina Ionescu,pts,Over,19.5,flip_paper,1.83,1.87,2.2,SKIP-drift,WAIT 70%,,Under,1.87,4
-2026-08-04,Kamilla Cardoso,pts,Under,15.5,starout,1.73,1.769,2.3,SKIP-drift,WAIT 70%,,Over,2.0,4
-2026-08-04,Maria Conde,pra,Over,16.5,cascade,1.83,1.87,2.2,SKIP-drift,WAIT 70%,,Under,1.87,4
+2026-08-04,Jordin Canada,pts,Under,10.5,newunder,1.73,1.769,2.3,SKIP-drift,WAIT 70%,,,,4
+2026-08-04,Rhyne Howard,pts,Under,16.5,newunder,1.83,1.87,2.2,SKIP-drift,WAIT 70%,,,,4
+2026-08-04,Jonquel Jones,pts,Under,14.5,newunder,1.8,1.833,1.8,SKIP-drift,WAIT 70%,,,,4
+2026-08-04,Sabrina Ionescu,pts,Over,19.5,flip_paper,1.83,1.87,2.2,SKIP-drift,WAIT 70%,,,,4
+2026-08-04,Kamilla Cardoso,pts,Under,15.5,starout,1.73,1.769,2.3,SKIP-drift,WAIT 70%,,,,4
+2026-08-04,Maria Conde,pra,Over,16.5,cascade,1.83,1.87,2.2,SKIP-drift,WAIT 70%,,,,4
