@@ -298,7 +298,7 @@ def drift_html():
     try: _sp.run([sys.executable, os.path.join(ROOT, "drift_gate.py")], capture_output=True, cwd=ROOT, timeout=180)
     except Exception: pass
     gate = load("drift_gate_today.csv")
-    LIVE_SRC = ("flip", "flip_paper", "cascade")
+    LIVE_SRC = ("flip", "flip_paper", "overshoot", "cascade")   # overshoot promoted 2026-08-06: flat unfiltered (-0.3%) but +12.3% drift-cleared on n=79
     cleared = [r for r in gate if r.get("verdict","").startswith("BET") and r.get("src") in LIVE_SRC]
     skipped = [r for r in gate if r.get("verdict","").startswith("SKIP")]
     def _conf_cell(c):
