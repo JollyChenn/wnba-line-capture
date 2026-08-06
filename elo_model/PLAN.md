@@ -283,6 +283,14 @@ audit_drift.py. Four tests:
   signal-mix proxy. Prices are similar (1.797 drifted vs 1.838 clean) so it is not a price artifact.
 - **T3: 0 duplicates in 652 graded rows.**
 - **T4 shuffle control: p=0.000** (real gap +32.8 ROI pts vs shuffled mean +0.9, 95th pct +14.1).
-CONCLUSION: drift is a real market phenomenon and a valid POST-HOC explainer, but as a live filter
-from Asia it is worth ~0. Do NOT size up on the +10.9%. The live-menu signals themselves (+5.7%
-unfiltered, t=1.19) are what you would actually be betting.
+**RETRACTED 2026-08-06 (same day): T1 WAS MY BUG, NOT THE SYSTEM'S.** My replay keyed captures by
+bets_log SLATE DATE, but grade_bets (and drift_gate) merge captures for a bet ACROSS dates and anchor
+on the OPENING line - so my series were truncated and the reconstruction disagreed with stored
+odds_clv on 53% of bets. audit_drift2.py redoes it properly (merge across dates, anchor opening line,
+cut off by REAL TIP TIME from games_2026): **skip-drift at T-8h = +10.1% ROI t=1.98; T-4h +10.3%
+t=2.02; T-2h +10.0%; vs baseline +5.7% t=1.19; vs full-close +10.9% t=2.13.** Coverage 90% of bets
+have a usable T-4h read. The filter IS live-tradeable and keeps ~93% of its measured edge at T-8h -
+the hour a Malaysia bettor can actually act. Also verified BET-AT-THE-CLOSE: paying closing prices
+costs only 1.1% of price (open 1.810 -> close 1.791), so late betting keeps +11.9% t=2.25.
+CONCLUSION: drift is real (shuffle p=0.000, hurts inside every signal) AND tradeable. Live menu +
+skip-drift ~+10% ROI, t~2.0, ~7 bets/night.
