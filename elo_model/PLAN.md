@@ -267,3 +267,22 @@ are ACTIONABLE while +2.46 fade is still paper.
 TRACKER CHAIN (all cloud, nightly): drift_gate.py (every capture; verdicts -> drift_gate_today.csv,
 paper bets -> fade_paper.csv) -> fade_grade.py (settles paper vs box -> fade_graded.csv) ->
 drift_tracker.py (retro buckets -> drift_track.csv). Verified end-to-end 2026-08-03.
+
+## 13. PRE-GO-LIVE AUDIT (2026-08-06) — the drift filter is REAL but MOSTLY UNTRADEABLE
+audit_drift.py. Four tests:
+- **T1 (decisive): replaying the filter with only pre-close information kills most of the edge.**
+  live menu no filter +5.7% | skip-drift decided at T-8h **+5.8%** | T-6h +5.0% | T-4h **+4.5%** |
+  T-2h +5.5% | T-0h(all captures) +7.0% | using the CLOSE (the backtest) **+10.9% t=2.13**.
+  => the +10.9%/t=2.13 was largely HINDSIGHT. At the hours a Malaysia-based bettor can act (T-6..8h)
+  the filter adds ~0.0-0.1 ROI points over doing nothing.
+- **WHY:** the drift happens LATE. Median share of the final price move completed: T-8h **1%**,
+  T-6h 23%, T-4h 50%, T-2h 100%. Of bets that finally drifted, only 48% are flagged by T-8h,
+  59% by T-4h, 77% by T-2h. You cannot see it in time from Asia.
+- **T2 confounds: the effect itself is genuine.** Drift hurts INSIDE every signal (newunder -29.3 vs
+  -7.5, cascade -47.7 vs +6.3, overshoot -32.9 vs +12.3, flip -9.2 vs +19.3), so it is not a
+  signal-mix proxy. Prices are similar (1.797 drifted vs 1.838 clean) so it is not a price artifact.
+- **T3: 0 duplicates in 652 graded rows.**
+- **T4 shuffle control: p=0.000** (real gap +32.8 ROI pts vs shuffled mean +0.9, 95th pct +14.1).
+CONCLUSION: drift is a real market phenomenon and a valid POST-HOC explainer, but as a live filter
+from Asia it is worth ~0. Do NOT size up on the +10.9%. The live-menu signals themselves (+5.7%
+unfiltered, t=1.19) are what you would actually be betting.
