@@ -294,3 +294,18 @@ the hour a Malaysia bettor can actually act. Also verified BET-AT-THE-CLOSE: pay
 costs only 1.1% of price (open 1.810 -> close 1.791), so late betting keeps +11.9% t=2.25.
 CONCLUSION: drift is real (shuffle p=0.000, hurts inside every signal) AND tradeable. Live menu +
 skip-drift ~+10% ROI, t~2.0, ~7 bets/night.
+- **FINAL PRE-LIVE AUDIT (audit_final.py, 2026-08-06):**
+  A. POST-TIP LEAK: **CLEAN** - 0 of 11,026 captures in the used series are at/after tip; the series
+     stops a median 77 min BEFORE tip, so not even the "close" version sees in-game prices.
+     (my first pass here was another self-inflicted bug: I measured the raw capture pool, not the filter.)
+  B. TIP COVERAGE: 0 live bets excluded - every one has a tip time. No hidden selection.
+  C. CLUSTERING: 299 bets sit in 103 games (2.9/game). Game-level t=**+1.88** vs bet-level +1.98 -
+     correlation barely inflates it. Use 1.88 as the honest t.
+  D. TIME SPLIT (the one YELLOW FLAG): H1 baseline -2.9% -> filtered -0.3% (t-0.04);
+     H2 baseline +11.3% -> filtered +16.7% (t+2.60). **The FILTER helps in both halves and every month
+     (+1.7pp Jun, +4.8pp Jul, +5.8pp Aug) and the drifted bucket is negative every month (-8.1%, -24.1%),
+     but the SIGNALS themselves only made money from July.** So: filter = robust; raw signal edge = not
+     time-stable. Size accordingly.
+  E. THRESHOLD: not cherry-picked - 0.5%/1%/1.5%/2%/3% all give +8.0..+10.1% ROI, t=1.61..1.98.
+  GO-LIVE VERDICT: cleared at SMALL stakes. Honest expectation ~+10% ROI, t~1.9 (game-clustered),
+  ~7 bets/night, with the caveat that half the sample (June) was flat.
