@@ -1,4 +1,5 @@
 date,player,market,side,line,src,open_odds,now_odds,move_pct,verdict,confidence,line_moved,fade_side,fade_price,captures
+<<<<<<< Updated upstream
 2026-08-06,Leila Lacan,pra,Over,17.5,cascade,1.75,1.75,0.0,BET (steady),NO READ (new line),,,,1
 2026-08-06,Olivia Nelson-Ododa,pra,Over,21.5,cascade,1.75,1.75,0.0,BET (steady),NO READ (new line),,,,1
 2026-08-06,Aneesah Morrow,pra,Over,22.5,cascade,1.75,1.75,0.0,BET (steady),NO READ (new line),,,,1
@@ -13,3 +14,19 @@ date,player,market,side,line,src,open_odds,now_odds,move_pct,verdict,confidence,
 2026-08-06,Shakira Austin,pr,Over,26.5,overshoot,1.73,1.73,0.0,BET (steady),NO READ (new line),,,,1
 2026-08-06,Dewanna Bonner,pr,Over,16.5,overshoot,1.73,1.73,0.0,BET (steady),NO READ (new line),,,,1
 2026-08-06,Kahleah Copper,pts,Over,20.5,overshoot,1.769,1.769,0.0,BET (steady),NO READ (new line),,,,1
+=======
+2026-08-06,Leila Lacan,pra,Over,17.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,2
+2026-08-06,Olivia Nelson-Ododa,pra,Over,21.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,2
+2026-08-06,Aneesah Morrow,pra,Over,22.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,2
+2026-08-06,Saniya Rivers,pra,Over,7.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,2
+2026-08-06,Laura Juskaite,pra,Over,17.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,2
+2026-08-06,Maria Conde,pra,Over,17.5,cascade,1.833,1.833,0.0,BET (steady),ok 85%,,,,2
+2026-08-06,Nyara Sabally,pra,Over,18.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,2
+2026-08-06,Kiki Rice,pra,Over,23.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,2
+2026-08-06,Kelsey Mitchell,pa,Over,25.5,overshoot,1.87,1.87,0.0,BET (steady),ok 85%,,,,2
+2026-08-06,Angel Reese,pts,Over,15.5,overshoot,1.909,1.909,0.0,BET (steady),ok 85%,,,,2
+2026-08-06,Arike Ogunbowale,pts,Over,14.5,overshoot,1.833,1.833,0.0,BET (steady),ok 85%,,,,2
+2026-08-06,Shakira Austin,pr,Over,26.5,overshoot,1.73,1.73,0.0,BET (steady),ok 85%,,,,2
+2026-08-06,Dewanna Bonner,pr,Over,16.5,overshoot,1.73,1.73,0.0,BET (steady),ok 85%,,,,2
+2026-08-06,Kahleah Copper,pts,Over,20.5,overshoot,1.769,1.769,0.0,BET (steady),ok 85%,,,,2
+>>>>>>> Stashed changes
