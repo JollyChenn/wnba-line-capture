@@ -7,12 +7,13 @@
 import json, urllib.request, csv, os, time, datetime, re, sys
 try: sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 except Exception: pass
+ESPN_EXTRA = {"Accept":"application/json, text/plain, */*","Accept-Language":"en-US,en;q=0.9","Referer":"https://www.espn.com/wnba/scoreboard","Origin":"https://www.espn.com"}
 UA = {"User-Agent": "Mozilla/5.0"}
 B = "https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/"
 D = os.path.dirname(os.path.abspath(__file__))
 def getj(u):
     for _ in range(3):
-        try: return json.load(urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=25))
+        try: return json.load(urllib.request.urlopen(urllib.request.Request(u, headers={**UA, **ESPN_EXTRA}), timeout=25))
         except Exception: time.sleep(3)
     return {}
 

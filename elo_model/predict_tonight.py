@@ -10,12 +10,13 @@ from collections import defaultdict, deque
 try: sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 except Exception: pass
 D = os.path.dirname(os.path.abspath(__file__))
+ESPN_EXTRA = {"Accept":"application/json, text/plain, */*","Accept-Language":"en-US,en;q=0.9","Referer":"https://www.espn.com/wnba/scoreboard","Origin":"https://www.espn.com"}
 UA = {"User-Agent": "Mozilla/5.0"}
 def f(x):
     try: return float(x)
     except Exception: return 0.0
 def getj(u):
-    try: return json.load(urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=20))
+    try: return json.load(urllib.request.urlopen(urllib.request.Request(u, headers={**UA, **ESPN_EXTRA}), timeout=20))
     except Exception: return {}
 
 def main():

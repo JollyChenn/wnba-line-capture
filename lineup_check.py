@@ -13,6 +13,7 @@ try: sys.stdout.reconfigure(encoding="utf-8")
 except Exception: pass
 
 WEBHOOK = os.environ.get("DISCORD_WEBHOOK", "")
+ESPN_EXTRA = {"Accept":"application/json, text/plain, */*","Accept-Language":"en-US,en;q=0.9","Referer":"https://www.espn.com/wnba/scoreboard","Origin":"https://www.espn.com"}
 UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36"}
 SUM = "https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/summary?event="
 INJ = "https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/injuries"
@@ -32,13 +33,13 @@ def key_of(n):                                        # robust FULL-name key —
 
 def getj(u):
     try:
-        return json.load(urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=20))
+        return json.load(urllib.request.urlopen(urllib.request.Request(u, headers={**UA, **ESPN_EXTRA}), timeout=20))
     except Exception:
         return {}
 
 
 def gethtml(u):
-    return urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=25).read().decode("utf-8", "replace")
+    return urllib.request.urlopen(urllib.request.Request(u, headers={**UA, **ESPN_EXTRA}), timeout=25).read().decode("utf-8", "replace")
 
 
 def ping(msg):

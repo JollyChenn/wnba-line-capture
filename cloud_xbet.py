@@ -136,7 +136,7 @@ def pinnacle_lines():
 def get(url, tries=2):
     for i in range(tries):
         try:
-            r = creq.get(url, impersonate="chrome", headers={"User-Agent": UA}, timeout=25)
+            r = creq.get(url, impersonate="chrome", headers={"User-Agent": UA, "Accept": "application/json, text/plain, */*", "Accept-Language": "en-US,en;q=0.9", "Referer": "https://www.espn.com/wnba/scoreboard", "Origin": "https://www.espn.com"}, timeout=25)
             if r.status_code == 200 and r.text.strip().startswith("{"):
                 return r.json()
             print("  HTTP", r.status_code)
@@ -158,7 +158,7 @@ def espn_near(window):
     out, team_mins, now = [], {}, datetime.datetime.now(datetime.timezone.utc)
     for d in (now.strftime("%Y%m%d"), (now + datetime.timedelta(days=1)).strftime("%Y%m%d")):
         try:
-            j = json.load(urllib.request.urlopen(urllib.request.Request(ESPN + "?dates=" + d, headers={"User-Agent": UA}), timeout=20))
+            j = json.load(urllib.request.urlopen(urllib.request.Request(ESPN + "?dates=" + d, headers={"User-Agent": UA, "Accept": "application/json, text/plain, */*", "Accept-Language": "en-US,en;q=0.9", "Referer": "https://www.espn.com/wnba/scoreboard", "Origin": "https://www.espn.com"}), timeout=20))
         except Exception:
             continue
         for ev in j.get("events", []):
@@ -184,7 +184,7 @@ def espn_near(window):
 def injuries():
     out = {}
     try:
-        d = json.load(urllib.request.urlopen(urllib.request.Request(INJ, headers={"User-Agent": UA}), timeout=20))
+        d = json.load(urllib.request.urlopen(urllib.request.Request(INJ, headers={"User-Agent": UA, "Accept": "application/json, text/plain, */*", "Accept-Language": "en-US,en;q=0.9", "Referer": "https://www.espn.com/wnba/scoreboard", "Origin": "https://www.espn.com"}), timeout=20))
     except Exception:
         return out
     for tm in d.get("injuries", []):
