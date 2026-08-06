@@ -30,6 +30,10 @@ jobs:
         run: python capture_news.py || true
       - name: DRIFT GATE (skip-drift verdicts + fade paper log)
         run: python drift_gate.py || true
+      - name: Discord alert (once per slate, ~4h before first tip)
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        run: python alert_bets.py || true
       - name: capture Pinnacle GAME lines (ML/spread/total; 2 requests; never fails the job)
         run: python capture_gamelines.py || true
       - name: commit snapshots
@@ -37,7 +41,7 @@ jobs:
           git config user.name "xbet-cloud-bot"
           git config user.email "actions@users.noreply.github.com"
           echo "snapshot file:"; ls -la xbet_snapshots.csv 2>&1 || echo "(none written this run)"
-          for f in xbet_snapshots.csv pinn_snapshots.csv bets_log.csv market_codes.json xbet_board.csv board_last.json injuries_log.csv lineups_log.csv news_last.json drift_gate_today.csv fade_paper.csv gamelines.csv gamelines_last.json elo_model/elo_forward_log.csv; do [ -f "$f" ] && git add -f "$f" || true; done   # add each file that EXISTS (a missing one, e.g. lineups_log before any live game, must NOT abort the whole add)
+          for f in xbet_snapshots.csv pinn_snapshots.csv bets_log.csv market_codes.json xbet_board.csv board_last.json injuries_log.csv lineups_log.csv news_last.json drift_gate_today.csv fade_paper.csv alert_state.json gamelines.csv gamelines_last.json elo_model/elo_forward_log.csv; do [ -f "$f" ] && git add -f "$f" || true; done   # add each file that EXISTS (a missing one, e.g. lineups_log before any live game, must NOT abort the whole add)
           git status --short
           if git diff --staged --quiet; then
             echo "nothing staged this run"
