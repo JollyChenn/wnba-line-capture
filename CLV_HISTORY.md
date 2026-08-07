@@ -10,7 +10,7 @@ _**sharp-odds** = vs Pinnacle's vig-free fair price (TRUE edge test) · **sharp-
   ★ SHARP ODDS-CLV: -6.7% | beat fair 0/7 (0%)  ← TRUE edge (vs Pinnacle fair price)
   SHARP LINE-CLV : +0.21 pts | n=12  ← better number than the sharp
   self ODDS-CLV  : -0.3% | beat 8/30 (27%)  (1xbet's own close = weak)
-  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 58/105 (+1.1u) · FLIP UNDER 21/35 (+3.9u) · FLIP UNDER(paper) 42/68 (+9.8u) · FTUNDER 106/231 (-34.5u) · HOT OVER 17/30 (+1.9u) · STAR-OUT CASCADE 83/141 (+5.1u) · starout 3/10 (-4.3u)
+  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 64/112 (+5.6u) · FLIP UNDER 22/36 (+4.9u) · FLIP UNDER(paper) 44/71 (+10.7u) · FTUNDER 108/237 (-36.7u) · HOT OVER 17/31 (+0.9u) · STAR-OUT CASCADE 89/154 (+2.6u) · starout 4/11 (-3.6u)
   VERDICT : ⚠️ NEUTRAL self CLV — winning on outcomes, not beating the line. Unproven; keep collecting.
   by tier: SOLID 5/12 (-2.3u) · STRONG 5/14 (-4.9u) · THIN 3/6 (-0.1u)
   by market: pa Under 1/3 (-1.0u) · pr Under 1/3 (-1.0u) · pra Under 2/9 (-5.4u) · pts Under 9/16 (+1.1u) · ra Under 0/1 (-1.0u)
@@ -674,3 +674,35 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260803 | Rhyne Howard | PTS Under 16.5 @ 1.833 | FTUNDER | loss | -8% | +0.0 | -4% |
 | 20260803 | Sabrina Ionescu | PR Over 24.5 @ 1.91 | BOOK OVERSHOOT | loss | — | — | +0% |
 | 20260803 | Sydney Taylor | PTS Under 17.5 @ 1.83 | FTUNDER | WIN | -5% | +0.0 | -4% |
+| 20260804 | Aneesah Morrow | PRA Over 22.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
+| 20260804 | Janelle Salaun | PTS Under 12.5 @ 1.95 | FTUNDER | loss | -4% | +0.0 | +0% |
+| 20260804 | Julie Allemand | PRA Over 15.5 @ 2.0 | FLIP UNDER | WIN | — | — | +0% |
+| 20260804 | Kayla Thornton | PTS Under 8.5 @ 1.91 | FTUNDER | loss | -8% | +0.0 | +4% |
+| 20260804 | Kiki Rice | PRA Over 23.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
+| 20260804 | Laura Juskaite | PRA Over 17.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
+| 20260804 | Maria Conde | PRA Over 19.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
+| 20260804 | Maria Conde | RA Over 6.5 @ 2.1 | BOOK OVERSHOOT | WIN | — | — | +5% |
+| 20260804 | Nyara Sabally | PRA Over 18.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
+| 20260804 | Nyara Sabally | PTS Over 10.5 @ 1.91 | FLIP UNDER(paper) | WIN | -2% | +0.0 | +0% |
+| 20260805 | Alyssa Thomas | PTS Over 14.5 @ 2.0 | FLIP UNDER(paper) | WIN | — | — | +2% |
+| 20260805 | Arike Ogunbowale | PTS Over 14.5 @ 2.0 | BOOK OVERSHOOT | WIN | — | — | +2% |
+| 20260805 | Breanna Stewart | PR Over 30.5 @ 1.8 | BOOK OVERSHOOT | WIN | — | — | — |
+| 20260805 | Courtney Vandersloot | PRA Over 15.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
+| 20260805 | Erica Wheeler | PRA Over 18.5 @ 1.91 | BOOK OVERSHOOT | WIN | — | — | +0% |
+| 20260805 | Jonquel Jones | PTS Under 14.5 @ 1.8 | FTUNDER | WIN | — | — | -2% |
+| 20260805 | Jordin Canada | PTS Under 10.5 @ 1.73 | FTUNDER | loss | — | — | -2% |
+| 20260805 | Kahleah Copper | PTS Under 20.5 @ 2.0 | FTUNDER | WIN | — | — | +0% |
+| 20260805 | Kamilla Cardoso | PRA Over 25.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
+| 20260805 | Kamilla Cardoso | PTS Under 15.5 @ 1.73 | starout | WIN | — | — | -2% |
+| 20260805 | Natasha Cloud | PRA Over 19.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
+| 20260805 | Natisha Hiedeman | PRA Over 25.5 @ 2.0 | HOT OVER | loss | — | — | +0% |
+| 20260805 | Rae Burrell | PA Over 18.5 @ 2.0 | BOOK OVERSHOOT | loss | — | — | +0% |
+| 20260805 | Rhyne Howard | PTS Under 16.5 @ 1.83 | FTUNDER | loss | — | — | -2% |
+| 20260805 | Sabrina Ionescu | PTS Over 19.5 @ 1.83 | FLIP UNDER(paper) | loss | — | — | -2% |
+| 20260805 | Shakira Austin | PR Over 25.5 @ 1.8 | BOOK OVERSHOOT | WIN | — | — | +0% |
+| 20260806 | Aneesah Morrow | PRA Over 22.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
+| 20260806 | Kelsey Mitchell | PA Over 25.5 @ 1.87 | BOOK OVERSHOOT | WIN | — | — | +0% |
+| 20260806 | Kiki Rice | PRA Over 23.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
+| 20260806 | Laura Juskaite | PRA Over 17.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
+| 20260806 | Maria Conde | PRA Over 17.5 @ 1.833 | STAR-OUT CASCADE | loss | — | — | +0% |
+| 20260806 | Nyara Sabally | PRA Over 18.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
