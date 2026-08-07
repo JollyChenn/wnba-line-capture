@@ -36,7 +36,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Install deps + refresh box scores (last night's results)
-        run: pip install --quiet pandas requests numpy && python daily_picks.py || true
+        run: pip install --quiet curl_cffi pandas requests numpy && python daily_picks.py || true
       - name: Settle logged bets vs actual results
         run: python grade_bets.py
       - name: drift tracker (skip-drift + fade-drift forward record)
