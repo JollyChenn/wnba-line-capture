@@ -96,6 +96,14 @@ try {
     if ($LASTEXITCODE -ne 0) { alert "gh CLI auth FAILED - laptop can't dispatch grading. Fix: run 'gh auth login'." }
 } catch {}
 
+# ---------- 5) DATA-HEALTH ALARM (added 2026-08-07 after two SILENT ESPN outages) ----------
+# Both outages ran "successfully" for days while collecting nothing. health_check.py Discord-pings
+# only on a real problem (stale box scores / stale capture / no bets before tip / ESPN down / grading behind).
+try {
+    $hc = & python (Join-Path $REPO "health_check.py") 2>&1 | Out-String
+    if ($hc -match "alerted") { log ("health: " + ($hc -replace "\s+"," ").Trim()) }
+} catch { log "health-check error: $($_.Exception.Message)" }
+
 $lh = (git rev-parse --short HEAD 2>$null)
 $oh = (git rev-parse --short origin/main 2>$null)
 log "ok (local $lh = origin $oh; cloud age ${cloudAge}h)"
