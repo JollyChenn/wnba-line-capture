@@ -1831,3 +1831,41 @@ pick_date,game_id,player,team,opp,market,anchor,signals,fair_p,fair_odds,proj,sd
 2026-08-03,401857114,Kayla Thornton,Golden State Valkyries,Toronto Tempo,pts_under,8.5,ftdrought,0.589,1.7,7.3,5.39
 2026-08-03,401857114,Nyara Sabally,Toronto Tempo,Golden State Valkyries,pts_under,12.5,steady,0.563,1.78,11.7,5.1
 2026-08-03,401857114,Janelle Salaun,Golden State Valkyries,Toronto Tempo,pts_under,12.5,steady,0.563,1.78,11.5,6.13
+2026-08-06,401857122,Kelsey Plum,Phoenix Mercury,Connecticut Sun,pts_under,19.5,cold+stingy,0.626,1.6,15.9,11.08
+2026-08-06,401857122,Kelsey Plum,Phoenix Mercury,Connecticut Sun,pr_under,21.5,cold+stingy,0.59,1.69,18.9,11.35
+2026-08-06,401857122,Kelsey Plum,Phoenix Mercury,Connecticut Sun,pa_under,26.5,cold+stingy,0.61,1.64,23.0,12.36
+2026-08-06,401857122,Kelsey Plum,Phoenix Mercury,Connecticut Sun,pra_under,29.5,cold+stingy,0.621,1.61,25.6,12.69
+2026-08-06,401857122,Monique Akoa Makani,Phoenix Mercury,Connecticut Sun,pts_under,9.5,cold+stingy,0.626,1.6,7.5,6.28
+2026-08-06,401857122,Monique Akoa Makani,Phoenix Mercury,Connecticut Sun,pr_under,11.5,cold+stingy,0.59,1.69,10.0,6.49
+2026-08-06,401857122,Valeriane Ayayi,Phoenix Mercury,Connecticut Sun,pr_under,11.5,mins-dip+stingy,0.59,1.69,10.5,4.43
+2026-08-06,401857122,Valeriane Ayayi,Phoenix Mercury,Connecticut Sun,pra_under,13.5,mins-dip+stingy,0.6,1.67,12.4,4.34
+2026-08-06,401857122,Natasha Mack,Phoenix Mercury,Connecticut Sun,pr_under,11.5,declining+stingy,0.59,1.69,10.4,4.99
+2026-08-06,401857122,Alyssa Thomas,Phoenix Mercury,Connecticut Sun,pts_under,17.5,steady,0.563,1.78,16.5,6.07
+2026-08-06,401857122,Kahleah Copper,Phoenix Mercury,Connecticut Sun,pts_under,21.5,steady,0.563,1.78,20.2,8.28
+2026-08-06,401857122,Olivia Nelson-Ododa,Connecticut Sun,Phoenix Mercury,pts_under,11.5,steady,0.563,1.78,10.9,3.48
+2026-08-06,401857122,Diamond Miller,Connecticut Sun,Phoenix Mercury,pts_under,12.5,steady,0.563,1.78,11.7,4.94
+2026-08-06,401857123,Allisha Gray,Atlanta Dream,Washington Mystics,pts_under,19.5,cold+stingy,0.626,1.6,17.6,5.81
+2026-08-06,401857123,Allisha Gray,Atlanta Dream,Washington Mystics,pr_under,21.5,cold+stingy,0.59,1.69,20.0,6.75
+2026-08-06,401857123,Allisha Gray,Atlanta Dream,Washington Mystics,pa_under,21.5,cold+stingy,0.61,1.64,19.8,6.22
+2026-08-06,401857123,Allisha Gray,Atlanta Dream,Washington Mystics,pra_under,23.5,cold+stingy,0.621,1.61,21.3,7.2
+2026-08-06,401857123,Angel Reese,Atlanta Dream,Washington Mystics,pts_under,19.5,declining+stingy,0.642,1.56,16.7,7.71
+2026-08-06,401857123,Angel Reese,Atlanta Dream,Washington Mystics,pr_under,31.5,declining+stingy,0.59,1.69,29.0,10.9
+2026-08-06,401857123,Angel Reese,Atlanta Dream,Washington Mystics,pa_under,21.5,declining+stingy,0.61,1.64,19.4,7.51
+2026-08-06,401857123,Angel Reese,Atlanta Dream,Washington Mystics,pra_under,34.5,declining+stingy,0.62,1.61,31.2,10.74
+2026-08-06,401857123,Jordin Canada,Atlanta Dream,Washington Mystics,pa_under,18.5,cold+stingy,0.61,1.64,16.9,5.82
+2026-08-06,401857123,Rhyne Howard,Atlanta Dream,Washington Mystics,pts_under,10.5,steady,0.563,1.78,9.8,4.58
+2026-08-06,401857123,Shakira Austin,Washington Mystics,Atlanta Dream,pts_under,18.5,steady,0.563,1.78,17.6,5.45
+2026-08-06,401857124,Jessica Shepard,Dallas Wings,Golden State Valkyries,pts_under,15.5,declining+stingy,0.642,1.56,13.6,5.09
+2026-08-06,401857124,Jessica Shepard,Dallas Wings,Golden State Valkyries,pr_under,28.5,declining+cold+stingy,0.59,1.69,26.6,8.22
+2026-08-06,401857124,Jessica Shepard,Dallas Wings,Golden State Valkyries,pa_under,19.5,declining+stingy,0.61,1.64,17.8,6.22
+2026-08-06,401857124,Jessica Shepard,Dallas Wings,Golden State Valkyries,ra_under,19.5,declining+cold,0.61,1.64,18.1,5.13
+2026-08-06,401857124,Jessica Shepard,Dallas Wings,Golden State Valkyries,pra_under,34.5,declining+cold+stingy,0.66,1.52,30.8,9.02
+2026-08-06,401857124,Jessica Shepard,Dallas Wings,Golden State Valkyries,reb_under,12.5,declining+cold,0.58,1.72,11.7,4.16
+2026-08-06,401857124,Paige Bueckers,Dallas Wings,Golden State Valkyries,pts_under,21.5,cold+stingy,0.626,1.6,19.0,7.73
+2026-08-06,401857124,Paige Bueckers,Dallas Wings,Golden State Valkyries,pr_under,24.5,cold+stingy,0.59,1.69,22.5,8.84
+2026-08-06,401857124,Paige Bueckers,Dallas Wings,Golden State Valkyries,pa_under,25.5,cold+stingy,0.61,1.64,23.2,8.26
+2026-08-06,401857124,Paige Bueckers,Dallas Wings,Golden State Valkyries,pra_under,29.5,cold+stingy,0.621,1.61,26.6,9.35
+2026-08-06,401857124,Kayla Thornton,Golden State Valkyries,Dallas Wings,pts_under,8.5,ftdrought,0.589,1.7,7.3,5.39
+2026-08-06,401857124,Arike Ogunbowale,Dallas Wings,Golden State Valkyries,pts_under,19.5,steady,0.563,1.78,18.5,6.45
+2026-08-06,401857124,Azzi Fudd,Dallas Wings,Golden State Valkyries,pts_under,12.5,ftdrought,0.589,1.7,11.7,3.5
+2026-08-06,401857124,Janelle Salaun,Golden State Valkyries,Dallas Wings,pts_under,12.5,steady,0.563,1.78,11.5,6.13

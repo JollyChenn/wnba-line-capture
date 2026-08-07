@@ -16,6 +16,7 @@
 # ============================================================================
 import os, sys, csv, datetime
 import requests
+from curl_cffi import requests as _creq   # ESPN fingerprints plain-requests TLS -> 403; curl_cffi impersonates Chrome
 import pandas as pd
 import numpy as np
 
@@ -33,7 +34,9 @@ except Exception:
 def _slate_today():
     return datetime.datetime.now(_SLATE_TZ).date()
 
-_H = {"User-Agent": "Mozilla/5.0"}
+_H = {"User-Agent": "Mozilla/5.0", "Accept": "application/json, text/plain, */*",
+      "Accept-Language": "en-US,en;q=0.9", "Referer": "https://www.espn.com/wnba/scoreboard",
+      "Origin": "https://www.espn.com"}   # 2026-08-06: ESPN 403s bare UA-only requests
 SB = "https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard"
 SUMMARY = "https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/summary"
 SEASON_START = datetime.date(2026, 5, 8)
@@ -44,7 +47,7 @@ _SCRATCH = {"out", "doubtful"}
 def injuries():
     """ESPN injury feed -> {displayName: status_lower}. Fail-open (empty) on any error."""
     try:
-        r = requests.get(INJ, headers=_H, timeout=20).json()
+        r = _creq.get(INJ, headers=_H, timeout=20, impersonate="chrome").json()
     except Exception:
         return {}
     out = {}
@@ -186,7 +189,7 @@ def _f(x):
 def fetch_day(d):
     """Scoreboard for one date -> (finished games list, upcoming games list)."""
     try:
-        r = requests.get(SB, params={"dates": d.strftime("%Y%m%d")}, headers=_H, timeout=20)
+        r = _creq.get(SB, params={"dates": d.strftime("%Y%m%d")}, headers=_H, timeout=20, impersonate="chrome")
         r.raise_for_status(); js = r.json()
     except Exception:
         return [], []
@@ -212,7 +215,7 @@ def fetch_day(d):
 
 def fetch_box(gid):
     """Per-player box for one finished game (ESPN summary)."""
-    r = requests.get(SUMMARY, params={"event": gid}, headers=_H, timeout=20)
+    r = _creq.get(SUMMARY, params={"event": gid}, headers=_H, timeout=20, impersonate="chrome")
     r.raise_for_status()
     rows = []
     for tm in r.json().get("boxscore", {}).get("players", []):

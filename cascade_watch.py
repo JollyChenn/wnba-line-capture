@@ -22,7 +22,9 @@ try: sys.stdout.reconfigure(encoding="utf-8")
 except Exception: pass
 
 WEBHOOK = os.environ.get("DISCORD_WEBHOOK", "")
-_H = {"User-Agent": "Mozilla/5.0"}
+_H = {"User-Agent": "Mozilla/5.0", "Accept": "application/json, text/plain, */*",
+      "Accept-Language": "en-US,en;q=0.9", "Referer": "https://www.espn.com/wnba/scoreboard",
+      "Origin": "https://www.espn.com"}   # ESPN 403s bare UA-only requests (2026-08-06)
 SB = "https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard"
 INJ = "https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/injuries"
 STATE = "cascade_pinged.json"
