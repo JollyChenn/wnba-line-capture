@@ -248,3 +248,21 @@ logged_utc,date,player,market,side,line,src,open_odds,now_odds,move_pct,verdict,
 2026-08-08T21:44:01Z,2026-08-08,Sabrina Ionescu,pts,Over,19.5,flip_paper,1.97,1.94,-1.5,BET (money agrees),bet now 81%,,,,2
 2026-08-08T21:44:01Z,2026-08-08,Jessica Shepard,pts,Under,13.5,newunder,1.9,1.9,0.0,BET (steady),ok 85%,,,,2
 2026-08-08T21:44:01Z,2026-08-08,Paige Bueckers,pts,Under,19.5,newunder,1.92,1.93,0.5,BET (steady),ok 85%,,,,2
+2026-08-08T22:44:31Z,2026-08-08,Alyssa Thomas,pts,Over,14.5,flip_paper,1.88,1.87,-0.5,BET (steady),bet now 81%,,,,18
+2026-08-08T22:44:31Z,2026-08-08,Jackie Young,pra,Over,29.5,hotover,1.8,1.73,-3.9,BET (money agrees),BET NOW 93%,30.5->29.5,,,3
+2026-08-08T22:44:31Z,2026-08-08,Carla Leite,pts,Under,17.5,newunder,1.833,2.05,11.8,SKIP-drift,WAIT 70%,,Over,1.68,18
+2026-08-08T22:44:31Z,2026-08-08,Dominique Malonga,pts,Under,18.5,newunder,1.87,1.75,-6.4,BET (money agrees),BET NOW 93%,17.5->18.5,,,14
+2026-08-08T22:44:31Z,2026-08-08,Nneka Ogwumike,pts,Over,14.5,flip_paper,1.97,2.0,1.5,SKIP-drift,WAIT 70%,,Under,1.769,17
+2026-08-08T22:44:31Z,2026-08-08,Dearica Hamby,pts,Over,13.5,flip_paper,2.0,2.0,0.0,BET (steady),ok 85%,12.5->13.5,,,10
+2026-08-08T22:44:31Z,2026-08-08,Kayla McBride,pts,Over,15.5,flip_paper,1.95,1.94,-0.5,BET (steady),bet now 81%,,,,8
+2026-08-08T22:44:31Z,2026-08-08,Kelsey Plum,ast,Over,4.5,flip,1.67,1.67,0.0,BET (steady),ok 85%,,,,11
+2026-08-08T22:44:31Z,2026-08-08,Shakira Austin,pts,Over,17.5,flip_paper,1.909,1.909,0.0,BET (steady),ok 85%,,,,11
+2026-08-08T22:44:31Z,2026-08-08,Erica Wheeler,pts,Over,8.5,flip_paper,2.0,2.0,0.0,BET (steady),ok 85%,,,,10
+2026-08-08T22:44:31Z,2026-08-08,Ariel Atkins,pts,Over,8.5,flip_paper,1.8,1.8,0.0,BET (steady),ok 85%,,,,10
+2026-08-08T22:44:31Z,2026-08-08,Rae Burrell,pts,Over,13.5,flip_paper,1.8,1.8,0.0,BET (steady),ok 85%,,,,10
+2026-08-08T22:44:31Z,2026-08-08,Olivia Miles,pr,Over,23.5,overshoot,1.8,1.8,0.0,BET (steady),ok 85%,,,,5
+2026-08-08T22:44:31Z,2026-08-08,Breanna Stewart,pts,Over,21.5,flip_paper,1.9,1.85,-2.6,BET (money agrees),bet now 81%,,,,3
+2026-08-08T22:44:31Z,2026-08-08,Jonquel Jones,pts,Under,14.5,newunder,1.76,1.76,0.0,BET (steady),NO READ (new line),13.5->14.5,,,1
+2026-08-08T22:44:31Z,2026-08-08,Sabrina Ionescu,pts,Over,19.5,flip_paper,1.97,1.89,-4.1,BET (money agrees),BET NOW 93%,,,,3
+2026-08-08T22:44:31Z,2026-08-08,Jessica Shepard,pts,Under,13.5,newunder,1.9,1.92,1.1,SKIP-drift,WAIT 70%,,Over,1.79,3
+2026-08-08T22:44:31Z,2026-08-08,Paige Bueckers,pts,Under,20.5,newunder,1.77,1.77,0.0,BET (steady),NO READ (new line),19.5->20.5,,,1
