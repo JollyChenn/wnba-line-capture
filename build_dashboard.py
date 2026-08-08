@@ -59,7 +59,12 @@ def team_of(name):                                     # -> just the nickname (D
 
 REAL_SRC = {"model"}                                   # COLD/SHRINK/STINGY = the ONLY real-money signal
 SIG_NAME = {                                           # proper display names (internal keys stable)
-    "model": "COLD/SHRINK/STINGY", "flip": "FLIP UNDER", "flip_paper": "FLIP UNDER",
+    # "flip_paper" is a BAD historical name: it is NOT paper-only, it is live and pinged like the rest.
+    # Both flips are the same bet (the book cut the over line too far, so we flip from under to over);
+    # the suffix only records WHICH signal flagged the player - a proven cold/shrink base vs an
+    # experimental one (ftdrought/steady/streak/ppseff). Display it that way so it stops misleading.
+    "model": "COLD/SHRINK/STINGY", "flip": "LINE-CUT FLIP · proven base",
+    "flip_paper": "LINE-CUT FLIP · exp. base",
     "newunder": "FTUNDER", "hotover": "HOT OVER", "usgshock": "usgshock",
     "cascade": "STAR-OUT CASCADE", "starout": "starout", "overshoot": "BOOK OVERSHOOT", "fragile": "fragile",
 }

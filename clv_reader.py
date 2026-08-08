@@ -13,7 +13,10 @@ def _src(r):                                          # legacy graded rows (no s
 
 
 SRC_LABEL = {                                         # proper display names (renamed 2026-06-19; internal keys stay stable)
-    "model": "COLD/SHRINK/STINGY", "flip": "FLIP UNDER", "flip_paper": "FLIP UNDER(paper)",
+    "model": "COLD/SHRINK/STINGY", "flip": "LINE-CUT FLIP · proven base",
+    # NOT paper-only despite the key name - flip_paper is live and pinged; the suffix records
+    # which signal flagged the player (experimental base), not whether we bet it.
+    "flip_paper": "LINE-CUT FLIP · exp. base",
     "newunder": "FTUNDER", "hotover": "HOT OVER", "usgshock": "usgshock", "cascade": "STAR-OUT CASCADE",
     "starout": "starout", "overshoot": "BOOK OVERSHOOT", "fragile": "fragile",
 }
