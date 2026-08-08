@@ -305,13 +305,29 @@ def drift_html():
         if "93" in c: return f'<td class="pos"><b>{esc(c)}</b></td>'
         if "WAIT" in c: return f'<td class="neg">{esc(c)}</td>'
         return f'<td class="mut">{esc(c)}</td>'
-    cr = "".join(f'<tr><td>{esc(r["player"])}</td><td>{esc(r["market"].upper())} {esc(r["side"])} {esc(r["line"])}</td>'
-                 f'<td class="pos"><b>{esc(r["now_odds"])}</b></td><td class="mut">{esc(r["move_pct"])}%</td>'
+    # MIN_CAPS mirrors alert_bets.py: a verdict with fewer price checks behind it has NOT been vetted,
+    # so it shows greyed and marked "held back" instead of sitting there looking identical to a real
+    # read. A wall of 0.0% after an outage is no-data, not all-clear. Only ✅ rows get pinged.
+    MIN_CAPS = 4
+    def _caps(r):
+        try: return int(float(r.get("captures") or 0))
+        except Exception: return 0
+    def _flag(r):
+        c = r.get("confidence", "")
+        if _caps(r) < MIN_CAPS or "NO READ" in c: return "⚫"        # no read yet
+        return "🟢" if ("93" in c or "81" in c) else "⚪"            # shortened vs steady
+    cr = "".join(f'<tr{"" if _caps(r) >= MIN_CAPS else " class=\'unv\'"}>'
+                 f'<td>{_flag(r)} {esc(r["player"])}</td>'
+                 f'<td>{esc(r["market"].upper())} {esc(r["side"])} {esc(r["line"])}</td>'
+                 f'<td class="pos"><b>{esc(r["now_odds"])}</b></td>'
+                 f'<td class="mut">{esc(r["move_pct"])}%</td>'
+                 f'<td class="mut">{_caps(r)}{"" if _caps(r) >= MIN_CAPS else " ⚠"}</td>'
                  f'{_conf_cell(r.get("confidence",""))}'
                  f'<td class="mut">{("⇢ "+esc(r["line_moved"])) if r.get("line_moved") else "—"}</td>'
-                 f'<td><span class="pill">{esc(r["src"])}</span></td></tr>'
-                 for r in sorted(cleared, key=lambda x: (x.get("confidence",""), x["src"]))) \
-         or '<tr><td colspan="7" class="empty">— no cleared bets for this slate —</td></tr>'
+                 f'<td><span class="pill">{esc(r["src"])}</span></td>'
+                 f'<td class="mut">{"✅ pinged" if _caps(r) >= MIN_CAPS else "held back"}</td></tr>'
+                 for r in sorted(cleared, key=lambda x: (-_caps(x), x.get("confidence",""), x["src"]))) \
+         or '<tr><td colspan="9" class="empty">— no cleared bets for this slate —</td></tr>'
     sk = "".join(f'<tr><td>{esc(r["player"])}</td><td>{esc(r["market"].upper())} {esc(r["side"])} {esc(r["line"])}</td>'
                  f'<td class="neg">{esc(r["move_pct"])}%</td><td class="mut">{esc(r["src"])}</td>'
                  f'<td>{("<span class=pill>"+esc(r["fade_side"])+" @ "+esc(r["fade_price"])+"</span>") if r.get("fade_side") else "—"}</td></tr>'
@@ -381,13 +397,15 @@ tr:nth-child(even) td{background:#12172c} tr.pend td{background:#1a1f3a}
 .lab .pill{background:#143a44;color:#7fe3f0}
 .gate{background:#101733;border:1px solid #2b6a4a;border-radius:12px;padding:4px 18px 18px;margin:18px 0 30px}
 .gate h2{color:#5fd07a}
+.unv{opacity:.45}
 </style></head><body><div class="wrap">
 <h1>🏀 WNBA prop bot</h1><div class="sub2">latest slate __SLATE__ · settled through __THROUGH__ · generated __GEN__</div>
 <div class="banner">⚠️ <b>UNPROVEN — paper / tiny stakes only.</b> Every line is vs a synthetic median (predicts the SIDE, not that it beats the book). <b>CLV is the only proof</b> — real-money CLV is __CLVHEAD__ so far. Never auto-bet.</div>
 
 <div class="gate">
-<h2>✅ TONIGHT — CLEARED TO BET <span class="sub2" style="font-weight:400">— flip &amp; cascade that passed the <span class="pill">skip-drift LIVE</span> gate</span></h2>
-<table><tr><th>player</th><th>bet</th><th>odds</th><th>price move</th><th>safe to bet early?</th><th>line moved</th><th>signal</th></tr>__DCLEARED__</table>
+<h2>✅ TONIGHT — CLEARED TO BET <span class="sub2" style="font-weight:400">— the live menu that passed the <span class="pill">skip-drift LIVE</span> gate</span></h2>
+<table><tr><th>player</th><th>bet</th><th>odds</th><th>drift</th><th>checks</th><th>safe to bet early?</th><th>line moved</th><th>signal</th><th>Discord</th></tr>__DCLEARED__</table>
+<div class="labnote">🟢 <b>price shortened</b> — money agrees with us · ⚪ <b>steady</b> — no news either way · ⚫ <b>no read</b> — fewer than 4 price checks, so the drift number means nothing yet.<br>📣 <b>Only ✅ rows are pinged to Discord.</b> Held-back rows stay here for the record but are never sent — after an outage the board restarts flat and every drift reads 0.0%, which looks identical to a genuine all-clear. Every read is also appended to <code>drift_log.csv</code> so we can later test whether the drift actually separated winners from losers.</div>
 <div class="labnote">🕙 <b>Bet at bedtime (~23:00 MYT).</b> WNBA tips 07:00-10:00 MYT, so the textbook 4h window is 03:00 MYT. You don't need it: at T-8h a price that already moved <b>≥3% toward us is 93% locked in</b>, flat is 85%. Only an <b>early drift is unreliable (70%)</b> — never fade early, wait for it.<br>📏 <b>If the LINE moves</b> (21% of bets, ~1pt): the row re-quotes the NEW line and the odds read restarts — a fresh line shows <b>NO READ</b> until it has 2+ captures. A bet you already placed stays at your original line; the row is telling you what's available <i>now</i>.</div>
 
 <h2>🚫 SKIPPED — price drifted against them <span class="sub2" style="font-weight:400">— do not bet; fade auto-logged to paper</span></h2>

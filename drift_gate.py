@@ -85,6 +85,25 @@ def main():
     hdr = ["date","player","market","side","line","src","open_odds","now_odds","move_pct","verdict","confidence","line_moved","fade_side","fade_price","captures"]
     w = csv.writer(open(os.path.join(D, "drift_gate_today.csv"), "w", newline="", encoding="utf-8"))
     w.writerow(hdr); w.writerows(sorted(rows, key=lambda x: x[9]))
+    # ---- PERMANENT RECORD ---------------------------------------------------------------------
+    # drift_gate_today.csv is overwritten every run, so the reads that led to a bet were being lost
+    # the moment the slate rolled. drift_log.csv is append-only: one row each time a bet's read
+    # actually CHANGES (new price, new line, more checks). That's what lets us ask later whether the
+    # drift read separated winners from losers, instead of just believing it does.
+    lp = os.path.join(D, "drift_log.csv")
+    last = {}
+    if os.path.exists(lp):
+        for r in csv.DictReader(open(lp, encoding="utf-8")):
+            last[(r["date"], r["player"], r["market"], r["side"])] = (r["line"], r["now_odds"], r["captures"])
+    stamp = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    changed = [x for x in rows
+               if last.get((str(x[0]), x[1], x[2], x[3])) != (str(x[4]), str(x[7]), str(x[14]))]
+    if changed:
+        isnew = not os.path.exists(lp)
+        fh = open(lp, "a", newline="", encoding="utf-8"); fw = csv.writer(fh)
+        if isnew: fw.writerow(["logged_utc"] + hdr)
+        fw.writerows([[stamp] + x for x in changed]); fh.close()
+    print(f"drift_log: +{len(changed)} read(s)")
     # append fade paper bets, deduped on (date,player,market,side,line)
     fp = os.path.join(D, "fade_paper.csv")
     seen = set()
