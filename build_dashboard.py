@@ -370,9 +370,41 @@ def drift_html():
     else:
         npend = sum(1 for r in load("fade_paper.csv"))
         fp = f'<span class="mut">{npend} logged, awaiting results</span>'
-    return cr, sk, br, fp
 
-drift_cleared, drift_skipped, drift_buckets, fade_paper_line = drift_html()
+    # ---- THE PING RECORD -----------------------------------------------------------------------
+    # pinged_bets.csv is what Discord ACTUALLY told you to bet - the signal after the drift vet,
+    # the stake tier and the live-menu filter. graded_bets.csv grades the raw signal, which is a
+    # different (and more flattering) population. This is the only list you ever acted on, so it
+    # is the one that has to be graded honestly. Settled rows are matched back by player+market+date.
+    pinged = load("pinged_bets.csv")
+    gidx = {}
+    for r in graded:
+        gidx[((r.get("player") or "").lower(), r.get("market"), (r.get("date") or "").replace("-", ""))] = r
+    prs, pw, pl, ppnl, pstk = [], 0, 0, 0.0, 0.0
+    for r in sorted(pinged, key=lambda x: (x.get("date", ""), x.get("src", "")), reverse=True)[:60]:
+        u = 0.5 if r.get("stake", "").startswith("½") else 1.0
+        g = gidx.get(((r.get("player") or "").lower(), r.get("market"), (r.get("date") or "").replace("-", "")))
+        res = (g or {}).get("result", "")
+        ru = (_f((g or {}).get("pnl")) or 0) * u
+        if res.upper() == "WIN":  pw += 1; ppnl += ru; pstk += u
+        elif res.upper() == "LOSS": pl += 1; ppnl += ru; pstk += u
+        cell = (f'<td class="pos"><b>WIN</b></td><td class="pos">{ru:+.2f}u</td>' if res.upper() == "WIN"
+                else (f'<td class="neg">LOSS</td><td class="neg">{ru:+.2f}u</td>' if res.upper() == "LOSS"
+                      else '<td class="mut">pending</td><td class="mut">—</td>'))
+        prs.append(f'<tr><td class="mut">{esc(r.get("date",""))}</td><td>{esc(r.get("player",""))}</td>'
+                   f'<td>{esc((r.get("market") or "").upper())} {esc(r.get("side",""))} {esc(r.get("line",""))}</td>'
+                   f'<td class="pos"><b>{esc(r.get("odds",""))}</b></td><td><b>{esc(r.get("stake",""))}</b></td>'
+                   f'<td class="mut">{esc(r.get("move_pct",""))}% / {esc(r.get("captures",""))}</td>'
+                   f'<td><span class="pill">{esc(r.get("src",""))}</span></td>{cell}</tr>')
+    pn = pw + pl
+    psum = (f'<b>{pw}–{pl}</b> <span class="mut">({100*pw/pn:.0f}%)</span> '
+            f'<span class="{"pos" if ppnl>0 else "neg"}">{ppnl:+.2f}u</span> '
+            f'<span class="mut">on {pstk:.1f}u staked = {100*ppnl/pstk:+.1f}% ROI</span>'
+            if pn and pstk else '<span class="mut">nothing settled yet</span>')
+    pr = "".join(prs) or '<tr><td colspan="9" class="empty">— nothing pinged yet —</td></tr>'
+    return cr, sk, br, fp, pr, psum
+
+drift_cleared, drift_skipped, drift_buckets, fade_paper_line, ping_rows, ping_summ = drift_html()
 
 gen = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
 through = max((r.get("date","") for r in graded), default="—")
@@ -423,6 +455,11 @@ tr:nth-child(even) td{background:#12172c} tr.pend td{background:#1a1f3a}
 <div class="labnote">When the book lengthens our price nobody backed it — those bets run <b>−28% ROI (t−3.78)</b>. Skipping them is the one filter now <b>live</b>. Fading them is <b>paper</b> until n≥100.</div>
 <table><tr><th>bucket</th><th>record · P&amp;L (flat 1u)</th></tr>__DBUCKETS__
 <tr><td>FADE-DRIFT · <span class="pill">forward paper</span></td><td>__FADEPAPER__</td></tr></table>
+
+<h2>📣 THE PING RECORD <span class="sub2" style="font-weight:400">— exactly what Discord told you to bet, graded</span></h2>
+<div class="labnote">This is the list you actually acted on: the signal <b>after</b> the drift vet, the stake tier and the live-menu filter. The signal-level record above grades a different, more flattering population (it includes bets the filter would have held back). <b>If the drift rule is real, this table should beat that one.</b> That is the check — and it needs n≥100 before it means anything.</div>
+<div class="sub2" style="margin:6px 0">__PINGSUMM__</div>
+<table><tr><th>slate</th><th>player</th><th>bet</th><th>odds</th><th>stake</th><th>drift/checks</th><th>signal</th><th>result</th><th>P&amp;L</th></tr>__PINGROWS__</table>
 </div>
 
 <h2>📊 BY SIGNAL <span class="sub2" style="font-weight:400">— each model's W–L · P&amp;L · CLV (take-on-sight, flat 1u — the signal record, not your placed bets)</span></h2>
@@ -462,7 +499,8 @@ page = (TEMPLATE.replace("__RSUMM__", summ_line(rs, "real")).replace("__RROWS__"
         .replace("__MODELSUMM__", signal_summ(sig)).replace("__MODELROWS__", model_rows)
         .replace("__FILTERROWS__", filter_rows).replace("__OVERROWS__", overshoot_rows)
         .replace("__DCLEARED__", drift_cleared).replace("__DSKIPPED__", drift_skipped)
-        .replace("__DBUCKETS__", drift_buckets).replace("__FADEPAPER__", fade_paper_line))
+        .replace("__DBUCKETS__", drift_buckets).replace("__FADEPAPER__", fade_paper_line)
+        .replace("__PINGROWS__", ping_rows).replace("__PINGSUMM__", ping_summ))
 
 with open(os.path.join(ROOT, "dashboard.html"), "w", encoding="utf-8") as f:
     f.write(page)

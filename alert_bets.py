@@ -63,6 +63,30 @@ def vetted(rows):
 HALF_STAKE = {"cascade"}
 def stake(r): return "½u" if r.get("src") in HALF_STAKE else "1u"
 
+def log_pinged(rows, stage, slate):
+    """PERMANENT RECORD of what Discord actually told you to bet.
+
+    Without this we can only grade "what the signal produced", which is not the same thing - the
+    ping is the signal AFTER the drift vet, the stake tier and the live-menu filter. That is the
+    only list you ever acted on, so it is the only list worth grading. Append-only, deduped on
+    (slate, player, market, side, line) so a re-send at a later stage does not double-count."""
+    p = os.path.join(D, "pinged_bets.csv")
+    seen = set()
+    if os.path.exists(p):
+        for r in csv.DictReader(open(p, encoding="utf-8")):
+            seen.add((r["date"], r["player"], r["market"], r["side"], r["line"]))
+    new = [[datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), stage, slate,
+            r["player"], r["market"], r["side"], r["line"], r["now_odds"], stake(r), r["src"],
+            r["move_pct"], caps(r), r.get("confidence", "")]
+           for r in rows if (slate, r["player"], r["market"], r["side"], r["line"]) not in seen]
+    if not new: return 0
+    isnew = not os.path.exists(p)
+    fh = open(p, "a", newline="", encoding="utf-8"); w = csv.writer(fh)
+    if isnew: w.writerow(["sent_utc", "stage", "date", "player", "market", "side", "line",
+                          "odds", "stake", "src", "move_pct", "captures", "confidence"])
+    w.writerows(new); fh.close()
+    return len(new)
+
 def fmt(r):
     # show the DRIFT itself, not just the price - that number is the whole point of the alert
     c = r.get("confidence", "")
@@ -154,7 +178,9 @@ def main():
         parts.append("\n_small stakes · board: http://localhost:8899_")
         if send("\n".join(parts)):
             st["done"].append(name); st["sent_full"] = True; st["sent_ids"] = sorted(cur_ids)
-            json.dump(st, open(STATE, "w")); print(f"[close] sent FINAL list: {len(ok)} bets, {len(dropped)} pulls")
+            json.dump(st, open(STATE, "w"))
+            print(f"[close] sent FINAL: {len(ok)} bets, {len(dropped)} pulls, "
+                  f"+{log_pinged(ok, name, slate)} logged to pinged_bets.csv")
         return
 
     # ---- FULL LIST: fires at the first stage where the filter actually has something to say ----
@@ -170,7 +196,9 @@ def main():
         parts.append("\n_small stakes · board: http://localhost:8899_")
         if send("\n".join(parts)):
             st["done"].append(name); st["sent_full"] = True; st["sent_ids"] = sorted(cur_ids)
-            json.dump(st, open(STATE, "w")); print(f"[{name}] sent FULL list: {len(ok)} bets ({held} held back)")
+            json.dump(st, open(STATE, "w"))
+            print(f"[{name}] sent FULL: {len(ok)} bets ({held} held back), "
+                  f"+{log_pinged(ok, name, slate)} logged to pinged_bets.csv")
         return
 
     # ---- later stages: changes only, silent when nothing moved ----
@@ -189,7 +217,9 @@ def main():
         parts.append("➕ **newly vetted**:\n" + "\n".join(fmt(r) for r in added))
     if send("\n".join(parts)):
         st["done"].append(name); st["sent_ids"] = sorted(cur_ids)
-        json.dump(st, open(STATE, "w")); print(f"[{name}] sent: {len(dropped)} pulls, {len(added)} adds")
+        json.dump(st, open(STATE, "w"))
+        print(f"[{name}] sent: {len(dropped)} pulls, {len(added)} adds, "
+              f"+{log_pinged(added, name, slate)} logged to pinged_bets.csv")
 
 if __name__ == "__main__":
     try: main()
