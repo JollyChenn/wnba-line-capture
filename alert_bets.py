@@ -128,6 +128,25 @@ def main():
         print(f"[{name}] {len(bet)} cleared but 0 drift-vetted (median {med} checks) — silent")
         return
 
+    # ---- NEAR CLOSE: the ping you actually bet off, so it always carries the FULL final list
+    # (not just changes) with the freshest drift reads of the night - 99.5% verdict-final here. ----
+    if name == "close":
+        told = set(st.get("sent_ids", []))
+        dropped = [r for r in skip if bet_id(r) in told]
+        parts = [f"⏰ **FINAL — bet these** · {len(ok)} drift-vetted · tip {myt} MYT (in {hrs:.1f}h)",
+                 "\n".join(fmt(r) for r in sorted(ok, key=lambda x: (x["src"], x["player"])))]
+        held = len(bet) - len(ok)
+        if held:
+            parts.append(f"_({held} cleared but never got enough price history — excluded.)_")
+        if dropped:
+            parts.append("🚫 **PULL** (drifted since the earlier ping):\n" + "\n".join(
+                f"• {r['player']} {r['market'].upper()} {r['side']} {r['line']} ({r['move_pct']}%)" for r in dropped))
+        parts.append("\n_small stakes · board: http://localhost:8899_")
+        if send("\n".join(parts)):
+            st["done"].append(name); st["sent_full"] = True; st["sent_ids"] = sorted(cur_ids)
+            json.dump(st, open(STATE, "w")); print(f"[close] sent FINAL list: {len(ok)} bets, {len(dropped)} pulls")
+        return
+
     # ---- FULL LIST: fires at the first stage where the filter actually has something to say ----
     if not st.get("sent_full"):
         held = len(bet) - len(ok)
