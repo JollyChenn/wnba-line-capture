@@ -51,12 +51,22 @@ def main():
                   f"Discord path is working. Current board: **{len(bet)} cleared bets** "
                   f"({len(rows)} rows in the gate).\n_This is a test, not a bet instruction._")
         print("test alert sent" if ok else "test alert FAILED"); return
-    try:
-        j = espn_get.getj("https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard")
-    except Exception as e:
-        print("espn fail", e); return
+    # ESPN's default scoreboard returns the US-Eastern date, which late in the UTC day is YESTERDAY's
+    # finished games - that made the alert report "no upcoming games" while tonight's slate was 8h out.
+    # Query today AND tomorrow explicitly (2026-08-08 fix).
     now = datetime.datetime.now(datetime.timezone.utc)
-    tips = [datetime.datetime.fromisoformat(ev["date"].replace("Z", "+00:00")) for ev in j.get("events", [])
+    evs = []
+    for _d in (now, now + datetime.timedelta(days=1)):
+        try:
+            evs += espn_get.getj("https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard",
+                                 {"dates": _d.strftime("%Y%m%d")}).get("events", [])
+        except Exception as e:
+            print("espn fail", e)
+    seen_ids, j_events = set(), []
+    for ev in evs:
+        if ev.get("id") not in seen_ids:
+            seen_ids.add(ev.get("id")); j_events.append(ev)
+    tips = [datetime.datetime.fromisoformat(ev["date"].replace("Z", "+00:00")) for ev in j_events
             if (((ev.get("competitions") or [{}])[0].get("status") or {}).get("type") or {}).get("state") == "pre"]
     tips = [t for t in tips if t > now]
     if not tips: print("no upcoming games"); return
