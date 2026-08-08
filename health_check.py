@@ -52,7 +52,7 @@ def main():
     if not espn_ok:
         issues.append(("espn", "🔴 **ESPN unreachable** — capture + grading will silently stall (this is what broke us twice). Check espn_get.py / IP block."))
     # --- 1. box scores stale ---
-    g = rows("data/games_2026.csv")
+    g = rows("data/games_2026.csv")   # also used by check 2 below
     finished = [r for r in g if r.get("home_score")]
     if finished:
         newest = max(r.get("date", "") for r in finished)
@@ -61,20 +61,32 @@ def main():
         played_since = any(r.get("date", "") > newest for r in g if r.get("tip") and hours_since(r["tip"]) and hours_since(r["tip"]) > 4)
         if h and h > 36 and played_since:
             issues.append(("box", f"🟠 **Box scores stale {h:.0f}h** (newest {newest}) — grading is frozen. daily_picks likely can't reach ESPN."))
-    # --- 2. capture stale (only during the capture window 14:00-04:00 UTC) ---
+    # --- 2. capture stale — TIGHTENED 2026-08-08 after the 37h silent outage.
+    # The old version only complained if a game was within 24h, so a gap that started in a quiet
+    # window went unreported for a day and a half. Now: during the season, ANY 6h gap is an alarm,
+    # and 3h if a game is actually near. (Season = we have a scheduled game in the last/next 5 days.)
     b = rows("xbet_board.csv")
-    # only meaningful when a game is within the capture window (else "stale" just means no slate)
-    _pre_all = [e for e in sb.get("events", []) if (((e.get("competitions") or [{}])[0].get("status") or {}).get("type") or {}).get("state") in ("pre", "in")]
+    _evs = sb.get("events", [])
     _soon = False
-    for e in _pre_all:
+    for e in _evs:
         try:
             _t = datetime.datetime.fromisoformat(e["date"].replace("Z", "+00:00"))
             if -3 <= (_t - now).total_seconds()/3600 <= 24: _soon = True
         except Exception: pass
-    if b and _soon:
+    # in-season? a game finished or is scheduled within +/-5 days
+    _inseason = False
+    for r in g:
+        try:
+            _d = datetime.datetime.strptime(r.get("date", ""), "%Y%m%d").replace(tzinfo=datetime.timezone.utc)
+            if abs((_d - now).days) <= 5: _inseason = True
+        except Exception: pass
+    if b:
         h = hours_since(b[-1].get("captured_utc", ""))
-        if h and h > 3:
-            issues.append(("capture", f"🟠 **No 1xbet capture for {h:.0f}h** during the game window — board is stale, tonight's bets may be missing."))
+        limit = 3 if _soon else (6 if _inseason else None)
+        if h and limit and h > limit:
+            where = "with a game near" if _soon else "during the season"
+            issues.append(("capture", f"🟠 **No 1xbet capture for {h:.0f}h** {where} — the board is stale. "
+                                      f"This is the silent-outage pattern: workflows report success but collect nothing."))
     # --- 3. games tonight but no cleared bets ---
     pre = [e for e in sb.get("events", []) if (((e.get("competitions") or [{}])[0].get("status") or {}).get("type") or {}).get("state") == "pre"]
     if pre:
