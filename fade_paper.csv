@@ -18,3 +18,4 @@ logged_utc,date,player,market,side,line,price,orig_src,orig_move
 2026-08-08T09:46:16Z,2026-08-08,Flau'jae Johnson,pts,Over,15.5,1.87,newunder,0.0202
 2026-08-08T11:43:34Z,2026-08-08,Carla Leite,pts,Over,17.5,1.68,newunder,0.1184
 2026-08-08T11:43:34Z,2026-08-08,Kelsey Mitchell,pr,Under,26.5,1.83,overshoot,0.0167
+2026-08-08T14:00:44Z,2026-08-08,Nneka Ogwumike,pts,Under,14.5,1.769,flip_paper,0.0152
