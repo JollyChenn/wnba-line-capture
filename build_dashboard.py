@@ -4,7 +4,10 @@ build_dashboard.py — clean two-section dashboard.html from the bot's CSVs.
 No external libs. Re-run anytime (the grade-bets workflow runs it on cron).
 
 Two sections, nothing else:
-  💰 REAL MONEY  = COLD/SHRINK/STINGY only (src=model) — the only real-money signal.
+  💰 REAL MONEY  = the bets YOU actually placed (my_bets.csv).
+                 Live strategy is now the DRIFT-VETTED LIVE MENU (flip/flip_paper/overshoot/cascade):
+                 n=330, 61% WR, +10.4% ROI, t=2.13. The old COLD/SHRINK/STINGY `model` signal is
+                 retired to tracking - n=32, 41% WR, -22.9% ROI - and is never pinged.
   🧪 PAPER TESTING = every other signal, merged into ONE bucket.
 Each section: pending (unsettled) at top, then settled marked WIN/LOSE, flat 1u stake P&L.
 """
@@ -420,7 +423,8 @@ tr:nth-child(even) td{background:#12172c} tr.pend td{background:#1a1f3a}
 <h2>📊 BY SIGNAL <span class="sub2" style="font-weight:400">— each model's W–L · P&amp;L · CLV (take-on-sight, flat 1u — the signal record, not your placed bets)</span></h2>
 <table><tr><th>signal</th><th>W–L</th><th>hit</th><th>P&amp;L</th><th>CLV</th><th>pend</th></tr>__SCOREBOARD__</table>
 
-<div class="real"><h2>💰 REAL MONEY — your placed bets (COLD/SHRINK/STINGY)</h2>
+<div class="real"><h2>💰 REAL MONEY — your placed bets</h2>
+<div class="labnote">Current live strategy = the <b>drift-vetted live menu</b> above (flip · flip_paper · overshoot · cascade), <b>n=330, 61% WR, +10.4% ROI, t=2.13</b>. The old COLD/SHRINK/STINGY <code>model</code> signal is <b>retired to tracking</b> — n=32, 41% WR, <b>−22.9% ROI</b> (−4.3% even drift-cleared). It is no longer pinged.</div>
 __RSUMM__
 <div class="sub2" style="margin-bottom:6px">⏳ pending = bot flagged it tonight — place &amp; record · settled = what you actually bet.<br><b>Signal CLV (the proof, take-on-sight):</b> __SIGCLVALL__</div>
 <table><tr><th>slate</th><th>player</th><th>logged</th><th>bet @ odds</th><th>result</th><th>P&amp;L</th><th>CLV</th></tr>__RROWS__</table>
