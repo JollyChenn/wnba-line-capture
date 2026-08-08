@@ -40,6 +40,19 @@ def fmt(r):
     return f"{flag} **{r['player']}** {r['market'].upper()} {r['side']} {r['line']} @ **{r['now_odds']}** ({r['move_pct']}%, {r['src']}){lm}"
 
 def main():
+    # TEST MODE: `ALERT_TEST=1` sends a proof-of-life message immediately, ignoring the timing gate.
+    # Lets you verify the CLOUD -> Discord path any time (workflow_dispatch input `test_alert`).
+    if os.environ.get("ALERT_TEST") == "1":
+        gp = os.path.join(D, "drift_gate_today.csv")
+        rows = list(csv.DictReader(open(gp, encoding="utf-8"))) if os.path.exists(gp) else []
+        bet = [r for r in rows if r["verdict"].startswith("BET") and r["src"] in LIVE]
+        where = "☁️ CLOUD (GitHub Actions)" if os.environ.get("GITHUB_ACTIONS") else "💻 laptop"
+        ok = send(f"🧪 **Alert test — sent from {where}**
+"
+                  f"Discord path is working. Current board: **{len(bet)} cleared bets** "
+                  f"({len(rows)} rows in the gate).
+_This is a test, not a bet instruction._")
+        print("test alert sent" if ok else "test alert FAILED"); return
     try:
         j = espn_get.getj("https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard")
     except Exception as e:
