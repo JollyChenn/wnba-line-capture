@@ -148,13 +148,15 @@ def main():
     if not stage:
         print(f"nothing to send (tip in {hrs:.1f}h, done={st['done']})"); return
     name, h = stage
-    myt = (first + datetime.timedelta(hours=8)).strftime("%H:%M")
+    # You are on WIB (Indonesia, UTC+7). This said MYT (+8) for months, so every time quoted in an
+    # alert was an hour later than your actual clock - "23:13 MYT" is 22:13 on your phone.
+    loc = (first + datetime.timedelta(hours=7)).strftime("%H:%M") + " WIB"
 
     # ---- THE GATE: no vetted bets -> stay silent, and do NOT burn the stage (retry next capture) ----
     if not ok:
         med = sorted(caps(r) for r in bet)[len(bet)//2] if bet else 0
         if hrs <= LAST_CALL and not st.get("blind_notice"):
-            if send(f"🏀 **WNBA · tip {myt} MYT — sitting out.**\n"
+            if send(f"🏀 **WNBA · tip {loc} — sitting out.**\n"
                     f"{len(bet)} bets on the board but the drift filter has only ~{med} price checks "
                     f"behind them (needs {MIN_CAPS}+), so none are vetted. An un-vetted menu is roughly "
                     f"breakeven and the drifted bets hiding inside it run −28% ROI. No bet is the bet."):
@@ -167,7 +169,7 @@ def main():
     if name == "close":
         told = set(st.get("sent_ids", []))
         dropped = [r for r in skip if bet_id(r) in told]
-        parts = [f"⏰ **FINAL — bet these** · {len(ok)} drift-vetted · tip {myt} MYT (in {hrs:.1f}h)",
+        parts = [f"⏰ **FINAL — bet these** · {len(ok)} drift-vetted · tip {loc} (in {hrs:.1f}h)",
                  "\n".join(fmt(r) for r in sorted(ok, key=lambda x: (x["src"], x["player"])))]
         held = len(bet) - len(ok)
         if held:
@@ -186,7 +188,7 @@ def main():
     # ---- FULL LIST: fires at the first stage where the filter actually has something to say ----
     if not st.get("sent_full"):
         held = len(bet) - len(ok)
-        parts = [f"🏀 **WNBA — {len(ok)} drift-vetted bets** · first tip {myt} MYT (in {hrs:.1f}h)",
+        parts = [f"🏀 **WNBA — {len(ok)} drift-vetted bets** · first tip {loc} (in {hrs:.1f}h)",
                  "\n".join(fmt(r) for r in sorted(ok, key=lambda x: (x["src"], x["player"])))]
         if held:
             parts.append(f"_({held} more cleared but not enough price history to vet — excluded.)_")
@@ -209,7 +211,7 @@ def main():
         st["done"].append(name); json.dump(st, open(STATE, "w"))
         print(f"[{name}] no changes - staying quiet"); return
     tag = "⏰ NEAR CLOSE" if name == "close" else "🔄 UPDATE"
-    parts = [f"{tag} · tip {myt} MYT (in {hrs:.1f}h)"]
+    parts = [f"{tag} · tip {loc} (in {hrs:.1f}h)"]
     if dropped:
         parts.append("🚫 **PULL / don't place** (price has since drifted):\n" +
                      "\n".join(f"• {r['player']} {r['market'].upper()} {r['side']} {r['line']} ({r['move_pct']}%)" for r in dropped))
