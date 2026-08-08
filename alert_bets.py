@@ -6,6 +6,7 @@
 # "Changes" = a bet you were told to place has since DRIFTED (pull it), or a new cleared bet appeared.
 # Stages 2-3 stay quiet when nothing moved, so no useless 3am buzz.
 import csv, os, sys, json, datetime, urllib.request
+import espn_get   # hardened ESPN client (curl_cffi Chrome TLS); GitHub IPs 403 plain urllib
 try: sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 except Exception: pass
 D = os.path.dirname(os.path.abspath(__file__))
@@ -40,8 +41,7 @@ def fmt(r):
 
 def main():
     try:
-        j = json.load(urllib.request.urlopen(urllib.request.Request(
-            "https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard", headers=ESPN_H), timeout=20))
+        j = espn_get.getj("https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard")
     except Exception as e:
         print("espn fail", e); return
     now = datetime.datetime.now(datetime.timezone.utc)

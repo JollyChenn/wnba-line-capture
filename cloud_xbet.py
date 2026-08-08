@@ -8,6 +8,7 @@ import os, sys, csv, json, time, math, re, datetime, urllib.request, unicodedata
 from collections import defaultdict
 from zoneinfo import ZoneInfo
 from curl_cffi import requests as creq
+import espn_get   # hardened ESPN client: curl_cffi(Chrome TLS) -> urllib fallback. GitHub IPs get 403 on plain urllib.
 import pandas as pd, numpy as np
 try:
     sys.stdout.reconfigure(encoding="utf-8")
@@ -158,7 +159,7 @@ def espn_near(window):
     out, team_mins, now = [], {}, datetime.datetime.now(datetime.timezone.utc)
     for d in (now.strftime("%Y%m%d"), (now + datetime.timedelta(days=1)).strftime("%Y%m%d")):
         try:
-            j = json.load(urllib.request.urlopen(urllib.request.Request(ESPN + "?dates=" + d, headers={"User-Agent": UA, "Accept": "application/json, text/plain, */*", "Accept-Language": "en-US,en;q=0.9", "Referer": "https://www.espn.com/wnba/scoreboard", "Origin": "https://www.espn.com"}), timeout=20))
+            j = espn_get.getj(ESPN + "?dates=" + d)
         except Exception:
             continue
         for ev in j.get("events", []):
@@ -184,7 +185,7 @@ def espn_near(window):
 def injuries():
     out = {}
     try:
-        d = json.load(urllib.request.urlopen(urllib.request.Request(INJ, headers={"User-Agent": UA, "Accept": "application/json, text/plain, */*", "Accept-Language": "en-US,en;q=0.9", "Referer": "https://www.espn.com/wnba/scoreboard", "Origin": "https://www.espn.com"}), timeout=20))
+        d = espn_get.getj(INJ)
     except Exception:
         return out
     for tm in d.get("injuries", []):

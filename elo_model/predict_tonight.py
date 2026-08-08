@@ -7,6 +7,7 @@
 # stdlib only. Never fails the workflow (exit 0).
 import csv, os, sys, json, math, statistics, datetime, urllib.request
 from collections import defaultdict, deque
+import sys as _s,os as _o; _s.path.insert(0,_o.path.dirname(_o.path.dirname(_o.path.abspath(__file__)))); import espn_get   # hardened ESPN client (curl_cffi Chrome TLS); GitHub IPs 403 plain urllib
 try: sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 except Exception: pass
 D = os.path.dirname(os.path.abspath(__file__))
@@ -16,7 +17,7 @@ def f(x):
     try: return float(x)
     except Exception: return 0.0
 def getj(u):
-    try: return json.load(urllib.request.urlopen(urllib.request.Request(u, headers={**UA, **ESPN_EXTRA}), timeout=20))
+    try: return espn_get.getj(u)
     except Exception: return {}
 
 def main():

@@ -3,11 +3,12 @@
 # game lines -> live_snapshots.csv / live_lines.csv. Gentle: 1 scoreboard + 1 summary per live game +
 # 2 Pinnacle req per cycle. Commits every ~10 min. Exits when no live games (or 5h cap).
 import json,urllib.request,csv,os,sys,time,datetime,subprocess
+import espn_get   # hardened ESPN client (curl_cffi Chrome TLS); GitHub IPs 403 plain urllib
 try:sys.stdout.reconfigure(encoding="utf-8",errors="replace")
 except Exception:pass
 UA={"User-Agent":"Mozilla/5.0"}
 def getj(u):
-    try:return json.load(urllib.request.urlopen(urllib.request.Request(u,headers=UA),timeout=15))
+    try:return espn_get.getj(u)
     except Exception:return {}
 B="https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/"
 def snap_lines():

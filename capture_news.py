@@ -12,6 +12,7 @@
 #   * Whole body is wrapped in try/except + always exits 0 -> an ESPN hiccup can NEVER fail the capture job.
 # ---------------------------------------------------------------------------------------------------
 import os, sys, json, csv, datetime, urllib.request, unicodedata, re
+import espn_get   # hardened ESPN client (curl_cffi Chrome TLS); GitHub IPs 403 plain urllib
 try:
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")   # Windows consoles choke on non-ASCII names otherwise
 except Exception:
@@ -29,7 +30,7 @@ INJ_CSV, LIN_CSV, STATE = "injuries_log.csv", "lineups_log.csv", "news_last.json
 def getj(url):
     """Fetch JSON, return {} on any error (so one bad call never stops the rest)."""
     try:
-        return json.load(urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=20))
+        return espn_get.getj(url)
     except Exception as e:
         print("fetch fail", url[:65], e)
         return {}
