@@ -53,13 +53,23 @@ def vetted(rows):
     """Bets with a real drift READ behind them - enough price checks, and not a brand-new line."""
     return [r for r in rows if caps(r) >= MIN_CAPS and "NO READ" not in r.get("confidence", "")]
 
+# CONVICTION TIERS. cascade is the weakest signal on the menu, but it is POSITIVE: +3.6% ROI,
+# +5.4u over n=151, and IMPROVING (1st half -1.8%, 2nd half +8.9%). Cutting it raises the menu's
+# average ROI 10.4% -> 16.1% while LOWERING total profit 34.3u -> 28.9u - the average only rises
+# because you deleted the low-margin half. Its gap vs the other three is not distinguishable from
+# noise (t=1.28, p=0.199), so cutting it would be picking winners after seeing the results, the same
+# selection trap that produced the fake gold-bot edge. Half stake keeps the expectancy while
+# refusing to give 46%-of-volume-for-16%-of-profit equal weight.
+HALF_STAKE = {"cascade"}
+def stake(r): return "½u" if r.get("src") in HALF_STAKE else "1u"
+
 def fmt(r):
     # show the DRIFT itself, not just the price - that number is the whole point of the alert
     c = r.get("confidence", "")
-    flag = "🟢" if "93" in c else ("🟡" if "81" in c else "⚪")
+    flag = "🟢" if ("93" in c or "81" in c) else "⚪"
     lm = f" ⇢line {r['line_moved']}" if r.get("line_moved") else ""
     return (f"{flag} **{r['player']}** {r['market'].upper()} {r['side']} {r['line']} @ **{r['now_odds']}**"
-            f"  ·  drift {r['move_pct']}% over {caps(r)} checks  ·  {r['src']}{lm}")
+            f"  ·  **{stake(r)}**  ·  drift {r['move_pct']}% over {caps(r)} checks  ·  {r['src']}{lm}")
 
 def main():
     # TEST MODE: `ALERT_TEST=1` sends a proof-of-life message immediately, ignoring the timing gate.
