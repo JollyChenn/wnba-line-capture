@@ -1,10 +1,22 @@
-# alert_bets.py - Discord alerts for the drift-cleared live menu, in THREE stages per slate.
-#   Stage 1  T-8h  (~23:00 MYT for a 07:00 tip) : FULL LIST - your main betting window.
-#                                                 verdicts are 96.4% final by now, so most bets go here.
-#   Stage 2  T-4h  (~03:00 MYT)                 : CHANGES ONLY - silent unless a bet turned bad or a new one appeared.
-#   Stage 3  T-2h  (~05:00 MYT, near close)     : CHANGES ONLY + final confirmation (99.5% final).
-# "Changes" = a bet you were told to place has since DRIFTED (pull it), or a new cleared bet appeared.
-# Stages 2-3 stay quiet when nothing moved, so no useless 3am buzz.
+# alert_bets.py - Discord alerts for the drift-cleared live menu.
+# ---------------------------------------------------------------------------------------------
+# RULE (2026-08-08): only ever alert on bets the drift filter has ACTUALLY VETTED.
+# A bet needs MIN_CAPS price checks behind it before its verdict means anything. After an outage
+# the board restarts with ~2 captures and every move_pct reads 0.0% - that is "no data", NOT
+# "all clear", and sending it looks identical to a genuine clean sweep. On a normal slate ~86% of
+# prices move >0.5% (median 2.4%), so a wall of zeros is the fingerprint of a blind filter.
+# Un-vetted menus are ~breakeven and the drifted bets inside them run -28% ROI, so silence beats
+# a list you can't trust.
+#
+# STAGES, each fired once per slate, all gated on the vetted rule above:
+#   T-8h  ~17:00 MYT : main betting window, verdicts 96.4% final
+#   T-4h  ~21:00 MYT
+#   T-2h  ~23:00 MYT : near close, 99.5% final
+# The FULL list goes out at the FIRST stage that has real price history - so on a night that
+# starts blind the list simply arrives later, near kickoff, instead of arriving worthless.
+# Every stage after that is CHANGES ONLY (a bet drifted -> pull it, or a new one cleared), so
+# there is no useless 3am buzz. If the board is still blind at T-2h you get one "sitting out"
+# note rather than being left guessing.
 import csv, os, sys, json, datetime, urllib.request
 import espn_get   # hardened ESPN client (curl_cffi Chrome TLS); GitHub IPs 403 plain urllib
 try: sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -12,9 +24,9 @@ except Exception: pass
 D = os.path.dirname(os.path.abspath(__file__))
 LIVE = ("flip", "flip_paper", "overshoot", "cascade")
 STAGES = [("main", 8.0), ("mid", 4.0), ("close", 2.0)]     # hours before FIRST tip
+MIN_CAPS = 4          # price checks needed before a drift verdict is worth acting on
+LAST_CALL = 2.0       # if still blind by here, send the one "sitting out" note
 STATE = os.path.join(D, "alert_state.json")
-ESPN_H = {"User-Agent": "Mozilla/5.0", "Accept": "application/json, text/plain, */*",
-          "Referer": "https://www.espn.com/wnba/scoreboard", "Origin": "https://www.espn.com"}
 
 def hook():
     p = os.path.join(D, "webhook.txt")
@@ -33,27 +45,21 @@ def send(msg):
 
 def bet_id(r): return f"{r['player']}|{r['market']}|{r['side']}|{r['line']}"
 
-def fmt(r):
-    c = r.get("confidence", "")
-    flag = "🟢" if "93" in c else ("🟡" if "NO READ" in c else "⚪")
-    lm = f" ⇢line {r['line_moved']}" if r.get("line_moved") else ""
-    return f"{flag} **{r['player']}** {r['market'].upper()} {r['side']} {r['line']} @ **{r['now_odds']}** ({r['move_pct']}%, {r['src']}){lm}"
+def caps(r):
+    try: return int(float(r.get("captures") or 0))
+    except Exception: return 0
 
-def thin_warning(rows):
-    """The drift filter only means something if prices have had TIME to move. After an outage the
-    board restarts with ~2 captures and EVERY move_pct reads 0.0% - that is not "all clear", it is
-    "no data". On a normal slate ~86% of prices move >0.5% (median 2.4%), so a wall of 0.0% is the
-    signature of a blind filter. Say so out loud instead of presenting a flat list as if it passed."""
-    caps = []
-    for r in rows:
-        try: caps.append(int(float(r.get("captures") or 0)))
-        except Exception: pass
-    if not caps: return ""
-    med = sorted(caps)[len(caps)//2]
-    if med >= 4: return ""
-    return ("\n⚠️ **DRIFT FILTER IS BLIND** - only ~{} price checks behind these (want 4+). "
-            "Every move reads 0.0% because nothing has been re-priced yet, *not* because they passed a "
-            "test. **Wait for the near-close update before placing.**".format(med))
+def vetted(rows):
+    """Bets with a real drift READ behind them - enough price checks, and not a brand-new line."""
+    return [r for r in rows if caps(r) >= MIN_CAPS and "NO READ" not in r.get("confidence", "")]
+
+def fmt(r):
+    # show the DRIFT itself, not just the price - that number is the whole point of the alert
+    c = r.get("confidence", "")
+    flag = "🟢" if "93" in c else ("🟡" if "81" in c else "⚪")
+    lm = f" ⇢line {r['line_moved']}" if r.get("line_moved") else ""
+    return (f"{flag} **{r['player']}** {r['market'].upper()} {r['side']} {r['line']} @ **{r['now_odds']}**"
+            f"  ·  drift {r['move_pct']}% over {caps(r)} checks  ·  {r['src']}{lm}")
 
 def main():
     # TEST MODE: `ALERT_TEST=1` sends a proof-of-life message immediately, ignoring the timing gate.
@@ -64,8 +70,9 @@ def main():
         bet = [r for r in rows if r["verdict"].startswith("BET") and r["src"] in LIVE]
         where = "☁️ CLOUD (GitHub Actions)" if os.environ.get("GITHUB_ACTIONS") else "💻 laptop"
         ok = send(f"🧪 **Alert test — sent from {where}**\n"
-                  f"Discord path is working. Current board: **{len(bet)} cleared bets** "
-                  f"({len(rows)} rows in the gate).\n_This is a test, not a bet instruction._")
+                  f"Discord path is working. Board: **{len(bet)} cleared**, of which "
+                  f"**{len(vetted(bet))} are drift-vetted** ({len(rows)} rows in the gate).\n"
+                  f"_This is a test, not a bet instruction._")
         print("test alert sent" if ok else "test alert FAILED"); return
     # ESPN's default scoreboard returns the US-Eastern date, which late in the UTC day is YESTERDAY's
     # finished games - that made the alert report "no upcoming games" while tonight's slate was 8h out.
@@ -96,7 +103,8 @@ def main():
     rows = list(csv.DictReader(open(gp, encoding="utf-8")))
     bet = [r for r in rows if r["verdict"].startswith("BET") and r["src"] in LIVE]
     skip = [r for r in rows if r["verdict"].startswith("SKIP")]
-    cur_ids = {bet_id(r) for r in bet}
+    ok = vetted(bet)                      # <- the ONLY rows we are ever willing to alert on
+    cur_ids = {bet_id(r) for r in ok}
 
     # which stage are we in? the tightest one whose window has arrived and hasn't fired
     stage = None
@@ -108,23 +116,38 @@ def main():
     name, h = stage
     myt = (first + datetime.timedelta(hours=8)).strftime("%H:%M")
 
-    if name == "main":
-        parts = [f"🏀 **WNBA — {len(bet)} bets to place** · first tip {myt} MYT (in {hrs:.1f}h)",
-                 "\n".join(fmt(r) for r in sorted(bet, key=lambda x: (x["src"], x["player"]))) if bet else "_no cleared bets_"]
+    # ---- THE GATE: no vetted bets -> stay silent, and do NOT burn the stage (retry next capture) ----
+    if not ok:
+        med = sorted(caps(r) for r in bet)[len(bet)//2] if bet else 0
+        if hrs <= LAST_CALL and not st.get("blind_notice"):
+            if send(f"🏀 **WNBA · tip {myt} MYT — sitting out.**\n"
+                    f"{len(bet)} bets on the board but the drift filter has only ~{med} price checks "
+                    f"behind them (needs {MIN_CAPS}+), so none are vetted. An un-vetted menu is roughly "
+                    f"breakeven and the drifted bets hiding inside it run −28% ROI. No bet is the bet."):
+                st["blind_notice"] = True; json.dump(st, open(STATE, "w"))
+        print(f"[{name}] {len(bet)} cleared but 0 drift-vetted (median {med} checks) — silent")
+        return
+
+    # ---- FULL LIST: fires at the first stage where the filter actually has something to say ----
+    if not st.get("sent_full"):
+        held = len(bet) - len(ok)
+        parts = [f"🏀 **WNBA — {len(ok)} drift-vetted bets** · first tip {myt} MYT (in {hrs:.1f}h)",
+                 "\n".join(fmt(r) for r in sorted(ok, key=lambda x: (x["src"], x["player"])))]
+        if held:
+            parts.append(f"_({held} more cleared but not enough price history to vet — excluded.)_")
         if skip:
             parts.append("\n🚫 **DO NOT BET** (drifted): " + ", ".join(
                 f"{r['player']} {r['market'].upper()} {r['side']} {r['line']}" for r in skip[:8]))
         parts.append("\n_small stakes · board: http://localhost:8899_")
-        parts.append(thin_warning(bet))
         if send("\n".join(parts)):
-            st["done"].append(name); st["sent_ids"] = sorted(cur_ids)
-            json.dump(st, open(STATE, "w")); print(f"[{name}] sent {len(bet)} bets")
+            st["done"].append(name); st["sent_full"] = True; st["sent_ids"] = sorted(cur_ids)
+            json.dump(st, open(STATE, "w")); print(f"[{name}] sent FULL list: {len(ok)} bets ({held} held back)")
         return
 
-    # stages 2-3: changes only
+    # ---- later stages: changes only, silent when nothing moved ----
     told = set(st.get("sent_ids", []))
     dropped = [r for r in skip if bet_id(r) in told]        # you were told to bet it; it has since drifted
-    added = [r for r in bet if bet_id(r) not in told]       # newly cleared since the main alert
+    added = [r for r in ok if bet_id(r) not in told]        # newly vetted+cleared since the full list
     if not dropped and not added:
         st["done"].append(name); json.dump(st, open(STATE, "w"))
         print(f"[{name}] no changes - staying quiet"); return
@@ -134,8 +157,7 @@ def main():
         parts.append("🚫 **PULL / don't place** (price has since drifted):\n" +
                      "\n".join(f"• {r['player']} {r['market'].upper()} {r['side']} {r['line']} ({r['move_pct']}%)" for r in dropped))
     if added:
-        parts.append("➕ **newly cleared**:\n" + "\n".join(fmt(r) for r in added))
-    parts.append(thin_warning(bet))          # still blind at the wire? say so
+        parts.append("➕ **newly vetted**:\n" + "\n".join(fmt(r) for r in added))
     if send("\n".join(parts)):
         st["done"].append(name); st["sent_ids"] = sorted(cur_ids)
         json.dump(st, open(STATE, "w")); print(f"[{name}] sent: {len(dropped)} pulls, {len(added)} adds")
