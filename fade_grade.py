@@ -11,29 +11,49 @@ def f(x):
     try: return float(x)
     except Exception: return None
 
+def _plus(dd, n):
+    """YYYY-MM-DD + n days, as a string (dates here are strings, not datetimes)."""
+    import datetime as _dt
+    return (_dt.date.fromisoformat(dd) + _dt.timedelta(days=n)).isoformat()
+
 def main():
     fp = os.path.join(D, "fade_paper.csv")
     if not os.path.exists(fp): print("no fade_paper.csv yet"); return
     # actuals from the elo box history (refreshed nightly by predict-tonight)
-    gd = {}
-    gp = os.path.join(D, "elo_model", "games_full.csv")
-    if os.path.exists(gp):
-        for g in csv.DictReader(open(gp, encoding="utf-8")):
+    # Read BOTH box sources. elo_model/box_full.csv is the deep multi-season history but it is only
+    # refreshed by the elo crawl (stale at 2026-08-02), while data/box_2026.csv is refreshed nightly
+    # by daily_picks (current through 2026-08-07). Reading only the elo copy silently froze fade
+    # grading 5 days behind - the fades were never graded, so the record looked like "n=2" forever.
+    gd, act = {}, {}
+    for _g, _b in ((os.path.join(D, "elo_model", "games_full.csv"), os.path.join(D, "elo_model", "box_full.csv")),
+                   (os.path.join(D, "data", "games_2026.csv"),     os.path.join(D, "data", "box_2026.csv"))):
+        if not (os.path.exists(_g) and os.path.exists(_b)): continue
+        for g in csv.DictReader(open(_g, encoding="utf-8")):
             gd[g["game_id"]] = g["date"]
-    act = {}
-    bp = os.path.join(D, "elo_model", "box_full.csv")
-    if os.path.exists(bp):
-        for r in csv.DictReader(open(bp, encoding="utf-8")):
+        for r in csv.DictReader(open(_b, encoding="utf-8")):
             d = gd.get(r["game_id"], "")
             if not d: continue
             dd = f"{d[:4]}-{d[4:6]}-{d[6:8]}"
-            k = (dd, r["player"].lower())
             pts, reb, ast = f(r["pts"]) or 0, f(r["reb"]) or 0, f(r["ast"]) or 0
-            act[k] = {"pts": pts, "reb": reb, "ast": ast, "pra": pts+reb+ast,
-                      "pr": pts+reb, "pa": pts+ast, "ra": reb+ast}
+            act[(dd, r["player"].lower())] = {"pts": pts, "reb": reb, "ast": ast, "pra": pts+reb+ast,
+                                              "pr": pts+reb, "pa": pts+ast, "ra": reb+ast}
+    # SLATE DATE != GAME DATE. fade_paper.csv stamps the date the bet was LOGGED, but a line captured
+    # late in the UTC day belongs to a game that tips the next calendar day. Matching the box on the
+    # slate date exactly left 13 of 15 fades permanently ungraded (Chelsea Gray logged 08-02, played
+    # 08-01 and 08-03). Take the player's first game within +2 days of the slate instead.
+    by_player = {}
+    for (dd, plow), v in act.items():
+        by_player.setdefault(plow, []).append((dd, v))
+    for v in by_player.values(): v.sort()
+    def actual_for(slate, plow):
+        exact = act.get((slate, plow))
+        if exact: return exact
+        for dd, v in by_player.get(plow, ()):
+            if slate <= dd <= _plus(slate, 2): return v
+        return None
     rows, rets = [], []
     for r in csv.DictReader(open(fp, encoding="utf-8")):
-        a = act.get((r["date"], r["player"].lower()), {}).get(r["market"])
+        a = (actual_for(r["date"], r["player"].lower()) or {}).get(r["market"])
         ln, pr = f(r["line"]), f(r["price"])
         if a is None or ln is None or pr is None:
             rows.append({**r, "actual": "", "result": "", "ret": ""}); continue
