@@ -108,6 +108,22 @@ def main():
         if newest_graded < newest_final and gap and gap > 36:
             issues.append(("grade", f"🟠 **Grading stalled** — newest graded slate {newest_graded} but games are final through {newest_final} ({gap:.0f}h behind)."))
 
+    # --- 6. fade grading frozen. fade_grade.py runs nightly in grade-bets.yml and reported "success"
+    # for six days while settling NOTHING (it read a box file that was stale at 08-02, and matched the
+    # slate date exactly when the game tips the next day). The record sat at n=2 and looked merely slow
+    # rather than broken. A paper record that stops growing is indistinguishable from one nobody is
+    # collecting, so alarm on it instead of trusting the workflow's green tick.
+    fp_rows, fg_rows = rows("fade_paper.csv"), rows("fade_graded.csv")
+    if fp_rows:
+        settled = {(r.get("date"), r.get("player")) for r in fg_rows
+                   if (r.get("result") or "").upper() in ("WIN", "LOSS", "PUSH")}
+        stale = [r for r in fp_rows if (r.get("date"), r.get("player")) not in settled
+                 and (hours_since(r.get("date", ""), "%Y-%m-%d") or 0) > 48]
+        if len(stale) >= 3:
+            issues.append(("fadegrade", f"🟠 **Fade grading frozen** — {len(stale)} fade bets are 48h+ old and still "
+                                        f"unsettled ({len(settled)} graded). fade_grade.py runs but settles nothing — "
+                                        f"check its box-score source and slate-vs-game date matching."))
+
     st = json.load(open(STATE)) if os.path.exists(STATE) else {}
     today = now.strftime("%Y-%m-%d")
     fresh = [(k, m) for k, m in issues if st.get(k) != today]      # one alert per issue per day
