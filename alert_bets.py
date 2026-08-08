@@ -39,6 +39,22 @@ def fmt(r):
     lm = f" ⇢line {r['line_moved']}" if r.get("line_moved") else ""
     return f"{flag} **{r['player']}** {r['market'].upper()} {r['side']} {r['line']} @ **{r['now_odds']}** ({r['move_pct']}%, {r['src']}){lm}"
 
+def thin_warning(rows):
+    """The drift filter only means something if prices have had TIME to move. After an outage the
+    board restarts with ~2 captures and EVERY move_pct reads 0.0% - that is not "all clear", it is
+    "no data". On a normal slate ~86% of prices move >0.5% (median 2.4%), so a wall of 0.0% is the
+    signature of a blind filter. Say so out loud instead of presenting a flat list as if it passed."""
+    caps = []
+    for r in rows:
+        try: caps.append(int(float(r.get("captures") or 0)))
+        except Exception: pass
+    if not caps: return ""
+    med = sorted(caps)[len(caps)//2]
+    if med >= 4: return ""
+    return ("\n⚠️ **DRIFT FILTER IS BLIND** - only ~{} price checks behind these (want 4+). "
+            "Every move reads 0.0% because nothing has been re-priced yet, *not* because they passed a "
+            "test. **Wait for the near-close update before placing.**".format(med))
+
 def main():
     # TEST MODE: `ALERT_TEST=1` sends a proof-of-life message immediately, ignoring the timing gate.
     # Lets you verify the CLOUD -> Discord path any time (workflow_dispatch input `test_alert`).
@@ -99,6 +115,7 @@ def main():
             parts.append("\n🚫 **DO NOT BET** (drifted): " + ", ".join(
                 f"{r['player']} {r['market'].upper()} {r['side']} {r['line']}" for r in skip[:8]))
         parts.append("\n_small stakes · board: http://localhost:8899_")
+        parts.append(thin_warning(bet))
         if send("\n".join(parts)):
             st["done"].append(name); st["sent_ids"] = sorted(cur_ids)
             json.dump(st, open(STATE, "w")); print(f"[{name}] sent {len(bet)} bets")
@@ -118,6 +135,7 @@ def main():
                      "\n".join(f"• {r['player']} {r['market'].upper()} {r['side']} {r['line']} ({r['move_pct']}%)" for r in dropped))
     if added:
         parts.append("➕ **newly cleared**:\n" + "\n".join(fmt(r) for r in added))
+    parts.append(thin_warning(bet))          # still blind at the wire? say so
     if send("\n".join(parts)):
         st["done"].append(name); st["sent_ids"] = sorted(cur_ids)
         json.dump(st, open(STATE, "w")); print(f"[{name}] sent: {len(dropped)} pulls, {len(added)} adds")
