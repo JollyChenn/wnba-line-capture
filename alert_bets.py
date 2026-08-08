@@ -9,9 +9,9 @@
 # a list you can't trust.
 #
 # STAGES, each fired once per slate, all gated on the vetted rule above:
-#   T-8h  ~17:00 MYT : main betting window, verdicts 96.4% final
-#   T-4h  ~21:00 MYT
-#   T-2h  ~23:00 MYT : near close, 99.5% final
+#   T-8h  ~16:00 WIB : main betting window, verdicts 96.4% final
+#   T-4h  ~20:00 WIB
+#   T-2h  ~22:00 WIB : near close, 99.5% final  <- the one you bet off
 # The FULL list goes out at the FIRST stage that has real price history - so on a night that
 # starts blind the list simply arrives later, near kickoff, instead of arriving worthless.
 # Every stage after that is CHANGES ONLY (a bet drifted -> pull it, or a new one cleared), so
@@ -63,6 +63,9 @@ def vetted(rows):
 HALF_STAKE = {"cascade"}
 def stake(r): return "½u" if r.get("src") in HALF_STAKE else "1u"
 
+PING_COLS = ["sent_utc", "stage", "date", "player", "market", "side", "line",
+             "odds", "stake", "src", "move_pct", "captures", "confidence", "pulled_utc"]
+
 def log_pinged(rows, stage, slate):
     """PERMANENT RECORD of what Discord actually told you to bet.
 
@@ -77,15 +80,39 @@ def log_pinged(rows, stage, slate):
             seen.add((r["date"], r["player"], r["market"], r["side"], r["line"]))
     new = [[datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), stage, slate,
             r["player"], r["market"], r["side"], r["line"], r["now_odds"], stake(r), r["src"],
-            r["move_pct"], caps(r), r.get("confidence", "")]
+            r["move_pct"], caps(r), r.get("confidence", ""), ""]
            for r in rows if (slate, r["player"], r["market"], r["side"], r["line"]) not in seen]
     if not new: return 0
     isnew = not os.path.exists(p)
     fh = open(p, "a", newline="", encoding="utf-8"); w = csv.writer(fh)
-    if isnew: w.writerow(["sent_utc", "stage", "date", "player", "market", "side", "line",
-                          "odds", "stake", "src", "move_pct", "captures", "confidence"])
+    if isnew: w.writerow(PING_COLS)
     w.writerows(new); fh.close()
     return len(new)
+
+def mark_pulled(rows, slate):
+    """Stamp bets we later told you to PULL, so grading never counts them as bets we recommended.
+
+    Without this the ping record keeps a bet at its main-stage state even after the near-close
+    message said "don't place this" - which would quietly grade a bet we withdrew and flatter or
+    punish the filter for a bet you never made. Atomic write (temp + replace): this file is the
+    only record of what was recommended, so a half-written file must never be possible."""
+    p = os.path.join(D, "pinged_bets.csv")
+    if not os.path.exists(p) or not rows: return 0
+    keys = {(slate, r["player"], r["market"], r["side"], r["line"]) for r in rows}
+    stamp = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    cur = list(csv.DictReader(open(p, encoding="utf-8")))
+    n = 0
+    for r in cur:
+        if (r["date"], r["player"], r["market"], r["side"], r["line"]) in keys and not r.get("pulled_utc"):
+            r["pulled_utc"] = stamp; n += 1
+    if not n: return 0
+    tmp = p + ".tmp"
+    with open(tmp, "w", newline="", encoding="utf-8") as fh:
+        w = csv.DictWriter(fh, fieldnames=PING_COLS, extrasaction="ignore")
+        w.writeheader()
+        for r in cur: w.writerow({k: r.get(k, "") for k in PING_COLS})
+    os.replace(tmp, p)
+    return n
 
 def fmt(r):
     # show the DRIFT itself, not just the price - that number is the whole point of the alert
@@ -182,7 +209,8 @@ def main():
             st["done"].append(name); st["sent_full"] = True; st["sent_ids"] = sorted(cur_ids)
             json.dump(st, open(STATE, "w"))
             print(f"[close] sent FINAL: {len(ok)} bets, {len(dropped)} pulls, "
-                  f"+{log_pinged(ok, name, slate)} logged to pinged_bets.csv")
+                  f"+{log_pinged(ok, name, slate)} logged, "
+                  f"{mark_pulled(dropped, slate)} marked pulled")
         return
 
     # ---- FULL LIST: fires at the first stage where the filter actually has something to say ----
@@ -221,7 +249,8 @@ def main():
         st["done"].append(name); st["sent_ids"] = sorted(cur_ids)
         json.dump(st, open(STATE, "w"))
         print(f"[{name}] sent: {len(dropped)} pulls, {len(added)} adds, "
-              f"+{log_pinged(added, name, slate)} logged to pinged_bets.csv")
+              f"+{log_pinged(added, name, slate)} logged, "
+              f"{mark_pulled(dropped, slate)} marked pulled")
 
 if __name__ == "__main__":
     try: main()
