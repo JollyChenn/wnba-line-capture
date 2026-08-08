@@ -47,11 +47,9 @@ def main():
         rows = list(csv.DictReader(open(gp, encoding="utf-8"))) if os.path.exists(gp) else []
         bet = [r for r in rows if r["verdict"].startswith("BET") and r["src"] in LIVE]
         where = "☁️ CLOUD (GitHub Actions)" if os.environ.get("GITHUB_ACTIONS") else "💻 laptop"
-        ok = send(f"🧪 **Alert test — sent from {where}**
-"
+        ok = send(f"🧪 **Alert test — sent from {where}**\n"
                   f"Discord path is working. Current board: **{len(bet)} cleared bets** "
-                  f"({len(rows)} rows in the gate).
-_This is a test, not a bet instruction._")
+                  f"({len(rows)} rows in the gate).\n_This is a test, not a bet instruction._")
         print("test alert sent" if ok else "test alert FAILED"); return
     try:
         j = espn_get.getj("https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard")
