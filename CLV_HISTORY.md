@@ -10,7 +10,7 @@ _**sharp-odds** = vs Pinnacle's vig-free fair price (TRUE edge test) · **sharp-
   ★ SHARP ODDS-CLV: -6.7% | beat fair 0/7 (0%)  ← TRUE edge (vs Pinnacle fair price)
   SHARP LINE-CLV : +0.21 pts | n=12  ← better number than the sharp
   self ODDS-CLV  : -0.3% | beat 8/30 (27%)  (1xbet's own close = weak)
-  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 64/112 (+5.6u) · FLIP UNDER 22/36 (+4.9u) · FLIP UNDER(paper) 44/71 (+10.7u) · FTUNDER 108/237 (-36.7u) · HOT OVER 17/31 (+0.9u) · STAR-OUT CASCADE 89/154 (+2.6u) · starout 4/11 (-3.6u)
+  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 66/117 (+4.1u) · FLIP UNDER 22/36 (+4.9u) · FLIP UNDER(paper) 44/71 (+10.7u) · FTUNDER 108/237 (-36.7u) · HOT OVER 17/31 (+0.9u) · STAR-OUT CASCADE 91/158 (+2.1u) · starout 4/11 (-3.6u)
   VERDICT : ⚠️ NEUTRAL self CLV — winning on outcomes, not beating the line. Unproven; keep collecting.
   by tier: SOLID 5/12 (-2.3u) · STRONG 5/14 (-4.9u) · THIN 3/6 (-0.1u)
   by market: pa Under 1/3 (-1.0u) · pr Under 1/3 (-1.0u) · pra Under 2/9 (-5.4u) · pts Under 9/16 (+1.1u) · ra Under 0/1 (-1.0u)
@@ -706,3 +706,12 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260806 | Laura Juskaite | PRA Over 17.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260806 | Maria Conde | PRA Over 17.5 @ 1.833 | STAR-OUT CASCADE | loss | — | — | +0% |
 | 20260806 | Nyara Sabally | PRA Over 18.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
+| 20260807 | Aaliyah Edwards | PRA Over 11.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
+| 20260807 | Angel Reese | PTS Over 15.5 @ 1.909 | BOOK OVERSHOOT | loss | — | — | +0% |
+| 20260807 | Brittney Griner | PR Over 19.5 @ 2.0 | BOOK OVERSHOOT | loss | — | — | — |
+| 20260807 | Dewanna Bonner | PR Over 16.5 @ 1.73 | BOOK OVERSHOOT | WIN | — | — | +0% |
+| 20260807 | Kahleah Copper | PTS Over 20.5 @ 1.769 | BOOK OVERSHOOT | loss | — | — | +0% |
+| 20260807 | Leila Lacan | PRA Over 17.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
+| 20260807 | Olivia Nelson-Ododa | PRA Over 21.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
+| 20260807 | Saniya Rivers | PRA Over 7.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
+| 20260807 | Shakira Austin | PR Over 26.5 @ 1.73 | BOOK OVERSHOOT | WIN | — | — | +0% |
