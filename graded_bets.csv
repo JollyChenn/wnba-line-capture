@@ -708,9 +708,13 @@ date,player,market,side,line,odds,tier,actual,result,pnl,odds_clv,line_clv,sharp
 20260808,Natasha Cloud,pra,Over,19.5,1.75,CASC,23.0,WIN,0.75,0.0,0.0,,,cascade,2026-08-08
 20260808,Natasha Cloud,pts,Under,13.5,1.77,STRONG,17.0,loss,-1.0,0.023,0.0,1.0,,newunder,2026-08-08
 20260808,Natasha Howard,pts,Under,11.5,1.909,STRONG,17.0,loss,-1.0,0.005,0.0,0.0,-0.109,newunder,2026-08-08
+20260809,Alyssa Thomas,pts,Over,14.5,1.88,SOLID,10.0,loss,-1.0,0.005,0.0,0.0,-0.064,flip_paper,2026-08-08
 20260809,Breanna Stewart,pts,Over,21.5,1.9,SOLID,14.0,loss,-1.0,0.033,0.0,0.0,-0.022,flip_paper,2026-08-08
+20260809,Dewanna Bonner,pra,Over,20.5,2.0,STRONG,11.0,loss,-1.0,0.0,-1.0,,,overshoot,2026-08-09
 20260809,Jewell Loyd,pra,Over,12.5,1.75,CASC,3.0,loss,-1.0,0.0,0.0,,,cascade,2026-08-09
 20260809,Jonquel Jones,pts,Under,13.5,1.93,THIN,15.0,loss,-1.0,0.0,-1.0,,,newunder,2026-08-08
+20260809,Kahleah Copper,pts,Under,20.5,1.79,THIN,15.0,WIN,0.79,0.0,0.0,0.0,-0.067,newunder,2026-08-08
 20260809,NaLyssa Smith,pra,Over,19.5,1.75,CASC,17.0,loss,-1.0,0.0,0.0,,,cascade,2026-08-09
 20260809,NaLyssa Smith,pts,Under,15.5,1.75,STRONG,7.0,WIN,0.75,-0.011,0.0,0.0,-0.071,newunder,2026-08-09
 20260809,Sabrina Ionescu,pts,Over,19.5,1.97,SOLID,5.0,loss,-1.0,0.037,0.0,0.0,-0.011,flip_paper,2026-08-08
+20260809,Shakira Austin,pra,Over,29.5,1.87,STRONG,33.0,WIN,0.87,0.0,0.0,,,overshoot,2026-08-09
