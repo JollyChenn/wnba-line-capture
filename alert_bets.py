@@ -155,7 +155,13 @@ def main():
     tips = [t for t in tips if t > now]
     if not tips: print("no upcoming games"); return
     first = min(tips); hrs = (first - now).total_seconds()/3600
-    slate = first.strftime("%Y-%m-%d")
+    # SLATE = the BETTING NIGHT, not the calendar date of the earliest remaining tip.
+    # WNBA tips run 16:00-02:00 UTC, so a 3-game night straddles midnight UTC. Once the early
+    # games tipped on 2026-08-08, the earliest REMAINING tip was 00:30 UTC on 08-09 -> the slate
+    # key changed -> state reset -> the bot re-sent the entire list at 02:42 WIB, 11 of 17 bets
+    # being duplicates of the afternoon ping. Shifting back 6h puts the whole night on one key.
+    slate = (first - datetime.timedelta(hours=6)).strftime("%Y-%m-%d")
+    last = max(tips)                       # late games tip hours after the first - see the "late" stage
     st = json.load(open(STATE)) if os.path.exists(STATE) else {}
     if st.get("slate") != slate: st = {"slate": slate, "done": [], "sent_ids": []}
 
@@ -172,8 +178,15 @@ def main():
     for name, h in STAGES:
         if hrs <= h and name not in st["done"]:
             stage = (name, h)
+    # LATE GAMES. All three stages key off the FIRST tip, but a slate can span 8h of tips - a game at
+    # 00:30 UTC gets "T-8h" treatment 15h before it actually starts, when its lines may not be posted.
+    # So allow ONE extra ping near the last tip, carrying only bets that were never sent. This is what
+    # legitimately surfaced Olivia Miles PR Over 23.5; the bug was re-sending the other 11 with her.
+    hrs_last = (last - now).total_seconds()/3600
+    if not stage and st.get("sent_full") and "late" not in st["done"] and 0 < hrs_last <= 2.5:
+        stage = ("late", 2.5)
     if not stage:
-        print(f"nothing to send (tip in {hrs:.1f}h, done={st['done']})"); return
+        print(f"nothing to send (first tip {hrs:.1f}h, last {hrs_last:.1f}h, done={st['done']})"); return
     name, h = stage
     # You are on WIB (Indonesia, UTC+7). This said MYT (+8) for months, so every time quoted in an
     # alert was an hour later than your actual clock - "23:13 MYT" is 22:13 on your phone.
