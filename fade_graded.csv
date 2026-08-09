@@ -26,7 +26,7 @@ logged_utc,date,player,market,side,line,price,orig_src,orig_move,actual,result,r
 2026-08-09T02:26:24Z,2026-08-08,Olivia Miles,pr,Under,23.5,1.83,overshoot,0.0167,30.0,loss,-1.0
 2026-08-09T02:26:24Z,2026-08-08,Paige Bueckers,pts,Over,19.5,1.77,newunder,0.0104,,,
 2026-08-09T09:56:41Z,2026-08-09,Natasha Howard,pts,Over,11.5,1.769,newunder,0.0256,,,
-2026-08-09T09:56:41Z,2026-08-09,Sabrina Ionescu,pts,Under,19.5,1.8,flip_paper,0.0106,,,
+2026-08-09T09:56:41Z,2026-08-09,Sabrina Ionescu,pts,Under,19.5,1.8,flip_paper,0.0106,5.0,WIN,0.8
 2026-08-09T09:56:41Z,2026-08-09,Arike Ogunbowale,pts,Under,16.5,1.952,flip_paper,0.0112,,,
 2026-08-09T10:52:31Z,2026-08-09,Jessica Shepard,pts,Over,13.5,1.72,newunder,0.0309,,,
 2026-08-09T14:50:37Z,2026-08-09,Kamilla Cardoso,pts,Over,14.5,1.909,newunder,0.0595,,,
