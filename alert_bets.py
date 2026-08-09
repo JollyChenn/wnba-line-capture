@@ -23,7 +23,7 @@ try: sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 except Exception: pass
 D = os.path.dirname(os.path.abspath(__file__))
 LIVE = ("flip", "flip_paper", "overshoot", "cascade")
-STAGES = [("main", 8.0), ("mid", 4.0), ("close", 2.0)]     # hours before FIRST tip
+STAGES = [("main", 8.0), ("mid", 4.0), ("close", 2.0), ("t1h", 1.0)]   # hours before FIRST tip
 MIN_CAPS = 4          # checks that vet a bet on their own, regardless of span
 MIN_CAPS_ABS = 2      # never vet on a single observation - that is not a "move", it is a price
 MIN_SPAN_H = 3.0      # hours the price must have been watchable for the read to mean anything
@@ -257,6 +257,35 @@ def main():
             json.dump(st, open(STATE, "w"))
             print(f"[{name}] sent FULL: {len(ok)} bets ({held} held back), "
                   f"+{log_pinged(ok, name, slate)} logged to pinged_bets.csv")
+        return
+
+    # ---- T-1h LAST CALL: this one ALWAYS sends. Full refreshed list if anything moved, otherwise a
+    # one-line confirmation. Silence at the wire is ambiguous - you cannot tell "nothing changed"
+    # from "the cron died", and that ambiguity is exactly what cost the whole 2026-08-08 slate. ----
+    if name == "t1h":
+        told = set(st.get("sent_ids", []))
+        dropped = [r for r in skip if bet_id(r) in told]
+        added = [r for r in ok if bet_id(r) not in told]
+        full = "\n".join(fmt(r) for r in sorted(ok, key=lambda x: (x["src"], x["player"])))
+        if dropped or added:
+            parts = [f"🔔 **LAST CALL — {hrs:.1f}h to tip {loc}** · {len(ok)} live"]
+            if dropped:
+                parts.append("🚫 **PULL** (drifted since the last list):\n" + "\n".join(
+                    f"• {r['player']} {r['market'].upper()} {r['side']} {r['line']} ({r['move_pct']}%)"
+                    for r in dropped))
+            if added:
+                parts.append("➕ **newly vetted**:\n" + "\n".join(fmt(r) for r in added))
+            parts.append("\n_the full standing list:_\n" + full)
+        else:
+            u = sum(0.5 if stake(r).startswith("½") else 1.0 for r in ok)
+            parts = [f"🔔 **LAST CALL — {hrs:.1f}h to tip {loc}**",
+                     f"No changes. The **{len(ok)} bets** from the earlier list still stand (**{u:g}u** total). "
+                     f"Nothing drifted off, nothing new cleared."]
+        if send("\n".join(parts)):
+            st["done"].append(name); st["sent_ids"] = sorted(cur_ids)
+            json.dump(st, open(STATE, "w"))
+            print(f"[t1h] LAST CALL: {len(ok)} live, {len(dropped)} pulls, {len(added)} adds, "
+                  f"+{log_pinged(added, name, slate)} logged, {mark_pulled(dropped, slate)} pulled")
         return
 
     # ---- later stages: changes only, silent when nothing moved ----
