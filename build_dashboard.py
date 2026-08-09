@@ -301,6 +301,15 @@ def filter_lab_html():
 filter_rows, overshoot_rows = filter_lab_html()
 
 # ---- DRIFT GATE: tonight's verdicts + the drift-bucket record (skip-drift is LIVE) ----
+def _plusday(dd):
+    """YYYY-MM-DD + 1 day. Late games tip after midnight UTC, so a night's box rows can carry
+    the NEXT calendar date - matching only the slate date would leave them ungraded."""
+    try:
+        import datetime as _dt
+        return (_dt.date.fromisoformat(dd) + _dt.timedelta(days=1)).isoformat()
+    except Exception:
+        return dd
+
 def drift_html():
     import subprocess as _sp
     try: _sp.run([sys.executable, os.path.join(ROOT, "drift_gate.py")], capture_output=True, cwd=ROOT, timeout=180)
@@ -377,21 +386,47 @@ def drift_html():
     # different (and more flattering) population. This is the only list you ever acted on, so it
     # is the one that has to be graded honestly. Settled rows are matched back by player+market+date.
     pinged = load("pinged_bets.csv")
-    gidx = {}
-    for r in graded:
-        gidx[((r.get("player") or "").lower(), r.get("market"), (r.get("date") or "").replace("-", ""))] = r
+    # Grade DIRECTLY from box scores, not from graded_bets.csv. graded_bets keeps only the top-EV bet
+    # per player per night by design, so a player pinged on two markets (McBride PRA + PTS, Austin
+    # PR + PTS, Hamby PA + PTS, Burrell PA + PTS on 08-08) would have one of them sit "pending"
+    # forever - silently dropping real bets out of the record we are using to judge the filter.
+    bstat = {}                                          # (YYYY-MM-DD, player) -> stat dict
+    for _r in load("data/box_2026.csv"):
+        _d = _gdate.get(_r.get("game_id"), "")
+        if not _d: continue
+        _p = lambda k: _f(_r.get(k)) or 0.0
+        pts, reb, ast = _p("pts"), _p("reb"), _p("ast")
+        bstat[(f"{_d[:4]}-{_d[4:6]}-{_d[6:8]}", (_r.get("player") or "").lower())] = {
+            "pts": pts, "reb": reb, "ast": ast, "pra": pts+reb+ast,
+            "pr": pts+reb, "pa": pts+ast, "ra": reb+ast}
+    def actual_of(r):
+        """A night's games can tip on that date OR just after midnight UTC, so check both days."""
+        night = r.get("date", "")
+        for d in (night, _plusday(night)):
+            s = bstat.get((d, (r.get("player") or "").lower()))
+            if s and r.get("market") in s: return s[r["market"]]
+        return None
     prs, pw, pl, ppnl, pstk = [], 0, 0, 0.0, 0.0
-    for r in sorted(pinged, key=lambda x: (x.get("date", ""), x.get("src", "")), reverse=True)[:60]:
+    for r in sorted(pinged, key=lambda x: (x.get("date", ""), x.get("src", "")), reverse=True)[:80]:
         u = 0.5 if r.get("stake", "").startswith("½") else 1.0
-        g = gidx.get(((r.get("player") or "").lower(), r.get("market"), (r.get("date") or "").replace("-", "")))
-        res = (g or {}).get("result", "")
-        ru = (_f((g or {}).get("pnl")) or 0) * u
-        if res.upper() == "WIN":  pw += 1; ppnl += ru; pstk += u
-        elif res.upper() == "LOSS": pl += 1; ppnl += ru; pstk += u
-        cell = (f'<td class="pos"><b>WIN</b></td><td class="pos">{ru:+.2f}u</td>' if res.upper() == "WIN"
-                else (f'<td class="neg">LOSS</td><td class="neg">{ru:+.2f}u</td>' if res.upper() == "LOSS"
-                      else '<td class="mut">pending</td><td class="mut">—</td>'))
-        prs.append(f'<tr><td class="mut">{esc(r.get("date",""))}</td><td>{esc(r.get("player",""))}</td>'
+        od, ln = _f(r.get("odds")), _f(r.get("line"))
+        act = actual_of(r)
+        if r.get("pulled_utc"):                          # withdrawn before tip - never a recommendation
+            cell, res = '<td class="mut">pulled</td><td class="mut">—</td>', ""
+        elif act is None or od is None or ln is None:
+            cell, res = '<td class="mut">pending</td><td class="mut">—</td>', ""
+        else:
+            win = act > ln if r.get("side") == "Over" else act < ln
+            ru = (od - 1) * u if win else -u
+            pstk += u; ppnl += ru
+            if win: pw += 1
+            else:   pl += 1
+            res = "WIN" if win else "LOSS"
+            cls = "pos" if win else "neg"
+            cell = (f'<td class="{cls}"><b>{res}</b> <span class="mut">({act:g})</span></td>'
+                    f'<td class="{cls}">{ru:+.2f}u</td>')
+        prs.append(f'<tr{"" if not r.get("pulled_utc") else " class=\'unv\'"}>'
+                   f'<td class="mut">{esc(r.get("date",""))}</td><td>{esc(r.get("player",""))}</td>'
                    f'<td>{esc((r.get("market") or "").upper())} {esc(r.get("side",""))} {esc(r.get("line",""))}</td>'
                    f'<td class="pos"><b>{esc(r.get("odds",""))}</b></td><td><b>{esc(r.get("stake",""))}</b></td>'
                    f'<td class="mut">{esc(r.get("move_pct",""))}% / {esc(r.get("captures",""))}</td>'

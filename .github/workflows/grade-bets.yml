@@ -57,7 +57,15 @@ jobs:
         run: |
           git config user.name "wnba-grade-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add graded_bets.csv drift_track.csv health_state.json fade_graded.csv fade_paper.csv CLV_HISTORY.md dashboard.html FILTER_REPORT.md data/*.csv 2>/dev/null || true
+          # Add each file that EXISTS, one at a time. `git add a b c` is fatal if ANY path is missing
+          # and stages NOTHING - and health_state.json is only written when there IS a problem, so on a
+          # healthy night the add died and the entire night's grading was silently thrown away. The
+          # healthier the bot, the more reliably it lost its own record. (capture-xbet.yml already
+          # loops per-file for exactly this reason; this workflow never got the same fix.)
+          for f in graded_bets.csv drift_track.csv health_state.json fade_graded.csv fade_paper.csv \n                   CLV_HISTORY.md dashboard.html FILTER_REPORT.md pinged_bets.csv drift_log.csv \n                   data/*.csv; do
+            [ -f "$f" ] && git add -f "$f" || true
+          done
+          git status --short | head -20
           if git diff --staged --quiet; then
             echo "nothing to commit"
           else
