@@ -10,7 +10,7 @@ _**sharp-odds** = vs Pinnacle's vig-free fair price (TRUE edge test) · **sharp-
   ★ SHARP ODDS-CLV: -6.7% | beat fair 0/7 (0%)  ← TRUE edge (vs Pinnacle fair price)
   SHARP LINE-CLV : +0.21 pts | n=12  ← better number than the sharp
   self ODDS-CLV  : -0.3% | beat 8/30 (27%)  (1xbet's own close = weak)
-  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 66/118 (+3.1u) · FLIP UNDER 22/36 (+4.9u) · FLIP UNDER(paper) 44/71 (+10.7u) · FTUNDER 108/237 (-36.7u) · HOT OVER 17/31 (+0.9u) · STAR-OUT CASCADE 91/158 (+2.1u) · starout 4/11 (-3.6u)
+  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 67/119 (+3.9u) · FTUNDER 111/242 (-36.1u) · HOT OVER 17/32 (-0.1u) · LINE-CUT FLIP · exp. base 44/73 (+8.7u) · LINE-CUT FLIP · proven base 22/36 (+4.9u) · STAR-OUT CASCADE 93/161 (+2.6u) · starout 4/11 (-3.6u)
   VERDICT : ⚠️ NEUTRAL self CLV — winning on outcomes, not beating the line. Unproven; keep collecting.
   by tier: SOLID 5/12 (-2.3u) · STRONG 5/14 (-4.9u) · THIN 3/6 (-0.1u)
   by market: pa Under 1/3 (-1.0u) · pr Under 1/3 (-1.0u) · pra Under 2/9 (-5.4u) · pts Under 9/16 (+1.1u) · ra Under 0/1 (-1.0u)
@@ -32,12 +32,12 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260615 | Natasha Howard | PA Over 19.5 @ 1.87 | BOOK OVERSHOOT | loss | — | — | +0% |
 | 20260615 | Paige Bueckers | PRA Over 28.5 @ 1.909 | BOOK OVERSHOOT | loss | — | — | +0% |
 | 20260616 | Aliyah Boston | PRA Over 28.5 @ 1.87 | HOT OVER | WIN | — | — | +0% |
-| 20260617 | Arike Ogunbowale | PA Over 17.5 @ 1.91 | FLIP UNDER | WIN | — | — | +0% |
-| 20260617 | Azzi Fudd | PTS Over 12.5 @ 1.92 | FLIP UNDER | loss | — | +0.0 | +1% |
+| 20260617 | Arike Ogunbowale | PA Over 17.5 @ 1.91 | LINE-CUT FLIP · proven base | WIN | — | — | +0% |
+| 20260617 | Azzi Fudd | PTS Over 12.5 @ 1.92 | LINE-CUT FLIP · proven base | loss | — | +0.0 | +1% |
 | 20260617 | Courtney Williams | PTS Under 16.5 @ 1.76 | FTUNDER | WIN | — | +1.0 | -4% |
 | 20260617 | Dearica Hamby | PRA Under 22.5 @ 1.909 | COLD/SHRINK/STINGY | loss | — | — | +0% |
 | 20260617 | Gabriela Jaquez | PTS Under 8.5 @ 1.84 | COLD/SHRINK/STINGY | loss | — | — | +0% |
-| 20260617 | Jessica Shepard | PTS Over 11.5 @ 1.82 | FLIP UNDER | WIN | — | +0.0 | -8% |
+| 20260617 | Jessica Shepard | PTS Over 11.5 @ 1.82 | LINE-CUT FLIP · proven base | WIN | — | +0.0 | -8% |
 | 20260617 | Kahleah Copper | PRA Over 23.5 @ 1.87 | HOT OVER | WIN | — | — | +0% |
 | 20260617 | Kamilla Cardoso | PRA Under 23.5 @ 1.714 | COLD/SHRINK/STINGY | WIN | — | — | -5% |
 | 20260617 | Kayla McBride | PTS Under 14.5 @ 1.81 | FTUNDER | WIN | — | +0.0 | -2% |
@@ -51,15 +51,15 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260619 | Breanna Stewart | PTS Under 19.5 @ 1.73 | FTUNDER | WIN | — | +0.0 | -6% |
 | 20260619 | Brittney Griner | PTS Under 11.5 @ 1.83 | FTUNDER | loss | — | +0.0 | -3% |
 | 20260619 | Courtney Williams | PR Under 22.5 @ 1.73 | COLD/SHRINK/STINGY | loss | — | — | +0% |
-| 20260619 | Gabby Williams | PTS Over 15.5 @ 1.92 | FLIP UNDER | loss | — | +0.0 | +3% |
+| 20260619 | Gabby Williams | PTS Over 15.5 @ 1.92 | LINE-CUT FLIP · proven base | loss | — | +0.0 | +3% |
 | 20260619 | Isabelle Harrison | PRA Over 19.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
-| 20260619 | Jonquel Jones | PTS Over 13.5 @ 2.0 | FLIP UNDER | loss | — | +0.0 | +11% |
+| 20260619 | Jonquel Jones | PTS Over 13.5 @ 2.0 | LINE-CUT FLIP · proven base | loss | — | +0.0 | +11% |
 | 20260619 | Kayla McBride | PTS Under 13.5 @ 1.8 | FTUNDER | loss | — | +0.0 | -4% |
 | 20260619 | Kayla Thornton | PR Under 14.5 @ 2.0 | COLD/SHRINK/STINGY | WIN | — | -0.5 | +0% |
 | 20260619 | Laura Juskaite | PRA Over 13.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260619 | Marina Mabrey | PTS Under 19.5 @ 2.0 | starout | loss | — | — | — |
 | 20260619 | Michaela Onyenwere | PTS Over 9.5 @ 1.8 | BOOK OVERSHOOT | WIN | — | — | +3% |
-| 20260619 | Natasha Howard | PTS Over 14.5 @ 1.69 | FLIP UNDER | loss | — | — | -7% |
+| 20260619 | Natasha Howard | PTS Over 14.5 @ 1.69 | LINE-CUT FLIP · proven base | loss | — | — | -7% |
 | 20260619 | Olivia Miles | PA Over 23.5 @ 1.83 | BOOK OVERSHOOT | loss | — | — | -8% |
 | 20260620 | Aliyah Boston | PTS Under 17.5 @ 1.82 | FTUNDER | WIN | — | — | +1% |
 | 20260620 | Allisha Gray | PTS Under 18.5 @ 1.93 | FTUNDER | loss | — | — | +0% |
@@ -75,21 +75,21 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260620 | Paige Bueckers | PTS Under 17.5 @ 2.0 | FTUNDER | loss | — | — | — |
 | 20260620 | Rhyne Howard | PRA Over 25.5 @ 2.0 | HOT OVER | WIN | — | — | +6% |
 | 20260620 | Skylar Diggins | PTS Under 15.5 @ 1.82 | FTUNDER | WIN | — | — | +2% |
-| 20260620 | Sophie Cunningham | PTS Over 8.5 @ 1.86 | FLIP UNDER(paper) | WIN | -7% | +0.0 | -0% |
+| 20260620 | Sophie Cunningham | PTS Over 8.5 @ 1.86 | LINE-CUT FLIP · exp. base | WIN | -7% | +0.0 | -0% |
 | 20260621 | Ariel Atkins | PRA Under 13.5 @ 1.67 | COLD/SHRINK/STINGY | loss | — | — | -4% |
 | 20260621 | Breanna Stewart | PTS Under 18.5 @ 1.91 | FTUNDER | WIN | — | -1.0 | -2% |
 | 20260621 | Cecilia Zandalasini | PTS Under 8.5 @ 1.82 | FTUNDER | loss | -12% | +0.0 | +4% |
 | 20260621 | Courtney Williams | PTS Under 17.5 @ 1.714 | FTUNDER | WIN | — | — | — |
 | 20260621 | Erica Wheeler | PTS Under 8.5 @ 1.78 | COLD/SHRINK/STINGY | loss | — | — | -2% |
 | 20260621 | Gabby Williams | PR Over 19.5 @ 1.769 | BOOK OVERSHOOT | loss | — | — | +2% |
-| 20260621 | Janelle Salaun | PTS Over 13.5 @ 1.85 | FLIP UNDER(paper) | loss | -10% | +0.0 | +0% |
-| 20260621 | Jonquel Jones | PTS Over 13.5 @ 1.85 | FLIP UNDER(paper) | WIN | — | — | -2% |
+| 20260621 | Janelle Salaun | PTS Over 13.5 @ 1.85 | LINE-CUT FLIP · exp. base | loss | -10% | +0.0 | +0% |
+| 20260621 | Jonquel Jones | PTS Over 13.5 @ 1.85 | LINE-CUT FLIP · exp. base | WIN | — | — | -2% |
 | 20260621 | Kayla McBride | PTS Under 13.5 @ 1.952 | FTUNDER | WIN | -4% | — | +4% |
 | 20260621 | Kelsey Plum | PTS Over 20.5 @ 1.77 | BOOK OVERSHOOT | loss | -1% | +0.0 | -3% |
 | 20260621 | Kiki Iriafen | PRA Under 23.5 @ 1.91 | COLD/SHRINK/STINGY | loss | — | — | +0% |
 | 20260621 | Michaela Onyenwere | PTS Over 9.5 @ 1.75 | BOOK OVERSHOOT | loss | — | — | -2% |
 | 20260621 | Nalyssa Smith | PR Over 16.5 @ 1.952 | BOOK OVERSHOOT | WIN | — | — | — |
-| 20260621 | Natasha Howard | PTS Over 15.5 @ 1.909 | FLIP UNDER(paper) | WIN | — | — | +0% |
+| 20260621 | Natasha Howard | PTS Over 15.5 @ 1.909 | LINE-CUT FLIP · exp. base | WIN | — | — | +0% |
 | 20260621 | Nneka Ogwumike | PTS Under 14.5 @ 1.714 | FTUNDER | loss | — | +1.0 | -1% |
 | 20260621 | Olivia Miles | PTS Under 17.5 @ 2.02 | FTUNDER | loss | -0% | +0.0 | +1% |
 | 20260621 | Shakira Austin | PTS Under 13.5 @ 1.73 | FTUNDER | WIN | -5% | +0.0 | -1% |
@@ -111,13 +111,13 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260622 | Skylar Diggins | PTS Under 16.5 @ 1.73 | FTUNDER | WIN | -7% | — | +2% |
 | 20260623 | Breanna Stewart | PTS Under 19.5 @ 1.8 | FTUNDER | loss | — | — | — |
 | 20260623 | Chelsea Gray | PTS Under 12.5 @ 1.75 | COLD/SHRINK/STINGY | WIN | -11% | +0.0 | +0% |
-| 20260623 | Jackie Young | PA Over 23.5 @ 1.8 | FLIP UNDER | WIN | — | +0.5 | -2% |
+| 20260623 | Jackie Young | PA Over 23.5 @ 1.8 | LINE-CUT FLIP · proven base | WIN | — | +0.5 | -2% |
 | 20260623 | Jonquel Jones | PA Over 15.5 @ 1.8 | BOOK OVERSHOOT | WIN | — | — | -2% |
 | 20260623 | Nalyssa Smith | PR Over 16.5 @ 1.91 | BOOK OVERSHOOT | loss | — | — | +4% |
-| 20260623 | Pauline Astier | PA Over 9.5 @ 1.73 | FLIP UNDER | loss | — | — | +0% |
+| 20260623 | Pauline Astier | PA Over 9.5 @ 1.73 | LINE-CUT FLIP · proven base | loss | — | — | +0% |
 | 20260624 | Aliyah Boston | PTS Under 16.5 @ 1.75 | FTUNDER | loss | — | +1.0 | +1% |
 | 20260624 | Allisha Gray | PTS Under 17.5 @ 1.94 | FTUNDER | WIN | -6% | +0.0 | +8% |
-| 20260624 | Angel Reese | PR Over 25.5 @ 1.83 | FLIP UNDER | loss | — | -0.5 | -8% |
+| 20260624 | Angel Reese | PR Over 25.5 @ 1.83 | LINE-CUT FLIP · proven base | loss | — | -0.5 | -8% |
 | 20260624 | Caitlin Clark | PTS Under 21.5 @ 1.91 | FTUNDER | WIN | -7% | — | +0% |
 | 20260624 | Carla Leite | PTS Under 14.5 @ 1.833 | FTUNDER | WIN | -5% | +0.0 | -1% |
 | 20260624 | Cecilia Zandalasini | PTS Under 8.5 @ 1.893 | FTUNDER | loss | -11% | +0.0 | +2% |
@@ -130,7 +130,7 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260624 | Kiki Iriafen | PRA Under 23.5 @ 1.91 | COLD/SHRINK/STINGY | loss | — | — | -4% |
 | 20260624 | Megan Gustafson | PTS Under 12.5 @ 2.02 | FTUNDER | loss | — | — | +0% |
 | 20260624 | Michaela Onyenwere | PTS Over 8.5 @ 1.77 | BOOK OVERSHOOT | loss | — | — | -2% |
-| 20260624 | Olivia Miles | PTS Over 18.5 @ 1.88 | FLIP UNDER(paper) | WIN | -8% | +0.0 | -2% |
+| 20260624 | Olivia Miles | PTS Over 18.5 @ 1.88 | LINE-CUT FLIP · exp. base | WIN | -8% | +0.0 | -2% |
 | 20260624 | Rhyne Howard | PRA Over 25.5 @ 1.91 | HOT OVER | loss | — | — | +0% |
 | 20260624 | Sarah Ashlee Barker | PTS Under 11.5 @ 1.833 | FTUNDER | loss | — | — | -4% |
 | 20260624 | Shakira Austin | PTS Under 12.5 @ 1.76 | FTUNDER | WIN | -2% | +0.0 | -2% |
@@ -143,18 +143,18 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260625 | Isabelle Harrison | PTS Under 14.5 @ 1.952 | FTUNDER | WIN | — | — | +7% |
 | 20260625 | Jackie Young | PA Over 23.5 @ 1.73 | BOOK OVERSHOOT | WIN | — | — | -6% |
 | 20260625 | Jessica Shepard | PA Over 18.5 @ 2.0 | BOOK OVERSHOOT | WIN | — | — | +0% |
-| 20260625 | Jonquel Jones | PTS Over 13.5 @ 1.833 | FLIP UNDER(paper) | WIN | — | — | -1% |
+| 20260625 | Jonquel Jones | PTS Over 13.5 @ 1.833 | LINE-CUT FLIP · exp. base | WIN | — | — | -1% |
 | 20260625 | Leonie Fiebich | PRA Over 14.5 @ 1.91 | HOT OVER | WIN | — | — | +0% |
 | 20260625 | Marina Mabrey | PTS Under 20.5 @ 1.952 | FTUNDER | loss | — | — | +0% |
 | 20260625 | Marine Johannes | PRA Over 12.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
-| 20260625 | NaLyssa Smith | PTS Over 10.5 @ 1.73 | FLIP UNDER(paper) | loss | — | — | +0% |
-| 20260625 | Natisha Hiedeman | PTS Over 14.5 @ 1.77 | FLIP UNDER(paper) | loss | — | — | +0% |
+| 20260625 | NaLyssa Smith | PTS Over 10.5 @ 1.73 | LINE-CUT FLIP · exp. base | loss | — | — | +0% |
+| 20260625 | Natisha Hiedeman | PTS Over 14.5 @ 1.77 | LINE-CUT FLIP · exp. base | loss | — | — | +0% |
 | 20260625 | Nneka Ogwumike | PTS Under 16.5 @ 1.909 | starout | loss | — | — | +0% |
 | 20260625 | Paige Bueckers | PTS Under 18.5 @ 2.0 | FTUNDER | loss | — | — | +0% |
 | 20260625 | Rae Burrell | PRA Over 18.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260625 | Sabrina Ionescu | PRA Over 13.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260626 | Allisha Gray | PTS Under 17.5 @ 1.87 | FTUNDER | WIN | — | — | -0% |
-| 20260626 | Angel Reese | PR Over 25.5 @ 1.83 | FLIP UNDER | WIN | — | -0.5 | -0% |
+| 20260626 | Angel Reese | PR Over 25.5 @ 1.83 | LINE-CUT FLIP · proven base | WIN | — | -0.5 | -0% |
 | 20260626 | Brittney Griner | PR Over 16.5 @ 1.73 | BOOK OVERSHOOT | loss | — | — | +0% |
 | 20260626 | Carla Leite | PTS Under 14.5 @ 1.82 | FTUNDER | loss | -11% | +0.0 | -0% |
 | 20260626 | Jordin Canada | PTS Under 11.5 @ 1.8 | FTUNDER | loss | -7% | +0.0 | +1% |
@@ -168,7 +168,7 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260626 | Sonia Citron | PTS Under 17.5 @ 1.73 | FTUNDER | WIN | — | — | -6% |
 | 20260627 | Aliyah Boston | PRA Over 29.5 @ 1.8 | STAR-OUT CASCADE | loss | — | +1.0 | -4% |
 | 20260627 | Aliyah Boston | PTS Under 16.5 @ 1.893 | starout | loss | -17% | +0.0 | +5% |
-| 20260627 | Angel Reese | PR Over 24.5 @ 1.73 | FLIP UNDER | WIN | — | — | +0% |
+| 20260627 | Angel Reese | PR Over 24.5 @ 1.73 | LINE-CUT FLIP · proven base | WIN | — | — | +0% |
 | 20260627 | Ariel Atkins | PRA Over 12.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260627 | Dearica Hamby | PRA Over 20.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260627 | Erica Wheeler | PRA Over 11.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
@@ -179,7 +179,7 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260627 | Kelsey Mitchell | PTS Under 21.5 @ 1.893 | starout | loss | — | — | +0% |
 | 20260627 | Monique Billings | PRA Over 10.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260627 | Myisha Hines-Allen | PRA Over 7.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
-| 20260627 | Natisha Hiedeman | PTS Over 14.5 @ 1.73 | FLIP UNDER(paper) | WIN | — | — | — |
+| 20260627 | Natisha Hiedeman | PTS Over 14.5 @ 1.73 | LINE-CUT FLIP · exp. base | WIN | — | — | — |
 | 20260627 | Nneka Ogwumike | PRA Over 29.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
 | 20260627 | Nneka Ogwumike | PTS Under 17.5 @ 2.0 | FTUNDER | WIN | — | — | +3% |
 | 20260627 | Noemie Brochant | PTS Under 9.5 @ 1.75 | FTUNDER | WIN | — | — | +0% |
@@ -189,14 +189,14 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260628 | Breanna Stewart | PTS Under 19.5 @ 1.714 | FTUNDER | WIN | — | — | -7% |
 | 20260628 | Carla Leite | PTS Under 14.5 @ 1.73 | FTUNDER | loss | -10% | +0.0 | -4% |
 | 20260628 | Courtney Williams | PTS Under 15.5 @ 1.9 | FTUNDER | WIN | -10% | +0.0 | -3% |
-| 20260628 | Jackie Young | PTS Over 17.5 @ 2.0 | FLIP UNDER(paper) | WIN | -1% | +0.0 | +12% |
+| 20260628 | Jackie Young | PTS Over 17.5 @ 2.0 | LINE-CUT FLIP · exp. base | WIN | -1% | +0.0 | +12% |
 | 20260628 | Jessica Shepard | PA Over 18.5 @ 1.83 | BOOK OVERSHOOT | loss | — | — | -3% |
-| 20260628 | Jonquel Jones | PTS Over 13.5 @ 1.91 | FLIP UNDER(paper) | WIN | -5% | +0.0 | +6% |
+| 20260628 | Jonquel Jones | PTS Over 13.5 @ 1.91 | LINE-CUT FLIP · exp. base | WIN | -5% | +0.0 | +6% |
 | 20260628 | Kayla McBride | PTS Under 14.5 @ 1.8 | FTUNDER | loss | -12% | +0.0 | -6% |
 | 20260628 | Kiki Iriafen | PTS Under 15.5 @ 1.73 | FTUNDER | loss | -12% | +0.0 | -6% |
 | 20260628 | Megan Gustafson | PR Under 18.5 @ 1.91 | COLD/SHRINK/STINGY | loss | — | — | +6% |
-| 20260628 | Natasha Howard | PTS Over 15.5 @ 1.92 | FLIP UNDER(paper) | WIN | — | — | +1% |
-| 20260628 | Olivia Miles | PTS Over 18.5 @ 1.87 | FLIP UNDER(paper) | WIN | -5% | +0.0 | +2% |
+| 20260628 | Natasha Howard | PTS Over 15.5 @ 1.92 | LINE-CUT FLIP · exp. base | WIN | — | — | +1% |
+| 20260628 | Olivia Miles | PTS Over 18.5 @ 1.87 | LINE-CUT FLIP · exp. base | WIN | -5% | +0.0 | +2% |
 | 20260628 | Paige Bueckers | PTS Under 19.5 @ 1.78 | FTUNDER | loss | -7% | +0.0 | -3% |
 | 20260628 | Skylar Diggins | PTS Under 14.5 @ 1.83 | FTUNDER | WIN | -11% | +0.0 | +2% |
 | 20260628 | Sonia Citron | PTS Under 18.5 @ 1.73 | FTUNDER | loss | -11% | +0.0 | -6% |
@@ -205,7 +205,7 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260630 | Jewell Loyd | PRA Over 9.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
 | 20260630 | NaLyssa Smith | PRA Over 16.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
 | 20260702 | Allisha Gray | PRA Under 22.5 @ 1.73 | COLD/SHRINK/STINGY | loss | — | — | -11% |
-| 20260702 | Angel Reese | PR Over 27.5 @ 2.0 | FLIP UNDER | loss | — | -1.5 | +2% |
+| 20260702 | Angel Reese | PR Over 27.5 @ 2.0 | LINE-CUT FLIP · proven base | loss | — | -1.5 | +2% |
 | 20260702 | Arike Ogunbowale | PTS Under 13.5 @ 2.0 | COLD/SHRINK/STINGY | WIN | -7% | +0.0 | +0% |
 | 20260702 | Azzi Fudd | PR Over 15.5 @ 1.73 | BOOK OVERSHOOT | loss | — | — | -4% |
 | 20260702 | Brittney Griner | PTS Under 12.5 @ 1.8 | FTUNDER | loss | — | +1.0 | +0% |
@@ -231,11 +231,11 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260703 | Natasha Howard | PTS Over 15.5 @ 1.74 | BOOK OVERSHOOT | loss | -6% | — | +1% |
 | 20260703 | Olivia Miles | PA Over 24.5 @ 1.83 | BOOK OVERSHOOT | loss | — | — | +0% |
 | 20260704 | Allisha Gray | PTS Under 16.5 @ 2.0 | FTUNDER | loss | — | — | +0% |
-| 20260704 | Angel Reese | PTS Over 13.5 @ 1.82 | FLIP UNDER(paper) | WIN | -4% | +0.0 | +6% |
-| 20260704 | Gabby Williams | PTS Over 15.5 @ 1.893 | FLIP UNDER(paper) | WIN | — | — | +3% |
+| 20260704 | Angel Reese | PTS Over 13.5 @ 1.82 | LINE-CUT FLIP · exp. base | WIN | -4% | +0.0 | +6% |
+| 20260704 | Gabby Williams | PTS Over 15.5 @ 1.893 | LINE-CUT FLIP · exp. base | WIN | — | — | +3% |
 | 20260704 | Megan Gustafson | PR Over 15.5 @ 1.8 | BOOK OVERSHOOT | WIN | — | — | +0% |
-| 20260704 | Natisha Hiedeman | PTS Over 14.5 @ 1.8 | FLIP UNDER(paper) | WIN | — | — | +0% |
-| 20260704 | Rhyne Howard | PR Over 22.5 @ 1.87 | FLIP UNDER | WIN | — | — | +0% |
+| 20260704 | Natisha Hiedeman | PTS Over 14.5 @ 1.8 | LINE-CUT FLIP · exp. base | WIN | — | — | +0% |
+| 20260704 | Rhyne Howard | PR Over 22.5 @ 1.87 | LINE-CUT FLIP · proven base | WIN | — | — | +0% |
 | 20260704 | Sarah Ashlee Barker | PTS Under 11.5 @ 1.81 | FTUNDER | WIN | — | — | — |
 | 20260705 | Aliyah Boston | PRA Over 28.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260705 | Aliyah Boston | PTS Under 17.5 @ 1.77 | FTUNDER | loss | -13% | +0.0 | -7% |
@@ -255,7 +255,7 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260705 | Myisha Hines-Allen | PRA Over 7.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260705 | NaLyssa Smith | PRA Over 16.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260705 | Nyara Sabally | PRA Over 16.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
-| 20260705 | Paige Bueckers | PTS Over 21.5 @ 1.91 | FLIP UNDER(paper) | WIN | -6% | +0.0 | +6% |
+| 20260705 | Paige Bueckers | PTS Over 21.5 @ 1.91 | LINE-CUT FLIP · exp. base | WIN | -6% | +0.0 | +6% |
 | 20260705 | Sophie Cunningham | PRA Over 12.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
 | 20260706 | Ariel Atkins | PRA Over 12.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
 | 20260706 | Cotie McMahon | PRA Over 11.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
@@ -264,7 +264,7 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260706 | Dearica Hamby | PRA Over 21.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260706 | Erica Wheeler | PRA Over 10.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260706 | Flau'jae Johnson | PRA Over 20.5 @ 1.73 | HOT OVER | WIN | — | — | — |
-| 20260706 | Gabby Williams | PTS Over 14.5 @ 1.91 | FLIP UNDER(paper) | loss | — | — | +0% |
+| 20260706 | Gabby Williams | PTS Over 14.5 @ 1.91 | LINE-CUT FLIP · exp. base | loss | — | — | +0% |
 | 20260706 | Georgia Amoore | PRA Over 11.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
 | 20260706 | Janelle Salaun | PTS Under 10.5 @ 1.75 | COLD/SHRINK/STINGY | WIN | — | +1.0 | +0% |
 | 20260706 | Kayla McBride | PTS Under 18.5 @ 1.85 | starout | loss | — | +1.0 | +0% |
@@ -273,8 +273,8 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260706 | Michaela Onyenwere | PRA Over 16.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
 | 20260706 | Michaela Onyenwere | PTS Over 9.5 @ 1.83 | BOOK OVERSHOOT | loss | — | — | -3% |
 | 20260706 | Natasha Howard | PRA Over 25.5 @ 1.893 | STAR-OUT CASCADE | WIN | — | — | +0% |
-| 20260706 | Natasha Howard | PTS Over 16.5 @ 1.893 | FLIP UNDER | WIN | — | -1.0 | +5% |
-| 20260706 | Natisha Hiedeman | PTS Over 15.5 @ 1.833 | FLIP UNDER(paper) | loss | — | — | +0% |
+| 20260706 | Natasha Howard | PTS Over 16.5 @ 1.893 | LINE-CUT FLIP · proven base | WIN | — | -1.0 | +5% |
+| 20260706 | Natisha Hiedeman | PTS Over 15.5 @ 1.833 | LINE-CUT FLIP · exp. base | loss | — | — | +0% |
 | 20260706 | Nia Coffey | PRA Over 14.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
 | 20260706 | Nneka Ogwumike | PRA Over 29.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
 | 20260706 | Nneka Ogwumike | PTS Under 17.5 @ 1.769 | FTUNDER | WIN | -7% | — | -5% |
@@ -289,14 +289,14 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260707 | Jonquel Jones | PRA Over 26.5 @ 1.91 | BOOK OVERSHOOT | WIN | — | — | +10% |
 | 20260707 | Kahleah Copper | PR Over 23.5 @ 2.02 | BOOK OVERSHOOT | WIN | — | — | +10% |
 | 20260707 | Kamilla Cardoso | PTS Under 14.5 @ 1.8 | FTUNDER | WIN | — | — | — |
-| 20260707 | Paige Bueckers | PTS Over 20.5 @ 1.82 | FLIP UNDER(paper) | loss | -11% | — | +0% |
+| 20260707 | Paige Bueckers | PTS Over 20.5 @ 1.82 | LINE-CUT FLIP · exp. base | loss | -11% | — | +0% |
 | 20260708 | Ariel Atkins | PRA Over 9.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260708 | Courtney Williams | PRA Over 24.5 @ 1.75 | STAR-OUT CASCADE | loss | — | +7.0 | +0% |
 | 20260708 | Courtney Williams | PTS Under 18.5 @ 1.8 | FTUNDER | WIN | — | -1.0 | -5% |
 | 20260708 | Dearica Hamby | PRA Over 22.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260708 | Dearica Hamby | PTS Under 15.5 @ 1.77 | FTUNDER | loss | -10% | — | +4% |
 | 20260708 | Erica Wheeler | PRA Over 10.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
-| 20260708 | Gabby Williams | PRA Over 19.5 @ 1.91 | FLIP UNDER | loss | — | — | +0% |
+| 20260708 | Gabby Williams | PRA Over 19.5 @ 1.91 | LINE-CUT FLIP · proven base | loss | — | — | +0% |
 | 20260708 | Isabelle Harrison | PTS Under 12.5 @ 1.96 | FTUNDER | loss | — | — | +0% |
 | 20260708 | Kayla McBride | PTS Under 18.5 @ 1.83 | FTUNDER | loss | -4% | +0.0 | -1% |
 | 20260708 | Kelsey Mitchell | PTS Under 23.5 @ 1.82 | FTUNDER | loss | — | — | +1% |
@@ -312,19 +312,19 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260709 | Aliyah Boston | PRA Over 28.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260709 | Aliyah Boston | PTS Under 18.5 @ 1.78 | FTUNDER | loss | — | — | — |
 | 20260709 | Allisha Gray | PTS Under 18.5 @ 1.833 | FTUNDER | loss | -5% | +0.0 | -3% |
-| 20260709 | Angel Reese | PTS Over 13.5 @ 1.75 | FLIP UNDER(paper) | WIN | — | — | +1% |
+| 20260709 | Angel Reese | PTS Over 13.5 @ 1.75 | LINE-CUT FLIP · exp. base | WIN | — | — | +1% |
 | 20260709 | Chelsea Gray | PRA Over 22.5 @ 1.75 | STAR-OUT CASCADE | loss | — | +3.0 | +0% |
 | 20260709 | Cheyenne Parker-Tyus | PRA Over 10.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
 | 20260709 | Emily Engstler | PTS Under 8.5 @ 1.74 | FTUNDER | loss | — | — | — |
-| 20260709 | Jackie Young | PTS Over 17.5 @ 1.82 | FLIP UNDER(paper) | WIN | -5% | +0.0 | — |
+| 20260709 | Jackie Young | PTS Over 17.5 @ 1.82 | LINE-CUT FLIP · exp. base | WIN | -5% | +0.0 | — |
 | 20260709 | Jewell Loyd | PRA Over 12.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
-| 20260709 | Kahleah Copper | PTS Over 19.5 @ 1.73 | FLIP UNDER(paper) | WIN | — | +1.0 | -1% |
+| 20260709 | Kahleah Copper | PTS Over 19.5 @ 1.73 | LINE-CUT FLIP · exp. base | WIN | — | +1.0 | -1% |
 | 20260709 | Kelsey Mitchell | PTS Under 23.5 @ 2.0 | starout | loss | -4% | +0.0 | +0% |
 | 20260709 | Lexie Hull | PRA Over 11.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
 | 20260709 | Megan Gustafson | PTS Over 11.5 @ 1.833 | BOOK OVERSHOOT | loss | — | — | +6% |
 | 20260709 | Monique Billings | PRA Over 13.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
 | 20260709 | NaLyssa Smith | PRA Over 16.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
-| 20260709 | Natisha Hiedeman | PTS Over 15.5 @ 2.02 | FLIP UNDER(paper) | WIN | -12% | +0.0 | +0% |
+| 20260709 | Natisha Hiedeman | PTS Over 15.5 @ 2.02 | LINE-CUT FLIP · exp. base | WIN | -12% | +0.0 | +0% |
 | 20260709 | Raven Johnson | PRA Over 7.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260709 | Rhyne Howard | PTS Over 18.5 @ 1.769 | BOOK OVERSHOOT | WIN | — | — | -9% |
 | 20260710 | Ariel Atkins | PRA Over 9.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
@@ -352,16 +352,16 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260711 | Courtney Williams | PRA Over 23.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260711 | Courtney Williams | PTS Under 15.5 @ 1.893 | FTUNDER | WIN | — | — | +0% |
 | 20260711 | Emily Engstler | PTS Under 8.5 @ 1.952 | FTUNDER | loss | — | — | — |
-| 20260711 | Jackie Young | PTS Over 16.5 @ 1.8 | FLIP UNDER(paper) | loss | — | — | +4% |
+| 20260711 | Jackie Young | PTS Over 16.5 @ 1.8 | LINE-CUT FLIP · exp. base | loss | — | — | +4% |
 | 20260711 | Jonquel Jones | PRA Over 26.5 @ 1.8 | BOOK OVERSHOOT | WIN | — | — | +0% |
 | 20260711 | Kahleah Copper | PA Over 22.5 @ 1.893 | BOOK OVERSHOOT | loss | — | — | +0% |
-| 20260711 | Kayla McBride | PTS Over 14.5 @ 1.77 | FLIP UNDER | WIN | — | — | +0% |
+| 20260711 | Kayla McBride | PTS Over 14.5 @ 1.77 | LINE-CUT FLIP · proven base | WIN | — | — | +0% |
 | 20260711 | Megan Gustafson | PR Over 15.5 @ 1.73 | BOOK OVERSHOOT | WIN | — | — | — |
 | 20260711 | Natasha Howard | PRA Over 26.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
-| 20260711 | Natasha Howard | PTS Over 15.5 @ 1.76 | FLIP UNDER(paper) | WIN | — | — | — |
+| 20260711 | Natasha Howard | PTS Over 15.5 @ 1.76 | LINE-CUT FLIP · exp. base | WIN | — | — | — |
 | 20260711 | Nia Coffey | PRA Over 14.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
 | 20260711 | Olivia Miles | PA Over 22.5 @ 1.73 | BOOK OVERSHOOT | WIN | — | — | +0% |
-| 20260711 | Rhyne Howard | PTS Over 18.5 @ 1.893 | FLIP UNDER(paper) | loss | — | — | — |
+| 20260711 | Rhyne Howard | PTS Over 18.5 @ 1.893 | LINE-CUT FLIP · exp. base | loss | — | — | — |
 | 20260712 | Alicia Florez | PRA Over 9.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260712 | Aliyah Boston | PR Over 25.5 @ 1.91 | BOOK OVERSHOOT | WIN | — | — | +4% |
 | 20260712 | Azura Stevens | PTS Under 12.5 @ 1.67 | FTUNDER | loss | -8% | +0.0 | -10% |
@@ -371,15 +371,15 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260712 | Cotie McMahon | PRA Over 11.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
 | 20260712 | Dominique Malonga | PTS Under 16.5 @ 1.95 | COLD/SHRINK/STINGY | WIN | -5% | +0.0 | +0% |
 | 20260712 | Isabelle Harrison | PTS Under 13.5 @ 1.91 | FTUNDER | WIN | -7% | — | +0% |
-| 20260712 | Jackie Young | PTS Over 16.5 @ 1.8 | FLIP UNDER(paper) | loss | — | — | — |
+| 20260712 | Jackie Young | PTS Over 16.5 @ 1.8 | LINE-CUT FLIP · exp. base | loss | — | — | — |
 | 20260712 | Jessica Shepard | PTS Under 15.5 @ 1.83 | FTUNDER | loss | -5% | +0.0 | -1% |
-| 20260712 | Jonquel Jones | PTS Over 15.5 @ 1.952 | FLIP UNDER | loss | — | -1.0 | +0% |
+| 20260712 | Jonquel Jones | PTS Over 15.5 @ 1.952 | LINE-CUT FLIP · proven base | loss | — | -1.0 | +0% |
 | 20260712 | Kelsey Mitchell | PRA Over 26.5 @ 1.833 | BOOK OVERSHOOT | WIN | — | — | +0% |
 | 20260712 | Kiki Iriafen | PRA Over 25.5 @ 1.91 | HOT OVER | WIN | — | — | +4% |
 | 20260712 | Maria Conde | PTS Under 10.5 @ 1.86 | FTUNDER | loss | — | — | -5% |
 | 20260712 | Michaela Onyenwere | PRA Over 11.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
 | 20260712 | Natisha Hiedeman | PRA Over 19.5 @ 2.0 | BOOK OVERSHOOT | WIN | — | — | +9% |
-| 20260712 | Paige Bueckers | PTS Over 21.5 @ 1.86 | FLIP UNDER(paper) | WIN | — | — | — |
+| 20260712 | Paige Bueckers | PTS Over 21.5 @ 1.86 | LINE-CUT FLIP · exp. base | WIN | — | — | — |
 | 20260712 | Shakira Austin | PRA Over 22.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260712 | Shakira Austin | PTS Under 12.5 @ 1.91 | FTUNDER | loss | -2% | +0.0 | -2% |
 | 20260712 | Sonia Citron | PTS Under 17.5 @ 2.0 | FTUNDER | loss | — | — | +0% |
@@ -391,28 +391,28 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260713 | Dearica Hamby | PTS Under 16.5 @ 1.909 | FTUNDER | WIN | — | +1.0 | +10% |
 | 20260713 | Erica Wheeler | PRA Over 11.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260713 | Jordin Canada | PTS Under 11.5 @ 1.8 | FTUNDER | loss | -9% | +0.0 | +0% |
-| 20260713 | Kahleah Copper | PTS Over 19.5 @ 1.8 | FLIP UNDER | WIN | — | — | -4% |
-| 20260713 | Kayla McBride | PTS Over 15.5 @ 1.8 | FLIP UNDER(paper) | WIN | — | — | +2% |
+| 20260713 | Kahleah Copper | PTS Over 19.5 @ 1.8 | LINE-CUT FLIP · proven base | WIN | — | — | -4% |
+| 20260713 | Kayla McBride | PTS Over 15.5 @ 1.8 | LINE-CUT FLIP · exp. base | WIN | — | — | +2% |
 | 20260713 | Monique Akoa Makani | PTS Under 9.5 @ 1.83 | COLD/SHRINK/STINGY | loss | -5% | +0.0 | -1% |
-| 20260713 | Natasha Howard | PTS Over 15.5 @ 1.73 | FLIP UNDER(paper) | loss | — | — | — |
+| 20260713 | Natasha Howard | PTS Over 15.5 @ 1.73 | LINE-CUT FLIP · exp. base | loss | — | — | — |
 | 20260713 | Nneka Ogwumike | PTS Under 18.5 @ 1.87 | FTUNDER | loss | — | — | +0% |
 | 20260713 | Olivia Miles | PA Over 23.5 @ 1.73 | BOOK OVERSHOOT | WIN | — | — | — |
 | 20260713 | Rae Burrell | PRA Over 21.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
-| 20260713 | Rae Burrell | PTS Over 14.5 @ 1.87 | FLIP UNDER(paper) | WIN | -2% | +0.0 | +2% |
+| 20260713 | Rae Burrell | PTS Over 14.5 @ 1.87 | LINE-CUT FLIP · exp. base | WIN | -2% | +0.0 | +2% |
 | 20260713 | Rhyne Howard | PTS Under 19.5 @ 1.73 | FTUNDER | WIN | — | — | -7% |
 | 20260714 | Charlisse Leger-Walker | PRA Over 14.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260714 | Diamond Miller | PRA Over 12.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260714 | Isabelle Harrison | PTS Under 13.5 @ 1.83 | FTUNDER | WIN | — | — | -2% |
 | 20260714 | Leila Lacan | PRA Over 18.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
-| 20260714 | Maria Conde | PTS Over 9.5 @ 1.714 | FLIP UNDER(paper) | loss | — | — | -0% |
-| 20260714 | Megan Gustafson | PTS Over 12.5 @ 2.0 | FLIP UNDER(paper) | WIN | — | — | +5% |
+| 20260714 | Maria Conde | PTS Over 9.5 @ 1.714 | LINE-CUT FLIP · exp. base | loss | — | — | -0% |
+| 20260714 | Megan Gustafson | PTS Over 12.5 @ 2.0 | LINE-CUT FLIP · exp. base | WIN | — | — | +5% |
 | 20260714 | Olivia Nelson-Ododa | PTS Under 11.5 @ 1.91 | FTUNDER | loss | — | — | +0% |
 | 20260714 | Shakira Austin | PTS Under 13.5 @ 1.92 | FTUNDER | loss | — | — | +3% |
 | 20260714 | Sonia Citron | PTS Under 17.5 @ 1.89 | FTUNDER | WIN | — | — | -3% |
 | 20260715 | Aliyah Boston | PR Over 24.5 @ 1.91 | BOOK OVERSHOOT | loss | — | — | +0% |
 | 20260715 | Ariel Atkins | PRA Over 12.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260715 | Azura Stevens | PTS Under 12.5 @ 1.87 | FTUNDER | loss | — | — | +0% |
-| 20260715 | Caitlin Clark | PA Over 21.5 @ 1.8 | FLIP UNDER | loss | — | +0.5 | — |
+| 20260715 | Caitlin Clark | PA Over 21.5 @ 1.8 | LINE-CUT FLIP · proven base | loss | — | +0.5 | — |
 | 20260715 | Courtney Williams | PTS Under 15.5 @ 1.83 | FTUNDER | loss | -10% | +0.0 | -4% |
 | 20260715 | Dearica Hamby | PRA Over 22.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
 | 20260715 | Dearica Hamby | PTS Under 15.5 @ 1.73 | FTUNDER | WIN | — | +1.0 | +0% |
@@ -423,9 +423,9 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260715 | Natasha Howard | PTS Under 15.5 @ 1.952 | FTUNDER | WIN | — | — | +2% |
 | 20260715 | Natisha Hiedeman | PR Over 18.5 @ 1.769 | BOOK OVERSHOOT | loss | — | — | -7% |
 | 20260715 | Nneka Ogwumike | PTS Under 17.5 @ 1.833 | FTUNDER | loss | — | — | +2% |
-| 20260715 | Olivia Miles | PTS Over 19.5 @ 1.87 | FLIP UNDER(paper) | loss | — | — | -2% |
+| 20260715 | Olivia Miles | PTS Over 19.5 @ 1.87 | LINE-CUT FLIP · exp. base | loss | — | — | -2% |
 | 20260715 | Rae Burrell | PRA Over 22.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
-| 20260715 | Rae Burrell | PTS Over 14.5 @ 1.93 | FLIP UNDER(paper) | WIN | +1% | +0.0 | +7% |
+| 20260715 | Rae Burrell | PTS Over 14.5 @ 1.93 | LINE-CUT FLIP · exp. base | WIN | +1% | +0.0 | +7% |
 | 20260715 | Sydney Taylor | PTS Under 15.5 @ 1.87 | FTUNDER | loss | — | — | +4% |
 | 20260716 | Carla Leite | PTS Under 15.5 @ 1.87 | FTUNDER | WIN | — | — | +0% |
 | 20260716 | Emily Engstler | PRA Over 18.5 @ 1.83 | HOT OVER | loss | — | — | -2% |
@@ -435,7 +435,7 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260717 | Ariel Atkins | PRA Over 15.5 @ 2.0 | STAR-OUT CASCADE | WIN | — | — | +9% |
 | 20260717 | Azura Stevens | PTS Under 14.5 @ 2.0 | FTUNDER | WIN | -3% | +0.0 | +5% |
 | 20260717 | Brittney Griner | PR Over 19.5 @ 1.73 | BOOK OVERSHOOT | loss | — | — | +0% |
-| 20260717 | Caitlin Clark | PA Over 23.5 @ 1.83 | FLIP UNDER | WIN | — | — | +0% |
+| 20260717 | Caitlin Clark | PA Over 23.5 @ 1.83 | LINE-CUT FLIP · proven base | WIN | — | — | +0% |
 | 20260717 | Charlisse Leger-Walker | PTS Under 8.5 @ 1.87 | FTUNDER | WIN | — | — | +2% |
 | 20260717 | Dearica Hamby | PRA Over 22.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260717 | Dearica Hamby | PTS Under 14.5 @ 1.83 | FTUNDER | loss | — | — | -2% |
@@ -445,17 +445,17 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260717 | Isabelle Harrison | PTS Under 12.5 @ 1.833 | FTUNDER | WIN | — | +1.0 | +2% |
 | 20260717 | Jade Melbourne | PRA Over 13.5 @ 1.67 | BOOK OVERSHOOT | WIN | — | — | -6% |
 | 20260717 | Jordin Canada | PTS Under 11.5 @ 1.909 | FTUNDER | loss | — | -1.0 | +0% |
-| 20260717 | Kahleah Copper | PTS Over 19.5 @ 1.833 | FLIP UNDER | WIN | — | — | +0% |
+| 20260717 | Kahleah Copper | PTS Over 19.5 @ 1.833 | LINE-CUT FLIP · proven base | WIN | — | — | +0% |
 | 20260717 | Kamilla Cardoso | PTS Under 15.5 @ 1.82 | FTUNDER | WIN | — | — | -7% |
-| 20260717 | Kelsey Mitchell | PTS Over 21.5 @ 1.8 | FLIP UNDER(paper) | WIN | — | — | -2% |
+| 20260717 | Kelsey Mitchell | PTS Over 21.5 @ 1.8 | LINE-CUT FLIP · exp. base | WIN | — | — | -2% |
 | 20260717 | Leila Lacan | PTS Under 12.5 @ 1.87 | FTUNDER | loss | -2% | +0.0 | -2% |
 | 20260717 | Maria Conde | PRA Over 16.5 @ 2.0 | BOOK OVERSHOOT | WIN | — | — | +0% |
-| 20260717 | Natisha Hiedeman | PTS Over 17.5 @ 2.0 | FLIP UNDER(paper) | loss | — | — | — |
+| 20260717 | Natisha Hiedeman | PTS Over 17.5 @ 2.0 | LINE-CUT FLIP · exp. base | loss | — | — | — |
 | 20260717 | Nneka Ogwumike | PA Over 19.5 @ 1.8 | BOOK OVERSHOOT | WIN | — | — | +4% |
-| 20260717 | Nyara Sabally | PTS Over 10.5 @ 1.74 | FLIP UNDER(paper) | WIN | — | — | — |
+| 20260717 | Nyara Sabally | PTS Over 10.5 @ 1.74 | LINE-CUT FLIP · exp. base | WIN | — | — | — |
 | 20260717 | Olivia Nelson-Ododa | PTS Under 11.5 @ 1.909 | FTUNDER | WIN | -9% | +0.0 | +0% |
 | 20260717 | Rae Burrell | PRA Over 20.5 @ 2.0 | STAR-OUT CASCADE | loss | — | — | +7% |
-| 20260717 | Rae Burrell | PTS Over 14.5 @ 1.73 | FLIP UNDER(paper) | loss | — | +1.0 | -4% |
+| 20260717 | Rae Burrell | PTS Over 14.5 @ 1.73 | LINE-CUT FLIP · exp. base | loss | — | +1.0 | -4% |
 | 20260717 | Rhyne Howard | PTS Under 19.5 @ 1.833 | FTUNDER | WIN | -3% | +0.0 | +2% |
 | 20260717 | Sydney Taylor | PTS Under 15.5 @ 2.0 | FTUNDER | loss | — | — | +0% |
 | 20260718 | Aliyah Boston | PR Over 25.5 @ 1.83 | BOOK OVERSHOOT | loss | — | — | +6% |
@@ -472,9 +472,9 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260718 | Natasha Howard | PRA Over 26.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | -3% |
 | 20260718 | Natasha Howard | PTS Under 14.5 @ 1.95 | starout | loss | — | — | +0% |
 | 20260718 | Nia Coffey | PRA Over 14.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
-| 20260718 | Olivia Miles | PTS Over 17.5 @ 1.95 | FLIP UNDER(paper) | loss | — | -1.0 | +0% |
+| 20260718 | Olivia Miles | PTS Over 17.5 @ 1.95 | LINE-CUT FLIP · exp. base | loss | — | -1.0 | +0% |
 | 20260718 | Shakira Austin | PRA Over 25.5 @ 2.0 | HOT OVER | WIN | — | — | — |
-| 20260718 | Sonia Citron | PR Over 18.5 @ 1.83 | FLIP UNDER | loss | — | — | -4% |
+| 20260718 | Sonia Citron | PR Over 18.5 @ 1.83 | LINE-CUT FLIP · proven base | loss | — | — | -4% |
 | 20260719 | Allisha Gray | PTS Under 18.5 @ 2.0 | FTUNDER | loss | -6% | +0.0 | +3% |
 | 20260719 | Alyssa Thomas | PTS Under 14.5 @ 1.83 | FTUNDER | WIN | -6% | +0.0 | +6% |
 | 20260719 | Angel Reese | PTS Under 16.5 @ 1.91 | FTUNDER | WIN | -7% | +0.0 | -2% |
@@ -487,13 +487,13 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260719 | Erica Wheeler | PRA Over 19.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260719 | Jessica Shepard | PRA Over 32.5 @ 1.8 | HOT OVER | loss | — | +0.0 | -2% |
 | 20260719 | Jordin Canada | PTS Under 12.5 @ 1.8 | FTUNDER | WIN | -5% | +0.0 | +3% |
-| 20260719 | Kahleah Copper | PR Over 24.5 @ 1.73 | FLIP UNDER | loss | — | — | -6% |
+| 20260719 | Kahleah Copper | PR Over 24.5 @ 1.73 | LINE-CUT FLIP · proven base | loss | — | — | -6% |
 | 20260719 | Kamilla Cardoso | PRA Over 23.5 @ 1.8 | BOOK OVERSHOOT | loss | — | — | +0% |
 | 20260719 | Leila Lacan | PTS Under 14.5 @ 1.73 | FTUNDER | WIN | — | +1.0 | +0% |
-| 20260719 | Nneka Ogwumike | PTS Over 17.5 @ 1.8 | FLIP UNDER | loss | -10% | +0.0 | -3% |
-| 20260719 | Paige Bueckers | PTS Over 21.5 @ 1.833 | FLIP UNDER(paper) | WIN | -11% | — | -2% |
+| 20260719 | Nneka Ogwumike | PTS Over 17.5 @ 1.8 | LINE-CUT FLIP · proven base | loss | -10% | +0.0 | -3% |
+| 20260719 | Paige Bueckers | PTS Over 21.5 @ 1.833 | LINE-CUT FLIP · exp. base | WIN | -11% | — | -2% |
 | 20260719 | Rae Burrell | PRA Over 20.5 @ 1.8 | STAR-OUT CASCADE | loss | — | — | -4% |
-| 20260719 | Rae Burrell | PTS Over 15.5 @ 2.0 | FLIP UNDER(paper) | loss | -4% | +0.0 | +1% |
+| 20260719 | Rae Burrell | PTS Over 15.5 @ 2.0 | LINE-CUT FLIP · exp. base | loss | -4% | +0.0 | +1% |
 | 20260719 | Rhyne Howard | PTS Under 18.5 @ 1.8 | FTUNDER | WIN | -7% | +0.0 | -3% |
 | 20260720 | Arike Ogunbowale | PRA Over 13.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260720 | Azzi Fudd | PRA Over 18.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
@@ -502,18 +502,18 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260720 | Chelsea Gray | PTS Under 11.5 @ 1.93 | FTUNDER | loss | -5% | +0.0 | +0% |
 | 20260720 | Courtney Williams | PTS Under 15.5 @ 2.0 | FTUNDER | loss | -6% | +0.0 | +0% |
 | 20260720 | Gabby Williams | PA Under 15.5 @ 2.0 | COLD/SHRINK/STINGY | WIN | — | — | +0% |
-| 20260720 | Isabelle Harrison | PTS Over 10.5 @ 1.74 | FLIP UNDER(paper) | WIN | — | — | +0% |
-| 20260720 | Jackie Young | PTS Over 16.5 @ 1.87 | FLIP UNDER(paper) | WIN | -13% | +0.0 | -3% |
+| 20260720 | Isabelle Harrison | PTS Over 10.5 @ 1.74 | LINE-CUT FLIP · exp. base | WIN | — | — | +0% |
+| 20260720 | Jackie Young | PTS Over 16.5 @ 1.87 | LINE-CUT FLIP · exp. base | WIN | -13% | +0.0 | -3% |
 | 20260720 | Jade Melbourne | PA Over 11.5 @ 1.909 | BOOK OVERSHOOT | loss | — | — | — |
 | 20260720 | Jessica Shepard | PTS Under 16.5 @ 1.85 | starout | WIN | — | +1.0 | +3% |
-| 20260720 | Jonquel Jones | PR Over 23.5 @ 1.952 | FLIP UNDER | WIN | — | +0.5 | +0% |
-| 20260720 | Kayla McBride | PTS Over 18.5 @ 1.83 | FLIP UNDER | WIN | — | -1.0 | -8% |
+| 20260720 | Jonquel Jones | PR Over 23.5 @ 1.952 | LINE-CUT FLIP · proven base | WIN | — | +0.5 | +0% |
+| 20260720 | Kayla McBride | PTS Over 18.5 @ 1.83 | LINE-CUT FLIP · proven base | WIN | — | -1.0 | -8% |
 | 20260720 | Natasha Howard | PTS Under 16.5 @ 2.0 | FTUNDER | WIN | — | +1.0 | +16% |
 | 20260720 | Natisha Hiedeman | PTS Under 15.5 @ 1.8 | FTUNDER | WIN | -5% | +0.0 | +2% |
 | 20260720 | Odyssey Sims | PRA Over 5.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260720 | Olivia Miles | PRA Over 27.5 @ 1.87 | BOOK OVERSHOOT | WIN | — | — | — |
 | 20260720 | Shakira Austin | PR Over 22.5 @ 1.73 | BOOK OVERSHOOT | WIN | — | — | +0% |
-| 20260720 | Sonia Citron | PR Over 17.5 @ 2.0 | FLIP UNDER | WIN | — | +0.5 | +5% |
+| 20260720 | Sonia Citron | PR Over 17.5 @ 2.0 | LINE-CUT FLIP · proven base | WIN | — | +0.5 | +5% |
 | 20260722 | Aliyah Boston | PR Over 21.5 @ 1.73 | BOOK OVERSHOOT | WIN | — | — | +0% |
 | 20260722 | Aneesah Morrow | PRA Over 22.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | — |
 | 20260722 | Ariel Atkins | PRA Over 15.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
@@ -522,39 +522,39 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260722 | Azzi Fudd | PTS Under 15.5 @ 1.91 | FTUNDER | WIN | +3% | +0.0 | +3% |
 | 20260722 | Breanna Stewart | PRA Over 33.5 @ 1.87 | HOT OVER | loss | — | +0.0 | +0% |
 | 20260722 | Bridget Carleton | PTS Under 13.5 @ 1.87 | FTUNDER | loss | +2% | +0.0 | +4% |
-| 20260722 | Carla Leite | PTS Over 14.5 @ 1.952 | FLIP UNDER(paper) | loss | — | +1.0 | +1% |
+| 20260722 | Carla Leite | PTS Over 14.5 @ 1.952 | LINE-CUT FLIP · exp. base | loss | — | +1.0 | +1% |
 | 20260722 | Charlisse Leger-Walker | PRA Over 14.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | — |
 | 20260722 | Courtney Williams | PTS Under 15.5 @ 1.95 | FTUNDER | WIN | +4% | +0.0 | +11% |
 | 20260722 | Dearica Hamby | PRA Over 24.5 @ 1.91 | STAR-OUT CASCADE | WIN | — | — | +4% |
-| 20260722 | Dearica Hamby | PTS Over 14.5 @ 1.952 | FLIP UNDER(paper) | WIN | -3% | +0.0 | +6% |
+| 20260722 | Dearica Hamby | PTS Over 14.5 @ 1.952 | LINE-CUT FLIP · exp. base | WIN | -3% | +0.0 | +6% |
 | 20260722 | Dewanna Bonner | PR Over 14.5 @ 1.73 | BOOK OVERSHOOT | WIN | — | — | -4% |
 | 20260722 | Diamond Miller | PRA Over 13.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | — |
 | 20260722 | Erica Wheeler | PRA Over 21.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
 | 20260722 | Flau'Jae Johnson | PA Over 16.5 @ 1.73 | BOOK OVERSHOOT | WIN | — | — | +0% |
-| 20260722 | Jackie Young | PRA Over 27.5 @ 1.83 | FLIP UNDER | WIN | — | -1.0 | -8% |
-| 20260722 | Jade Melbourne | PTS Over 7.5 @ 1.86 | FLIP UNDER(paper) | loss | -11% | +0.0 | +3% |
+| 20260722 | Jackie Young | PRA Over 27.5 @ 1.83 | LINE-CUT FLIP · proven base | WIN | — | -1.0 | -8% |
+| 20260722 | Jade Melbourne | PTS Over 7.5 @ 1.86 | LINE-CUT FLIP · exp. base | loss | -11% | +0.0 | +3% |
 | 20260722 | Jessica Shepard | PRA Over 32.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | — |
 | 20260722 | Jessica Shepard | PTS Under 15.5 @ 1.833 | FTUNDER | loss | -6% | +0.0 | -6% |
-| 20260722 | Jonquel Jones | PR Over 23.5 @ 1.909 | FLIP UNDER | WIN | — | — | — |
+| 20260722 | Jonquel Jones | PR Over 23.5 @ 1.909 | LINE-CUT FLIP · proven base | WIN | — | — | — |
 | 20260722 | Kahleah Copper | PTS Over 20.5 @ 1.909 | BOOK OVERSHOOT | WIN | — | — | +2% |
 | 20260722 | Kamilla Cardoso | PRA Over 22.5 @ 1.8 | BOOK OVERSHOOT | loss | — | — | +0% |
-| 20260722 | Kayla McBride | PTS Over 19.5 @ 1.95 | FLIP UNDER(paper) | WIN | — | — | +4% |
+| 20260722 | Kayla McBride | PTS Over 19.5 @ 1.95 | LINE-CUT FLIP · exp. base | WIN | — | — | +4% |
 | 20260722 | Kelsey Mitchell | PTS Over 21.5 @ 1.8 | BOOK OVERSHOOT | WIN | -8% | — | +0% |
 | 20260722 | Kiki Iriafen | PTS Under 13.5 @ 1.95 | COLD/SHRINK/STINGY | WIN | — | — | +0% |
 | 20260722 | Natasha Cloud | PTS Under 10.5 @ 1.9 | FTUNDER | WIN | -8% | +0.0 | -3% |
-| 20260722 | Natasha Howard | PTS Over 12.5 @ 1.82 | FLIP UNDER(paper) | loss | -12% | — | — |
+| 20260722 | Natasha Howard | PTS Over 12.5 @ 1.82 | LINE-CUT FLIP · exp. base | loss | -12% | — | — |
 | 20260722 | Natisha Hiedeman | PTS Under 14.5 @ 1.84 | FTUNDER | WIN | -8% | +0.0 | -0% |
 | 20260722 | Nneka Ogwumike | PA Over 20.5 @ 1.91 | BOOK OVERSHOOT | loss | — | — | +0% |
 | 20260722 | Odyssey Sims | PRA Over 7.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
-| 20260722 | Olivia Miles | PTS Over 17.5 @ 1.97 | FLIP UNDER(paper) | loss | +0% | +0.0 | +8% |
+| 20260722 | Olivia Miles | PTS Over 17.5 @ 1.97 | LINE-CUT FLIP · exp. base | loss | +0% | +0.0 | +8% |
 | 20260722 | Olivia Nelson-Ododa | PR Over 16.5 @ 1.8 | BOOK OVERSHOOT | loss | — | — | — |
 | 20260722 | Olivia Nelson-Ododa | PRA Over 21.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | — |
-| 20260722 | Paige Bueckers | PTS Over 20.5 @ 1.9 | FLIP UNDER | WIN | — | -1.0 | — |
+| 20260722 | Paige Bueckers | PTS Over 20.5 @ 1.9 | LINE-CUT FLIP · proven base | WIN | — | -1.0 | — |
 | 20260722 | Rae Burrell | PRA Over 22.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
-| 20260722 | Rae Burrell | PTS Over 14.5 @ 1.87 | FLIP UNDER(paper) | WIN | -1% | +0.0 | +0% |
+| 20260722 | Rae Burrell | PTS Over 14.5 @ 1.87 | LINE-CUT FLIP · exp. base | WIN | -1% | +0.0 | +0% |
 | 20260722 | Sabrina Ionescu | PTS Under 17.5 @ 1.83 | FTUNDER | loss | — | +1.0 | +5% |
 | 20260722 | Shakira Austin | PRA Over 27.5 @ 2.0 | BOOK OVERSHOOT | WIN | — | — | +0% |
-| 20260722 | Sonia Citron | PRA Over 21.5 @ 2.0 | FLIP UNDER | WIN | — | — | +0% |
+| 20260722 | Sonia Citron | PRA Over 21.5 @ 2.0 | LINE-CUT FLIP · proven base | WIN | — | — | +0% |
 | 20260722 | Sydney Taylor | PTS Under 16.5 @ 1.79 | FTUNDER | loss | — | — | -5% |
 | 20260728 | Aneesah Morrow | PTS Under 9.5 @ 2.0 | COLD/SHRINK/STINGY | loss | — | +1.0 | +3% |
 | 20260728 | Ariel Atkins | PRA Over 15.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
@@ -573,22 +573,22 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260728 | Olivia Nelson-Ododa | PRA Over 21.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260728 | Olivia Nelson-Ododa | PTS Under 11.5 @ 1.83 | FTUNDER | loss | — | +1.0 | -1% |
 | 20260728 | Rae Burrell | PRA Over 22.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
-| 20260728 | Rae Burrell | PTS Over 14.5 @ 1.8 | FLIP UNDER(paper) | WIN | — | — | +0% |
+| 20260728 | Rae Burrell | PTS Over 14.5 @ 1.8 | LINE-CUT FLIP · exp. base | WIN | — | — | +0% |
 | 20260728 | Sabrina Ionescu | PTS Under 18.5 @ 1.8 | FTUNDER | loss | -7% | +0.0 | -12% |
 | 20260728 | Shakira Austin | PRA Over 27.5 @ 1.8 | BOOK OVERSHOOT | loss | — | — | +0% |
-| 20260729 | Alyssa Thomas | PTS Over 13.5 @ 1.769 | FLIP UNDER(paper) | WIN | — | — | +0% |
+| 20260729 | Alyssa Thomas | PTS Over 13.5 @ 1.769 | LINE-CUT FLIP · exp. base | WIN | — | — | +0% |
 | 20260729 | Azzi Fudd | PTS Under 13.5 @ 1.833 | FTUNDER | loss | -6% | — | +0% |
 | 20260729 | Dewanna Bonner | PR Over 15.5 @ 2.0 | BOOK OVERSHOOT | WIN | — | — | +0% |
 | 20260729 | Jordin Canada | PTS Under 11.5 @ 1.87 | FTUNDER | WIN | -8% | — | +0% |
 | 20260729 | Monique Akoa Makani | PTS Under 9.5 @ 1.833 | FTUNDER | WIN | -6% | +0.0 | -9% |
 | 20260730 | Aneesah Morrow | PRA Over 22.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260730 | Breanna Stewart | PTS Over 20.5 @ 1.73 | BOOK OVERSHOOT | WIN | — | — | -6% |
-| 20260730 | Chelsea Gray | PTS Over 11.5 @ 1.8 | FLIP UNDER(paper) | WIN | -5% | +0.0 | +0% |
+| 20260730 | Chelsea Gray | PTS Over 11.5 @ 1.8 | LINE-CUT FLIP · exp. base | WIN | -5% | +0.0 | +0% |
 | 20260730 | Courtney Williams | PTS Under 11.5 @ 1.769 | COLD/SHRINK/STINGY | loss | -9% | +0.0 | +2% |
 | 20260730 | Diamond Miller | PRA Over 13.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260730 | Jonquel Jones | PTS Under 13.5 @ 1.85 | FTUNDER | WIN | -8% | +0.0 | -1% |
 | 20260730 | Kamilla Cardoso | PTS Under 13.5 @ 1.91 | FTUNDER | loss | — | — | -4% |
-| 20260730 | Kayla McBride | PTS Over 17.5 @ 1.83 | FLIP UNDER(paper) | loss | -8% | +0.0 | +0% |
+| 20260730 | Kayla McBride | PTS Over 17.5 @ 1.83 | LINE-CUT FLIP · exp. base | loss | -8% | +0.0 | +0% |
 | 20260730 | Leila Lacan | PTS Under 12.5 @ 1.83 | FTUNDER | WIN | -14% | +0.0 | +2% |
 | 20260730 | Marina Mabrey | PR Over 24.5 @ 1.73 | BOOK OVERSHOOT | loss | — | — | -4% |
 | 20260730 | Natasha Cloud | PTS Under 11.5 @ 1.769 | FTUNDER | WIN | -12% | +0.0 | -8% |
@@ -596,7 +596,7 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260730 | Olivia Miles | PTS Over 17.5 @ 1.73 | BOOK OVERSHOOT | loss | — | — | -2% |
 | 20260730 | Olivia Nelson-Ododa | PRA Over 21.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260730 | Olivia Nelson-Ododa | PTS Under 11.5 @ 1.83 | FTUNDER | loss | — | +0.0 | -2% |
-| 20260730 | Sabrina Ionescu | PTS Over 18.5 @ 1.78 | FLIP UNDER(paper) | loss | -12% | +0.0 | -1% |
+| 20260730 | Sabrina Ionescu | PTS Over 18.5 @ 1.78 | LINE-CUT FLIP · exp. base | loss | -12% | +0.0 | -1% |
 | 20260730 | Saniya Rivers | PRA Over 8.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260730 | Sydney Taylor | PTS Under 17.5 @ 2.0 | FTUNDER | WIN | -2% | +0.0 | +5% |
 | 20260731 | Alanna Smith | PRA Over 6.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
@@ -607,33 +607,33 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260731 | Bridget Carleton | PTS Under 13.5 @ 1.77 | FTUNDER | loss | — | +1.0 | — |
 | 20260731 | Carla Leite | PTS Under 15.5 @ 1.79 | FTUNDER | loss | -10% | +0.0 | -1% |
 | 20260731 | Flau'Jae Johnson | PA Over 16.5 @ 1.73 | BOOK OVERSHOOT | loss | — | — | +0% |
-| 20260731 | Jessica Shepard | PR Over 26.5 @ 2.0 | FLIP UNDER | loss | — | — | +0% |
+| 20260731 | Jessica Shepard | PR Over 26.5 @ 2.0 | LINE-CUT FLIP · proven base | loss | — | — | +0% |
 | 20260731 | Jordin Canada | PTS Under 10.5 @ 1.8 | FTUNDER | WIN | — | — | -2% |
 | 20260731 | Kelsey Mitchell | PTS Over 22.5 @ 2.0 | BOOK OVERSHOOT | WIN | -3% | +0.0 | +5% |
-| 20260731 | Megan DiLeo | PTS Over 13.5 @ 1.8 | FLIP UNDER(paper) | loss | — | — | +3% |
+| 20260731 | Megan DiLeo | PTS Over 13.5 @ 1.8 | LINE-CUT FLIP · exp. base | loss | — | — | +3% |
 | 20260731 | Paige Bueckers | PTS Over 19.5 @ 1.73 | BOOK OVERSHOOT | WIN | — | — | -2% |
 | 20260731 | Shakira Austin | PR Over 24.5 @ 1.73 | BOOK OVERSHOOT | WIN | — | — | +0% |
 | 20260731 | Sonia Citron | PA Under 19.5 @ 1.91 | COLD/SHRINK/STINGY | loss | — | — | -4% |
 | 20260801 | Alyssa Thomas | PRA Over 31.5 @ 1.83 | HOT OVER | loss | — | -1.0 | -0% |
 | 20260801 | Breanna Stewart | PR Over 30.5 @ 1.8 | BOOK OVERSHOOT | loss | — | — | +0% |
-| 20260801 | Chelsea Gray | PTS Over 12.5 @ 1.83 | FLIP UNDER(paper) | loss | -13% | +0.0 | -6% |
+| 20260801 | Chelsea Gray | PTS Over 12.5 @ 1.83 | LINE-CUT FLIP · exp. base | loss | -13% | +0.0 | -6% |
 | 20260801 | Jonquel Jones | PTS Under 13.5 @ 2.0 | FTUNDER | loss | +0% | +0.0 | +11% |
 | 20260801 | Kahleah Copper | PTS Under 21.5 @ 1.82 | FTUNDER | loss | -13% | — | -0% |
 | 20260801 | Kamilla Cardoso | PTS Under 13.5 @ 1.8 | FTUNDER | WIN | — | — | -4% |
 | 20260801 | Monique Akoa Makani | PTS Under 8.5 @ 2.0 | FTUNDER | WIN | -10% | — | — |
-| 20260801 | Natasha Cloud | PTS Over 8.5 @ 1.78 | FLIP UNDER(paper) | WIN | — | — | +0% |
-| 20260801 | Sabrina Ionescu | PTS Over 19.5 @ 1.73 | FLIP UNDER(paper) | WIN | -20% | +0.0 | +1% |
+| 20260801 | Natasha Cloud | PTS Over 8.5 @ 1.78 | LINE-CUT FLIP · exp. base | WIN | — | — | +0% |
+| 20260801 | Sabrina Ionescu | PTS Over 19.5 @ 1.73 | LINE-CUT FLIP · exp. base | WIN | -20% | +0.0 | +1% |
 | 20260801 | Sydney Taylor | PTS Under 16.5 @ 1.8 | FTUNDER | loss | -4% | +0.0 | -3% |
 | 20260802 | Ariel Atkins | PRA Over 15.5 @ 1.8 | STAR-OUT CASCADE | WIN | — | — | +2% |
 | 20260802 | Ariel Atkins | PTS Under 11.5 @ 1.95 | FTUNDER | loss | — | +1.0 | +5% |
-| 20260802 | Arike Ogunbowale | PTS Over 15.5 @ 1.909 | FLIP UNDER(paper) | loss | -7% | — | -0% |
+| 20260802 | Arike Ogunbowale | PTS Over 15.5 @ 1.909 | LINE-CUT FLIP · exp. base | loss | -7% | — | -0% |
 | 20260802 | Azzi Fudd | PTS Under 12.5 @ 2.0 | FTUNDER | WIN | -7% | — | +0% |
 | 20260802 | Bridget Carleton | PRA Over 19.5 @ 1.83 | HOT OVER | WIN | — | — | -2% |
 | 20260802 | Carla Leite | PTS Under 15.5 @ 1.8 | FTUNDER | loss | — | — | -8% |
 | 20260802 | Charlisse Leger-Walker | PRA Over 13.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
-| 20260802 | Courtney Williams | PRA Over 20.5 @ 1.769 | FLIP UNDER | WIN | — | +0.0 | +0% |
+| 20260802 | Courtney Williams | PRA Over 20.5 @ 1.769 | LINE-CUT FLIP · proven base | WIN | — | +0.0 | +0% |
 | 20260802 | Dearica Hamby | PRA Over 23.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
-| 20260802 | Dearica Hamby | PTS Over 14.5 @ 1.833 | FLIP UNDER(paper) | WIN | — | — | +0% |
+| 20260802 | Dearica Hamby | PTS Over 14.5 @ 1.833 | LINE-CUT FLIP · exp. base | WIN | — | — | +0% |
 | 20260802 | Diamond Miller | PRA Over 14.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260802 | Diamond Miller | PTS Over 8.5 @ 1.769 | BOOK OVERSHOOT | WIN | — | — | +0% |
 | 20260802 | Erica Wheeler | PRA Over 18.5 @ 1.91 | STAR-OUT CASCADE | WIN | — | — | -4% |
@@ -641,26 +641,26 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260802 | Isabelle Harrison | PTS Under 12.5 @ 1.85 | FTUNDER | WIN | -10% | +0.0 | +0% |
 | 20260802 | Janelle Salaun | PTS Under 12.5 @ 1.68 | FTUNDER | loss | -18% | +0.0 | +0% |
 | 20260802 | Jessica Shepard | PRA Over 31.5 @ 1.83 | BOOK OVERSHOOT | loss | — | — | +6% |
-| 20260802 | Julie Allemand | PA Over 12.5 @ 1.91 | FLIP UNDER | WIN | — | +1.5 | +0% |
-| 20260802 | Kayla McBride | PTS Over 17.5 @ 1.909 | FLIP UNDER(paper) | loss | — | — | +3% |
-| 20260802 | Kelsey Mitchell | PTS Over 22.5 @ 1.94 | FLIP UNDER(paper) | WIN | -3% | +0.0 | +6% |
+| 20260802 | Julie Allemand | PA Over 12.5 @ 1.91 | LINE-CUT FLIP · proven base | WIN | — | +1.5 | +0% |
+| 20260802 | Kayla McBride | PTS Over 17.5 @ 1.909 | LINE-CUT FLIP · exp. base | loss | — | — | +3% |
+| 20260802 | Kelsey Mitchell | PTS Over 22.5 @ 1.94 | LINE-CUT FLIP · exp. base | WIN | -3% | +0.0 | +6% |
 | 20260802 | Kiki Rice | PRA Over 22.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260802 | Laura Juskaite | PRA Over 12.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260802 | Maria Conde | PRA Over 20.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
 | 20260802 | Natasha Howard | PRA Under 21.5 @ 1.83 | COLD/SHRINK/STINGY | loss | — | — | -2% |
 | 20260802 | Nneka Ogwumike | PRA Over 27.5 @ 1.73 | BOOK OVERSHOOT | WIN | — | — | -4% |
-| 20260802 | Nneka Ogwumike | PTS Over 16.5 @ 1.87 | FLIP UNDER(paper) | WIN | — | — | +0% |
-| 20260802 | Nyara Sabally | PTS Over 10.5 @ 1.92 | FLIP UNDER(paper) | WIN | -6% | +0.0 | +10% |
+| 20260802 | Nneka Ogwumike | PTS Over 16.5 @ 1.87 | LINE-CUT FLIP · exp. base | WIN | — | — | +0% |
+| 20260802 | Nyara Sabally | PTS Over 10.5 @ 1.92 | LINE-CUT FLIP · exp. base | WIN | -6% | +0.0 | +10% |
 | 20260802 | Olivia Miles | PTS Under 18.5 @ 1.833 | FTUNDER | loss | -8% | +0.0 | -6% |
 | 20260802 | Olivia Nelson-Ododa | PRA Over 21.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
 | 20260802 | Olivia Nelson-Ododa | PTS Under 11.5 @ 1.833 | FTUNDER | WIN | — | — | +0% |
 | 20260802 | Paige Bueckers | PTS Under 22.5 @ 1.85 | FTUNDER | WIN | — | +1.0 | +0% |
 | 20260802 | Rae Burrell | PA Over 16.5 @ 1.73 | BOOK OVERSHOOT | loss | — | — | -2% |
 | 20260802 | Veronica Burton | PRA Over 21.5 @ 1.87 | HOT OVER | WIN | — | — | +2% |
-| 20260803 | Alyssa Thomas | PTS Over 14.5 @ 1.73 | FLIP UNDER | WIN | — | — | +0% |
+| 20260803 | Alyssa Thomas | PTS Over 14.5 @ 1.73 | LINE-CUT FLIP · proven base | WIN | — | — | +0% |
 | 20260803 | Angel Reese | PRA Over 28.5 @ 1.73 | BOOK OVERSHOOT | WIN | — | — | +0% |
 | 20260803 | Breanna Stewart | PRA Over 34.5 @ 1.87 | BOOK OVERSHOOT | WIN | — | — | +0% |
-| 20260803 | Chelsea Gray | PTS Over 12.5 @ 1.86 | FLIP UNDER(paper) | WIN | — | -1.0 | +0% |
+| 20260803 | Chelsea Gray | PTS Over 12.5 @ 1.86 | LINE-CUT FLIP · exp. base | WIN | — | -1.0 | +0% |
 | 20260803 | Dominique Malonga | PRA Over 24.5 @ 1.83 | BOOK OVERSHOOT | loss | — | — | -0% |
 | 20260803 | Flau'Jae Johnson | PA Over 16.5 @ 1.73 | BOOK OVERSHOOT | WIN | — | — | — |
 | 20260803 | Jackie Young | PTS Under 19.5 @ 1.87 | FTUNDER | loss | — | — | +0% |
@@ -676,15 +676,15 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260803 | Sydney Taylor | PTS Under 17.5 @ 1.83 | FTUNDER | WIN | -5% | +0.0 | -4% |
 | 20260804 | Aneesah Morrow | PRA Over 22.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
 | 20260804 | Janelle Salaun | PTS Under 12.5 @ 1.95 | FTUNDER | loss | -4% | +0.0 | +0% |
-| 20260804 | Julie Allemand | PRA Over 15.5 @ 2.0 | FLIP UNDER | WIN | — | — | +0% |
+| 20260804 | Julie Allemand | PRA Over 15.5 @ 2.0 | LINE-CUT FLIP · proven base | WIN | — | — | +0% |
 | 20260804 | Kayla Thornton | PTS Under 8.5 @ 1.91 | FTUNDER | loss | -8% | +0.0 | +4% |
 | 20260804 | Kiki Rice | PRA Over 23.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
 | 20260804 | Laura Juskaite | PRA Over 17.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
 | 20260804 | Maria Conde | PRA Over 19.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260804 | Maria Conde | RA Over 6.5 @ 2.1 | BOOK OVERSHOOT | WIN | — | — | +5% |
 | 20260804 | Nyara Sabally | PRA Over 18.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
-| 20260804 | Nyara Sabally | PTS Over 10.5 @ 1.91 | FLIP UNDER(paper) | WIN | -2% | +0.0 | +0% |
-| 20260805 | Alyssa Thomas | PTS Over 14.5 @ 2.0 | FLIP UNDER(paper) | WIN | — | — | +2% |
+| 20260804 | Nyara Sabally | PTS Over 10.5 @ 1.91 | LINE-CUT FLIP · exp. base | WIN | -2% | +0.0 | +0% |
+| 20260805 | Alyssa Thomas | PTS Over 14.5 @ 2.0 | LINE-CUT FLIP · exp. base | WIN | — | — | +2% |
 | 20260805 | Arike Ogunbowale | PTS Over 14.5 @ 2.0 | BOOK OVERSHOOT | WIN | — | — | +2% |
 | 20260805 | Breanna Stewart | PR Over 30.5 @ 1.8 | BOOK OVERSHOOT | WIN | — | — | — |
 | 20260805 | Courtney Vandersloot | PRA Over 15.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
@@ -698,7 +698,7 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260805 | Natisha Hiedeman | PRA Over 25.5 @ 2.0 | HOT OVER | loss | — | — | +0% |
 | 20260805 | Rae Burrell | PA Over 18.5 @ 2.0 | BOOK OVERSHOOT | loss | — | — | +0% |
 | 20260805 | Rhyne Howard | PTS Under 16.5 @ 1.83 | FTUNDER | loss | — | — | -2% |
-| 20260805 | Sabrina Ionescu | PTS Over 19.5 @ 1.83 | FLIP UNDER(paper) | loss | — | — | -2% |
+| 20260805 | Sabrina Ionescu | PTS Over 19.5 @ 1.83 | LINE-CUT FLIP · exp. base | loss | — | — | -2% |
 | 20260805 | Shakira Austin | PR Over 25.5 @ 1.8 | BOOK OVERSHOOT | WIN | — | — | +0% |
 | 20260806 | Aneesah Morrow | PRA Over 22.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
 | 20260806 | Kelsey Mitchell | PA Over 25.5 @ 1.87 | BOOK OVERSHOOT | WIN | — | — | +0% |
@@ -716,3 +716,15 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260807 | Olivia Nelson-Ododa | PRA Over 21.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
 | 20260807 | Saniya Rivers | PRA Over 7.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260807 | Shakira Austin | PR Over 26.5 @ 1.73 | BOOK OVERSHOOT | WIN | — | — | +0% |
+| 20260808 | Aliyah Boston | PTS Under 16.5 @ 1.85 | FTUNDER | WIN | — | -1.0 | — |
+| 20260808 | Azura Stevens | PTS Under 13.5 @ 1.909 | FTUNDER | WIN | — | +1.0 | -2% |
+| 20260808 | Chelsea Gray | PTS Over 12.5 @ 1.87 | LINE-CUT FLIP · exp. base | loss | -8% | +0.0 | +7% |
+| 20260808 | Courtney Vandersloot | PRA Over 17.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
+| 20260808 | Jackie Young | PRA Over 30.5 @ 2.0 | HOT OVER | loss | — | -1.0 | +0% |
+| 20260808 | Kamilla Cardoso | PRA Over 24.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | +2.0 | +0% |
+| 20260808 | Kamilla Cardoso | PTS Under 15.5 @ 1.85 | FTUNDER | WIN | -7% | +0.0 | -4% |
+| 20260808 | Kayla McBride | PTS Over 15.5 @ 1.95 | LINE-CUT FLIP · exp. base | loss | -8% | +0.0 | +0% |
+| 20260808 | Kelsey Mitchell | PR Over 26.5 @ 1.8 | BOOK OVERSHOOT | WIN | — | — | +20% |
+| 20260808 | Natasha Cloud | PRA Over 19.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
+| 20260808 | Natasha Cloud | PTS Under 13.5 @ 1.77 | FTUNDER | loss | — | +1.0 | +2% |
+| 20260808 | Natasha Howard | PTS Under 11.5 @ 1.909 | FTUNDER | loss | -11% | +0.0 | +0% |
