@@ -10,7 +10,7 @@ _**sharp-odds** = vs Pinnacle's vig-free fair price (TRUE edge test) · **sharp-
   ★ SHARP ODDS-CLV: -6.7% | beat fair 0/7 (0%)  ← TRUE edge (vs Pinnacle fair price)
   SHARP LINE-CLV : +0.21 pts | n=12  ← better number than the sharp
   self ODDS-CLV  : -0.3% | beat 8/30 (27%)  (1xbet's own close = weak)
-  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 67/119 (+3.9u) · FTUNDER 111/242 (-36.1u) · HOT OVER 17/32 (-0.1u) · LINE-CUT FLIP · exp. base 44/73 (+8.7u) · LINE-CUT FLIP · proven base 22/36 (+4.9u) · STAR-OUT CASCADE 93/161 (+2.6u) · starout 4/11 (-3.6u)
+  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 67/119 (+3.9u) · FTUNDER 113/245 (-35.4u) · HOT OVER 17/32 (-0.1u) · LINE-CUT FLIP · exp. base 44/73 (+8.7u) · LINE-CUT FLIP · proven base 22/36 (+4.9u) · STAR-OUT CASCADE 93/161 (+2.6u) · starout 4/11 (-3.6u)
   VERDICT : ⚠️ NEUTRAL self CLV — winning on outcomes, not beating the line. Unproven; keep collecting.
   by tier: SOLID 5/12 (-2.3u) · STRONG 5/14 (-4.9u) · THIN 3/6 (-0.1u)
   by market: pa Under 1/3 (-1.0u) · pr Under 1/3 (-1.0u) · pra Under 2/9 (-5.4u) · pts Under 9/16 (+1.1u) · ra Under 0/1 (-1.0u)
@@ -718,8 +718,11 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260807 | Shakira Austin | PR Over 26.5 @ 1.73 | BOOK OVERSHOOT | WIN | — | — | +0% |
 | 20260808 | Aliyah Boston | PTS Under 16.5 @ 1.85 | FTUNDER | WIN | — | -1.0 | — |
 | 20260808 | Azura Stevens | PTS Under 13.5 @ 1.909 | FTUNDER | WIN | — | +1.0 | -2% |
+| 20260808 | Carla Leite | PTS Under 17.5 @ 1.833 | FTUNDER | WIN | -10% | +0.0 | -11% |
 | 20260808 | Chelsea Gray | PTS Over 12.5 @ 1.87 | LINE-CUT FLIP · exp. base | loss | -8% | +0.0 | +7% |
 | 20260808 | Courtney Vandersloot | PRA Over 17.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
+| 20260808 | Dominique Malonga | PTS Under 17.5 @ 1.769 | FTUNDER | loss | — | -1.0 | +0% |
+| 20260808 | Flau'jae Johnson | PTS Under 15.5 @ 1.833 | FTUNDER | WIN | — | +1.0 | -2% |
 | 20260808 | Jackie Young | PRA Over 30.5 @ 2.0 | HOT OVER | loss | — | -1.0 | +0% |
 | 20260808 | Kamilla Cardoso | PRA Over 24.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | +2.0 | +0% |
 | 20260808 | Kamilla Cardoso | PTS Under 15.5 @ 1.85 | FTUNDER | WIN | -7% | +0.0 | -4% |
