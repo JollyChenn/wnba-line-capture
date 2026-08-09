@@ -1971,18 +1971,12 @@ pick_date,game_id,player,team,opp,market,anchor,signals,fair_p,fair_odds,proj,sd
 2026-08-08,401857131,Ariel Atkins,Los Angeles Sparks,Golden State Valkyries,pts_under,10.5,steady,0.563,1.78,9.9,3.69
 2026-08-08,401857131,Rae Burrell,Los Angeles Sparks,Golden State Valkyries,pts_under,16.5,steady,0.563,1.78,15.6,5.5
 2026-08-08,401857131,Janelle Salaun,Golden State Valkyries,Los Angeles Sparks,pts_under,12.5,steady,0.563,1.78,11.5,6.57
-2026-08-09,401857128,A'ja Wilson,Las Vegas Aces,New York Liberty,pra_over,38.5,expand+leaky,0.58,1.72,41.4,11.73
-2026-08-09,401857128,Jackie Young,Las Vegas Aces,New York Liberty,pra_over,34.5,expand+leaky,0.58,1.72,37.0,12.15
 2026-08-09,401857128,NaLyssa Smith,Las Vegas Aces,New York Liberty,pra_over,19.5,hot+expand+leaky,0.62,1.61,22.0,6.66
-2026-08-09,401857128,Chelsea Gray,Las Vegas Aces,New York Liberty,pts_under,14.5,ftdrought,0.589,1.7,13.5,4.49
 2026-08-09,401857128,Jewell Loyd,Las Vegas Aces,New York Liberty,pts_under,8.5,ftdrought,0.589,1.7,7.8,3.0
 2026-08-09,401857128,Breanna Stewart,New York Liberty,Las Vegas Aces,pts_under,24.5,steady,0.563,1.78,23.2,7.89
 2026-08-09,401857128,Jonquel Jones,New York Liberty,Las Vegas Aces,pts_under,13.5,steady,0.563,1.78,12.8,4.5
-2026-08-09,401857128,A'ja Wilson,Las Vegas Aces,New York Liberty,pts_under,25.5,steady,0.563,1.78,24.2,8.42
-2026-08-09,401857128,Jackie Young,Las Vegas Aces,New York Liberty,pts_under,23.5,steady,0.563,1.78,22.3,7.61
 2026-08-09,401857128,Sabrina Ionescu,New York Liberty,Las Vegas Aces,pts_under,22.5,steady,0.563,1.78,21.5,6.31
 2026-08-09,401857128,NaLyssa Smith,Las Vegas Aces,New York Liberty,pts_under,13.5,steady,0.563,1.78,12.7,4.84
-2026-08-09,401857128,Jackie Young,Las Vegas Aces,New York Liberty,ast_over,5.5,usgshock,0.591,1.69,5.9,3.81
 2026-08-09,401857129,Kelsey Plum,Phoenix Mercury,Washington Mystics,pts_under,19.5,declining+stingy,0.642,1.56,15.6,10.81
 2026-08-09,401857129,Kelsey Plum,Phoenix Mercury,Washington Mystics,pr_under,22.5,declining+stingy,0.59,1.69,20.0,10.95
 2026-08-09,401857129,Kelsey Plum,Phoenix Mercury,Washington Mystics,pa_under,25.5,declining+stingy,0.61,1.64,22.1,12.2

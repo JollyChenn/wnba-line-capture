@@ -2,7 +2,7 @@
 
 _Stingy-D threshold (trailing-10 allowed, bottom quartile): 89_
 
-_🩹 OUT/doubtful (excluded from ALL picks): Alysha Clark, Ashlon Jackson, Brittney Sykes, Cheyenne Parker-Tyus, Damiris Dantas, Indya Nivar, Jovana Nogic, Karlie Samuelson, Katie Lou Samuelson, Leonie Fiebich, Liatu King, Luisa Geiselsoder, Raegan Beers, Sarah Ashlee Barker, Satou Sabally, Skylar Diggins, Sydney Taylor, Te-Hina Paopao, Teja Oblak_
+_🩹 OUT/doubtful (excluded from ALL picks): A'ja Wilson, Alysha Clark, Ashlon Jackson, Brittney Sykes, Chance Gray, Chelsea Gray, Cheyenne Parker-Tyus, Damiris Dantas, Indya Nivar, Jackie Young, Jovana Nogic, Karlie Samuelson, Katie Lou Samuelson, Leonie Fiebich, Liatu King, Luisa Geiselsoder, Raegan Beers, Sarah Ashlee Barker, Satou Sabally, Skylar Diggins, Sydney Taylor, Te-Hina Paopao, Teja Oblak_
 
 ## 💰 REAL-MONEY — UNDER (cold/shrink + stingy · pts/PR/PA/PRA · flat 1u)
 
@@ -18,8 +18,6 @@ _🩹 OUT/doubtful (excluded from ALL picks): Alysha Clark, Ashlon Jackson, Brit
 
 ## 🧪 PAPER — hot-PRA OVERS (capture for CLV; NOT real money)
 
-- **A'ja Wilson** (Las Vegas Aces, Las Vegas Aces @ New York Liberty): **PRA OVER** median~39→proj~41.4 fair[41.5=2.02 40.5=1.89 39.5=1.78] · [expand+leaky] · last5 mins [36 34 30 37 33] oppDef 97 · OVER value zone = book line between median and proj (MAX edge near median)
-- **Jackie Young** (Las Vegas Aces, Las Vegas Aces @ New York Liberty): **PRA OVER** median~34→proj~37.0 fair[37.0=2.01 36.0=1.88 35.0=1.77] · [expand+leaky] · last5 mins [36 33 34 35 33] oppDef 97 · OVER value zone = book line between median and proj (MAX edge near median)
 - **NaLyssa Smith** (Las Vegas Aces, Las Vegas Aces @ New York Liberty): **PRA OVER** median~20→proj~22.0 fair[22.0=1.99 21.0=1.78 20.0=1.61] · [hot+expand+leaky] · last5 mins [19 31 31 37 24] oppDef 97 · OVER value zone = book line between median and proj (MAX edge near median)
 - **Rhyne Howard** (Atlanta Dream, Toronto Tempo @ Atlanta Dream): **PRA OVER** median~19→proj~21.0 fair[21.0=2.01 20.0=1.79 19.0=1.61] · [hot+leaky] · last5 mins [32 35 33 33 31] oppDef 98 · OVER value zone = book line between median and proj (MAX edge near median)
 - **Angel Reese** (Atlanta Dream, Toronto Tempo @ Atlanta Dream): **PRA OVER** median~34→proj~35.7 fair[35.5=1.97 34.5=1.84 33.5=1.72] · [expand+leaky] · last5 mins [34 38 27 32 33] oppDef 98 · OVER value zone = book line between median and proj (MAX edge near median)
@@ -27,7 +25,7 @@ _🩹 OUT/doubtful (excluded from ALL picks): Alysha Clark, Ashlon Jackson, Brit
 
 ## CASCADE contingencies — fire ONLY on scratch news (PRA OVER rank-3-6, flat 1u)
 
-- Las Vegas Aces: if **A'ja Wilson** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Chelsea Gray OVER 23.5 PRA, NaLyssa Smith OVER 19.5 PRA, Jewell Loyd OVER 12.5 PRA, Chennedy Carter OVER 9.5 PRA
+- Las Vegas Aces: if **A'ja Wilson** OUT -> (fair 1.75, bet if 1xbet over > 1.75) NaLyssa Smith OVER 19.5 PRA, Jewell Loyd OVER 12.5 PRA, Chennedy Carter OVER 9.5 PRA
 - New York Liberty: if **Breanna Stewart** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Jonquel Jones OVER 25.5 PRA, Pauline Astier OVER 14.5 PRA
 - Phoenix Mercury: if **Kahleah Copper** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Kelsey Plum OVER 28.5 PRA, DeWanna Bonner OVER 24.5 PRA, Noemie Brochant OVER 6.5 PRA
 - Washington Mystics: if **Shakira Austin** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Sonia Citron OVER 18.5 PRA, Cotie McMahon OVER 11.5 PRA, Michaela Onyenwere OVER 12.5 PRA, Georgia Amoore OVER 11.5 PRA
@@ -43,15 +41,11 @@ _🩹 OUT/doubtful (excluded from ALL picks): Alysha Clark, Ashlon Jackson, Brit
 ## 🧪 EXPERIMENTAL forward-test — PAPER ONLY (volume brute-force winners; log CLV, do NOT bet real until +CLV)
 _ft_volume_drought 58.9% / steady+streak 58.6% OOS vs a synthetic line — proves the side, NOT that it beats 1xbet. Tracked separately until forward CLV confirms._
 
-- **Chelsea Gray** (Las Vegas Aces, Las Vegas Aces @ New York Liberty): PTS UNDER ~14.5 [ftdrought · PAPER] median~14→proj~13.5 · last5 mins [34 34 30 40 36]
 - **Jewell Loyd** (Las Vegas Aces, Las Vegas Aces @ New York Liberty): PTS UNDER ~8.5 [ftdrought · PAPER] median~8→proj~7.8 · last5 mins [27 25 19 31 30]
 - **Breanna Stewart** (New York Liberty, Las Vegas Aces @ New York Liberty): PTS UNDER ~24.5 [steady · PAPER] median~25→proj~23.2 · last5 mins [37 37 34 31 33]
 - **Jonquel Jones** (New York Liberty, Las Vegas Aces @ New York Liberty): PTS UNDER ~13.5 [steady · PAPER] median~14→proj~12.8 · last5 mins [24 28 28 30 30]
-- **A'ja Wilson** (Las Vegas Aces, Las Vegas Aces @ New York Liberty): PTS UNDER ~25.5 [steady · PAPER] median~26→proj~24.2 · last5 mins [36 34 30 37 33]
-- **Jackie Young** (Las Vegas Aces, Las Vegas Aces @ New York Liberty): PTS UNDER ~23.5 [steady · PAPER] median~24→proj~22.3 · last5 mins [36 33 34 35 33]
 - **Sabrina Ionescu** (New York Liberty, Las Vegas Aces @ New York Liberty): PTS UNDER ~22.5 [steady · PAPER] median~23→proj~21.5 · last5 mins [36 29 35 29 31]
 - **NaLyssa Smith** (Las Vegas Aces, Las Vegas Aces @ New York Liberty): PTS UNDER ~13.5 [steady · PAPER] median~14→proj~12.7 · last5 mins [19 31 31 37 24]
-- **Jackie Young** (Las Vegas Aces, Las Vegas Aces @ New York Liberty): ASSISTS OVER ~5.5 [usgshock · PAPER] usg 18->22 · med~6->proj~5.9
 - **Alyssa Thomas** (Phoenix Mercury, Phoenix Mercury @ Washington Mystics): PTS UNDER ~16.5 [steady · PAPER] median~17→proj~15.6 · last5 mins [38 36 38 38 35]
 - **Kahleah Copper** (Phoenix Mercury, Phoenix Mercury @ Washington Mystics): PTS UNDER ~20.5 [steady · PAPER] median~21→proj~19.3 · last5 mins [34 37 34 36 34]
 - **Shakira Austin** (Washington Mystics, Phoenix Mercury @ Washington Mystics): PTS UNDER ~19.5 [steady · PAPER] median~20→proj~18.7 · last5 mins [29 32 35 36 27]
