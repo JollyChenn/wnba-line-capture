@@ -1,7 +1,7 @@
 # alert_bets.py - Discord alerts for the drift-cleared live menu.
 # ---------------------------------------------------------------------------------------------
 # RULE (2026-08-08): only ever alert on bets the drift filter has ACTUALLY VETTED.
-# A bet needs MIN_CAPS price checks behind it before its verdict means anything. After an outage
+# A bet needs a real WATCH WINDOW (>=3h, or >=4 checks) behind it before its verdict means anything. After an outage
 # the board restarts with ~2 captures and every move_pct reads 0.0% - that is "no data", NOT
 # "all clear", and sending it looks identical to a genuine clean sweep. On a normal slate ~86% of
 # prices move >0.5% (median 2.4%), so a wall of zeros is the fingerprint of a blind filter.
@@ -24,7 +24,9 @@ except Exception: pass
 D = os.path.dirname(os.path.abspath(__file__))
 LIVE = ("flip", "flip_paper", "overshoot", "cascade")
 STAGES = [("main", 8.0), ("mid", 4.0), ("close", 2.0)]     # hours before FIRST tip
-MIN_CAPS = 4          # price checks needed before a drift verdict is worth acting on
+MIN_CAPS = 4          # checks that vet a bet on their own, regardless of span
+MIN_CAPS_ABS = 2      # never vet on a single observation - that is not a "move", it is a price
+MIN_SPAN_H = 3.0      # hours the price must have been watchable for the read to mean anything
 LAST_CALL = 2.0       # if still blind by here, send the one "sitting out" note
 STATE = os.path.join(D, "alert_state.json")
 
@@ -49,9 +51,21 @@ def caps(r):
     try: return int(float(r.get("captures") or 0))
     except Exception: return 0
 
+def span(r):
+    try: return float(r.get("span_h") or 0)
+    except Exception: return 0.0
+
 def vetted(rows):
-    """Bets with a real drift READ behind them - enough price checks, and not a brand-new line."""
-    return [r for r in rows if caps(r) >= MIN_CAPS and "NO READ" not in r.get("confidence", "")]
+    """Bets whose drift read is actually meaningful.
+
+    The test is TIME, not tally. 4 captures 20 minutes apart say nothing; 3 spread over 4 hours are a
+    real chance for the book to reprice. A pure count>=4 rule also silenced whole slates - on
+    2026-08-06 not one bet reached 4 checks even at T-2h, so you would have got nothing all night for
+    no good reason. Require a real window AND at least a couple of observations in it."""
+    return [r for r in rows
+            if "NO READ" not in r.get("confidence", "")
+            and caps(r) >= MIN_CAPS_ABS
+            and (span(r) >= MIN_SPAN_H or caps(r) >= MIN_CAPS)]
 
 # CONVICTION TIERS. cascade is the weakest signal on the menu, but it is POSITIVE: +3.6% ROI,
 # +5.4u over n=151, and IMPROVING (1st half -1.8%, 2nd half +8.9%). Cutting it raises the menu's
@@ -64,7 +78,7 @@ HALF_STAKE = {"cascade"}
 def stake(r): return "½u" if r.get("src") in HALF_STAKE else "1u"
 
 PING_COLS = ["sent_utc", "stage", "date", "player", "market", "side", "line",
-             "odds", "stake", "src", "move_pct", "captures", "confidence", "pulled_utc"]
+             "odds", "stake", "src", "move_pct", "captures", "span_h", "confidence", "pulled_utc"]
 
 def log_pinged(rows, stage, slate):
     """PERMANENT RECORD of what Discord actually told you to bet.
@@ -80,7 +94,7 @@ def log_pinged(rows, stage, slate):
             seen.add((r["date"], r["player"], r["market"], r["side"], r["line"]))
     new = [[datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), stage, slate,
             r["player"], r["market"], r["side"], r["line"], r["now_odds"], stake(r), r["src"],
-            r["move_pct"], caps(r), r.get("confidence", ""), ""]
+            r["move_pct"], caps(r), span(r), r.get("confidence", ""), ""]
            for r in rows if (slate, r["player"], r["market"], r["side"], r["line"]) not in seen]
     if not new: return 0
     isnew = not os.path.exists(p)
@@ -120,7 +134,8 @@ def fmt(r):
     flag = "🟢" if ("93" in c or "81" in c) else "⚪"
     lm = f" ⇢line {r['line_moved']}" if r.get("line_moved") else ""
     return (f"{flag} **{r['player']}** {r['market'].upper()} {r['side']} {r['line']} @ **{r['now_odds']}**"
-            f"  ·  **{stake(r)}**  ·  drift {r['move_pct']}% over {caps(r)} checks  ·  {r['src']}{lm}")
+            f"  ·  **{stake(r)}**  ·  drift {r['move_pct']}% over {caps(r)} checks / {span(r):.1f}h"
+            f"  ·  {r['src']}{lm}")
 
 def main():
     # TEST MODE: `ALERT_TEST=1` sends a proof-of-life message immediately, ignoring the timing gate.
