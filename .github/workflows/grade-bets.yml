@@ -53,6 +53,8 @@ jobs:
         run: python build_dashboard.py || true
       - name: Update signal filter report (forward CLV/overshoot tracker)
         run: python signal_report.py || true
+      - name: STRATEGY AUDIT (fails the run if a filter rule regresses)
+        run: python audit_strategy.py
       - name: Commit track record
         run: |
           git config user.name "wnba-grade-bot"
