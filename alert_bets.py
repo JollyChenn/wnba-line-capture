@@ -188,6 +188,58 @@ def main():
     ok = vetted(bet)                      # <- the ONLY rows we are ever willing to alert on
     cur_ids = {bet_id(r) for r in ok}
 
+    # ---- PER-GAME LAST CALL --------------------------------------------------------------------
+    # Every slate stage keys off the FIRST tip, but a night spans hours of them. On 2026-08-09 the
+    # T-1h call fired at 22:30 WIB for the 23:30 game and the 02:00 / 02:30 / 06:00 games got nothing
+    # at all - their bets were quoted 4-7h before they tipped and never confirmed. So each GAME now
+    # gets its own last call an hour before its own tip, listing only that game's bets.
+    tip_of = {}                                     # player(lower) -> that game's tip
+    gname = {}                                      # player(lower) -> "AWY@HOM" for the header
+    try:
+        team_of = {}
+        _gd = {r.get("game_id"): r.get("date", "") for r in csv.DictReader(
+            open(os.path.join(D, "data", "games_2026.csv"), encoding="utf-8"))}
+        for r in csv.DictReader(open(os.path.join(D, "data", "box_2026.csv"), encoding="utf-8")):
+            pl, tm, dd = (r.get("player") or "").lower(), r.get("team") or "", _gd.get(r.get("game_id"), "")
+            if pl and tm and (pl not in team_of or dd >= team_of[pl][0]):
+                team_of[pl] = (dd, tm)              # keep the LATEST team (handles mid-season moves)
+        for ev in j_events:
+            comp = (ev.get("competitions") or [{}])[0]
+            if ((comp.get("status") or {}).get("type") or {}).get("state") != "pre": continue
+            t = datetime.datetime.fromisoformat(ev["date"].replace("Z", "+00:00"))
+            abbrs = {(c.get("team") or {}).get("abbreviation") for c in comp.get("competitors", [])}
+            label = "@".join(sorted(a for a in abbrs if a))
+            for pl, (_dd, tm) in team_of.items():
+                if tm in abbrs: tip_of[pl] = t; gname[pl] = label
+    except Exception as e:
+        print("game map failed (per-game calls disabled):", e)
+
+    gdone = st.setdefault("game_done", [])
+    if st.get("sent_full"):                          # only after you have seen the slate list
+        for label in sorted({gname.get(r["player"].lower(), "") for r in ok} - {""}):
+            if label in gdone: continue
+            mine = [r for r in ok if gname.get(r["player"].lower()) == label]
+            gt = min(tip_of[r["player"].lower()] for r in mine)
+            gh = (gt - now).total_seconds()/3600
+            if not (0 < gh <= 1.25): continue        # its own T-1h window
+            told = set(st.get("sent_ids", []))
+            pulls = [r for r in skip if bet_id(r) in told and gname.get(r["player"].lower()) == label]
+            u = sum(0.5 if stake(r).startswith("½") else 1.0 for r in mine)
+            gl = (gt + datetime.timedelta(hours=7)).strftime("%H:%M") + " WIB"
+            parts = [f"🔔 **LAST CALL · {label}** — tips {gl} (in {gh:.1f}h) · {len(mine)} bets, {u:g}u",
+                     "\n".join(fmt(r) for r in sorted(mine, key=lambda x: (x["src"], x["player"])))]
+            if pulls:
+                parts.append("🚫 **PULL** (drifted since the list):\n" + "\n".join(
+                    f"• {r['player']} {r['market'].upper()} {r['side']} {r['line']} ({r['move_pct']}%)"
+                    for r in pulls))
+            if send("\n".join(parts)):
+                gdone.append(label); st["sent_ids"] = sorted(cur_ids)
+                json.dump(st, open(STATE, "w"))
+                print(f"[game {label}] last call: {len(mine)} bets, {len(pulls)} pulls, "
+                      f"+{log_pinged(mine, 'game_' + label, slate)} logged, "
+                      f"{mark_pulled(pulls, slate)} pulled")
+                return
+
     # which stage are we in? the tightest one whose window has arrived and hasn't fired
     stage = None
     for name, h in STAGES:
