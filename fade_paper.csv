@@ -44,3 +44,5 @@ logged_utc,date,player,market,side,line,price,orig_src,orig_move
 2026-08-10T10:36:51Z,2026-08-10,Erica Wheeler,pts,Under,8.5,2.0,flip_paper,0.0225
 2026-08-10T10:36:51Z,2026-08-10,Dearica Hamby,pts,Under,13.5,1.87,flip_paper,0.0219
 2026-08-10T10:36:51Z,2026-08-10,Sabrina Ionescu,pts,Under,17.5,2.0,flip_paper,0.0109
+2026-08-10T11:45:22Z,2026-08-10,Kelsey Mitchell,pts,Under,25.5,1.8,flip,0.0114
+2026-08-10T11:45:22Z,2026-08-10,Rae Burrell,pts,Over,14.5,1.909,newunder,0.0183
