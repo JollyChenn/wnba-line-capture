@@ -84,10 +84,13 @@ def main():
         # minutes tell you nothing, while 3 spread over 4 hours is a real window for the book to
         # reprice. Emitting it lets the alert vet on elapsed time instead of a raw tally.
         span_h = round((cl[-1][0] - cl[0][0]).total_seconds() / 3600, 1) if len(cl) > 1 else 0.0
+        # last_utc lets the alert refuse a STALE read. A long span means nothing if the last look was
+        # 9h ago - that is the outage signature, and the price could have moved anywhere since.
+        last_utc = cl[-1][0].strftime("%Y-%m-%dT%H:%M:%SZ")
         rows.append([r.get("date"), r["player"], r["market"], r["side"], cur_line, r.get("src"),
                      first, last, round(100 * move, 1), verdict, conf, lm, fade_side, fade_price,
-                     len(cl), span_h])
-    hdr = ["date","player","market","side","line","src","open_odds","now_odds","move_pct","verdict","confidence","line_moved","fade_side","fade_price","captures","span_h"]
+                     len(cl), span_h, last_utc])
+    hdr = ["date","player","market","side","line","src","open_odds","now_odds","move_pct","verdict","confidence","line_moved","fade_side","fade_price","captures","span_h","last_utc"]
     w = csv.writer(open(os.path.join(D, "drift_gate_today.csv"), "w", newline="", encoding="utf-8"))
     w.writerow(hdr); w.writerows(sorted(rows, key=lambda x: x[9]))
     # ---- PERMANENT RECORD ---------------------------------------------------------------------

@@ -55,13 +55,45 @@ def span(r):
     try: return float(r.get("span_h") or 0)
     except Exception: return 0.0
 
-def vetted(rows):
-    """Bets whose drift read is actually meaningful.
+MAX_STALE_H = 3.0     # a read whose last look was longer ago than this is not a read, it is a memory
 
-    The test is TIME, not tally. 4 captures 20 minutes apart say nothing; 3 spread over 4 hours are a
-    real chance for the book to reprice. A pure count>=4 rule also silenced whole slates - on
-    2026-08-06 not one bet reached 4 checks even at T-2h, so you would have got nothing all night for
-    no good reason. Require a real window AND at least a couple of observations in it."""
+def guard(rows, tip_of=None, horizon=None, verbose=True):
+    """THE ENFORCER. Every rule the strategy depends on, checked in one place, with a named reason
+    for each rejection. Nothing reaches Discord except through here.
+
+    Each of these exists because it was VIOLATED in live running, not because it sounded prudent:
+      menu      - retired signals (newunder -15.5%, model -22.9%) must never be pinged
+      verdict   - the skip-drift rule itself; skipped bets run -20% to -27% ROI
+      read      - a brand-new line has no drift history, so its 0.0% means nothing
+      window    - >=3h watched (or >=4 checks); a blind board reads 0.0% and looks like all-clear
+      fresh     - last look within 3h; a wide span with a stale end is the outage signature
+      tonight   - the 48h capture window served bets on games two days out (TOR/CHI, 2026-08-09)
+    """
+    out, rejected = [], {}
+    now = datetime.datetime.now(datetime.timezone.utc)
+    for r in rows:
+        why = None
+        if r.get("src") not in LIVE:                                   why = "menu"
+        elif not (r.get("verdict") or "").startswith("BET"):           why = "verdict"
+        elif "NO READ" in r.get("confidence", "") or caps(r) < MIN_CAPS_ABS: why = "read"
+        elif not (span(r) >= MIN_SPAN_H or caps(r) >= MIN_CAPS):       why = "window"
+        else:
+            try:
+                seen = datetime.datetime.fromisoformat((r.get("last_utc") or "").replace("Z", "+00:00"))
+                if (now - seen).total_seconds()/3600 > MAX_STALE_H:    why = "fresh"
+            except Exception:
+                pass                                                   # no stamp yet -> other gates carry it
+            if not why and tip_of is not None:
+                t = tip_of.get((r.get("player") or "").lower())
+                if not t or (horizon and t > horizon):                 why = "tonight"
+        if why: rejected[why] = rejected.get(why, 0) + 1
+        else:   out.append(r)
+    if verbose and rejected:
+        print("guard rejected: " + ", ".join(f"{k}={v}" for k, v in sorted(rejected.items())))
+    return out
+
+def vetted(rows):
+    """Kept as the read-quality half of the guard (used by the dashboard and the blind-board notice)."""
     return [r for r in rows
             if "NO READ" not in r.get("confidence", "")
             and caps(r) >= MIN_CAPS_ABS
@@ -201,8 +233,6 @@ def main():
     rows = list(csv.DictReader(open(gp, encoding="utf-8")))
     bet = [r for r in rows if r["verdict"].startswith("BET") and r["src"] in LIVE]
     skip = [r for r in rows if r["verdict"].startswith("SKIP")]
-    ok = vetted(bet)                      # <- the ONLY rows we are ever willing to alert on
-    cur_ids = {bet_id(r) for r in ok}
 
     # ---- PER-GAME LAST CALL --------------------------------------------------------------------
     # Every slate stage keys off the FIRST tip, but a night spans hours of them. On 2026-08-09 the
@@ -230,20 +260,10 @@ def main():
     except Exception as e:
         print("game map failed (per-game calls disabled):", e)
 
-    # ---- TONIGHT ONLY --------------------------------------------------------------------------
-    # The capture window is 48h, and bets_log stamps rows with the CAPTURE date, so the board carries
-    # lines for games up to two days out. On 2026-08-09 seven cascade bets on TOR and CHI players were
-    # pinged as if they were that night's slate - those teams did not play until 08-11. A drift read
-    # taken 48h early has nothing to do with that game's closing line, and the bets sat unresolvable
-    # in the record. Keep only bets whose player maps to a game tipping within this slate.
-    if tip_of:
-        horizon = last + datetime.timedelta(hours=1)
-        far = [r for r in ok if not (tip_of.get(r["player"].lower()) and tip_of[r["player"].lower()] <= horizon)]
-        if far:
-            print(f"dropped {len(far)} bet(s) for games beyond tonight: "
-                  + ", ".join(sorted({r['player'] for r in far}))[:160])
-        ok = [r for r in ok if r not in far]
-        cur_ids = {bet_id(r) for r in ok}
+    # EVERY rule in one place. Nothing is sent that has not passed guard().
+    ok = guard(rows, tip_of=tip_of if tip_of else None,
+               horizon=(last + datetime.timedelta(hours=1)) if tip_of else None)
+    cur_ids = {bet_id(r) for r in ok}
 
     gdone = st.setdefault("game_done", [])
     if st.get("sent_full"):                          # only after you have seen the slate list
