@@ -73,7 +73,7 @@ summarise(bt_keep, "backtest filter (odds_clv >= -1%)")
 
 print("\n=== B. the LIVE system replayed causally at each decision point ===")
 print("     (drift measured open->then, guard rules applied, paid at the price available then)\n")
-for HRS in (8.0, 4.0, 2.0, 1.0):
+for HRS in (10.0, 8.0, 6.0, 5.0, 4.0, 3.0, 2.0, 1.0):
     # board liveness at this hour, per slate: share of that slate's bets that had moved by then
     board = collections.defaultdict(lambda: [0, 0])
     partial = {}

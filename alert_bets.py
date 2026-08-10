@@ -23,13 +23,15 @@ try: sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 except Exception: pass
 D = os.path.dirname(os.path.abspath(__file__))
 LIVE = ("flip", "flip_paper", "overshoot", "cascade")
-# BET LATE. Replaying every graded bet causally (backtest_guard.py) shows skip-drift COSTS
-# money at the early horizons - it discards bets on a partial drift that later recovers:
-#   T-8h  menu +8.6% -> with skip-drift +5.7%      T-4h  +5.6% -> +2.9%
-#   T-2h  menu +8.2% -> with skip-drift +8.6%      T-1h  +5.3% -> +5.9%
-# The rule only stops hurting once most of the move has happened. So the actionable list is
-# T-2.5h and the confirmation is T-1h; the old T-8h/T-4h betting stages are gone.
-STAGES = [("main", 2.5), ("t1h", 1.0)]   # hours before FIRST tip
+# WHEN TO BET. Comparing horizons on a FIXED COHORT (same 115 bets evaluable at every hour, so
+# sample composition cannot drive the answer) the ROI is essentially flat:
+#   T-10h +11.2%  T-8h +12.7%  T-6h +11.7%  T-4h +13.6%  T-3h +15.9%  T-2h +15.1%  T-1h +15.1%
+# All t=1.3-1.8. There is a mild tilt toward later, nothing more. The earlier 'skip-drift costs
+# money before T-2h' reading came from comparing DIFFERENT samples at each horizon and does not
+# survive the fixed-cohort test. WNBA tips land 23:00-09:00 WIB, so a tip-relative stage can
+# easily fire at 4am; since timing is not worth much, the list goes out early enough to be
+# actionable and is confirmed once near the wire.
+STAGES = [("main", 6.0), ("t1h", 2.0)]   # hours before FIRST tip
 MIN_CAPS = 4          # checks that vet a bet on their own, regardless of span
 MIN_CAPS_ABS = 2      # never vet on a single observation - that is not a "move", it is a price
 MIN_SPAN_H = 3.0      # hours the price must have been watchable for the read to mean anything
