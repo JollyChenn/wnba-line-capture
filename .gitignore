@@ -7,3 +7,4 @@ webhook.txt
 ping_state.json
 *.bak.csv
 _archive/
+run_local.log
