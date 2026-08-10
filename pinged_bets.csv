@@ -52,3 +52,6 @@ sent_utc,stage,date,player,market,side,line,odds,stake,src,move_pct,captures,spa
 2026-08-10T18:05:32Z,main,2026-08-10,Shakira Austin,pra,Over,30.5,1.833,1u,overshoot,0.0,4,2.8,ok 85%,
 2026-08-10T18:05:32Z,main,2026-08-10,Nneka Ogwumike,pr,Over,23.5,1.8,1u,flip,0.0,5,2.8,ok 85%,
 2026-08-10T18:05:32Z,main,2026-08-10,Shakira Austin,pr,Over,27.5,1.83,1u,overshoot,0.0,3,0.5,ok 85%,
+2026-08-10T22:18:36Z,t1h,2026-08-10,Kelsey Mitchell,pts,Over,24.5,1.909,1u,flip,0.0,2,0.9,ok 85%,
+2026-08-10T22:18:36Z,t1h,2026-08-10,Dearica Hamby,pra,Over,23.5,2.0,½u,cascade,0.0,10,14.6,ok 85%,
+2026-08-10T22:18:36Z,t1h,2026-08-10,Erica Wheeler,pra,Over,16.5,1.909,½u,cascade,0.0,7,7.1,ok 85%,
