@@ -97,10 +97,26 @@ def log_pinged(rows, stage, slate):
             r["move_pct"], caps(r), span(r), r.get("confidence", ""), ""]
            for r in rows if (slate, r["player"], r["market"], r["side"], r["line"]) not in seen]
     if not new: return 0
+    # SCHEMA GUARD. Adding span_h to PING_COLS while the file on disk still had the OLD 14-column
+    # header appended 15-value rows under it, shifting every field right - `pulled_utc` ended up
+    # holding the confidence string, so 15 live bets read as "pulled" and vanished from the P&L.
+    # If the header no longer matches, migrate the file in place (pad old rows) before appending.
+    if os.path.exists(p):
+        raw = list(csv.reader(open(p, encoding="utf-8")))
+        if raw and raw[0] != PING_COLS:
+            old = raw[0]
+            fixed = [[r[old.index(c)] if c in old and old.index(c) < len(r) else "" for c in PING_COLS]
+                     for r in raw[1:]]
+            tmp = p + ".tmp"
+            with open(tmp, "w", newline="", encoding="utf-8") as fh:
+                w = csv.writer(fh); w.writerow(PING_COLS); w.writerows(fixed)
+            os.replace(tmp, p)
+            print(f"pinged_bets.csv migrated {len(old)} -> {len(PING_COLS)} columns")
     isnew = not os.path.exists(p)
-    fh = open(p, "a", newline="", encoding="utf-8"); w = csv.writer(fh)
-    if isnew: w.writerow(PING_COLS)
-    w.writerows(new); fh.close()
+    with open(p, "a", newline="", encoding="utf-8") as fh:
+        w = csv.writer(fh)
+        if isnew: w.writerow(PING_COLS)
+        w.writerows(new)
     return len(new)
 
 def mark_pulled(rows, slate):
@@ -213,6 +229,21 @@ def main():
                 if tm in abbrs: tip_of[pl] = t; gname[pl] = label
     except Exception as e:
         print("game map failed (per-game calls disabled):", e)
+
+    # ---- TONIGHT ONLY --------------------------------------------------------------------------
+    # The capture window is 48h, and bets_log stamps rows with the CAPTURE date, so the board carries
+    # lines for games up to two days out. On 2026-08-09 seven cascade bets on TOR and CHI players were
+    # pinged as if they were that night's slate - those teams did not play until 08-11. A drift read
+    # taken 48h early has nothing to do with that game's closing line, and the bets sat unresolvable
+    # in the record. Keep only bets whose player maps to a game tipping within this slate.
+    if tip_of:
+        horizon = last + datetime.timedelta(hours=1)
+        far = [r for r in ok if not (tip_of.get(r["player"].lower()) and tip_of[r["player"].lower()] <= horizon)]
+        if far:
+            print(f"dropped {len(far)} bet(s) for games beyond tonight: "
+                  + ", ".join(sorted({r['player'] for r in far}))[:160])
+        ok = [r for r in ok if r not in far]
+        cur_ids = {bet_id(r) for r in ok}
 
     gdone = st.setdefault("game_done", [])
     if st.get("sent_full"):                          # only after you have seen the slate list
