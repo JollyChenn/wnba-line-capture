@@ -18,7 +18,7 @@ logged_utc,date,player,market,side,line,price,orig_src,orig_move,actual,result,r
 2026-08-08T09:46:16Z,2026-08-08,Flau'jae Johnson,pts,Over,15.5,1.87,newunder,0.0202,8.0,loss,-1.0
 2026-08-08T11:43:34Z,2026-08-08,Carla Leite,pts,Over,17.5,1.68,newunder,0.1184,4.0,loss,-1.0
 2026-08-08T11:43:34Z,2026-08-08,Kelsey Mitchell,pr,Under,26.5,1.83,overshoot,0.0167,32.0,loss,-1.0
-2026-08-08T14:00:44Z,2026-08-08,Nneka Ogwumike,pts,Under,14.5,1.769,flip_paper,0.0152,,,
+2026-08-08T14:00:44Z,2026-08-08,Nneka Ogwumike,pts,Under,14.5,1.769,flip_paper,0.0152,16.0,loss,-1.0
 2026-08-08T19:42:22Z,2026-08-08,Kayla McBride,pts,Under,15.5,1.73,flip_paper,0.0256,15.0,WIN,0.73
 2026-08-08T21:44:01Z,2026-08-08,Jackie Young,pra,Under,29.5,1.83,hotover,0.0167,29.0,WIN,0.83
 2026-08-08T22:44:31Z,2026-08-08,Jessica Shepard,pts,Over,13.5,1.79,newunder,0.0105,0,loss,-1.0
@@ -35,3 +35,4 @@ logged_utc,date,player,market,side,line,price,orig_src,orig_move,actual,result,r
 2026-08-09T21:45:43Z,2026-08-09,Angel Reese,pra,Under,29.5,1.8,hotover,0.0437,,,
 2026-08-09T21:45:43Z,2026-08-09,Maria Conde,pts,Under,9.5,1.84,flip_paper,0.0164,,,
 2026-08-09T22:47:37Z,2026-08-09,Jordin Canada,pts,Over,10.5,1.84,newunder,0.0147,,,
+2026-08-10T02:31:27Z,2026-08-09,Rhyne Howard,pts,Over,17.5,1.77,newunder,0.0162,,,
