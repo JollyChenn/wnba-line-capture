@@ -112,10 +112,22 @@ for HRS in (8.0, 4.0, 2.0, 1.0):
         B["+ window"].append(ret)
         if tot >= 8 and mv/tot < BOARD_ALIVE: continue
         B["+ dead-board"].append(ret)
+    # PROPOSED CONFIG: bet late, and relax the two rules that were costing ROI. dead-board drops
+    # 10% -> 3% (catch only a genuinely no-data board, not a quiet one); window 3h -> 2h.
+    prop = []
+    for (move, span, ncap, price_then, r) in partial.values():
+        sd = r.get("date", "")[:4] + "-" + r.get("date", "")[4:6] + "-" + r.get("date", "")[6:8]
+        tot, mv = board[sd]
+        ret = (price_then-1) if r["result"].upper() == "WIN" else -1.0
+        if move >= DRIFT: continue
+        if ncap < 2: continue                      # >=2 observations, no span requirement
+        if tot >= 8 and mv/tot < 0.03: continue    # only a genuinely no-data board
+        prop.append(ret)
     print(f"  --- T-{HRS:.0f}h ---")
     for k in ("menu only, no rules", "+ skip-drift", "+ window", "+ dead-board",
               "ONLY shortened (<=-0.5%)"):
         summarise(B[k], k)
+    summarise(prop, "PROPOSED (skip-drift, caps>=2, board 3%)")
 
 print("\nNOTE: B pays at the price actually on the board at that hour, so it is directly comparable")
 print("to what you can collect. A pays at the close and needs post-tip information to select bets.")

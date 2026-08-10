@@ -23,7 +23,13 @@ try: sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 except Exception: pass
 D = os.path.dirname(os.path.abspath(__file__))
 LIVE = ("flip", "flip_paper", "overshoot", "cascade")
-STAGES = [("main", 8.0), ("mid", 4.0), ("close", 2.0), ("t1h", 1.0)]   # hours before FIRST tip
+# BET LATE. Replaying every graded bet causally (backtest_guard.py) shows skip-drift COSTS
+# money at the early horizons - it discards bets on a partial drift that later recovers:
+#   T-8h  menu +8.6% -> with skip-drift +5.7%      T-4h  +5.6% -> +2.9%
+#   T-2h  menu +8.2% -> with skip-drift +8.6%      T-1h  +5.3% -> +5.9%
+# The rule only stops hurting once most of the move has happened. So the actionable list is
+# T-2.5h and the confirmation is T-1h; the old T-8h/T-4h betting stages are gone.
+STAGES = [("main", 2.5), ("t1h", 1.0)]   # hours before FIRST tip
 MIN_CAPS = 4          # checks that vet a bet on their own, regardless of span
 MIN_CAPS_ABS = 2      # never vet on a single observation - that is not a "move", it is a price
 MIN_SPAN_H = 3.0      # hours the price must have been watchable for the read to mean anything
@@ -60,7 +66,10 @@ def span(r):
     except Exception: return 0.0
 
 MAX_STALE_H = 3.0     # a read whose last look was longer ago than this is not a read, it is a memory
-BOARD_ALIVE = 0.10    # min share of the board that must have MOVED for any verdict to mean anything
+BOARD_ALIVE = 0.03    # SAFETY RAIL, not an edge rule. At 10% it cost 1.3-3pp of ROI by
+                      # dropping quiet-but-working boards. At 3% it fires only on an
+                      # essentially-zero board (08-09 07:16, lines just posted) - that is a
+                      # broken-pipeline signal, not a betting signal.
 
 def guard(rows, tip_of=None, horizon=None, verbose=True):
     """THE ENFORCER. Every rule the strategy depends on, checked in one place, with a named reason
@@ -93,7 +102,9 @@ def guard(rows, tip_of=None, horizon=None, verbose=True):
         if r.get("src") not in LIVE:                                   why = "menu"
         elif not (r.get("verdict") or "").startswith("BET"):           why = "verdict"
         elif "NO READ" in r.get("confidence", "") or caps(r) < MIN_CAPS_ABS: why = "read"
-        elif not (span(r) >= MIN_SPAN_H or caps(r) >= MIN_CAPS):       why = "window"
+        # NO SPAN RULE. Requiring >=3h watched cost 2.5pp at T-2h (8.6% -> 6.1%) while adding
+        # nothing the caps>=2 and NO-READ checks above do not already do. It was reasoning,
+        # not evidence, and the evidence went against it.
         else:
             try:
                 seen = datetime.datetime.fromisoformat((r.get("last_utc") or "").replace("Z", "+00:00"))

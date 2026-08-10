@@ -43,7 +43,9 @@ cases = [
     ("drifted bet blocked",           row(verdict="SKIP-drift"),                 False),
     ("new line with no read blocked", row(confidence="NO READ (new line)"),      False),
     ("single observation blocked",    row(captures="1", span_h="0.0"),           False),
-    ("short window blocked",          row(captures="2", span_h="1.0"),           False),
+    # span rule deliberately removed 2026-08-10: requiring >=3h cost 2.5pp of ROI at T-2h
+    # and added nothing over caps>=2 + NO-READ. A short-but-real window must now PASS.
+    ("short window now passes",       row(captures="2", span_h="1.0"),           True),
     ("stale read blocked",            row(last_utc=stale),                       False),
     ("good bet passes",               row(),                                     True),
     ("4 checks passes even if short", row(captures="4", span_h="0.5"),           True),
@@ -132,7 +134,7 @@ print("\n=== 7. stage state is coherent ===")
 stp = os.path.join(D, "alert_state.json")
 if os.path.exists(stp):
     st = json.load(open(stp))
-    known = {n for n, _ in A.STAGES} | {"late"}
+    known = {n for n, _ in A.STAGES} | {"late", "mid", "close"}   # historical stage names in old state files
     check("no unknown stage recorded", set(st.get("done", [])) <= known,
           f"done={st.get('done')}")
     check("sent_full is set once a full list went out",
