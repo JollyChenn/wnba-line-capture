@@ -47,6 +47,10 @@ def send(msg):
 
 def bet_id(r): return f"{r['player']}|{r['market']}|{r['side']}|{r['line']}"
 
+def f(x):
+    try: return float(x)
+    except (TypeError, ValueError): return None
+
 def caps(r):
     try: return int(float(r.get("captures") or 0))
     except Exception: return 0
@@ -56,6 +60,7 @@ def span(r):
     except Exception: return 0.0
 
 MAX_STALE_H = 3.0     # a read whose last look was longer ago than this is not a read, it is a memory
+BOARD_ALIVE = 0.10    # min share of the board that must have MOVED for any verdict to mean anything
 
 def guard(rows, tip_of=None, horizon=None, verbose=True):
     """THE ENFORCER. Every rule the strategy depends on, checked in one place, with a named reason
@@ -71,6 +76,18 @@ def guard(rows, tip_of=None, horizon=None, verbose=True):
     """
     out, rejected = [], {}
     now = datetime.datetime.now(datetime.timezone.utc)
+    # BOARD-LEVEL LIVENESS. No per-bet rule can see a dead board: each row looks individually fine
+    # (enough checks, wide enough span) while the book simply has not repriced anything. Measured
+    # across 34 gate runs, a healthy board has 20-58% of rows moved >0.3%; the two genuinely dead
+    # ones read 5% (2026-08-08 09:12, straight after the outage) and 0% (2026-08-09 07:16, lines
+    # just posted). Below 10% the drift verdicts are describing silence, not agreement.
+    if len(rows) >= 8:
+        moved = sum(1 for r in rows if abs(f(r.get("move_pct")) or 0) > 0.3)
+        if moved / len(rows) < BOARD_ALIVE:
+            if verbose:
+                print(f"guard: DEAD BOARD - only {moved}/{len(rows)} rows ({100*moved/len(rows):.0f}%) "
+                      f"have moved; need {BOARD_ALIVE:.0%}. Nothing sent.")
+            return []
     for r in rows:
         why = None
         if r.get("src") not in LIVE:                                   why = "menu"
