@@ -61,19 +61,30 @@ for pl, v in plog.items():
                                    rate={mk: sum(x[mk] for x in l10)/tot for mk in ("pts","pra","pr","pa")})
 
 # ---- board series, so we can freeze the state at any decision time -------------------------------
-ser = collections.defaultdict(list)
+# BUG FOUND 2026-08-11: keying only on (player, market, line) glues the SAME line across DIFFERENT
+# NIGHTS into one series weeks long, so the "open" came from a fortnight ago and the drift was junk.
+# Split on any gap over 12h - each block is one night's line for one game.
+raw = collections.defaultdict(list)
 for b in load("xbet_board.csv"):
     t, o, ln = ts(b.get("captured_utc")), f(b.get("odds")), f(b.get("line"))
     if t and o and ln is not None and b.get("side") == "Over" and b.get("market") in ("pts","pra","pr","pa"):
-        ser[((b.get("player") or "").lower(), b.get("market"), ln)].append((t, o))
-for v in ser.values(): v.sort()
+        raw[((b.get("player") or "").lower(), b.get("market"), ln)].append((t, o))
+ser = {}
+for (pl, mk, ln), v in raw.items():
+    v.sort()
+    block, k = [v[0]], 0
+    for prev, cur in zip(v, v[1:]):
+        if (cur[0] - prev[0]).total_seconds() > 12*3600:
+            ser[(pl, mk, ln, k)] = block; k += 1; block = []
+        block.append(cur)
+    ser[(pl, mk, ln, k)] = block
 
 HRS = float(__import__('sys').argv[1]) if len(__import__('sys').argv)>1 else 6.0
 bets = []
-for (pl, mk, ln), s in ser.items():
+for (pl, mk, ln, _k), s in ser.items():
     # which player-game does this line belong to? the one whose tip follows the first capture
     cand = [(d, fc) for (p2, d), fc in FC.items() if p2 == pl and fc["tip"]
-            and s[0][0] <= fc["tip"] <= s[0][0] + datetime.timedelta(hours=72)]
+            and s[0][0] <= fc["tip"] <= s[0][0] + datetime.timedelta(hours=36)]
     if not cand: continue
     date, fc = min(cand, key=lambda x: x[1]["tip"])
     cut = fc["tip"] - datetime.timedelta(hours=HRS)
