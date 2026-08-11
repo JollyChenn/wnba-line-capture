@@ -52,3 +52,5 @@ logged_utc,date,player,market,side,line,price,orig_src,orig_move
 2026-08-10T18:31:38Z,2026-08-10,Nyara Sabally,pra,Under,19.5,1.83,cascade,0.0457
 2026-08-10T20:41:11Z,2026-08-10,Maria Conde,pra,Under,16.5,1.952,overshoot,0.0405
 2026-08-11T02:24:54Z,2026-08-10,Shakira Austin,pr,Under,27.5,1.8,overshoot,0.0437
+2026-08-11T05:20:13Z,2026-08-10,Nyara Sabally,pts,Over,13.5,1.83,newunder,0.0223
+2026-08-11T05:20:13Z,2026-08-10,Olivia Miles,pa,Under,26.5,1.83,overshoot,0.0167
