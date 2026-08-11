@@ -2,7 +2,7 @@
 
 _Stingy-D threshold (trailing-10 allowed, bottom quartile): 89_
 
-_🩹 OUT/doubtful (excluded from ALL picks): Alysha Clark, Ashlon Jackson, Azzi Fudd, Brittney Sykes, Cheyenne Parker-Tyus, Damiris Dantas, Dana Evans, Flau'jae Johnson, Indya Nivar, Jessica Shepard, Jovana Nogic, Karlie Samuelson, Katie Lou Samuelson, Kelsey Plum, Leonie Fiebich, Luisa Geiselsoder, Raegan Beers, Sarah Ashlee Barker, Satou Sabally, Skylar Diggins, Sydney Taylor, Te-Hina Paopao, Teja Oblak_
+_🩹 OUT/doubtful (excluded from ALL picks): Alysha Clark, Ashlon Jackson, Azzi Fudd, Brittney Sykes, Carla Leite, Cheyenne Parker-Tyus, Damiris Dantas, Dana Evans, Flau'jae Johnson, Indya Nivar, Jessica Shepard, Jovana Nogic, Karlie Samuelson, Katie Lou Samuelson, Kelsey Plum, Leonie Fiebich, Luisa Geiselsoder, Raegan Beers, Sarah Ashlee Barker, Satou Sabally, Skylar Diggins, Sydney Taylor, Te-Hina Paopao, Teja Oblak_
 
 ## 💰 REAL-MONEY — UNDER (cold/shrink + stingy · pts/PR/PA/PRA · flat 1u)
 
@@ -74,7 +74,6 @@ _ft_volume_drought 58.9% / steady+streak 58.6% OOS vs a synthetic line — prove
 - **Megan DiLeo** (Portland Fire, Minnesota Lynx @ Portland Fire): PTS UNDER ~15.5 [steady · PAPER] median~16→proj~14.7 · last5 mins [27 25 29 28 24]
 - **Emily Engstler** (Portland Fire, Minnesota Lynx @ Portland Fire): PTS UNDER ~8.5 [ftdrought · PAPER] median~9→proj~7.8 · last5 mins [19 28 22 24 24]
 - **Olivia Miles** (Minnesota Lynx, Minnesota Lynx @ Portland Fire): PTS UNDER ~21.5 [steady · PAPER] median~22→proj~20.4 · last5 mins [23 32 34 35 34]
-- **Carla Leite** (Portland Fire, Minnesota Lynx @ Portland Fire): PTS UNDER ~15.5 [steady · PAPER] median~16→proj~14.5 · last5 mins [22 31 27 30 4]
 
 ---
 _Rules: flat 1u stakes. Bet 1xbet only where its line >= anchor (under) or
