@@ -10,7 +10,7 @@ _**sharp-odds** = vs Pinnacle's vig-free fair price (TRUE edge test) · **sharp-
   ★ SHARP ODDS-CLV: -6.7% | beat fair 0/7 (0%)  ← TRUE edge (vs Pinnacle fair price)
   SHARP LINE-CLV : +0.21 pts | n=12  ← better number than the sharp
   self ODDS-CLV  : -0.3% | beat 8/30 (27%)  (1xbet's own close = weak)
-  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 69/125 (+1.7u) · FTUNDER 118/253 (-34.0u) · HOT OVER 17/32 (-0.1u) · LINE-CUT FLIP · exp. base 47/80 (+7.2u) · LINE-CUT FLIP · proven base 22/36 (+4.9u) · STAR-OUT CASCADE 94/167 (-1.6u) · starout 4/11 (-3.6u)
+  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 70/126 (+2.5u) · FTUNDER 119/256 (-35.2u) · HOT OVER 18/33 (+0.7u) · LINE-CUT FLIP · exp. base 47/82 (+5.2u) · LINE-CUT FLIP · proven base 22/36 (+4.9u) · STAR-OUT CASCADE 96/171 (-2.1u) · starout 4/11 (-3.6u)
   VERDICT : ⚠️ NEUTRAL self CLV — winning on outcomes, not beating the line. Unproven; keep collecting.
   by tier: SOLID 5/12 (-2.3u) · STRONG 5/14 (-4.9u) · THIN 3/6 (-0.1u)
   by market: pa Under 1/3 (-1.0u) · pr Under 1/3 (-1.0u) · pra Under 2/9 (-5.4u) · pts Under 9/16 (+1.1u) · ra Under 0/1 (-1.0u)
@@ -758,3 +758,14 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260809 | Sabrina Ionescu | PTS Over 19.5 @ 1.97 | LINE-CUT FLIP · exp. base | loss | -1% | +0.0 | +4% |
 | 20260809 | Shakira Austin | PRA Over 29.5 @ 1.87 | BOOK OVERSHOOT | WIN | — | — | +0% |
 | 20260809 | Veronica Burton | PTS Under 13.5 @ 1.88 | FTUNDER | WIN | — | — | +2% |
+| 20260810 | Allisha Gray | PRA Over 22.5 @ 1.8 | BOOK OVERSHOOT | WIN | — | — | +0% |
+| 20260810 | Angel Reese | PRA Over 28.5 @ 1.8 | HOT OVER | WIN | — | — | +0% |
+| 20260810 | Isabelle Harrison | PRA Over 14.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
+| 20260810 | Jordin Canada | PTS Under 10.5 @ 1.833 | FTUNDER | loss | — | -1.0 | -4% |
+| 20260810 | Laura Juskaite | PRA Over 20.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
+| 20260810 | Laura Juskaite | PTS Over 9.5 @ 1.86 | LINE-CUT FLIP · exp. base | loss | -11% | +0.0 | +9% |
+| 20260810 | Maria Conde | PRA Over 20.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
+| 20260810 | Maria Conde | PTS Over 9.5 @ 1.83 | LINE-CUT FLIP · exp. base | loss | -8% | +0.0 | +2% |
+| 20260810 | Nyara Sabally | PRA Over 19.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
+| 20260810 | Nyara Sabally | PTS Under 14.5 @ 1.833 | FTUNDER | WIN | — | +1.0 | -1% |
+| 20260810 | Rhyne Howard | PTS Under 17.5 @ 1.909 | FTUNDER | loss | -5% | +0.0 | -1% |
