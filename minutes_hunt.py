@@ -272,3 +272,48 @@ for lo_, hi_ in ((0, 1), (1, 2), (2, 3), (3, 5), (5, 99)):
 
 print("\n  4. COST. 1xbet prop margin is ~11%; these are its own posted prices, so the vig is")
 print("     already inside every ROI above. No further haircut needed.")
+
+# =================================================================================================
+# HOW DOES THIS RELATE TO DRIFT? Same signal, or two independent ones?
+# =================================================================================================
+print("\n" + "="*78)
+print("  DRIFT vs THE MINUTES MODEL")
+print("="*78)
+ser2 = collections.defaultdict(list)
+for b in load("xbet_board.csv"):
+    t, o, ln = ts(b.get("captured_utc")), f(b.get("odds")), f(b.get("line"))
+    if t and o and ln is not None and b.get("side") == "Over" and b.get("market") in ("pts","pra","pr","pa"):
+        ser2[(t.strftime("%Y%m%d"), (b.get("player") or "").lower(), b.get("market"), ln)].append((t, o))
+P = []
+for (d8, pl, mk, ln), s in ser2.items():
+    s.sort()
+    if len(s) < 2: continue
+    r = idx.get((pl, d8))
+    if not r:
+        nd = dparse(d8)
+        r = idx.get((pl, (nd + datetime.timedelta(days=1)).strftime("%Y%m%d"))) if nd else None
+    if not r or r["rate"].get(mk) is None: continue
+    P.append(dict(drift=s[-1][1]/s[0][1]-1, edge=r["pred_min"]*r["rate"][mk]-ln,
+                  odds=s[0][1], won=r["mk_actual"][mk] > ln))
+print(f"  {len(P)} props carrying BOTH a drift read and a minutes-model edge")
+xs = [p["drift"] for p in P]; ys = [p["edge"] for p in P]
+n2 = len(xs); mx, my = sum(xs)/n2, sum(ys)/n2
+cov = sum((a-mx)*(b-my) for a, b in zip(xs, ys))/n2
+sx = (sum((a-mx)**2 for a in xs)/n2)**.5; sy = (sum((b-my)**2 for b in ys)/n2)**.5
+rr = cov/(sx*sy); tt = rr*math.sqrt((n2-2)/max(1e-9, 1-rr*rr))
+print(f"\n  SAME SIGNAL?  correlation(drift, minutes edge) = {rr:+.3f}  t={tt:+.2f}")
+print("  -> near zero = INDEPENDENT: the market's price move and our minutes forecast are")
+print("     looking at different things, so neither substitutes for the other.")
+
+def st2(x, lbl):
+    k = len(x)
+    if k < 25: print(f"  {lbl:<44} n={k} too few"); return
+    m = sum(x)/k; sd = (sum((a-m)**2 for a in x)/(k-1))**.5
+    print(f"  {lbl:<44} n={k:<5} ROI={m*100:+6.1f}%  t={m/(sd/math.sqrt(k)):+5.2f}")
+ret2 = lambda p: (p["odds"]-1) if p["won"] else -1.0
+hi = [p for p in P if p["edge"] > 3.0]
+print("\n  DOES SKIP-DRIFT HELP THE MINUTES MODEL?")
+st2([ret2(p) for p in hi], "minutes edge>3, no drift filter")
+st2([ret2(p) for p in hi if p["drift"] < 0.01], "  + skip-drift ON (what we do now)")
+st2([ret2(p) for p in hi if p["drift"] >= 0.01], "  the bets skip-drift would REMOVE")
+st2([ret2(p) for p in hi if p["drift"] <= -0.005], "  only ones the market SHORTENED")
