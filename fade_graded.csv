@@ -69,3 +69,7 @@ logged_utc,date,player,market,side,line,price,orig_src,orig_move,actual,result,r
 2026-08-11T23:56:18Z,2026-08-11,Azura Stevens,pra,Over,20.5,1.952,model,0.0405,,,
 2026-08-12T04:41:26Z,2026-08-11,Olivia Miles,pts,Under,18.5,1.81,flip_paper,0.0107,,,
 2026-08-12T04:41:26Z,2026-08-11,Emily Engstler,pts,Over,9.5,1.88,newunder,0.0109,,,
+2026-08-12T06:41:23Z,2026-08-11,Erica Wheeler,pra,Under,16.5,1.73,cascade,0.0477,15.0,WIN,0.73
+2026-08-12T06:41:23Z,2026-08-11,Arike Ogunbowale,pra,Over,23.5,1.909,model,0.0595,,,
+2026-08-12T06:42:28Z,2026-08-11,Jonquel Jones,pts,Over,14.5,1.8,newunder,0.0791,14.0,loss,-1.0
+2026-08-12T06:42:28Z,2026-08-11,Erica Wheeler,pts,Under,8.5,1.8,flip_paper,0.0914,7.0,WIN,0.8
