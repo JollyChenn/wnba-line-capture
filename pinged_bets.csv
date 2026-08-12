@@ -87,3 +87,5 @@ sent_utc,stage,date,player,market,side,line,odds,stake,src,move_pct,captures,spa
 2026-08-12T18:05:59Z,main,2026-08-12,Kiki Rice,pra,Over,19.5,1.75,½u,cascade,0.0,11,9.4,ok 85%,
 2026-08-12T18:05:59Z,main,2026-08-12,Diamond Miller,pts,Over,9.5,1.78,1u,flip_paper,0.0,11,9.4,ok 85%,
 2026-08-12T18:05:59Z,main,2026-08-12,Nalyssa Smith,pr,Over,16.5,1.8,1u,overshoot,0.0,6,3.4,ok 85%,
+2026-08-12T22:23:31Z,t1h,2026-08-12,NaLyssa Smith,pts,Over,10.5,1.8,1u,flip_paper,0.0,10,13.7,ok 85%,
+2026-08-12T22:23:31Z,t1h,2026-08-12,Angel Reese,pts,Over,17.5,1.97,1u,flip,0.0,4,2.0,ok 85%,
