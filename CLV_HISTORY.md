@@ -10,7 +10,7 @@ _**sharp-odds** = vs Pinnacle's vig-free fair price (TRUE edge test) · **sharp-
   ★ SHARP ODDS-CLV: -6.7% | beat fair 0/7 (0%)  ← TRUE edge (vs Pinnacle fair price)
   SHARP LINE-CLV : +0.21 pts | n=12  ← better number than the sharp
   self ODDS-CLV  : -0.3% | beat 8/30 (27%)  (1xbet's own close = weak)
-  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 70/126 (+2.5u) · FTUNDER 121/260 (-35.7u) · HOT OVER 18/33 (+0.7u) · LINE-CUT FLIP · exp. base 47/82 (+5.2u) · LINE-CUT FLIP · proven base 22/36 (+4.9u) · STAR-OUT CASCADE 96/174 (-5.1u) · starout 4/11 (-3.6u)
+  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 70/126 (+2.5u) · FTUNDER 122/262 (-36.0u) · HOT OVER 19/34 (+1.6u) · LINE-CUT FLIP · exp. base 48/84 (+4.9u) · LINE-CUT FLIP · proven base 23/37 (+5.8u) · STAR-OUT CASCADE 96/174 (-5.1u) · starout 4/11 (-3.6u)
   VERDICT : ⚠️ NEUTRAL self CLV — winning on outcomes, not beating the line. Unproven; keep collecting.
   by tier: SOLID 5/12 (-2.3u) · STRONG 5/14 (-4.9u) · THIN 3/6 (-0.1u)
   by market: pa Under 1/3 (-1.0u) · pr Under 1/3 (-1.0u) · pra Under 2/9 (-5.4u) · pts Under 9/16 (+1.1u) · ra Under 0/1 (-1.0u)
@@ -776,3 +776,9 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260810 | Nyara Sabally | PRA Over 19.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
 | 20260810 | Nyara Sabally | PTS Under 14.5 @ 1.833 | FTUNDER | WIN | — | +1.0 | -1% |
 | 20260810 | Rhyne Howard | PTS Under 17.5 @ 1.909 | FTUNDER | loss | -5% | +0.0 | -1% |
+| 20260811 | Aliyah Boston | PTS Under 16.5 @ 1.91 | FTUNDER | loss | +1% | +0.0 | +4% |
+| 20260811 | Breanna Stewart | PTS Over 22.5 @ 1.97 | LINE-CUT FLIP · exp. base | loss | — | — | +5% |
+| 20260811 | Caitlin Clark | PRA Over 34.5 @ 1.833 | HOT OVER | WIN | — | — | +0% |
+| 20260811 | Jonquel Jones | PTS Under 14.5 @ 1.75 | FTUNDER | WIN | -9% | +0.0 | -2% |
+| 20260811 | Kelsey Mitchell | PTS Over 25.5 @ 1.93 | LINE-CUT FLIP · proven base | WIN | — | — | -1% |
+| 20260811 | Sabrina Ionescu | PTS Over 17.5 @ 1.75 | LINE-CUT FLIP · exp. base | WIN | — | — | -1% |
