@@ -79,3 +79,9 @@ logged_utc,date,player,market,side,line,price,orig_src,orig_move
 2026-08-12T09:42:07Z,2026-08-12,Olivia Miles,pts,Under,17.5,1.87,flip_paper,0.0108
 2026-08-12T10:41:33Z,2026-08-12,NaLyssa Smith,pts,Under,10.5,1.88,flip_paper,0.0111
 2026-08-12T11:45:03Z,2026-08-12,Nyara Sabally,pts,Over,14.5,1.72,newunder,0.1236
+2026-08-12T14:44:51Z,2026-08-12,Dearica Hamby,pts,Under,13.5,1.93,flip_paper,0.0289
+2026-08-12T14:44:51Z,2026-08-12,Rae Burrell,pts,Over,15.5,1.82,newunder,0.0273
+2026-08-12T14:44:51Z,2026-08-12,Rae Burrell,pra,Under,20.5,1.909,cascade,0.0183
+2026-08-12T14:44:51Z,2026-08-12,Dearica Hamby,pra,Under,23.5,1.87,cascade,0.0389
+2026-08-12T14:44:51Z,2026-08-12,Rhyne Howard,pts,Over,17.5,1.75,newunder,0.0103
+2026-08-12T14:44:51Z,2026-08-12,Nneka Ogwumike,pts,Over,16.5,1.87,newunder,0.0167
