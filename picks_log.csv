@@ -2126,28 +2126,9 @@ pick_date,game_id,player,team,opp,market,anchor,signals,fair_p,fair_odds,proj,sd
 2026-08-11,401857139,Megan DiLeo,Portland Fire,Minnesota Lynx,pts_under,15.5,steady,0.563,1.78,14.7,5.17
 2026-08-11,401857139,Emily Engstler,Portland Fire,Minnesota Lynx,pts_under,8.5,ftdrought,0.589,1.7,7.8,3.0
 2026-08-11,401857139,Olivia Miles,Minnesota Lynx,Portland Fire,pts_under,21.5,steady,0.563,1.78,20.4,7.04
-2026-08-12,401857137,Isabelle Harrison,Toronto Tempo,Dallas Wings,pts_under,9.5,declining+stingy,0.642,1.56,6.6,7.93
-2026-08-12,401857137,Isabelle Harrison,Toronto Tempo,Dallas Wings,pr_under,14.5,declining+cold+stingy,0.59,1.69,12.0,11.02
-2026-08-12,401857137,Isabelle Harrison,Toronto Tempo,Dallas Wings,pra_under,14.5,declining+cold+stingy,0.66,1.52,9.7,11.57
-2026-08-12,401857137,Isabelle Harrison,Toronto Tempo,Dallas Wings,reb_under,3.5,declining+cold,0.58,1.72,2.8,3.4
-2026-08-12,401857137,Arike Ogunbowale,Dallas Wings,Toronto Tempo,pts_under,18.5,declining+cold,0.684,1.46,14.7,7.85
-2026-08-12,401857137,Arike Ogunbowale,Dallas Wings,Toronto Tempo,pr_under,20.5,declining+cold,0.59,1.69,18.5,8.81
-2026-08-12,401857137,Arike Ogunbowale,Dallas Wings,Toronto Tempo,pa_under,20.5,declining+cold,0.61,1.64,18.0,8.96
-2026-08-12,401857137,Arike Ogunbowale,Dallas Wings,Toronto Tempo,pra_under,23.5,declining+cold,0.641,1.56,19.9,9.94
-2026-08-12,401857137,Kiki Rice,Toronto Tempo,Dallas Wings,pr_under,17.5,cold+stingy,0.59,1.69,15.6,8.35
-2026-08-12,401857137,Kiki Rice,Toronto Tempo,Dallas Wings,pra_under,19.5,cold+stingy,0.621,1.61,16.5,9.73
-2026-08-12,401857137,Laura Juskaite,Toronto Tempo,Dallas Wings,pr_under,15.5,cold+stingy,0.59,1.69,13.9,7.16
-2026-08-12,401857137,Laura Juskaite,Toronto Tempo,Dallas Wings,pa_under,13.5,cold+stingy,0.61,1.64,11.5,7.13
-2026-08-12,401857137,Laura Juskaite,Toronto Tempo,Dallas Wings,pra_under,17.5,cold+stingy,0.621,1.61,15.0,8.1
-2026-08-12,401857137,Maria Conde,Toronto Tempo,Dallas Wings,pa_under,15.5,cold+stingy,0.61,1.64,13.7,6.62
-2026-08-12,401857137,Aneesah Morrow,Toronto Tempo,Dallas Wings,pra_under,19.5,cold+stingy,0.621,1.61,16.6,9.33
-2026-08-12,401857137,Alanna Smith,Dallas Wings,Toronto Tempo,pra_over,13.5,hot+expand+leaky,0.62,1.61,16.9,9.45
-2026-08-12,401857137,Nyara Sabally,Toronto Tempo,Dallas Wings,pts_under,13.5,steady,0.563,1.78,12.7,5.29
-2026-08-12,401857137,Paige Bueckers,Dallas Wings,Toronto Tempo,pts_under,18.5,steady,0.563,1.78,17.6,5.87
 2026-08-12,401857138,Azura Stevens,Chicago Sky,Golden State Valkyries,pra_under,20.5,cold+stingy,0.621,1.61,18.2,7.6
 2026-08-12,401857138,Natasha Cloud,Chicago Sky,Golden State Valkyries,pts_under,11.5,steady,0.563,1.78,11.0,3.43
 2026-08-12,401857138,Kamilla Cardoso,Chicago Sky,Golden State Valkyries,pts_under,14.5,steady,0.563,1.78,13.7,4.79
-2026-08-12,401857138,Janelle Salaun,Golden State Valkyries,Chicago Sky,pts_under,12.5,steady,0.563,1.78,11.5,6.57
 2026-08-12,401857138,Tiffany Hayes,Golden State Valkyries,Chicago Sky,ast_over,2.5,usgshock,0.591,1.69,2.9,1.5
 2026-08-12,401857139,Natasha Howard,Minnesota Lynx,Portland Fire,pts_under,11.5,steady,0.563,1.78,10.9,3.59
 2026-08-12,401857139,Bridget Carleton,Portland Fire,Minnesota Lynx,pts_under,15.5,steady,0.563,1.78,14.4,6.99
@@ -2155,7 +2136,6 @@ pick_date,game_id,player,team,opp,market,anchor,signals,fair_p,fair_odds,proj,sd
 2026-08-12,401857139,Megan DiLeo,Portland Fire,Minnesota Lynx,pts_under,15.5,steady,0.563,1.78,14.7,5.17
 2026-08-12,401857139,Emily Engstler,Portland Fire,Minnesota Lynx,pts_under,8.5,ftdrought,0.589,1.7,7.8,3.0
 2026-08-12,401857139,Olivia Miles,Minnesota Lynx,Portland Fire,pts_under,21.5,steady,0.563,1.78,20.4,7.04
-2026-08-12,401857139,Carla Leite,Portland Fire,Minnesota Lynx,pts_under,15.5,steady,0.563,1.78,14.5,6.57
 2026-08-12,401857140,Angel Reese,Atlanta Dream,Connecticut Sun,pts_under,20.5,cold+stingy,0.626,1.6,17.8,8.36
 2026-08-12,401857140,Angel Reese,Atlanta Dream,Connecticut Sun,pr_under,33.5,cold+stingy,0.59,1.69,30.9,11.24
 2026-08-12,401857140,Angel Reese,Atlanta Dream,Connecticut Sun,pa_under,22.5,cold+stingy,0.61,1.64,20.2,8.21

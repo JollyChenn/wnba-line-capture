@@ -1,0 +1,7 @@
+slate,player,market,side,line,odds,src,prev_line,result,actual,pnl,note
+20260811,Kelsey Mitchell,pts,Over,24.5,1.86,flip,25.5,WIN,28,0.86,book cut 25.5->24.5
+20260811,Chelsea Gray,pra,Over,19.5,1.8,overshoot,19.5,loss,19,-1.0,lost by 0.5
+20260811,NaLyssa Smith,pts,Over,11.5,1.79,flip_paper,12.5,loss,11,-1.0,lost by 0.5
+20260811,Dearica Hamby,pts,Over,13.5,1.81,flip_paper,13.5,WIN,19,0.81,correlated w/ her PRA
+20260811,Dearica Hamby,pra,Over,22.5,1.73,cascade,23.5,WIN,25,0.73,correlated w/ her PTS
+20260811,Rae Burrell,pra,Over,18.5,1.73,cascade,19.5,WIN,28,0.73,book cut 19.5->18.5
