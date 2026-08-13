@@ -173,15 +173,30 @@ else:
         sent[slate] = len(PASS)
         tmp = SENT + ".tmp"
         json.dump(sent, open(tmp, "w")); os.replace(tmp, SENT)    # atomic, never a half-written file
-    logged = {(r["slate"], r["player"], r["market"]) for r in load("model_forward.csv")}
-    new = not os.path.exists(FWD)
-    with open(FWD, "a", newline="", encoding="utf-8") as fh:
-        w = csv.writer(fh)
-        if new: w.writerow(["slate","player","market","side","line","odds","src","prev_line",
-                            "result","actual","pnl","note"])
+    # THE TRACKER MUST MATCH THE CARD, NOT ACCUMULATE IT.
+    # The loop reruns every 30 min. A pick can qualify at 21:00 and then fail at 22:00 because the
+    # book raised her number or the price drifted. Appending each time left 3 pending rows for a
+    # slate whose card showed 2 - a record of bets we would NOT have placed. So while the slate is
+    # still PRE-TIP, replace this slate's pending rows with the current card. Once the first tip
+    # has passed the card is frozen and never rewritten, because by then the bet is real.
+    sk = slate.replace("-", "")
+    first_tip = min(tips.values())
+    rows_all = load("model_forward.csv")
+    hdr = ["slate","player","market","side","line","odds","src","prev_line",
+           "result","actual","pnl","note"]
+    if NOW < first_tip:
+        keep = [r for r in rows_all
+                if not (r["slate"] == sk and r.get("result") not in ("WIN", "loss", "push"))]
         for r in PASS:
-            if (slate.replace("-",""), r["name"], r["mk"]) in logged: continue
-            w.writerow([slate.replace("-",""), r["name"], r["mk"], "Over", r["line"], r["price"],
-                        r["src"], r["prev"] if r["prev"] is not None else "", "", "", "",
-                        "pending"])
-    print(f"logged {len(PASS)} picks to model_forward.csv as pending")
+            keep.append({"slate": sk, "player": r["name"], "market": r["mk"], "side": "Over",
+                         "line": r["line"], "odds": r["price"], "src": r["src"],
+                         "prev_line": r["prev"] if r["prev"] is not None else "",
+                         "result": "", "actual": "", "pnl": "", "note": "pending"})
+        tmp = FWD + ".tmp"
+        with open(tmp, "w", newline="", encoding="utf-8") as fh:
+            w = csv.DictWriter(fh, fieldnames=hdr)
+            w.writeheader(); w.writerows(keep)
+        os.replace(tmp, FWD)                       # atomic - never a half-written tracker
+        print(f"tracker now holds exactly the {len(PASS)} picks on this card (pre-tip, rewritable)")
+    else:
+        print("first tip has passed - card frozen, tracker left untouched")
