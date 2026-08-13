@@ -776,3 +776,10 @@ date,player,market,side,line,odds,tier,actual,result,pnl,odds_clv,line_clv,sharp
 20260811,Sabrina Ionescu,pts,Over,17.5,1.75,STRONG,19.0,WIN,0.75,-0.011,0.0,,,flip_paper,2026-08-10
 20260811,Shakira Austin,pr,Over,27.5,1.83,STRONG,28.0,WIN,0.83,-0.042,0.0,,,overshoot,2026-08-10
 20260811,Sonia Citron,pts,Under,15.5,1.91,SOLID,19.0,loss,-1.0,-0.021,0.0,-1.0,,newunder,2026-08-10
+20260812,Arike Ogunbowale,pra,Under,22.5,1.8,SOLID,28.0,loss,-1.0,-0.016,-1.0,,,model,2026-08-11
+20260812,Kiki Rice,pra,Over,19.5,1.75,CASC,21.0,WIN,0.75,0.0,0.0,,,cascade,2026-08-11
+20260812,Laura Juskaite,pra,Over,17.5,1.75,CASC,25.0,WIN,0.75,0.0,0.0,,,cascade,2026-08-11
+20260812,Marina Mabrey,pa,Over,21.5,1.73,SOLID,27.0,WIN,0.73,-0.039,0.0,,,overshoot,2026-08-11
+20260812,Nyara Sabally,pra,Over,21.5,1.75,CASC,14.0,loss,-1.0,0.0,0.0,,,cascade,2026-08-11
+20260812,Nyara Sabally,pts,Under,13.5,1.83,THIN,6.0,WIN,0.83,-0.041,-2.0,,-0.145,newunder,2026-08-11
+20260812,Paige Bueckers,pts,Under,21.5,2.0,STRONG,22.0,loss,-1.0,0.025,-1.0,,,newunder,2026-08-11
