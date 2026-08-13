@@ -49,8 +49,33 @@ def git(*args):
     except Exception as e:
         print("  git failed (continuing local-only):", e); return False
 
-print("syncing state with the cloud...")
-git("pull", "--rebase", "--autostash", "-q", "origin", "main")
+def git_out(*args):
+    import subprocess
+    try:
+        r = subprocess.run(["git"] + list(args), cwd=D, capture_output=True, text=True, timeout=120)
+        return r.stdout.strip() if r.returncode == 0 else ""
+    except Exception:
+        return ""
+
+# WHY THIS IS NO LONGER `git pull --rebase --autostash`.
+# That command rebases the WHOLE repo on every hourly run. Twice it dropped local commits and
+# deleted their files from the working tree, and twice its autostash hit a conflict on the pop and
+# left board_last.json / health_state.json full of merge markers - which then blocks every later
+# commit. The repo is not what needs syncing. Exactly ONE file does: alert_state.json, which
+# records what has already been pinged so the laptop and the cloud do not both alert.
+# So fetch, take that single file, and touch nothing else. This cannot delete a file, cannot
+# rewrite history, and cannot leave a conflict behind.
+print("syncing ping state with the cloud (alert_state.json only)...")
+if git("fetch", "-q", "origin", "main"):
+    if git("checkout", "origin/main", "--", "alert_state.json"):
+        print("  pulled alert_state.json from origin")
+    else:
+        print("  no alert_state.json on origin yet - continuing local-only")
+else:
+    print("  fetch failed - continuing local-only")
+unmerged = git_out("diff", "--name-only", "--diff-filter=U")
+if unmerged:
+    print(f"  WARNING unresolved merge left in: {unmerged.splitlines()} - fix before this can push")
 
 step("1/5  refresh box scores + rebuild signals from the latest games", "daily_picks.py")
 step("2/5  capture 1xbet board (both sides, 48h window)", "cloud_xbet.py",
@@ -82,5 +107,9 @@ else:
                "dashboard.html", "data/box_2026.csv", "data/games_2026.csv"):
         if os.path.exists(os.path.join(D, fn)): git("add", "-f", fn)
     if git("commit", "-q", "-m", f"local run {datetime.datetime.now().strftime('%F %H:%M')}"):
-        git("pull", "--rebase", "--autostash", "-q", "origin", "main"); git("push", "-q")
+        # push only. If origin has moved on, the push is simply rejected and we try again next
+        # hour - that is harmless. The old code rebased first, which is what kept destroying the
+        # working tree for the sake of a push that does not matter to tonight's betting.
+        if not git("push", "-q"):
+            print("  push rejected (origin moved on) - local record is intact, will retry next run")
 print(f"\ndone {datetime.datetime.now().strftime('%Y-%m-%d %H:%M')} local")
