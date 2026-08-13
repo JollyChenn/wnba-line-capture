@@ -88,3 +88,4 @@ logged_utc,date,player,market,side,line,price,orig_src,orig_move
 2026-08-12T19:17:40Z,2026-08-12,Kiki Iriafen,pts,Over,14.5,1.8,newunder,0.0106
 2026-08-13T02:41:10Z,2026-08-12,Sonia Citron,pts,Over,16.5,1.79,newunder,0.0214
 2026-08-13T05:41:15Z,2026-08-12,Rebecca Allen,pts,Under,6.5,1.87,flip_paper,0.0108
+2026-08-13T06:41:27Z,2026-08-12,Angel Reese,pts,Under,16.5,1.86,flip,0.011
