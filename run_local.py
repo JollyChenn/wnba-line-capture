@@ -16,6 +16,12 @@ import os, sys, runpy, datetime, csv
 
 D = os.path.dirname(os.path.abspath(__file__))
 os.chdir(D)
+# run_local.py runs every pipeline script IN-PROCESS via runpy, so they all inherit this stdout.
+# Several of them print star / chart characters. Under the Windows default cp1252 that raises
+# UnicodeEncodeError mid-script - the step() handler swallows it, so the run LOOKS fine while the
+# script actually stopped halfway. This one line is what stops that being a silent data problem.
+try: sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+except Exception: pass
 DRY = "--dry" in sys.argv
 
 
@@ -77,10 +83,21 @@ unmerged = git_out("diff", "--name-only", "--diff-filter=U")
 if unmerged:
     print(f"  WARNING unresolved merge left in: {unmerged.splitlines()} - fix before this can push")
 
-step("1/5  refresh box scores + rebuild signals from the latest games", "daily_picks.py")
-step("2/5  capture 1xbet board (both sides, 48h window)", "cloud_xbet.py",
+# GOING LAPTOP-ONLY. These four used to run only in GitHub Actions. With the cloud workflows off,
+# nothing else would do them:
+#   validate_data     the freshness/range/dup gate - without it a stale slate is bet silently
+#   capture_news      injury + news feed that the cascade signal reads
+#   capture_gamelines game totals and spreads (this is also the data the flip->totals question
+#                     needs, and it only starts 2026-07-11 because nothing local was capturing it)
+#   cascade_watch     fires when a star is ruled OUT, which is the one time-critical alert we have
+#   lineup_check      confirms starters near tip
+step("1/8  refresh box scores + rebuild signals from the latest games", "daily_picks.py")
+step("2/8  validate data (freshness / range / duplicate gate)", "validate_data.py")
+step("3/8  capture 1xbet board (both sides, 48h window)", "cloud_xbet.py",
      {"CAPTURE_ROLE": "all", "XBET_WINDOW_MIN": "2880"})
-step("3/5  drift gate (skip-drift verdicts + fade paper)", "drift_gate.py")
+step("4/8  capture news + injuries", "capture_news.py")
+step("5/8  capture game lines (totals + spreads)", "capture_gamelines.py")
+step("6/8  drift gate (skip-drift verdicts + fade paper)", "drift_gate.py")
 
 # ---- 4) show exactly what the guard would send, BEFORE sending it -----------------------------
 print(f"\n{'='*70}\n  4/5  guard - what passes the strategy right now\n{'='*70}")
@@ -99,7 +116,10 @@ else:
 if DRY:
     print("\n--dry: not sending.")
 else:
-    step("5/5  Discord alert (respects the stage timing + dedup)", "alert_bets.py")
+    step("7/8  Discord alert (respects the stage timing + dedup)", "alert_bets.py")
+    step("8/8  over-model card (the forward-tested rule)", "model_card.py")
+    step("cascade watch (star ruled OUT -> teammate overs)", "cascade_watch.py")
+    step("lineup check (confirm starters near tip)", "lineup_check.py")
     step("dashboard", "build_dashboard.py")
     # push the record back so the cloud sees what was already sent
     for fn in ("alert_state.json", "pinged_bets.csv", "drift_gate_today.csv", "drift_log.csv",
