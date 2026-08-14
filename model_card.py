@@ -137,18 +137,45 @@ for b in load("bets_log.csv"):
                      raised=(pv is not None and line_now - pv >= 0.5)))
 print(f"{len(rows)} over candidates on this slate's teams")
 
-PASS = [r for r in rows if r["mk"] in BET_MKTS and not r["raised"] and r["drift"] < 0.01]
-PASS.sort(key=lambda r: r["tip"])
+# SELECTION, rebuilt 2026-08-14 after auditing every signal on one consistent price basis.
+#
+#   THE LIST  = flip + hotover only. Every other signal together returns +0.8% ROI on 498 bets;
+#               these two return +14.7% on 98. They are not part of the edge, they are it.
+#   THE STAR  = the book did NOT raise her number since her last game.
+#               n=48, 77.1%, +41.4% ROI, alpha +25.8pp - and the 50 bets without it lose 5.43u,
+#               so this is closer to a gate than a tier. Both groups are shown; only the starred
+#               ones are recommended.
+#   DRIFT IS NOT USED HERE. On these two signals the drift condition alone is +4.0% ROI, and
+#   stacking it on top of not-raised drops 48 bets to 20 and +19.87u to +7.75u. It costs 12 units
+#   to buy nothing. It stays in the code as a displayed number, not a filter.
+TOP_SRC = ("flip", "hotover")
+cand = [r for r in rows if r["mk"] in BET_MKTS and r["src"] in TOP_SRC]
+PASS = [r for r in cand if not r["raised"]]
+SECOND = [r for r in cand if r["raised"]]
+PASS.sort(key=lambda r: r["tip"]); SECOND.sort(key=lambda r: r["tip"])
 WIB = lambda t: (t + datetime.timedelta(hours=7)).strftime("%H:%M")
 
-lines = [f"**🎯 OVER MODEL · {slate}** · {len(PASS)} bet{'s' if len(PASS)!=1 else ''} · flat 1u"]
-for r in PASS:
+def fmt(r, star):
     mv = (f"book cut {r['prev']:.1f}→{r['line']:.1f}" if r["prev"] is not None and r["prev"] > r["line"]
-          else (f"line held {r['line']:.1f}" if r["prev"] is not None else "new line"))
-    lines.append(f"• **{r['name']}** {r['mk'].upper()} Over {r['line']} @ {r['price']:.2f}"
-                 f" · {r['team']} v {r['opp']} · {WIB(r['tip'])} WIB")
-    lines.append(f"   {mv} · 10-game median {r['med']:.1f} · price {100*r['drift']:+.1f}% · _{r['src']}_"
-                 if r["med"] is not None else f"   {mv} · _{r['src']}_")
+          else (f"line held {r['line']:.1f}" if r["prev"] is not None
+                else (f"book RAISED {r['prev']:.1f}→{r['line']:.1f}" if r["prev"] is not None
+                      else "no previous line")))
+    if r["prev"] is not None and r["line"] - r["prev"] >= 0.5:
+        mv = f"book RAISED {r['prev']:.1f}→{r['line']:.1f}"
+    head = ("⭐ " if star else "· ") + f"**{r['name']}** {r['mk'].upper()} Over {r['line']} @ {r['price']:.2f}"
+    out = [f"{head} · {r['team']} v {r['opp']} · {WIB(r['tip'])} WIB"]
+    tail = f"   {mv}"
+    if r["med"] is not None: tail += f" · 10-game median {r['med']:.1f}"
+    tail += f" · price {100*r['drift']:+.1f}% · _{r['src']}_"
+    out.append(tail)
+    return out
+
+lines = [f"**🎯 OVER MODEL · {slate}** · {len(PASS)} bet{'s' if len(PASS)!=1 else ''} · flat 1u"]
+for r in PASS: lines += fmt(r, True)
+if SECOND:
+    lines.append(f"_— below: {len(SECOND)} flip/hotover the book has already repriced. "
+                 f"Historically 59.0% / +8.6% — playable, not recommended. —_")
+    for r in SECOND: lines += fmt(r, False)
 dbl = [p for p, c in collections.Counter(r["pl"] for r in PASS).items() if c > 1]
 for p in dbl:
     nm = next(r["name"] for r in PASS if r["pl"] == p)
