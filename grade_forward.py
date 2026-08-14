@@ -30,7 +30,56 @@ for r in load("data/box_2026.csv"):
     box[(dt, (r.get("player") or "").strip().lower())] = dict(
         pts=pts, reb=reb, ast=ast, pra=pts+reb+ast, pr=pts+reb, pa=pts+ast, ra=reb+ast)
 
+# DO NOT TRUST THE LOCAL BOX FOR A RECENT SLATE.
+# data/box_2026.csv is written once per game and never refreshed, so if the fetch landed while the
+# game was still finalising, the cached line is wrong FOREVER. Tonight Erica Wheeler was stored
+# with 5 assists; the ESPN final says 6. PRA 15 vs 16. Both lose to a 16.5 line so the grade held,
+# but on a 15.5 line we would have booked a WIN as a LOSS and never known.
+# So for any slate in the last 4 days, go back to ESPN and let that be the authority.
+import urllib.request, json
+def espn_box(datestr):
+    out = {}
+    try:
+        sb = json.load(urllib.request.urlopen(
+            "https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard"
+            f"?dates={datestr}", timeout=25))
+    except Exception as e:
+        print(f"  (espn scoreboard {datestr} unavailable: {e})"); return out
+    for ev in sb.get("events", []):
+        try:
+            d = json.load(urllib.request.urlopen(
+                "https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/summary"
+                f"?event={ev['id']}", timeout=25))
+        except Exception:
+            continue
+        st = d.get("header", {}).get("competitions", [{}])[0].get("status", {}) \
+              .get("type", {}).get("detail", "")
+        if "Final" not in st: continue            # only settle finished games
+        for t in d.get("boxscore", {}).get("players", []):
+            for grp in t.get("statistics", []):
+                keys = [k.lower() for k in grp.get("keys", [])]
+                for a in grp.get("athletes", []):
+                    nm = a.get("athlete", {}).get("displayName"); s = a.get("stats", [])
+                    if not nm or len(s) != len(keys): continue
+                    m = dict(zip(keys, s))
+                    def num(k):
+                        try: return float(m.get(k, "0") or 0)
+                        except Exception: return 0.0
+                    p, rb, asst = num("points"), num("rebounds"), num("assists")
+                    out[nm.strip().lower()] = dict(pts=p, reb=rb, ast=asst, pra=p+rb+asst,
+                                                   pr=p+rb, pa=p+asst, ra=rb+asst)
+    return out
+
 rows = load("model_forward.csv")
+today = datetime.date.today()
+recent = sorted({r["slate"] for r in rows if r.get("result") not in ("WIN", "loss", "push")
+                 and (today - datetime.date(int(r["slate"][:4]), int(r["slate"][4:6]),
+                                            int(r["slate"][6:8]))).days <= 4})
+for ds in recent:
+    fresh = espn_box(ds)
+    if fresh:
+        for k, v in fresh.items(): box[(ds, k)] = v
+        print(f"  refreshed {len(fresh)} box lines for {ds} straight from ESPN")
 changed = 0
 for r in rows:
     if r.get("result") in ("WIN", "loss"): continue
