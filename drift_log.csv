@@ -3659,3 +3659,13 @@ logged_utc,date,player,market,side,line,src,open_odds,now_odds,move_pct,verdict,
 2026-08-14T03:21:39Z,2026-08-13,Cameron Brink,pra,Over,15.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,14.5->15.5,,,3,1.0,2026-08-14T03:21:28Z
 2026-08-14T03:21:39Z,2026-08-13,Bridget Carleton,pts,Under,16.5,newunder,1.78,1.78,0.0,BET (steady),ok 85%,,,,28,18.7,2026-08-14T03:21:28Z
 2026-08-14T03:21:39Z,2026-08-13,Arike Ogunbowale,pts,Over,16.5,flip_paper,1.78,1.76,-1.1,BET (money agrees),bet now 81%,17.5->16.5,,,4,1.6,2026-08-14T03:21:28Z
+2026-08-14T03:54:28Z,2026-08-13,Kelsey Mitchell,pts,Over,24.5,flip_paper,1.75,1.769,1.1,SKIP-drift,WAIT 70%,25.5->24.5,Under,1.93,3,1.1,2026-08-14T03:54:22Z
+2026-08-14T03:54:28Z,2026-08-13,Paige Bueckers,pts,Under,21.5,newunder,1.73,1.84,6.4,SKIP-drift,WAIT 70%,,Over,1.86,32,20.2,2026-08-14T03:54:22Z
+2026-08-14T03:54:28Z,2026-08-13,Megan DiLeo,pts,Over,13.5,flip_paper,1.85,1.86,0.5,BET (steady),ok 85%,,,,32,20.2,2026-08-14T03:54:22Z
+2026-08-14T03:54:28Z,2026-08-13,Dominique Malonga,pts,Under,20.5,newunder,1.84,1.79,-2.7,BET (money agrees),bet now 81%,,,,33,20.2,2026-08-14T03:54:22Z
+2026-08-14T03:54:28Z,2026-08-13,Rae Burrell,pra,Over,20.5,cascade,1.833,1.75,-4.5,BET (money agrees),BET NOW 93%,,,,33,20.2,2026-08-14T03:54:22Z
+2026-08-14T03:54:28Z,2026-08-13,Dearica Hamby,pra,Over,25.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,23.5->25.5,,,8,3.7,2026-08-14T03:54:22Z
+2026-08-14T03:54:28Z,2026-08-13,Erica Wheeler,pra,Over,20.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,16.5->20.5,,,8,3.7,2026-08-14T03:54:22Z
+2026-08-14T03:54:28Z,2026-08-13,Cameron Brink,pra,Over,15.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,14.5->15.5,,,4,1.6,2026-08-14T03:54:22Z
+2026-08-14T03:54:28Z,2026-08-13,Bridget Carleton,pts,Under,16.5,newunder,1.78,1.78,0.0,BET (steady),ok 85%,,,,29,19.2,2026-08-14T03:54:22Z
+2026-08-14T03:54:28Z,2026-08-13,Arike Ogunbowale,pts,Over,16.5,flip_paper,1.78,1.75,-1.7,BET (money agrees),bet now 81%,17.5->16.5,,,5,2.1,2026-08-14T03:54:22Z
