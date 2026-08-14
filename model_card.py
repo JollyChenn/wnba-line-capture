@@ -6,7 +6,7 @@
 # reads local CSVs, writes two local files, and posts to Discord. If the network is down it still
 # writes the card to disk.
 #
-# THE MODEL (backtest n=134, 67.2%, +29.86u, ROI +22.3%, alpha +15.6pp, z=+3.62):
+# THE MODEL (backtest n=108, 67.6%, +25.38u, ROI +23.5%, alpha +16.1pp, z=+3.36):
 #   1 OVER side only. Not because unders are cursed - the profitable side actually rotates by
 #     half-month - but because our under SELECTION was worse than random even in the months when
 #     unders were the better side (blind -4.5%, ours -14.5%). We are bad at picking them.
@@ -152,14 +152,16 @@ print(f"{len(rows)} over candidates on this slate's teams")
 #       overshoot STARRED  n=86   61.6%  +11.6% ROI  alpha +10.0pp   <- in
 #       overshoot raised   n=77   51.9%   -4.4% ROI  alpha  +0.2pp   <- out
 #
-#   THE LIST  = flip + hotover + overshoot, STARRED ONLY. n=134, 67.2%, +29.86u, +22.3% ROI,
-#               alpha +15.6pp, z=+3.62. The three groups are disjoint - overshoot fires on
-#               different player-nights, so these are 86 extra bets, not relabels.
+#   THE LIST  = flip + hotover + overshoot, STARRED ONLY. n=108, 67.6%, +25.38u, +23.5% ROI,
+#               alpha +16.1pp, z=+3.36. The three groups are disjoint - overshoot fires on
+#               different player-nights, so these are extra bets, not relabels.
+#   THE LADDER, i.e. which filter earns its keep:
+#     raw over menu (all srcs, all mkts) n=596 +3.1% | +markets n=545 +2.8% (-0.3pp, ~nothing)
+#     +drop dead signals n=213 +8.7% (+5.9pp) | +THE STAR n=108 +23.5% (+14.8pp) <- the star IS it
 #   THE STAR  = the book did NOT raise her number 0.5+ since her last game. It is a GATE, not a
-#               tier: the 127 unstarred bets run -8.84u, -7.0% ROI, alpha -1.2pp. Shown on the
+#               tier: the 105 unstarred bets run -6.86u, -6.5% ROI, alpha -0.9pp. Shown on the
 #               card so you can see what was rejected. Do not bet them.
-#   OUT OF SAMPLE, split 20260718:  IN n=49 +22.8%  ->  OUT n=85 +22.0%. Flat. This combination
-#               is the one with a measurable holdout; flip+hotover alone had only n=14 in sample.
+#   OUT OF SAMPLE, split 20260718:  IN n=40 +28.6%  ->  OUT n=68 +20.5%. Both halves readable.
 #   PRICE      = first 1.818 +22.3% | last 1.820 +22.0%. My earlier 'close is best' number was a
 #               BUG: the close price was read at the book's main line, which for 63 of 134 bets
 #               was a different line than the bet settled on. On the 71 clean ones first and close

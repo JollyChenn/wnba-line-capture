@@ -39,7 +39,7 @@ TIMING    BET ON THE ALERT. waiting until close costs 4.7pp of ROI - see §3.
 DRIFT     shown on the card, NOT used as a filter.
 ```
 
-Volume: **~2.6 starred bets per night**, roughly 78 a month. Many nights are still silent -
+Volume: **~2.1 starred bets per night**, roughly 62 a month. Many nights are still silent -
 the two biggest signals by volume (`flip_paper`, `cascade`) are dead and never make the card.
 
 ---
@@ -109,6 +109,28 @@ most mechanically explicit of the three: *the book's number is far below what sh
 model / starout falls here. It is a catch-all, not a designed signal, and in practice it fires
 **only on pra** (all 15 starred bets are pra).
 
+### The ladder - which filter is actually doing the work
+
+Start from every over the engine has ever fired and add one restriction at a time:
+
+```
+0. every OVER signal, every market  (the raw menu)   n=596  56.7%  +18.63u  ROI  +3.1%  alpha +5.6pp
+1. + markets pra / pr / pts only                     n=545  56.5%  +15.13u  ROI  +2.8%  alpha +5.5pp
+2. + drop flip_paper, cascade and the rest           n=213  59.2%  +18.52u  ROI  +8.7%  alpha +7.7pp
+3. + THE STAR                              <- LIVE   n=108  67.6%  +25.38u  ROI +23.5%  alpha +16.1pp
+
+   restricting markets      +3.1% ->  +2.8%   ( -0.3pp)   kept 545/596
+   dropping dead signals    +2.8% ->  +8.7%   ( +5.9pp)   kept 213/545
+   THE STAR                 +8.7% -> +23.5%   (+14.8pp)   kept 108/213
+```
+
+**The star is the model.** It is worth more than twice what signal-selection is worth, and the
+market filter is worth roughly nothing on its own (it stays because `pa` was clearly bad and
+because mixing markets with 44-53% blind rates makes every pooled number unreadable).
+
+Worth noticing: the raw over menu was already **+3.1%, alpha +5.6pp, z=+2.73**. The overs were
+never the problem. The -32.92u came from the unders bolted onto the same menu.
+
 ### The star (book did not raise her 0.5+)
 The single most valuable filter, and it replicates inside each signal independently — which is
 what makes it a mechanism rather than a lucky cut:
@@ -122,8 +144,8 @@ overshoot n=163 57.1%  +4.0%    n=86  61.6%  +11.6%    n=77  51.9%   −4.4%
 The logic: when the book *raises* her line after a good game, it has already priced the thing
 our signal is reacting to. When it holds or cuts, it hasn't. We buy the un-repriced ones.
 
-This is a **gate, not a tier**. The 127 unstarred bets across all three signals run
-**−8.84u, ROI −7.0%, alpha −1.2pp**. They are printed on the card so you can see what was
+This is a **gate, not a tier**. The 105 unstarred bets across all three signals run
+**−6.86u, ROI −6.5%, alpha −0.9pp**. They are printed on the card so you can see what was
 rejected. Do not bet them.
 
 
@@ -146,6 +168,19 @@ lines averages 7.1%.** Either side of a coin flip loses that, every time. A sign
 is not the same as a signal that is *reverse-good* - raised bets are not wrong, they are
 uninformative, and there is nothing in an uninformative bet to fade.
 
+Split by signal, the fade does not rescue itself either:
+
+```
+ALL raised, pooled       n=94   under hits 51.1%   break-even 53.2%   ROI  -4.7%
+  raised flip            n=14   under hits 50.0%   break-even 53.0%   ROI  -5.8%
+  raised hotover         n=12   under hits 66.7%   break-even 53.4%   ROI +24.3%   <- n=12. NOISE.
+  raised overshoot       n=21   under hits 42.9%   break-even 53.0%   ROI -21.1%
+```
+
+Two of three lose; the one that "wins" is **twelve bets**, which is exactly what splitting a
+coin-flip group three ways produces. That cell is the precise shape of the thing that has
+burned this project over and over. Do not build on it.
+
 ### Drift is displayed, not used
 The old model skipped bets whose price had lengthened 1%+. On flip/hotover specifically that
 filter **costs 12.1u**. It is on the card as information only.
@@ -161,25 +196,26 @@ filter **costs 12.1u**. It is on the card as information only.
 **Backtest**, one bet per player-market-night, priced at the first logged odds:
 
 ```
-flip only                        n=33   81.8%  +16.27u  ROI +49.3%  alpha +30.4pp  z=+3.49
-flip + hotover                   n=48   77.1%  +19.87u  ROI +41.4%  alpha +25.8pp  z=+3.58
-flip + hotover + overshoot  LIVE n=134  67.2%  +29.86u  ROI +22.3%  alpha +15.6pp  z=+3.62
+flip only                        n=25   84.0%  +13.69u  ROI +54.8%  alpha +32.4pp  z=+3.24
+flip + hotover                   n=40   77.5%  +17.30u  ROI +43.2%  alpha +26.1pp  z=+3.31
+flip + hotover + overshoot  LIVE n=108  67.6%  +25.38u  ROI +23.5%  alpha +16.1pp  z=+3.36
 ```
 
-Adding overshoot halves ROI-per-bet and raises total profit from +19.87u to +29.86u. That is
-the trade, stated plainly: less edge per bet, ~50% more money, 3x the volume.
+(Earlier drafts of this file quoted n=134 / +29.86u. That was the same rule **without** the
+pra/pr/pts market filter, which the card does apply. n=108 is what the card actually bets.)
+
+Adding overshoot cuts ROI-per-bet from 43.2% to 23.5% and raises total profit from +17.30u to
++25.38u. That is the trade: less edge per bet, ~47% more money, 2.7x the volume.
 
 **Out of sample** (split at 2026-07-18, 60/40 on match-days):
 
 ```
-flip + hotover              IN n=14 unmeasurable      OUT n=34  +40.1%  z=+2.94
-overshoot starred           IN n=35  +14.1%           OUT n=51   +9.9%  z=+1.31
-flip + hotover + overshoot  IN n=49  +22.8%           OUT n=85  +22.0%  z=+2.87
+LIVE  IN   n=40  70.0%  +11.44u  ROI +28.6%  alpha +18.6pp  z=+2.35
+LIVE  OUT  n=68  66.2%  +13.94u  ROI +20.5%  alpha +14.7pp  z=+2.42
 ```
 
-**+22.8% in, +22.0% out.** The combined model is the only configuration with a holdout big
-enough on *both* sides to mean anything - flip+hotover alone has n=14 in sample, so its
-out-of-sample number has nothing to be compared against.
+Both halves are big enough to read and both clear +20%. Month by month: July +24.8% (n=72),
+August +15.5% (n=33). Decaying slightly, but positive throughout.
 
 **Price basis, and a bug I had to back out.** I first reported that the board close was the
 *best* price (+24.7% vs +22.3%). That was wrong. The close price was being read at the book's
