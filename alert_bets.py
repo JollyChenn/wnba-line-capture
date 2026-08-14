@@ -43,6 +43,11 @@ def hook():
     return open(p, encoding="utf-8").read().strip() if os.path.exists(p) else os.environ.get("DISCORD_WEBHOOK", "")
 
 def send(msg):
+    # MUTED 2026-08-14. This module is no longer a pinger - it is kept only because
+    # audit_strategy.py imports its guard()/vetted() helpers, and deleting the file broke the
+    # nightly regression audit. Exactly two things notify now: model_card.py (tonight's bets)
+    # and ping_results.py (last night's result). This one prints and returns.
+    print("[alert_bets muted - would have sent]\n" + msg[:400]); return False
     wh = hook()
     if not wh: print("[no webhook]\n" + msg); return False
     try:

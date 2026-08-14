@@ -21,6 +21,7 @@ STEPS = [
     ("strategy audit (fails loudly on a regression)", "audit_strategy.py"),
     ("health check", "health_check.py"),
     ("grade the over-model forward record", "grade_forward.py"),
+    ("ping last night's result (notification 2 of 2)", "ping_results.py"),
     ("dashboard", "build_dashboard.py"),
 ]
 

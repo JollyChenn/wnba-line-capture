@@ -2126,16 +2126,6 @@ pick_date,game_id,player,team,opp,market,anchor,signals,fair_p,fair_odds,proj,sd
 2026-08-11,401857139,Megan DiLeo,Portland Fire,Minnesota Lynx,pts_under,15.5,steady,0.563,1.78,14.7,5.17
 2026-08-11,401857139,Emily Engstler,Portland Fire,Minnesota Lynx,pts_under,8.5,ftdrought,0.589,1.7,7.8,3.0
 2026-08-11,401857139,Olivia Miles,Minnesota Lynx,Portland Fire,pts_under,21.5,steady,0.563,1.78,20.4,7.04
-2026-08-12,401857138,Azura Stevens,Chicago Sky,Golden State Valkyries,pra_under,20.5,cold+stingy,0.621,1.61,18.2,7.6
-2026-08-12,401857138,Natasha Cloud,Chicago Sky,Golden State Valkyries,pts_under,11.5,steady,0.563,1.78,11.0,3.43
-2026-08-12,401857138,Kamilla Cardoso,Chicago Sky,Golden State Valkyries,pts_under,14.5,steady,0.563,1.78,13.7,4.79
-2026-08-12,401857138,Tiffany Hayes,Golden State Valkyries,Chicago Sky,ast_over,2.5,usgshock,0.591,1.69,2.9,1.5
-2026-08-12,401857139,Natasha Howard,Minnesota Lynx,Portland Fire,pts_under,11.5,steady,0.563,1.78,10.9,3.59
-2026-08-12,401857139,Bridget Carleton,Portland Fire,Minnesota Lynx,pts_under,15.5,steady,0.563,1.78,14.4,6.99
-2026-08-12,401857139,Napheesa Collier,Minnesota Lynx,Portland Fire,pts_under,17.5,steady,0.563,1.78,17.0,3.37
-2026-08-12,401857139,Megan DiLeo,Portland Fire,Minnesota Lynx,pts_under,15.5,steady,0.563,1.78,14.7,5.17
-2026-08-12,401857139,Emily Engstler,Portland Fire,Minnesota Lynx,pts_under,8.5,ftdrought,0.589,1.7,7.8,3.0
-2026-08-12,401857139,Olivia Miles,Minnesota Lynx,Portland Fire,pts_under,21.5,steady,0.563,1.78,20.4,7.04
 2026-08-12,401857140,Angel Reese,Atlanta Dream,Connecticut Sun,pts_under,20.5,cold+stingy,0.626,1.6,17.8,8.36
 2026-08-12,401857140,Angel Reese,Atlanta Dream,Connecticut Sun,pr_under,33.5,cold+stingy,0.59,1.69,30.9,11.24
 2026-08-12,401857140,Angel Reese,Atlanta Dream,Connecticut Sun,pa_under,22.5,cold+stingy,0.61,1.64,20.2,8.21
@@ -2163,3 +2153,63 @@ pick_date,game_id,player,team,opp,market,anchor,signals,fair_p,fair_odds,proj,sd
 2026-08-12,401857142,Sonia Citron,Washington Mystics,Las Vegas Aces,pts_under,16.5,steady,0.563,1.78,15.8,4.36
 2026-08-12,401857142,Kiki Iriafen,Washington Mystics,Las Vegas Aces,pts_under,13.5,steady,0.563,1.78,12.6,5.54
 2026-08-12,401857142,Jackie Young,Las Vegas Aces,Washington Mystics,ast_over,7.5,usgshock,0.591,1.69,7.9,3.69
+2026-08-13,401857143,Alanna Smith,Dallas Wings,Indiana Fever,pra_over,14.5,hot+expand+leaky,0.62,1.61,18.2,10.59
+2026-08-13,401857143,Kelsey Mitchell,Indiana Fever,Dallas Wings,pts_under,27.5,steady,0.563,1.78,26.9,3.85
+2026-08-13,401857143,Arike Ogunbowale,Dallas Wings,Indiana Fever,pts_under,19.5,steady,0.563,1.78,18.2,7.93
+2026-08-13,401857143,Aliyah Boston,Indiana Fever,Dallas Wings,pts_under,14.5,steady,0.563,1.78,13.5,6.19
+2026-08-13,401857143,Caitlin Clark,Indiana Fever,Dallas Wings,pts_under,23.5,steady,0.563,1.78,22.1,8.52
+2026-08-13,401857143,Paige Bueckers,Dallas Wings,Indiana Fever,pts_under,18.5,steady,0.563,1.78,17.6,5.87
+2026-08-13,401857144,Awa Fam,Seattle Storm,Portland Fire,pr_under,17.5,declining+cold,0.59,1.69,15.7,7.75
+2026-08-13,401857144,Awa Fam,Seattle Storm,Portland Fire,pa_under,11.5,declining+cold,0.61,1.64,9.8,6.07
+2026-08-13,401857144,Awa Fam,Seattle Storm,Portland Fire,ra_under,9.5,declining+cold,0.61,1.64,8.3,4.42
+2026-08-13,401857144,Awa Fam,Seattle Storm,Portland Fire,pra_under,19.5,declining+cold,0.641,1.56,16.4,8.59
+2026-08-13,401857144,Awa Fam,Seattle Storm,Portland Fire,reb_under,7.5,declining+cold,0.58,1.72,6.7,3.78
+2026-08-13,401857144,Bridget Carleton,Portland Fire,Seattle Storm,pts_under,16.5,steady,0.563,1.78,15.4,6.81
+2026-08-13,401857144,Megan DiLeo,Portland Fire,Seattle Storm,pts_under,15.5,steady,0.563,1.78,14.7,5.01
+2026-08-13,401857144,Carla Leite,Portland Fire,Seattle Storm,pts_under,15.5,steady,0.563,1.78,14.5,6.57
+2026-08-13,401857144,Dominique Malonga,Seattle Storm,Portland Fire,pts_under,18.5,steady,0.563,1.78,17.5,6.36
+2026-08-14,401857143,Alanna Smith,Dallas Wings,Indiana Fever,pra_over,14.5,hot+expand+leaky,0.62,1.61,18.2,10.59
+2026-08-14,401857143,Kelsey Mitchell,Indiana Fever,Dallas Wings,pts_under,27.5,steady,0.563,1.78,26.9,3.85
+2026-08-14,401857143,Arike Ogunbowale,Dallas Wings,Indiana Fever,pts_under,19.5,steady,0.563,1.78,18.2,7.93
+2026-08-14,401857143,Aliyah Boston,Indiana Fever,Dallas Wings,pts_under,14.5,steady,0.563,1.78,13.5,6.19
+2026-08-14,401857143,Caitlin Clark,Indiana Fever,Dallas Wings,pts_under,23.5,steady,0.563,1.78,22.1,8.52
+2026-08-14,401857143,Paige Bueckers,Dallas Wings,Indiana Fever,pts_under,18.5,steady,0.563,1.78,17.6,5.87
+2026-08-14,401857144,Awa Fam,Seattle Storm,Portland Fire,pr_under,17.5,declining+cold,0.59,1.69,15.7,7.75
+2026-08-14,401857144,Awa Fam,Seattle Storm,Portland Fire,pa_under,11.5,declining+cold,0.61,1.64,9.8,6.07
+2026-08-14,401857144,Awa Fam,Seattle Storm,Portland Fire,ra_under,9.5,declining+cold,0.61,1.64,8.3,4.42
+2026-08-14,401857144,Awa Fam,Seattle Storm,Portland Fire,pra_under,19.5,declining+cold,0.641,1.56,16.4,8.59
+2026-08-14,401857144,Awa Fam,Seattle Storm,Portland Fire,reb_under,7.5,declining+cold,0.58,1.72,6.7,3.78
+2026-08-14,401857144,Bridget Carleton,Portland Fire,Seattle Storm,pts_under,16.5,steady,0.563,1.78,15.4,6.81
+2026-08-14,401857144,Megan DiLeo,Portland Fire,Seattle Storm,pts_under,15.5,steady,0.563,1.78,14.7,5.01
+2026-08-14,401857144,Carla Leite,Portland Fire,Seattle Storm,pts_under,15.5,steady,0.563,1.78,14.5,6.57
+2026-08-14,401857144,Dominique Malonga,Seattle Storm,Portland Fire,pts_under,18.5,steady,0.563,1.78,17.5,6.36
+2026-08-14,401857145,Breanna Stewart,New York Liberty,Connecticut Sun,pts_under,19.5,steady,0.563,1.78,18.3,7.74
+2026-08-14,401857145,Jonquel Jones,New York Liberty,Connecticut Sun,pts_under,13.5,steady,0.563,1.78,12.8,4.4
+2026-08-14,401857145,Rebecca Allen,New York Liberty,Connecticut Sun,pts_under,11.5,ftdrought,0.589,1.7,10.4,4.85
+2026-08-14,401857145,Sabrina Ionescu,New York Liberty,Connecticut Sun,pts_under,19.5,steady,0.563,1.78,18.4,7.14
+2026-08-14,401857145,Olivia Nelson-Ododa,Connecticut Sun,New York Liberty,pts_under,11.5,steady,0.563,1.78,10.8,4.6
+2026-08-14,401857146,Dearica Hamby,Los Angeles Sparks,Washington Mystics,pr_under,23.5,cold+stingy,0.59,1.69,21.9,7.06
+2026-08-14,401857146,Dearica Hamby,Los Angeles Sparks,Washington Mystics,pra_under,25.5,cold+stingy,0.621,1.61,23.1,7.72
+2026-08-14,401857146,Erica Wheeler,Los Angeles Sparks,Washington Mystics,pa_under,18.5,cold+stingy,0.61,1.64,17.1,5.19
+2026-08-14,401857146,Erica Wheeler,Los Angeles Sparks,Washington Mystics,pra_under,20.5,cold+stingy,0.621,1.61,19.0,4.89
+2026-08-14,401857146,Ariel Atkins,Los Angeles Sparks,Washington Mystics,pa_under,12.5,cold+stingy,0.61,1.64,11.1,4.94
+2026-08-14,401857146,Nneka Ogwumike,Los Angeles Sparks,Washington Mystics,pts_under,15.5,steady,0.563,1.78,14.8,4.33
+2026-08-14,401857146,Rae Burrell,Los Angeles Sparks,Washington Mystics,pts_under,14.5,steady,0.563,1.78,13.4,6.72
+2026-08-14,401857146,Shakira Austin,Washington Mystics,Los Angeles Sparks,pts_under,20.5,steady,0.563,1.78,19.7,4.98
+2026-08-14,401857146,Sonia Citron,Washington Mystics,Los Angeles Sparks,pts_under,16.5,steady,0.563,1.78,15.8,4.14
+2026-08-14,401857146,Kiki Iriafen,Washington Mystics,Los Angeles Sparks,pts_under,13.5,steady,0.563,1.78,12.6,5.72
+2026-08-14,401857147,Chelsea Gray,Las Vegas Aces,Minnesota Lynx,pts_under,12.5,cold+stingy,0.626,1.6,10.8,5.17
+2026-08-14,401857147,Chelsea Gray,Las Vegas Aces,Minnesota Lynx,pr_under,15.5,cold+stingy,0.59,1.69,14.3,5.1
+2026-08-14,401857147,Chelsea Gray,Las Vegas Aces,Minnesota Lynx,pa_under,18.5,cold+stingy,0.61,1.64,17.2,4.77
+2026-08-14,401857147,Chelsea Gray,Las Vegas Aces,Minnesota Lynx,pra_under,21.5,cold+stingy,0.621,1.61,20.1,4.6
+2026-08-14,401857147,A'ja Wilson,Las Vegas Aces,Minnesota Lynx,pts_under,25.5,cold+stingy,0.626,1.6,22.6,8.93
+2026-08-14,401857147,A'ja Wilson,Las Vegas Aces,Minnesota Lynx,pr_under,38.5,cold+stingy,0.59,1.69,35.9,11.37
+2026-08-14,401857147,A'ja Wilson,Las Vegas Aces,Minnesota Lynx,pa_under,28.5,cold+stingy,0.61,1.64,25.7,10.17
+2026-08-14,401857147,A'ja Wilson,Las Vegas Aces,Minnesota Lynx,pra_under,41.5,cold+stingy,0.621,1.61,37.7,12.46
+2026-08-14,401857147,NaLyssa Smith,Las Vegas Aces,Minnesota Lynx,pts_under,12.5,cold+stingy,0.626,1.6,10.8,5.32
+2026-08-14,401857147,NaLyssa Smith,Las Vegas Aces,Minnesota Lynx,pr_under,21.5,cold+stingy,0.59,1.69,20.0,6.38
+2026-08-14,401857147,NaLyssa Smith,Las Vegas Aces,Minnesota Lynx,pra_under,21.5,cold+stingy,0.621,1.61,19.4,6.79
+2026-08-14,401857147,Natasha Howard,Minnesota Lynx,Las Vegas Aces,pts_under,11.5,steady,0.563,1.78,11.0,3.35
+2026-08-14,401857147,Napheesa Collier,Minnesota Lynx,Las Vegas Aces,pts_under,18.5,steady,0.563,1.78,18.0,3.14
+2026-08-14,401857147,Jackie Young,Las Vegas Aces,Minnesota Lynx,pts_under,24.5,steady,0.563,1.78,23.2,8.01
+2026-08-14,401857147,Olivia Miles,Minnesota Lynx,Las Vegas Aces,pts_under,21.5,steady,0.563,1.78,20.4,7.15

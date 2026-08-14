@@ -313,6 +313,12 @@ def load_picks():
 
 def ping(msg):
     print(msg)
+    # MUTED 2026-08-14 unless XBET_PING=1. This is the legacy under-model board alert and the
+    # "scrape blocked" warning. Exactly two things notify now: model_card.py (tonight's bets)
+    # and ping_results.py (last night's result). The board still captures normally - it just
+    # does it into the CSV and the log instead of into your phone.
+    if not os.environ.get("XBET_PING"):
+        return
     if not WEBHOOK:
         return
     try:

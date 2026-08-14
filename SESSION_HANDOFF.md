@@ -1,4 +1,29 @@
-# WNBA-LINE-CAPTURE — SESSION HANDOFF (updated 2026-06-21)
+# WNBA-LINE-CAPTURE - SESSION HANDOFF
+
+> ## >>> START HERE, 2026-08-14 <<<
+> **The live model is the OVER MODEL. It is documented in [MODEL.md](MODEL.md) - read that file first.**
+> Everything below this banner is the older under-model era and is kept for history only.
+>
+> **What changed since the text below was written:**
+> - The `model` (COLD/SHRINK/STINGY) **under** signal is NOT real money any more. Our unders lost
+>   -95.61u. Not because unders are cursed - the profitable side rotates by half-month - but because
+>   our under *selection* was worse than random even in under-friendly months.
+> - Real money is now: `flip`/`hotover` **overs**, pra/pr/pts, **starred** (book did not raise her
+>   number 0.5+), flat 1u, ~0.7 bets a night. Backtest n=29, 72.4%, +32.4% ROI, alpha +21.2pp, z=+2.28.
+>   Forward 4-3, +0.13u over 7 bets - review at 50.
+> - **The cloud is off.** No GitHub Actions, no git in the hot path. Everything runs from
+>   `wnba_loop.ps1` in one PowerShell window on this laptop. `git pull --rebase --autostash`
+>   destroyed local commits three times; that is why.
+> - **Exactly two notifications**, by design: `model_card.py` (tonight's bets, evening) and
+>   `ping_results.py` (last night's result, morning). Both silent when there is nothing to say.
+>   `health_check.py` prints instead of pinging. `alert_bets.py` is retired.
+> - Drift is displayed but **not** used as a filter - on flip/hotover it costs 12.1u.
+> - Best open question: **add `overshoot`?** Starred overshoot is +11.2% on n=39 and the combined
+>   model would be z=+2.46, better than live. `hotover` is the weakest leg (strict-universe n=9).
+
+---
+
+## ARCHIVE - the under-model era (updated 2026-06-21)
 
 Repo: `JollyChenn/wnba-line-capture` (private), all on `main`.
 **ARCHITECTURE CHANGED 2026-06-21:** it no longer "runs fully on GitHub Actions, laptop off." It's now SPLIT —

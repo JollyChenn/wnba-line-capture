@@ -128,7 +128,11 @@ def main():
     today = now.strftime("%Y-%m-%d")
     fresh = [(k, m) for k, m in issues if st.get(k) != today]      # one alert per issue per day
     if fresh:
-        ping("🩺 **WNBA bot health**\n" + "\n".join(m for _, m in fresh))
+        # MUTED ON PURPOSE. Only two things ping now: tonight's card (model_card.py) and last
+        # night's result (ping_results.py). Plumbing warnings go to wnba_loop.log and the
+        # PowerShell window, where they belong - they are not betting decisions, and a 04:00
+        # "fade grading frozen" notice is exactly what teaches you to ignore the channel.
+        for _, m in fresh: print("  HEALTH:", m.replace("\n", " ")[:160])
         for k, _ in fresh: st[k] = today
         json.dump(st, open(STATE, "w"))
         print(f"alerted {len(fresh)} issue(s)")
