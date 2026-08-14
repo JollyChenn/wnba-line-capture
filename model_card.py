@@ -160,9 +160,17 @@ print(f"{len(rows)} over candidates on this slate's teams")
 #               card so you can see what was rejected. Do not bet them.
 #   OUT OF SAMPLE, split 20260718:  IN n=49 +22.8%  ->  OUT n=85 +22.0%. Flat. This combination
 #               is the one with a measurable holdout; flip+hotover alone had only n=14 in sample.
-#   PRICE      = holds on every basis. first 1.818 +22.3% | last 1.820 +22.0% | close 1.851 +24.7%.
-#               Overshoot is bet slightly shorter than flip (median 1.80 vs 1.83) and still clears
-#               break-even even if every bet were flat 1.70.
+#   PRICE      = first 1.818 +22.3% | last 1.820 +22.0%. My earlier 'close is best' number was a
+#               BUG: the close price was read at the book's main line, which for 63 of 134 bets
+#               was a different line than the bet settled on. On the 71 clean ones first and close
+#               are a wash (1.832 +11.6% vs 1.839 +11.5%). Overshoot is bet slightly shorter than
+#               flip (median 1.80 vs 1.83) and still clears break-even at a flat 1.70.
+#   TIMING     = BET ON THE ALERT. Same 134 selections, priced as whole bets:
+#                 on the alert  line 20.49  price 1.818  67.2%  +29.86u  +22.3%
+#                 at the close  line 20.87  price 1.851  63.4%  +23.58u  +17.6%
+#               Waiting costs 4.7pp. The line RISES on 38.8% of bets and falls on 8.2% - you gain
+#               3.3 cents and pay 0.38 of line for it. The rise afterwards IS the CLV, and you
+#               capture it by being early, not by waiting for it.
 #   DRIFT IS NOT USED. Stacking it on top of not-raised costs ~12u to buy nothing. Displayed only.
 TOP_SRC = ("flip", "hotover", "overshoot")
 cand = [r for r in rows if r["mk"] in BET_MKTS and r["src"] in TOP_SRC]

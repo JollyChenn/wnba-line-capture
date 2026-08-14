@@ -14,7 +14,7 @@ SIDE      Over. Never under.
 STAR      the book did NOT raise her number by 0.5+ since her previous game   -> BET
 STAKE     flat 1u. one bet per player-market. same player on 2 markets = ONE position.
 FRESH     the signal must be from today or yesterday (0-1 days old)
-TIMING    place it whenever the alert fires. waiting is worth 0.4 cents. not a real edge.
+TIMING    BET ON THE ALERT. waiting until close costs 4.7pp of ROI - see §3.
 DRIFT     shown on the card, NOT used as a filter.
 ```
 
@@ -119,14 +119,39 @@ flip + hotover + overshoot  IN n=49  +22.8%           OUT n=85  +22.0%  z=+2.87
 enough on *both* sides to mean anything - flip+hotover alone has n=14 in sample, so its
 out-of-sample number has nothing to be compared against.
 
-**Price basis** - it holds on all three, and the board close is the *best* price, not the worst:
+**Price basis, and a bug I had to back out.** I first reported that the board close was the
+*best* price (+24.7% vs +22.3%). That was wrong. The close price was being read at the book's
+**main line**, which for 63 of 134 bets was a *different* line from the one the bet was settled
+against - and 52 of those had moved up, where a higher line naturally quotes longer odds. I was
+crediting one line's price to another line's outcome. On the 71 bets where the close is quoted
+at the same line, first and close are a wash:
 
 ```
-                    first          last          close
-flip+hotover     1.824 +41.4%   1.824 +41.1%   1.849 +42.8%
-overshoot        1.814 +11.6%   1.818 +11.3%   1.851 +14.6%
-combined         1.818 +22.3%   1.820 +22.0%   1.851 +24.7%
+CLEAN subset (close quoted at the same line)   first 1.832 +11.6%   close 1.839 +11.5%
 ```
+
+**Price timing is worth nothing. Line timing is worth a lot** - see below.
+
+**WHEN TO BET: on the alert.** The honest comparison is not two prices for one line, it is two
+whole bets - the line-and-price you can have now, against the line-and-price at close:
+
+```
+BET ON THE ALERT   avg line 20.49   avg price 1.818   67.2%   +29.86u   ROI +22.3%
+BET AT CLOSE       avg line 20.87   avg price 1.851   63.4%   +23.58u   ROI +17.6%
+                                          waiting costs 6.28u = 4.7pp of ROI
+```
+
+Why: after the alert the line **rises on 38.8% of bets and falls on only 8.2%**. You gain about
+3.3 cents of price by waiting and pay about 0.38 of line for it. That is a bad trade.
+
+```
+line ROSE after we saw it   n=52  (38.8%)  won 75.0%  ROI +33.9%
+line held                   n=71  (53.0%)  won 60.6%  ROI +11.6%
+line FELL                   n=11  ( 8.2%)  won 72.7%  ROI +36.2%
+```
+
+That top row is the CLV: the market moving toward us afterwards is the confirmation the signal
+is real. **You capture that by betting early. Waiting for close means you are the one paying it.**
 
 **Stress test** - the combined model stays profitable even if every bet were flat 1.70
 (break-even 58.8% vs 67.2% actual, +19.00u).
