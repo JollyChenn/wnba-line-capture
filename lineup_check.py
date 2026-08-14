@@ -43,6 +43,10 @@ def gethtml(u):
 
 
 def ping(msg):
+    # run_local.py sets NO_PING=1 so this script still gathers its data without
+    # adding to the Discord noise. Only the over-model card pings now.
+    import os as _os
+    if _os.environ.get("NO_PING"): return False
     if not WEBHOOK:
         print("[no webhook]\n" + msg); return
     try:

@@ -192,7 +192,14 @@ print("\n" + card + "\n")
 
 # ---- idempotent send, and log the picks so tomorrow can grade them --------------------------------
 sent = json.load(open(SENT)) if os.path.exists(SENT) else {}
-if sent.get(slate) == len(PASS):
+if not PASS:
+    # SILENCE ON EMPTY. At ~0.8 starred bets a night most slates have nothing, and a nightly
+    # "no qualifying bets" ping trains you to ignore the channel - which is exactly when you
+    # miss the one that matters. No bet, no message. The card is still written to the log.
+    print("no qualifying bets - staying silent (card is in the log)")
+    sent[slate] = 0
+    tmp = SENT + ".tmp"; json.dump(sent, open(tmp, "w")); os.replace(tmp, SENT)
+elif sent.get(slate) == len(PASS):
     print("already sent this slate with the same count - not re-pinging")
 else:
     if send(card):

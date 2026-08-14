@@ -116,10 +116,17 @@ else:
 if DRY:
     print("\n--dry: not sending.")
 else:
-    step("7/8  Discord alert (respects the stage timing + dedup)", "alert_bets.py")
-    step("8/8  over-model card (the forward-tested rule)", "model_card.py")
-    step("cascade watch (star ruled OUT -> teammate overs)", "cascade_watch.py")
-    step("lineup check (confirm starters near tip)", "lineup_check.py")
+    # NOTIFICATIONS, trimmed 2026-08-14. Only one thing pings now: the over-model card, and only
+    # when it actually has a bet. Everything else was noise or worse:
+    #   alert_bets   the OLD menu - it is led by newunder, which lost 64u across 551 bets. Pinging
+    #                bets we have measured as losing is the worst kind of notification.
+    #   cascade_watch  cascade is no longer bet (+2.0% ROI, -13.5u in August)
+    #   lineup_check   information, not a decision
+    # All three still RUN below for their data; they just no longer reach Discord. NO_PING=1 is
+    # honoured by any script that checks it, and the env is restored after each step.
+    step("7/7  over-model card (the only thing that pings)", "model_card.py")
+    step("cascade watch - data only, no ping", "cascade_watch.py", {"NO_PING": "1"})
+    step("lineup check - data only, no ping", "lineup_check.py", {"NO_PING": "1"})
     step("dashboard", "build_dashboard.py")
     # push the record back so the cloud sees what was already sent
     for fn in ("alert_state.json", "pinged_bets.csv", "drift_gate_today.csv", "drift_log.csv",
