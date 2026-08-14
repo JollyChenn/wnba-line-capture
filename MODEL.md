@@ -57,7 +57,7 @@ and half a dead one averaged together, which is exactly what the star exists to 
 |---|---|---|---|---|---|---|
 | **flip** | 33 | 81.8% | **+49.3%** | +30.4pp | +3.49 | in |
 | **overshoot** | 86 | 61.6% | **+11.6%** | +10.0pp | +1.85 | in |
-| hotover | 15 | — | — | too few to measure | — | in, on sufferance |
+| hotover | 15 | 66.7% | +24.0% | +15.7pp | +1.22 | in (audited, kept) |
 | flip_paper | 84 | 56.0% | +3.6% | +5.3pp | +0.97 | out |
 | cascade | 63 | 49.2% | −12.1% | −1.7pp | −0.27 | out |
 
