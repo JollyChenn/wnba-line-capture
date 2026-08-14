@@ -3,6 +3,27 @@
 Last updated 2026-08-14. This file is the single source of truth for the live model.
 If this file and any older doc disagree, this file wins.
 
+
+---
+
+## 0. What "alpha" means in this file
+
+Every table here reports **alpha**, not just win rate, because raw win rate is not comparable
+across markets. The blind Over hit rate on this board differs a lot by market:
+
+```
+pra Over  50.9%      pr Over  52.6%      pts Over  50.7%      ast Over  44.0%
+```
+
+So a 50% win rate is *good* on ast (+6.0pp) and *bad* on pr (−2.6pp). **Alpha = our win rate
+minus the blind win rate of the same market and side**, weighted across whatever mix of markets
+that group happens to contain. It answers the only question that matters: did the signal beat
+what you would have got picking that same market and side at random?
+
+`z` is that alpha divided by its standard error - how many standard deviations from luck.
+Roughly: |z| under 2 is suggestive, over 2 is interesting, and none of it means anything until
+the multiplicity correction in §4.4.
+
 ---
 
 ## 1. The rule, in one box
@@ -104,6 +125,26 @@ our signal is reacting to. When it holds or cuts, it hasn't. We buy the un-repri
 This is a **gate, not a tier**. The 127 unstarred bets across all three signals run
 **−8.84u, ROI −7.0%, alpha −1.2pp**. They are printed on the card so you can see what was
 rejected. Do not bet them.
+
+
+### Should we FADE the raised ones? No - tested, it still loses
+
+The obvious idea: if the raised group returns −7.0% on the over, bet the under instead. It
+does not work, and the reason is worth keeping:
+
+```
+RAISED  n=47   BET THE OVER   48.9%  avg 1.865   -4.54u  ROI  -9.7%   alpha -2.2pp
+               FADE (under)   51.1%  avg 1.883   -2.33u  ROI  -5.0%   alpha +2.2pp
+```
+
+The two alphas are **mirror images by construction** - if the over is X above its baseline the
+under is exactly X below its. Fading never creates information; it buys the other side of the
+same coin at the other side's price and pays the vig a second time.
+
+The raised group hits 48.9% on the over. That is a coin flip, and **the book's cut on those 47
+lines averages 7.1%.** Either side of a coin flip loses that, every time. A signal that is *bad*
+is not the same as a signal that is *reverse-good* - raised bets are not wrong, they are
+uninformative, and there is nothing in an uninformative bet to fade.
 
 ### Drift is displayed, not used
 The old model skipped bets whose price had lengthened 1%+. On flip/hotover specifically that
