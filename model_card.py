@@ -6,15 +6,18 @@
 # reads local CSVs, writes two local files, and posts to Discord. If the network is down it still
 # writes the card to disk.
 #
-# THE MODEL (backtest: 425 bets, 63.5%, +68.45u, ROI +16.1%, positive in all three months):
-#   1 OVER side only. Unders are structurally -13% on this board and our under selection adds
-#     nothing to that (46.0% against a 46.7% blind baseline).
-#   2 candidates come from the engine's own over signals in bets_log.csv
-#     (flip / flip_paper / cascade / overshoot / hotover)
-#   3 SKIP if the book RAISED her number 0.5+ since her previous game - already repriced
-#   4 SKIP if the price DRIFTED (lengthened) 1%+ since this line opened
+# THE MODEL (backtest n=134, 67.2%, +29.86u, ROI +22.3%, alpha +15.6pp, z=+3.62):
+#   1 OVER side only. Not because unders are cursed - the profitable side actually rotates by
+#     half-month - but because our under SELECTION was worse than random even in the months when
+#     unders were the better side (blind -4.5%, ours -14.5%). We are bad at picking them.
+#   2 SIGNAL must be flip, hotover or overshoot. flip_paper and cascade are the two biggest
+#     sources by volume and both are dead, which is why most nights are silent.
+#   3 SKIP if the book RAISED her number 0.5+ since her previous game - already repriced.
+#     This is the gate. Unstarred bets run -7.0% ROI on 127.
+#   4 DRIFT is displayed, NOT used. Stacking it costs ~12u to buy nothing.
 #   5 markets pra / pr / pts only - pa ran -14.1%
 #   6 one bet per player-market, and same-player multi-market flagged as ONE position
+#   Full reasoning, evidence and weak points: MODEL.md
 #
 # Run it any time. It is idempotent per slate: it will not re-ping a slate it has already sent.
 import csv, os, sys, json, math, statistics, datetime, collections, urllib.request
@@ -137,18 +140,31 @@ for b in load("bets_log.csv"):
                      raised=(pv is not None and line_now - pv >= 0.5)))
 print(f"{len(rows)} over candidates on this slate's teams")
 
-# SELECTION, rebuilt 2026-08-14 after auditing every signal on one consistent price basis.
+# SELECTION, rebuilt 2026-08-14, then CORRECTED the same day. Read the correction - it is the
+# most instructive mistake in this file.
 #
-#   THE LIST  = flip + hotover only. Every other signal together returns +0.8% ROI on 498 bets;
-#               these two return +14.7% on 98. They are not part of the edge, they are it.
-#   THE STAR  = the book did NOT raise her number since her last game.
-#               n=48, 77.1%, +41.4% ROI, alpha +25.8pp - and the 50 bets without it lose 5.43u,
-#               so this is closer to a gate than a tier. Both groups are shown; only the starred
-#               ones are recommended.
-#   DRIFT IS NOT USED HERE. On these two signals the drift condition alone is +4.0% ROI, and
-#   stacking it on top of not-raised drops 48 bets to 20 and +19.87u to +7.75u. It costs 12 units
-#   to buy nothing. It stays in the code as a displayed number, not a filter.
-TOP_SRC = ("flip", "hotover")
+#   THE MISTAKE. The first version of this rule ranked signals on their RAW numbers (flip +19.6%,
+#   hotover +7.1%, overshoot +4.0%, flip_paper +5.0%, cascade -5.7%), kept the top two, and only
+#   THEN discovered the star. I applied the star to the two signals I had already kept and never
+#   re-tested the ones I had discarded. overshoot RAW is mediocre because it is half a good signal
+#   and half a dead one averaged together - which is precisely what the star exists to separate:
+#       overshoot RAW      n=163  57.1%   +4.0% ROI  alpha  +5.3pp
+#       overshoot STARRED  n=86   61.6%  +11.6% ROI  alpha +10.0pp   <- in
+#       overshoot raised   n=77   51.9%   -4.4% ROI  alpha  +0.2pp   <- out
+#
+#   THE LIST  = flip + hotover + overshoot, STARRED ONLY. n=134, 67.2%, +29.86u, +22.3% ROI,
+#               alpha +15.6pp, z=+3.62. The three groups are disjoint - overshoot fires on
+#               different player-nights, so these are 86 extra bets, not relabels.
+#   THE STAR  = the book did NOT raise her number 0.5+ since her last game. It is a GATE, not a
+#               tier: the 127 unstarred bets run -8.84u, -7.0% ROI, alpha -1.2pp. Shown on the
+#               card so you can see what was rejected. Do not bet them.
+#   OUT OF SAMPLE, split 20260718:  IN n=49 +22.8%  ->  OUT n=85 +22.0%. Flat. This combination
+#               is the one with a measurable holdout; flip+hotover alone had only n=14 in sample.
+#   PRICE      = holds on every basis. first 1.818 +22.3% | last 1.820 +22.0% | close 1.851 +24.7%.
+#               Overshoot is bet slightly shorter than flip (median 1.80 vs 1.83) and still clears
+#               break-even even if every bet were flat 1.70.
+#   DRIFT IS NOT USED. Stacking it on top of not-raised costs ~12u to buy nothing. Displayed only.
+TOP_SRC = ("flip", "hotover", "overshoot")
 cand = [r for r in rows if r["mk"] in BET_MKTS and r["src"] in TOP_SRC]
 PASS = [r for r in cand if not r["raised"]]
 SECOND = [r for r in cand if r["raised"]]
@@ -173,8 +189,9 @@ def fmt(r, star):
 lines = [f"**🎯 OVER MODEL · {slate}** · {len(PASS)} bet{'s' if len(PASS)!=1 else ''} · flat 1u"]
 for r in PASS: lines += fmt(r, True)
 if SECOND:
-    lines.append(f"_— below: {len(SECOND)} flip/hotover the book has already repriced. "
-                 f"Historically 59.0% / +8.6% — playable, not recommended. —_")
+    lines.append(f"_— below: {len(SECOND)} the book has already repriced (raised her 0.5+). "
+                 f"Historically n=127, 50.4%, −8.84u, ROI −7.0%. DO NOT BET. Shown so you can "
+                 f"see what was rejected. —_")
     for r in SECOND: lines += fmt(r, False)
 dbl = [p for p, c in collections.Counter(r["pl"] for r in PASS).items() if c > 1]
 for p in dbl:

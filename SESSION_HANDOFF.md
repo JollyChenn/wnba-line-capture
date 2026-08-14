@@ -9,8 +9,10 @@
 >   -95.61u. Not because unders are cursed - the profitable side rotates by half-month - but because
 >   our under *selection* was worse than random even in under-friendly months.
 > - Real money is now: `flip`/`hotover` **overs**, pra/pr/pts, **starred** (book did not raise her
->   number 0.5+), flat 1u, ~0.7 bets a night. Backtest n=29, 72.4%, +32.4% ROI, alpha +21.2pp, z=+2.28.
->   Forward 4-3, +0.13u over 7 bets - review at 50.
+>   number 0.5+), flat 1u, ~2.6 bets a night. Backtest n=134, 67.2%, +29.86u, ROI +22.3%,
+>   alpha +15.6pp, z=+3.62. Out of sample it is FLAT: IN +22.8% (n=49) -> OUT +22.0% (n=85).
+>   Holds on every price basis (first +22.3% / last +22.0% / close +24.7%). Forward 4-3, +0.13u
+>   over 7 bets - review at 50, now ~3 weeks away rather than 3 months.
 > - **The cloud is off.** No GitHub Actions, no git in the hot path. Everything runs from
 >   `wnba_loop.ps1` in one PowerShell window on this laptop. `git pull --rebase --autostash`
 >   destroyed local commits three times; that is why.
@@ -19,7 +21,12 @@
 >   `health_check.py` prints instead of pinging. `alert_bets.py` is retired.
 > - Drift is displayed but **not** used as a filter - on flip/hotover it costs 12.1u.
 > - Best open question: **add `overshoot`?** Starred overshoot is +11.2% on n=39 and the combined
->   model would be z=+2.46, better than live. `hotover` is the weakest leg (strict-universe n=9).
+>   model IS now live (n=86 starred, +11.6%, holds out of sample). THE MISTAKE THAT HID IT, kept
+>   as a standing rule: I ranked signals on RAW performance, kept the top two, THEN discovered the
+>   star filter and only applied it to the survivors. overshoot raw is mediocre because it is half
+>   a good signal and half a dead one averaged together. **When you find a new filter, re-run it
+>   across every candidate you already rejected.** `hotover` is now the weakest leg (starred n=15,
+>   unmeasurable) and is the next thing to consider cutting.
 
 ---
 

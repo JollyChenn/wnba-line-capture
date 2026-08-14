@@ -8,7 +8,7 @@ If this file and any older doc disagree, this file wins.
 ## 1. The rule, in one box
 
 ```
-SIGNAL    the engine flags her with src = flip  OR  hotover
+SIGNAL    the engine flags her with src = flip  OR  hotover  OR  overshoot
 MARKET    pra / pr / pts only
 SIDE      Over. Never under.
 STAR      the book did NOT raise her number by 0.5+ since her previous game   -> BET
@@ -18,8 +18,8 @@ TIMING    place it whenever the alert fires. waiting is worth 0.4 cents. not a r
 DRIFT     shown on the card, NOT used as a filter.
 ```
 
-Volume: **~0.7 starred bets per night**, roughly 21 a month. Most nights are silent.
-That is the model working, not the model broken.
+Volume: **~2.6 starred bets per night**, roughly 78 a month. Many nights are still silent -
+the two biggest signals by volume (`flip_paper`, `cascade`) are dead and never make the card.
 
 ---
 
@@ -45,36 +45,44 @@ returned −4.5% and ours returned −14.5%. In 2026-08a blind −2.9%, ours −
 being punished by the environment, we are just bad at picking unders. Different problem, and
 "don't bet them" solves it.
 
-### flip / hotover only
-Every over-source, one bet per player-market-night, scored as **alpha over the matched
-per-market blind baseline** (raw win rate is meaningless when one subset is pra and another
-is ast):
+### flip / hotover / overshoot only
 
-| source | starred n | win% | ROI | alpha | z |
-|---|---|---|---|---|---|
-| **flip** | 20 | 75.0% | **+37.9%** | +23.6pp | +2.11 |
-| overshoot | 39 | 61.5% | +11.2% | +10.2pp | +1.28 |
-| hotover | 9 | — | — | too few | — |
-| flip_paper | 59 | 49.2% | −9.7% | −1.4pp | −0.22 |
-| cascade | 43 | 46.5% | −14.1% | −4.3pp | −0.56 |
+**This list was wrong for half a day and the correction is the most instructive thing here.**
+The first version ranked signals on their RAW numbers, kept the top two, and only *then*
+discovered the star filter - which was applied to the two survivors and never re-run on the
+signals already discarded. `overshoot` looked mediocre raw because it is half a good signal
+and half a dead one averaged together, which is exactly what the star exists to separate:
 
-`flip_paper` and `cascade` are the two biggest sources by volume and both are **dead**.
-That is why the card ignores them, and it is why there is no bet most nights.
+| source | starred n | win% | ROI | alpha | z | verdict |
+|---|---|---|---|---|---|---|
+| **flip** | 33 | 81.8% | **+49.3%** | +30.4pp | +3.49 | in |
+| **overshoot** | 86 | 61.6% | **+11.6%** | +10.0pp | +1.85 | in |
+| hotover | 15 | — | — | too few to measure | — | in, on sufferance |
+| flip_paper | 84 | 56.0% | +3.6% | +5.3pp | +0.97 | out |
+| cascade | 63 | 49.2% | −12.1% | −1.7pp | −0.27 | out |
+
+The three kept groups are **disjoint** - zero shared player-market-nights - so overshoot is 86
+genuinely extra bets, not relabels of ones we already take.
+
+`flip_paper` and `cascade` are the two biggest sources by volume and both are dead. That is why
+there is still no bet on plenty of nights.
 
 ### The star (book did not raise her 0.5+)
-This is the single most valuable filter, and it replicates inside each signal independently:
+The single most valuable filter, and it replicates inside each signal independently — which is
+what makes it a mechanism rather than a lucky cut:
 
 ```
-flip  RAW       n=34   64.7%   +18.9% ROI
-flip  STARRED   n=20   75.0%   +37.9% ROI     <- the whole edge is here
-flip  raised    n=14   (loses)
+             RAW                    STARRED                 RAISED
+flip     n=60  65.0%  +19.6%    n=33  81.8%  +49.3%    n=27  44.4%  −16.8%
+overshoot n=163 57.1%  +4.0%    n=86  61.6%  +11.6%    n=77  51.9%   −4.4%
 ```
 
 The logic: when the book *raises* her line after a good game, it has already priced the thing
-our signal is reacting to. When it holds or cuts, it hasn't. We are buying the un-repriced ones.
+our signal is reacting to. When it holds or cuts, it hasn't. We buy the un-repriced ones.
 
-Unstarred bets are still printed on the card, labelled and not recommended. Across 48 of them
-they ran **−5.33u**. Do not take them.
+This is a **gate, not a tier**. The 127 unstarred bets across all three signals run
+**−8.84u, ROI −7.0%, alpha −1.2pp**. They are printed on the card so you can see what was
+rejected. Do not bet them.
 
 ### Drift is displayed, not used
 The old model skipped bets whose price had lengthened 1%+. On flip/hotover specifically that
@@ -88,39 +96,67 @@ filter **costs 12.1u**. It is on the card as information only.
 
 ## 3. What it is worth
 
-**Backtest** (strict universe — both sides quoted, drift computable, one bet per
-player-market-night):
+**Backtest**, one bet per player-market-night, priced at the first logged odds:
 
 ```
-flip + hotover, STARRED    n=29   21-8   72.4%   +9.39u   ROI +32.4%   alpha +21.2pp   z=+2.28
+flip only                        n=33   81.8%  +16.27u  ROI +49.3%  alpha +30.4pp  z=+3.49
+flip + hotover                   n=48   77.1%  +19.87u  ROI +41.4%  alpha +25.8pp  z=+3.58
+flip + hotover + overshoot  LIVE n=134  67.2%  +29.86u  ROI +22.3%  alpha +15.6pp  z=+3.62
 ```
 
-On the looser universe used when the model was first wired: n=42, 78.6%, +18.96u, +45.1% ROI,
-alpha +27.2pp, z=3.53, **positive in all three months**.
+Adding overshoot halves ROI-per-bet and raises total profit from +19.87u to +29.86u. That is
+the trade, stated plainly: less edge per bet, ~50% more money, 3x the volume.
 
-**The best single piece of evidence** is August. In 2026-08a blind overs returned −11.5% —
-the most over-hostile stretch in the data — and the model returned **+16.0% (+3.84u on 24)**.
-Roughly 27 points of alpha against a punishing environment. That is the strongest sign it is
-reading something real rather than riding an over-friendly season.
+**Out of sample** (split at 2026-07-18, 60/40 on match-days):
 
-**Forward record: 4-3, +0.13u, ROI +1.9% over 7 bets.** Meaningless at this n. Review at 50.
+```
+flip + hotover              IN n=14 unmeasurable      OUT n=34  +40.1%  z=+2.94
+overshoot starred           IN n=35  +14.1%           OUT n=51   +9.9%  z=+1.31
+flip + hotover + overshoot  IN n=49  +22.8%           OUT n=85  +22.0%  z=+2.87
+```
 
----
+**+22.8% in, +22.0% out.** The combined model is the only configuration with a holdout big
+enough on *both* sides to mean anything - flip+hotover alone has n=14 in sample, so its
+out-of-sample number has nothing to be compared against.
 
-## 4. Honest weak points — read before trusting this
+**Price basis** - it holds on all three, and the board close is the *best* price, not the worst:
 
-1. **hotover barely qualifies.** In the strict universe hotover-starred is n=9. Raw hotover is
-   −13.4%. The edge measured above is carried almost entirely by `flip`. Dropping hotover would
-   cost ~a third of the volume and probably lose nothing.
-2. **overshoot is the strongest thing we are NOT betting.** Starred overshoot is +11.2% on
-   n=39 — four times hotover's sample. Adding it gives n=68, 66.2%, +13.76u, alpha +14.9pp,
-   **z=+2.46, higher than the live model alone**. This is the first change to consider.
-3. **n=29 is small.** ±18pp confidence interval. z=+2.28 is real but not a multiplicity-priced
-   result across all the variants that were searched this session.
-4. **We are betting a soft book.** 1xbet props sit 7.0% below Pinnacle no-vig fair
-   (n=551 time-aligned, t=−42.9). The edge must clear that. It is why the filters are so tight.
+```
+                    first          last          close
+flip+hotover     1.824 +41.4%   1.824 +41.1%   1.849 +42.8%
+overshoot        1.814 +11.6%   1.818 +11.3%   1.851 +14.6%
+combined         1.818 +22.3%   1.820 +22.0%   1.851 +24.7%
+```
 
----
+**Stress test** - the combined model stays profitable even if every bet were flat 1.70
+(break-even 58.8% vs 67.2% actual, +19.00u).
+
+**The best single piece of evidence** is August. In 2026-08a blind overs returned −11.5% - the
+most over-hostile stretch in the data - and the model returned **+16.0%**. Roughly 27 points of
+alpha against a punishing environment.
+
+**Forward record: 4-3, +0.13u, ROI +1.9% over 7 bets.** Meaningless at this n. Review at 50,
+which at ~2.6 bets a night is about three weeks away rather than three months.
+
+## 4. Honest weak points - read before trusting this
+
+1. **overshoot's cushion is thin.** It hits 61.6% against a break-even of 55.6% at its median
+   price of 1.80 - six points of margin, on n=86 where the confidence interval is about ±10pp.
+   If the true rate is three points below the measured one it is roughly break-even. `flip`
+   has a 21-point cushion; overshoot does not. It earns its place on volume and out-of-sample
+   stability, not on strength.
+2. **overshoot is bet slightly shorter than flip** - median 1.80 vs 1.83, p25 1.73 vs 1.80.
+   Not fatal, but it is why the margin is thinner.
+3. **hotover is the weakest leg, not overshoot.** Starred hotover is n=15 - too few to put a
+   number on at all. It survives in the list on its raw +7.1%/z=+0.86, which is nothing. If
+   anything gets cut next, it is this.
+4. **Multiplicity.** A lot of variants were searched to arrive here. z=+3.62 is not
+   multiplicity-priced. The out-of-sample flatness is the better evidence than the z.
+5. **We are betting a soft book.** 1xbet props sit 7.0% below Pinnacle no-vig fair
+   (n=551 time-aligned, t=−42.9). The edge must clear that. It is why the filters are tight.
+6. **The methodological lesson, kept deliberately:** when a new filter is discovered, re-run it
+   across *every* candidate that was previously rejected. Ranking on raw performance and then
+   filtering the survivors nearly cost this model two thirds of its bets.
 
 ## 5. Notifications — exactly two, by design
 
