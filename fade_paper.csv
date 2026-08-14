@@ -96,3 +96,4 @@ logged_utc,date,player,market,side,line,price,orig_src,orig_move
 2026-08-13T09:41:35Z,2026-08-13,Aliyah Boston,pts,Over,16.5,1.94,newunder,0.0231
 2026-08-13T09:41:35Z,2026-08-13,Paige Bueckers,pts,Over,21.5,1.97,newunder,0.0116
 2026-08-13T14:44:04Z,2026-08-13,Bridget Carleton,pts,Over,16.5,1.952,newunder,0.0112
+2026-08-14T02:50:00Z,2026-08-13,Megan DiLeo,pts,Under,13.5,1.85,flip_paper,0.0216
