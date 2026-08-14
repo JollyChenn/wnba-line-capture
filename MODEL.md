@@ -67,6 +67,27 @@ genuinely extra bets, not relabels of ones we already take.
 `flip_paper` and `cascade` are the two biggest sources by volume and both are dead. That is why
 there is still no bet on plenty of nights.
 
+### What the three signals actually ARE
+
+All three are generated in `cloud_xbet.py`. They are not variants of one idea:
+
+**`flip`** — the under-model found a cold/shrink candidate, but the book's *over* line came in so
+low (2+ below her anchor, and below our projection) that the over is the +EV side. The model
+literally flips its own under into an over. It only gets the `flip` tag if the underlying signal
+is a proven one; on an experimental signal it is tagged `flip_paper` instead, which is why
+`flip_paper` is a different and dead animal.
+
+**`overshoot`** — a board-wide sweep, independent of the player model. It looks for any 1xbet
+over line sitting **3+ below the player's trailing median**, then guards it hard: confirmed-active
+only (injury-first), current-team games only so a trade cannot blend the median, skip if minutes
+are shrinking (role cut), skip if she is cold, **skip if Pinnacle agrees with the low line** (then
+*our* median is the stale one, not the book's), and drop pts/pra in low-total games. It is the
+most mechanically explicit of the three: *the book's number is far below what she actually does.*
+
+**`hotover`** — the `else` branch. Any over that is not flip / newunder / usgshock / fragile /
+model / starout falls here. It is a catch-all, not a designed signal, and in practice it fires
+**only on pra** (all 15 starred bets are pra).
+
 ### The star (book did not raise her 0.5+)
 The single most valuable filter, and it replicates inside each signal independently — which is
 what makes it a mechanism rather than a lucky cut:
@@ -165,18 +186,52 @@ which at ~2.6 bets a night is about three weeks away rather than three months.
 
 ## 4. Honest weak points - read before trusting this
 
-1. **overshoot's cushion is thin.** It hits 61.6% against a break-even of 55.6% at its median
-   price of 1.80 - six points of margin, on n=86 where the confidence interval is about ±10pp.
-   If the true rate is three points below the measured one it is roughly break-even. `flip`
-   has a 21-point cushion; overshoot does not. It earns its place on volume and out-of-sample
-   stability, not on strength.
+1. **overshoot's cushion is thin, and its `pts` leg is the weak cell.** Overall it hits 61.6%
+   against a break-even of 55.6% at its median price of 1.80 - six points of margin on n=86,
+   where the CI is about ±10pp. Broken down:
+   ```
+   overshoot starred  pra   n=26  73.1%  ROI +33.5%  alpha +22.1pp  z=+2.26
+   overshoot starred  pr    n=26  61.5%  ROI +10.4%  alpha  +9.0pp  z=+0.92
+   overshoot starred  pts   n=16  43.8%  ROI -20.6%  alpha  -6.9pp  z=-0.55   <- watch this
+   ```
+   I did NOT cut pts, because pooled across all three signals pts is **+6.3%, alpha +7.7pp** -
+   so the weakness lives in one 16-bet cell, and cutting a market on 16 bets is exactly the
+   curve-fitting that has killed every previous version of this model. Flag it, watch it
+   forward, do not act on it yet.
 2. **overshoot is bet slightly shorter than flip** - median 1.80 vs 1.83, p25 1.73 vs 1.80.
    Not fatal, but it is why the margin is thinner.
-3. **hotover is the weakest leg, not overshoot.** Starred hotover is n=15 - too few to put a
-   number on at all. It survives in the list on its raw +7.1%/z=+0.86, which is nothing. If
-   anything gets cut next, it is this.
-4. **Multiplicity.** A lot of variants were searched to arrive here. z=+3.62 is not
-   multiplicity-priced. The out-of-sample flatness is the better evidence than the z.
+3. **hotover: audited, and KEPT** - reversing what this file said earlier. I had called it
+   unmeasurable because n=15 fell below my n>=20 reporting threshold. Measured, it is
+   66.7%, +3.60u, ROI +24.0%, **alpha +15.7pp - the same alpha as the model overall.**
+   Dropping it changes nothing and costs 15 bets:
+   ```
+   flip + overshoot  (drop)   n=119  67.2%  +26.25u  ROI +22.1%  z=+3.41   OOS 23.9 -> 21.0
+   flip + hot + over (keep)   n=134  67.2%  +29.86u  ROI +22.3%  z=+3.62   OOS 22.8 -> 22.0
+   ```
+   It is small and it is a catch-all, but it is not dragging. Keep.
+4. **MULTIPLICITY - the most important caveat in this file, now measured.** I simulated every
+   outcome from that line's own de-vigged book probability (a world with no edge, same lines,
+   same prices, same sample sizes) and re-ran the entire 558-cell search on each fake world:
+
+   ```
+   ASKING "is the BEST cell of my search significant?"
+     min n=25   real +32.4%   null median +22.3%   p=0.193
+     min n=40   real +20.2%   null median +15.1%   p=0.237
+     min n=60   real +20.2%   null median +10.3%   p=0.077
+     min n=80   real +12.8%   null median  +6.2%   p=0.213      -> NOT significant
+
+   ASKING "is OUR cell significant?" (flip+hotover+overshoot x pra/pr/pts x starred)
+     n=68   real +20.2%   null median -6.5%   p95 +12.3%        -> p=0.0095
+   ```
+
+   **Both numbers are true and they mean different things.** Cherry-picking the best of 558
+   cells produces +22% ROI in a *no-edge* world about half the time - so the maximum of my
+   search proves nothing. But our config is not that maximum (the max was +32.4% on n=29; ours
+   is +20.2% on n=68), and tested as a stated rule it clears the null at p=0.0095.
+
+   The honest position is between the two: our rule was chosen after looking at the data, so
+   0.0095 is optimistic; it was chosen by a *mechanism* rather than by maximising ROI, so 0.19
+   is pessimistic. **Probably real, not proven. The forward record settles it, nothing else.**
 5. **We are betting a soft book.** 1xbet props sit 7.0% below Pinnacle no-vig fair
    (n=551 time-aligned, t=−42.9). The edge must clear that. It is why the filters are tight.
 6. **The methodological lesson, kept deliberately:** when a new filter is discovered, re-run it
