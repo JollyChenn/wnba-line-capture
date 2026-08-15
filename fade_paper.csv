@@ -112,3 +112,4 @@ logged_utc,date,player,market,side,line,price,orig_src,orig_move
 2026-08-14T21:45:02Z,2026-08-14,Cameron Brink,pra,Under,15.5,1.83,cascade,0.0457
 2026-08-14T23:51:57Z,2026-08-14,Kayla Mcbride,pa,Under,17.5,1.952,overshoot,0.0405
 2026-08-15T03:37:20Z,2026-08-14,Jackie Young,pts,Under,18.5,1.92,flip_paper,0.017
+2026-08-15T05:14:07Z,2026-08-14,Natasha Howard,pts,Over,12.5,1.95,newunder,0.0115
