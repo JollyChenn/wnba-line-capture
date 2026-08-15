@@ -23,7 +23,7 @@ BET_MKTS = ("pra", "pr", "pts")
 SIGS = ("flip", "hotover", "overshoot")
 OUT = os.path.join(D, "shadow_forward.csv")
 COLS = ["slate", "config", "player", "market", "line", "odds", "src",
-        "prev_line", "drift", "logged_utc", "result", "actual"]
+        "prev_line", "mv", "drift", "logged_utc", "result", "actual"]
 
 def load(p):
     fp = os.path.join(D, p)
@@ -46,27 +46,43 @@ if not tips:
 slate = min(tips.values()).strftime("%Y-%m-%d")
 first_tip = min(tips.values())
 
-# ---- board, split into nights ----------------------------------------------------------------
+# ---- board, anchored to GAMES (same fix as model_card.py 2026-08-15) --------------------------
+# The old version bucketed by "started within 30h of tip". 1xbet posts lines a median 29.9h out,
+# so half of all live lines were landing in the previous-game bucket. Shadow rows must be built
+# from exactly the same view as the card or the comparison is meaningless.
 raw = collections.defaultdict(list)
 for b in load("xbet_board.csv"):
     t, o, ln = ts(b.get("captured_utc")), f(b.get("odds")), f(b.get("line"))
     if t and o and ln is not None and b.get("market") in MKTS and b.get("side") == "Over":
         raw[((b.get("player") or "").lower(), b.get("market"), ln)].append((t, o))
-nights = collections.defaultdict(list)
-for (pl, mk, ln), v in raw.items():
-    v.sort(); blocks, cur = [], [v[0]]
-    for a_, b_ in zip(v, v[1:]):
-        if (b_[0]-a_[0]).total_seconds() > 12*3600: blocks.append(cur); cur = []
-        cur.append(b_)
-    blocks.append(cur)
-    for blk in blocks:
-        if blk: nights[(pl, mk)].append((blk[0][0], ln, blk))
-for v in nights.values(): v.sort()
 
 teamnow = {}
 gm = {g.get("game_id"): g.get("date","") for g in load("data/games_2026.csv")}
 for r in load("data/box_2026.csv"):
     if gm.get(r.get("game_id")): teamnow[(r.get("player") or "").lower()] = r.get("team")
+
+tips_of = collections.defaultdict(list)
+for g in load("data/games_2026.csv"):
+    t = ts(g.get("tip"))
+    if t:
+        tips_of[g["home"]].append(t); tips_of[g["away"]].append(t)
+for v in tips_of.values(): v.sort()
+
+def game_for(team, when):
+    for t in tips_of.get(team, []):
+        if when <= t and (t - when).total_seconds() <= 60*3600:
+            return t
+    return None
+
+bygame = collections.defaultdict(list)
+for (pl, mk, ln), v in raw.items():
+    tm = teamnow.get(pl)
+    if tm is None: continue
+    for t, o in sorted(v):
+        gt = game_for(tm, t)
+        if gt is None: continue
+        bygame[(pl, mk, gt)].append((t, ln, o))
+for v in bygame.values(): v.sort()
 
 # ---- candidates, exactly as model_card builds them --------------------------------------------
 seen, C = set(), []
@@ -83,17 +99,19 @@ for b in load("bets_log.csv"):
     if mk not in MKTS: continue
     tm = teamnow.get(pl)
     if tm not in tips or (pl, mk) in seen: continue
-    tn = [x for x in nights.get((pl, mk), [])
-          if (tips[tm] - x[0]).total_seconds() < 30*3600 and x[0] <= tips[tm]]
-    if not tn: continue
+    tonight = bygame.get((pl, mk, tips[tm]), [])
+    if not tonight: continue
     seen.add((pl, mk))
-    _, line_now, series = max(tn, key=lambda x: len(x[2]))
-    prev = [x for x in nights.get((pl, mk), []) if (tips[tm] - x[0]).total_seconds() >= 30*3600]
-    pv = prev[-1][1] if prev else None
-    drift = series[-1][1]/series[0][1] - 1 if len(series) >= 2 else 0.0
+    line_now, price_now = tonight[-1][1], tonight[-1][2]
+    earlier = sorted(g for (p2, m2, g) in bygame if p2 == pl and m2 == mk and g < tips[tm])
+    pv = bygame[(pl, mk, earlier[-1])][-1][1] if earlier else None
+    same = [x for x in tonight if x[1] == line_now]
+    drift = same[-1][2]/same[0][2] - 1 if len(same) >= 2 else 0.0
     C.append(dict(pl=pl, name=b.get("player"), mk=mk, src=b.get("src") or "?",
-                  line=line_now, odds=series[-1][1], prev=pv, drift=drift,
-                  raised=(pv is not None and line_now - pv >= 0.5),
+                  line=line_now, odds=price_now, prev=pv, drift=drift,
+                  raised=(pv is None or line_now - pv >= 0.5),   # no prev line is NOT a star
+                  noprev=(pv is None),
+                  mv=(None if pv is None else line_now - pv),
                   nodrift=(drift < 0.01)))
 
 # ---- the competing rules ----------------------------------------------------------------------
@@ -106,6 +124,14 @@ CONFIGS = {
     "S_nostar": lambda r: r["src"] in SIGS and r["mk"] in BET_MKTS,
     "S_prev":   lambda r: r["src"] in ("flip","hotover") and r["mk"] in BET_MKTS and not r["raised"],
     "S_raised": lambda r: r["src"] in SIGS and r["mk"] in BET_MKTS and r["raised"],
+    # S_loose: allow a ONE-POINT raise. Backtest said +17.3% on the big universe and -10.7% on
+    # the strict one - the same band, opposite signs, because the two differ only in how a bet's
+    # line is chosen. Not live for exactly that reason; tracked so forward data can settle it.
+    "S_loose":  lambda r: r["src"] in SIGS and r["mk"] in BET_MKTS
+                          and not r["noprev"] and r["mv"] is not None and r["mv"] < 2.0,
+    # S_noprev: the group that used to be silently bet as starred (48.4%, -10.0%). Tracked as a
+    # control - if it stops losing, the exclusion needs revisiting.
+    "S_noprev": lambda r: r["src"] in SIGS and r["mk"] in BET_MKTS and r["noprev"],
     "OLD_MENU": lambda r: True,
 }
 
@@ -138,6 +164,7 @@ for cfg, fn in CONFIGS.items():
         keep.append({"slate": slate, "config": cfg, "player": r["name"], "market": r["mk"],
                      "line": r["line"], "odds": r["odds"], "src": r["src"],
                      "prev_line": "" if r["prev"] is None else r["prev"],
+                     "mv": "" if r.get("mv") is None else r["mv"],
                      "drift": f"{r['drift']:.4f}", "logged_utc": stamp,
                      "result": "", "actual": ""})
         added[cfg] += 1

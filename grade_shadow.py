@@ -132,3 +132,52 @@ if S:
     print("")
     print("  SWITCH RULE: only move off flat 1u when flip has >=25 forward bets AND beats")
     print("  hotover+overshoot by >=15pp of ROI. Anything less is the n=25 backtest talking.")
+
+    # ---- PARLAYS ------------------------------------------------------------------------------
+    # Scored on the SAME Model S picks, so this is purely "how to combine them", not a new
+    # selection. Pairing is DETERMINISTIC (alphabetical, consecutive, no reuse) because the
+    # obvious version - every possible pair - double counts badly: a 7-bet night yields 21
+    # overlapping pairs that all win together, which inflated my first backtest to +81.6% ROI
+    # and manufactured an apparent leg correlation that was mostly the overlap.
+    #
+    # THE UNKNOWN THAT DECIDES THIS: whether 1xbet pays the straight product of the legs. If it
+    # takes accumulator margin - 5-10% is normal - most of the theoretical gain disappears. The
+    # PAYS column below assumes the pure product, so treat it as an upper bound until checked.
+    byslate = collections.defaultdict(list)
+    for r in S: byslate[r["slate"]].append(r)
+    p2 = []; pall = []
+    for sl, v in byslate.items():
+        v = sorted(v, key=lambda r: (r.get("player") or ""))
+        for i in range(0, len(v)-1, 2):
+            a, b = v[i], v[i+1]
+            od = (f(a.get("odds")) or 1.85) * (f(b.get("odds")) or 1.85)
+            won = all((x.get("result") or "").upper() == "WIN" for x in (a, b))
+            p2.append((od, won))
+        if len(v) >= 2:
+            od = 1.0
+            for x in v: od *= (f(x.get("odds")) or 1.85)
+            pall.append((od, all((x.get("result") or "").upper() == "WIN" for x in v), len(v)))
+    print("")
+    print("=" * 96)
+    print("  PARLAYS on the same Model S picks (1u per ticket, assumes the book pays the product)")
+    print("=" * 96)
+    sw = sum(1 for r in S if (r["result"] or "").upper() == "WIN")
+    su = sum(pnl(r) for r in S)
+    print(f"  {'singles, flat 1u':<30} {len(S):>4} tickets  {100*sw/len(S):5.1f}%  {su:+8.2f}u"
+          f"  ROI {100*su/len(S):+6.1f}%")
+    for lbl, g in (("2-leg parlays", [(o, w) for o, w in p2]),
+                   ("full-night accumulator", [(o, w) for o, w, _ in pall])):
+        if not g:
+            print(f"  {lbl:<30} none yet (needs 2+ bets on a slate)"); continue
+        w = sum(1 for _, x in g if x)
+        u = sum((o-1) if x else -1.0 for o, x in g)
+        print(f"  {lbl:<30} {len(g):>4} tickets  {100*w/len(g):5.1f}%  {u:+8.2f}u"
+              f"  ROI {100*u/len(g):+6.1f}%  avg odds {sum(o for o, _ in g)/len(g):.2f}")
+    if p2:
+        exp = (sw/len(S))**2
+        act = sum(1 for _, x in p2 if x)/len(p2)
+        print(f"  independence check: singles {100*sw/len(S):.1f}% -> pairs should hit "
+              f"{100*exp:.1f}%, actual {100*act:.1f}%")
+    print("  NOT LIVE. A parlay squares the edge and the error together, and our single-leg edge")
+    print("  is still unproven at n<50. Verify the book pays 1.73 x 1.83 = 3.166 before believing")
+    print("  any of the above.")
