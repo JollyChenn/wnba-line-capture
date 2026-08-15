@@ -14,7 +14,10 @@
 #   2 SIGNAL must be flip, hotover or overshoot. flip_paper and cascade are the two biggest
 #     sources by volume and both are dead, which is why most nights are silent.
 #   3 SKIP if the book RAISED her number 0.5+ since her previous game - already repriced.
-#     This is the gate. Unstarred bets run -6.5% ROI on 105.
+#     SKIP ALSO if there is NO previous line: the star IS that comparison, so with nothing to
+#     compare the filter was never applied. Those 64 bets ran 48.4% / -10.0% and were dragging
+#     the rule from +23.5% to +11.0% until 2026-08-15. Unknown is not starred.
+#     raised n=41 ROI -1.1% | no-prev n=64 ROI -10.0% | starred n=108 ROI +23.5%
 #   4 DRIFT is displayed, NOT used. Stacking it costs ~12u to buy nothing.
 #   5 markets pra / pr / pts only - pa ran -14.1%
 #   6 one bet per player-market, and same-player multi-market flagged as ONE position
@@ -183,8 +186,14 @@ for b in load("bets_log.csv"):
     rows.append(dict(pl=pl, name=b.get("player"), mk=mk, src=b.get("src") or "?", team=tm,
                      opp=opp.get(tm), tip=tips[tm], line=line_now, price=price_now,
                      drift=drift, prev=pv, med=med(pl, mk),
-                     seen_utc=tonight[-1][0],
-                     raised=(pv is not None and line_now - pv >= 0.5)))
+                     seen_utc=tonight[-1][0], noprev=(pv is None),
+                     # NO PREVIOUS LINE IS NOT A STAR. The star IS the comparison against her
+                     # previous game's number - with no previous number there is nothing to
+                     # compare and the filter has not been applied at all. The old code read
+                     # `pv is not None and ...`, so a missing previous line produced raised=False
+                     # and the card BET it. Those 64 bets ran 48.4% / -10.0% ROI and dragged the
+                     # rule from +23.5% down to +11.0%. Unknown is not starred; unknown is out.
+                     raised=(pv is None or line_now - pv >= 0.5)))
 print(f"{len(rows)} over candidates on this slate's teams")
 
 # SELECTION, rebuilt 2026-08-14, then CORRECTED the same day. Read the correction - it is the
@@ -259,9 +268,9 @@ def fmt(r, star):
 lines = [f"**🎯 MODEL S · {slate}** · {len(PASS)} bet{'s' if len(PASS)!=1 else ''} · flat 1u"]
 for r in PASS: lines += fmt(r, True)
 if SECOND:
-    lines.append(f"_— below: {len(SECOND)} the book has already repriced (raised her 0.5+). "
-                 f"Historically n=127, 50.4%, −8.84u, ROI −7.0%. DO NOT BET. Shown so you can "
-                 f"see what was rejected. —_")
+    lines.append(f"_— below: {len(SECOND)} rejected — the book already repriced her (raised 0.5+, "
+                 f"n=41, ROI −1.1%) or she has no previous line to compare (n=64, ROI −10.0%). "
+                 f"DO NOT BET. Shown so you can see what was screened out. —_")
     for r in SECOND: lines += fmt(r, False)
 dbl = [p for p, c in collections.Counter(r["pl"] for r in PASS).items() if c > 1]
 for p in dbl:
@@ -271,7 +280,8 @@ rej = [r for r in rows if r not in PASS]
 if rej:
     lines.append(f"_skipped {len(rej)}: "
                  + ", ".join(f"{r['name'].split()[-1]} ("
-                             + ("book raised" if r["raised"] else
+                             + ("no prev line" if r.get("noprev") else
+                                "book raised" if r["raised"] else
                                 ("drifted" if r["drift"] >= 0.01 else r["mk"])) + ")"
                              for r in rej[:6]) + "_")
 card = "\n".join(lines) if PASS else f"**🎯 MODEL S · {slate}** · no qualifying bets tonight."
