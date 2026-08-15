@@ -10,7 +10,7 @@ _**sharp-odds** = vs Pinnacle's vig-free fair price (TRUE edge test) · **sharp-
   ★ SHARP ODDS-CLV: -6.7% | beat fair 0/7 (0%)  ← TRUE edge (vs Pinnacle fair price)
   SHARP LINE-CLV : +0.21 pts | n=12  ← better number than the sharp
   self ODDS-CLV  : -0.4% | beat 8/34 (24%)  (1xbet's own close = weak)
-  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 75/137 (+0.7u) · FTUNDER 130/281 (-40.0u) · HOT OVER 19/34 (+1.6u) · LINE-CUT FLIP · exp. base 54/94 (+6.1u) · LINE-CUT FLIP · proven base 23/39 (+3.8u) · STAR-OUT CASCADE 103/190 (-8.3u) · starout 4/11 (-3.6u)
+  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 75/137 (+0.7u) · FTUNDER 133/284 (-37.5u) · HOT OVER 19/34 (+1.6u) · LINE-CUT FLIP · exp. base 55/95 (+6.9u) · LINE-CUT FLIP · proven base 23/39 (+3.8u) · STAR-OUT CASCADE 103/190 (-8.3u) · starout 4/11 (-3.6u)
   VERDICT : ⚠️ NEUTRAL self CLV — winning on outcomes, not beating the line. Unproven; keep collecting.
   by tier: SOLID 8/16 (-0.9u) · STRONG 5/14 (-4.9u) · THIN 3/6 (-0.1u)
   by market: pa Under 1/3 (-1.0u) · pr Under 1/3 (-1.0u) · pra Under 5/13 (-3.9u) · pts Under 9/16 (+1.1u) · ra Under 0/1 (-1.0u)
@@ -842,5 +842,9 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260813 | Sonia Citron | PTS Under 16.5 @ 1.87 | FTUNDER | loss | -10% | +0.0 | +1% |
 | 20260814 | Aliyah Boston | PTS Under 16.5 @ 1.73 | FTUNDER | WIN | -14% | +0.0 | -9% |
 | 20260814 | Arike Ogunbowale | PTS Over 17.5 @ 1.92 | LINE-CUT FLIP · exp. base | WIN | — | — | +2% |
+| 20260814 | Bridget Carleton | PTS Under 16.5 @ 1.78 | FTUNDER | WIN | -10% | +0.0 | -2% |
+| 20260814 | Carla Leite | PTS Under 16.5 @ 1.9 | FTUNDER | WIN | -6% | +0.0 | — |
+| 20260814 | Dominique Malonga | PTS Under 20.5 @ 1.84 | FTUNDER | WIN | — | +1.0 | +5% |
 | 20260814 | Kelsey Mitchell | PTS Over 25.5 @ 1.91 | LINE-CUT FLIP · exp. base | loss | — | -1.0 | -0% |
+| 20260814 | Megan DiLeo | PTS Over 13.5 @ 1.85 | LINE-CUT FLIP · exp. base | WIN | -6% | +0.0 | +0% |
 | 20260814 | Paige Bueckers | PTS Under 21.5 @ 1.73 | FTUNDER | loss | -15% | +0.0 | -16% |

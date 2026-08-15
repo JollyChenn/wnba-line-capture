@@ -4,9 +4,14 @@
 # disabled while this runs, otherwise both would fire and you would get doubled work.
 #
 # Cadence, and why:
-#   PIPELINE  every 30 min - board prices move continuously and the capture is what everything
-#             else reads. run_local.py already covers picks, validate, board, news, gamelines,
-#             drift gate, alerts, the over-model card, cascade watch, lineup check, dashboard.
+#   FAST      every 10 min - board capture + the card + the shadow log, and nothing else.
+#             Of the line cuts that later revert, 26.3% are gone inside 30 minutes (p25 of their
+#             life is 20 min), so a 30-min loop was blind to a quarter of the transient ones.
+#             cloud_xbet.py now ROTATES 1x-bet.com <-> melbet.com (same LineFeed engine, same
+#             board), so each HOST is hit less than before - 3 req/hr split two ways versus 2
+#             req/hr on one - while we sample the board three times as often.
+#   PIPELINE  every 30 min - everything that moves on the scale of hours: picks, validate, news,
+#             gamelines, drift gate, cascade watch, lineup check, dashboard.
 #   GRADING   every 2 h - games finish 09:00-12:00 WIB and late finals need sweeping up.
 #             Every grading script is idempotent on already-graded rows, so extra runs are free.
 #
@@ -17,8 +22,10 @@ Set-Location $repo
 $env:PYTHONIOENCODING = "utf-8"   # cp1252 kills grade_bets.py mid-print otherwise
 $env:PYTHONUTF8 = "1"
 
-$pipelineEvery = 30      # minutes
+$fastEvery     = 10      # minutes - board + card only
+$pipelineEvery = 30      # minutes - the full run
 $gradeEvery    = 120     # minutes
+$lastFast      = [datetime]::MinValue
 $lastPipeline  = [datetime]::MinValue
 $lastGrade     = [datetime]::MinValue
 $cycle = 0
@@ -27,12 +34,22 @@ function Say($msg, $colour = "Gray") {
     Write-Host ("[{0}] {1}" -f (Get-Date -Format "MM-dd HH:mm"), $msg) -ForegroundColor $colour
 }
 
-Say "WNBA loop started. pipeline every $pipelineEvery min, grading every $gradeEvery min." "Cyan"
+Say "WNBA loop started. fast $fastEvery min | pipeline $pipelineEvery min | grading $gradeEvery min." "Cyan"
 Say "repo $repo  |  Ctrl+C to stop" "DarkGray"
 
 while ($true) {
     $cycle++
     $now = Get-Date
+
+    if (($now - $lastFast).TotalMinutes -ge $fastEvery) {
+        try {
+            $out = & python run_fast.py 2>&1
+            $out | Out-File -Append -Encoding utf8 "$repo\wnba_loop.log"
+            $out | Select-String -Pattern "MODEL S|pinged|BLOCKED|FAIL|fast " |
+                ForEach-Object { Say ("   " + $_.ToString().Trim()) "White" }
+        } catch { Say "fast error: $_" "Red" }
+        $lastFast = $now
+    }
 
     if (($now - $lastPipeline).TotalMinutes -ge $pipelineEvery) {
         Say "pipeline: run_local.py ..." "Yellow"
@@ -59,5 +76,5 @@ while ($true) {
         $lastGrade = $now
     }
 
-    Start-Sleep -Seconds 300      # wake every 5 min and check whether anything is due
+    Start-Sleep -Seconds 120      # wake every 2 min - the fast loop needs finer granularity
 }

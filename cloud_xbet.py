@@ -488,12 +488,38 @@ def main():
 
     global BASE                                          # may be re-pinned to a fallback mirror below
     disc = None
-    for mirror in MIRRORS:                               # try 1x-bet.com, then melbet.com — first one with WNBA games wins
+    # MIRROR ROTATION, not just fallback. melbet and 1x-bet run the SAME LineFeed engine and the
+    # same champ, so they quote the same board. Alternating which one leads each run lets us
+    # sample the board 3x more often while each HOST sees fewer requests than it did before:
+    #   before  1x-bet every 30 min                    = 2 hits/hr on one host
+    #   after   alternating every 10 min               = 3 hits/hr split across two hosts
+    # That matters because ~26% of the cuts that revert are gone inside 30 minutes, and a cut
+    # that opens and closes between two scrapes is invisible - xbet_board.csv logs only CHANGES,
+    # so we cannot even measure what we are missing without sampling faster.
+    # Blocking risk is the reason to rotate rather than simply hammer: if one host starts
+    # refusing us, the other is already warm and the existing fallback loop covers it.
+    order = list(MIRRORS)
+    _rot = os.path.join(os.path.dirname(os.path.abspath(__file__)), "mirror_rot.json")
+    try:
+        _n = json.load(open(_rot)).get("n", 0) if os.path.exists(_rot) else 0
+    except Exception:
+        _n = 0
+    if os.environ.get("XBET_MIRROR"):                    # explicit override wins, for debugging
+        order.sort(key=lambda m: 0 if os.environ["XBET_MIRROR"] in m else 1)
+    else:
+        order = order[_n % len(order):] + order[:_n % len(order)]
+    try:
+        _t = _rot + ".tmp"
+        json.dump({"n": (_n + 1) % 1000}, open(_t, "w")); os.replace(_t, _rot)   # atomic
+    except Exception:
+        pass
+    print(f"mirror order this run: {', '.join(m.split('/')[2] for m in order)}")
+    for mirror in order:                                 # rotated; first one with WNBA games wins
         d = get(f"{mirror}/LineFeed/Get1x2_VZip?sports=3&champs={CHAMP}&count=40&lng=en&mode=4&country=115&getEmpty=true&virtualSports=true")
         if [e for e in (d or {}).get("Value", []) if isinstance(e, dict) and e.get("O1") and e.get("I")]:
             BASE, disc = mirror, d                        # pin this mirror for the rest of the run (gz() reads BASE)
-            if mirror != MIRRORS[0]:
-                print(f"primary mirror empty/blocked -> using fallback {mirror}")
+            if mirror != order[0]:
+                print(f"lead mirror empty/blocked -> fell back to {mirror.split('/')[2]}")
             break
     if not disc:
         ping(f"⚠️ **1xbet scrape BLOCKED (all mirrors) — {now.strftime('%H:%M')} UTC**\nCheck these on 1xbet yourself:\n" + proj_msg(inj))

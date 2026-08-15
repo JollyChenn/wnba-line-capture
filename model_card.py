@@ -83,22 +83,51 @@ def med(pl, mk, n=10):
     v = plog.get(pl, [])[-n:]
     return statistics.median(x[mk] for x in v) if len(v) >= 6 else None
 
-# ---- the board, split into nights ----------------------------------------------------------------
+# ---- the board, anchored to GAMES, not to a fixed hours-before-tip window --------------------------
+# THIS WAS A REAL BUG AND IT COST A BET. The old version kept board blocks that started within 30h
+# of tip and called everything older "her previous game". But 1xbet posts lines a MEDIAN 29.9h
+# before tip (p75 = 40.5h), so roughly half of all CURRENT lines were being thrown into the
+# previous-game bucket. On 2026-08-15 Shakira Austin's live 32.5 was first quoted 43.1h out and
+# got classified as her previous line, while a dead 31.5 - one quote, gone by 13:13 - was first
+# quoted 28.4h out and got shown as the bet. The card advertised a number that no longer existed
+# AND computed the star against tonight's own line.
+#
+# The backtest never had this bug: it anchors each block to the GAME it precedes. The live card
+# was therefore not implementing the model that was measured. Now it matches - every block is
+# attached to the player's next game within 36h, exactly as audit_signals.py does it.
 raw = collections.defaultdict(list)
 for b in load("xbet_board.csv"):
     t, o, ln = ts(b.get("captured_utc")), f(b.get("odds")), f(b.get("line"))
     if t and o and ln is not None and b.get("market") in MKTS and b.get("side") == "Over":
         raw[((b.get("player") or "").lower(), b.get("market"), ln)].append((t, o))
-nights = collections.defaultdict(list)
+
+# every tip this player could be quoted for, so a block can be attached to the game it precedes
+tips_of = collections.defaultdict(list)
+for g in load("data/games_2026.csv"):
+    t = ts(g.get("tip"))
+    if t:
+        tips_of[g["home"]].append(t); tips_of[g["away"]].append(t)
+for v in tips_of.values(): v.sort()
+
+def game_for(team, when):
+    """the first tip that starts AFTER this quote and within 60h - i.e. the game it is pricing"""
+    for t in tips_of.get(team, []):
+        if when <= t and (t - when).total_seconds() <= 60*3600:
+            return t
+    return None
+
+# per (player, market, game-tip): every quote we hold for that game, newest last
+bygame = collections.defaultdict(list)
 for (pl, mk, ln), v in raw.items():
-    v.sort(); blocks, cur = [], [v[0]]
-    for a, b_ in zip(v, v[1:]):
-        if (b_[0]-a[0]).total_seconds() > 12*3600: blocks.append(cur); cur = []
-        cur.append(b_)
-    blocks.append(cur)
-    for blk in blocks:
-        if blk: nights[(pl, mk)].append((blk[0][0], ln, blk))
-for v in nights.values(): v.sort()
+    tm = None
+    v.sort()
+    for t, o in v:
+        if tm is None: tm = teamnow.get(pl)
+        if tm is None: break
+        gt = game_for(tm, t)
+        if gt is None: continue
+        bygame[(pl, mk, gt)].append((t, ln, o))
+for v in bygame.values(): v.sort()
 
 # ---- candidates: the engine's own over signals for this slate -------------------------------------
 # THE SIGNAL MUST BE FROM THIS SLATE. bets_log holds every signal the engine has ever fired, and
@@ -127,17 +156,24 @@ for b in load("bets_log.csv"):
     tm = teamnow.get(pl)
     if tm not in tips: continue                                   # not playing this slate
     if (pl, mk) in seen: continue
-    tn = [x for x in nights.get((pl, mk), []) if (tips[tm] - x[0]).total_seconds() < 30*3600
-          and x[0] <= tips[tm]]
-    if not tn: continue
+    tonight = bygame.get((pl, mk, tips[tm]), [])
+    if not tonight: continue
     seen.add((pl, mk))
-    _, line_now, series = max(tn, key=lambda x: len(x[2]))
-    prev = [x for x in nights.get((pl, mk), []) if (tips[tm] - x[0]).total_seconds() >= 30*3600]
-    pv = prev[-1][1] if prev else None
-    drift = series[-1][1]/series[0][1] - 1 if len(series) >= 2 else 0.0
+    # THE LINE YOU CAN ACTUALLY BET IS THE MOST RECENT QUOTE, full stop. Not the most-quoted
+    # line, which is what this used to pick and which is how a dead 31.5 reached the card while
+    # 32.5 was live on the board.
+    line_now, price_now = tonight[-1][1], tonight[-1][2]
+    # HER PREVIOUS GAME'S LINE = the last quote attached to her PREVIOUS game, by game not by
+    # clock. This is the star's reference point and it must not be contaminated by tonight.
+    earlier = sorted(g for (p2, m2, g) in bygame if p2 == pl and m2 == mk and g < tips[tm])
+    pv = bygame[(pl, mk, earlier[-1])][-1][1] if earlier else None
+    # drift is measured only across quotes at the line we would actually take
+    same = [x for x in tonight if x[1] == line_now]
+    drift = same[-1][2]/same[0][2] - 1 if len(same) >= 2 else 0.0
     rows.append(dict(pl=pl, name=b.get("player"), mk=mk, src=b.get("src") or "?", team=tm,
-                     opp=opp.get(tm), tip=tips[tm], line=line_now, price=series[-1][1],
+                     opp=opp.get(tm), tip=tips[tm], line=line_now, price=price_now,
                      drift=drift, prev=pv, med=med(pl, mk),
+                     seen_utc=tonight[-1][0],
                      raised=(pv is not None and line_now - pv >= 0.5)))
 print(f"{len(rows)} over candidates on this slate's teams")
 
@@ -225,14 +261,18 @@ if not PASS:
     # "no qualifying bets" ping trains you to ignore the channel - which is exactly when you
     # miss the one that matters. No bet, no message. The card is still written to the log.
     print("no qualifying bets - staying silent (card is in the log)")
-    sent[slate] = 0
+    sent[slate] = []
     tmp = SENT + ".tmp"; json.dump(sent, open(tmp, "w")); os.replace(tmp, SENT)
-elif sent.get(slate) == len(PASS):
-    print("already sent this slate with the same count - not re-pinging")
+elif sent.get(slate) == [f"{r['pl']}|{r['mk']}|{r['line']}" for r in PASS]:
+    # KEY ON THE PICKS, NOT THE COUNT. On 2026-08-15 a line-classification bug put Shakira Austin
+    # on the card at a dead 31.5; the fix replaced her with Dearica Hamby - still two bets, so a
+    # count-based check would have stayed silent and left you holding the wrong card. Any change
+    # to WHO or WHAT LINE re-sends.
+    print("already sent this slate with the same picks - not re-pinging")
 else:
     if send(card):
         print("pinged Discord")
-        sent[slate] = len(PASS)
+        sent[slate] = [f"{r['pl']}|{r['mk']}|{r['line']}" for r in PASS]
         tmp = SENT + ".tmp"
         json.dump(sent, open(tmp, "w")); os.replace(tmp, SENT)    # atomic, never a half-written file
     # THE TRACKER MUST MATCH THE CARD, NOT ACCUMULATE IT.
