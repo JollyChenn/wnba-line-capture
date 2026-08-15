@@ -41,6 +41,16 @@ def f(x):
 def ts(s):
     try: return datetime.datetime.fromisoformat((s or "").replace("Z", "+00:00"))
     except Exception: return None
+# board_seen.json = every (player|market|side|line) key present in the LAST scrape, with its
+# timestamp. This is what "is the line still there" actually means. xbet_board.csv only records
+# CHANGES, so a line that has sat unmoved all day has no recent row and looks stale when it is in
+# fact the most stable number on the board.
+SEEN = {}
+try:
+    SEEN = json.load(open(os.path.join(D, "board_seen.json")))
+except Exception:
+    pass
+
 def send(msg):
     p = os.path.join(D, "webhook.txt")
     wh = open(p).read().strip() if os.path.exists(p) else ""
@@ -230,6 +240,19 @@ def fmt(r, star):
     tail = f"   {mv}"
     if r["med"] is not None: tail += f" · 10-game median {r['med']:.1f}"
     tail += f" · price {100*r['drift']:+.1f}% · _{r['src']}_"
+    # HOW OLD IS THIS NUMBER. The line shown is the most recent quote we hold, but the board is
+    # only sampled every 10 min and you may read the ping later. A quote from 4 hours ago is not
+    # a bet, it is a suggestion - so say how stale it is rather than let you find out at the book.
+    # CONFIRMED = the line was in the most recent scrape of the board, whether or not the price
+    # moved. That is the question you actually care about: is this number still buyable?
+    conf = SEEN.get(f"{r['pl']}|{r['mk']}|Over|{r['line']}")
+    ct = ts(conf) if conf else None
+    if ct is not None:
+        mins = (NOW - ct).total_seconds()/60
+        tail += (f" · ✓ on the board {mins:.0f}m ago" if mins < 45
+                 else f" · ⚠️ not seen for {mins/60:.1f}h — RECHECK THE BOARD")
+    else:
+        tail += " · ⚠️ not in the last scrape — RECHECK THE BOARD"
     out.append(tail)
     return out
 

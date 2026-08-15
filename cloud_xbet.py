@@ -727,13 +727,25 @@ def main():
     # file with identical rows. Wrapped so it can NEVER break a capture.
     try:
         blast = json.load(open("board_last.json")) if os.path.exists("board_last.json") else {}
+        # LAST-SEEN vs LAST-CHANGED. xbet_board.csv deliberately logs only CHANGES, which keeps it
+        # small but means a stable line writes no rows at all. The card was therefore reporting
+        # "last seen 20.7h ago" for a number that is on the board right now and simply has not
+        # moved - the most alarming possible way to display the healthiest possible line.
+        # So: record every key we SAW this scrape, separately from the change log.
+        bseen = json.load(open("board_seen.json")) if os.path.exists("board_seen.json") else {}
         board = []
         for _pl, _mk in props.items():
             for (_st, _sd), _outs in _mk.items():
                 for _L, _O in _outs:
                     _k = f"{_pl}|{_st}|{_sd}|{_L}"
+                    bseen[_k] = stamp                        # present in the feed right now
                     if blast.get(_k) != _O:                  # new line or a price move -> log it
                         board.append([stamp, _pl, _st, _sd, _L, _O]); blast[_k] = _O
+        try:
+            _st = "board_seen.json.tmp"
+            json.dump(bseen, open(_st, "w")); os.replace(_st, "board_seen.json")   # atomic
+        except Exception as _e:
+            print("board_seen write skipped:", str(_e)[:60])
         if board:
             _bnew = not os.path.exists("xbet_board.csv")
             with open("xbet_board.csv", "a", newline="", encoding="utf-8") as _bf:
