@@ -817,3 +817,7 @@ date,player,market,side,line,src,result,odds,odds_clv,bucket,as_bet,fade_ret,ski
 2026-08-13,Sabrina Ionescu,pts,Under,18.5,newunder,LOSS,1.91,-0.021,drift,-1.0,0.75,
 2026-08-13,Shakira Austin,pra,Over,28.5,overshoot,WIN,1.73,,n/a,0.73,,0.73
 2026-08-13,Sonia Citron,pts,Under,16.5,newunder,LOSS,1.87,0.011,short,-1.0,,-1.0
+2026-08-14,Aliyah Boston,pts,Under,16.5,newunder,WIN,1.73,-0.089,drift,0.73,-1.0,
+2026-08-14,Arike Ogunbowale,pts,Over,17.5,flip_paper,WIN,1.92,0.021,short,0.92,,0.92
+2026-08-14,Kelsey Mitchell,pts,Over,25.5,flip_paper,LOSS,1.91,-0.005,steady,-1.0,,-1.0
+2026-08-14,Paige Bueckers,pts,Under,21.5,newunder,LOSS,1.73,-0.156,drift,-1.0,0.68,

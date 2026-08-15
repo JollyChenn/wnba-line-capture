@@ -2,7 +2,7 @@
 
 _Stingy-D threshold (trailing-10 allowed, bottom quartile): 88_
 
-_🩹 OUT/doubtful (excluded from ALL picks): Ashlon Jackson, Aziaha James, Azzi Fudd, Brionna Jones, Brittney Sykes, Cheyenne Parker-Tyus, Damiris Dantas, Dana Evans, Flau'jae Johnson, Indya Nivar, Janelle Salaun, Jessica Shepard, Jovana Nogic, Julie Allemand, Kelsey Plum, Kiah Stokes, Kierstan Bell, Kiki Rice, Leonie Fiebich, Liatu King, Luisa Geiselsoder, Maria Conde, Monique Akoa Makani, Nyara Sabally, Sarah Ashlee Barker, Satou Sabally, Skylar Diggins, Sydney Taylor, Te-Hina Paopao_
+_🩹 OUT/doubtful (excluded from ALL picks): Aziaha James, Azzi Fudd, Brionna Jones, Brittney Sykes, Cheyenne Parker-Tyus, Courtney Williams, Damiris Dantas, Dana Evans, Flau'jae Johnson, Indya Nivar, Janelle Salaun, Jessica Shepard, Jovana Nogic, Julie Allemand, Kelsey Plum, Kiah Stokes, Kierstan Bell, Kiki Rice, Leonie Fiebich, Luisa Geiselsoder, Maria Conde, Monique Akoa Makani, Nyara Sabally, Sarah Ashlee Barker, Satou Sabally, Skylar Diggins, Sydney Taylor, Te-Hina Paopao_
 
 ## 💰 REAL-MONEY — UNDER (cold/shrink + stingy · pts/PR/PA/PRA · flat 1u)
 
@@ -14,31 +14,20 @@ _🩹 OUT/doubtful (excluded from ALL picks): Ashlon Jackson, Aziaha James, Azzi
 - **A'ja Wilson** (Las Vegas Aces, Minnesota Lynx @ Las Vegas Aces): points median~26→proj~22.6 fair[22.5=2.02 23.5=1.86 24.5=1.72] · PR 39→35.9 · PA 28→25.7 · PRA 42→37.7 · [cold+stingy] · last5 mins [30 37 33 35 35] oppDef 88 · UNDER value zone = book line between proj and median (MAX edge near median)
 - **NaLyssa Smith** (Las Vegas Aces, Minnesota Lynx @ Las Vegas Aces): points median~12→proj~10.8 fair[11.0=1.94 12.0=1.7 13.0=1.51] · PR 22→20.0 · PRA 22→19.4 · [cold+stingy] · last5 mins [37 24 20 30 29] oppDef 88 · UNDER value zone = book line between proj and median (MAX edge near median)
 
-## 🧪 PAPER — hot-PRA OVERS (capture for CLV; NOT real money)
-
-- **Alanna Smith** (Dallas Wings, Dallas Wings @ Indiana Fever): **PRA OVER** median~15→proj~18.2 fair[18.0=1.97 17.0=1.83 16.0=1.71] · [hot+expand+leaky] · last5 mins [14 32 27 27 33] oppDef 94 · OVER value zone = book line between median and proj (MAX edge near median)
-
 ## CASCADE contingencies — fire ONLY on scratch news (PRA OVER rank-3-6, flat 1u)
 
-- Dallas Wings: if **Paige Bueckers** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Alanna Smith OVER 14.5 PRA
-- Indiana Fever: if **Caitlin Clark** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Aliyah Boston OVER 27.5 PRA, Monique Billings OVER 14.5 PRA, Makayla Timpson OVER 11.5 PRA
 - Portland Fire: if **Bridget Carleton** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Megan DiLeo OVER 20.5 PRA, Teja Oblak OVER 9.5 PRA, Emily Engstler OVER 16.5 PRA
 - Seattle Storm: if **Dominique Malonga** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Natisha Hiedeman OVER 23.5 PRA, Jade Melbourne OVER 15.5 PRA, Ezi Magbegor OVER 11.5 PRA, Awa Fam OVER 19.5 PRA
 - New York Liberty: if **Breanna Stewart** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Jonquel Jones OVER 27.5 PRA, Marine Johannes OVER 10.5 PRA
 - Connecticut Sun: if **Brittney Griner** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Diamond Miller OVER 14.5 PRA, Olivia Nelson-Ododa OVER 21.5 PRA, Kennedy Burke OVER 12.5 PRA, Aaliyah Edwards OVER 15.5 PRA
 - Los Angeles Sparks: if **Nneka Ogwumike** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Dearica Hamby OVER 25.5 PRA, Erica Wheeler OVER 20.5 PRA, Cameron Brink OVER 15.5 PRA
 - Washington Mystics: if **Shakira Austin** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Kiki Iriafen OVER 24.5 PRA, Cotie McMahon OVER 13.5 PRA, Michaela Onyenwere OVER 12.5 PRA, Georgia Amoore OVER 9.5 PRA
-- Minnesota Lynx: if **Olivia Miles** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Kayla McBride OVER 22.5 PRA, Courtney Williams OVER 19.5 PRA, Natasha Howard OVER 20.5 PRA, Anastasiia Olairi Kosu OVER 4.5 PRA
+- Minnesota Lynx: if **Olivia Miles** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Kayla McBride OVER 22.5 PRA, Natasha Howard OVER 20.5 PRA, Anastasiia Olairi Kosu OVER 4.5 PRA
 - Las Vegas Aces: if **A'ja Wilson** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Chelsea Gray OVER 21.5 PRA, NaLyssa Smith OVER 21.5 PRA, Jewell Loyd OVER 8.5 PRA, Chennedy Carter OVER 9.5 PRA
 
 ## 🧪 EXPERIMENTAL forward-test — PAPER ONLY (volume brute-force winners; log CLV, do NOT bet real until +CLV)
 _ft_volume_drought 58.9% / steady+streak 58.6% OOS vs a synthetic line — proves the side, NOT that it beats 1xbet. Tracked separately until forward CLV confirms._
 
-- **Kelsey Mitchell** (Indiana Fever, Dallas Wings @ Indiana Fever): PTS UNDER ~27.5 [steady · PAPER] median~28→proj~26.9 · last5 mins [36 35 39 36 31]
-- **Arike Ogunbowale** (Dallas Wings, Dallas Wings @ Indiana Fever): PTS UNDER ~19.5 [steady · PAPER] median~20→proj~18.2 · last5 mins [23 33 27 28 35]
-- **Aliyah Boston** (Indiana Fever, Dallas Wings @ Indiana Fever): PTS UNDER ~14.5 [steady · PAPER] median~15→proj~13.5 · last5 mins [30 33 38 29 26]
-- **Caitlin Clark** (Indiana Fever, Dallas Wings @ Indiana Fever): PTS UNDER ~23.5 [steady · PAPER] median~24→proj~22.1 · last5 mins [34 34 38 36 35]
-- **Paige Bueckers** (Dallas Wings, Dallas Wings @ Indiana Fever): PTS UNDER ~18.5 [steady · PAPER] median~19→proj~17.6 · last5 mins [25 37 29 31 34]
 - **Bridget Carleton** (Portland Fire, Portland Fire @ Seattle Storm): PTS UNDER ~16.5 [steady · PAPER] median~17→proj~15.4 · last5 mins [33 30 30 29 33]
 - **Megan DiLeo** (Portland Fire, Portland Fire @ Seattle Storm): PTS UNDER ~15.5 [steady · PAPER] median~16→proj~14.7 · last5 mins [25 29 28 24 23]
 - **Carla Leite** (Portland Fire, Portland Fire @ Seattle Storm): PTS UNDER ~15.5 [steady · PAPER] median~16→proj~14.5 · last5 mins [22 31 27 30 4]

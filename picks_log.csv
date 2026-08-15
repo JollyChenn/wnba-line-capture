@@ -2168,12 +2168,6 @@ pick_date,game_id,player,team,opp,market,anchor,signals,fair_p,fair_odds,proj,sd
 2026-08-13,401857144,Megan DiLeo,Portland Fire,Seattle Storm,pts_under,15.5,steady,0.563,1.78,14.7,5.01
 2026-08-13,401857144,Carla Leite,Portland Fire,Seattle Storm,pts_under,15.5,steady,0.563,1.78,14.5,6.57
 2026-08-13,401857144,Dominique Malonga,Seattle Storm,Portland Fire,pts_under,18.5,steady,0.563,1.78,17.5,6.36
-2026-08-14,401857143,Alanna Smith,Dallas Wings,Indiana Fever,pra_over,14.5,hot+expand+leaky,0.62,1.61,18.2,10.59
-2026-08-14,401857143,Kelsey Mitchell,Indiana Fever,Dallas Wings,pts_under,27.5,steady,0.563,1.78,26.9,3.85
-2026-08-14,401857143,Arike Ogunbowale,Dallas Wings,Indiana Fever,pts_under,19.5,steady,0.563,1.78,18.2,7.93
-2026-08-14,401857143,Aliyah Boston,Indiana Fever,Dallas Wings,pts_under,14.5,steady,0.563,1.78,13.5,6.19
-2026-08-14,401857143,Caitlin Clark,Indiana Fever,Dallas Wings,pts_under,23.5,steady,0.563,1.78,22.1,8.52
-2026-08-14,401857143,Paige Bueckers,Dallas Wings,Indiana Fever,pts_under,18.5,steady,0.563,1.78,17.6,5.87
 2026-08-14,401857144,Awa Fam,Seattle Storm,Portland Fire,pr_under,17.5,declining+cold,0.59,1.69,15.7,7.75
 2026-08-14,401857144,Awa Fam,Seattle Storm,Portland Fire,pa_under,11.5,declining+cold,0.61,1.64,9.8,6.07
 2026-08-14,401857144,Awa Fam,Seattle Storm,Portland Fire,ra_under,9.5,declining+cold,0.61,1.64,8.3,4.42
