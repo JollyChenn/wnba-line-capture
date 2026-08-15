@@ -181,10 +181,16 @@ os.replace(tmp, OUT)                                  # atomic - never a half-wr
 # Pairing matches model_card.py exactly: Model S picks sorted by TIP, paired consecutively, no leg
 # reused, odd bet left out.
 #
-# same_game is recorded because the audit could not settle whether it matters. On 148 historical
-# pairs same-game hit 45.5% and different-game 31.7% against a 29.2% break-even, but a permutation
-# test put that gap at p=0.55 - not significant. Both buckets were positive; the different-game
-# cushion was only 2.5pp. Only forward data separates them, so the flag goes in the file now.
+# same_game is recorded because the audit could not settle whether it matters on RESULTS - 148
+# historical pairs gave same-game 45.5% vs different-game 31.7% against a 29.2% break-even, but a
+# permutation test put that gap at p=0.55. What IS settled is the mechanism: our player overs are
+# a de facto bet on the GAME going over its total.
+#     game went over its total   n=20  75.0%  ROI +38.4%
+#     game went under            n=21  42.9%  ROI -21.7%
+# and our signal does NOT predict which way that goes (13 over / 13 under across 26 games). So the
+# game-total exposure is UNCOMPENSATED - it swings results hard and we have no edge on direction.
+# That makes different-game pairs preferable on risk grounds alone, no data-mining needed:
+# spreading legs across games diversifies an exposure we cannot forecast.
 PAR = os.path.join(D, "parlay_forward.csv")
 PCOLS = ["slate", "leg1", "mk1", "line1", "odds1", "leg2", "mk2", "line2", "odds2",
          "combined_odds", "same_game", "logged_utc", "result", "pnl"]
