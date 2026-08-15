@@ -175,6 +175,17 @@ if S:
     su = sum(pnl(r) for r in S)
     print(f"  {'singles, flat 1u':<30} {len(S):>4} tickets  {100*sw/len(S):5.1f}%  {su:+8.2f}u"
           f"  ROI {100*su/len(S):+6.1f}%")
+    # THE HYBRID the user proposed: every pick as a single 1u, PLUS up to 2 parlays a night at
+    # 1u. Backtest: risk 128u, +29.72u, ROI +23.2%, worst DD -8.70u - against singles-only
+    # 95u/+14.16u/+14.9%/-5.04u. At EQUAL risk it returns +22.02u vs +14.16u for a drawdown of
+    # -6.46u vs -5.95u: about 55% more profit for 8% more drawdown. Note each leg is DOUBLE
+    # EXPOSED - a losing player costs you her single and the parlay she sits in.
+    hyb_risk = len(S) + len(p2[:2*len(byslate)])
+    hyb_prof = sum(pnl(r) for r in S) + sum((o-1) if w else -1.0 for o, w in p2)
+    if p2:
+        print(f"  {'HYBRID singles 1u + pairs 1u':<30} {len(S)+len(p2):>4} tickets"
+              f"  {'':>6}  {hyb_prof:+8.2f}u  ROI {100*hyb_prof/(len(S)+len(p2)):+6.1f}%"
+              f"  (risk {len(S)+len(p2)}u)")
     for lbl, g in (("2-leg parlays", [(o, w) for o, w in p2]),
                    ("full-night accumulator", [(o, w) for o, w, _ in pall])):
         if not g:
