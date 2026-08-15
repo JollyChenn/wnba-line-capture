@@ -2168,15 +2168,6 @@ pick_date,game_id,player,team,opp,market,anchor,signals,fair_p,fair_odds,proj,sd
 2026-08-13,401857144,Megan DiLeo,Portland Fire,Seattle Storm,pts_under,15.5,steady,0.563,1.78,14.7,5.01
 2026-08-13,401857144,Carla Leite,Portland Fire,Seattle Storm,pts_under,15.5,steady,0.563,1.78,14.5,6.57
 2026-08-13,401857144,Dominique Malonga,Seattle Storm,Portland Fire,pts_under,18.5,steady,0.563,1.78,17.5,6.36
-2026-08-14,401857144,Awa Fam,Seattle Storm,Portland Fire,pr_under,17.5,declining+cold,0.59,1.69,15.7,7.75
-2026-08-14,401857144,Awa Fam,Seattle Storm,Portland Fire,pa_under,11.5,declining+cold,0.61,1.64,9.8,6.07
-2026-08-14,401857144,Awa Fam,Seattle Storm,Portland Fire,ra_under,9.5,declining+cold,0.61,1.64,8.3,4.42
-2026-08-14,401857144,Awa Fam,Seattle Storm,Portland Fire,pra_under,19.5,declining+cold,0.641,1.56,16.4,8.59
-2026-08-14,401857144,Awa Fam,Seattle Storm,Portland Fire,reb_under,7.5,declining+cold,0.58,1.72,6.7,3.78
-2026-08-14,401857144,Bridget Carleton,Portland Fire,Seattle Storm,pts_under,16.5,steady,0.563,1.78,15.4,6.81
-2026-08-14,401857144,Megan DiLeo,Portland Fire,Seattle Storm,pts_under,15.5,steady,0.563,1.78,14.7,5.01
-2026-08-14,401857144,Carla Leite,Portland Fire,Seattle Storm,pts_under,15.5,steady,0.563,1.78,14.5,6.57
-2026-08-14,401857144,Dominique Malonga,Seattle Storm,Portland Fire,pts_under,18.5,steady,0.563,1.78,17.5,6.36
 2026-08-14,401857145,Breanna Stewart,New York Liberty,Connecticut Sun,pts_under,19.5,steady,0.563,1.78,18.3,7.74
 2026-08-14,401857145,Jonquel Jones,New York Liberty,Connecticut Sun,pts_under,13.5,steady,0.563,1.78,12.8,4.4
 2026-08-14,401857145,Rebecca Allen,New York Liberty,Connecticut Sun,pts_under,11.5,ftdrought,0.589,1.7,10.4,4.85

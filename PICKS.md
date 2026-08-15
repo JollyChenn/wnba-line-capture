@@ -6,7 +6,6 @@ _🩹 OUT/doubtful (excluded from ALL picks): Aziaha James, Azzi Fudd, Brionna J
 
 ## 💰 REAL-MONEY — UNDER (cold/shrink + stingy · pts/PR/PA/PRA · flat 1u)
 
-- **Awa Fam** (Seattle Storm, Portland Fire @ Seattle Storm): PR median~18→proj~15.7 fair[15.5=2.05 16.5=1.85 17.5=1.69] · PA 12→9.8 · RA 10→8.3 · PRA 20→16.4 · reb⚠frag 8→6.7 · [declining+cold] · last5 mins [29 20 23 17 14] oppDef 93 · UNDER value zone = book line between proj and median (MAX edge near median)
 - **Dearica Hamby** (Los Angeles Sparks, Los Angeles Sparks @ Washington Mystics): PR median~24→proj~21.9 fair[22.0=1.98 23.0=1.78 24.0=1.62] · PRA 26→23.1 · [cold+stingy] · last5 mins [34 25 26 32 30] oppDef 83 · UNDER value zone = book line between proj and median (MAX edge near median)
 - **Erica Wheeler** (Los Angeles Sparks, Los Angeles Sparks @ Washington Mystics): PA median~19→proj~17.1 fair[17.0=2.02 18.0=1.75 19.0=1.55] · PRA 21→19.0 · [cold+stingy] · last5 mins [24 30 27 30 29] oppDef 83 · UNDER value zone = book line between proj and median (MAX edge near median)
 - **Ariel Atkins** (Los Angeles Sparks, Los Angeles Sparks @ Washington Mystics): PA median~12→proj~11.1 fair[11.0=2.04 12.0=1.75 13.0=1.54] · [cold+stingy] · last5 mins [21 29 30 32 28] oppDef 83 · UNDER value zone = book line between proj and median (MAX edge near median)
@@ -16,8 +15,6 @@ _🩹 OUT/doubtful (excluded from ALL picks): Aziaha James, Azzi Fudd, Brionna J
 
 ## CASCADE contingencies — fire ONLY on scratch news (PRA OVER rank-3-6, flat 1u)
 
-- Portland Fire: if **Bridget Carleton** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Megan DiLeo OVER 20.5 PRA, Teja Oblak OVER 9.5 PRA, Emily Engstler OVER 16.5 PRA
-- Seattle Storm: if **Dominique Malonga** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Natisha Hiedeman OVER 23.5 PRA, Jade Melbourne OVER 15.5 PRA, Ezi Magbegor OVER 11.5 PRA, Awa Fam OVER 19.5 PRA
 - New York Liberty: if **Breanna Stewart** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Jonquel Jones OVER 27.5 PRA, Marine Johannes OVER 10.5 PRA
 - Connecticut Sun: if **Brittney Griner** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Diamond Miller OVER 14.5 PRA, Olivia Nelson-Ododa OVER 21.5 PRA, Kennedy Burke OVER 12.5 PRA, Aaliyah Edwards OVER 15.5 PRA
 - Los Angeles Sparks: if **Nneka Ogwumike** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Dearica Hamby OVER 25.5 PRA, Erica Wheeler OVER 20.5 PRA, Cameron Brink OVER 15.5 PRA
@@ -28,10 +25,6 @@ _🩹 OUT/doubtful (excluded from ALL picks): Aziaha James, Azzi Fudd, Brionna J
 ## 🧪 EXPERIMENTAL forward-test — PAPER ONLY (volume brute-force winners; log CLV, do NOT bet real until +CLV)
 _ft_volume_drought 58.9% / steady+streak 58.6% OOS vs a synthetic line — proves the side, NOT that it beats 1xbet. Tracked separately until forward CLV confirms._
 
-- **Bridget Carleton** (Portland Fire, Portland Fire @ Seattle Storm): PTS UNDER ~16.5 [steady · PAPER] median~17→proj~15.4 · last5 mins [33 30 30 29 33]
-- **Megan DiLeo** (Portland Fire, Portland Fire @ Seattle Storm): PTS UNDER ~15.5 [steady · PAPER] median~16→proj~14.7 · last5 mins [25 29 28 24 23]
-- **Carla Leite** (Portland Fire, Portland Fire @ Seattle Storm): PTS UNDER ~15.5 [steady · PAPER] median~16→proj~14.5 · last5 mins [22 31 27 30 4]
-- **Dominique Malonga** (Seattle Storm, Portland Fire @ Seattle Storm): PTS UNDER ~18.5 [steady · PAPER] median~19→proj~17.5 · last5 mins [25 28 30 28 30]
 - **Breanna Stewart** (New York Liberty, New York Liberty @ Connecticut Sun): PTS UNDER ~19.5 [steady · PAPER] median~20→proj~18.3 · last5 mins [31 33 23 30 31]
 - **Jonquel Jones** (New York Liberty, New York Liberty @ Connecticut Sun): PTS UNDER ~13.5 [steady · PAPER] median~14→proj~12.8 · last5 mins [30 30 19 30 33]
 - **Rebecca Allen** (New York Liberty, New York Liberty @ Connecticut Sun): PTS UNDER ~11.5 [ftdrought · PAPER] median~12→proj~10.4 · last5 mins [26 19 22 24 26]
