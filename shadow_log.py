@@ -107,7 +107,7 @@ for b in load("bets_log.csv"):
     pv = bygame[(pl, mk, earlier[-1])][-1][1] if earlier else None
     same = [x for x in tonight if x[1] == line_now]
     drift = same[-1][2]/same[0][2] - 1 if len(same) >= 2 else 0.0
-    C.append(dict(pl=pl, name=b.get("player"), mk=mk, src=b.get("src") or "?",
+    C.append(dict(pl=pl, name=b.get("player"), mk=mk, src=b.get("src") or "?", tip=tips[tm],
                   line=line_now, odds=price_now, prev=pv, drift=drift,
                   raised=(pv is None or line_now - pv >= 0.5),   # no prev line is NOT a star
                   noprev=(pv is None),
@@ -175,6 +175,44 @@ with open(tmp, "w", newline="", encoding="utf-8") as fh:
     w.writeheader()
     for r in keep: w.writerow({c: r.get(c, "") for c in COLS})
 os.replace(tmp, OUT)                                  # atomic - never a half-written file
+
+# ---- THE PARLAY LEDGER --------------------------------------------------------------------------
+# A real record, written at decision time, rather than something re-derived later from the singles.
+# Pairing matches model_card.py exactly: Model S picks sorted by TIP, paired consecutively, no leg
+# reused, odd bet left out.
+#
+# same_game is recorded because the audit could not settle whether it matters. On 148 historical
+# pairs same-game hit 45.5% and different-game 31.7% against a 29.2% break-even, but a permutation
+# test put that gap at p=0.55 - not significant. Both buckets were positive; the different-game
+# cushion was only 2.5pp. Only forward data separates them, so the flag goes in the file now.
+PAR = os.path.join(D, "parlay_forward.csv")
+PCOLS = ["slate", "leg1", "mk1", "line1", "odds1", "leg2", "mk2", "line2", "odds2",
+         "combined_odds", "same_game", "logged_utc", "result", "pnl"]
+ms = one_position([r for r in C if CONFIGS["MODEL_S"](r)])
+ms = sorted(ms, key=lambda r: (r["tip"], r["name"]))
+prev_rows = load("parlay_forward.csv")
+if NOW < first_tip:
+    pkeep = [r for r in prev_rows if not (r.get("slate") == slate and (r.get("result") or "") == "")]
+else:
+    pkeep = list(prev_rows)
+padded = 0
+if NOW < first_tip:
+    for i in range(0, len(ms) - 1, 2):
+        a, b2 = ms[i], ms[i + 1]
+        pkeep.append({"slate": slate, "leg1": a["name"], "mk1": a["mk"], "line1": a["line"],
+                      "odds1": a["odds"], "leg2": b2["name"], "mk2": b2["mk"], "line2": b2["line"],
+                      "odds2": b2["odds"], "combined_odds": round(a["odds"] * b2["odds"], 4),
+                      "same_game": int(a["tip"] == b2["tip"]), "logged_utc": stamp,
+                      "result": "", "pnl": ""})
+        padded += 1
+ptmp = PAR + ".tmp"
+with open(ptmp, "w", newline="", encoding="utf-8") as fh:
+    w = csv.DictWriter(fh, fieldnames=PCOLS)
+    w.writeheader()
+    for r in pkeep: w.writerow({c: r.get(c, "") for c in PCOLS})
+os.replace(ptmp, PAR)                                 # atomic
+if padded:
+    print(f"  parlay ledger {slate}: {padded} pair(s) logged")
 
 if added:
     print("  shadow " + slate + ": " + ", ".join(f"{k} {v}" for k, v in sorted(added.items())))

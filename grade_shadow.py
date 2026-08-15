@@ -56,6 +56,56 @@ with open(tmp, "w", newline="", encoding="utf-8") as fh:
 os.replace(tmp, FWD)                                   # atomic
 print(f"  shadow: graded {graded} new, {len(rows)} rows total")
 
+# ---- settle the parlay ledger -----------------------------------------------------------------
+# parlay_forward.csv is written by shadow_log.py at decision time, one row per pair, matching the
+# card's pairing exactly. Settled here from the same box scores as the singles.
+PAR = os.path.join(D, "parlay_forward.csv")
+PCOLS = ["slate", "leg1", "mk1", "line1", "odds1", "leg2", "mk2", "line2", "odds2",
+         "combined_odds", "same_game", "logged_utc", "result", "pnl"]
+prow = load("parlay_forward.csv")
+pg = 0
+for r in prow:
+    if (r.get("result") or ""): continue
+    day = (r.get("slate") or "").replace("-", "")
+    legs = []
+    for i in ("1", "2"):
+        act = box.get((day, (r.get("leg" + i) or "").strip().lower()))
+        ln = f(r.get("line" + i))
+        if not act or ln is None: legs = None; break
+        v = act.get(r.get("mk" + i))
+        if v is None: legs = None; break
+        legs.append((v, ln))
+    if not legs: continue
+    if any(v == ln for v, ln in legs):
+        r["result"] = "push"; r["pnl"] = 0.0          # a pushed leg voids the parlay leg
+    elif all(v > ln for v, ln in legs):
+        r["result"] = "WIN"; r["pnl"] = round((f(r.get("combined_odds")) or 1) - 1, 3)
+    else:
+        r["result"] = "loss"; r["pnl"] = -1.0
+    pg += 1
+if prow:
+    ptmp = PAR + ".tmp"
+    with open(ptmp, "w", newline="", encoding="utf-8") as fh:
+        w = csv.DictWriter(fh, fieldnames=PCOLS)
+        w.writeheader()
+        for r in prow: w.writerow({c: r.get(c, "") for c in PCOLS})
+    os.replace(ptmp, PAR)                              # atomic
+    pdone = [r for r in prow if (r.get("result") or "").upper() in ("WIN", "LOSS", "PUSH")]
+    print(f"  parlay ledger: graded {pg} new, {len(prow)} rows, {len(pdone)} settled")
+    if pdone:
+        pw = sum(1 for r in pdone if (r["result"] or "").upper() == "WIN")
+        pu = sum(f(r.get("pnl")) or 0.0 for r in pdone)
+        print(f"    PARLAY RECORD  {pw}-{len(pdone)-pw}  {pu:+.2f}u  "
+              f"ROI {100*pu/len(pdone):+.1f}%  over {len(pdone)} tickets")
+        for lbl, want in (("same game ", "1"), ("diff games", "0")):
+            g = [r for r in pdone if str(r.get("same_game")) == want]
+            if not g: continue
+            w_ = sum(1 for r in g if (r["result"] or "").upper() == "WIN")
+            u_ = sum(f(r.get("pnl")) or 0.0 for r in g)
+            print(f"      {lbl}  {w_}-{len(g)-w_}  {u_:+6.2f}u  ROI {100*u_/len(g):+6.1f}%")
+        print("    (backtest could not separate same-game from different-game: 45.5% vs 31.7%")
+        print("     but permutation p=0.55. This is the forward record that can.)")
+
 done = [r for r in rows if (r.get("result") or "").upper() in ("WIN", "LOSS", "PUSH")]
 if not done:
     print("  shadow: nothing settled yet"); raise SystemExit
