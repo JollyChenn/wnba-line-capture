@@ -140,9 +140,16 @@ if S:
     # overlapping pairs that all win together, which inflated my first backtest to +81.6% ROI
     # and manufactured an apparent leg correlation that was mostly the overlap.
     #
-    # THE UNKNOWN THAT DECIDES THIS: whether 1xbet pays the straight product of the legs. If it
-    # takes accumulator margin - 5-10% is normal - most of the theoretical gain disappears. The
-    # PAYS column below assumes the pure product, so treat it as an upper bound until checked.
+    # PRICING SETTLED 2026-08-15: the user checked at the book. 1.87 x 1.73 = 3.2351 and 1xbet
+    # quoted 3.235 - it pays the STRAIGHT PRODUCT, no accumulator margin. So the figures below
+    # are real, not an upper bound.
+    #
+    # AND A CORRECTION TO MY OWN EARLIER OBJECTION. I said a parlay "squares the edge and the
+    # error together". That is true of ROI magnitude but NOT of the break-even point, which is
+    # identical: a single breaks even at p = 1/o, a pair at p^2 = 1/o^2, i.e. the same p. A
+    # parlay is pure leverage - it does not move the threshold at which you start losing.
+    # Observed leg clustering (+3.5pp over independence) actually pushes the parlay's break-even
+    # BELOW the single's, but that is measured on 21 nights and is the weakest input here.
     byslate = collections.defaultdict(list)
     for r in S: byslate[r["slate"]].append(r)
     p2 = []; pall = []
@@ -178,6 +185,8 @@ if S:
         act = sum(1 for _, x in p2 if x)/len(p2)
         print(f"  independence check: singles {100*sw/len(S):.1f}% -> pairs should hit "
               f"{100*exp:.1f}%, actual {100*act:.1f}%")
-    print("  NOT LIVE. A parlay squares the edge and the error together, and our single-leg edge")
-    print("  is still unproven at n<50. Verify the book pays 1.73 x 1.83 = 3.166 before believing")
-    print("  any of the above.")
+    print("  NOT LIVE - but not because the maths is against it. Book pricing is confirmed fair")
+    print("  (straight product), break-even is IDENTICAL to singles, and at equal risk the")
+    print("  backtest gives ~3x the profit for ~2x the drawdown. The reason to wait is that both")
+    print("  rest on the SAME unproven single-leg edge: leverage applied before the edge is")
+    print("  established just makes being wrong more expensive. Revisit at 50 single-leg bets.")
