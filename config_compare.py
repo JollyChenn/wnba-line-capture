@@ -67,7 +67,15 @@ for b in sorted(load("bets_log.csv"), key=lambda r: r.get("captured_utc") or "")
     if not act: continue                       # game not played / not captured yet
     seen.add((day, pl, mk))
     pv = prev_line(pl, mk, day)
+    # intraday price drift on THIS night's series for this line - the old drift gate
+    dd = datetime.datetime.strptime(day, "%Y%m%d").replace(tzinfo=datetime.timezone.utc)
+    tonight_blk = [x for x in nights.get((pl, mk), []) if abs((x[0]-dd).total_seconds()) < 30*3600]
+    dr = None
+    if tonight_blk:
+        blk = max(tonight_blk, key=lambda x: len(x[2]))[2]
+        if len(blk) >= 2: dr = blk[-1][1]/blk[0][1] - 1
     C.append(dict(day=day, pl=pl, name=b.get("player"), mk=mk, line=ln, odds=od,
+                  dr=dr, nodrift=(dr is not None and dr < 0.01),
                   src=b.get("src") or "?", actual=act[mk], won=act[mk] > ln,
                   push=act[mk] == ln, prev=pv,
                   raised=(pv is not None and ln - pv >= 0.5)))
@@ -79,6 +87,11 @@ CONFIGS = [
      lambda r: r["src"] in ("flip","hotover") and r["mk"] in ("pra","pr","pts") and not r["raised"]),
     ("LIVE      +overshoot, pra/pr/pts, STARRED",
      lambda r: r["src"] in ("flip","hotover","overshoot") and r["mk"] in ("pra","pr","pts") and not r["raised"]),
+    ("DRIFT     same signals, drift gate INSTEAD of star",
+     lambda r: r["src"] in ("flip","hotover","overshoot") and r["mk"] in ("pra","pr","pts") and r["nodrift"]),
+    ("FILTER X  same signals, star AND drift stacked",
+     lambda r: r["src"] in ("flip","hotover","overshoot") and r["mk"] in ("pra","pr","pts")
+               and not r["raised"] and r["nodrift"]),
 ]
 
 def one_position(rows):
@@ -106,7 +119,7 @@ for d in days:
     print(f"  --- {d} ---")
     for label, fn in CONFIGS:
         rows = [r for r in C if r["day"] == d and fn(r)]
-        if label.startswith(("PREV", "LIVE")): rows = one_position(rows)
+        if not label.startswith("OLD"): rows = one_position(rows)
         w, n, u = score(rows)
         if not n:
             print(f"    {label:<48} no bet"); continue
@@ -121,7 +134,7 @@ print("  TOTAL OVER THE WHOLE WINDOW")
 print("="*104)
 for label, fn in CONFIGS:
     rows = [r for r in C if fn(r)]
-    if label.startswith(("PREV", "LIVE")): rows = one_position(rows)
+    if not label.startswith("OLD"): rows = one_position(rows)
     w, n, u = score(rows)
     if not n:
         print(f"  {label:<48} no bets"); continue
