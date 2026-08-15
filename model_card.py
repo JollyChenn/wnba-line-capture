@@ -272,6 +272,31 @@ if SECOND:
                  f"n=41, ROI −1.1%) or she has no previous line to compare (n=64, ROI −10.0%). "
                  f"DO NOT BET. Shown so you can see what was screened out. —_")
     for r in SECOND: lines += fmt(r, False)
+# ---- the parlay line ------------------------------------------------------------------------------
+# Whenever 2+ bets qualify on a slate, pair them off and show the accumulator alongside. This is a
+# STAKING choice, not a selection one - the picks are identical either way.
+#
+# WHY IT IS SHOWN AT ALL. 1xbet pays the straight product on a 2-leg accumulator (verified at the
+# book: 1.87 x 1.73 = 3.2351, quoted 3.235), so a parlay is pure leverage with the SAME break-even
+# as the singles - a single breaks even at p = 1/o, a pair at p^2 = 1/o^2, the same p. Backtest of
+# singles-plus-pairs: risk 128u, +29.72u, ROI +23.2% against singles-only +14.9%.
+#
+# WHY IT IS LABELLED OPTIONAL. Both rest on the same single-leg edge, which has fewer than 50
+# forward bets behind it. Leverage before proof only makes being wrong more expensive. Pairing is
+# by tip time, consecutive, no reuse - a bet is in at most one parlay.
+if len(PASS) >= 2:
+    par = []
+    for i in range(0, len(PASS)-1, 2):
+        a, b2 = PASS[i], PASS[i+1]
+        par.append((a, b2, a["price"] * b2["price"]))
+    lines.append(f"_— optional parlay layer, 1u each. Same picks, leverage only. —_")
+    for a, b2, od in par:
+        lines.append(f"💰 **{a['name'].split()[-1]} + {b2['name'].split()[-1]}** "
+                     f"{a['mk'].upper()} {a['line']} & {b2['mk'].upper()} {b2['line']} "
+                     f"@ **{od:.2f}** · 1u")
+    if len(PASS) % 2:
+        lines.append(f"_({PASS[-1]['name'].split()[-1]} has no partner tonight — single only)_")
+
 dbl = [p for p, c in collections.Counter(r["pl"] for r in PASS).items() if c > 1]
 for p in dbl:
     nm = next(r["name"] for r in PASS if r["pl"] == p)
