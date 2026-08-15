@@ -86,3 +86,49 @@ for cfg in ORDER:
 print("")
 print("  n is tiny. This table is not evidence yet - it is a record being built. The point at")
 print("  which it starts to mean anything is ~50 bets on MODEL_S.")
+
+# ---- STAKING OVERLAYS -----------------------------------------------------------------------
+# The tier question is NOT a selection question - the picks are identical. It is purely how much
+# to put on each one. Because shadow_forward.csv records `src`, every staking scheme can be
+# scored on the SAME bets with no re-logging and no second live experiment. That is deliberate:
+# running tiered staking live would confound "is the tier right" with "is the model right".
+#
+# Backtest said flip 2u / rest 1u returns +29.4% vs +23.5% flat, and holds out of sample
+# (IN +37.6% -> OUT +24.8%). But that is fitted to flip's +54.8% on n=25, which WILL regress.
+# So the tier stays on paper until the forward record says the same thing independently.
+S = [r for r in done if r["config"] == "MODEL_S"]
+if S:
+    print("")
+    print("=" * 96)
+    print("  STAKING OVERLAYS on the SAME Model S picks - selection identical, only size differs")
+    print("=" * 96)
+    SCHEMES = [
+        ("flat 1u                    <- LIVE", lambda r: 1.0),
+        ("flip 2u / rest 1u",                  lambda r: 2.0 if r.get("src") == "flip" else 1.0),
+        ("flip 2u / rest 0.5u",                lambda r: 2.0 if r.get("src") == "flip" else 0.5),
+        ("flip 3u / rest 1u",                  lambda r: 3.0 if r.get("src") == "flip" else 1.0),
+    ]
+    print(f"  {'scheme':<36} {'risked':>9} {'profit':>9} {'ROI':>8} {'worst DD':>10}")
+    for lbl, stake in SCHEMES:
+        risk = sum(stake(r) for r in S)
+        prof = sum(stake(r) * pnl(r) for r in S)
+        eq = peak = dd = 0.0
+        for r in S:
+            eq += stake(r) * pnl(r)
+            peak = max(peak, eq); dd = min(dd, eq - peak)
+        print(f"  {lbl:<36} {risk:8.1f}u {prof:+8.2f}u {100*prof/risk if risk else 0:+7.1f}% {dd:+9.2f}u")
+    bysrc = collections.Counter(r.get("src") for r in S)
+    print("")
+    print("  forward mix so far: " + ", ".join(f"{k} {v}" for k, v in sorted(bysrc.items())))
+    fl = [r for r in S if r.get("src") == "flip"]
+    ot = [r for r in S if r.get("src") != "flip"]
+    for lbl, g in (("flip", fl), ("hotover+overshoot", ot)):
+        if len(g) >= 5:
+            w = sum(1 for r in g if (r["result"] or "").upper() == "WIN")
+            u = sum(pnl(r) for r in g)
+            print(f"    {lbl:<20} {w}-{len(g)-w}  {u:+6.2f}u  ROI {100*u/len(g):+6.1f}%")
+        else:
+            print(f"    {lbl:<20} n={len(g)} - too few to compare tiers yet")
+    print("")
+    print("  SWITCH RULE: only move off flat 1u when flip has >=25 forward bets AND beats")
+    print("  hotover+overshoot by >=15pp of ROI. Anything less is the n=25 backtest talking.")
