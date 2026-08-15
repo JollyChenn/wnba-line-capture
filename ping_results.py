@@ -74,7 +74,7 @@ au = sum(pnl(r) for r in allg)
 roi = 100 * au / len(allg) if allg else 0.0
 
 head = "🟢" if nu > 0 else ("🔴" if nu < 0 else "⚪")
-lines = [f"{head} **OVER MODEL RESULT · {slate}** · {nw}-{nl} · {nu:+.2f}u"]
+lines = [f"{head} **MODEL S RESULT · {slate}** · {nw}-{nl} · {nu:+.2f}u"]
 for r in night:
     res = (r.get("result") or "").upper()
     mark = {"WIN": "✅", "LOSS": "❌", "PUSH": "➖"}.get(res, "·")

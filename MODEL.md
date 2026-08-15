@@ -1,4 +1,7 @@
-# THE OVER MODEL — what it is, why each rule is there, and what it is worth
+# MODEL S — what it is, why each rule is there, and what it is worth
+
+**S is for STAR.** The star filter is the model — see the ladder in §2. Everything
+else in the rule is signal hygiene; the star is the edge.
 
 Last updated 2026-08-14. This file is the single source of truth for the live model.
 If this file and any older doc disagree, this file wins.
@@ -26,7 +29,7 @@ the multiplicity correction in §4.4.
 
 ---
 
-## 1. The rule, in one box
+## 1. MODEL S, in one box
 
 ```
 SIGNAL    the engine flags her with src = flip  OR  hotover  OR  overshoot
@@ -349,3 +352,32 @@ cd C:\Users\Axioo\wnba-line-capture
 
 **Never auto-bet 1xbet.** Bets are placed by hand. `webhook.txt` is gitignored and must stay
 that way.
+
+---
+
+## 6. The shadow log - every rejected filter, tracked forward
+
+`shadow_log.py` records, **at decision time**, what each competing rule would have bet tonight.
+`grade_shadow.py` settles them and prints a head-to-head scoreboard. Both are silent.
+
+| config | rule |
+|---|---|
+| **MODEL_S** | flip/hotover/overshoot, pra/pr/pts, **starred** — LIVE |
+| S_prev | flip+hotover only, starred (the model before overshoot went in) |
+| S_drift | drift gate INSTEAD of the star |
+| S_filterx | star AND drift stacked |
+| S_nostar | same signals, no star at all |
+| S_raised | only the ones the star rejects (should lose) |
+| OLD_MENU | every over signal, any market, no filter |
+
+**Why this exists.** Over four nights in August the drift gate showed **3-0, +81% ROI** and
+MODEL_S showed **5-4, −1.2%**. On the full sample the drift gate is worth nothing (+8.3% versus
++8.7% for no filter at all) — it simply held no ticket on the one bad night. Four nights cannot
+choose between rules and neither can forty bets. This log is how the choice eventually gets made
+by forward data instead of by whichever backtest was run most recently.
+
+**Decision-time only, never backfilled.** Reconstructing history from `xbet_board.csv` would use
+the *final* board state, which is not what we could have acted on — the same contamination that
+produced three withdrawn findings this week. Historical reconstruction lives in
+`config_compare.py` and is kept separate on purpose.
+

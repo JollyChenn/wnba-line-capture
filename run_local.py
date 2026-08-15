@@ -125,6 +125,7 @@ else:
     # All three still RUN below for their data; they just no longer reach Discord. NO_PING=1 is
     # honoured by any script that checks it, and the env is restored after each step.
     step("7/7  over-model card (NOTIFICATION 1 of 2 - the only pinger in this pipeline)", "model_card.py")
+    step("shadow log - every rejected filter, on paper, silent", "shadow_log.py")
     step("cascade watch - data only, no ping", "cascade_watch.py", {"NO_PING": "1"})
     step("lineup check - data only, no ping", "lineup_check.py", {"NO_PING": "1"})
     step("dashboard", "build_dashboard.py")

@@ -1,4 +1,5 @@
-# model_card.py - the over-model card, generated and pinged from THIS LAPTOP. No git, no GitHub.
+# model_card.py - MODEL S. The card, generated and pinged from THIS LAPTOP. No git, no GitHub.
+# S is for STAR: the star filter is the model (raw over menu +3.1% -> +23.5% with it).
 # ---------------------------------------------------------------------------------------------
 # WHY THIS FILE EXISTS SEPARATELY. run_local.py calls `git pull --rebase --autostash` every hour.
 # That has twice stashed the working tree, hit a conflict on the pop, and left files deleted plus
@@ -13,7 +14,7 @@
 #   2 SIGNAL must be flip, hotover or overshoot. flip_paper and cascade are the two biggest
 #     sources by volume and both are dead, which is why most nights are silent.
 #   3 SKIP if the book RAISED her number 0.5+ since her previous game - already repriced.
-#     This is the gate. Unstarred bets run -7.0% ROI on 127.
+#     This is the gate. Unstarred bets run -6.5% ROI on 105.
 #   4 DRIFT is displayed, NOT used. Stacking it costs ~12u to buy nothing.
 #   5 markets pra / pr / pts only - pa ran -14.1%
 #   6 one bet per player-market, and same-player multi-market flagged as ONE position
@@ -196,7 +197,7 @@ def fmt(r, star):
     out.append(tail)
     return out
 
-lines = [f"**🎯 OVER MODEL · {slate}** · {len(PASS)} bet{'s' if len(PASS)!=1 else ''} · flat 1u"]
+lines = [f"**🎯 MODEL S · {slate}** · {len(PASS)} bet{'s' if len(PASS)!=1 else ''} · flat 1u"]
 for r in PASS: lines += fmt(r, True)
 if SECOND:
     lines.append(f"_— below: {len(SECOND)} the book has already repriced (raised her 0.5+). "
@@ -214,7 +215,7 @@ if rej:
                              + ("book raised" if r["raised"] else
                                 ("drifted" if r["drift"] >= 0.01 else r["mk"])) + ")"
                              for r in rej[:6]) + "_")
-card = "\n".join(lines) if PASS else f"**🎯 OVER MODEL · {slate}** · no qualifying bets tonight."
+card = "\n".join(lines) if PASS else f"**🎯 MODEL S · {slate}** · no qualifying bets tonight."
 print("\n" + card + "\n")
 
 # ---- idempotent send, and log the picks so tomorrow can grade them --------------------------------
