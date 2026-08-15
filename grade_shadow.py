@@ -44,8 +44,10 @@ for r in rows:
     r["actual"] = v
     graded += 1
 
+# MUST match shadow_log.py exactly. It writes `mv`; omitting it here would silently
+# drop the column on every rewrite - the file is rewritten in full each run.
 COLS = ["slate", "config", "player", "market", "line", "odds", "src",
-        "prev_line", "drift", "logged_utc", "result", "actual"]
+        "prev_line", "mv", "drift", "logged_utc", "result", "actual"]
 tmp = FWD + ".tmp"
 with open(tmp, "w", newline="", encoding="utf-8") as fh:
     w = csv.DictWriter(fh, fieldnames=COLS)
@@ -64,7 +66,8 @@ def pnl(r):
     o = f(r.get("odds")) or 1.85
     return (o - 1) if res == "WIN" else -1.0
 
-ORDER = ["MODEL_S", "S_prev", "S_drift", "S_filterx", "S_nostar", "S_raised", "OLD_MENU"]
+ORDER = ["MODEL_S", "S_prev", "S_loose", "S_drift", "S_filterx", "S_nostar",
+         "S_raised", "S_noprev", "OLD_MENU"]
 slates = sorted({r["slate"] for r in done})
 print("")
 print("=" * 96)
