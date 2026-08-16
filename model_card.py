@@ -19,7 +19,10 @@
 #     the rule from +23.5% to +11.0% until 2026-08-15. Unknown is not starred.
 #     raised n=41 ROI -1.1% | no-prev n=64 ROI -10.0% | starred n=108 ROI +23.5%
 #   4 DRIFT is displayed, NOT used. Stacking it costs ~12u to buy nothing.
-#   5 markets pra / pr / pts only - pa ran -14.1%
+#   5 markets pra / pr / pts only. Re-tested WITH the star 2026-08-16: pa starred is
+#     n=24 +4.3% ROI (not the -14.1% an older note claimed, which was a different
+#     universe). reb/ast/ra barely fire at all - 2, 1 and 1 signals in the whole
+#     season - so there is no volume hiding in the excluded markets.
 #   6 one bet per player-market, and same-player multi-market flagged as ONE position
 #   Full reasoning, evidence and weak points: MODEL.md
 #
@@ -305,9 +308,10 @@ rej = [r for r in rows if r not in PASS]
 if rej:
     lines.append(f"_skipped {len(rej)}: "
                  + ", ".join(f"{r['name'].split()[-1]} ("
-                             + ("no prev line" if r.get("noprev") else
-                                "book raised" if r["raised"] else
-                                ("drifted" if r["drift"] >= 0.01 else r["mk"])) + ")"
+                             + ("dead signal" if r["src"] not in TOP_SRC else
+                                r["mk"] if r["mk"] not in BET_MKTS else
+                                "no prev line" if r.get("noprev") else
+                                "book raised") + ")"
                              for r in rej[:6]) + "_")
 card = "\n".join(lines) if PASS else f"**🎯 MODEL S · {slate}** · no qualifying bets tonight."
 print("\n" + card + "\n")
@@ -352,10 +356,14 @@ else:
     # tipped, MIN@LV was the only game left and the slate flipped to 2026-08-16. NaLyssa Smith's
     # single bet was therefore logged twice under two labels - and pinged twice. Dedup on
     # (player, market, tip) so the same game can never be recorded under two slates.
-    have_games = {(r.get("player"), r.get("market"), r.get("tip")) for r in rows_all if r.get("tip")}
     if NOW < first_tip:
         keep = [r for r in rows_all
                 if not (r["slate"] == sk and r.get("result") not in ("WIN", "loss", "push"))]
+        # DEDUP AGAINST WHAT SURVIVES THE REWRITE, NOT AGAINST rows_all. The pre-tip rewrite has
+        # just dropped this slate's pending rows so they can be rebuilt from the current board;
+        # if the dedup set were built from rows_all it would contain those very rows and refuse
+        # to re-add them, silently emptying the tracker on every run after the first.
+        have_games = {(r.get("player"), r.get("market"), r.get("tip")) for r in keep if r.get("tip")}
         for r in PASS:
             tipkey = r["tip"].strftime("%Y-%m-%dT%H:%MZ")
             if (r["name"], r["mk"], tipkey) in have_games:
