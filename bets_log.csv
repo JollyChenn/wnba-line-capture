@@ -17681,3 +17681,16 @@ captured_utc,date,player,market,side,line,odds,tier,ev,pinn,src
 2026-08-16T02:49:23+00:00,2026-08-15,DiJonai Carrington,pra,Over,11.5,1.75,CASC,0.0,,cascade
 2026-08-16T02:49:23+00:00,2026-08-15,Courtney Vandersloot,pra,Over,16.5,1.83,CASC,0.046,,cascade
 2026-08-16T02:49:23+00:00,2026-08-15,Azura Stevens,pra,Over,20.5,1.952,CASC,0.115,,cascade
+2026-08-16T03:20:49+00:00,2026-08-15,Natasha Cloud,pts,Under,10.5,1.82,THIN,0.034,,newunder
+2026-08-16T03:20:49+00:00,2026-08-15,Kamilla Cardoso,pts,Under,14.5,1.87,THIN,0.054,,newunder
+2026-08-16T03:20:49+00:00,2026-08-15,Flau'jae Johnson,pts,Over,13.5,1.84,THIN,0.013,,flip_paper
+2026-08-16T03:20:49+00:00,2026-08-15,Dominique Malonga,pts,Under,20.5,1.83,STRONG,0.22,,newunder
+2026-08-16T03:20:49+00:00,2026-08-15,Kelsey Mitchell,pts,Over,25.5,1.833,SOLID,0.138,,flip_paper
+2026-08-16T03:20:49+00:00,2026-08-15,Alyssa Thomas,pts,Under,16.5,1.8,THIN,0.008,,newunder
+2026-08-16T03:20:49+00:00,2026-08-15,Kahleah Copper,pts,Under,22.5,1.77,STRONG,0.401,,newunder
+2026-08-16T03:20:49+00:00,2026-08-15,Bridget Carleton,pts,Under,16.5,1.86,THIN,0.052,,newunder
+2026-08-16T03:20:49+00:00,2026-08-15,Carla Leite,pts,Under,16.5,1.86,SOLID,0.154,,newunder
+2026-08-16T03:20:49+00:00,2026-08-15,DiJonai Carrington,pra,Over,11.5,1.75,CASC,0.0,,cascade
+2026-08-16T03:20:49+00:00,2026-08-15,Courtney Vandersloot,pra,Over,16.5,1.8,CASC,0.029,,cascade
+2026-08-16T03:20:49+00:00,2026-08-15,Azura Stevens,pra,Over,20.5,1.952,CASC,0.115,,cascade
+2026-08-16T03:20:49+00:00,2026-08-15,Megan Dileo,pr,Over,18.5,1.952,SOLID,0.272,,overshoot
