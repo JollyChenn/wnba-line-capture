@@ -5934,3 +5934,15 @@ logged_utc,date,player,market,side,line,src,open_odds,now_odds,move_pct,verdict,
 2026-08-16T12:15:31Z,2026-08-16,Courtney Vandersloot,pra,Over,17.5,cascade,2.0,1.75,-12.5,BET (money agrees),BET NOW 93%,,,,10,4.9,2026-08-16T12:14:50Z
 2026-08-16T12:15:31Z,2026-08-16,Azura Stevens,pra,Over,20.5,cascade,1.952,1.952,0.0,BET (steady),ok 85%,,,,10,4.9,2026-08-16T12:14:50Z
 2026-08-16T12:15:31Z,2026-08-16,Kelsey Mitchell,pr,Over,26.5,overshoot,1.87,1.87,0.0,BET (steady),NO READ (new line),,,,1,0.0,2026-08-16T12:14:50Z
+2026-08-16T12:50:49Z,2026-08-16,Natasha Cloud,pts,Under,11.5,newunder,1.73,1.73,0.0,BET (steady),ok 85%,10.5->11.5,,,6,2.7,2026-08-16T12:50:18Z
+2026-08-16T12:50:49Z,2026-08-16,Dominique Malonga,pts,Under,20.5,newunder,1.82,1.73,-4.9,BET (money agrees),BET NOW 93%,,,,9,5.5,2026-08-16T12:50:18Z
+2026-08-16T12:50:49Z,2026-08-16,Bridget Carleton,pts,Under,16.5,newunder,1.82,1.95,7.1,SKIP-drift,WAIT 70%,,Over,1.75,11,5.5,2026-08-16T12:50:18Z
+2026-08-16T12:50:49Z,2026-08-16,Carla Leite,pts,Under,16.5,newunder,1.86,1.95,4.8,SKIP-drift,WAIT 70%,,Over,1.75,11,5.5,2026-08-16T12:50:18Z
+2026-08-16T12:50:49Z,2026-08-16,Arike Ogunbowale,pts,Over,15.5,flip,1.79,1.8,0.6,BET (steady),ok 85%,,,,11,5.5,2026-08-16T12:50:18Z
+2026-08-16T12:50:49Z,2026-08-16,Gabby Williams,pts,Under,13.5,newunder,1.88,1.833,-2.5,BET (money agrees),bet now 81%,,,,11,5.5,2026-08-16T12:50:18Z
+2026-08-16T12:50:49Z,2026-08-16,Veronica Burton,pts,Under,13.5,newunder,1.81,1.833,1.3,SKIP-drift,WAIT 70%,,Over,1.909,11,5.5,2026-08-16T12:50:18Z
+2026-08-16T12:50:49Z,2026-08-16,Paige Bueckers,pts,Under,19.5,newunder,1.92,1.909,-0.6,BET (steady),bet now 81%,,,,11,5.5,2026-08-16T12:50:18Z
+2026-08-16T12:50:49Z,2026-08-16,DiJonai Carrington,pra,Over,11.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,11,5.5,2026-08-16T12:50:18Z
+2026-08-16T12:50:49Z,2026-08-16,Courtney Vandersloot,pra,Over,17.5,cascade,2.0,1.75,-12.5,BET (money agrees),BET NOW 93%,,,,11,5.5,2026-08-16T12:50:18Z
+2026-08-16T12:50:49Z,2026-08-16,Azura Stevens,pra,Over,20.5,cascade,1.952,1.952,0.0,BET (steady),ok 85%,,,,11,5.5,2026-08-16T12:50:18Z
+2026-08-16T12:50:49Z,2026-08-16,Kelsey Mitchell,pr,Over,26.5,overshoot,1.87,1.87,0.0,BET (steady),ok 85%,,,,2,0.6,2026-08-16T12:50:18Z
