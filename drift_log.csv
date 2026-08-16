@@ -5709,3 +5709,11 @@ logged_utc,date,player,market,side,line,src,open_odds,now_odds,move_pct,verdict,
 2026-08-16T02:14:36Z,2026-08-15,Alyssa Thomas,pts,Under,16.5,newunder,1.8,1.79,-0.6,BET (steady),bet now 81%,,,,24,16.2,2026-08-16T02:14:25Z
 2026-08-16T02:14:36Z,2026-08-15,Megan Dileo,pr,Over,18.5,overshoot,2.0,1.952,-2.4,BET (money agrees),bet now 81%,,,,32,16.2,2026-08-16T02:14:25Z
 2026-08-16T02:14:36Z,2026-08-15,Flau'jae Johnson,pts,Over,13.5,flip_paper,1.84,1.84,0.0,BET (steady),ok 85%,,,,4,1.6,2026-08-16T02:14:25Z
+2026-08-16T02:49:31Z,2026-08-15,Natasha Cloud,pts,Under,10.5,newunder,1.88,1.84,-2.1,BET (money agrees),bet now 81%,,,,40,19.5,2026-08-16T02:49:23Z
+2026-08-16T02:49:31Z,2026-08-15,Kamilla Cardoso,pts,Under,14.5,newunder,1.82,1.89,3.8,SKIP-drift,WAIT 70%,,Over,1.81,40,19.5,2026-08-16T02:49:23Z
+2026-08-16T02:49:31Z,2026-08-15,Dominique Malonga,pts,Under,20.5,newunder,1.83,1.83,0.0,BET (steady),ok 85%,19.5->20.5,,,6,2.7,2026-08-16T02:49:23Z
+2026-08-16T02:49:31Z,2026-08-15,Kelsey Mitchell,pts,Over,25.5,flip_paper,1.8,1.833,1.8,SKIP-drift,WAIT 70%,,Under,1.909,43,19.5,2026-08-16T02:49:23Z
+2026-08-16T02:49:31Z,2026-08-15,DiJonai Carrington,pra,Over,11.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,45,19.5,2026-08-16T02:49:23Z
+2026-08-16T02:49:31Z,2026-08-15,Courtney Vandersloot,pra,Over,16.5,cascade,1.83,1.83,0.0,BET (steady),ok 85%,17.5->16.5,,,4,1.6,2026-08-16T02:49:23Z
+2026-08-16T02:49:31Z,2026-08-15,Azura Stevens,pra,Over,20.5,cascade,2.0,1.952,-2.4,BET (money agrees),bet now 81%,,,,45,19.5,2026-08-16T02:49:23Z
+2026-08-16T02:49:31Z,2026-08-15,Flau'jae Johnson,pts,Over,13.5,flip_paper,1.84,1.84,0.0,BET (steady),ok 85%,,,,5,2.2,2026-08-16T02:49:23Z
