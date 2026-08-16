@@ -525,6 +525,52 @@ def main():
         ping(f"⚠️ **1xbet scrape BLOCKED (all mirrors) — {now.strftime('%H:%M')} UTC**\nCheck these on 1xbet yourself:\n" + proj_msg(inj))
         return
 
+    # ---- 1XBET GAME MARKETS, free from the discovery call we already make ----------------------
+    # NOT for betting the moneyline. Checked 2026-08-16 against Pinnacle: 1xbet's de-vigged
+    # moneyline matched to 0.0-0.8pp on every game. The soft book is SHARP on the headline number
+    # and soft only on obscure player props (where it sits 7.0% below fair, t=-42.9). There is no
+    # staleness to exploit here and a walk-forward Elo cannot beat the line either (Brier 0.2182
+    # vs the market's 0.2095; betting the disagreement fails a random-side control at p=0.35).
+    #
+    # The REASON to capture it is the between-games TOTAL test. That is the one rejected idea
+    # whose direction held up - overs do better when the game total rises versus the team's last
+    # game, and the effect INVERTS on unders exactly as the mechanism demands. It failed on sample
+    # size, because Pinnacle gameline capture only starts 2026-07-11 against a season opening
+    # 2026-05-08. Capturing 1xbet's own total from here doubles the collection rate at zero extra
+    # request cost, so that test can be re-run with real power in a month.
+    #
+    # Type codes: 401/402 home/away win (no draw in the WNBA), 9/10 total over/under, 7/8 spread.
+    try:
+        _gstamp = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+        grows = []
+        for _e in disc.get("Value", []):
+            if not (isinstance(_e, dict) and _e.get("O1") and _e.get("I")): continue
+            _E = _e.get("E") or []
+            def _pick(code):
+                m = [x for x in _E if x.get("T") == code]
+                return m[0] if m else None
+            _h, _a = _pick(401), _pick(402)
+            _to, _tu = _pick(9), _pick(10)
+            _sh, _sa = _pick(7), _pick(8)
+            _nm = f"{_e.get('O1','')}|{_e.get('O2','')}".replace(" (Women)", "")
+            _st = datetime.datetime.fromtimestamp(_e.get("S", 0), datetime.timezone.utc).strftime("%Y-%m-%dT%H:%MZ") if _e.get("S") else ""
+            if _h and _a:
+                grows.append([_gstamp, _e.get("I"), _st, _nm, "moneyline", "", _h.get("C"), _a.get("C")])
+            if _to and _tu:
+                grows.append([_gstamp, _e.get("I"), _st, _nm, "total", _to.get("P"), _to.get("C"), _tu.get("C")])
+            if _sh and _sa:
+                grows.append([_gstamp, _e.get("I"), _st, _nm, "spread", _sh.get("P"), _sh.get("C"), _sa.get("C")])
+        if grows:
+            _gnew = not os.path.exists("xbet_gamelines.csv")
+            with open("xbet_gamelines.csv", "a", newline="", encoding="utf-8") as _gf:
+                _gw = csv.writer(_gf)
+                if _gnew:
+                    _gw.writerow(["captured_utc","game_id","start","teams","type","points","p1","p2"])
+                _gw.writerows(grows)
+            print(f"XBET GAMELINES: logged {len(grows)} rows -> xbet_gamelines.csv")
+    except Exception as _ge:
+        print("xbet gameline capture skipped:", str(_ge)[:80])
+
     games = [e for e in disc.get("Value", []) if isinstance(e, dict) and e.get("O1") and e.get("I")]
     target = [e for e in games if any(all(w in f"{e.get('O1','')} {e.get('O2','')}".lower() for w in kw) for kw in nearkw)]
     props = {}
