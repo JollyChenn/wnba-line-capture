@@ -116,8 +116,8 @@ def pnl(r):
     o = f(r.get("odds")) or 1.85
     return (o - 1) if res == "WIN" else -1.0
 
-ORDER = ["MODEL_S", "S_prev", "S_loose", "S_drift", "S_filterx", "S_nostar",
-         "S_raised", "S_noprev", "OLD_MENU"]
+ORDER = ["MODEL_S", "S_prev", "S_loose", "S_paper", "S_drift", "S_filterx",
+         "S_nostar", "S_raised", "S_noprev", "OLD_MENU"]
 slates = sorted({r["slate"] for r in done})
 print("")
 print("=" * 96)

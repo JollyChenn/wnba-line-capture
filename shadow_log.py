@@ -112,6 +112,7 @@ for b in load("bets_log.csv"):
                   raised=(pv is None or line_now - pv >= 0.5),   # no prev line is NOT a star
                   noprev=(pv is None),
                   mv=(None if pv is None else line_now - pv),
+                  tier=b.get("tier") or "",
                   nodrift=(drift < 0.01)))
 
 # ---- the competing rules ----------------------------------------------------------------------
@@ -132,6 +133,21 @@ CONFIGS = {
     # S_noprev: the group that used to be silently bet as starred (48.4%, -10.0%). Tracked as a
     # control - if it stops losing, the exclusion needs revisiting.
     "S_noprev": lambda r: r["src"] in SIGS and r["mk"] in BET_MKTS and r["noprev"],
+    # S_paper: flip_paper restricted to the engine's THIN and STRONG confidence tiers. This is the
+    # best-evidenced candidate found so far and it is still NOT live. In its favour: n=69, 68.1%,
+    # +26.6% ROI, both time-halves positive (IN +39.8% / OUT +17.6%), a tier-label permutation
+    # test at p=0.027, and adding it to Model S raises ROI 24.0% -> 25.0% while lifting volume
+    # 2.02 -> 3.30 bets a night. Against it, and decisive:
+    #   * NON-MONOTONIC in the engine's own confidence. tier is defined as STRONG p>=0.66,
+    #     SOLID p>=0.58, THIN below. Results run THIN +34.8%, SOLID -13.9%, STRONG +19.5% -
+    #     good, bad, good across an ORDERED variable. That is the shape of noise, not signal.
+    #   * DECAYING: June +51.1%, July +35.9%, August +4.2%. The most recent month is flat.
+    #   * The star does nothing here (+27.9% vs +25.4%), so adopting it means running a second,
+    #     different rule alongside the star - more surface for a fitted result to hide in.
+    # A p-value on a split chosen after looking is weaker than three structural objections.
+    # Tracked so forward data can overrule me.
+    "S_paper":  lambda r: r["src"] == "flip_paper" and r["mk"] in BET_MKTS
+                          and r.get("tier") in ("THIN", "STRONG"),
     "OLD_MENU": lambda r: True,
 }
 
