@@ -321,7 +321,9 @@ if not PASS:
     print("no qualifying bets - staying silent (card is in the log)")
     sent[slate] = []
     tmp = SENT + ".tmp"; json.dump(sent, open(tmp, "w")); os.replace(tmp, SENT)
-elif sent.get(slate) == [f"{r['pl']}|{r['mk']}|{r['line']}" for r in PASS]:
+elif sent.get(slate) == [f"{r['pl']}|{r['mk']}|{r['line']}" for r in PASS] or all(
+        any(f"{r['pl']}|{r['mk']}|{r['line']}" in v for v in sent.values() if isinstance(v, list))
+        for r in PASS):
     # KEY ON THE PICKS, NOT THE COUNT. On 2026-08-15 a line-classification bug put Shakira Austin
     # on the card at a dead 31.5; the fix replaced her with Dearica Hamby - still two bets, so a
     # count-based check would have stayed silent and left you holding the wrong card. Any change
@@ -342,15 +344,27 @@ else:
     sk = slate.replace("-", "")
     first_tip = min(tips.values())
     rows_all = load("model_forward.csv")
-    hdr = ["slate","player","market","side","line","odds","src","prev_line",
+    hdr = ["slate","player","market","side","line","odds","src","prev_line","tip",
            "result","actual","pnl","note"]
+    # A BET IS IDENTIFIED BY HER GAME, NOT BY THE SLATE LABEL. `slate` is min(tip) among games
+    # inside the 16h window, so it MOVES as earlier games tip and drop out. On 2026-08-15 the
+    # window held LA@WSH (23:30Z) and MIN@LV (00:00Z) and the slate read 2026-08-15; once WSH
+    # tipped, MIN@LV was the only game left and the slate flipped to 2026-08-16. NaLyssa Smith's
+    # single bet was therefore logged twice under two labels - and pinged twice. Dedup on
+    # (player, market, tip) so the same game can never be recorded under two slates.
+    have_games = {(r.get("player"), r.get("market"), r.get("tip")) for r in rows_all if r.get("tip")}
     if NOW < first_tip:
         keep = [r for r in rows_all
                 if not (r["slate"] == sk and r.get("result") not in ("WIN", "loss", "push"))]
         for r in PASS:
+            tipkey = r["tip"].strftime("%Y-%m-%dT%H:%MZ")
+            if (r["name"], r["mk"], tipkey) in have_games:
+                print(f"  already tracked {r['name']} {r['mk']} for this game - not duplicating")
+                continue
             keep.append({"slate": sk, "player": r["name"], "market": r["mk"], "side": "Over",
                          "line": r["line"], "odds": r["price"], "src": r["src"],
                          "prev_line": r["prev"] if r["prev"] is not None else "",
+                         "tip": tipkey,
                          "result": "", "actual": "", "pnl": "", "note": "pending"})
         tmp = FWD + ".tmp"
         with open(tmp, "w", newline="", encoding="utf-8") as fh:
