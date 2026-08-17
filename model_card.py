@@ -7,7 +7,8 @@
 # reads local CSVs, writes two local files, and posts to Discord. If the network is down it still
 # writes the card to disk.
 #
-# THE MODEL (backtest n=108, 67.6%, +25.38u, ROI +23.5%, alpha +16.1pp, z=+3.36):
+# THE MODEL (backtest, ONE POSITION PER PLAYER: n=96, 59.4%, ROI +10.3%. The +23.5% often
+# quoted elsewhere counts a player twice when she qualifies in two markets - see rule 6.)
 #   1 OVER side only. Not because unders are cursed - the profitable side actually rotates by
 #     half-month - but because our under SELECTION was worse than random even in the months when
 #     unders were the better side (blind -4.5%, ours -14.5%). We are bad at picking them.
@@ -23,7 +24,9 @@
 #     n=24 +4.3% ROI (not the -14.1% an older note claimed, which was a different
 #     universe). reb/ast/ra barely fire at all - 2, 1 and 1 signals in the whole
 #     season - so there is no volume hiding in the excluded markets.
-#   6 one bet per player-market, and same-player multi-market flagged as ONE position
+#   6 ONE POSITION PER PLAYER, enforced not merely warned. Counting a player twice when
+#     she qualifies in two markets is what made the backtest read +23.5% instead of
+#     +10.3%, and the forward record 6-6 instead of 5-6. The card keeps her best price.
 #   Full reasoning, evidence and weak points: MODEL.md
 #
 # Run it any time. It is idempotent per slate: it will not re-ping a slate it has already sent.
@@ -237,6 +240,17 @@ TOP_SRC = ("flip", "hotover", "overshoot")
 cand = [r for r in rows if r["mk"] in BET_MKTS and r["src"] in TOP_SRC]
 PASS = [r for r in cand if not r["raised"]]
 SECOND = [r for r in cand if r["raised"]]
+# ONE POSITION PER PLAYER, ENFORCED - not merely warned about. The rule has always said a player
+# qualifying in two markets is ONE bet, but the card used to list both and leave the choice to
+# you, and the tracker logged both. That flattered every number: on 2026-08-11 Dearica Hamby went
+# in as pts 13.5 AND pra 22.5, both won, and one good night was counted twice. The backtest has
+# the same split - +23.5% counting both against +10.3% under this rule - so the card now picks
+# her best-priced leg and that is the bet.
+_bestleg = {}
+for _r in sorted(PASS, key=lambda x: -x["price"]):
+    _bestleg.setdefault(_r["pl"], _r)
+_dropped = [r for r in PASS if _bestleg.get(r["pl"]) is not r]
+PASS = sorted(_bestleg.values(), key=lambda r: r["tip"])
 PASS.sort(key=lambda r: r["tip"]); SECOND.sort(key=lambda r: r["tip"])
 WIB = lambda t: (t + datetime.timedelta(hours=7)).strftime("%H:%M")
 
@@ -300,10 +314,9 @@ if len(PASS) >= 2:
     if len(PASS) % 2:
         lines.append(f"_({PASS[-1]['name'].split()[-1]} has no partner tonight — single only)_")
 
-dbl = [p for p, c in collections.Counter(r["pl"] for r in PASS).items() if c > 1]
-for p in dbl:
-    nm = next(r["name"] for r in PASS if r["pl"] == p)
-    lines.append(f"⚠️ {nm} appears twice — same player, same night. Treat as ONE position.")
+for _d in _dropped:
+    lines.append(f"_· also qualified: {_d['name']} {_d['mk'].upper()} {_d['line']} @ {_d['price']:.2f} "
+                 f"— NOT a second bet, one position per player. Kept her better price above._")
 rej = [r for r in rows if r not in PASS]
 if rej:
     lines.append(f"_skipped {len(rej)}: "
