@@ -6184,3 +6184,13 @@ logged_utc,date,player,market,side,line,src,open_odds,now_odds,move_pct,verdict,
 2026-08-17T01:38:37Z,2026-08-16,Laura Juskaite,pra,Over,17.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,4,1.6,2026-08-17T01:38:33Z
 2026-08-17T01:38:37Z,2026-08-16,Arike Ogunbowale,pr,Over,18.5,flip,1.8,1.8,0.0,BET (steady),ok 85%,,,,3,1.0,2026-08-17T01:38:33Z
 2026-08-17T01:38:37Z,2026-08-16,Natasha Cloud,pra,Over,20.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,2,0.5,2026-08-17T01:38:33Z
+2026-08-17T02:11:57Z,2026-08-16,Veronica Burton,pts,Under,13.5,newunder,1.81,1.86,2.8,SKIP-drift,WAIT 70%,,Over,1.89,36,18.8,2026-08-17T02:11:33Z
+2026-08-17T02:11:57Z,2026-08-16,Paige Bueckers,pts,Under,19.5,newunder,1.92,1.75,-8.9,BET (money agrees),BET NOW 93%,,,,36,18.8,2026-08-17T02:11:33Z
+2026-08-17T02:11:57Z,2026-08-16,DiJonai Carrington,pra,Over,11.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,29,18.8,2026-08-17T02:11:33Z
+2026-08-17T02:11:57Z,2026-08-16,Courtney Vandersloot,pra,Over,17.5,cascade,2.0,1.75,-12.5,BET (money agrees),BET NOW 93%,,,,29,18.8,2026-08-17T02:11:33Z
+2026-08-17T02:11:57Z,2026-08-16,Nneka Ogwumike,pra,Over,26.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,5,2.1,2026-08-17T02:11:33Z
+2026-08-17T02:11:57Z,2026-08-16,Dearica Hamby,pra,Over,24.5,cascade,1.8,1.8,0.0,BET (steady),ok 85%,,,,5,2.1,2026-08-17T02:11:33Z
+2026-08-17T02:11:57Z,2026-08-16,Erica Wheeler,pra,Over,20.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,5,2.1,2026-08-17T02:11:33Z
+2026-08-17T02:11:57Z,2026-08-16,Laura Juskaite,pra,Over,17.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,5,2.1,2026-08-17T02:11:33Z
+2026-08-17T02:11:57Z,2026-08-16,Arike Ogunbowale,pr,Over,18.5,flip,1.8,1.8,0.0,BET (steady),ok 85%,,,,4,1.6,2026-08-17T02:11:33Z
+2026-08-17T02:11:57Z,2026-08-16,Natasha Cloud,pra,Over,20.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,3,1.1,2026-08-17T02:11:33Z
