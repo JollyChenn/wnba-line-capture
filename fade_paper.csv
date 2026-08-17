@@ -147,3 +147,4 @@ logged_utc,date,player,market,side,line,price,orig_src,orig_move
 2026-08-17T12:01:54Z,2026-08-17,Breanna Stewart,pts,Over,22.5,1.952,newunder,0.0112
 2026-08-17T12:01:54Z,2026-08-17,Chelsea Gray,pts,Over,11.5,1.8,newunder,0.0114
 2026-08-17T12:01:54Z,2026-08-17,Allisha Gray,pts,Under,19.5,1.769,flip_paper,0.0256
+2026-08-17T12:36:59Z,2026-08-17,Arike Ogunbowale,pr,Under,18.5,1.83,flip,0.0167
