@@ -47,7 +47,7 @@ for r in rows:
 # MUST match shadow_log.py exactly. It writes `mv`; omitting it here would silently
 # drop the column on every rewrite - the file is rewritten in full each run.
 COLS = ["slate", "config", "player", "market", "line", "odds", "src",
-        "prev_line", "mv", "drift", "logged_utc", "result", "actual"]
+        "prev_line", "mv", "drift", "tip", "logged_utc", "result", "actual"]
 tmp = FWD + ".tmp"
 with open(tmp, "w", newline="", encoding="utf-8") as fh:
     w = csv.DictWriter(fh, fieldnames=COLS)

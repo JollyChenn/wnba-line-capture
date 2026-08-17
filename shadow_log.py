@@ -23,7 +23,7 @@ BET_MKTS = ("pra", "pr", "pts")
 SIGS = ("flip", "hotover", "overshoot")
 OUT = os.path.join(D, "shadow_forward.csv")
 COLS = ["slate", "config", "player", "market", "line", "odds", "src",
-        "prev_line", "mv", "drift", "logged_utc", "result", "actual"]
+        "prev_line", "mv", "drift", "tip", "logged_utc", "result", "actual"]
 
 def load(p):
     fp = os.path.join(D, p)
@@ -159,15 +159,17 @@ def one_position(rows):
     return sorted(best.values(), key=lambda r: r["name"])
 
 rows_all = load("shadow_forward.csv")
-# PRE-TIP REWRITE, same discipline as model_card: a pick can qualify at 21:00 and fail at 22:00
-# because the book moved her number. While the slate has not tipped, this slate's ungraded rows
-# are replaced by the current view. After first tip they freeze, because by then the bet is real.
-if NOW < first_tip:
-    keep = [r for r in rows_all
-            if not (r.get("slate") == slate and (r.get("result") or "") == "")]
-else:
-    keep = list(rows_all)
-    have = {(r.get("slate"), r.get("config"), r.get("player"), r.get("market")) for r in rows_all}
+# THE WINDOW NARROWS AS GAMES TIP, AND THAT USED TO DESTROY ROWS. `tips` only holds games still
+# ahead of us, so once the 21:00 games start, first_tip jumps to the 23:00 game and the pre-tip
+# rewrite fires AGAIN - but now only the late game's players are candidates, so the earlier ones
+# were silently dropped. On 2026-08-16 the card logged 3 Model S bets and this file kept 1.
+# Fix: identify a row by its GAME (player, market, tip), never rewrite a row whose game has
+# already started, and only replace rows for games still ahead.
+def _tipkey(t): return t.strftime("%Y-%m-%dT%H:%MZ")
+live_tips = {_tipkey(t) for t in tips.values() if NOW < t}
+keep = [r for r in rows_all
+        if (r.get("result") or "") != "" or r.get("tip", "") not in live_tips]
+have = {(r.get("config"), r.get("player"), r.get("market"), r.get("tip")) for r in keep}
 
 stamp = NOW.strftime("%Y-%m-%dT%H:%M:%SZ")
 added = collections.Counter()
@@ -175,13 +177,15 @@ for cfg, fn in CONFIGS.items():
     picks = [r for r in C if fn(r)]
     if cfg != "OLD_MENU": picks = one_position(picks)
     for r in picks:
-        if NOW >= first_tip and (slate, cfg, r["name"], r["mk"]) in have: continue
-        if NOW >= first_tip: continue          # never add a new bet after tip
+        tk = _tipkey(r["tip"])
+        if NOW >= r["tip"]: continue                       # her game has started - never add
+        if (cfg, r["name"], r["mk"], tk) in have: continue  # already recorded for THIS game
         keep.append({"slate": slate, "config": cfg, "player": r["name"], "market": r["mk"],
                      "line": r["line"], "odds": r["odds"], "src": r["src"],
                      "prev_line": "" if r["prev"] is None else r["prev"],
                      "mv": "" if r.get("mv") is None else r["mv"],
-                     "drift": f"{r['drift']:.4f}", "logged_utc": stamp,
+                     "drift": f"{r['drift']:.4f}", "tip": _tipkey(r["tip"]),
+                     "logged_utc": stamp,
                      "result": "", "actual": ""})
         added[cfg] += 1
 
