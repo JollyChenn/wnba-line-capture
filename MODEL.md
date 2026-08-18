@@ -502,3 +502,58 @@ sqrt(quotes-per-player) too tight and manufactures significance. Bootstrap and p
 level the LABEL lives at: player-block for player attributes (rank, role), game-block for
 game attributes (pass count, total). This is the same bug class as every other one this season -
 two identifiers treated as interchangeable, here "a quote" and "an independent observation".
+
+## 2026-08-18 (final) - IS THE MODEL GOOD? The honest answer, with the right nulls.
+
+### The backtest edge does not survive the correct null
+
+    MODEL S (signal fired)          n=99   61.6%  +13.7%  95CI [-5.0, +31.2]
+    same star filter, NO signal     n=822  50.4%   -5.2%  95CI [-11.2, +0.5]
+    gap +18.9pp
+
+That gap looks decisive until you ask what null it beats. Two permutations:
+
+    BETWEEN players (does the engine pick good PLAYERS?)          p = 0.0568
+    WITHIN players  (does the engine pick good NIGHTS?)           p = 0.3280
+
+The second is the one that matters, because picking nights is what the signals claim to do. Take
+the same 44 players, the same number of bets each, and choose their nights AT RANDOM from their
+star-filtered games: median +10.0%, p95 +23.4%, against the engine's +13.7%. The engine's timing
+is worth +3.7pp over a coin flip and cannot be told apart from one.
+
+So whatever Model S has is in WHICH PLAYERS it concentrates on and how often, not in when it
+fires. And the player-level test is only borderline.
+
+### The forward record - the only data not fitted to anything
+
+    MODEL S forward (star-filtered, deduped)  n=13   53.8%   -0.13u   -1.0%
+    three SIGS (flip/hotover/overshoot)       n=221  55.2%   +4.40u   +2.0%  95CI [-10.7, +13.7]
+      flip family (flip + flip_paper)         n=141  56.7%   +7.40u   +5.2%  95CI [ -8.3, +17.2]
+      overshoot                               n=144  54.2%   -0.63u   -0.4%
+    ENTIRE PING MENU                          n=869  51.1%  -55.91u   -6.4%  95CI [-12.1, -1.0]
+
+The last line is the only statistically solid result in the whole file: the menu as a whole is
+losing, and its interval EXCLUDES ZERO. newunder (-45.27u over 303 bets) and cascade (-8.47u over
+199) are where it goes.
+
+### CLV says no edge, and CLV is our own stated proof standard
+
+    odds_clv   three SIGS -0.001 | flip family +0.005 | overshoot +0.003 | entire menu -0.001
+    sharp_clv  three SIGS -0.188 (n=32) | flip -0.190 (n=21) | flip_paper +0.020 (n=50)
+
+Flat against our own closing number, and negative against Pinnacle on the signals with enough
+sharp coverage to read. The NBA cousin ran -6% on the same metric and was shelved for it. A model
+that genuinely beat a soft book would show positive odds_clv long before it showed profit.
+
+### VERDICT
+
+Not good, not proven bad, and the weight is negative. Nothing here clears a bar we set ourselves.
+The one component with any forward support is the FLIP FAMILY: n=141, 56.7%, +5.2%, the only
+group with non-negative CLV on both measures. Its interval still spans zero.
+
+Everything hunted today died under clustered nulls: rank2 over, rank4 under, over-streak-2,
+teammate correlation, pass-count, and every game-market test. No new profitable filter was found.
+
+The correct posture is the one already in place - paper/track, never auto-bet, and let the
+forward column decide. What would change the verdict is odds_clv turning positive on the flip
+family over another 100+ bets. What would end it is the menu's -6.4% continuing.
