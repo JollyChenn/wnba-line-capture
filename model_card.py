@@ -347,6 +347,24 @@ elif sent.get(slate) == [f"{r['pl']}|{r['mk']}|{r['line']}" for r in PASS] or al
     # to WHO or WHAT LINE re-sends.
     print("already sent this slate with the same picks - not re-pinging")
 else:
+    # SAY WHY WE ARE PINGING AGAIN. The guard keys on player|market|line, so a line move
+    # re-sends - which looked like three unexplained pings on Arike Ogunbowale (19.5 -> 18.5
+    # -> 17.5). For an OVER a lower number is unambiguously better, so name the change.
+    _prevpicks = {}
+    for _v in sent.values():
+        if isinstance(_v, list):
+            for _p in _v:
+                _bits = _p.split("|")
+                if len(_bits) == 3: _prevpicks[(_bits[0], _bits[1])] = f(_bits[2])
+    _moves = []
+    for r in PASS:
+        _old = _prevpicks.get((r["pl"], r["mk"]))
+        if _old is not None and abs(_old - r["line"]) >= 0.01:
+            _dir = "BETTER" if r["line"] < _old else "worse"
+            _moves.append(f"{r['name'].split()[-1]} {_old:g}->{r['line']:g} ({_dir})")
+    if _moves:
+        card += "
+_re-sent because the book moved a number: " + ", ".join(_moves) +                 " — for an over a LOWER line is better._"
     if send(card):
         print("pinged Discord")
         sent[slate] = [f"{r['pl']}|{r['mk']}|{r['line']}" for r in PASS]
