@@ -363,8 +363,9 @@ else:
             _dir = "BETTER" if r["line"] < _old else "worse"
             _moves.append(f"{r['name'].split()[-1]} {_old:g}->{r['line']:g} ({_dir})")
     if _moves:
-        card += "
-_re-sent because the book moved a number: " + ", ".join(_moves) +                 " — for an over a LOWER line is better._"
+        card += ("\n_re-sent because the book moved a number: "
+                 + ", ".join(_moves)
+                 + " - for an over a LOWER line is better._")
     if send(card):
         print("pinged Discord")
         sent[slate] = [f"{r['pl']}|{r['mk']}|{r['line']}" for r in PASS]
