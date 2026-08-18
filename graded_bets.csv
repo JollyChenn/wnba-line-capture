@@ -864,3 +864,7 @@ date,player,market,side,line,odds,tier,actual,result,pnl,odds_clv,line_clv,sharp
 20260816,Megan Dileo,pr,Over,18.5,2.0,SOLID,20.0,WIN,1.0,0.025,0.0,,,overshoot,2026-08-15
 20260816,Monique Billings,pts,Over,6.5,1.94,SOLID,3.0,loss,-1.0,0.0,0.0,,,flip,2026-08-16
 20260816,Natasha Cloud,pts,Under,10.5,1.88,THIN,20.0,loss,-1.0,0.005,-1.0,0.0,-0.129,newunder,2026-08-15
+20260817,Arike Ogunbowale,pr,Over,18.5,1.8,SOLID,21.0,WIN,0.8,-0.1,-1.0,,,flip,2026-08-17
+20260817,Gabby Williams,pts,Under,13.5,1.88,THIN,23.0,loss,-1.0,0.026,0.0,,,newunder,2026-08-16
+20260817,Paige Bueckers,pts,Under,19.5,1.92,SOLID,21.0,loss,-1.0,0.085,-1.0,0.0,,newunder,2026-08-16
+20260817,Veronica Burton,pts,Under,13.5,1.81,SOLID,16.0,loss,-1.0,0.046,0.0,0.0,-0.032,newunder,2026-08-16

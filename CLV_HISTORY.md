@@ -10,7 +10,7 @@ _**sharp-odds** = vs Pinnacle's vig-free fair price (TRUE edge test) · **sharp-
   ★ SHARP ODDS-CLV: -6.7% | beat fair 0/7 (0%)  ← TRUE edge (vs Pinnacle fair price)
   SHARP LINE-CLV : +0.21 pts | n=12  ← better number than the sharp
   self ODDS-CLV  : -0.4% | beat 8/35 (23%)  (1xbet's own close = weak)
-  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 78/144 (-0.6u) · FTUNDER 139/300 (-42.3u) · HOT OVER 19/34 (+1.6u) · LINE-CUT FLIP · exp. base 55/98 (+3.9u) · LINE-CUT FLIP · proven base 24/42 (+2.7u) · STAR-OUT CASCADE 108/199 (-8.5u) · starout 4/11 (-3.6u)
+  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 78/144 (-0.6u) · FTUNDER 139/303 (-45.3u) · HOT OVER 19/34 (+1.6u) · LINE-CUT FLIP · exp. base 55/98 (+3.9u) · LINE-CUT FLIP · proven base 25/43 (+3.5u) · STAR-OUT CASCADE 108/199 (-8.5u) · starout 4/11 (-3.6u)
   VERDICT : ⚠️ NEUTRAL self CLV — winning on outcomes, not beating the line. Unproven; keep collecting.
   by tier: SOLID 8/17 (-1.9u) · STRONG 5/14 (-4.9u) · THIN 3/6 (-0.1u)
   by market: pa Under 1/3 (-1.0u) · pr Under 1/3 (-1.0u) · pra Under 5/14 (-4.9u) · pts Under 9/16 (+1.1u) · ra Under 0/1 (-1.0u)
@@ -887,3 +887,7 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260816 | Megan Dileo | PR Over 18.5 @ 2.0 | BOOK OVERSHOOT | WIN | — | — | +2% |
 | 20260816 | Monique Billings | PTS Over 6.5 @ 1.94 | LINE-CUT FLIP · proven base | loss | — | — | +0% |
 | 20260816 | Natasha Cloud | PTS Under 10.5 @ 1.88 | FTUNDER | loss | -13% | +0.0 | +0% |
+| 20260817 | Arike Ogunbowale | PR Over 18.5 @ 1.8 | LINE-CUT FLIP · proven base | WIN | — | — | -10% |
+| 20260817 | Gabby Williams | PTS Under 13.5 @ 1.88 | FTUNDER | loss | — | — | +3% |
+| 20260817 | Paige Bueckers | PTS Under 19.5 @ 1.92 | FTUNDER | loss | — | +0.0 | +8% |
+| 20260817 | Veronica Burton | PTS Under 13.5 @ 1.81 | FTUNDER | loss | -3% | +0.0 | +5% |
