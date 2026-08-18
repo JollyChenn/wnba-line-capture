@@ -430,3 +430,75 @@ Pinnacle's on 64% of quotes exactly - the 7% softness is in the PRICE, not the n
 look sideways at another market keep failing because there is nothing there to see. The star, and
 possibly rank, look BACKWARDS IN TIME at the book's own previous number, which is the only
 dimension where this book has been shown to be inattentive.
+
+## 2026-08-18 (later) - the re-audit. Two corrections to what I reported earlier today.
+
+### CORRECTION 1: the rank p-value was computed against the wrong null
+
+mega_sweep permuted outcomes quote-by-quote. Rank is not a property of a quote, it is a property
+of a PLAYER for most of a season, so that null could not have produced the data.
+
+    rank 2 OVER   1466 quotes -> 58 players, 256 player-GAMES (5.7 correlated quotes each)
+    rank 4 UNDER   891 quotes -> 52 players, 194 player-games
+
+    player-block bootstrap (the honest interval):
+      rank 2 OVER   +2.5%   95% CI [-5.6%, +10.6%]   INCLUDES 0
+      rank 4 UNDER  +5.0%   95% CI [-3.3%, +13.1%]   INCLUDES 0
+
+In their favour: leave-one-player-out never turns either non-positive (0 of 58, 0 of 52), so this
+is a broad weak effect rather than one good season. But `p=0.0207` should not have been quoted.
+Effective n is ~250 player-games and a +2.5% edge is invisible at that size. Both stay on paper.
+(reaudit_rank.py test C is malformed - assigning a player's whole season to her modal rank
+invents a rank6-under cell at +27.8% that is +2.1% in the real data. Ignore its p=0.0000.)
+
+### CORRECTION 2: the star filter alone LOSES. The engine's signal is doing the work.
+
+passcount.py built the universe the way the card bets - unraised, BET_MKTS, one position per
+player, best price - across the whole board:
+
+    ALL Model-S-shaped   n=838   50.7%   ROI -4.4%   95% CI [-11.1%, +2.1%]
+
+That is the star filter with NO `src in (flip, hotover, overshoot)` condition, because
+xbet_board.csv does not carry which signal fired. It loses. So the +11% headline is NOT the star
+- it is the engine's signal selection, which the star then filters. The season's summary line
+("the star is the only surviving edge") is wrong as written. Correct version: the star is the
+only surviving FILTER; the signals select the population it filters, and if they are noise the
+star has nothing to improve. Testing that is the open question.
+
+### TEAMMATES: a real pattern, not a bettable one
+
+Anchored on the PASS (known at bet time), not on the pick hitting (knowable only after).
+
+    teammate of a pass, OVER   -8.5%  [-16.4, +0.1]     vs baseline -4.9%
+    teammate ast OVER         -16.3%  [-32.6, -0.8]     excludes 0
+    teammate ra  OVER         -17.4%  [-33.2, -0.8]     excludes 0
+    teammate ast UNDER         -0.2%  [-13.5, +14.1]    fading returns nothing
+    teammate ra  UNDER         +3.8%  [-12.9, +20.9]
+    block permutation over the whole teammate grid      p = 0.324
+
+The anti-correlation is real in DIRECTION - teammates' assist and reb+ast overs underperform when
+S fires on a scorer - and the under price already absorbs it. Same wall as every other fade.
+
+THE STAR INVERTS ON TEAMMATES:
+
+    teammate ALSO unraised, OVER  -15.3%  [-29.7, -1.9]   excludes 0, WRONG WAY
+    teammate WAS raised,    OVER   -5.4%  [-15.1,  +4.8]
+
+The game-level inattention story is false. The filter works on the player it fires on and
+reverses next to her. Independent support for one-position-per-player and against same-game
+stacking.
+
+### PASS-COUNT PER TEAM-GAME: dead
+
+An undeduped seven-market cut showed -29.3% / -9.7% / +3.6% across 1/2/3 passes. Rebuilt with
+dedup and BET_MKTS it goes 1:-19.0, 2:-13.0, 3:+0.0, 4:-2.4, 5:-5.9 - peaks and falls. Never
+positive in either time-half. Confounded with roster coverage (few-quote team-games +5.9%,
+many-quote -7.3%). Block permutation p = 0.7432.
+
+### METHOD NOTE - adopt for everything from here
+
+Prop quotes cluster by player and by game. A quote-level bootstrap or permutation is roughly
+sqrt(quotes-per-player) too tight and manufactures significance. Bootstrap and permute at the
+level the LABEL lives at: player-block for player attributes (rank, role), game-block for
+game attributes (pass count, total). This is the same bug class as every other one this season -
+two identifiers treated as interchangeable, here "a quote" and "an independent observation".
