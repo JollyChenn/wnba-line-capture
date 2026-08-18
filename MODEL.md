@@ -381,3 +381,52 @@ the *final* board state, which is not what we could have acted on — the same c
 produced three withdrawn findings this week. Historical reconstruction lives in
 `config_compare.py` and is kept separate on purpose.
 
+
+## 2026-08-18 - the definitive feature sweep (mega_sweep.py)
+
+One grid, every feature family, both sides, on all 6,077 two-sided board quotes. Box score
+(usage share, usage trend, minutes trend, form vs line, trailing-median gap), momentum (streak of
+games she beat her own line, rest days, team win/loss last game), line (the star, line move,
+price), and game markets (Pinnacle total, spread, moneyline). 74 cells at n>=120.
+
+    best real cell   rank 4 [under]  +5.1%
+    shuffled best-of-grid   median +1.4%   p95 +4.2%   max +9.5%
+    GLOBAL p = 0.0207
+
+Two cells cleared the ceiling: `rank 4 [under]` and `over-streak 2 [over]`.
+
+**over-streak 2 is dead.** It looked like the better of the two - not cherry-picked, and rising
+with the streak (0: -8.3%, 1: -2.2%, 2: +4.4%). It failed everything after that:
+
+    OOS         IN n=313 +8.7%  ->  OUT n=230 -1.5%
+    streak 3+   -1.3%          the effect reverses instead of continuing
+    by market   pr +15.2% (n=170) carries it; pts +0.4, pra -1.7, pa +0.2, ast -14.9
+    form split  streak2 & form BELOW median +21.2%, ABOVE -3.4%   backwards
+
+It was NOT the star filter in disguise (starred-streak2 +7.1% vs raised-streak2 +0.4%, only 38%
+overlap), which is the one thing it had going for it. Not enough.
+
+**What survived the whole sweep - two cells, both non-monotonic:**
+
+    rank 2 OVER    +3.2% (n=1471)   IN +1.8% -> OUT +4.5%
+    rank 4 UNDER   +5.1% (n=901)    IN +6.5% -> OUT +4.2%
+
+Mechanism, if real: the book prices the STAR carefully because everyone bets her, and pays less
+attention to the second option. Same inattention the star filter exploits, on a different axis.
+
+Against both: rank 2 is a spike between negative neighbours (rank 1 -4.6%, rank 3 -5.0%), rank 4
+likewise, and "fade the low ranks" is explicitly false - rank 5+ returns -5.4%. The alternating
+shape (over good at 2, under good at 4 and 6) is what noise looks like cut fourteen ways. And the
+p=0.0207 prices only the 74 cells in that grid, not the forty-odd scripts run before it.
+
+Neither is live. `S_rank2` and `RANK2_ANY` are now in shadow_log.py so forward data settles it.
+The rank-4 UNDER cannot be tracked there - every candidate row in that file is an over, and an
+under-side ledger does not exist yet. That is the open build item.
+
+**Game markets contributed nothing again.** Total, spread and moneyline made neither end of the
+table (best: `game total HIGH [over]` +1.4%). That is the twelfth cross-market test to come back
+empty, and it is consistent with the season's central finding: 1xbet's prop LINES match
+Pinnacle's on 64% of quotes exactly - the 7% softness is in the PRICE, not the number. Tests that
+look sideways at another market keep failing because there is nothing there to see. The star, and
+possibly rank, look BACKWARDS IN TIME at the book's own previous number, which is the only
+dimension where this book has been shown to be inattentive.

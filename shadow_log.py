@@ -61,6 +61,34 @@ gm = {g.get("game_id"): g.get("date","") for g in load("data/games_2026.csv")}
 for r in load("data/box_2026.csv"):
     if gm.get(r.get("game_id")): teamnow[(r.get("player") or "").lower()] = r.get("team")
 
+# ---- SCORING RANK inside her own team, from her last 6 games ------------------------------------
+# The full-board sweep found exactly two cells that held out of sample: the team's SECOND scorer's
+# OVER (+3.2%, IN +1.8 -> OUT +4.5) and the FOURTH scorer's UNDER (+5.1%, IN +6.5 -> OUT +4.2).
+# Neither is live. Both are non-monotonic in rank - a spike with negative neighbours - and the
+# global permutation that produced them (p=0.0207) prices only the 74 cells inside that one grid,
+# not the forty-odd scripts run before it. Recording them here is the cheap way to find out: in
+# six weeks the forward column answers it, and no backtest has to be trusted.
+# Only the rank-2 OVER can be tracked in this file - every candidate row here is an over. The
+# rank-4 UNDER needs an under-side ledger that does not exist yet.
+_pgames = collections.defaultdict(list)
+for r in load("data/box_2026.csv"):
+    d = gm.get(r.get("game_id"))
+    if not d: continue
+    try: p_ = float(r.get("pts") or 0)
+    except ValueError: continue
+    _pgames[(r.get("player") or "").lower()].append((d, r.get("team"), p_))
+_avg = {}
+for pl, v in _pgames.items():
+    v.sort()
+    last = v[-6:]
+    if last: _avg[pl] = sum(x[2] for x in last)/len(last)
+_byteam = collections.defaultdict(list)
+for pl, a in _avg.items():
+    if teamnow.get(pl): _byteam[teamnow[pl]].append((a, pl))
+RANK = {}
+for tm, v in _byteam.items():
+    for i, (a, pl) in enumerate(sorted(v, reverse=True), 1): RANK[pl] = i
+
 tips_of = collections.defaultdict(list)
 for g in load("data/games_2026.csv"):
     t = ts(g.get("tip"))
@@ -113,6 +141,7 @@ for b in load("bets_log.csv"):
                   noprev=(pv is None),
                   mv=(None if pv is None else line_now - pv),
                   tier=b.get("tier") or "",
+                  rank=RANK.get(pl, 99),
                   nodrift=(drift < 0.01)))
 
 # ---- the competing rules ----------------------------------------------------------------------
@@ -148,6 +177,14 @@ CONFIGS = {
     # Tracked so forward data can overrule me.
     "S_paper":  lambda r: r["src"] == "flip_paper" and r["mk"] in BET_MKTS
                           and r.get("tier") in ("THIN", "STRONG"),
+    # S_rank2 / RANK2_ANY: the second-scorer over. S_rank2 is Model S narrowed to her, which
+    # should raise ROI and cut volume if the rank cell is real and separate from the star.
+    # RANK2_ANY ignores our signals entirely - if THAT one wins, the engine is the part to drop.
+    # On the board the two barely differ (rank2 & ever-flagged +4.4%, rank2 never flagged -26.5%),
+    # but that split is 105 quotes deep on the second arm and cannot carry the claim.
+    "S_rank2":  lambda r: r["src"] in SIGS and r["mk"] in BET_MKTS and not r["raised"]
+                          and r.get("rank") == 2,
+    "RANK2_ANY":lambda r: r["mk"] in BET_MKTS and r.get("rank") == 2,
     "OLD_MENU": lambda r: True,
 }
 
