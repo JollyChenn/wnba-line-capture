@@ -1,156 +1,62 @@
-# audit_signals.py - the careful recheck before anything goes live.
-# ---------------------------------------------------------------------------------------------
-# I have now compared roughly 8 signals x {raw, filtered} x several price bases. That is a wide
-# enough search that "flip + hotover raw looks best" could easily be the lucky corner - which is
-# exactly how the gap band died. So this file does four things, in order:
-#
-#   1 SETTLE THE PRICE BASIS. My tables disagreed because one used the odds LOGGED when the signal
-#     fired and another the board's LAST price before tip. Before ranking anything, measure how far
-#     apart those are and which one a real bettor gets.
-#   2 RANK EVERY SIGNAL on that basis, raw and filtered, with alpha over the matched blind baseline.
-#   3 PRICE THE MULTIPLICITY. Re-run the ENTIRE search (every signal x raw/filtered) on simulated
-#     outcomes, 400 times, and ask how often chance produces a leader as good as ours.
-#   4 SPLIT IN TIME. Anything that survives 1-3 still has to hold in the final third.
-import csv, os, sys, math, random, datetime, collections
+# tier_test.py - should gate 5 be a FILTER (bet/skip) or a TIER (bet more/less)?
+# ------------------------------------------------------------------------------------------
+# A tier is only defensible if the underlying variable is MONOTONIC. This project already has a
+# scar from ignoring that: S_paper's confidence tiers ran THIN +34.8%, SOLID -13.9%, STRONG
+# +19.5% - good, bad, good across an ORDERED variable - and that non-monotonicity is why it was
+# kept on paper. So before staking 2u on anything, check that more of the good thing is better.
+import csv, os, sys, random, collections, statistics
 try: sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 except Exception: pass
+random.seed(20260926)
 D = os.path.dirname(os.path.abspath(__file__))
-random.seed(20260814)
-def load(p):
-    fp = os.path.join(D, p)
-    return list(csv.DictReader(open(fp, encoding="utf-8", errors="replace"))) if os.path.exists(fp) else []
-def f(x):
-    try: return float(x)
-    except (TypeError, ValueError): return None
-def ts(s):
-    try: return datetime.datetime.fromisoformat((s or "").replace("Z", "+00:00"))
-    except Exception: return None
-MK = ("pts","pra","pr","pa","reb","ast","ra")
-
-gm = {g["game_id"]: (g.get("date",""), ts(g.get("tip"))) for g in load("data/games_2026.csv")}
-plog = collections.defaultdict(list)
-for r in load("data/box_2026.csv"):
-    dt, tp = gm.get(r.get("game_id"), ("", None))
-    if not (dt and tp): continue
-    p, rb, a = f(r.get("pts")) or 0, f(r.get("reb")) or 0, f(r.get("ast")) or 0
-    plog[(r.get("player") or "").lower()].append(dict(date=dt, tip=tp, pts=p, reb=rb, ast=a,
-        pra=p+rb+a, pr=p+rb, pa=p+a, ra=rb+a))
-for v in plog.values(): v.sort(key=lambda x: x["date"])
-byp = collections.defaultdict(list)
-for pl, v in plog.items():
-    for g in v: byp[pl].append((g["tip"], g["date"], g))
-for v in byp.values(): v.sort()
-def ga(pl, when):
-    for tip, dt, rec in byp.get(pl, []):
-        if when <= tip <= when + datetime.timedelta(hours=36): return dt, rec
-    return None, None
-raw = collections.defaultdict(list)
-for b in load("xbet_board.csv"):
-    t, o, ln = ts(b.get("captured_utc")), f(b.get("odds")), f(b.get("line"))
-    if t and o and ln is not None and b.get("market") in MK:
-        raw[((b.get("player") or "").lower(), b.get("market"), b.get("side"), ln)].append((t, o))
-pg = collections.defaultdict(dict)
-for (pl, mk, side, ln), v in raw.items():
-    v.sort(); blocks, cur = [], [v[0]]
-    for a, b_ in zip(v, v[1:]):
-        if (b_[0]-a[0]).total_seconds() > 12*3600: blocks.append(cur); cur = []
-        cur.append(b_)
-    blocks.append(cur)
-    for blk in blocks:
-        if not blk: continue
-        dt, rec = ga(pl, blk[0][0])
-        if not rec: continue
-        pre = [x for x in blk if x[0] <= rec["tip"]]
-        if pre: pg[(pl, mk, dt)].setdefault(ln, {})[side] = pre
-BL = {}; tmp = collections.defaultdict(list); main = {}
-for (pl, mk, dt), lines in pg.items():
-    ln, sides = max(lines.items(), key=lambda kv: sum(len(x) for x in kv[1].values()))
-    if "Over" not in sides: continue
-    rec = next((g for g in plog.get(pl, []) if g["date"] == dt), None)
-    if rec is None or rec[mk] == ln: continue
-    main[(pl, mk, dt)] = ln
-    tmp[(mk,"Over")].append(1.0 if rec[mk] > ln else 0.0)
-for k, v in tmp.items():
-    if len(v) >= 60: BL[k] = sum(v)/len(v)
-lh = collections.defaultdict(list)
-for (pl, mk, dt), ln in main.items(): lh[(pl, mk)].append((dt, ln))
-for v in lh.values(): v.sort()
-def prev(pl, mk, dt):
-    v = lh[(pl, mk)]; i = next((k for k, x in enumerate(v) if x[0] == dt), None)
-    return v[i-1][1] if i is not None and i >= 1 else None
-def drift(pl, mk, ln, tip):
-    v = [x for x in raw.get((pl, mk, "Over", ln), []) if x[0] <= tip - datetime.timedelta(hours=2)
-         and 0 <= (tip-x[0]).total_seconds() <= 36*3600]
-    return v[-1][1]/v[0][1] - 1 if len(v) >= 2 else None
-
-# every logged price for a bet, so the price bases can be compared on the SAME bets
-byid = collections.defaultdict(list)
-for b in load("bets_log.csv"):
-    if b.get("side") != "Over": continue
-    pl, mk, ln, o = (b.get("player") or "").lower(), b.get("market"), f(b.get("line")), f(b.get("odds"))
-    t = ts(b.get("captured_utc"))
-    if not (t and o and ln is not None) or mk not in MK: continue
-    dt, rec = ga(pl, t)
-    if not rec: continue
-    byid[(dt, pl, mk)].append((t, o, ln, b.get("src") or "?"))
-B = []
-for (dt, pl, mk), v in byid.items():
-    v.sort()
-    rec = next((g for g in plog.get(pl, []) if g["date"] == dt), None)
-    if rec is None or (mk, "Over") not in BL: continue
-    first_o, first_ln, src = v[0][1], v[0][2], v[0][3]
-    last_o,  last_ln       = v[-1][1], v[-1][2]
-    if rec[mk] == first_ln: continue
-    cl = main.get((pl, mk, dt))
-    close_o = pg[(pl, mk, dt)][cl]["Over"][-1][1] if cl is not None and cl in pg[(pl, mk, dt)] else None
-    pv = prev(pl, mk, dt); dr = drift(pl, mk, first_ln, rec["tip"])
-    B.append(dict(date=dt, mo=dt[:6], pl=pl, mk=mk, src=src, first_ln=first_ln, close_ln=cl,
-                  first=first_o, last=last_o, close=close_o,
-                  won=rec[mk] > first_ln, base=BL[(mk,"Over")],
-                  passes=(pv is not None and (first_ln-pv) < 0.5 and dr is not None and dr < 0.01),
-                  notraised=(pv is not None and (first_ln-pv) < 0.5)))
-
-
-
-
-
-B.sort(key=lambda r: r["date"])
-K = [r for r in B if r["mk"] in ("pra","pr","pts")]
-S = [r for r in K if r["src"] in ("flip","hotover","overshoot") and r["notraised"]]
-dates = sorted({r["date"] for r in B}); cut = dates[int(len(dates)*0.6)]
-
-def run(rows, stake_of, label):
-    risk = sum(stake_of(r) for r in rows)
-    prof = sum(stake_of(r) * ((r["first"]-1) if r["won"] else -1.0) for r in rows)
-    eq, peak, dd = 0.0, 0.0, 0.0
-    for r in rows:
-        eq += stake_of(r) * ((r["first"]-1) if r["won"] else -1.0)
-        peak = max(peak, eq); dd = min(dd, eq-peak)
-    print(f"  {label:<44} n={len(rows):<4} risk {risk:6.1f}u  profit {prof:+7.2f}u"
-          f"  ROI {100*prof/risk:+6.1f}%  worst DD {dd:+6.2f}u")
-    return prof, risk
-
-print("="*104)
-print("  THE HYBRID: keep Model S's volume, but stake by signal strength.")
-print("  flip starred is +54.8% on its own; overshoot starred is +11.9%. Same 1u on both")
-print("  under-bets the good one and over-bets the thin one.")
-print("="*104)
-SPREV = [r for r in S if r["src"] in ("flip","hotover")]
-FLIP  = [r for r in S if r["src"] == "flip"]
-run(FLIP,  lambda r: 1.0, "flip only            flat 1u")
-run(SPREV, lambda r: 1.0, "S_prev               flat 1u")
-run(S,     lambda r: 1.0, "MODEL S              flat 1u                <- LIVE")
+exec(open(os.path.join(D, "gate5.py"), encoding="utf-8").read()
+     .split('print(f"{len(A)} bets with gates 1+2 on')[0])
+S = [r for r in A if r["star"] == "starred"]          # OLD MODEL S, judged at the ping line
+def sc(rows):
+    n = len(rows); w = sum(1 for r in rows if r["won"])
+    u = sum((r["od"]-1) if r["won"] else -1.0 for r in rows)
+    return n, 100*w/n, u, 100*u/n
+def pb(rows, T=3000):
+    bp = collections.defaultdict(list)
+    for r in rows: bp[r["pl"]].append(r)
+    k = list(bp); o = []
+    for _ in range(T):
+        g = [x for p in [random.choice(k) for _ in k] for x in bp[p]]
+        o.append(100*sum((x["od"]-1) if x["won"] else -1.0 for x in g)/len(g))
+    o.sort(); return o[int(T*.025)], o[int(T*.975)]
+def show(rows, lbl, minn=10):
+    if len(rows) < minn: print(f"  {lbl:<34} n={len(rows)} too few"); return
+    n, h, u, ro = sc(rows); lo, hi = pb(rows)
+    print(f"  {lbl:<34} n={n:<4} {h:5.1f}%  {u:+6.2f}u  ROI {ro:+6.1f}%  95CI [{lo:+6.1f},{hi:+6.1f}]")
+print(f"OLD MODEL S = {len(S)} bets. Is tonight's line MOVE monotonic inside it?")
+print("=" * 92)
+for lo, hi, lbl in ((-9, -0.6, "moved DOWN 1+"), (-0.6, 0.4, "unchanged"),
+                    (0.4, 1.4, "up 1.0"), (1.4, 9, "up 2.0+")):
+    show([r for r in S if lo <= r["moved"] < hi], f"  {lbl}")
 print("")
-for fl, ot, lbl in ((2.0, 1.0, "flip 2u / hotover+overshoot 1u"),
-                    (3.0, 1.0, "flip 3u / hotover+overshoot 1u"),
-                    (2.0, 0.5, "flip 2u / hotover+overshoot 0.5u")):
-    run(S, lambda r, a=fl, b=ot: a if r["src"] == "flip" else b, f"MODEL S tiered  {lbl}")
+print("  monotonic would read: down >= unchanged > up1 > up2. anything else and a TIER is")
+print("  fitting noise, even if the PASS/FAIL split itself is real.")
 print("")
-print("  and the same tiers, split out of sample:")
-for fl, ot, lbl in ((2.0, 1.0, "flip 2u / rest 1u"),):
-    for half, rows in (("IN ", [r for r in S if r["date"] <  cut]),
-                       ("OUT", [r for r in S if r["date"] >= cut])):
-        run(rows, lambda r, a=fl, b=ot: a if r["src"] == "flip" else b, f"  tiered {lbl}  {half}")
-    for half, rows in (("IN ", [r for r in S if r["date"] <  cut]),
-                       ("OUT", [r for r in S if r["date"] >= cut])):
-        run(rows, lambda r: 1.0, f"  flat 1u             {half}")
+print("=" * 92)
+print("  STAKING SCHEMES ON THE SAME 75 BETS")
+print("=" * 92)
+P = [r for r in S if r["net"]]; F = [r for r in S if not r["net"]]
+_, _, up, _ = sc(P); _, _, uf, _ = sc(F)
+for lbl, stP, stF in (("flat 1u on all 75 (today)", 1, 1),
+                      ("gate 5 as a FILTER (skip fails)", 1, 0),
+                      ("TIER 2u pass / 1u fail", 2, 1),
+                      ("TIER 3u pass / 1u fail", 3, 1)):
+    staked = stP*len(P) + stF*len(F)
+    prof = stP*up + stF*uf
+    print(f"  {lbl:<34} risk {staked:>4}u   profit {prof:+7.2f}u   ROI {100*prof/staked:+6.1f}%")
+print("")
+print("  ROI is profit per unit RISKED. tiering buys more profit only by risking more, and on an")
+print("  edge whose interval barely clears zero that is leverage, not improvement.")
+print("")
+print("=" * 92)
+print("  THE DECIDING QUESTION - is the FAIL group worth 1u at all?")
+print("=" * 92)
+show(F, "  gate 5 FAIL (starred but raised tonight)")
+print("")
+print("  if this interval covers zero comfortably, a 1u tier on it is a coin-flip bet funded")
+print("  from the same bankroll as the good one.")

@@ -690,3 +690,160 @@ graded bets to pull the interval off zero, and positive odds_clv to hold while t
 
 Posture unchanged: keep betting it manually at current stakes, never auto-bet, keep the shadow
 configs running. Nothing here justifies raising stake, and nothing here justifies stopping.
+
+## 2026-08-18 (session close) - the corrections, in the order they were forced
+
+Five revisions in one day, EVERY ONE DOWNWARD. That pattern is the most important thing in this
+section: when all your errors point the same way they are not random, they are systematic
+optimism, and there are probably more of the same kind left.
+
+    +23.5%  ->  no-previous-line bug: 64 bets at -10.0% were counted as starred
+    +11.0%  ->  held for a while
+    "not good" -> computed on model_forward n=13 plus the whole menu's -6.3%, both wrong sources
+    +12.0%  ->  graded_bets, 107 bets... but the STAR was judged on the OPENING line
+    +18.3%  ->  star judged where the card judges it (line_now) = 75 bets, the real Model S
+
+### THE ONE TRUE FUNNEL - memorise this, it explains every sample size in this file
+
+     869  everything the engine logged that settled
+     182  after gate 1 (flip/hotover/overshoot) + gate 2 (pra/pr/pts)
+     129  of those, regradable from the board archive   <- 51 lost, need >=2 quotes, UNCLOSED GAP
+      75  after gate 3 judged at the PING line          = OLD MODEL S
+      55  + gate 5
+      13  the card has actually pinged, and settled
+
+n=107 and n=93 were the star judged at the OPENING line. Only 70 of those overlap the real 75;
+23 would never have appeared on a card. Do not reuse those numbers.
+
+### PRICE MATTERS MORE THAN ANY FILTER FOUND ALL SEASON
+
+grade_bets.py:128 scores cl[0] - the FIRST capture, a median 40.5h before tip. model_card.py:184
+pings tonight[-1] - the last quote, a median 6.2h out. Same bets, different money:
+
+    OPEN  (what every historical ROI in this repo describes)   n=93  61.3%  +12.8%
+    PING  (what you can actually take)                         n=93  55.9%   +4.0%
+    BEST  (lowest line offered, hindsight)                     n=93  62.4%  +16.1%
+
+Any ROI quoted from graded_bets is an OPENING-line number. Say so, every time.
+
+### GATE 5 - the full arc, ending in a downgrade
+
+Proposed rule: at ping time, compare tonight's line to TONIGHT'S OPENING quote; skip if it rose.
+Gate 3 asks "did the book raise her since her LAST GAME"; gate 5 asks "since it opened tonight".
+
+  FOR   gates 1+2 universe: not-raised +11.8% vs raised -16.2%
+        stacked with gate 3: n=55 67.3% +23.1% CI [+1.9,+42.5], 7-cell game-block p=0.0302
+        live 13 split the same way: PASS n=9 +3.7%, FAIL n=4 -11.5%
+        definition test: `net` (ping <= open) beats `nevup` and `ismin`. The Ogunbowale round
+        trip 18.5->19.5->17.5 is KEPT by net, dropped by nevup, and net discriminates twice as
+        well. Where the line IS beats the path it took.
+  AGAINST
+        in a 24-cell grid it does NOT clear: +11.8% vs a +28.1% p95 ceiling
+        inside Model S the FAIL group is +5.3%, not -13.8% - the penalty rests on TWO bets
+        not monotonic: down +17.3%, unchanged +25.7%, up1 +17.0%
+        ** it makes OVERSHOOT WORSE: alone +17.4% (n=46) -> with gate 5 +13.6% (n=29) **
+
+FINAL: do NOT use gate 5 as a hard filter. Display it. Overshoot is 61% of the card and gate 5
+degrades it. Its p=0.0302 came from a 7-cell grid drawn AFTER the split was already spotted.
+
+### NO TIERING
+
+Monotonicity fails, and this repo already has that scar (S_paper: THIN +34.8 / SOLID -13.9 /
+STRONG +19.5). Staking schemes on the same 75 bets:
+
+    flat 1u on all 75      risk  75u  +13.75u  +18.3%
+    gate 5 as a filter     risk  55u  +12.69u  +23.1%
+    tier 2u/1u             risk 130u  +26.44u  +20.3%
+    tier 3u/1u             risk 185u  +39.13u  +21.2%
+
+Tiering buys profit only by risking 73-147% more. On an interval that barely clears zero that is
+leverage, not improvement. FLAT 1u.
+
+### WHEN A BETTER LINE APPEARS LATER - TAKE IT
+
+"Wait and take the best line once" was useless advice - you cannot know a better number is
+coming. You are pinged at 18.5, you bet, then 17.5 appears. The only real choice is add or skip.
+
+    hold the first ping only     75 bets   +15.73u  +21.0%
+    the ADD-ON bets alone        44 bets    +9.10u  +20.7%   CI [-13.7, +57.0]
+    both                        119 units  +24.82u  +20.9%
+
+A better line appears on 44 of 75 bets (59%). The add-on is the SAME edge, not a worse one, so
+taking it is a bankroll decision (2u on one player) and not an edge decision. TAKE IT.
+
+### PER SIGNAL, AT THE PING PRICE, INSIDE MODEL S
+
+    overshoot   n=46  63.0%  +17.4%  CI [ -9.6, +41.3]   <- the backbone, 61% of the card
+    flip        n=19  63.2%  +16.6%  CI [-16.4, +51.6]
+    hotover     n=10  70.0%  +25.7%  CI [-23.2, +62.0]
+
+All three intervals include zero. Overshoot has the most evidence and is not the weak one.
+
+### THE FILTER HUNT IS OVER UNTIL THE SAMPLE GROWS
+
+24 features knowable at ping time (usage, minutes, cushion vs median, cushion in SDs, price,
+quotes tonight, hours to tip, rest, volatility, market, src, line move), both universes:
+
+    gates 1+2 (n=129)     noise ceiling p95 +28.1%   best real cell +17.6%   p = 0.4505
+    inside Model S (n=75) noise ceiling p95 +45.4%   best real cell +36.3%   p = 0.4105
+
+NOTHING CLEARS, in either. At n=75 cut 24 ways, pure noise makes a +45% cell one time in twenty.
+The finding is the CEILING: this sample cannot detect a filter. Stop cutting. The only coherent
+(insignificant) pattern is `cushion in SDs` HIGH +17.6% / LOW -16.8% - which is overshoot's own
+core quantity, so it validates the existing design rather than adding to it.
+
+### BUGS FOUND, NOT ALL FIXED
+
+  1 model_card.med() does NOT filter to her current team, so All-Star/exhibition games poison the
+    displayed median. Angel Reese 2026-08-18: card showed median 26.5 (contaminated by a 9-minute
+    "COOP" All-Star game, PR 5.0), true ATL-only median 31.5. The card made a VALID overshoot
+    (line 28.5, exactly at the median-3 threshold) look inverted and nearly talked us off it.
+    The SIGNAL is right - overshoot_overs already filters to current team. Display only. NOT FIXED.
+  2 board_seen.json is read at model_card.py:274 inside the DISPLAY block only. It annotates
+    "not seen for N.Nh" and does NOT gate the bet. A vanished line still shows as a bet. NOT FIXED.
+  3 model_forward.csv rewrites pending rows until `first_tip` - the SLATE's earliest game, not
+    each bet's own tip. A later game's line can drift after the freeze. 4 of 13 settled rows carry
+    a line that was no longer available at her tip, and every one is in the FAVOURABLE direction
+    (Gray 19.5 rec / 21.5 actual, Wheeler 16.5/18.5, Burrell 18.5/20.5, Hamby 13.5/14.5).
+    Impact so far -1.0% -> -0.5%, negligible, but one-sided. NOT FIXED.
+  4 grade_bets.py:28 files any blank-src row as "overshoot" (over) or "model" (under). All 19,295
+    current bets_log rows carry a src so exposure is the 41-row pre-src era only. Repeated at
+    clv_reader.py:12, build_dashboard.py:72, bet_timing_study.py:22. NOT FIXED - changing it
+    alters the meaning of historical rows and should be a deliberate call.
+
+### WHAT I NEVER CHECKED
+
+  * whether the pinged price is TAKEABLE when you click (see bug 2)
+  * the daily_picks projection layer - proj/sd/anchor - never read for look-ahead. Every signal
+    depends on it. THIS IS THE BIGGEST REMAINING HOLE.
+  * the 51 bets dropped for <2 board quotes - unknown whether they differ systematically
+
+### STANDING VERDICT
+
+Model S is n=75, 64.0%, +18.3%, 95% CI [-3.6, +37.6] at the price you can take. Unproven. The
+live card has settled 13 bets at -1.0%, which is ONE WIN short of what a 64% model predicts
+(z=-0.76) and exactly what a coin predicts. At n=13 nothing is separable.
+
+POSTURE: flat 1u, manual, never auto-bet. Take a better line if one appears. Do not tier. Do not
+skip on gate 5. Re-run these scripts at ~150 bets (roughly two months at 1.3-1.8/night), where
+the noise ceiling drops to something a real edge could clear.
+
+### SCRIPTS WRITTEN TODAY (all mirrored to C:\Users\Axioo\wnba-analysis)
+
+    mega_sweep.py     74-cell all-family sweep; the quote-level permutation here is WRONG for
+                      player attributes - see reaudit_rank.py
+    streak_probe.py   over-streak-2 autopsy (died out of sample)
+    reaudit_rank.py   player-block nulls; rank2/rank4 CIs include zero. Its test C is malformed
+    mate_pattern.py   teammates anchored on the pass; real direction, unbettable, p=0.324
+    passcount.py      pass-count gradient dead, p=0.7432
+    signal_audit.py   gate ladder; had the WIN/loss vs W/L bug
+    signal_audit2.py  within-player permutation on the signal
+    final_verdict.py  the +12.0% - star judged at the OPENING line, superseded
+    ping_vs_open.py   OPEN vs PING vs BEST. The most important script of the day
+    gate5.py          gate 5 definitions and the 3x2 star/gate5 table
+    tier_test.py      monotonicity + staking schemes
+    newfilter.py      24-feature sweep with the ceiling printed FIRST
+    addline.py        overshoot quality + the add-a-better-line answer
+    reconcile.py      the funnel; explains every sample size
+    where_went.py     backtest vs live reconciliation
+    fade_low_rank.py  rank-4 fade

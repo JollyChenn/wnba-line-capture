@@ -1,6 +1,24 @@
 # WNBA-LINE-CAPTURE - SESSION HANDOFF
 
-> ## >>> START HERE, 2026-08-14 <<<
+> ## >>> START HERE, 2026-08-18 <<<
+> **Read [MODEL.md](MODEL.md) from the "2026-08-18 (session close)" section upward. Everything
+> below this block is superseded on the numbers, though the operational notes still hold.**
+>
+> **THE ONE THING TO CARRY FORWARD:** every historical ROI in this repo is an **OPENING-LINE**
+> number. `grade_bets.py:128` scores the first capture, a median 40.5h before tip; the card pings
+> the last quote, a median 6.2h out. Same bets: **OPEN +12.8%, PING +4.0%.** The +22.3% in the
+> 2026-08-14 banner below is an opening-line figure and is not a price you can take.
+>
+> - **Model S is n=75, 64.0%, +18.3%, 95% CI [-3.6, +37.6]** at the ping price. Unproven, interval
+>   includes zero. Live card: 13 settled, -1.0%, which is one win short of a 64% model (z=-0.76).
+> - Five downward revisions were forced in one day. All errors pointed the same way. Assume more.
+> - **Do NOT tier. Do NOT use gate 5 as a hard filter** (it degrades overshoot, 61% of the card).
+> - **DO take a better line if one appears later** - the add-ons are +20.7% standalone on 44 of 75.
+> - The filter hunt is CLOSED until ~150 bets: at n=75, noise alone makes a +45% cell 1 time in 20.
+> - Four known bugs are documented and deliberately NOT fixed - see the BUGS section in MODEL.md.
+> - Biggest unchecked hole: **daily_picks' projection layer was never read for look-ahead.**
+
+> ## >>> 2026-08-14 (superseded on numbers, still valid on operations) <<<
 > **The live model is the OVER MODEL. It is documented in [MODEL.md](MODEL.md) - read that file first.**
 > Everything below this banner is the older under-model era and is kept for history only.
 >
