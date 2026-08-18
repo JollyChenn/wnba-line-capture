@@ -70,11 +70,40 @@ def espn_box(datestr):
                                                    pr=p+rb, pa=p+asst, ra=rb+asst)
     return out
 
+def one_position(rows):
+    """ONE POSITION PER PLAYER on a slate - the rule we bet. Without this, a player who
+       qualifies in two markets is counted twice: Hamby on 2026-08-11 went in as pts 13.5 AND
+       pra 22.5, both won, and the headline read 6-6 instead of 5-6."""
+    best = {}
+    for r in sorted(rows, key=lambda x: -(float(x.get("odds") or 0))):
+        best.setdefault((r.get("slate"), (r.get("player") or "").strip().lower()), r)
+    return list(best.values())
+
 rows = load("model_forward.csv")
+# THE SLATE IS NOT THE GAME DATE, AND GRADING ON IT LEAVES BETS PENDING FOREVER.
+# `slate` is the label the card gave the night (min tip inside its window); the box score is
+# keyed on the GAME's own date. They differ whenever a game tips after midnight UTC - e.g.
+# Arike Ogunbowale on 2026-08-18: slate 20260818, DAL@GS dated 20260817, tip 02:00Z. The
+# lookup missed and she would have stayed PENDING indefinitely. Rows now carry `tip`, so
+# derive the game date from it and fall back to the slate only for older rows.
+def _ts(x):
+    try: return datetime.datetime.fromisoformat((x or "").replace("Z", "+00:00"))
+    except Exception: return None
+
+def game_date(r):
+    t = _ts(r.get("tip")) if r.get("tip") else None
+    if t is None: return r.get("slate", "")
+    # find the games file entry whose tip matches, and use ITS date
+    return TIP2DATE.get(t.strftime("%Y-%m-%dT%H:%MZ"), r.get("slate", ""))
+TIP2DATE = {}
+for _g in load("data/games_2026.csv"):
+    _t = _ts(_g.get("tip"))
+    if _t: TIP2DATE[_t.strftime("%Y-%m-%dT%H:%MZ")] = _g.get("date", "")
 today = datetime.date.today()
-recent = sorted({r["slate"] for r in rows if r.get("result") not in ("WIN", "loss", "push")
-                 and (today - datetime.date(int(r["slate"][:4]), int(r["slate"][4:6]),
-                                            int(r["slate"][6:8]))).days <= 4})
+recent = sorted({game_date(r) for r in rows if r.get("result") not in ("WIN", "loss", "push")
+                 and game_date(r)[:8].isdigit()
+                 and (today - datetime.date(int(game_date(r)[:4]), int(game_date(r)[4:6]),
+                                            int(game_date(r)[6:8]))).days <= 4})
 for ds in recent:
     fresh = espn_box(ds)
     if fresh:
@@ -83,7 +112,7 @@ for ds in recent:
 changed = 0
 for r in rows:
     if r.get("result") in ("WIN", "loss"): continue
-    key = (r["slate"], (r["player"] or "").strip().lower())
+    key = (game_date(r), (r["player"] or "").strip().lower())
     b = box.get(key)
     if not b:                                   # game not final, or she did not play
         continue
@@ -107,12 +136,14 @@ if changed:
         w = csv.DictWriter(fh, fieldnames=list(rows[0].keys()))
         w.writeheader(); w.writerows(rows)
     os.replace(tmp, FWD)                        # atomic - never leaves a half-written file
-g = [r for r in rows if r.get("result") in ("WIN", "loss")]
+# EVERY number below is one-position, because that is the rule we bet. Counting a player
+# twice when she qualifies in two markets read 6-6 / -1.13u where the truth is 5-6 / -1.86u.
+g = one_position([r for r in rows if r.get("result") in ("WIN", "loss")])
 w_ = sum(1 for r in g if r["result"] == "WIN")
 pnl = sum(f(r["pnl"]) or 0 for r in g)
 pend = sum(1 for r in rows if r.get("result") not in ("WIN", "loss", "push"))
-print(f"  graded {changed} newly settled | forward record: {len(g)} bets {w_}-{len(g)-w_} "
-      f"{pnl:+.2f}u ROI {100*pnl/len(g):+.1f}%" if g else "  nothing settled yet")
+print(f"  graded {changed} newly settled | forward record (one position): {len(g)} bets "
+      f"{w_}-{len(g)-w_} {pnl:+.2f}u ROI {100*pnl/len(g):+.1f}%" if g else "  nothing settled yet")
 print(f"  {pend} still pending")
 by = collections.defaultdict(list)
 for r in g: by[r["slate"]].append(r)

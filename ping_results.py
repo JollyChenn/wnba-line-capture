@@ -37,6 +37,15 @@ def send(msg):
     except Exception as e:
         print("  discord failed:", e); return False
 
+def one_position(rows):
+    """ONE POSITION PER PLAYER on a slate - the rule we bet. Without this, a player who
+       qualifies in two markets is counted twice: Hamby on 2026-08-11 went in as pts 13.5 AND
+       pra 22.5, both won, and the headline read 6-6 instead of 5-6."""
+    best = {}
+    for r in sorted(rows, key=lambda x: -(float(x.get("odds") or 0))):
+        best.setdefault((r.get("slate"), (r.get("player") or "").strip().lower()), r)
+    return list(best.values())
+
 rows = load("model_forward.csv")
 if not rows:
     print("  no forward record yet"); raise SystemExit
@@ -56,7 +65,7 @@ if sent.get("last") == slate:
     print(f"  already reported {slate}"); raise SystemExit
 
 # ---- that night ----------------------------------------------------------------------------------
-night = by_slate[slate]
+night = one_position(by_slate[slate])
 def pnl(r):
     res = (r.get("result") or "").upper()
     if res == "PUSH": return 0.0
@@ -67,7 +76,7 @@ nl = sum(1 for r in night if (r.get("result") or "").upper() == "LOSS")
 nu = sum(pnl(r) for r in night)
 
 # ---- the running record, which is the number that actually decides anything ----------------------
-allg = [r for r in rows if done(r)]
+allg = one_position([r for r in rows if done(r)])
 aw = sum(1 for r in allg if (r.get("result") or "").upper() == "WIN")
 al = sum(1 for r in allg if (r.get("result") or "").upper() == "LOSS")
 au = sum(pnl(r) for r in allg)

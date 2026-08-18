@@ -2,11 +2,12 @@
 
 _Stingy-D threshold (trailing-10 allowed, bottom quartile): 88_
 
-_🩹 OUT/doubtful (excluded from ALL picks): Aaliyah Edwards, Aziaha James, Azzi Fudd, Brionna Jones, Brittney Griner, Brittney Sykes, Cameron Brink, Cheyenne Parker-Tyus, Damiris Dantas, Dana Evans, Hailey Van Lith, Jessica Shepard, Jordin Canada, Jovana Nogic, Julie Allemand, Kelsey Plum, Kierstan Bell, Kiki Rice, Leonie Fiebich, Liatu King, Luisa Geiselsoder, Maria Conde, Monique Akoa Makani, Natisha Hiedeman, Nyara Sabally, Sabrina Ionescu, Sarah Ashlee Barker, Satou Sabally, Skylar Diggins, Sydney Taylor, Ta'Niya Latson_
+_🩹 OUT/doubtful (excluded from ALL picks): Aziaha James, Azzi Fudd, Brionna Jones, Brittney Sykes, Cheyenne Parker-Tyus, Courtney Williams, Damiris Dantas, Dana Evans, Jovana Nogic, Julie Allemand, Kelsey Plum, Leonie Fiebich, Liatu King, Luisa Geiselsoder, Maria Conde, Monique Akoa Makani, Natisha Hiedeman, Nyara Sabally, Sarah Ashlee Barker, Satou Sabally, Skylar Diggins, Sydney Taylor_
 
 ## 💰 REAL-MONEY — UNDER (cold/shrink + stingy · pts/PR/PA/PRA · flat 1u)
 
 - **Arike Ogunbowale** (Dallas Wings, Dallas Wings @ Golden State Valkyries): points median~20→proj~17.0 fair[17.0=1.99 18.0=1.81 19.0=1.66] · PR 22→20.5 · PRA 26→22.4 · [cold+stingy] · last5 mins [33 27 28 35 30] oppDef 79 · UNDER value zone = book line between proj and median (MAX edge near median)
+- **Jessica Shepard** (Dallas Wings, Dallas Wings @ Golden State Valkyries): points median~12→proj~9.1 fair[9.0=2.03 10.0=1.81 11.0=1.63] · PR 24→22.1 · PA 17→14.1 · RA 16→13.5 · PRA 28→23.3 · [declining+stingy] · last5 mins [33 23 37 26 5] oppDef 79 · UNDER value zone = book line between proj and median (MAX edge near median)
 - **Azura Stevens** (Chicago Sky, New York Liberty @ Chicago Sky): points median~10→proj~6.5 fair[6.5=2.0 7.5=1.77 8.5=1.6] · PR 18→15.6 · PA 12→9.6 · PRA 20→16.2 · reb⚠frag 8→6.9 · [declining+cold] · last5 mins [30 20 24 17 28] oppDef 90 · UNDER value zone = book line between proj and median (MAX edge near median)
 - **A'ja Wilson** (Las Vegas Aces, Atlanta Dream @ Las Vegas Aces): PR median~39→proj~36.0 fair[36.0=2.0 37.0=1.87 38.0=1.75] · PRA 40→36.9 · [cold+stingy] · last5 mins [37 33 35 35 34] oppDef 88 · UNDER value zone = book line between proj and median (MAX edge near median)
 - **Jackie Young** (Las Vegas Aces, Atlanta Dream @ Las Vegas Aces): PR median~28→proj~25.0 fair[25.0=2.0 26.0=1.86 27.0=1.75] · [cold+stingy] · last5 mins [35 33 32 35 33] oppDef 88 · UNDER value zone = book line between proj and median (MAX edge near median)
@@ -19,15 +20,15 @@ _🩹 OUT/doubtful (excluded from ALL picks): Aaliyah Edwards, Aziaha James, Azz
 
 ## CASCADE contingencies — fire ONLY on scratch news (PRA OVER rank-3-6, flat 1u)
 
-- Dallas Wings: if **Paige Bueckers** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Alanna Smith OVER 16.5 PRA
+- Dallas Wings: if **Paige Bueckers** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Alanna Smith OVER 16.5 PRA, Jessica Shepard OVER 28.5 PRA
 - Golden State Valkyries: if **Gabby Williams** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Veronica Burton OVER 23.5 PRA, Janelle Salaun OVER 17.5 PRA, Cecilia Zandalasini OVER 11.5 PRA, Kayla Thornton OVER 16.5 PRA
-- Los Angeles Sparks: if **Rae Burrell** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Dearica Hamby OVER 24.5 PRA, Erica Wheeler OVER 20.5 PRA
-- Connecticut Sun: if **Diamond Miller** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Leila Lacan OVER 16.5 PRA, Olivia Nelson-Ododa OVER 21.5 PRA, Kennedy Burke OVER 12.5 PRA
+- Los Angeles Sparks: if **Rae Burrell** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Dearica Hamby OVER 24.5 PRA, Erica Wheeler OVER 20.5 PRA, Cameron Brink OVER 15.5 PRA
+- Connecticut Sun: if **Diamond Miller** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Leila Lacan OVER 16.5 PRA, Olivia Nelson-Ododa OVER 21.5 PRA, Kennedy Burke OVER 12.5 PRA, Aaliyah Edwards OVER 15.5 PRA
 - Indiana Fever: if **Caitlin Clark** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Aliyah Boston OVER 29.5 PRA, Makayla Timpson OVER 11.5 PRA, Monique Billings OVER 13.5 PRA, Sophie Cunningham OVER 11.5 PRA
 - Toronto Tempo: if **Brittney Sykes** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Laura Juskaite OVER 17.5 PRA, Aneesah Morrow OVER 17.5 PRA
 - New York Liberty: if **Breanna Stewart** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Jonquel Jones OVER 29.5 PRA, Marine Johannes OVER 10.5 PRA
 - Chicago Sky: if **Sydney Taylor** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Natasha Cloud OVER 20.5 PRA, DiJonai Carrington OVER 11.5 PRA, Courtney Vandersloot OVER 17.5 PRA
-- Atlanta Dream: if **Allisha Gray** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Rhyne Howard OVER 22.5 PRA, Naz Hillmon OVER 13.5 PRA
+- Atlanta Dream: if **Allisha Gray** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Rhyne Howard OVER 22.5 PRA, Jordin Canada OVER 22.5 PRA, Naz Hillmon OVER 13.5 PRA
 - Las Vegas Aces: if **A'ja Wilson** OUT -> (fair 1.75, bet if 1xbet over > 1.75) Chelsea Gray OVER 21.5 PRA, NaLyssa Smith OVER 21.5 PRA, Jewell Loyd OVER 10.5 PRA, Chennedy Carter OVER 9.5 PRA
 
 ## 🧪 EXPERIMENTAL forward-test — PAPER ONLY (volume brute-force winners; log CLV, do NOT bet real until +CLV)
@@ -50,6 +51,7 @@ _ft_volume_drought 58.9% / steady+streak 58.6% OOS vs a synthetic line — prove
 - **Breanna Stewart** (New York Liberty, New York Liberty @ Chicago Sky): PTS UNDER ~16.5 [steady · PAPER] median~16→proj~15.2 · last5 mins [33 23 30 31 33]
 - **Jonquel Jones** (New York Liberty, New York Liberty @ Chicago Sky): PTS UNDER ~14.5 [steady · PAPER] median~14→proj~13.7 · last5 mins [30 19 30 33 35]
 - **Rebecca Allen** (New York Liberty, New York Liberty @ Chicago Sky): PTS UNDER ~11.5 [ftdrought · PAPER] median~12→proj~10.4 · last5 mins [19 22 24 26 29]
+- **Sabrina Ionescu** (New York Liberty, New York Liberty @ Chicago Sky): PTS UNDER ~19.5 [steady · PAPER] median~20→proj~18.4 · last5 mins [29 31 21 28 33]
 - **Kamilla Cardoso** (Chicago Sky, New York Liberty @ Chicago Sky): PTS UNDER ~14.5 [steady · PAPER] median~15→proj~13.6 · last5 mins [29 26 27 22 30]
 - **Chelsea Gray** (Las Vegas Aces, Atlanta Dream @ Las Vegas Aces): PTS UNDER ~11.5 [ftdrought · PAPER] median~12→proj~10.3 · last5 mins [40 36 35 29 34]
 - **Allisha Gray** (Atlanta Dream, Atlanta Dream @ Las Vegas Aces): PTS UNDER ~22.5 [steady · PAPER] median~22→proj~21.3 · last5 mins [29 38 33 28 42]
