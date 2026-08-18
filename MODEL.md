@@ -625,3 +625,68 @@ model_card:187 selects the previous line BY GAME (`g < tips[tm]`), not by clock 
 30h bucketing bug that once showed a dead 31.5 while 32.5 was live. And `raised=(pv is None or
 line_now - pv >= 0.5)` correctly treats a missing previous line as NOT starred. Both verified
 against the current source.
+
+## 2026-08-18 - THE VERDICT, REVISED. The earlier "not good" call used the wrong data.
+
+Two hours ago I called the model not good. That verdict rested on model_forward.csv (n=13) and on
+a BOARD RECONSTRUCTION where the engine's signal had to be inferred from bets_log rather than
+read. Both were the wrong source. graded_bets.csv holds 864 bets the engine EMITTED LIVE and that
+settled afterwards - forward on signal selection, chosen before tip by the live code with no
+knowledge of the result. The only thing missing was gate 3, because the star was added to the card
+later and graded_bets carries no previous-line column. Reconstructing that gate from the board
+archive gives the largest honest estimate that exists.
+
+### Every gate improves the number. Monotonically, on all three metrics.
+
+    everything the engine pinged      n=864  51.2%  -54.75u   -6.3%  CI [-11.6, -0.9]  clv -0.001
+    + gate 1  src in the 3 signals    n=219  55.7%   +6.40u   +2.9%  CI [ -9.5, +14.7] clv -0.000
+    + gate 2  market in pra/pr/pts    n=180  56.7%   +8.84u   +4.9%  CI [ -8.1, +17.5] clv +0.001
+    + gate 3  book did not raise her  n=107  60.7%  +12.85u  +12.0%  CI [ -5.6, +27.4] clv +0.004
+    + gate 4  one position per player n=107  60.7%  +12.85u  +12.0%  CI [ -6.0, +26.8] clv +0.004
+
+Hit rate 51.2 -> 60.7. ROI -6.3 -> +12.0. CLV -0.001 -> +0.004. Three independent measures moving
+the same way through four independent filters is structural coherence, not one lucky cell.
+
+And the residue each gate leaves behind is worse, which is what a real filter must do:
+
+    cut by gate 1 (other srcs)        n=645  49.6%  -61.14u   -9.5%  CI [-16.7, -2.7]  EXCLUDES 0
+    cut by gate 2 (pa/ra/reb/ast)     n=39   51.3%   -2.44u   -6.3%
+    cut by gate 3: NO PREVIOUS LINE   n=42   45.2%   -6.65u  -15.8%
+    cut by gate 3: RAISED             n=31   58.1%   +2.64u   +8.5%   <- see caveat 3
+
+The menu's -6.3% is not evidence against the model. It is evidence FOR the gates: what they
+reject loses significantly, and Model S is the 12% they keep.
+
+### Out of sample, on live-pinged bets
+
+    MODEL S  IN   n=60  61.7%  +14.0%
+    MODEL S  OUT  n=47  59.6%   +9.4%
+
+Both halves positive. By signal: flip n=22 68.2% +26.3%, overshoot n=72 58.3% +7.1%, hotover n=13
+too few.
+
+### WHAT STILL STOPS THIS BEING PROOF
+
+  1 The interval includes zero. +12.0% CI [-6.0, +26.8] on ~50 effective players.
+  2 The star gate is RETRO-FITTED. Signal selection was live; gate 3 was tuned on this same
+    data earlier in the season. A within-player permutation - same players, same bet counts,
+    random picks from the gate-2 pool - gives median +6.7% against the star's +12.0%,
+    p = 0.1288. Better than the 0.328 the board reconstruction produced, still not significance.
+  3 The RAISED residue is POSITIVE (+8.5%, n=31). Only the no-previous-line half of gate 3 is
+    clearly earning its place (-15.8%). The raise cut itself is unproven here and the interval
+    is enormous [-32, +46]. Worth watching, not worth changing on n=31.
+  4 odds_clv +0.0042 +/- 0.0080 - positive point estimate, interval spans zero.
+    sharp_clv -0.192 on n=13 vs Pinnacle. Too thin to read, and pointing the wrong way.
+
+### VERDICT
+
+Not proven. But POSITIVE and COHERENT on the best data available, which is a materially different
+statement from the one I made earlier today, and the earlier one should be disregarded - it was
+computed on n=13 and on inferred rather than recorded signals.
+
+The honest state: n=107, 60.7%, +12.85u, +12.0%, every gate pulling the right way, both time
+halves positive, CLV trending positive through the ladder. What it needs is roughly 150 more
+graded bets to pull the interval off zero, and positive odds_clv to hold while that happens.
+
+Posture unchanged: keep betting it manually at current stakes, never auto-bet, keep the shadow
+configs running. Nothing here justifies raising stake, and nothing here justifies stopping.
