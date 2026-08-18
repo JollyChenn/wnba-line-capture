@@ -154,3 +154,4 @@ logged_utc,date,player,market,side,line,price,orig_src,orig_move
 2026-08-17T19:38:32Z,2026-08-17,Paige Bueckers,pts,Over,20.5,1.85,newunder,0.0571
 2026-08-17T20:41:25Z,2026-08-17,Arike Ogunbowale,pr,Under,17.5,1.73,flip,0.1561
 2026-08-17T20:41:25Z,2026-08-17,Kelsey Mitchell,pts,Under,25.5,1.88,flip_paper,0.0108
+2026-08-18T04:44:16Z,2026-08-17,Dearica Hamby,pra,Under,25.5,1.73,cascade,0.0471
