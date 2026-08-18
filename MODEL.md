@@ -557,3 +557,71 @@ teammate correlation, pass-count, and every game-market test. No new profitable 
 The correct posture is the one already in place - paper/track, never auto-bet, and let the
 forward column decide. What would change the verdict is odds_clv turning positive on the flip
 family over another 100+ bets. What would end it is the menu's -6.4% continuing.
+
+## 2026-08-18 - QUALIFICATION AUDIT: how a bet actually becomes a Model S bet
+
+Four gates, in order:
+
+    1  src in (flip, hotover, overshoot)          set by cloud_xbet at capture time
+    2  mk  in (pra, pr, pts)                      BET_MKTS in model_card
+    3  not raised                                 book has not moved her line up 0.5+ since her
+                                                  PREVIOUS GAME (not previous quote)
+    4  one position per player, best price         _bestleg dedup
+
+### Gate 1 - what the three signals actually are
+
+`flip` (cloud_xbet ~665) fires only on a player who ALREADY carries an UNDER signal: her 1xbet
+OVER line has overshot to at least 2 below her anchor AND below our projection, at a price above
+our fair. It is a contrarian read on our own under - the book has run the number so far down that
+the other side became free. `flip_paper` is the same shape on an unproven underlying signal.
+
+`hotover` is the residual tag for an over that is not a flip and not new/usgshock. In practice it
+is 100% pra (521 of 521 rows).
+
+`overshoot` (overshoot_overs, ~389) is a genuine SEPARATE board-wide scan, not a fallback: any
+over line >=3 below the player's trailing 10-game median, gated by injury status, current-team-only
+history, a MINUTES-SHRINK check on disjoint 5v5 windows, a cold-form skip, a period/live-prop
+guard, a game-total trap, a PINNACLE CONFIRM (if the sharp agrees with 1xbet's low line then OUR
+median is the stale one - drop), EV>0, and one bet per player.
+
+### FINDING 1 - a latent mislabelling bug in the grader
+
+grade_bets.py:28 writes
+
+    src = b.get("src", "") or ("model" if b["side"] == "Under" else "overshoot")
+
+So ANY row reaching the grader with a blank src is silently filed as `overshoot` (if an over) or
+`model` (if an under) - the two most consequential buckets in the project. Current exposure is
+small: all 19,295 bets_log rows carry a src, so only the 41-row pre-src era is affected. But it is
+live, and if cloud_xbet ever emits a blank src those bets are absorbed into a proven bucket with
+no trace. The same fallback is repeated at clv_reader.py:12, build_dashboard.py:72 and
+bet_timing_study.py:22. Not fixed here - changing it alters the meaning of historical rows and
+should be a deliberate decision.
+
+### FINDING 2 - BET_MKTS contradicts overshoot's own design note, and the DATA backs BET_MKTS
+
+cloud_xbet:56 records the June-15 lesson: "POINTS crater (so pts/PRA overshoot-overs are TRAPS)
+... keep pa/pr/ra, drop pts/pra". BET_MKTS does the exact opposite - it keeps pra and pts and
+discards pa and ra. That silently drops 23% of overshoot's output (pa 365, ra 5 of 1577) and 21%
+of flip's.
+
+Forward evidence (graded_bets, player-block CIs) says BET_MKTS is the right config and the
+comment is stale:
+
+    overshoot pts/pra  ("its trap set")   n=68   57.4%   +6.2%  CI [-13.8, +26.5]  clv +0.008
+    overshoot pa/pr/ra ("its safe set")   n=76   51.3%   -6.3%  CI [-27.0, +14.5]  clv -0.002
+
+    BET_MKTS  (what we bet)               n=280  56.1%   +3.8%  CI [ -6.1, +14.2]  clv +0.005
+    pa + ra   (what we discard)           n=39   51.3%   -6.3%  CI [-35.6, +19.9]  clv -0.009
+
+Inverted relative to the comment. Both CIs span zero and n=39 on the discarded group is thin, so
+this is not proof - but nothing supports re-admitting pa/ra, and the comment should not be left
+where it will mislead the next change. Best single market is pra (n=75, 60.0%, +11.8%), which is
+also the only market hotover ever fires in.
+
+### Gate 3 is sound
+
+model_card:187 selects the previous line BY GAME (`g < tips[tm]`), not by clock - the fix for the
+30h bucketing bug that once showed a dead 31.5 while 32.5 was live. And `raised=(pv is None or
+line_now - pv >= 0.5)` correctly treats a missing previous line as NOT starred. Both verified
+against the current source.
