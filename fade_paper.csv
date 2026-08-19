@@ -173,3 +173,5 @@ logged_utc,date,player,market,side,line,price,orig_src,orig_move
 2026-08-19T08:44:01Z,2026-08-19,Olivia Miles,pts,Under,19.5,1.73,flip_paper,0.0844
 2026-08-19T09:47:58Z,2026-08-19,Paige Bueckers,pts,Over,20.5,1.88,newunder,0.0162
 2026-08-19T11:26:58Z,2026-08-19,Nneka Ogwumike,pts,Over,15.5,1.88,newunder,0.0168
+2026-08-19T12:28:19Z,2026-08-19,Jessica Shepard,pts,Over,14.5,1.87,model,0.0108
+2026-08-19T12:28:19Z,2026-08-19,Rae Burrell,pts,Under,16.5,1.952,flip_paper,0.0227
