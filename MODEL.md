@@ -847,3 +847,116 @@ the noise ceiling drops to something a real edge could clear.
     reconcile.py      the funnel; explains every sample size
     where_went.py     backtest vs live reconciliation
     fade_low_rank.py  rank-4 fade
+
+## 2026-08-19 - CORRECTION: the "price basis" collapse was my error, not the market's
+
+Yesterday's section says PING = +4.0% and calls the price basis "bigger than any filter found all
+season". **That is wrong and it is now retracted.** The gap was manufactured by ping_vs_open.py.
+
+### What the bug was
+
+ping_vs_open.py:56 applies gate 3 using `o_ln` - the line stored in graded_bets, which is the
+OPENING number - and then grades the bet at the PING price. Gate evaluated at one moment, bet
+placed at another. The card never does this: model_card.py:184 reads `line_now` and :202 judges
+`raised` against that same current line. Gate and price always agree there.
+
+That mismatch lets in exactly the bets the card throws away: the ones the book RAISED between open
+and ping. basis_check.py, same rows, three combinations:
+
+    gate@OPEN  price@OPEN   n=94  61.7%  +13.6%     what all historical ROIs describe
+    gate@OPEN  price@PING   n=94  56.4%   +4.9%     ping_vs_open's number - A CONSTRUCT
+    gate@PING  price@PING   n=78  64.1%  +18.7%     WHAT THE CARD ACTUALLY DOES
+
+The leak, isolated:
+
+    passes at open, rejected at ping (book raised her)   n=23  34.8%  -34.2%
+    passes at both                                       n=71  63.4%  +17.6%
+    passes at ping, not at open (book cut her)           n=7   too few
+
+23 bets at -34.2% dragged +13.6% down to +4.9%. The card has never bet one and never will.
+
+### There is no price decay at all
+
+pricedecay.py re-runs gates 3 and 4 on the line that existed at each horizon - a true simulation of
+"what if the card pinged H hours out" - then repeats it on a FROZEN bet set so composition cannot
+explain the shape.
+
+    REALISTIC (gates re-run at H)     36h +12.4%  24h +17.2%  12h +11.2%  6h +12.3%  1h +17.2%
+    CONSTANT SET (n=45, frozen)       36h +11.2%  24h +12.7%  12h +15.3%  6h +14.2%  1h +14.5%
+
+Flat, same mean line (~21.0), same mean odds (~1.84). Pinging earlier would gain nothing and
+pinging later loses nothing. The 6h ping is fine.
+
+### Sample reconciliation, replacing the old funnel's bottom half
+
+    126  gates 1+2, board history + box + a previous line
+     94  gate 3 passes at the OPEN line     <- the old n=93/n=94 numbers
+     78  gate 3 passes at the PING line     = MODEL S, the card's own construction
+     23  pass at open, fail at ping         the leak
+      7  pass at ping, fail at open
+
+**MODEL S IS n=78, 64.1%, +18.7%, 95% CI [-3.1, +39.7] (game-block).** The old n=75 / +18.3% was
+the same thing built by a different script; the difference is push handling and quote requirements.
+
+### Five downward revisions, then one up - what that means
+
+The one-signed-error warning still stands, but it needs amending: the errors were not all in the
+optimistic direction, they were all in the direction of WHATEVER I HAD JUST CHANGED. Each revision
+came from a fresh construction rather than from re-deriving the card's own logic. The rule that
+would have prevented every one of them: **evaluate the gate and the price at the same instant, and
+prove the script reproduces what model_card.py does before believing its output.**
+
+## 2026-08-19 - THE GATES ALL EARN THEIR KEEP (widen.py)
+
+Volume hunt, everything priced at the ping with gate 3 at the ping:
+
+    MODEL S as it stands                  n=78   64.1%  +18.7%
+    pa/ra/reb/ast (gate 2 removes)        n=21   38.1%  -28.9%    (pa alone n=20 -36.3%)
+    other srcs (gate 1 removes)           n=243  51.9%   -4.8%
+      cascade                             n=41   51.2%   -4.6%
+      flip_paper                          n=52   46.2%  -16.2%
+      newunder                            n=137  53.3%   -2.2%
+    RAISED (gate 3 removes)               n=48   41.7%  -22.1%
+    no previous line                      n=7    too few now
+
+Every relaxation loses money. Gate 3's reject at -22.1% against its keep at +18.7% is a 41-point
+spread and is the strongest structural evidence the model has. **There is no volume to buy by
+loosening.** More bets must come from more games or more books, not looser gates.
+
+## 2026-08-19 - GAME CONTEXT: cannot be answered yet (gamectx.py)
+
+Pinnacle gameline capture starts 2026-07-11; 168 of 274 games predate it, so the total/spread/
+moneyline join covers only 30 of 78 Model S bets. Every game-market cell is n<14. Not a bug, not
+fixable retroactively, and it will improve on its own. Do not re-run this before ~October.
+
+Same-game stacking, 18 games carrying 2+ bets, 27 pairs:
+
+    both legs win   44.4% +/-18.7   vs 41.1% if independent   lift +3.4pp   p = 0.4046
+      TEAMMATES     38.5%  (13 pairs)  slightly BELOW independence - usage cannibalisation
+      OPPOSING      50.0%  (14 pairs)  slightly above - shared pace
+
+Directions match the basketball but neither is measurable at 27 pairs. **Treat same-game legs as
+independent for pricing and as correlated for RISK.** Three bets on one game is one game's worth of
+risk wearing three bets' clothing.
+
+The parlay line is priced at the exact product (1.91 x 1.87 = 3.57 last night), so it is leverage:
+it turns edge e into (1+e)^2-1. With e unproven and its CI touching zero, that squares the downside
+too. Singles +18.7%, pairs +52.4%, both layers +27.3% - the pair layer's apparent superiority is
+arithmetic, not alpha. Keep it optional.
+
+## 2026-08-19 - AWAY: the best candidate yet, still not a filter
+
+    AWAY  n=43  72.1%  +32.6%  95CI [+6.9,+56.8]
+    HOME  n=35  54.3%   +1.5%  95CI [-29.8,+33.2]
+
+FOR: survives leave-one-team-out (worst +26.0%, dropping DAL) and leave-one-player-out (worst
++27.7%); 0 of 27 single-player removals take it to zero; holds out of sample (first 60% +25.3%,
+last 40% +46.3%); game-level label permutation p = 0.0560.
+
+AGAINST: size-matched ceiling (random game-blocks of ~43 bets, best of 14) is +43.8% at p95 and
++48.9% at p99 - AWAY's +32.6% is under both. p=0.0560 is one uncorrected test on a cell found by
+scanning. And the basketball prior runs the OTHER WAY: home players normally produce more, so a
+wrong-signed cell needs more evidence than a right-signed one, not less.
+
+VERDICT: do not gate on it. It is the first candidate all season to survive every robustness check,
+so track it - if it is still there at n=150 it becomes interesting.
