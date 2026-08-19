@@ -168,3 +168,4 @@ logged_utc,date,player,market,side,line,price,orig_src,orig_move
 2026-08-19T03:53:34Z,2026-08-18,Sonia Citron,pts,Over,18.5,1.86,newunder,0.022
 2026-08-19T04:57:42Z,2026-08-18,Dearica Hamby,pra,Under,24.5,1.83,cascade,0.0457
 2026-08-19T04:57:42Z,2026-08-18,Tiffany Hayes,pra,Under,14.5,1.83,overshoot,0.0167
+2026-08-19T06:34:16Z,2026-08-18,Marina Mabrey,pts,Under,19.5,1.82,flip_paper,0.0162
