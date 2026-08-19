@@ -19897,3 +19897,8 @@ captured_utc,date,player,market,side,line,odds,tier,ev,pinn,src
 2026-08-18T23:37:14+00:00,2026-08-18,DiJonai Carrington,pra,Over,11.5,1.75,CASC,0.0,,cascade
 2026-08-18T23:37:14+00:00,2026-08-18,Courtney Vandersloot,pra,Over,17.5,2.0,CASC,0.143,,cascade
 2026-08-18T23:37:14+00:00,2026-08-18,Napheesa Collier,pra,Over,27.5,1.769,STRONG,0.339,,overshoot
+2026-08-19T00:09:58+00:00,2026-08-18,Sonia Citron,pts,Under,17.5,2.0,THIN,0.127,,newunder
+2026-08-19T00:09:58+00:00,2026-08-18,Kiki Iriafen,pts,Under,15.5,1.87,STRONG,0.32,,newunder
+2026-08-19T00:09:58+00:00,2026-08-18,Veronica Burton,pra,Under,23.5,1.83,SOLID,0.141,,model
+2026-08-19T00:09:58+00:00,2026-08-18,Gabby Williams,pts,Over,13.5,1.73,SOLID,0.056,,flip_paper
+2026-08-19T00:09:58+00:00,2026-08-18,Napheesa Collier,pra,Over,27.5,1.769,STRONG,0.339,,overshoot

@@ -7890,3 +7890,8 @@ logged_utc,date,player,market,side,line,src,open_odds,now_odds,move_pct,verdict,
 2026-08-18T23:37:26Z,2026-08-18,Gabby Williams,pts,Over,13.5,flip_paper,1.73,1.73,0.0,BET (steady),ok 85%,,,,13,6.9,2026-08-18T23:37:14Z
 2026-08-18T23:37:26Z,2026-08-18,Napheesa Collier,pra,Over,27.5,overshoot,1.769,1.769,0.0,BET (steady),ok 85%,,,,7,6.9,2026-08-18T23:37:14Z
 2026-08-18T23:37:26Z,2026-08-18,Sabrina Ionescu,pts,Over,16.5,flip_paper,1.75,1.75,0.0,BET (steady),ok 85%,,,,11,5.8,2026-08-18T23:37:14Z
+2026-08-19T00:10:04Z,2026-08-18,Sonia Citron,pts,Under,17.5,newunder,1.95,2.0,2.6,SKIP-drift,WAIT 70%,,Over,1.769,31,16.8,2026-08-19T00:09:58Z
+2026-08-19T00:10:04Z,2026-08-18,Kiki Iriafen,pts,Under,15.5,newunder,1.85,1.87,1.1,SKIP-drift,WAIT 70%,,Over,1.87,31,16.8,2026-08-19T00:09:58Z
+2026-08-19T00:10:04Z,2026-08-18,Veronica Burton,pra,Under,23.5,model,2.0,1.83,-8.5,BET (money agrees),BET NOW 93%,22.5->23.5,,,14,7.4,2026-08-19T00:09:58Z
+2026-08-19T00:10:04Z,2026-08-18,Gabby Williams,pts,Over,13.5,flip_paper,1.73,1.73,0.0,BET (steady),ok 85%,,,,14,7.4,2026-08-19T00:09:58Z
+2026-08-19T00:10:04Z,2026-08-18,Napheesa Collier,pra,Over,27.5,overshoot,1.769,1.769,0.0,BET (steady),ok 85%,,,,8,7.4,2026-08-19T00:09:58Z
