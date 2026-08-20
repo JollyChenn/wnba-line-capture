@@ -196,3 +196,5 @@ logged_utc,date,player,market,side,line,price,orig_src,orig_move
 2026-08-20T19:06:57Z,2026-08-20,Erica Wheeler,pra,Under,15.5,1.8,cascade,0.0437
 2026-08-20T20:41:03Z,2026-08-20,Nneka Ogwumike,pra,Under,25.5,1.73,cascade,0.0929
 2026-08-20T20:41:03Z,2026-08-20,Dearica Hamby,pra,Under,23.5,1.73,cascade,0.0477
+2026-08-20T23:21:21Z,2026-08-20,Rae Burrell,pra,Under,20.5,1.909,overshoot,0.0183
+2026-08-20T23:21:21Z,2026-08-20,Natasha Howard,pts,Over,12.5,1.833,newunder,0.0415
