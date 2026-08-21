@@ -198,3 +198,5 @@ logged_utc,date,player,market,side,line,price,orig_src,orig_move
 2026-08-20T20:41:03Z,2026-08-20,Dearica Hamby,pra,Under,23.5,1.73,cascade,0.0477
 2026-08-20T23:21:21Z,2026-08-20,Rae Burrell,pra,Under,20.5,1.909,overshoot,0.0183
 2026-08-20T23:21:21Z,2026-08-20,Natasha Howard,pts,Over,12.5,1.833,newunder,0.0415
+2026-08-21T13:17:19Z,2026-08-21,Nneka Ogwumike,pra,Under,25.5,1.83,cascade,0.0457
+2026-08-21T13:17:19Z,2026-08-21,Dearica Hamby,pra,Under,23.5,1.91,cascade,0.0286
