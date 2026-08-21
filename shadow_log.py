@@ -12,7 +12,7 @@
 #
 # SILENT BY DESIGN. It never pings. Only model_card.py (tonight's card) and ping_results.py
 # (last night's result) are allowed to notify.
-import csv, os, sys, datetime, collections, statistics
+import csv, os, sys, datetime, collections, statistics, unicodedata, re
 try: sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 except Exception: pass
 D = os.path.dirname(os.path.abspath(__file__))
@@ -22,8 +22,10 @@ MKTS = ("pts", "pra", "pr", "pa", "reb", "ast", "ra")
 BET_MKTS = ("pra", "pr", "pts")
 SIGS = ("flip", "hotover", "overshoot")
 OUT = os.path.join(D, "shadow_forward.csv")
-COLS = ["slate", "config", "player", "market", "line", "odds", "src",
-        "prev_line", "mv", "drift", "tip", "logged_utc", "result", "actual"]
+# `side` and `gap` added 2026-08-21 for the sharp-divergence configs. Every config before them
+# bets the OVER, so a row with no side is read as "Over" by grade_shadow - old rows stay valid.
+COLS = ["slate", "config", "player", "market", "side", "line", "odds", "src",
+        "prev_line", "mv", "drift", "gap", "tip", "logged_utc", "result", "actual"]
 
 def load(p):
     fp = os.path.join(D, p)
@@ -112,6 +114,63 @@ for (pl, mk, ln), v in raw.items():
         bygame[(pl, mk, gt)].append((t, ln, o))
 for v in bygame.values(): v.sort()
 
+# ---- UNDER prices, needed only by the divergence configs --------------------------------------
+# The loop above keeps OVER quotes because every config written before 2026-08-21 bets the over.
+# S_gap follows Pinnacle and can land on either side, and pricing an under at the over's odds
+# would silently invent about 7% of edge out of the book's own margin. So the under side of the
+# same line is collected separately and looked up at the line we are actually betting.
+bygameU = collections.defaultdict(list)
+for b in load("xbet_board.csv"):
+    t, o, ln = ts(b.get("captured_utc")), f(b.get("odds")), f(b.get("line"))
+    if not (t and o and ln is not None) or b.get("side") != "Under": continue
+    if b.get("market") not in MKTS: continue
+    pl = (b.get("player") or "").lower()
+    tm = teamnow.get(pl)
+    if tm is None: continue
+    gt = game_for(tm, t)
+    if gt is None: continue
+    bygameU[(pl, b.get("market"), gt)].append((t, ln, o))
+for v in bygameU.values(): v.sort()
+def under_price(pl, mk, gt, line):
+    """the under quote at the SAME line, latest first - None if the book never posted one"""
+    same = [x for x in bygameU.get((pl, mk, gt), []) if abs(x[1] - line) < 0.01]
+    return same[-1][2] if same else None
+
+# ---- the SHARP reference, for the divergence configs ------------------------------------------
+# Bet toward Pinnacle when 1xbet disagrees with it by a point or more. Backtest (gap_final.py):
+# toward-sharp return rises with |gap| - rho +0.2503, player-block permutation p = 0.0083, which
+# survives Bonferroni over the five families declared in fresh_hunt.py (0.0083 x 5 = 0.042). Both
+# directions pay about the same (+13.6% over / +12.4% under) and it holds out of sample
+# (+14.5% / +11.4%). Crucially it is NOT the overshoot signal wearing a different hat: stratified
+# by cushion it separates in both halves, and gap-with-cushion-under-3 returns +14.3% on n=100 -
+# it works precisely where overshoot is blind.
+#
+# TIMING MATTERS AND IS NOT OPTIONAL. The same rule scored using the sharp line as it stood 12h
+# before tip returns -14.9%; using the 6h line, +13.0%. Pinnacle's early prop lines are posted at
+# low limits and carry no information. So only captures within SHARP_MAX_AGE_H are trusted, and
+# the shadow log runs on the same ~6h cadence as the card.
+#
+# Names are normalised the way cloud_xbet's _pkey does it (accents folded, punctuation stripped),
+# because pinn_board.csv is keyed that way and "A'ja Wilson" must meet "aja wilson".
+SHARP_MAX_AGE_H = 10.0
+def pkey(name):
+    s = unicodedata.normalize("NFKD", str(name or "")).encode("ascii", "ignore").decode().lower()
+    s = s.replace("-", " ").replace(".", " ").replace("'", "")
+    return re.sub(r"\s+", " ", re.sub(r"[^a-z ]", " ", s)).strip() or str(name or "").lower()
+
+sharp_raw = collections.defaultdict(list)
+for r in load("pinn_board.csv"):                       # full board (added 2026-08-21) - preferred
+    t, ln = ts(r.get("captured_utc")), f(r.get("pinn_line"))
+    if t and ln is not None: sharp_raw[(pkey(r.get("player")), r.get("market"))].append((t, ln))
+for r in load("bets_log.csv"):                         # engine-bet players only, but has history
+    t, ln = ts(r.get("captured_utc")), f(r.get("pinn"))
+    if t and ln is not None: sharp_raw[(pkey(r.get("player")), r.get("market"))].append((t, ln))
+for v in sharp_raw.values(): v.sort()
+def sharp_line(pl, mk):
+    v = sharp_raw.get((pkey(pl), mk), [])
+    fresh = [x for x in v if (NOW - x[0]).total_seconds() <= SHARP_MAX_AGE_H*3600]
+    return fresh[-1][1] if fresh else None
+
 # ---- candidates, exactly as model_card builds them --------------------------------------------
 seen, C = set(), []
 for b in load("bets_log.csv"):
@@ -135,6 +194,7 @@ for b in load("bets_log.csv"):
     pv = bygame[(pl, mk, earlier[-1])][-1][1] if earlier else None
     same = [x for x in tonight if x[1] == line_now]
     drift = same[-1][2]/same[0][2] - 1 if len(same) >= 2 else 0.0
+    sl = sharp_line(b.get("player"), mk)
     C.append(dict(pl=pl, name=b.get("player"), mk=mk, src=b.get("src") or "?", tip=tips[tm],
                   line=line_now, odds=price_now, prev=pv, drift=drift,
                   raised=(pv is None or line_now - pv >= 0.5),   # no prev line is NOT a star
@@ -142,6 +202,9 @@ for b in load("bets_log.csv"):
                   mv=(None if pv is None else line_now - pv),
                   tier=b.get("tier") or "",
                   rank=RANK.get(pl, 99),
+                  sharp=sl,
+                  gap=(None if sl is None else round(sl - line_now, 2)),
+                  uodds=under_price(pl, mk, tips[tm], line_now),
                   nodrift=(drift < 0.01)))
 
 # ---- the competing rules ----------------------------------------------------------------------
@@ -185,8 +248,36 @@ CONFIGS = {
     "S_rank2":  lambda r: r["src"] in SIGS and r["mk"] in BET_MKTS and not r["raised"]
                           and r.get("rank") == 2,
     "RANK2_ANY":lambda r: r["mk"] in BET_MKTS and r.get("rank") == 2,
+    # S_gap / S_gap_big: bet TOWARD Pinnacle whenever 1xbet's line disagrees with it. The first
+    # thing all season to show a dose-response rather than a cell - toward-sharp return rises with
+    # |gap| (rho +0.2503, player-block permutation p = 0.0083, Bonferroni over 5 declared families
+    # = 0.042) - to pay symmetrically on BOTH sides (+13.6% over / +12.4% under), and to hold out
+    # of sample (+14.5% then +11.4%). It is also demonstrably not the overshoot signal renamed:
+    # inside the shallow-cushion half it returns +14.3% on n=100, where overshoot never fires.
+    # NOT LIVE. The backtest reaches only 150 genuine disagreements, almost all pts, because until
+    # today we only wrote down Pinnacle lines for players we had already bet. cloud_xbet now logs
+    # the whole sharp board, so this config's own forward record is what will settle it.
+    # Requires an under price when it points down - no quote, no bet, rather than a guessed price.
+    "S_gap":    lambda r: r.get("gap") is not None and abs(r["gap"]) >= 1.0
+                          and (r["gap"] > 0 or r.get("uodds")),
+    "S_gap_big":lambda r: r.get("gap") is not None and abs(r["gap"]) >= 1.5
+                          and (r["gap"] > 0 or r.get("uodds")),
+    # S_gap_x: the divergence restricted to bets Model S would ALSO take. If the two are the same
+    # information this matches MODEL_S; if they are independent it should beat both.
+    "S_gap_x":  lambda r: r.get("gap") is not None and r["gap"] >= 1.0
+                          and r["src"] in SIGS and r["mk"] in BET_MKTS and not r["raised"],
     "OLD_MENU": lambda r: True,
 }
+
+# Which SIDE each config bets, and therefore which price it is scored at. Everything written
+# before 2026-08-21 is an over; only the divergence configs can point down, and they follow the
+# sign of the gap. grade_shadow reads a missing side as "Over" so historical rows are unaffected.
+def side_of(cfg, r):
+    if cfg in ("S_gap", "S_gap_big") and r.get("gap") is not None and r["gap"] < 0:
+        return "Under"
+    return "Over"
+def odds_of(cfg, r):
+    return r["uodds"] if (side_of(cfg, r) == "Under" and r.get("uodds")) else r["odds"]
 
 def one_position(rows):
     """same player, two markets = ONE position (the live staking rule)"""
@@ -218,10 +309,13 @@ for cfg, fn in CONFIGS.items():
         if NOW >= r["tip"]: continue                       # her game has started - never add
         if (cfg, r["name"], r["mk"], tk) in have: continue  # already recorded for THIS game
         keep.append({"slate": slate, "config": cfg, "player": r["name"], "market": r["mk"],
-                     "line": r["line"], "odds": r["odds"], "src": r["src"],
+                     "side": side_of(cfg, r),
+                     "line": r["line"], "odds": odds_of(cfg, r), "src": r["src"],
                      "prev_line": "" if r["prev"] is None else r["prev"],
                      "mv": "" if r.get("mv") is None else r["mv"],
-                     "drift": f"{r['drift']:.4f}", "tip": _tipkey(r["tip"]),
+                     "drift": f"{r['drift']:.4f}",
+                     "gap": "" if r.get("gap") is None else r["gap"],
+                     "tip": _tipkey(r["tip"]),
                      "logged_utc": stamp,
                      "result": "", "actual": ""})
         added[cfg] += 1

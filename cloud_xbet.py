@@ -847,6 +847,32 @@ def main():
             if pnew:
                 wp.writerow(["captured_utc", "date", "player", "market", "side", "pinn_line", "pinn_fair"])
             wp.writerows(pinn_rows)
+    # FULL-BOARD PINNACLE SNAPSHOT (added 2026-08-21) -------------------------------------------
+    # The block above walks `betstruct`, so it only ever records players the engine ALREADY bet.
+    # That is why pinn_snapshots.csv ended up 4300 pts rows against 42 reb and 37 ast, and why the
+    # sharp-divergence test could only reach 378 of 6471 board quotes: the signal was never thin,
+    # the SAMPLE was, and only because of what we chose to write down.
+    #
+    # pinnacle_lines() already pulls pts/reb/ast for EVERY player Pinnacle posts and derives the
+    # PR/PA/RA/PRA combos from them. Logging the whole board therefore costs ZERO extra requests -
+    # we were fetching this data every cycle and discarding 95% of it.
+    #
+    # Written to its own file so pinn_snapshots.csv keeps the schema and meaning grade_bets.py
+    # depends on. NOTE FOR ANALYSIS: `player` here is _pkey() - accent-folded, punctuation
+    # stripped ("A'ja Wilson" -> "aja wilson"). Apply the same normalisation to box-score names
+    # before joining, or stars with apostrophes will silently fail to match.
+    if DO_REAL and pin:
+        bdnew = not os.path.exists("pinn_board.csv")
+        with open("pinn_board.csv", "a", newline="", encoding="utf-8") as bdf:
+            wbd = csv.writer(bdf)
+            if bdnew:
+                wbd.writerow(["captured_utc", "date", "player", "market", "pinn_line",
+                              "fair_over", "fair_under"])
+            for _pk, _mks in pin.items():
+                for _mkt, _ln in _mks.items():
+                    _fz = pinfair.get(_pk, {}).get(_mkt) or {}
+                    wbd.writerow([stamp, la_today, _pk, _mkt, _ln,
+                                  _fz.get("over", ""), _fz.get("under", "")])
     # PING POLICY (2026-06-19): ping ONLY the real-money signal (COLD/SHRINK/STINGY, src=model).
     # Paper/experimental are still captured to bets_log for the dashboard but are NEVER pinged, and there is
     # no heartbeat / no-bet spam. A real bet pings once when first found, then again near tip (reconfirm).

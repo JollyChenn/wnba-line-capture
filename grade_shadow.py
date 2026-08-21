@@ -40,14 +40,22 @@ for r in rows:
     if not act or ln is None: continue
     v = act.get(r.get("market"))
     if v is None: continue
-    r["result"] = "push" if v == ln else ("WIN" if v > ln else "loss")
+    # SIDE-AWARE since 2026-08-21. Every config before the divergence pair bets the over, and
+    # historical rows carry no `side` column at all - so a missing/blank value must read as
+    # "Over" or the whole back-catalogue would silently invert.
+    if v == ln:
+        r["result"] = "push"
+    elif (r.get("side") or "Over").strip().lower() == "under":
+        r["result"] = "WIN" if v < ln else "loss"
+    else:
+        r["result"] = "WIN" if v > ln else "loss"
     r["actual"] = v
     graded += 1
 
 # MUST match shadow_log.py exactly. It writes `mv`; omitting it here would silently
 # drop the column on every rewrite - the file is rewritten in full each run.
-COLS = ["slate", "config", "player", "market", "line", "odds", "src",
-        "prev_line", "mv", "drift", "tip", "logged_utc", "result", "actual"]
+COLS = ["slate", "config", "player", "market", "side", "line", "odds", "src",
+        "prev_line", "mv", "drift", "gap", "tip", "logged_utc", "result", "actual"]
 tmp = FWD + ".tmp"
 with open(tmp, "w", newline="", encoding="utf-8") as fh:
     w = csv.DictWriter(fh, fieldnames=COLS)
@@ -116,8 +124,8 @@ def pnl(r):
     o = f(r.get("odds")) or 1.85
     return (o - 1) if res == "WIN" else -1.0
 
-ORDER = ["MODEL_S", "S_prev", "S_loose", "S_paper", "S_drift", "S_filterx",
-         "S_nostar", "S_raised", "S_noprev", "OLD_MENU"]
+ORDER = ["MODEL_S", "S_gap", "S_gap_big", "S_gap_x", "S_prev", "S_loose", "S_paper",
+         "S_drift", "S_filterx", "S_nostar", "S_raised", "S_noprev", "OLD_MENU"]
 slates = sorted({r["slate"] for r in done})
 print("")
 print("=" * 96)
