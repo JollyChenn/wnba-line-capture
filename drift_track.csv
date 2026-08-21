@@ -893,3 +893,15 @@ date,player,market,side,line,src,result,odds,odds_clv,bucket,as_bet,fade_ret,ski
 2026-08-18,Nneka Ogwumike,pts,Under,16.5,newunder,LOSS,1.75,-0.011,drift,-1.0,,
 2026-08-18,Rhyne Howard,pts,Under,17.5,newunder,LOSS,1.89,0.022,short,-1.0,,-1.0
 2026-08-18,Sabrina Ionescu,pts,Over,16.5,flip_paper,WIN,1.75,0.0,steady,0.75,,0.75
+2026-08-19,Aneesah Morrow,pra,Over,22.5,cascade,LOSS,1.75,0.0,steady,-1.0,,-1.0
+2026-08-19,Gabby Williams,pts,Over,13.5,flip_paper,LOSS,1.73,0.0,steady,-1.0,,-1.0
+2026-08-19,Kayla Thornton,pr,Over,13.5,flip,LOSS,1.87,0.0,steady,-1.0,,-1.0
+2026-08-19,Kiki Iriafen,pts,Under,15.5,newunder,LOSS,1.85,0.069,short,-1.0,,-1.0
+2026-08-19,Laura Juskaite,pr,Under,15.5,starout,WIN,1.833,,n/a,0.83,,0.83
+2026-08-19,Laura Juskaite,pra,Over,17.5,cascade,WIN,1.75,0.0,steady,0.75,,0.75
+2026-08-19,Napheesa Collier,pra,Over,27.5,overshoot,LOSS,1.769,0.0,steady,-1.0,,-1.0
+2026-08-19,Olivia Miles,pts,Over,19.5,flip_paper,WIN,1.8,-0.1,drift,0.8,-1.0,
+2026-08-19,Shakira Austin,pts,Under,20.5,newunder,WIN,1.86,0.033,short,0.86,,0.86
+2026-08-19,Sonia Citron,pts,Under,17.5,newunder,WIN,1.95,0.01,steady,0.95,,0.95
+2026-08-19,Tiffany Hayes,pra,Over,14.5,overshoot,WIN,1.8,-0.1,drift,0.8,-1.0,
+2026-08-19,Veronica Burton,pra,Under,22.5,model,LOSS,2.05,0.074,short,-1.0,,-1.0
