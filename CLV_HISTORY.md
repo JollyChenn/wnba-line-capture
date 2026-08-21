@@ -4,16 +4,16 @@ _Auto-updated after each slate settles. Raw data: `graded_bets.csv`. CLV>0 = we 
 _**sharp-odds** = vs Pinnacle's vig-free fair price (TRUE edge test) · **sharp-line** = pts vs Pinnacle's line · **self** = vs 1xbet's own close (weak)._
 
 ```
-📊 WNBA BOT — TRACK RECORD (39 settled · PROVEN signals only)
-  Record  : 16-23  (41% hit)
-  Net P&L : -8.89u  (ROI -22.8%/bet)
+📊 WNBA BOT — TRACK RECORD (41 settled · PROVEN signals only)
+  Record  : 17-24  (41% hit)
+  Net P&L : -8.89u  (ROI -21.7%/bet)
   ★ SHARP ODDS-CLV: -5.9% | beat fair 0/8 (0%)  ← TRUE edge (vs Pinnacle fair price)
   SHARP LINE-CLV : +0.19 pts | n=13  ← better number than the sharp
-  self ODDS-CLV  : -0.2% | beat 9/37 (24%)  (1xbet's own close = weak)
-  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 82/150 (+0.8u) · FTUNDER 145/315 (-46.1u) · HOT OVER 19/34 (+1.6u) · LINE-CUT FLIP · exp. base 58/102 (+5.3u) · LINE-CUT FLIP · proven base 26/45 (+3.3u) · STAR-OUT CASCADE 112/209 (-11.5u) · starout 5/12 (-2.8u)
+  self ODDS-CLV  : -0.2% | beat 9/39 (23%)  (1xbet's own close = weak)
+  ⚗️ Paper / experimental (UNPROVEN, NOT the record): BOOK OVERSHOOT 82/154 (-3.2u) · FTUNDER 150/321 (-42.9u) · HOT OVER 19/34 (+1.6u) · LINE-CUT FLIP · exp. base 60/104 (+6.9u) · LINE-CUT FLIP · proven base 26/45 (+3.3u) · STAR-OUT CASCADE 113/216 (-16.7u) · starout 5/12 (-2.8u)
   VERDICT : ⚠️ NEUTRAL self CLV — winning on outcomes, not beating the line. Unproven; keep collecting.
-  by tier: SOLID 8/17 (-1.9u) · STRONG 5/15 (-5.9u) · THIN 3/7 (-1.1u)
-  by market: pa Under 1/3 (-1.0u) · pr Under 1/3 (-1.0u) · pra Under 5/15 (-5.9u) · pts Under 9/17 (+0.1u) · ra Under 0/1 (-1.0u)
+  by tier: SOLID 8/17 (-1.9u) · STRONG 6/17 (-5.9u) · THIN 3/7 (-1.1u)
+  by market: pa Under 1/3 (-1.0u) · pr Under 1/3 (-1.0u) · pra Under 6/16 (-4.9u) · pts Under 9/18 (-0.9u) · ra Under 0/1 (-1.0u)
 ```
 
 ## Per-bet
@@ -928,3 +928,24 @@ _signal: **COLD/SHRINK/STINGY** = real money (headline) · everything else = pap
 | 20260819 | Sonia Citron | PTS Under 17.5 @ 1.95 | FTUNDER | WIN | — | — | +1% |
 | 20260819 | Tiffany Hayes | PRA Over 14.5 @ 1.8 | BOOK OVERSHOOT | WIN | — | — | -10% |
 | 20260819 | Veronica Burton | PRA Under 22.5 @ 2.05 | COLD/SHRINK/STINGY | loss | — | — | +7% |
+| 20260820 | Aliyah Boston | PTS Under 16.5 @ 1.88 | FTUNDER | WIN | -6% | +0.0 | +7% |
+| 20260820 | Allisha Gray | PR Over 22.5 @ 1.73 | BOOK OVERSHOOT | loss | — | — | -4% |
+| 20260820 | Ariel Atkins | PRA Under 14.5 @ 2.0 | COLD/SHRINK/STINGY | WIN | — | — | +0% |
+| 20260820 | Arike Ogunbowale | PTS Over 16.5 @ 1.82 | LINE-CUT FLIP · exp. base | WIN | -10% | +0.0 | -2% |
+| 20260820 | Caitlin Clark | PA Over 32.5 @ 2.0 | BOOK OVERSHOOT | loss | — | — | +5% |
+| 20260820 | Cameron Brink | PRA Over 15.5 @ 1.75 | STAR-OUT CASCADE | WIN | — | — | +0% |
+| 20260820 | Chelsea Gray | PTS Under 11.5 @ 1.92 | FTUNDER | WIN | -3% | — | +4% |
+| 20260820 | Dearica Hamby | PRA Over 24.5 @ 1.83 | STAR-OUT CASCADE | loss | — | — | -4% |
+| 20260820 | Dearica Hamby | PTS Under 15.5 @ 1.769 | FTUNDER | WIN | — | — | +0% |
+| 20260820 | Erica Wheeler | PRA Over 20.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
+| 20260820 | Jackie Young | PTS Over 19.5 @ 1.79 | LINE-CUT FLIP · exp. base | WIN | — | — | -2% |
+| 20260820 | Jessica Shepard | PTS Under 14.5 @ 1.85 | COLD/SHRINK/STINGY | loss | — | — | -0% |
+| 20260820 | Kennedy Burke | PRA Over 15.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
+| 20260820 | Leila Lacan | PRA Over 16.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
+| 20260820 | Nalyssa Smith | PR Over 18.5 @ 1.91 | BOOK OVERSHOOT | loss | — | — | +0% |
+| 20260820 | Nneka Ogwumike | PRA Over 25.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | -8% |
+| 20260820 | Nneka Ogwumike | PTS Under 15.5 @ 1.79 | FTUNDER | WIN | — | — | +0% |
+| 20260820 | Olivia Nelson-Ododa | PRA Over 21.5 @ 1.75 | STAR-OUT CASCADE | loss | — | — | +0% |
+| 20260820 | Paige Bueckers | PTS Under 20.5 @ 1.85 | FTUNDER | WIN | — | -1.0 | -3% |
+| 20260820 | Rae Burrell | PRA Over 22.5 @ 1.73 | BOOK OVERSHOOT | loss | — | — | -4% |
+| 20260820 | Rhyne Howard | PTS Under 18.5 @ 1.88 | FTUNDER | loss | — | — | +4% |
