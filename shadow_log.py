@@ -91,6 +91,26 @@ RANK = {}
 for tm, v in _byteam.items():
     for i, (a, pl) in enumerate(sorted(v, reverse=True), 1): RANK[pl] = i
 
+# ---- per-market history for S_steady's volatility read (current-team games only - the same
+# filter overshoot_overs applies; an unfiltered median already burned us once on All-Star games)
+_mkhist = collections.defaultdict(list)          # (player, market) -> [value, ...] time-ordered
+for r in load("data/box_2026.csv"):
+    d = gm.get(r.get("game_id"))
+    if not d: continue
+    try:
+        p_, rb, a_ = float(r.get("pts") or 0), float(r.get("reb") or 0), float(r.get("ast") or 0)
+    except ValueError:
+        continue
+    pl = (r.get("player") or "").lower()
+    if r.get("team") != teamnow.get(pl): continue
+    vals = {"pts": p_, "reb": rb, "ast": a_, "pr": p_+rb, "pa": p_+a_, "ra": rb+a_, "pra": p_+rb+a_}
+    for mk2, vv in vals.items(): _mkhist[(pl, mk2)].append((d, vv))
+def relvol_of(pl, mk, line):
+    v = sorted(_mkhist.get((pl, mk), []))
+    if len(v) < 6 or not line: return None
+    w = [x[1] for x in v[-10:]]
+    return statistics.pstdev(w) / max(float(line), 1.0)
+
 tips_of = collections.defaultdict(list)
 for g in load("data/games_2026.csv"):
     t = ts(g.get("tip"))
@@ -205,6 +225,7 @@ for b in load("bets_log.csv"):
                   sharp=sl,
                   gap=(None if sl is None else round(sl - line_now, 2)),
                   uodds=under_price(pl, mk, tips[tm], line_now),
+                  relvol=relvol_of(pl, mk, line_now),
                   nodrift=(drift < 0.01)))
 
 # ---- the competing rules ----------------------------------------------------------------------
@@ -266,6 +287,14 @@ CONFIGS = {
     # information this matches MODEL_S; if they are independent it should beat both.
     "S_gap_x":  lambda r: r.get("gap") is not None and r["gap"] >= 1.0
                           and r["src"] in SIGS and r["mk"] in BET_MKTS and not r["raised"],
+    # S_steady: Model S minus the wild tercile. The volatility gradient is the only board-wide
+    # cell with a CI excluding zero (wild overs -12.0% [-17.2,-7.2]) and it reaches Model S:
+    # steady +12.4 / mid +11.2 / wild +0.1 (n=96). vol_filter.py then tried 15 declared rescues
+    # and NONE cleared a +9.0% ceiling - wild overs are unrescuable by any tested context, and
+    # wild unders top out at breakeven (the margin wall). So the actionable form is subtraction:
+    # skip the wild third. Tracked here, not live - ~32 bets per tercile is not a gating sample.
+    "S_steady": lambda r: r["src"] in SIGS and r["mk"] in BET_MKTS and not r["raised"]
+                          and r.get("relvol") is not None and r["relvol"] <= 0.446,
     "OLD_MENU": lambda r: True,
 }
 
