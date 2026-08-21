@@ -200,3 +200,5 @@ logged_utc,date,player,market,side,line,price,orig_src,orig_move
 2026-08-20T23:21:21Z,2026-08-20,Natasha Howard,pts,Over,12.5,1.833,newunder,0.0415
 2026-08-21T13:17:19Z,2026-08-21,Nneka Ogwumike,pra,Under,25.5,1.83,cascade,0.0457
 2026-08-21T13:17:19Z,2026-08-21,Dearica Hamby,pra,Under,23.5,1.91,cascade,0.0286
+2026-08-21T14:50:11Z,2026-08-21,Alyssa Thomas,pts,Under,14.5,1.83,flip_paper,0.0275
+2026-08-21T14:50:11Z,2026-08-21,Olivia Nelson-Ododa,pts,Over,13.5,1.9,newunder,0.0169
