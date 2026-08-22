@@ -204,3 +204,6 @@ logged_utc,date,player,market,side,line,price,orig_src,orig_move
 2026-08-21T14:50:11Z,2026-08-21,Olivia Nelson-Ododa,pts,Over,13.5,1.9,newunder,0.0169
 2026-08-21T19:59:08Z,2026-08-21,Rhyne Howard,pts,Under,18.5,1.79,flip_paper,0.0106
 2026-08-21T23:07:22Z,2026-08-21,Sydney Taylor,pra,Under,15.5,1.83,overshoot,0.0167
+2026-08-22T00:40:20Z,2026-08-21,Breanna Stewart,pts,Over,22.5,1.82,newunder,0.033
+2026-08-22T00:40:20Z,2026-08-21,Kelsey Mitchell,pts,Under,25.5,1.87,flip_paper,0.0202
+2026-08-22T00:40:20Z,2026-08-21,Angel Reese,pts,Under,16.5,1.78,flip_paper,0.0546
