@@ -211,3 +211,5 @@ logged_utc,date,player,market,side,line,price,orig_src,orig_move
 2026-08-22T10:26:23Z,2026-08-22,Azura Stevens,pts,Over,9.5,1.79,newunder,0.0324
 2026-08-22T12:00:52Z,2026-08-22,Carla Leite,pra,Over,26.5,1.952,model,0.0405
 2026-08-22T12:32:44Z,2026-08-22,Paige Bueckers,pts,Over,20.5,1.769,newunder,0.0256
+2026-08-22T14:38:31Z,2026-08-22,Kiki Iriafen,pr,Under,23.5,1.909,overshoot,0.0595
+2026-08-22T14:38:31Z,2026-08-22,NaLyssa Smith,pts,Under,10.5,1.833,flip_paper,0.0154
