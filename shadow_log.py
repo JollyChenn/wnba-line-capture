@@ -16,8 +16,27 @@ import csv, os, sys, datetime, collections, statistics, unicodedata, re
 try: sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 except Exception: pass
 D = os.path.dirname(os.path.abspath(__file__))
-NOW = datetime.datetime.now(datetime.timezone.utc)
-WINDOW_H = float(sys.argv[1]) if len(sys.argv) > 1 else 16.0
+# --asof <ISO> replays this script as if it were running at a past moment, so a slate missed
+# while the laptop was off can still be recorded. EVERY data source below is then capped at NOW:
+# the board, bets_log, the sharp lines and the box-score history. Without those caps a replay
+# would quietly use the final board state and post-game box scores, which is the "reconstructed
+# later" failure the shadow log exists to avoid.
+#
+# A replayed row is NOT as good as a live one - it proves the rule would have SELECTED the bet,
+# but not that we were awake to place it. Rows are stamped backfill=1 and grade_shadow reports
+# the two populations separately. Never trust a config whose record is mostly backfill.
+ASOF = None
+_args = [a for a in sys.argv[1:]]
+if "--asof" in _args:
+    i = _args.index("--asof")
+    try:
+        ASOF = datetime.datetime.fromisoformat(_args[i+1].replace("Z", "+00:00"))
+        del _args[i:i+2]
+    except Exception:
+        print("  shadow: bad --asof value"); raise SystemExit
+NOW = ASOF or datetime.datetime.now(datetime.timezone.utc)
+BACKFILL = "1" if ASOF else ""
+WINDOW_H = float(_args[0]) if _args else 16.0
 MKTS = ("pts", "pra", "pr", "pa", "reb", "ast", "ra")
 BET_MKTS = ("pra", "pr", "pts")
 SIGS = ("flip", "hotover", "overshoot")
@@ -25,7 +44,7 @@ OUT = os.path.join(D, "shadow_forward.csv")
 # `side` and `gap` added 2026-08-21 for the sharp-divergence configs. Every config before them
 # bets the OVER, so a row with no side is read as "Over" by grade_shadow - old rows stay valid.
 COLS = ["slate", "config", "player", "market", "side", "line", "odds", "src",
-        "prev_line", "mv", "drift", "gap", "tip", "logged_utc", "result", "actual"]
+        "prev_line", "mv", "drift", "gap", "tip", "logged_utc", "backfill", "result", "actual"]
 
 def load(p):
     fp = os.path.join(D, p)
@@ -55,11 +74,17 @@ first_tip = min(tips.values())
 raw = collections.defaultdict(list)
 for b in load("xbet_board.csv"):
     t, o, ln = ts(b.get("captured_utc")), f(b.get("odds")), f(b.get("line"))
-    if t and o and ln is not None and b.get("market") in MKTS and b.get("side") == "Over":
+    if not t or t > NOW: continue                       # --asof cap: never see the future board
+    if o and ln is not None and b.get("market") in MKTS and b.get("side") == "Over":
         raw[((b.get("player") or "").lower(), b.get("market"), ln)].append((t, o))
 
+# BOX HISTORY IS CAPPED AT THE SLATE. In a replay the box file already contains the very games
+# we are pretending not to know about, so every box-derived feature (team, scoring rank, market
+# volatility) is restricted to games played BEFORE this slate. In the live case this is a no-op.
+_slatekey = slate.replace("-", "")
 teamnow = {}
-gm = {g.get("game_id"): g.get("date","") for g in load("data/games_2026.csv")}
+gm = {g.get("game_id"): g.get("date","") for g in load("data/games_2026.csv")
+      if (g.get("date") or "") < _slatekey}
 for r in load("data/box_2026.csv"):
     if gm.get(r.get("game_id")): teamnow[(r.get("player") or "").lower()] = r.get("team")
 
@@ -143,7 +168,7 @@ bygameU = collections.defaultdict(list)
 for b in load("xbet_board.csv"):
     t, o, ln = ts(b.get("captured_utc")), f(b.get("odds")), f(b.get("line"))
     if not (t and o and ln is not None) or b.get("side") != "Under": continue
-    if b.get("market") not in MKTS: continue
+    if t > NOW or b.get("market") not in MKTS: continue   # --asof cap
     pl = (b.get("player") or "").lower()
     tm = teamnow.get(pl)
     if tm is None: continue
@@ -181,10 +206,10 @@ def pkey(name):
 sharp_raw = collections.defaultdict(list)
 for r in load("pinn_board.csv"):                       # full board (added 2026-08-21) - preferred
     t, ln = ts(r.get("captured_utc")), f(r.get("pinn_line"))
-    if t and ln is not None: sharp_raw[(pkey(r.get("player")), r.get("market"))].append((t, ln))
+    if t and t <= NOW and ln is not None: sharp_raw[(pkey(r.get("player")), r.get("market"))].append((t, ln))
 for r in load("bets_log.csv"):                         # engine-bet players only, but has history
     t, ln = ts(r.get("captured_utc")), f(r.get("pinn"))
-    if t and ln is not None: sharp_raw[(pkey(r.get("player")), r.get("market"))].append((t, ln))
+    if t and t <= NOW and ln is not None: sharp_raw[(pkey(r.get("player")), r.get("market"))].append((t, ln))
 for v in sharp_raw.values(): v.sort()
 def sharp_line(pl, mk):
     v = sharp_raw.get((pkey(pl), mk), [])
@@ -195,6 +220,8 @@ def sharp_line(pl, mk):
 seen, C = set(), []
 for b in load("bets_log.csv"):
     if b.get("side") != "Over": continue
+    _bt = ts(b.get("captured_utc"))
+    if _bt and _bt > NOW: continue                      # --asof cap: signal not emitted yet
     bd = (b.get("date") or "").replace("-", "")[:8]
     try:
         age = (datetime.datetime.strptime(slate.replace("-", ""), "%Y%m%d")
@@ -345,7 +372,7 @@ for cfg, fn in CONFIGS.items():
                      "drift": f"{r['drift']:.4f}",
                      "gap": "" if r.get("gap") is None else r["gap"],
                      "tip": _tipkey(r["tip"]),
-                     "logged_utc": stamp,
+                     "logged_utc": stamp, "backfill": BACKFILL,
                      "result": "", "actual": ""})
         added[cfg] += 1
 

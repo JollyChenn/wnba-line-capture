@@ -55,7 +55,7 @@ for r in rows:
 # MUST match shadow_log.py exactly. It writes `mv`; omitting it here would silently
 # drop the column on every rewrite - the file is rewritten in full each run.
 COLS = ["slate", "config", "player", "market", "side", "line", "odds", "src",
-        "prev_line", "mv", "drift", "gap", "tip", "logged_utc", "result", "actual"]
+        "prev_line", "mv", "drift", "gap", "tip", "logged_utc", "backfill", "result", "actual"]
 tmp = FWD + ".tmp"
 with open(tmp, "w", newline="", encoding="utf-8") as fh:
     w = csv.DictWriter(fh, fieldnames=COLS)
@@ -133,7 +133,7 @@ print(f"  SHADOW SCOREBOARD - {len(slates)} settled slate(s), {slates[0]} to {sl
 print("  MODEL_S is live. The rest are filters that were rejected on backtest and are being")
 print("  tracked forward so the decision is eventually made by real data.")
 print("=" * 96)
-print(f"  {'config':<11} {'record':>8} {'win%':>7} {'units':>9} {'ROI':>8} {'bets/slate':>11}")
+print(f"  {'config':<11} {'record':>8} {'win%':>7} {'units':>9} {'ROI':>8} {'bets/slate':>11} {'live-logged':>12}")
 for cfg in ORDER:
     g = [r for r in done if r["config"] == cfg]
     if not g:
@@ -141,9 +141,23 @@ for cfg in ORDER:
     w = sum(1 for r in g if (r["result"] or "").upper() == "WIN")
     l = sum(1 for r in g if (r["result"] or "").upper() == "LOSS")
     u = sum(pnl(r) for r in g)
+    # a replayed row proves the rule SELECTED the bet, not that we were awake to place it.
+    # a config carried by backfill is weaker evidence than one built live, so show the split.
+    liv = sum(1 for r in g if str(r.get("backfill") or "") != "1")
     tag = "  <- LIVE" if cfg == "MODEL_S" else ""
     print(f"  {cfg:<11} {f'{w}-{l}':>8} {100*w/len(g):6.1f}% {u:+8.2f}u {100*u/len(g):+7.1f}%"
-          f" {len(g)/len(slates):10.1f}{tag}")
+          f" {len(g)/len(slates):10.1f} {f'{liv}/{len(g)}':>12}{tag}")
+bf = [r for r in done if str(r.get("backfill") or "") == "1"]
+if bf:
+    bw = sum(1 for r in bf if (r["result"] or "").upper() == "WIN")
+    bu = sum(pnl(r) for r in bf)
+    lv = [r for r in done if str(r.get("backfill") or "") != "1"]
+    lw = sum(1 for r in lv if (r["result"] or "").upper() == "WIN")
+    lu = sum(pnl(r) for r in lv)
+    print("")
+    print(f"  ALL CONFIGS POOLED - live-logged {lw}-{len(lv)-lw} {100*lu/max(len(lv),1):+.1f}%"
+          f"  vs backfilled {bw}-{len(bf)-bw} {100*bu/max(len(bf),1):+.1f}%")
+    print("  these two should look alike. if backfill is much better, the replay is leaking.")
 print("")
 print("  n is tiny. This table is not evidence yet - it is a record being built. The point at")
 print("  which it starts to mean anything is ~50 bets on MODEL_S.")

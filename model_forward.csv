@@ -17,4 +17,6 @@ slate,player,market,side,line,odds,src,prev_line,tip,result,actual,pnl,note
 20260818,Angel Reese,pr,Over,28.5,1.8,overshoot,28.5,2026-08-19T01:00Z,WIN,31.0,0.8,
 20260819,Kayla Thornton,pts,Over,8.5,1.95,flip,8.5,2026-08-20T02:00Z,loss,5.0,-1.0,
 20260819,Napheesa Collier,pra,Over,28.5,1.83,overshoot,30.5,2026-08-20T02:00Z,loss,26.0,-1.0,
-20260821,Kamilla Cardoso,pra,Over,24.5,1.87,overshoot,25.5,2026-08-21T23:30Z,,,,pending
+20260821,Kamilla Cardoso,pra,Over,24.5,1.87,overshoot,25.5,2026-08-21T23:30Z,WIN,28.0,0.87,
+20260821,Sydney Taylor,pra,Over,15.5,1.8,overshoot,22.5,2026-08-21T23:30Z,WIN,17.0,0.8,
+20260822,Rebecca Allen,pts,Over,8.5,2.05,overshoot,9.5,2026-08-22T23:00Z,,,,pending
