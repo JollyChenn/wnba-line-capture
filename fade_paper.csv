@@ -223,3 +223,6 @@ logged_utc,date,player,market,side,line,price,orig_src,orig_move
 2026-08-24T05:39:48Z,2026-08-23,Rae Burrell,pts,Under,15.5,1.74,flip_paper,0.0155
 2026-08-24T05:39:48Z,2026-08-23,Dearica Hamby,pra,Under,22.5,1.8,cascade,0.0437
 2026-08-24T08:44:57Z,2026-08-24,Allisha Gray,pts,Over,19.5,1.87,newunder,0.0219
+2026-08-24T12:28:19Z,2026-08-24,Tiffany Hayes,pra,Under,15.5,1.83,overshoot,0.0167
+2026-08-24T12:28:19Z,2026-08-24,Azura Stevens,pts,Over,10.5,1.95,newunder,0.0173
+2026-08-24T12:28:19Z,2026-08-24,Shakira Austin,pts,Under,16.5,1.9,flip_paper,0.0112
