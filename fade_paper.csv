@@ -216,3 +216,6 @@ logged_utc,date,player,market,side,line,price,orig_src,orig_move
 2026-08-22T15:04:40Z,2026-08-22,Flau'jae Johnson,pa,Over,18.5,1.91,model,0.0405
 2026-08-22T15:34:48Z,2026-08-22,Natasha Cloud,pa,Under,17.5,2.0,overshoot,0.0225
 2026-08-23T15:04:38Z,2026-08-23,Laura Juskaite,pra,Under,20.5,1.73,cascade,0.0929
+2026-08-24T05:08:19Z,2026-08-23,Kayla Thornton,pr,Over,11.5,1.91,model,0.0405
+2026-08-24T05:08:19Z,2026-08-23,Nneka Ogwumike,pra,Under,24.5,1.73,cascade,0.1429
+2026-08-24T05:08:19Z,2026-08-23,Allisha Gray,pts,Over,19.5,1.87,newunder,0.0223
