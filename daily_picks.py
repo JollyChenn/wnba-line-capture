@@ -38,6 +38,13 @@ _H = {"User-Agent": "Mozilla/5.0", "Accept": "application/json, text/plain, */*"
       "Accept-Language": "en-US,en;q=0.9", "Referer": "https://www.espn.com/wnba/scoreboard",
       "Origin": "https://www.espn.com"}   # 2026-08-06: ESPN 403s bare UA-only requests
 SB = "https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard"
+# The league's real franchises, 2026 (Toronto and Portland joined this season). Used to reject
+# exhibition fixtures, which ESPN otherwise reports as ordinary regular-season games - the
+# All-Star sides came through as COOP and SPO. Anything not on this list is skipped WITH A
+# PRINTED WARNING, so a genuine expansion team shows up as a visible message rather than as
+# games quietly missing from the schedule.
+FRANCHISES = frozenset({"ATL", "CHI", "CON", "DAL", "GS", "IND", "LA", "LV",
+                        "MIN", "NY", "PHX", "POR", "SEA", "TOR", "WSH"})
 SUMMARY = "https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/summary"
 SEASON_START = datetime.date(2026, 5, 8)
 INJ = "https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/injuries"
@@ -195,12 +202,29 @@ def fetch_day(d):
         return [], []
     fin, up = [], []
     for ev in js.get("events", []):
-        if (ev.get("season") or {}).get("type") != 2:
-            continue                                   # regular season only
+        # SEASON TYPE (rewritten 2026-08-24). The old test was `type != 2 -> skip`, described as
+        # "regular season only". It was wrong in BOTH directions:
+        #   * it did NOT exclude the All-Star game. ESPN labels 2026-07-25 COOP v SPO as
+        #     type=2 / slug=regular-season, so those 22 exhibition box rows flowed straight in
+        #     and poisoned trailing medians - that is the Allisha Gray 24.0-vs-26.0 bug.
+        #   * it DID exclude the postseason (type 3), so the moment the playoffs start the whole
+        #     pipeline ingests zero games and the model goes dark with no error at all.
+        # So: admit regular season AND postseason, and reject exhibitions by the only reliable
+        # marker - a competitor that is not one of the league's actual franchises.
+        if (ev.get("season") or {}).get("type") not in (2, 3):
+            continue                                   # drops preseason and off-season events
         comp = (ev.get("competitions") or [{}])[0]
         cs = comp.get("competitors", [])
         home = next((t for t in cs if t.get("homeAway") == "home"), {})
         away = next((t for t in cs if t.get("homeAway") == "away"), {})
+        _abs = [(home.get("team") or {}).get("abbreviation"),
+                (away.get("team") or {}).get("abbreviation")]
+        if any(a not in FRANCHISES for a in _abs):
+            # loud, not silent: an expansion team would land here too, and a silently dropped
+            # franchise is a far worse failure than a printed line.
+            print(f"    skipped non-franchise fixture {d:%Y%m%d} {_abs} "
+                  f"(exhibition, or a new team to add to FRANCHISES)")
+            continue
         g = {"game_id": ev.get("id"), "date": d.strftime("%Y%m%d"),
              "home": (home.get("team") or {}).get("abbreviation"),
              "away": (away.get("team") or {}).get("abbreviation"),
