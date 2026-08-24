@@ -219,3 +219,6 @@ logged_utc,date,player,market,side,line,price,orig_src,orig_move
 2026-08-24T05:08:19Z,2026-08-23,Kayla Thornton,pr,Over,11.5,1.91,model,0.0405
 2026-08-24T05:08:19Z,2026-08-23,Nneka Ogwumike,pra,Under,24.5,1.73,cascade,0.1429
 2026-08-24T05:08:19Z,2026-08-23,Allisha Gray,pts,Over,19.5,1.87,newunder,0.0223
+2026-08-24T05:39:48Z,2026-08-23,Natasha Howard,pts,Over,12.5,1.8,newunder,0.0495
+2026-08-24T05:39:48Z,2026-08-23,Rae Burrell,pts,Under,15.5,1.74,flip_paper,0.0155
+2026-08-24T05:39:48Z,2026-08-23,Dearica Hamby,pra,Under,22.5,1.8,cascade,0.0437
