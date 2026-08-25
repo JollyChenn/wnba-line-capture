@@ -2450,14 +2450,87 @@ pick_date,game_id,player,team,opp,market,anchor,signals,fair_p,fair_odds,proj,sd
 2026-08-23,401857171,Olivia Miles,Minnesota Lynx,Golden State Valkyries,pts_under,22.5,steady,0.563,1.78,21.8,4.55
 2026-08-23,401857171,Janelle Salaun,Golden State Valkyries,Minnesota Lynx,pts_under,11.5,steady,0.563,1.78,10.7,5.36
 2026-08-23,401857171,Tiffany Hayes,Golden State Valkyries,Minnesota Lynx,ast_over,2.5,usgshock,0.591,1.69,2.9,1.5
-2026-08-23,401857172,Dearica Hamby,Los Angeles Sparks,Atlanta Dream,pts_under,15.5,cold+stingy,0.626,1.6,13.9,5.05
-2026-08-23,401857172,Dearica Hamby,Los Angeles Sparks,Atlanta Dream,pr_under,19.5,cold+stingy,0.59,1.69,17.8,7.67
-2026-08-23,401857172,Dearica Hamby,Los Angeles Sparks,Atlanta Dream,pa_under,17.5,cold+stingy,0.61,1.64,15.9,5.73
-2026-08-23,401857172,Dearica Hamby,Los Angeles Sparks,Atlanta Dream,pra_under,22.5,cold+stingy,0.621,1.61,19.9,8.42
-2026-08-23,401857172,Erica Wheeler,Los Angeles Sparks,Atlanta Dream,pa_under,17.5,cold+stingy,0.61,1.64,15.8,6.04
-2026-08-23,401857172,Erica Wheeler,Los Angeles Sparks,Atlanta Dream,pra_under,18.5,cold+stingy,0.621,1.61,16.6,6.09
 2026-08-23,401857172,Nneka Ogwumike,Los Angeles Sparks,Atlanta Dream,pts_under,15.5,steady,0.563,1.78,14.9,4.08
+2026-08-23,401857172,Erica Wheeler,Los Angeles Sparks,Atlanta Dream,pts_under,11.5,ftdrought,0.589,1.7,10.6,3.91
+2026-08-23,401857172,Dearica Hamby,Los Angeles Sparks,Atlanta Dream,pts_under,15.5,steady,0.563,1.78,14.7,5.05
 2026-08-23,401857172,Allisha Gray,Atlanta Dream,Los Angeles Sparks,pts_under,18.5,steady,0.563,1.78,17.3,7.66
 2026-08-23,401857172,Rhyne Howard,Atlanta Dream,Los Angeles Sparks,pts_under,20.5,steady,0.563,1.78,19.6,5.44
 2026-08-23,401857172,Rae Burrell,Los Angeles Sparks,Atlanta Dream,pts_under,17.5,steady,0.563,1.78,16.6,5.55
 2026-08-23,401857172,Angel Reese,Atlanta Dream,Los Angeles Sparks,pts_under,19.5,steady,0.563,1.78,18.4,7.2
+2026-08-24,401857171,Kayla Thornton,Golden State Valkyries,Minnesota Lynx,pr_under,11.5,cold+stingy,0.59,1.69,9.7,7.73
+2026-08-24,401857171,Kayla Thornton,Golden State Valkyries,Minnesota Lynx,pra_under,13.5,cold+stingy,0.621,1.61,10.9,8.44
+2026-08-24,401857171,Natasha Howard,Minnesota Lynx,Golden State Valkyries,pts_under,12.5,steady,0.563,1.78,11.9,4.05
+2026-08-24,401857171,Napheesa Collier,Minnesota Lynx,Golden State Valkyries,pts_under,18.5,steady,0.563,1.78,18.0,3.0
+2026-08-24,401857171,Veronica Burton,Golden State Valkyries,Minnesota Lynx,pts_under,13.5,steady,0.563,1.78,12.9,4.01
+2026-08-24,401857171,Olivia Miles,Minnesota Lynx,Golden State Valkyries,pts_under,22.5,steady,0.563,1.78,21.8,4.55
+2026-08-24,401857171,Janelle Salaun,Golden State Valkyries,Minnesota Lynx,pts_under,11.5,steady,0.563,1.78,10.7,5.36
+2026-08-24,401857171,Tiffany Hayes,Golden State Valkyries,Minnesota Lynx,ast_over,2.5,usgshock,0.591,1.69,2.9,1.5
+2026-08-24,401857172,Nneka Ogwumike,Los Angeles Sparks,Atlanta Dream,pts_under,15.5,steady,0.563,1.78,14.9,4.08
+2026-08-24,401857172,Erica Wheeler,Los Angeles Sparks,Atlanta Dream,pts_under,11.5,ftdrought,0.589,1.7,10.6,3.91
+2026-08-24,401857172,Dearica Hamby,Los Angeles Sparks,Atlanta Dream,pts_under,15.5,steady,0.563,1.78,14.7,5.05
+2026-08-24,401857172,Allisha Gray,Atlanta Dream,Los Angeles Sparks,pts_under,18.5,steady,0.563,1.78,17.3,7.66
+2026-08-24,401857172,Rhyne Howard,Atlanta Dream,Los Angeles Sparks,pts_under,20.5,steady,0.563,1.78,19.6,5.44
+2026-08-24,401857172,Rae Burrell,Los Angeles Sparks,Atlanta Dream,pts_under,17.5,steady,0.563,1.78,16.6,5.55
+2026-08-24,401857172,Angel Reese,Atlanta Dream,Los Angeles Sparks,pts_under,19.5,steady,0.563,1.78,18.4,7.2
+2026-08-24,401857173,Diamond Miller,Connecticut Sun,Chicago Sky,pts_under,11.5,declining+cold,0.684,1.46,8.4,6.42
+2026-08-24,401857173,Diamond Miller,Connecticut Sun,Chicago Sky,pr_under,14.5,declining+cold,0.59,1.69,12.7,7.72
+2026-08-24,401857173,Diamond Miller,Connecticut Sun,Chicago Sky,pa_under,13.5,declining+cold,0.61,1.64,11.7,6.56
+2026-08-24,401857173,Diamond Miller,Connecticut Sun,Chicago Sky,pra_under,15.5,declining+cold,0.641,1.56,12.6,7.96
+2026-08-24,401857173,Sydney Taylor,Chicago Sky,Connecticut Sun,pts_under,15.5,declining+cold,0.684,1.46,11.6,8.2
+2026-08-24,401857173,Sydney Taylor,Chicago Sky,Connecticut Sun,pr_under,17.5,declining+cold,0.59,1.69,15.5,8.81
+2026-08-24,401857173,Sydney Taylor,Chicago Sky,Connecticut Sun,pa_under,18.5,declining+cold,0.61,1.64,16.2,8.27
+2026-08-24,401857173,Sydney Taylor,Chicago Sky,Connecticut Sun,pra_under,21.5,declining+cold,0.641,1.56,18.3,8.81
+2026-08-24,401857173,Azura Stevens,Chicago Sky,Connecticut Sun,pts_under,8.5,ftdrought,0.589,1.7,7.3,5.31
+2026-08-24,401857173,Kennedy Burke,Connecticut Sun,Chicago Sky,pts_under,10.5,steady,0.563,1.78,9.9,3.54
+2026-08-24,401857173,Kamilla Cardoso,Chicago Sky,Connecticut Sun,pts_under,14.5,steady,0.563,1.78,13.9,4.02
+2026-08-24,401857173,Natasha Cloud,Chicago Sky,Connecticut Sun,ast_over,6.5,usgshock,0.591,1.69,6.9,2.23
+2026-08-24,401857174,Bridget Carleton,Portland Fire,Dallas Wings,pts_under,16.5,steady,0.563,1.78,15.6,5.96
+2026-08-24,401857174,Alanna Smith,Dallas Wings,Portland Fire,pts_under,10.5,ftdrought,0.589,1.7,9.2,5.73
+2026-08-24,401857174,Megan DiLeo,Portland Fire,Dallas Wings,pts_under,14.5,steady,0.563,1.78,13.7,4.8
+2026-08-24,401857174,Emily Engstler,Portland Fire,Dallas Wings,pts_under,8.5,ftdrought,0.589,1.7,7.4,4.83
+2026-08-24,401857174,Paige Bueckers,Dallas Wings,Portland Fire,pts_under,21.5,steady,0.563,1.78,20.3,7.53
+2026-08-24,401857175,DeWanna Bonner,Phoenix Mercury,Washington Mystics,pts_under,11.5,steady,0.563,1.78,10.5,6.12
+2026-08-24,401857175,Alyssa Thomas,Phoenix Mercury,Washington Mystics,pts_under,16.5,steady,0.563,1.78,15.8,4.7
+2026-08-24,401857175,Kahleah Copper,Phoenix Mercury,Washington Mystics,pts_under,19.5,steady,0.563,1.78,18.3,7.78
+2026-08-24,401857175,Shakira Austin,Washington Mystics,Phoenix Mercury,pts_under,20.5,steady,0.563,1.78,19.5,6.46
+2026-08-24,401857175,Sonia Citron,Washington Mystics,Phoenix Mercury,pts_under,14.5,steady,0.563,1.78,14.0,3.34
+2026-08-24,401857175,Kiki Iriafen,Washington Mystics,Phoenix Mercury,pts_under,16.5,steady,0.563,1.78,15.7,5.23
+2026-08-25,401857173,Diamond Miller,Connecticut Sun,Chicago Sky,pts_under,11.5,declining+cold,0.684,1.46,8.4,6.42
+2026-08-25,401857173,Diamond Miller,Connecticut Sun,Chicago Sky,pr_under,14.5,declining+cold,0.59,1.69,12.7,7.72
+2026-08-25,401857173,Diamond Miller,Connecticut Sun,Chicago Sky,pa_under,13.5,declining+cold,0.61,1.64,11.7,6.56
+2026-08-25,401857173,Diamond Miller,Connecticut Sun,Chicago Sky,pra_under,15.5,declining+cold,0.641,1.56,12.6,7.96
+2026-08-25,401857173,Sydney Taylor,Chicago Sky,Connecticut Sun,pts_under,15.5,declining+cold,0.684,1.46,11.6,8.2
+2026-08-25,401857173,Sydney Taylor,Chicago Sky,Connecticut Sun,pr_under,17.5,declining+cold,0.59,1.69,15.5,8.81
+2026-08-25,401857173,Sydney Taylor,Chicago Sky,Connecticut Sun,pa_under,18.5,declining+cold,0.61,1.64,16.2,8.27
+2026-08-25,401857173,Sydney Taylor,Chicago Sky,Connecticut Sun,pra_under,21.5,declining+cold,0.641,1.56,18.3,8.81
+2026-08-25,401857173,Azura Stevens,Chicago Sky,Connecticut Sun,pts_under,8.5,ftdrought,0.589,1.7,7.3,5.31
+2026-08-25,401857173,Kennedy Burke,Connecticut Sun,Chicago Sky,pts_under,10.5,steady,0.563,1.78,9.9,3.54
+2026-08-25,401857173,Kamilla Cardoso,Chicago Sky,Connecticut Sun,pts_under,14.5,steady,0.563,1.78,13.9,4.02
+2026-08-25,401857173,Natasha Cloud,Chicago Sky,Connecticut Sun,ast_over,6.5,usgshock,0.591,1.69,6.9,2.23
+2026-08-25,401857174,Bridget Carleton,Portland Fire,Dallas Wings,pts_under,16.5,steady,0.563,1.78,15.6,5.96
+2026-08-25,401857174,Alanna Smith,Dallas Wings,Portland Fire,pts_under,10.5,ftdrought,0.589,1.7,9.2,5.73
+2026-08-25,401857174,Megan DiLeo,Portland Fire,Dallas Wings,pts_under,14.5,steady,0.563,1.78,13.7,4.8
+2026-08-25,401857174,Emily Engstler,Portland Fire,Dallas Wings,pts_under,8.5,ftdrought,0.589,1.7,7.4,4.83
+2026-08-25,401857174,Paige Bueckers,Dallas Wings,Portland Fire,pts_under,21.5,steady,0.563,1.78,20.3,7.53
+2026-08-25,401857175,Kelsey Plum,Phoenix Mercury,Washington Mystics,pts_under,18.5,declining+stingy,0.642,1.56,14.6,10.69
+2026-08-25,401857175,Kelsey Plum,Phoenix Mercury,Washington Mystics,pr_under,21.5,declining+stingy,0.59,1.69,19.1,10.46
+2026-08-25,401857175,Kelsey Plum,Phoenix Mercury,Washington Mystics,pa_under,23.5,declining+cold+stingy,0.61,1.64,20.1,12.09
+2026-08-25,401857175,Kelsey Plum,Phoenix Mercury,Washington Mystics,pra_under,27.5,declining+cold+stingy,0.66,1.52,22.6,11.95
+2026-08-25,401857175,Kelsey Plum,Phoenix Mercury,Washington Mystics,ast_under,4.5,declining+cold,0.58,1.72,3.9,2.97
+2026-08-25,401857175,DeWanna Bonner,Phoenix Mercury,Washington Mystics,pts_under,11.5,steady,0.563,1.78,10.5,6.12
+2026-08-25,401857175,Alyssa Thomas,Phoenix Mercury,Washington Mystics,pts_under,16.5,steady,0.563,1.78,15.8,4.7
+2026-08-25,401857175,Kahleah Copper,Phoenix Mercury,Washington Mystics,pts_under,19.5,steady,0.563,1.78,18.3,7.78
+2026-08-25,401857175,Shakira Austin,Washington Mystics,Phoenix Mercury,pts_under,20.5,steady,0.563,1.78,19.5,6.46
+2026-08-25,401857175,Sonia Citron,Washington Mystics,Phoenix Mercury,pts_under,14.5,steady,0.563,1.78,14.0,3.34
+2026-08-25,401857175,Kiki Iriafen,Washington Mystics,Phoenix Mercury,pts_under,16.5,steady,0.563,1.78,15.7,5.23
+2026-08-25,401857176,Diamond Miller,Connecticut Sun,Golden State Valkyries,pts_under,11.5,declining+cold+stingy,0.7,1.43,8.1,6.42
+2026-08-25,401857176,Diamond Miller,Connecticut Sun,Golden State Valkyries,pr_under,14.5,declining+cold+stingy,0.59,1.69,12.7,7.72
+2026-08-25,401857176,Diamond Miller,Connecticut Sun,Golden State Valkyries,pa_under,13.5,declining+cold+stingy,0.61,1.64,11.7,6.56
+2026-08-25,401857176,Diamond Miller,Connecticut Sun,Golden State Valkyries,pra_under,15.5,declining+cold+stingy,0.66,1.52,12.2,7.96
+2026-08-25,401857176,Kennedy Burke,Connecticut Sun,Golden State Valkyries,pts_under,10.5,steady,0.563,1.78,9.9,3.54
+2026-08-25,401857176,Veronica Burton,Golden State Valkyries,Connecticut Sun,pts_under,13.5,steady,0.563,1.78,12.9,4.01
+2026-08-25,401857176,Janelle Salaun,Golden State Valkyries,Connecticut Sun,pts_under,11.5,steady,0.563,1.78,10.7,5.36
+2026-08-25,401857176,Tiffany Hayes,Golden State Valkyries,Connecticut Sun,ast_over,2.5,usgshock,0.591,1.69,2.9,1.5
+2026-08-25,401857177,Isabelle Harrison,Toronto Tempo,Seattle Storm,pra_over,17.5,hot+expand+leaky,0.62,1.61,21.0,11.55
+2026-08-25,401857177,Dominique Malonga,Seattle Storm,Toronto Tempo,pts_under,17.5,steady,0.563,1.78,16.5,6.55
+2026-08-25,401857177,Awa Fam,Seattle Storm,Toronto Tempo,pts_under,8.5,ftdrought,0.589,1.7,7.0,6.55

@@ -64,19 +64,7 @@ for g in load("data/games_2026.csv"):
         tips[g["home"]] = t; tips[g["away"]] = t
 if not tips:
     print("  shadow: no tips in window"); raise SystemExit
-# SLATE LABEL IS A PACIFIC DATE, NOT A UTC ONE (fixed 2026-08-25).
-# This used to be min(tips).strftime(...) on the raw UTC tip. That agrees with ESPN's slate
-# naming only while the night contains a game before midnight UTC. On 2026-08-24 the slate was
-# GS@MIN 00:00Z and ATL@LA 02:00Z - nothing earlier - so the label came out 2026-08-25 while
-# games_2026.csv dated those games 20260824. Every grader keys on the slate string, so Tiffany
-# Hayes' bet could never be matched to her own box score and sat unsettled forever, silently.
-# ESPN dates a slate by its Pacific calendar day; so do we now.
-try:
-    from zoneinfo import ZoneInfo
-    _SLATE_TZ = ZoneInfo("America/Los_Angeles")
-except Exception:
-    _SLATE_TZ = datetime.timezone(datetime.timedelta(hours=-7))   # PDT fallback (season is DST)
-slate = min(tips.values()).astimezone(_SLATE_TZ).strftime("%Y-%m-%d")
+slate = min(tips.values()).strftime("%Y-%m-%d")
 first_tip = min(tips.values())
 
 # ---- board, anchored to GAMES (same fix as model_card.py 2026-08-15) --------------------------

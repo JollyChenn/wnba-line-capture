@@ -11,7 +11,7 @@ slate,player,market,side,line,odds,src,prev_line,tip,result,actual,pnl,note
 20260816,Monique Billings,pts,Over,6.5,1.94,flip,9.5,2026-08-16T21:00Z,loss,3.0,-1.0,
 20260816,Kelsey Mitchell,pr,Over,26.5,1.87,overshoot,26.5,2026-08-16T21:00Z,loss,21.0,-1.0,
 20260816,Megan Dileo,pr,Over,18.5,1.91,overshoot,18.5,2026-08-16T23:00Z,WIN,20.0,0.91,
-20260818,Arike Ogunbowale,pr,Over,17.5,2.0,flip,19.5,2026-08-18T02:00Z,WIN,21.0,1.0,
+20260817,Arike Ogunbowale,pr,Over,17.5,2.0,flip,19.5,2026-08-18T02:00Z,WIN,21.0,1.0,
 20260818,Nalyssa Smith,pr,Over,17.5,1.833,overshoot,17.5,2026-08-19T01:00Z,loss,16.0,-1.0,
 20260818,Jackie Young,pr,Over,22.5,1.83,flip,23.5,2026-08-19T01:00Z,WIN,29.0,0.83,
 20260818,Angel Reese,pr,Over,28.5,1.8,overshoot,28.5,2026-08-19T01:00Z,WIN,31.0,0.8,
@@ -22,3 +22,4 @@ slate,player,market,side,line,odds,src,prev_line,tip,result,actual,pnl,note
 20260822,Rebecca Allen,pts,Over,8.5,2.05,overshoot,9.5,2026-08-22T23:00Z,WIN,9.0,1.05,
 20260823,Kelsey Mitchell,pra,Over,29.5,1.91,overshoot,30.5,2026-08-23T23:00Z,WIN,36.0,0.91,
 20260823,Kiki Iriafen,pra,Over,25.5,1.833,overshoot,25.5,2026-08-23T23:00Z,WIN,30.0,0.833,
+20260824,Tiffany Hayes,pra,Over,14.5,1.73,overshoot,14.5,2026-08-25T00:00Z,,,,pending
