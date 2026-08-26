@@ -22,4 +22,7 @@ slate,player,market,side,line,odds,src,prev_line,tip,result,actual,pnl,note
 20260822,Rebecca Allen,pts,Over,8.5,2.05,overshoot,9.5,2026-08-22T23:00Z,WIN,9.0,1.05,
 20260823,Kelsey Mitchell,pra,Over,29.5,1.91,overshoot,30.5,2026-08-23T23:00Z,WIN,36.0,0.91,
 20260823,Kiki Iriafen,pra,Over,25.5,1.833,overshoot,25.5,2026-08-23T23:00Z,WIN,30.0,0.833,
-20260824,Tiffany Hayes,pra,Over,14.5,1.73,overshoot,14.5,2026-08-25T00:00Z,,,,pending
+20260824,Tiffany Hayes,pra,Over,14.5,1.73,overshoot,14.5,2026-08-25T00:00Z,WIN,21.0,0.73,
+20260825,Sydney Taylor,pra,Over,16.5,1.83,flip,19.5,2026-08-25T23:00Z,loss,8.0,-1.0,
+20260825,Shakira Austin,pra,Over,30.5,2.0,overshoot,30.5,2026-08-26T02:00Z,loss,24.0,-1.0,
+20260825,Dewanna Bonner,pr,Over,17.5,1.73,overshoot,17.5,2026-08-26T02:00Z,void,,,DNP - stake returned
