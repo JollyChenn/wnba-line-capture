@@ -1640,10 +1640,10 @@ slate,config,player,market,side,line,odds,src,prev_line,mv,drift,gap,tip,logged_
 2026-08-25,OLD_MENU,Kelsey Plum,pr,Over,17.5,2.0,flip,16.5,1.0,0.0000,,2026-08-26T02:00Z,2026-08-26T01:56:19Z,,loss,10.0
 2026-08-25,OLD_MENU,Kiki Iriafen,pra,Over,25.5,1.73,overshoot,25.5,0.0,0.0000,,2026-08-26T02:00Z,2026-08-26T01:56:19Z,,WIN,29.0
 2026-08-25,OLD_MENU,Kelsey Plum,pa,Over,16.5,1.83,flip,17.5,-1.0,0.0167,,2026-08-26T02:00Z,2026-08-26T01:56:19Z,,loss,11.0
-2026-08-26,S_drift,Tiffany Hayes,pra,Over,17.5,1.83,overshoot,15.5,2.0,-0.0850,,2026-08-26T23:00Z,2026-08-26T11:39:36Z,,,
-2026-08-26,S_nostar,Tiffany Hayes,pra,Over,17.5,1.83,overshoot,15.5,2.0,-0.0850,,2026-08-26T23:00Z,2026-08-26T11:39:36Z,,,
-2026-08-26,S_raised,Tiffany Hayes,pra,Over,17.5,1.83,overshoot,15.5,2.0,-0.0850,,2026-08-26T23:00Z,2026-08-26T11:39:36Z,,,
-2026-08-26,OLD_MENU,Isabelle Harrison,pra,Over,24.5,1.909,cascade,24.5,0.0,0.0000,,2026-08-27T02:00Z,2026-08-26T11:39:36Z,,,
-2026-08-26,OLD_MENU,Laura Juskaite,pra,Over,20.5,1.952,cascade,19.5,1.0,0.0220,,2026-08-27T02:00Z,2026-08-26T11:39:36Z,,,
-2026-08-26,OLD_MENU,Kiki Rice,pra,Over,27.5,1.909,cascade,22.5,5.0,-0.0455,,2026-08-27T02:00Z,2026-08-26T11:39:36Z,,,
-2026-08-26,OLD_MENU,Tiffany Hayes,pra,Over,17.5,1.83,overshoot,15.5,2.0,-0.0850,,2026-08-26T23:00Z,2026-08-26T11:39:36Z,,,
+2026-08-26,S_drift,Tiffany Hayes,pra,Over,17.5,1.83,overshoot,15.5,2.0,-0.0850,,2026-08-26T23:00Z,2026-08-26T11:50:10Z,,,
+2026-08-26,S_nostar,Tiffany Hayes,pra,Over,17.5,1.83,overshoot,15.5,2.0,-0.0850,,2026-08-26T23:00Z,2026-08-26T11:50:10Z,,,
+2026-08-26,S_raised,Tiffany Hayes,pra,Over,17.5,1.83,overshoot,15.5,2.0,-0.0850,,2026-08-26T23:00Z,2026-08-26T11:50:10Z,,,
+2026-08-26,OLD_MENU,Isabelle Harrison,pra,Over,24.5,1.909,cascade,24.5,0.0,0.0000,,2026-08-27T02:00Z,2026-08-26T11:50:10Z,,,
+2026-08-26,OLD_MENU,Laura Juskaite,pra,Over,20.5,1.952,cascade,19.5,1.0,0.0220,,2026-08-27T02:00Z,2026-08-26T11:50:10Z,,,
+2026-08-26,OLD_MENU,Kiki Rice,pra,Over,27.5,1.909,cascade,22.5,5.0,-0.0455,,2026-08-27T02:00Z,2026-08-26T11:50:10Z,,,
+2026-08-26,OLD_MENU,Tiffany Hayes,pra,Over,17.5,1.83,overshoot,15.5,2.0,-0.0850,,2026-08-26T23:00Z,2026-08-26T11:50:10Z,,,

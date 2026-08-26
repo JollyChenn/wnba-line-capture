@@ -1,0 +1,94 @@
+[
+ {
+  "h": "game-total gradient (higher total -> better player overs)",
+  "tier": 0,
+  "cause": "alternate-line extraction bug: GM took an arbitrary rung of a 7-line ladder, median 1.5pts off main. Clean main line rho -0.0061, p=0.807",
+  "status": "RETRACTED"
+ },
+ {
+  "h": "opponent shade",
+  "tier": 0,
+  "cause": "unfiltered median poisoned by All-Star game; p 0.019 -> 0.398 once team-filtered",
+  "status": "RETRACTED"
+ },
+ {
+  "h": "garbage-time fade",
+  "tier": 0,
+  "cause": "MECHANISM FALSIFIED - padded players score MORE next game (+1.28 vs +0.05)"
+ },
+ {
+  "h": "props -> game totals",
+  "tier": 0,
+  "cause": "72.7% decomposes into a 60% always-over base rate plus an arbitrary scaling constant"
+ },
+ {
+  "h": "odds lean follow/fade",
+  "tier": 0,
+  "cause": "all four directions ~-7%: the book's prices are calibrated"
+ },
+ {
+  "h": "opponent/teammate prop spillover",
+  "tier": 0,
+  "cause": "no spillover clears the 7.5% margin"
+ },
+ {
+  "h": "second market same player",
+  "tier": 0,
+  "cause": "-1.7%; edge is on the number not the player"
+ },
+ {
+  "h": "fade the gate-3 rejects",
+  "tier": 0,
+  "cause": "-19.9% over but only +5.1% under: vig eats the anti-edge"
+ },
+ {
+  "h": "fade ftunder/newunder",
+  "tier": 0,
+  "cause": "real -13.3% loser but mirror is -1.6%, not +13.3%"
+ },
+ {
+  "h": "milestone lines 9.5/19.5",
+  "tier": 0,
+  "cause": "inverted - the book shades round-number overs up"
+ },
+ {
+  "h": "within-game timing (H1/Q4 share, quarter concentration)",
+  "tier": 0,
+  "cause": "concentration is 1/volume (rho -0.73); residualised on volatility every cell goes negative; H1/Q4 mechanisms falsified"
+ },
+ {
+  "h": "sharp-gap persistence / convergence",
+  "tier": 0,
+  "cause": "persistence runs backwards p=0.945; only 3 convergence cases exist"
+ },
+ {
+  "h": "injury-news latency",
+  "tier": 0,
+  "cause": "teammate overs at unmoved lines equal control exactly (-7.2%)"
+ },
+ {
+  "h": "engine tier/ev confidence layer",
+  "tier": 0,
+  "cause": "zero rank power: spearman -0.0001, CI [-0.063,+0.061]; overstates hit rate 11.2pp"
+ },
+ {
+  "h": "in-play momentum / mean reversion / pre-game anchor (G/H/I)",
+  "tier": 0,
+  "cause": "feed has only 130 real refreshes across 27 games on a 15-min cache; no information at 1-5 min horizons"
+ },
+ {
+  "h": "star-return fade / forgotten lines / slate size / book-vs-itself arithmetic",
+  "tier": 0,
+  "cause": "all inverted or flat"
+ },
+ {
+  "h": "C1 flip/hotover/overshoot SIGNAL layer",
+  "tier": 0,
+  "cause": "falsified on raw production: signal nights +0.191 sd vs +0.213 sd on same players' other gate-pass nights, p=0.87"
+ },
+ {
+  "h": "C4 volatility gradient as a BET",
+  "tier": 1,
+  "cause": "gradient real (-3.5% vs -11.6%) but BOTH sides lose - a skip-signal, not a bet"
+ }
+]

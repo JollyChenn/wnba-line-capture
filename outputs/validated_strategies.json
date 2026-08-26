@@ -1,0 +1,44 @@
+[
+ {
+  "id": "C2_sharp_gap",
+  "tier": 2,
+  "status": "PROMISING BUT UNCONFIRMED",
+  "market": "player props (1xbet), OVER side",
+  "rule": "bet OVER when Pinnacle line for same player-market is >=1.0 pt HIGHER than 1xbet, sharp line read <=6h to tip",
+  "n_signals": 45,
+  "n_independent_games": 32,
+  "n_players": 30,
+  "hit_pct": 64.4,
+  "roi_pct": 16.2,
+  "ci95_game_block": [
+   -11.2,
+   43.3
+  ],
+  "mean_odds": 1.808,
+  "breakeven_pct": 55.3,
+  "max_drawdown_u": -4.26,
+  "walk_forward": {
+   "fold1": 43.3,
+   "fold2": 29.4,
+   "fold3": -6.2
+  },
+  "slippage_roi": {
+   "0.00": 16.2,
+   "0.01": 15.6,
+   "0.02": 14.9,
+   "0.03": 14.3
+  },
+  "leave_one_player_out_worst": 15.9,
+  "ceiling_p95": 13.3,
+  "clears_ceiling": true,
+  "mechanism": "Pinnacle prop line is more accurate than 1xbet (MAE 5.003 vs 5.439); we arbitrage the soft book against the sharp one",
+  "blockers": [
+   "CI includes zero",
+   "most recent fold negative",
+   "fails multiple-testing over 100+ project hypotheses",
+   "no verified CLV",
+   "adversarial panel never ran (session limit)"
+  ],
+  "next_step": "widen Pinnacle prop capture to reb/ast; revisit at ~120 signals"
+ }
+]
