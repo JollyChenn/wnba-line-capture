@@ -12770,3 +12770,7 @@ logged_utc,date,player,market,side,line,src,open_odds,now_odds,move_pct,verdict,
 2026-08-26T02:11:44Z,2026-08-25,Isabelle Harrison,pra,Over,17.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,91,11.9,2026-08-26T02:11:40Z
 2026-08-26T02:11:44Z,2026-08-25,Laura Juskaite,pra,Over,20.5,cascade,2.0,1.83,-8.5,BET (money agrees),BET NOW 93%,,,,91,11.9,2026-08-26T02:11:40Z
 2026-08-26T02:11:44Z,2026-08-25,Kiki Rice,pra,Over,20.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,91,11.9,2026-08-26T02:11:40Z
+2026-08-26T02:42:37Z,2026-08-25,Dominique Malonga,pts,Under,20.5,newunder,1.769,1.769,0.0,BET (steady),ok 85%,,,,88,12.5,2026-08-26T02:42:33Z
+2026-08-26T02:42:37Z,2026-08-25,Isabelle Harrison,pra,Over,17.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,95,12.5,2026-08-26T02:42:33Z
+2026-08-26T02:42:37Z,2026-08-25,Laura Juskaite,pra,Over,20.5,cascade,2.0,1.91,-4.5,BET (money agrees),BET NOW 93%,,,,95,12.5,2026-08-26T02:42:33Z
+2026-08-26T02:42:37Z,2026-08-25,Kiki Rice,pra,Over,20.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,95,12.5,2026-08-26T02:42:33Z
