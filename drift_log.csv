@@ -12783,3 +12783,8 @@ logged_utc,date,player,market,side,line,src,open_odds,now_odds,move_pct,verdict,
 2026-08-26T03:46:28Z,2026-08-25,Laura Juskaite,pra,Over,20.5,cascade,2.0,1.83,-8.5,BET (money agrees),BET NOW 93%,,,,103,13.5,2026-08-26T03:46:22Z
 2026-08-26T03:46:28Z,2026-08-25,Kiki Rice,pra,Over,20.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,103,13.5,2026-08-26T03:46:22Z
 2026-08-26T03:46:28Z,2026-08-25,Tiffany Hayes,pra,Over,16.5,overshoot,1.8,1.8,0.0,BET (steady),ok 85%,,,,3,0.2,2026-08-26T03:46:22Z
+2026-08-26T04:18:35Z,2026-08-25,Dominique Malonga,pts,Under,19.5,newunder,1.91,1.883,-1.4,BET (money agrees),bet now 81%,20.5->19.5,,,11,9.5,2026-08-26T04:18:30Z
+2026-08-26T04:18:35Z,2026-08-25,Isabelle Harrison,pra,Over,17.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,107,14.1,2026-08-26T04:18:30Z
+2026-08-26T04:18:35Z,2026-08-25,Laura Juskaite,pra,Over,20.5,cascade,2.0,1.83,-8.5,BET (money agrees),BET NOW 93%,,,,107,14.1,2026-08-26T04:18:30Z
+2026-08-26T04:18:35Z,2026-08-25,Kiki Rice,pra,Over,20.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,107,14.1,2026-08-26T04:18:30Z
+2026-08-26T04:18:35Z,2026-08-25,Tiffany Hayes,pra,Over,16.5,overshoot,1.8,1.8,0.0,BET (steady),ok 85%,,,,7,0.8,2026-08-26T04:18:30Z
