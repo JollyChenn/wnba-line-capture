@@ -12449,3 +12449,659 @@ captured_utc,game_id,start,teams,type,points,p1,p2
 2026-08-26T06:10:17Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,spread,2.5,1.92,1.92
 2026-08-26T06:10:17Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),total,329.5,1.936,1.905
 2026-08-26T06:10:17Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),spread,1.5,1.888,1.953
+2026-08-26T06:20:30Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,moneyline,,6.96,1.113
+2026-08-26T06:20:30Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,total,151.5,1.93,1.91
+2026-08-26T06:20:30Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,spread,13.5,1.94,1.9
+2026-08-26T06:20:30Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),total,327.5,1.906,1.934
+2026-08-26T06:20:30Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),spread,8.5,1.932,1.908
+2026-08-26T06:20:30Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,moneyline,,1.448,2.848
+2026-08-26T06:20:30Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,total,176.5,1.93,1.91
+2026-08-26T06:20:30Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,spread,-5.5,1.91,1.93
+2026-08-26T06:20:30Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,moneyline,,1.823,2.027
+2026-08-26T06:20:30Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,total,163.5,1.92,1.92
+2026-08-26T06:20:30Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,spread,-1.5,1.92,1.92
+2026-08-26T06:20:30Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,moneyline,,2.163,1.726
+2026-08-26T06:20:30Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,total,167.5,1.92,1.92
+2026-08-26T06:20:30Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,spread,2.5,1.92,1.92
+2026-08-26T06:20:30Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),total,329.5,1.936,1.905
+2026-08-26T06:20:30Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),spread,1.5,1.888,1.953
+2026-08-26T06:23:39Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,moneyline,,6.96,1.113
+2026-08-26T06:23:39Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,total,151.5,1.93,1.91
+2026-08-26T06:23:39Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,spread,13.5,1.94,1.9
+2026-08-26T06:23:39Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),total,327.5,1.906,1.934
+2026-08-26T06:23:39Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),spread,8.5,1.932,1.908
+2026-08-26T06:23:39Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,moneyline,,1.448,2.848
+2026-08-26T06:23:39Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,total,176.5,1.93,1.91
+2026-08-26T06:23:39Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,spread,-5.5,1.91,1.93
+2026-08-26T06:23:39Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,moneyline,,1.823,2.027
+2026-08-26T06:23:39Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,total,163.5,1.92,1.92
+2026-08-26T06:23:39Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,spread,-1.5,1.92,1.92
+2026-08-26T06:23:39Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,moneyline,,2.163,1.726
+2026-08-26T06:23:39Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,total,167.5,1.92,1.92
+2026-08-26T06:23:39Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,spread,2.5,1.92,1.92
+2026-08-26T06:23:39Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),total,329.5,1.936,1.905
+2026-08-26T06:23:39Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),spread,1.5,1.888,1.953
+2026-08-26T06:32:19Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,moneyline,,6.96,1.113
+2026-08-26T06:32:19Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,total,151.5,1.93,1.91
+2026-08-26T06:32:19Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,spread,13.5,1.94,1.9
+2026-08-26T06:32:19Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),total,327.5,1.906,1.934
+2026-08-26T06:32:19Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),spread,8.5,1.932,1.908
+2026-08-26T06:32:19Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,moneyline,,1.448,2.848
+2026-08-26T06:32:19Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,total,176.5,1.93,1.91
+2026-08-26T06:32:19Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,spread,-5.5,1.91,1.93
+2026-08-26T06:32:19Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,moneyline,,1.823,2.027
+2026-08-26T06:32:19Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,total,163.5,1.92,1.92
+2026-08-26T06:32:19Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,spread,-1.5,1.92,1.92
+2026-08-26T06:32:19Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,moneyline,,2.163,1.726
+2026-08-26T06:32:19Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,total,167.5,1.92,1.92
+2026-08-26T06:32:19Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,spread,2.5,1.92,1.92
+2026-08-26T06:32:19Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),total,329.5,1.936,1.905
+2026-08-26T06:32:19Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),spread,1.5,1.888,1.953
+2026-08-26T06:42:30Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,moneyline,,6.96,1.113
+2026-08-26T06:42:30Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,total,151.5,1.93,1.91
+2026-08-26T06:42:30Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,spread,13.5,1.94,1.9
+2026-08-26T06:42:30Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),total,327.5,1.906,1.934
+2026-08-26T06:42:30Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),spread,8.5,1.932,1.908
+2026-08-26T06:42:30Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,moneyline,,1.448,2.848
+2026-08-26T06:42:30Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,total,176.5,1.93,1.91
+2026-08-26T06:42:30Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,spread,-5.5,1.91,1.93
+2026-08-26T06:42:30Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,moneyline,,1.823,2.027
+2026-08-26T06:42:30Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,total,163.5,1.92,1.92
+2026-08-26T06:42:30Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,spread,-1.5,1.92,1.92
+2026-08-26T06:42:30Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,moneyline,,2.163,1.726
+2026-08-26T06:42:30Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,total,167.5,1.92,1.92
+2026-08-26T06:42:30Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,spread,2.5,1.92,1.92
+2026-08-26T06:42:30Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),total,329.5,1.936,1.905
+2026-08-26T06:42:30Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),spread,1.5,1.888,1.953
+2026-08-26T06:52:34Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,moneyline,,6.96,1.113
+2026-08-26T06:52:34Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,total,151.5,1.93,1.91
+2026-08-26T06:52:34Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,spread,13.5,1.94,1.9
+2026-08-26T06:52:34Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),total,326.5,1.889,1.952
+2026-08-26T06:52:34Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),spread,8.5,1.924,1.916
+2026-08-26T06:52:34Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,moneyline,,1.443,2.867
+2026-08-26T06:52:34Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,total,175.5,1.92,1.92
+2026-08-26T06:52:34Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,spread,-5.5,1.9,1.94
+2026-08-26T06:52:34Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,moneyline,,1.823,2.027
+2026-08-26T06:52:34Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,total,163.5,1.92,1.92
+2026-08-26T06:52:34Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,spread,-1.5,1.92,1.92
+2026-08-26T06:52:34Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,moneyline,,2.163,1.726
+2026-08-26T06:52:34Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,total,167.5,1.92,1.92
+2026-08-26T06:52:34Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,spread,2.5,1.92,1.92
+2026-08-26T06:52:34Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),total,329.5,1.936,1.905
+2026-08-26T06:52:34Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),spread,1.5,1.888,1.953
+2026-08-26T06:55:42Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,moneyline,,6.96,1.113
+2026-08-26T06:55:42Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,total,151.5,1.93,1.91
+2026-08-26T06:55:42Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,spread,13.5,1.94,1.9
+2026-08-26T06:55:42Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),total,326.5,1.889,1.952
+2026-08-26T06:55:42Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),spread,8.5,1.924,1.916
+2026-08-26T06:55:42Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,moneyline,,1.443,2.867
+2026-08-26T06:55:42Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,total,175.5,1.92,1.92
+2026-08-26T06:55:42Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,spread,-5.5,1.9,1.94
+2026-08-26T06:55:42Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,moneyline,,1.823,2.027
+2026-08-26T06:55:42Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,total,163.5,1.92,1.92
+2026-08-26T06:55:42Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,spread,-1.5,1.92,1.92
+2026-08-26T06:55:42Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,moneyline,,2.163,1.726
+2026-08-26T06:55:42Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,total,167.5,1.92,1.92
+2026-08-26T06:55:42Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,spread,2.5,1.92,1.92
+2026-08-26T06:55:42Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),total,329.5,1.936,1.905
+2026-08-26T06:55:42Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),spread,1.5,1.888,1.953
+2026-08-26T07:06:05Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,moneyline,,6.96,1.113
+2026-08-26T07:06:05Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,total,151.5,1.93,1.91
+2026-08-26T07:06:05Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,spread,13.5,1.94,1.9
+2026-08-26T07:06:05Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),total,326.5,1.889,1.952
+2026-08-26T07:06:05Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),spread,8.5,1.924,1.916
+2026-08-26T07:06:05Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,moneyline,,1.443,2.867
+2026-08-26T07:06:05Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,total,175.5,1.92,1.92
+2026-08-26T07:06:05Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,spread,-5.5,1.9,1.94
+2026-08-26T07:06:05Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,moneyline,,1.823,2.027
+2026-08-26T07:06:05Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,total,163.5,1.92,1.92
+2026-08-26T07:06:05Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,spread,-1.5,1.92,1.92
+2026-08-26T07:06:05Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,moneyline,,2.163,1.726
+2026-08-26T07:06:05Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,total,167.5,1.92,1.92
+2026-08-26T07:06:05Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,spread,2.5,1.92,1.92
+2026-08-26T07:06:05Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),total,329.5,1.936,1.905
+2026-08-26T07:06:05Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),spread,1.5,1.888,1.953
+2026-08-26T07:16:28Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,moneyline,,6.96,1.113
+2026-08-26T07:16:28Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,total,151.5,1.93,1.91
+2026-08-26T07:16:28Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,spread,13.5,1.94,1.9
+2026-08-26T07:16:28Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),total,326.5,1.889,1.952
+2026-08-26T07:16:28Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),spread,8.5,1.924,1.916
+2026-08-26T07:16:28Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,moneyline,,1.443,2.867
+2026-08-26T07:16:28Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,total,175.5,1.92,1.92
+2026-08-26T07:16:28Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,spread,-5.5,1.9,1.94
+2026-08-26T07:16:28Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,moneyline,,1.823,2.027
+2026-08-26T07:16:28Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,total,163.5,1.92,1.92
+2026-08-26T07:16:28Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,spread,-1.5,1.92,1.92
+2026-08-26T07:16:28Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,moneyline,,2.163,1.726
+2026-08-26T07:16:28Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,total,167.5,1.92,1.92
+2026-08-26T07:16:28Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,spread,2.5,1.92,1.92
+2026-08-26T07:16:28Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),total,329.5,1.936,1.905
+2026-08-26T07:16:28Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),spread,1.5,1.888,1.953
+2026-08-26T07:22:22Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,moneyline,,6.96,1.113
+2026-08-26T07:22:22Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,total,151.5,1.93,1.91
+2026-08-26T07:22:22Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,spread,13.5,1.94,1.9
+2026-08-26T07:22:22Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),total,326.5,1.889,1.952
+2026-08-26T07:22:22Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),spread,8.5,1.924,1.916
+2026-08-26T07:22:22Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,moneyline,,1.443,2.867
+2026-08-26T07:22:22Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,total,175.5,1.92,1.92
+2026-08-26T07:22:22Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,spread,-5.5,1.9,1.94
+2026-08-26T07:22:22Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,moneyline,,1.823,2.027
+2026-08-26T07:22:22Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,total,163.5,1.92,1.92
+2026-08-26T07:22:22Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,spread,-1.5,1.92,1.92
+2026-08-26T07:22:22Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,moneyline,,2.163,1.726
+2026-08-26T07:22:22Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,total,167.5,1.92,1.92
+2026-08-26T07:22:22Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,spread,2.5,1.92,1.92
+2026-08-26T07:22:22Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),total,329.5,1.936,1.905
+2026-08-26T07:22:22Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),spread,1.5,1.888,1.953
+2026-08-26T07:26:46Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,moneyline,,6.96,1.113
+2026-08-26T07:26:46Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,total,151.5,1.93,1.91
+2026-08-26T07:26:46Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,spread,13.5,1.94,1.9
+2026-08-26T07:26:46Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),total,326.5,1.889,1.952
+2026-08-26T07:26:46Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),spread,8.5,1.924,1.916
+2026-08-26T07:26:46Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,moneyline,,1.443,2.867
+2026-08-26T07:26:46Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,total,175.5,1.92,1.92
+2026-08-26T07:26:46Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,spread,-5.5,1.9,1.94
+2026-08-26T07:26:46Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,moneyline,,1.823,2.027
+2026-08-26T07:26:46Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,total,163.5,1.92,1.92
+2026-08-26T07:26:46Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,spread,-1.5,1.92,1.92
+2026-08-26T07:26:46Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,moneyline,,2.163,1.726
+2026-08-26T07:26:46Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,total,167.5,1.92,1.92
+2026-08-26T07:26:46Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,spread,2.5,1.92,1.92
+2026-08-26T07:26:46Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),total,329.5,1.936,1.905
+2026-08-26T07:26:46Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),spread,1.5,1.888,1.953
+2026-08-26T07:37:00Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,moneyline,,6.96,1.113
+2026-08-26T07:37:00Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,total,151.5,1.93,1.91
+2026-08-26T07:37:00Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,spread,13.5,1.94,1.9
+2026-08-26T07:37:00Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),total,326.5,1.889,1.952
+2026-08-26T07:37:00Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),spread,8.5,1.924,1.916
+2026-08-26T07:37:00Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,moneyline,,1.443,2.867
+2026-08-26T07:37:00Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,total,175.5,1.92,1.92
+2026-08-26T07:37:00Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,spread,-5.5,1.9,1.94
+2026-08-26T07:37:00Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,moneyline,,1.823,2.027
+2026-08-26T07:37:00Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,total,163.5,1.92,1.92
+2026-08-26T07:37:00Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,spread,-1.5,1.92,1.92
+2026-08-26T07:37:00Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,moneyline,,2.163,1.726
+2026-08-26T07:37:00Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,total,167.5,1.92,1.92
+2026-08-26T07:37:00Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,spread,2.5,1.92,1.92
+2026-08-26T07:37:00Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),total,329.5,1.936,1.905
+2026-08-26T07:37:00Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),spread,1.5,1.888,1.953
+2026-08-26T07:47:16Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,moneyline,,6.96,1.113
+2026-08-26T07:47:16Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,total,151.5,1.93,1.91
+2026-08-26T07:47:16Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,spread,13.5,1.94,1.9
+2026-08-26T07:47:16Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),total,326.5,1.889,1.952
+2026-08-26T07:47:16Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),spread,8.5,1.924,1.916
+2026-08-26T07:47:16Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,moneyline,,1.443,2.867
+2026-08-26T07:47:16Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,total,175.5,1.92,1.92
+2026-08-26T07:47:16Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,spread,-5.5,1.9,1.94
+2026-08-26T07:47:16Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,moneyline,,1.823,2.027
+2026-08-26T07:47:16Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,total,163.5,1.92,1.92
+2026-08-26T07:47:16Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,spread,-1.5,1.92,1.92
+2026-08-26T07:47:16Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,moneyline,,2.163,1.726
+2026-08-26T07:47:16Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,total,167.5,1.92,1.92
+2026-08-26T07:47:16Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,spread,2.5,1.92,1.92
+2026-08-26T07:47:16Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),total,329.5,1.936,1.905
+2026-08-26T07:47:16Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),spread,1.5,1.888,1.953
+2026-08-26T07:56:50Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,moneyline,,6.96,1.113
+2026-08-26T07:56:50Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,total,151.5,1.93,1.91
+2026-08-26T07:56:50Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,spread,13.5,1.94,1.9
+2026-08-26T07:56:50Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),total,326.5,1.889,1.952
+2026-08-26T07:56:50Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),spread,8.5,1.924,1.916
+2026-08-26T07:56:50Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,moneyline,,1.443,2.867
+2026-08-26T07:56:50Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,total,175.5,1.92,1.92
+2026-08-26T07:56:50Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,spread,-5.5,1.9,1.94
+2026-08-26T07:56:50Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,moneyline,,1.823,2.027
+2026-08-26T07:56:50Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,total,163.5,1.92,1.92
+2026-08-26T07:56:50Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,spread,-1.5,1.92,1.92
+2026-08-26T07:56:50Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,moneyline,,2.163,1.726
+2026-08-26T07:56:50Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,total,167.5,1.92,1.92
+2026-08-26T07:56:50Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,spread,2.5,1.92,1.92
+2026-08-26T07:56:50Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),total,329.5,1.936,1.905
+2026-08-26T07:56:50Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),spread,1.5,1.888,1.953
+2026-08-26T07:59:43Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,moneyline,,6.96,1.113
+2026-08-26T07:59:43Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,total,151.5,1.93,1.91
+2026-08-26T07:59:43Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,spread,13.5,1.94,1.9
+2026-08-26T07:59:43Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),total,326.5,1.889,1.952
+2026-08-26T07:59:43Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),spread,8.5,1.924,1.916
+2026-08-26T07:59:43Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,moneyline,,1.443,2.867
+2026-08-26T07:59:43Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,total,175.5,1.92,1.92
+2026-08-26T07:59:43Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,spread,-5.5,1.9,1.94
+2026-08-26T07:59:43Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,moneyline,,1.823,2.027
+2026-08-26T07:59:43Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,total,163.5,1.92,1.92
+2026-08-26T07:59:43Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,spread,-1.5,1.92,1.92
+2026-08-26T07:59:43Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,moneyline,,2.163,1.726
+2026-08-26T07:59:43Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,total,167.5,1.92,1.92
+2026-08-26T07:59:43Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,spread,2.5,1.92,1.92
+2026-08-26T07:59:43Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),total,329.5,1.936,1.905
+2026-08-26T07:59:43Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),spread,1.5,1.888,1.953
+2026-08-26T08:09:59Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,moneyline,,6.96,1.113
+2026-08-26T08:09:59Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,total,151.5,1.93,1.91
+2026-08-26T08:09:59Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,spread,13.5,1.94,1.9
+2026-08-26T08:09:59Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),total,326.5,1.889,1.952
+2026-08-26T08:09:59Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),spread,8.5,1.924,1.916
+2026-08-26T08:09:59Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,moneyline,,1.443,2.867
+2026-08-26T08:09:59Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,total,175.5,1.92,1.92
+2026-08-26T08:09:59Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,spread,-5.5,1.9,1.94
+2026-08-26T08:09:59Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,moneyline,,1.823,2.027
+2026-08-26T08:09:59Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,total,163.5,1.92,1.92
+2026-08-26T08:09:59Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,spread,-1.5,1.92,1.92
+2026-08-26T08:09:59Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,moneyline,,2.163,1.726
+2026-08-26T08:09:59Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,total,167.5,1.92,1.92
+2026-08-26T08:09:59Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,spread,2.5,1.92,1.92
+2026-08-26T08:09:59Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),total,329.5,1.936,1.905
+2026-08-26T08:09:59Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),spread,1.5,1.888,1.953
+2026-08-26T08:20:21Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,moneyline,,6.96,1.113
+2026-08-26T08:20:21Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,total,151.5,1.93,1.91
+2026-08-26T08:20:21Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,spread,13.5,1.94,1.9
+2026-08-26T08:20:21Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),total,326.5,1.889,1.952
+2026-08-26T08:20:21Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),spread,8.5,1.924,1.916
+2026-08-26T08:20:21Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,moneyline,,1.443,2.867
+2026-08-26T08:20:21Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,total,175.5,1.92,1.92
+2026-08-26T08:20:21Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,spread,-5.5,1.9,1.94
+2026-08-26T08:20:21Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,moneyline,,1.823,2.027
+2026-08-26T08:20:21Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,total,163.5,1.92,1.92
+2026-08-26T08:20:21Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,spread,-1.5,1.92,1.92
+2026-08-26T08:20:21Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,moneyline,,2.163,1.726
+2026-08-26T08:20:21Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,total,167.5,1.92,1.92
+2026-08-26T08:20:21Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,spread,2.5,1.92,1.92
+2026-08-26T08:20:21Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),total,329.5,1.936,1.905
+2026-08-26T08:20:21Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),spread,1.5,1.888,1.953
+2026-08-26T08:26:51Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,moneyline,,6.96,1.113
+2026-08-26T08:26:51Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,total,151.5,1.93,1.91
+2026-08-26T08:26:51Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,spread,13.5,1.94,1.9
+2026-08-26T08:26:51Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),total,326.5,1.889,1.952
+2026-08-26T08:26:51Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),spread,8.5,1.924,1.916
+2026-08-26T08:26:51Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,moneyline,,1.443,2.867
+2026-08-26T08:26:51Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,total,175.5,1.92,1.92
+2026-08-26T08:26:51Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,spread,-5.5,1.9,1.94
+2026-08-26T08:26:51Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,moneyline,,1.823,2.027
+2026-08-26T08:26:51Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,total,163.5,1.92,1.92
+2026-08-26T08:26:51Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,spread,-1.5,1.92,1.92
+2026-08-26T08:26:51Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,moneyline,,2.163,1.726
+2026-08-26T08:26:51Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,total,167.5,1.92,1.92
+2026-08-26T08:26:51Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,spread,2.5,1.92,1.92
+2026-08-26T08:26:51Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),total,329.5,1.936,1.905
+2026-08-26T08:26:51Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),spread,1.5,1.888,1.953
+2026-08-26T08:33:48Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,moneyline,,6.96,1.113
+2026-08-26T08:33:48Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,total,151.5,1.93,1.91
+2026-08-26T08:33:48Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,spread,13.5,1.94,1.9
+2026-08-26T08:33:48Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),total,326.5,1.889,1.952
+2026-08-26T08:33:48Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),spread,8.5,1.924,1.916
+2026-08-26T08:33:48Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,moneyline,,1.443,2.867
+2026-08-26T08:33:48Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,total,175.5,1.92,1.92
+2026-08-26T08:33:48Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,spread,-5.5,1.9,1.94
+2026-08-26T08:33:48Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,moneyline,,1.823,2.027
+2026-08-26T08:33:48Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,total,163.5,1.92,1.92
+2026-08-26T08:33:48Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,spread,-1.5,1.92,1.92
+2026-08-26T08:33:48Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,moneyline,,2.163,1.726
+2026-08-26T08:33:48Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,total,167.5,1.92,1.92
+2026-08-26T08:33:48Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,spread,2.5,1.92,1.92
+2026-08-26T08:33:48Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),total,329.5,1.936,1.905
+2026-08-26T08:33:48Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),spread,1.5,1.888,1.953
+2026-08-26T08:44:22Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,moneyline,,6.96,1.113
+2026-08-26T08:44:22Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,total,151.5,1.93,1.91
+2026-08-26T08:44:22Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,spread,13.5,1.94,1.9
+2026-08-26T08:44:22Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),total,326.5,1.889,1.952
+2026-08-26T08:44:22Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),spread,8.5,1.924,1.916
+2026-08-26T08:44:22Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,moneyline,,1.443,2.867
+2026-08-26T08:44:22Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,total,175.5,1.92,1.92
+2026-08-26T08:44:22Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,spread,-5.5,1.9,1.94
+2026-08-26T08:44:22Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,moneyline,,1.823,2.027
+2026-08-26T08:44:22Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,total,163.5,1.92,1.92
+2026-08-26T08:44:22Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,spread,-1.5,1.92,1.92
+2026-08-26T08:44:22Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,moneyline,,2.163,1.726
+2026-08-26T08:44:22Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,total,167.5,1.92,1.92
+2026-08-26T08:44:22Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,spread,2.5,1.92,1.92
+2026-08-26T08:44:22Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),total,329.5,1.936,1.905
+2026-08-26T08:44:22Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),spread,1.5,1.888,1.953
+2026-08-26T08:54:45Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,moneyline,,6.96,1.113
+2026-08-26T08:54:45Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,total,151.5,1.93,1.91
+2026-08-26T08:54:45Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,spread,13.5,1.94,1.9
+2026-08-26T08:54:45Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),total,326.5,1.889,1.952
+2026-08-26T08:54:45Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),spread,8.5,1.924,1.916
+2026-08-26T08:54:45Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,moneyline,,1.443,2.867
+2026-08-26T08:54:45Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,total,175.5,1.92,1.92
+2026-08-26T08:54:45Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,spread,-5.5,1.9,1.94
+2026-08-26T08:54:45Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,moneyline,,1.823,2.027
+2026-08-26T08:54:45Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,total,163.5,1.92,1.92
+2026-08-26T08:54:45Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,spread,-1.5,1.92,1.92
+2026-08-26T08:54:45Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,moneyline,,2.163,1.726
+2026-08-26T08:54:45Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,total,167.5,1.92,1.92
+2026-08-26T08:54:45Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,spread,2.5,1.92,1.92
+2026-08-26T08:54:45Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),total,329.5,1.936,1.905
+2026-08-26T08:54:45Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),spread,1.5,1.888,1.953
+2026-08-26T09:00:08Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,moneyline,,6.96,1.113
+2026-08-26T09:00:08Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,total,151.5,1.93,1.91
+2026-08-26T09:00:08Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,spread,13.5,1.94,1.9
+2026-08-26T09:00:08Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),total,326.5,1.889,1.952
+2026-08-26T09:00:08Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),spread,8.5,1.924,1.916
+2026-08-26T09:00:08Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,moneyline,,1.443,2.867
+2026-08-26T09:00:08Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,total,175.5,1.92,1.92
+2026-08-26T09:00:08Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,spread,-5.5,1.9,1.94
+2026-08-26T09:00:08Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,moneyline,,1.823,2.027
+2026-08-26T09:00:08Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,total,163.5,1.92,1.92
+2026-08-26T09:00:08Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,spread,-1.5,1.92,1.92
+2026-08-26T09:00:08Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,moneyline,,2.163,1.726
+2026-08-26T09:00:08Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,total,167.5,1.92,1.92
+2026-08-26T09:00:08Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,spread,2.5,1.92,1.92
+2026-08-26T09:00:08Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),total,329.5,1.936,1.905
+2026-08-26T09:00:08Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),spread,1.5,1.888,1.953
+2026-08-26T09:05:30Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,moneyline,,6.96,1.113
+2026-08-26T09:05:30Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,total,151.5,1.93,1.91
+2026-08-26T09:05:30Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,spread,13.5,1.94,1.9
+2026-08-26T09:05:30Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),total,326.5,1.889,1.952
+2026-08-26T09:05:30Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),spread,8.5,1.924,1.916
+2026-08-26T09:05:30Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,moneyline,,1.443,2.867
+2026-08-26T09:05:30Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,total,175.5,1.92,1.92
+2026-08-26T09:05:30Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,spread,-5.5,1.9,1.94
+2026-08-26T09:05:30Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,moneyline,,1.823,2.027
+2026-08-26T09:05:30Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,total,163.5,1.92,1.92
+2026-08-26T09:05:30Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,spread,-1.5,1.92,1.92
+2026-08-26T09:05:30Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,moneyline,,2.163,1.726
+2026-08-26T09:05:30Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,total,167.5,1.92,1.92
+2026-08-26T09:05:30Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,spread,2.5,1.92,1.92
+2026-08-26T09:05:30Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),total,329.5,1.936,1.905
+2026-08-26T09:05:30Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),spread,1.5,1.888,1.953
+2026-08-26T09:16:08Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,moneyline,,6.96,1.113
+2026-08-26T09:16:08Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,total,151.5,1.93,1.91
+2026-08-26T09:16:08Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,spread,13.5,1.94,1.9
+2026-08-26T09:16:08Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),total,326.5,1.888,1.953
+2026-08-26T09:16:08Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),spread,7.5,1.956,1.885
+2026-08-26T09:16:08Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,moneyline,,1.433,2.907
+2026-08-26T09:16:08Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,total,175.5,1.92,1.92
+2026-08-26T09:16:08Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,spread,-5.5,1.88,1.961
+2026-08-26T09:16:08Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,moneyline,,1.823,2.027
+2026-08-26T09:16:08Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,total,163.5,1.92,1.92
+2026-08-26T09:16:08Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,spread,-1.5,1.92,1.92
+2026-08-26T09:16:08Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,moneyline,,2.163,1.726
+2026-08-26T09:16:08Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,total,167.5,1.92,1.92
+2026-08-26T09:16:08Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,spread,2.5,1.92,1.92
+2026-08-26T09:16:08Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),total,329.5,1.936,1.905
+2026-08-26T09:16:08Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),spread,1.5,1.888,1.953
+2026-08-26T09:26:39Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,moneyline,,6.61,1.123
+2026-08-26T09:26:39Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,total,151.5,1.93,1.91
+2026-08-26T09:26:39Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,spread,13.5,1.9,1.94
+2026-08-26T09:26:39Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),total,326.5,1.892,1.948
+2026-08-26T09:26:39Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),spread,7.5,1.912,1.928
+2026-08-26T09:26:39Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,moneyline,,1.433,2.907
+2026-08-26T09:26:39Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,total,175.5,1.92,1.92
+2026-08-26T09:26:39Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,spread,-5.5,1.88,1.961
+2026-08-26T09:26:39Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,moneyline,,1.823,2.027
+2026-08-26T09:26:39Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,total,163.5,1.92,1.92
+2026-08-26T09:26:39Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,spread,-1.5,1.92,1.92
+2026-08-26T09:26:39Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,moneyline,,2.163,1.726
+2026-08-26T09:26:39Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,total,167.5,1.92,1.92
+2026-08-26T09:26:39Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,spread,2.5,1.92,1.92
+2026-08-26T09:26:39Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),total,329.5,1.936,1.905
+2026-08-26T09:26:39Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),spread,1.5,1.888,1.953
+2026-08-26T09:31:56Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,moneyline,,6.61,1.123
+2026-08-26T09:31:56Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,total,151.5,1.93,1.91
+2026-08-26T09:31:56Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,spread,13.5,1.9,1.94
+2026-08-26T09:31:56Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),total,326.5,1.892,1.948
+2026-08-26T09:31:56Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),spread,7.5,1.912,1.928
+2026-08-26T09:31:56Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,moneyline,,1.433,2.907
+2026-08-26T09:31:56Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,total,175.5,1.92,1.92
+2026-08-26T09:31:56Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,spread,-5.5,1.88,1.961
+2026-08-26T09:31:56Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,moneyline,,1.823,2.027
+2026-08-26T09:31:56Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,total,163.5,1.92,1.92
+2026-08-26T09:31:56Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,spread,-1.5,1.92,1.92
+2026-08-26T09:31:56Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,moneyline,,2.163,1.726
+2026-08-26T09:31:56Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,total,167.5,1.92,1.92
+2026-08-26T09:31:56Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,spread,2.5,1.92,1.92
+2026-08-26T09:31:56Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),total,329.5,1.936,1.905
+2026-08-26T09:31:56Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),spread,1.5,1.888,1.953
+2026-08-26T09:37:01Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,moneyline,,6.61,1.123
+2026-08-26T09:37:01Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,total,151.5,1.93,1.91
+2026-08-26T09:37:01Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,spread,13.5,1.9,1.94
+2026-08-26T09:37:01Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),total,326.5,1.892,1.948
+2026-08-26T09:37:01Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),spread,7.5,1.912,1.928
+2026-08-26T09:37:01Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,moneyline,,1.433,2.907
+2026-08-26T09:37:01Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,total,175.5,1.92,1.92
+2026-08-26T09:37:01Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,spread,-5.5,1.88,1.961
+2026-08-26T09:37:01Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,moneyline,,1.823,2.027
+2026-08-26T09:37:01Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,total,163.5,1.92,1.92
+2026-08-26T09:37:01Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,spread,-1.5,1.92,1.92
+2026-08-26T09:37:01Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,moneyline,,2.163,1.726
+2026-08-26T09:37:01Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,total,167.5,1.92,1.92
+2026-08-26T09:37:01Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,spread,2.5,1.92,1.92
+2026-08-26T09:37:01Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),total,329.5,1.936,1.905
+2026-08-26T09:37:01Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),spread,1.5,1.888,1.953
+2026-08-26T09:47:51Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,moneyline,,6.61,1.123
+2026-08-26T09:47:51Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,total,151.5,1.93,1.91
+2026-08-26T09:47:51Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,spread,13.5,1.9,1.94
+2026-08-26T09:47:51Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),total,326.5,1.893,1.948
+2026-08-26T09:47:51Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),spread,7.5,1.952,1.889
+2026-08-26T09:47:51Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,moneyline,,1.443,2.867
+2026-08-26T09:47:51Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,total,175.5,1.92,1.92
+2026-08-26T09:47:51Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,spread,-5.5,1.9,1.94
+2026-08-26T09:47:51Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,moneyline,,1.823,2.027
+2026-08-26T09:47:51Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,total,162.5,1.89,1.951
+2026-08-26T09:47:51Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,spread,-1.5,1.92,1.92
+2026-08-26T09:47:51Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,moneyline,,2.163,1.726
+2026-08-26T09:47:51Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,total,167.5,1.92,1.92
+2026-08-26T09:47:51Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,spread,2.5,1.92,1.92
+2026-08-26T09:47:51Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),total,329.5,1.936,1.905
+2026-08-26T09:47:51Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),spread,1.5,1.888,1.953
+2026-08-26T09:58:12Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,moneyline,,6.61,1.123
+2026-08-26T09:58:12Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,total,151.5,1.93,1.91
+2026-08-26T09:58:12Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,spread,13.5,1.9,1.94
+2026-08-26T09:58:12Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),total,326.5,1.929,1.911
+2026-08-26T09:58:12Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),spread,8.5,1.89,1.951
+2026-08-26T09:58:12Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,moneyline,,1.443,2.867
+2026-08-26T09:58:12Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,total,174.5,1.89,1.951
+2026-08-26T09:58:12Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,spread,-5.5,1.91,1.93
+2026-08-26T09:58:12Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,moneyline,,1.823,2.027
+2026-08-26T09:58:12Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,total,163.5,1.92,1.92
+2026-08-26T09:58:12Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,spread,-1.5,1.92,1.92
+2026-08-26T09:58:12Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,moneyline,,2.163,1.726
+2026-08-26T09:58:12Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,total,167.5,1.92,1.92
+2026-08-26T09:58:12Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,spread,2.5,1.92,1.92
+2026-08-26T09:58:12Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),total,329.5,1.936,1.905
+2026-08-26T09:58:12Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),spread,1.5,1.888,1.953
+2026-08-26T10:02:26Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,moneyline,,6.61,1.123
+2026-08-26T10:02:26Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,total,151.5,1.93,1.91
+2026-08-26T10:02:26Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,spread,13.5,1.9,1.94
+2026-08-26T10:02:26Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),total,326.5,1.929,1.911
+2026-08-26T10:02:26Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),spread,8.5,1.89,1.951
+2026-08-26T10:02:26Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,moneyline,,1.443,2.867
+2026-08-26T10:02:26Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,total,174.5,1.89,1.951
+2026-08-26T10:02:26Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,spread,-5.5,1.91,1.93
+2026-08-26T10:02:26Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,moneyline,,1.823,2.027
+2026-08-26T10:02:26Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,total,163.5,1.92,1.92
+2026-08-26T10:02:26Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,spread,-1.5,1.92,1.92
+2026-08-26T10:02:26Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,moneyline,,2.163,1.726
+2026-08-26T10:02:26Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,total,167.5,1.92,1.92
+2026-08-26T10:02:26Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,spread,2.5,1.92,1.92
+2026-08-26T10:02:26Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),total,329.5,1.936,1.905
+2026-08-26T10:02:26Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),spread,1.5,1.888,1.953
+2026-08-26T10:09:25Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,moneyline,,6.61,1.123
+2026-08-26T10:09:25Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,total,151.5,1.93,1.91
+2026-08-26T10:09:25Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,spread,13.5,1.9,1.94
+2026-08-26T10:09:25Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),total,326.5,1.929,1.911
+2026-08-26T10:09:25Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),spread,8.5,1.89,1.951
+2026-08-26T10:09:25Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,moneyline,,1.443,2.867
+2026-08-26T10:09:25Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,total,174.5,1.89,1.951
+2026-08-26T10:09:25Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,spread,-5.5,1.91,1.93
+2026-08-26T10:09:25Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,moneyline,,1.823,2.027
+2026-08-26T10:09:25Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,total,163.5,1.92,1.92
+2026-08-26T10:09:25Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,spread,-1.5,1.92,1.92
+2026-08-26T10:09:25Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,moneyline,,2.163,1.726
+2026-08-26T10:09:25Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,total,167.5,1.92,1.92
+2026-08-26T10:09:25Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,spread,2.5,1.92,1.92
+2026-08-26T10:09:25Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),total,329.5,1.936,1.905
+2026-08-26T10:09:25Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),spread,1.5,1.888,1.953
+2026-08-26T10:19:40Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,moneyline,,6.61,1.123
+2026-08-26T10:19:40Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,total,151.5,1.93,1.91
+2026-08-26T10:19:40Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,spread,13.5,1.9,1.94
+2026-08-26T10:19:40Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),total,326.5,1.929,1.911
+2026-08-26T10:19:40Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),spread,8.5,1.89,1.951
+2026-08-26T10:19:40Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,moneyline,,1.443,2.867
+2026-08-26T10:19:40Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,total,174.5,1.89,1.951
+2026-08-26T10:19:40Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,spread,-5.5,1.91,1.93
+2026-08-26T10:19:40Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,moneyline,,1.823,2.027
+2026-08-26T10:19:40Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,total,163.5,1.92,1.92
+2026-08-26T10:19:40Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,spread,-1.5,1.92,1.92
+2026-08-26T10:19:40Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,moneyline,,2.163,1.726
+2026-08-26T10:19:40Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,total,167.5,1.92,1.92
+2026-08-26T10:19:40Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,spread,2.5,1.92,1.92
+2026-08-26T10:19:40Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),total,329.5,1.936,1.905
+2026-08-26T10:19:40Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),spread,1.5,1.888,1.953
+2026-08-26T10:32:53Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,moneyline,,6.61,1.123
+2026-08-26T10:32:53Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,total,151.5,1.93,1.91
+2026-08-26T10:32:53Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,spread,13.5,1.9,1.94
+2026-08-26T10:32:53Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),total,326.5,1.929,1.911
+2026-08-26T10:32:53Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),spread,8.5,1.89,1.951
+2026-08-26T10:32:53Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,moneyline,,1.414,2.989
+2026-08-26T10:32:53Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,total,175.5,1.92,1.92
+2026-08-26T10:32:53Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,spread,-6.5,1.951,1.89
+2026-08-26T10:32:53Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,moneyline,,1.823,2.027
+2026-08-26T10:32:53Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,total,163.5,1.92,1.92
+2026-08-26T10:32:53Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,spread,-1.5,1.92,1.92
+2026-08-26T10:32:53Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,moneyline,,2.163,1.726
+2026-08-26T10:32:53Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,total,167.5,1.92,1.92
+2026-08-26T10:32:53Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,spread,2.5,1.92,1.92
+2026-08-26T10:32:53Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),total,329.5,1.936,1.905
+2026-08-26T10:32:53Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),spread,1.5,1.888,1.953
+2026-08-26T10:35:33Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,moneyline,,6.61,1.123
+2026-08-26T10:35:33Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,total,151.5,1.93,1.91
+2026-08-26T10:35:33Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,spread,13.5,1.9,1.94
+2026-08-26T10:35:33Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),total,326.5,1.892,1.948
+2026-08-26T10:35:33Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),spread,7.5,1.914,1.926
+2026-08-26T10:35:33Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,moneyline,,1.414,2.989
+2026-08-26T10:35:33Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,total,175.5,1.92,1.92
+2026-08-26T10:35:33Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,spread,-6.5,1.951,1.89
+2026-08-26T10:35:33Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,moneyline,,1.823,2.027
+2026-08-26T10:35:33Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,total,163.5,1.92,1.92
+2026-08-26T10:35:33Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,spread,-1.5,1.92,1.92
+2026-08-26T10:35:33Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,moneyline,,2.163,1.726
+2026-08-26T10:35:33Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,total,167.5,1.92,1.92
+2026-08-26T10:35:33Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,spread,2.5,1.92,1.92
+2026-08-26T10:35:33Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),total,329.5,1.936,1.905
+2026-08-26T10:35:33Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),spread,1.5,1.888,1.953
+2026-08-26T10:46:13Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,moneyline,,6.61,1.123
+2026-08-26T10:46:13Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,total,151.5,1.93,1.91
+2026-08-26T10:46:13Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,spread,13.5,1.9,1.94
+2026-08-26T10:46:13Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),total,326.5,1.892,1.948
+2026-08-26T10:46:13Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),spread,7.5,1.914,1.926
+2026-08-26T10:46:13Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,moneyline,,1.414,2.989
+2026-08-26T10:46:13Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,total,175.5,1.92,1.92
+2026-08-26T10:46:13Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,spread,-6.5,1.951,1.89
+2026-08-26T10:46:13Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,moneyline,,1.823,2.027
+2026-08-26T10:46:13Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,total,163.5,1.92,1.92
+2026-08-26T10:46:13Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,spread,-1.5,1.92,1.92
+2026-08-26T10:46:13Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,moneyline,,2.163,1.726
+2026-08-26T10:46:13Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,total,167.5,1.92,1.92
+2026-08-26T10:46:13Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,spread,2.5,1.92,1.92
+2026-08-26T10:46:13Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),total,329.5,1.936,1.905
+2026-08-26T10:46:13Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),spread,1.5,1.888,1.953
+2026-08-26T10:56:45Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,moneyline,,6.61,1.123
+2026-08-26T10:56:45Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,total,151.5,1.93,1.91
+2026-08-26T10:56:45Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,spread,13.5,1.9,1.94
+2026-08-26T10:56:45Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),total,326.5,1.892,1.948
+2026-08-26T10:56:45Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),spread,7.5,1.914,1.926
+2026-08-26T10:56:45Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,moneyline,,1.414,2.989
+2026-08-26T10:56:45Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,total,175.5,1.92,1.92
+2026-08-26T10:56:45Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,spread,-6.5,1.951,1.89
+2026-08-26T10:56:45Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,moneyline,,1.823,2.027
+2026-08-26T10:56:45Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,total,163.5,1.92,1.92
+2026-08-26T10:56:45Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,spread,-1.5,1.92,1.92
+2026-08-26T10:56:45Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,moneyline,,2.163,1.726
+2026-08-26T10:56:45Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,total,167.5,1.92,1.92
+2026-08-26T10:56:45Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,spread,2.5,1.92,1.92
+2026-08-26T10:56:45Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),total,329.5,1.936,1.905
+2026-08-26T10:56:45Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),spread,1.5,1.888,1.953
+2026-08-26T11:04:30Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,moneyline,,6.61,1.123
+2026-08-26T11:04:30Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,total,151.5,1.93,1.91
+2026-08-26T11:04:30Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,spread,13.5,1.9,1.94
+2026-08-26T11:04:30Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),total,326.5,1.892,1.948
+2026-08-26T11:04:30Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),spread,7.5,1.914,1.926
+2026-08-26T11:04:30Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,moneyline,,1.414,2.989
+2026-08-26T11:04:30Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,total,175.5,1.92,1.92
+2026-08-26T11:04:30Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,spread,-6.5,1.951,1.89
+2026-08-26T11:04:30Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,moneyline,,1.823,2.027
+2026-08-26T11:04:30Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,total,163.5,1.92,1.92
+2026-08-26T11:04:30Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,spread,-1.5,1.92,1.92
+2026-08-26T11:04:30Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,moneyline,,2.163,1.726
+2026-08-26T11:04:30Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,total,167.5,1.92,1.92
+2026-08-26T11:04:30Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,spread,2.5,1.92,1.92
+2026-08-26T11:04:30Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),total,329.5,1.936,1.905
+2026-08-26T11:04:30Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),spread,1.5,1.888,1.953
+2026-08-26T11:07:38Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,moneyline,,6.61,1.123
+2026-08-26T11:07:38Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,total,151.5,1.93,1.91
+2026-08-26T11:07:38Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,spread,13.5,1.9,1.94
+2026-08-26T11:07:38Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),total,326.5,1.892,1.948
+2026-08-26T11:07:38Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),spread,7.5,1.914,1.926
+2026-08-26T11:07:38Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,moneyline,,1.414,2.989
+2026-08-26T11:07:38Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,total,175.5,1.92,1.92
+2026-08-26T11:07:38Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,spread,-6.5,1.951,1.89
+2026-08-26T11:07:38Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,moneyline,,1.823,2.027
+2026-08-26T11:07:38Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,total,163.5,1.92,1.92
+2026-08-26T11:07:38Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,spread,-1.5,1.92,1.92
+2026-08-26T11:07:38Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,moneyline,,2.163,1.726
+2026-08-26T11:07:38Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,total,167.5,1.92,1.92
+2026-08-26T11:07:38Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,spread,2.5,1.92,1.92
+2026-08-26T11:07:38Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),total,329.5,1.936,1.905
+2026-08-26T11:07:38Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),spread,1.5,1.888,1.953
+2026-08-26T11:18:14Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,moneyline,,6.41,1.129
+2026-08-26T11:18:14Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,total,151.5,1.93,1.91
+2026-08-26T11:18:14Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,spread,13.5,1.871,1.972
+2026-08-26T11:18:14Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),total,326.5,1.893,1.948
+2026-08-26T11:18:14Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),spread,7.5,1.909,1.931
+2026-08-26T11:18:14Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,moneyline,,1.414,2.989
+2026-08-26T11:18:14Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,total,175.5,1.92,1.92
+2026-08-26T11:18:14Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,spread,-6.5,1.951,1.89
+2026-08-26T11:18:14Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,moneyline,,1.823,2.027
+2026-08-26T11:18:14Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,total,163.5,1.92,1.92
+2026-08-26T11:18:14Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,spread,-1.5,1.92,1.92
+2026-08-26T11:18:14Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,moneyline,,2.163,1.726
+2026-08-26T11:18:14Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,total,167.5,1.92,1.92
+2026-08-26T11:18:14Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,spread,2.5,1.92,1.92
+2026-08-26T11:18:14Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),total,329.5,1.936,1.905
+2026-08-26T11:18:14Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),spread,1.5,1.888,1.953
+2026-08-26T11:28:53Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,moneyline,,6.56,1.124
+2026-08-26T11:28:53Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,total,151.5,1.93,1.91
+2026-08-26T11:28:53Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,spread,13.5,1.9,1.94
+2026-08-26T11:28:53Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),total,326.5,1.892,1.948
+2026-08-26T11:28:53Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),spread,7.5,1.914,1.926
+2026-08-26T11:28:53Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,moneyline,,1.414,2.989
+2026-08-26T11:28:53Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,total,175.5,1.92,1.92
+2026-08-26T11:28:53Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,spread,-6.5,1.951,1.89
+2026-08-26T11:28:53Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,moneyline,,1.823,2.027
+2026-08-26T11:28:53Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,total,163.5,1.92,1.92
+2026-08-26T11:28:53Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,spread,-1.5,1.92,1.92
+2026-08-26T11:28:53Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,moneyline,,2.163,1.726
+2026-08-26T11:28:53Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,total,167.5,1.92,1.92
+2026-08-26T11:28:53Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,spread,2.5,1.92,1.92
+2026-08-26T11:28:53Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),total,329.5,1.936,1.905
+2026-08-26T11:28:53Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),spread,1.5,1.888,1.953
+2026-08-26T11:36:19Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,moneyline,,6.56,1.124
+2026-08-26T11:36:19Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,total,151.5,1.93,1.91
+2026-08-26T11:36:19Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,spread,13.5,1.9,1.94
+2026-08-26T11:36:19Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),total,326.5,1.892,1.948
+2026-08-26T11:36:19Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),spread,7.5,1.914,1.926
+2026-08-26T11:36:19Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,moneyline,,1.414,2.989
+2026-08-26T11:36:19Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,total,175.5,1.92,1.92
+2026-08-26T11:36:19Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,spread,-6.5,1.951,1.89
+2026-08-26T11:36:19Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,moneyline,,1.823,2.027
+2026-08-26T11:36:19Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,total,163.5,1.92,1.92
+2026-08-26T11:36:19Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,spread,-1.5,1.92,1.92
+2026-08-26T11:36:19Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,moneyline,,2.163,1.726
+2026-08-26T11:36:19Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,total,167.5,1.92,1.92
+2026-08-26T11:36:19Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,spread,2.5,1.92,1.92
+2026-08-26T11:36:19Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),total,329.5,1.936,1.905
+2026-08-26T11:36:19Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),spread,1.5,1.888,1.953
+2026-08-26T11:39:13Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,moneyline,,6.56,1.124
+2026-08-26T11:39:13Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,total,151.5,1.93,1.91
+2026-08-26T11:39:13Z,747317318,2026-08-26T23:00Z,Connecticut Sun|Golden State Valkyries,spread,13.5,1.9,1.94
+2026-08-26T11:39:13Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),total,326.5,1.892,1.948
+2026-08-26T11:39:13Z,747048522,2026-08-26T23:00Z,Home (Points)|Away (Points),spread,7.5,1.914,1.926
+2026-08-26T11:39:13Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,moneyline,,1.414,2.989
+2026-08-26T11:39:13Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,total,175.5,1.92,1.92
+2026-08-26T11:39:13Z,747081380,2026-08-27T02:00Z,Seattle Storm|Toronto Tempo,spread,-6.5,1.951,1.89
+2026-08-26T11:39:13Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,moneyline,,1.823,2.027
+2026-08-26T11:39:13Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,total,163.5,1.92,1.92
+2026-08-26T11:39:13Z,747275764,2026-08-28T00:00Z,New York Liberty|Golden State Valkyries,spread,-1.5,1.92,1.92
+2026-08-26T11:39:13Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,moneyline,,2.163,1.726
+2026-08-26T11:39:13Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,total,167.5,1.92,1.92
+2026-08-26T11:39:13Z,747297412,2026-08-28T02:00Z,Phoenix Mercury|Washington Mystics,spread,2.5,1.92,1.92
+2026-08-26T11:39:13Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),total,329.5,1.936,1.905
+2026-08-26T11:39:13Z,747297446,2026-08-28T00:00Z,Home (Points)|Away (Points),spread,1.5,1.888,1.953

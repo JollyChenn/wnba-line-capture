@@ -1,0 +1,35 @@
+raw player-games with timing profile: 3532  players 107
+player-level medians: {'h1share': 0.5, 'q4share': 0.243, 'qconc': 0.448, 'q4app': 0.647, 'cv': 0.484}
+
+M1  MINUTES in blowouts vs close, split by h1share (within-player z of minutes)
+   h1share HI  blowout>=15  n=508   mean z(min) -0.2705  mean min 23.4
+   h1share HI  close<8      n=740   mean z(min) +0.1692  mean min 25.3
+   h1share LO  blowout>=15  n=472   mean z(min) -0.3538  mean min 24.2
+   h1share LO  close<8      n=716   mean z(min) +0.1722  mean min 26.5
+   per-player blowout minute-delta vs h1share  rho +0.076 p 0.443 (n players 106)
+   per-player blowout minute-delta vs q4share  rho +0.009 p 0.927 (n players 106)
+   per-player blowout minute-delta vs q4app    rho -0.425 p 0.000 (n players 106)
+   per-player blowout minute-delta vs cv       rho +0.444 p 0.000 (n players 106)
+
+M2  PRODUCTION (within-player z of pts) in blowouts, split by q4share
+   q4share HI  blowout>=15  n=513   mean z(pts) -0.0738
+   q4share HI  close<8      n=752   mean z(pts) +0.0748
+   q4share LO  blowout>=15  n=467   mean z(pts) -0.0945
+   q4share LO  close<8      n=704   mean z(pts) +0.0736
+
+M3  qconc effect WITHIN cv tertiles (the key control), board quotes
+   SCOR  cvLO  concHI  n=1121 over% 53.1  OVER ROI  -1.04% CI[-12.0,+9.9]
+   SCOR  cvLO  concLO  n=997  over% 56.4  OVER ROI  +4.66% CI[-6.9,+16.2]
+   SCOR  cvMD  concHI  n=747  over% 47.3  OVER ROI -11.81% CI[-25.2,+1.6]
+   SCOR  cvMD  concLO  n=694  over% 51.7  OVER ROI  -3.72% CI[-17.6,+10.1]
+   SCOR  cvHI  concHI  n=367  over% 49.3  OVER ROI  -8.47% CI[-27.5,+10.5]
+   SCOR  cvHI  concLO  n=366  over% 50.5  OVER ROI  -6.15% CI[-25.3,+13.0]
+   NONS  cvLO  concHI  n=790  over% 46.8  OVER ROI -11.59% CI[-24.9,+1.8]
+   NONS  cvLO  concLO  n=704  over% 52.7  OVER ROI  -1.44% CI[-15.4,+12.5]
+   NONS  cvMD  concHI  n=444  over% 49.5  OVER ROI  -7.43% CI[-25.0,+10.2]
+   NONS  cvMD  concLO  n=444  over% 45.7  OVER ROI -13.37% CI[-31.1,+4.4]
+   NONS  cvHI  concHI  n=185  over% 44.3  OVER ROI -15.47% CI[-43.7,+12.8]
+   NONS  cvHI  concLO  n=168  over% 45.2  OVER ROI -14.26% CI[-43.4,+14.9]
+
+base rates: board over% = 50.6  (n=7027)
+done

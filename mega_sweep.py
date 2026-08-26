@@ -83,20 +83,55 @@ for r in load("gamelines.csv"):
     cap, pts = ts(r.get("captured_utc")), f(r.get("points"))
     if not cap: continue
     s = GM[(st, ab)]
-    if r.get("type") == "total" and pts is not None and ("tot" not in s or cap > s["tot"][0]):
-        s["tot"] = (cap, pts)
-    if r.get("type") == "spread" and pts is not None and ("spr" not in s or cap > s["spr"][0]):
-        s["spr"] = (cap, abs(pts))
+    # MAIN LINE, NOT AN ALTERNATE (fixed 2026-08-26). Pinnacle posts a ladder - the median
+    # snapshot carries SEVEN total rows (e.g. 172.0 ... 175.0) sharing one capture timestamp.
+    # The old test "cap > stored cap" is false for every tie, so it kept whichever rung landed
+    # last in the file: an arbitrary alternate differing from the main line by a median 1.5
+    # points, and by more than a point on 71% of snapshots. Everything built on GM inherited it,
+    # including the retracted "higher total -> better player overs" gradient.
+    # The main line is the rung priced closest to even; validated against 1xbet's own posted
+    # total to mean +0.04 / sd 0.66.
+    _pr = (r.get("prices") or "").split(",")
+    _skew = 9.0
+    if len(_pr) == 2:
+        _a, _b = am(_pr[0]), am(_pr[1])
+        if _a is not None and _b is not None: _skew = abs(_a - _b)
+    if r.get("type") == "total" and pts is not None:
+        if "tot" not in s or (cap, -_skew) > (s["tot"][0], -s["tot"][2]):
+            s["tot"] = (cap, pts, _skew)
+    if r.get("type") == "spread" and pts is not None:
+        if "spr" not in s or (cap, -_skew) > (s["spr"][0], -s["spr"][2]):
+            s["spr"] = (cap, abs(pts), _skew)
     if r.get("type") == "moneyline":
         pr = (r.get("prices") or "").split(",")
         h = am(pr[0]) if pr and pr[0] else None
         if h is not None and ("ml" not in s or cap > s["ml"][0]): s["ml"] = (cap, h)
 
+# BOARD NAME RESOLUTION (added 2026-08-26). The join used to be an exact lowercase string match
+# and failed on 8 real players covering 3,201 board rows - 3.9% of the prop book - led by
+# A'ja Wilson at 1,530 rows. Those players were silently absent from every study built on this
+# preamble, so any conclusion about "stars" or usage rank was drawn from a population with the
+# league's highest-usage name deleted. namefix.resolve() maps board spellings onto box spellings
+# and returns None only for a genuinely unknown name, which we count and report rather than drop.
+import namefix as _nf
+_resolve = _nf.build(os.path.join(D, "data", "box_2026.csv"))
+_NAMEMAP, _UNRESOLVED = {}, collections.Counter()
+def _pl(raw_name):
+    k = (raw_name or "").strip()
+    if k in _NAMEMAP: return _NAMEMAP[k]
+    hit = _resolve(k)
+    if hit is None:
+        _UNRESOLVED[k] += 1
+        _NAMEMAP[k] = k.lower()
+    else:
+        _NAMEMAP[k] = hit.strip().lower()
+    return _NAMEMAP[k]
+
 raw = collections.defaultdict(list)
 for b in load("xbet_board.csv"):
     t, o, ln = ts(b.get("captured_utc")), f(b.get("odds")), f(b.get("line"))
     if t and o and ln is not None and b.get("market") in ALL_MK:
-        raw[((b.get("player") or "").lower(), b.get("market"), b.get("side"), ln)].append((t, o))
+        raw[(_pl(b.get("player")), b.get("market"), b.get("side"), ln)].append((t, o))
 side = collections.defaultdict(dict)
 lines_seen = collections.defaultdict(list)
 for (pl, mk, sd, ln), v in raw.items():

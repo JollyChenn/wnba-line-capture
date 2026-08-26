@@ -1,0 +1,89 @@
+GRID DECLARED: 64 cells | min n = 60 | K = 1000 permutations
+universe T = 7103 two-sided board quotes, selected AND priced at the last quote <= tip-6h
+
+====================================================================================
+NOISE CEILING - p95 of the BEST-CELL ROI over the whole 64-cell grid under the null.
+  Null: game-level labels (total move, spread move) relabelled by shuffling GAMES;
+        player-game-level labels (her line move, her price drift, her pts-line move,
+        slate steam counts) relabelled by shuffling PLAYER-GAMES. Prices/outcomes fixed.
+  p50 +12.14%   p90 +21.12%   p95 +24.61%   p99 +34.48%   max +44.35%
+  >>> ANY CELL AT OR BELOW +24.61% IS NOT A FINDING. <<<
+====================================================================================
+
+cell                                  n     ROI%   95% CI block-boot    vs ceiling
+--- family A ---
+A:totFLAT&any:Over                 1290     1.19   [ -5.41, +7.34]      
+A:totFLAT&herline_unmoved:Over     1123    -0.67   [ -7.76, +5.54]      
+A:totDN&herline_unmoved:Under      1840    -4.60   [-11.18, +2.45]      
+A:totUP&herline_unmoved:Over       1135    -4.84   [-11.75, +1.50]      
+A:totUP&any:Over                   1290    -4.97   [-11.14, +1.19]      
+A:totDN&any:Under                  2099    -5.59   [-12.97, +1.48]      
+A:totUP&any:Under                  1290    -8.85   [-15.24, -2.86]      
+A:totUP&herline_unmoved:Under      1135    -9.07   [-15.75, -2.38]      
+A:totDN&any:Over                   2099    -9.27   [-15.64, -1.66]      
+A:totDN&herline_unmoved:Over       1840   -10.08   [-17.33, -3.08]      
+A:totFLAT&herline_unmoved:Under    1123   -13.21   [-19.50, -6.27]      
+A:totFLAT&any:Under                1290   -15.08   [-21.09, -8.42]      
+--- family B ---
+B:sprWIDEN&dog:Under                256    13.38   [-18.09,+31.65]      
+B:sprWIDEN&fav:Under                337     1.33   [-15.77,+15.40]      
+B:sprNARROW&fav:Under               609    -0.53   [-11.86,+13.55]      
+B:sprFLAT&fav:Over                 1563    -1.36   [ -7.69, +5.62]      
+B:sprFLAT&dog:Over                 1593    -1.74   [ -7.84, +4.74]      
+B:sprNARROW&dog:Over                650    -2.00   [-16.00,+13.55]      
+B:sprFLAT&dog:Under                1593   -12.31   [-18.41, -5.00]      
+B:sprNARROW&dog:Under               650   -12.88   [-28.12, +0.16]      
+B:sprFLAT&fav:Under                1563   -13.06   [-20.09, -6.37]      
+B:sprNARROW&fav:Over                609   -13.75   [-26.65, -3.47]      
+B:sprWIDEN&fav:Over                 337   -15.09   [-29.67, +2.67]      
+B:sprWIDEN&dog:Over                 256   -26.78   [-45.08, +2.16]      
+--- family C ---
+C:ptsDN&tgt_nonsc:Over              104    14.51   [ -6.94,+34.94]      
+C:ptsUP&tgt_ptsfam:Over             180     7.59   [-13.56,+28.63]      
+C:ptsUP&tgt_all:Over                345     4.74   [-11.09,+18.98]      
+C:ptsDN&tgt_all:Over                225     1.99   [-17.05,+19.81]      
+C:ptsUP&tgt_nonsc:Over              165     1.64   [-14.66,+16.79]      
+C:ptsDN&tgt_ptsfam:Under            121    -5.84   [-27.81,+17.27]      
+C:ptsDN&tgt_ptsfam:Over             121    -8.78   [-32.28,+12.62]      
+C:ptsUP&tgt_nonsc:Under             165   -12.51   [-27.18, +4.23]      
+C:ptsUP&tgt_all:Under               345   -17.55   [-31.98, -3.17]      
+C:ptsDN&tgt_all:Under               225   -18.01   [-35.70, -0.75]      
+C:ptsUP&tgt_ptsfam:Under            180   -22.18   [-42.76, -1.10]      
+C:ptsDN&tgt_nonsc:Under             104   -32.16   [-52.42,-10.55]      
+--- family D ---
+D:upPACK:Over                       433    -1.55   [-12.60, +9.51]      
+D:dnPACK:Over                       368    -3.93   [-15.24, +7.19]      
+D:nomove:Over                      5776    -6.71   [-10.94, -2.69]      
+D:nomove:Under                     5776    -7.34   [-11.16, -3.53]      
+D:dnPACK:Under                      368   -10.86   [-22.13, +0.10]      
+D:upPACK:Under                      433   -13.15   [-23.59, -2.89]      
+   (dropped, n<60: D:upALONE:Over n=6, D:upALONE:Under n=6, D:dnALONE:Over n=7, D:dnALONE:Under n=7)
+--- family E ---
+E:short&x_totDN:Over                303     1.72   [-10.56,+13.73]      
+E:short&x_any:Over                  964    -0.31   [ -7.17, +5.93]      
+E:short&x_totUP:Over                186    -0.63   [-10.07, +9.43]      
+E:long&x_totUP:Over                 166    -3.05   [-17.98,+11.83]      
+E:long&x_totDN:Under                258    -3.29   [-20.51,+12.28]      
+E:long&x_any:Over                   958    -3.52   [-11.22, +3.97]      
+E:flat&x_totDN:Under               1538    -3.60   [-10.93, +4.08]      
+E:flat&x_any:Under                 4695    -6.07   [-10.05, -1.80]      
+E:flat&x_totUP:Over                 938    -6.17   [-14.11, +1.53]      
+E:flat&x_totUP:Under                938    -7.89   [-15.54, -0.59]      
+E:flat&x_any:Over                  4695    -8.11   [-12.24, -3.99]      
+E:long&x_any:Under                  958   -10.14   [-17.61, -3.13]      
+E:long&x_totUP:Under                166   -10.16   [-25.07, +3.80]      
+E:flat&x_totDN:Over                1538   -11.00   [-18.61, -3.94]      
+E:long&x_totDN:Over                 258   -11.87   [-27.91, +5.47]      
+E:short&x_totUP:Under               186   -12.50   [-24.26, -0.10]      
+E:short&x_any:Under                 964   -14.08   [-21.15, -6.53]      
+E:short&x_totDN:Under               303   -17.70   [-31.13, -4.63]      
+
+BASELINE all Overs n=7103 ROI=-5.89% | all Unders ROI=-8.21%
+BEST CELL C:ptsDN&tgt_nonsc:Over  ROI +14.51%  n=104   CEILING +24.61%   -> NOT A FINDING
+
+per-cell one-sided permutation p (own block level, K=1000):
+   C:ptsDN&tgt_nonsc:Over           ROI +14.51%  p=0.0140
+   B:sprWIDEN&dog:Under             ROI +13.38%  p=0.0330
+   C:ptsUP&tgt_ptsfam:Over          ROI  +7.59%  p=0.1578
+   C:ptsUP&tgt_all:Over             ROI  +4.74%  p=0.0899
+   C:ptsDN&tgt_all:Over             ROI  +1.99%  p=0.2128

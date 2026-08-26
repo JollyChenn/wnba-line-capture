@@ -1,0 +1,41 @@
+team-nights 318  rows 7027  teams 15
+team_h1 p10 0.469 med 0.489 p90 0.514
+TEAM GRID DECLARED: 24 cells (1 feature x 3 groups x 4 splits x 2 sides), MINN=120
+TEAM NOISE CEILING (team-night relabel, 1500 perms): p95 best-cell ROI = +3.51%
+  team_h1 T3HI [under] NONS      n=916   ROI  -0.06%  p=0.460 
+  team_h1 T3LO [over] SCOR       n=1429  ROI  -1.47%  p=0.762 
+  team_h1 HI [under] NONS        n=1484  ROI  -2.38%  p=0.943 
+  team_h1 T3LO [over] ALL        n=2335  ROI  -2.48%  p=0.951 
+  team_h1 LO [over] SCOR         n=2146  ROI  -2.87%  p=0.989 
+  team_h1 LO [over] ALL          n=3208  ROI  -3.17%  p=1.000 
+  team_h1 T3LO [under] ALL       n=2335  ROI -11.65%  p=1.000 
+  team_h1 HI [over] NONS         n=1484  ROI -12.31%  p=1.000 
+  team_h1 T3LO [under] SCOR      n=1429  ROI -12.48%  p=1.000 
+  team_h1 T3HI [over] NONS       n=916   ROI -14.84%  p=1.000 
+
+============================================================================================
+Q5  LINE vs MEDIAN and RESIDUAL, by timing feature
+============================================================================================
+  scoring   linegap(line-median) vs h1share  rho +0.0144 p 0.800 n 4292
+  scoring   linegap(line-median) vs q4share  rho -0.0073 p 0.888 n 4292
+  scoring   linegap(line-median) vs qconc    rho +0.2358 p 0.002 n 4292
+  scoring   linegap(line-median) vs q4app    rho -0.1688 p 0.002 n 4292
+  non-scor  linegap(line-median) vs h1share  rho +0.0180 p 0.718 n 2735
+  non-scor  linegap(line-median) vs q4share  rho -0.0267 p 0.641 n 2735
+  non-scor  linegap(line-median) vs qconc    rho +0.0661 p 0.227 n 2735
+  non-scor  linegap(line-median) vs q4app    rho -0.0692 p 0.147 n 2735
+
+============================================================================================
+MODEL S subset (src in flip/hotover/overshoot, mkt in pra/pr/pts, not-raised) x timing
+============================================================================================
+Model-S-like (not-raised, pra/pr/pts, with timing profile): n=1992
+  h1share  HI  n=940  over% 54.9  ROI  +1.24%  CI [-10.6, +13.1]
+  h1share  LO  n=1052 over% 51.0  ROI  -5.74%  CI [-16.9, +5.4]
+  q4share  HI  n=1026 over% 52.9  ROI  -2.53%  CI [-13.8, +8.8]
+  q4share  LO  n=966  over% 52.8  ROI  -2.36%  CI [-14.1, +9.3]
+  qconc    HI  n=657  over% 50.4  ROI  -6.79%  CI [-21.0, +7.4]
+  qconc    LO  n=1335 over% 54.1  ROI  -0.31%  CI [-10.2, +9.6]
+  q4app    HI  n=1411 over% 54.1  ROI  -0.24%  CI [-9.9, +9.4]
+  q4app    LO  n=581  over% 49.9  ROI  -7.80%  CI [-22.9, +7.3]
+
+done

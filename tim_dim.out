@@ -1,0 +1,149 @@
+rows 7027  players 107  games 132  over% 50.6
+GRID DECLARED: 120 cells = 5 features x 3 market groups x 4 splits x 2 sides, MINN=120
+NOISE CEILING (player-block relabel, 4000 perms, 107 player blocks): p95 best-cell ROI = +5.27%  p99 = +6.89%
+   null best-cell median +2.03%   null best-cell 5th pct -0.15%
+
+================================================================================================
+REAL CELLS, ranked.  CEILING p95 = +5.27%   (breakeven is ~53.5%, board margin ~7%)
+================================================================================================
+  qconc T3LO [over] SCOR         n=1397  win% 55.8  ROI  +3.70%  p(global)=0.180
+  qconc LO [over] SCOR           n=2135  win% 54.8  ROI  +1.97%  p(global)=0.515
+  q4app HI [over] SCOR           n=2475  win% 54.3  ROI  +0.92%  p(global)=0.774
+  q4app T3HI [over] SCOR         n=1633  win% 54.1  ROI  +0.57%  p(global)=0.841
+  qconc T3LO [over] ALL          n=2260  win% 53.5  ROI  -0.18%  p(global)=0.954
+  q4app HI [over] ALL            n=3526  win% 52.7  ROI  -1.73%  p(global)=1.000
+  qconc LO [over] ALL            n=3511  win% 52.5  ROI  -1.94%  p(global)=1.000
+  q4share LO [over] SCOR         n=2145  win% 52.6  ROI  -2.01%  p(global)=1.000
+  h1share HI [over] SCOR         n=2165  win% 52.7  ROI  -2.04%  p(global)=1.000
+  qconc_r T3LO [over] SCOR       n=1376  win% 52.7  ROI  -2.22%  p(global)=1.000
+  h1share HI [under] NONS        n=1381  win% 53.3  ROI  -2.32%  p(global)=1.000
+  qconc_r HI [over] SCOR         n=2225  win% 52.2  ROI  -2.68%  p(global)=1.000
+  q4app LO [under] NONS          n=1364  win% 53.3  ROI  -2.83%  p(global)=1.000
+  q4share T3LO [under] NONS      n=904   win% 53.0  ROI  -2.99%  p(global)=1.000
+  q4share LO [under] NONS        n=1304  win% 52.8  ROI  -3.37%  p(global)=1.000
+  qconc_r LO [over] SCOR         n=2067  win% 51.9  ROI  -3.54%  p(global)=1.000
+  h1share T3HI [over] SCOR       n=1468  win% 51.6  ROI  -3.97%  p(global)=1.000
+  q4app T3HI [over] ALL          n=2442  win% 51.4  ROI  -4.15%  p(global)=1.000
+  h1share LO [over] SCOR         n=2127  win% 51.5  ROI  -4.17%  p(global)=1.000
+  q4share HI [over] SCOR         n=2147  win% 51.5  ROI  -4.18%  p(global)=1.000
+  qconc T3HI [under] SCOR        n=1499  win% 51.4  ROI  -4.19%  p(global)=1.000
+  qconc T3HI [under] ALL         n=2462  win% 51.7  ROI  -4.29%  p(global)=1.000
+  h1share T3LO [over] SCOR       n=1402  win% 51.4  ROI  -4.45%  p(global)=1.000
+  qconc_r T3HI [under] NONS      n=959   win% 52.5  ROI  -4.47%  p(global)=1.000
+  q4share T3LO [under] ALL       n=2320  win% 51.6  ROI  -4.75%  p(global)=1.000
+  h1share LO [over] ALL          n=3481  win% 50.9  ROI  -4.78%  p(global)=1.000
+  h1share T3HI [under] NONS      n=915   win% 51.7  ROI  -4.79%  p(global)=1.000
+  qconc_r T3LO [over] ALL        n=2296  win% 51.2  ROI  -4.80%  p(global)=1.000
+  q4app LO [under] ALL           n=3501  win% 51.5  ROI  -4.81%  p(global)=1.000
+  qconc HI [under] ALL           n=3516  win% 51.3  ROI  -4.98%  p(global)=1.000
+  h1share T3LO [over] ALL        n=2285  win% 50.9  ROI  -5.05%  p(global)=1.000
+  qconc_r T3HI [over] SCOR       n=1442  win% 50.9  ROI  -5.05%  p(global)=1.000
+  qconc_r HI [over] ALL          n=3570  win% 50.8  ROI  -5.07%  p(global)=1.000
+  qconc_r LO [under] NONS        n=1329  win% 51.7  ROI  -5.08%  p(global)=1.000
+  q4app LO [under] SCOR          n=1817  win% 50.9  ROI  -5.12%  p(global)=1.000
+  q4app T3LO [under] NONS        n=793   win% 51.8  ROI  -5.18%  p(global)=1.000
+  qconc T3HI [under] NONS        n=963   win% 51.7  ROI  -5.26%  p(global)=1.000
+  qconc HI [under] NONS          n=1394  win% 51.7  ROI  -5.28%  p(global)=1.000
+  q4share T3HI [over] SCOR       n=1473  win% 50.9  ROI  -5.29%  p(global)=1.000
+  q4share T3HI [over] ALL        n=2372  win% 50.6  ROI  -5.29%  p(global)=1.000
+  q4share LO [over] ALL          n=3367  win% 50.5  ROI  -5.35%  p(global)=1.000
+  q4share HI [over] ALL          n=3660  win% 50.7  ROI  -5.45%  p(global)=1.000
+  q4app T3HI [over] NONS         n=968   win% 50.4  ROI  -5.48%  p(global)=1.000
+  qconc HI [under] SCOR          n=2157  win% 50.7  ROI  -5.60%  p(global)=1.000
+  qconc LO [under] NONS          n=1341  win% 51.6  ROI  -5.60%  p(global)=1.000
+  h1share LO [over] NONS         n=1354  win% 50.0  ROI  -5.74%  p(global)=1.000
+  qconc_r LO [over] ALL          n=3457  win% 50.5  ROI  -5.75%  p(global)=1.000
+  qconc_r HI [under] NONS        n=1406  win% 51.6  ROI  -5.77%  p(global)=1.000
+  q4share T3LO [under] SCOR      n=1428  win% 50.6  ROI  -5.84%  p(global)=1.000
+  q4app T3LO [under] ALL         n=2191  win% 50.8  ROI  -5.99%  p(global)=1.000
+  h1share T3LO [over] NONS       n=883   win% 50.1  ROI  -6.00%  p(global)=1.000
+  h1share HI [over] ALL          n=3546  win% 50.3  ROI  -6.01%  p(global)=1.000
+  q4share T3HI [over] NONS       n=956   win% 49.8  ROI  -6.03%  p(global)=1.000
+  h1share T3HI [over] ALL        n=2383  win% 50.3  ROI  -6.04%  p(global)=1.000
+  q4app T3LO [under] SCOR        n=1398  win% 50.3  ROI  -6.45%  p(global)=1.000
+  q4app HI [over] NONS           n=1371  win% 50.0  ROI  -6.52%  p(global)=1.000
+  qconc T3LO [over] NONS         n=866   win% 49.8  ROI  -6.76%  p(global)=1.000
+  qconc_r T3HI [over] ALL        n=2355  win% 49.7  ROI  -6.91%  p(global)=1.000
+  qconc_r T3HI [under] ALL       n=2355  win% 50.3  ROI  -6.96%  p(global)=1.000
+  q4share HI [under] NONS        n=1431  win% 50.7  ROI  -7.32%  p(global)=1.000
+  q4app T3LO [over] SCOR         n=1398  win% 49.7  ROI  -7.37%  p(global)=1.000
+  qconc_r T3LO [under] NONS      n=877   win% 50.4  ROI  -7.38%  p(global)=1.000
+  q4share HI [over] NONS         n=1431  win% 49.3  ROI  -7.50%  p(global)=1.000
+  qconc_r T3LO [over] NONS       n=877   win% 49.6  ROI  -7.54%  p(global)=1.000
+  h1share T3HI [under] ALL       n=2383  win% 49.7  ROI  -7.98%  p(global)=1.000
+  q4app HI [under] NONS          n=1371  win% 50.0  ROI  -8.03%  p(global)=1.000
+  q4app T3LO [over] ALL          n=2191  win% 49.2  ROI  -8.06%  p(global)=1.000
+  q4share T3LO [over] SCOR       n=1428  win% 49.4  ROI  -8.11%  p(global)=1.000
+  qconc HI [over] SCOR           n=2157  win% 49.3  ROI  -8.11%  p(global)=1.000
+  h1share HI [under] ALL         n=3546  win% 49.7  ROI  -8.12%  p(global)=1.000
+  qconc T3LO [under] NONS        n=866   win% 50.2  ROI  -8.14%  p(global)=1.000
+  q4share T3HI [under] SCOR      n=1473  win% 49.1  ROI  -8.26%  p(global)=1.000
+  qconc_r LO [under] ALL         n=3457  win% 49.5  ROI  -8.28%  p(global)=1.000
+  qconc_r T3HI [under] SCOR      n=1442  win% 49.1  ROI  -8.36%  p(global)=1.000
+  q4share LO [under] ALL         n=3367  win% 49.5  ROI  -8.56%  p(global)=1.000
+  q4app LO [over] SCOR           n=1817  win% 49.1  ROI  -8.57%  p(global)=1.000
+  h1share LO [under] NONS        n=1354  win% 50.0  ROI  -8.62%  p(global)=1.000
+  q4share HI [under] ALL         n=3660  win% 49.3  ROI  -8.68%  p(global)=1.000
+  q4share T3HI [under] ALL       n=2372  win% 49.4  ROI  -8.69%  p(global)=1.000
+  qconc HI [over] NONS           n=1394  win% 48.3  ROI  -8.70%  p(global)=1.000
+  q4share T3HI [under] NONS      n=956   win% 50.2  ROI  -8.72%  p(global)=1.000
+  h1share T3LO [under] NONS      n=883   win% 49.9  ROI  -8.78%  p(global)=1.000
+  qconc HI [over] ALL            n=3516  win% 48.7  ROI  -8.86%  p(global)=1.000
+  q4app T3HI [under] NONS        n=968   win% 49.6  ROI  -8.88%  p(global)=1.000
+  qconc_r HI [over] NONS         n=1406  win% 48.4  ROI  -8.89%  p(global)=1.000
+  qconc_r HI [under] ALL         n=3570  win% 49.2  ROI  -8.95%  p(global)=1.000
+  h1share T3LO [under] ALL       n=2285  win% 49.1  ROI  -9.06%  p(global)=1.000
+  q4app LO [over] ALL            n=3501  win% 48.5  ROI  -9.09%  p(global)=1.000
+  h1share LO [under] ALL         n=3481  win% 49.1  ROI  -9.13%  p(global)=1.000
+  qconc T3HI [over] NONS         n=963   win% 48.3  ROI  -9.14%  p(global)=1.000
+  qconc_r LO [over] NONS         n=1329  win% 48.3  ROI  -9.15%  p(global)=1.000
+  h1share T3LO [under] SCOR      n=1402  win% 48.6  ROI  -9.23%  p(global)=1.000
+  q4share T3LO [over] ALL        n=2320  win% 48.4  ROI  -9.25%  p(global)=1.000
+  q4app T3LO [over] NONS         n=793   win% 48.2  ROI  -9.27%  p(global)=1.000
+  qconc LO [over] NONS           n=1341  win% 48.4  ROI  -9.34%  p(global)=1.000
+  h1share T3HI [over] NONS       n=915   win% 48.3  ROI  -9.37%  p(global)=1.000
+  qconc T3HI [over] SCOR         n=1499  win% 48.6  ROI  -9.44%  p(global)=1.000
+  h1share LO [under] SCOR        n=2127  win% 48.5  ROI  -9.46%  p(global)=1.000
+  q4share HI [under] SCOR        n=2147  win% 48.5  ROI  -9.48%  p(global)=1.000
+  qconc_r T3LO [under] ALL       n=2296  win% 48.8  ROI  -9.56%  p(global)=1.000
+  qconc T3HI [over] ALL          n=2462  win% 48.3  ROI  -9.68%  p(global)=1.000
+  h1share T3HI [under] SCOR      n=1468  win% 48.4  ROI  -9.98%  p(global)=1.000
+  q4app T3HI [under] ALL         n=2442  win% 48.6  ROI -10.11%  p(global)=1.000
+  qconc_r T3HI [over] NONS       n=959   win% 47.5  ROI -10.37%  p(global)=1.000
+  qconc_r LO [under] SCOR        n=2067  win% 48.1  ROI -10.37%  p(global)=1.000
+  q4share LO [over] NONS         n=1304  win% 47.2  ROI -10.69%  p(global)=1.000
+  qconc_r HI [under] SCOR        n=2225  win% 47.8  ROI -10.90%  p(global)=1.000
+  q4share T3LO [over] NONS       n=904   win% 47.0  ROI -10.96%  p(global)=1.000
+  q4app LO [over] NONS           n=1364  win% 46.7  ROI -11.53%  p(global)=1.000
+  qconc_r T3LO [under] SCOR      n=1376  win% 47.3  ROI -11.75%  p(global)=1.000
+  q4share LO [under] SCOR        n=2145  win% 47.4  ROI -11.81%  p(global)=1.000
+  h1share HI [under] SCOR        n=2165  win% 47.3  ROI -11.81%  p(global)=1.000
+  h1share HI [over] NONS         n=1381  win% 46.7  ROI -12.23%  p(global)=1.000
+  qconc LO [under] ALL           n=3511  win% 47.5  ROI -12.26%  p(global)=1.000
+  q4app HI [under] ALL           n=3526  win% 47.3  ROI -12.40%  p(global)=1.000
+  qconc T3LO [under] ALL         n=2260  win% 46.5  ROI -14.06%  p(global)=1.000
+  q4app T3HI [under] SCOR        n=1633  win% 45.9  ROI -14.63%  p(global)=1.000
+  q4app HI [under] SCOR          n=2475  win% 45.7  ROI -14.71%  p(global)=1.000
+  qconc LO [under] SCOR          n=2135  win% 45.2  ROI -15.75%  p(global)=1.000
+  qconc T3LO [under] SCOR        n=1397  win% 44.2  ROI -17.59%  p(global)=1.000
+
+CI on the 5 best and 5 worst cells (normal approx on realised pnl):
+   qconc T3LO [over] SCOR         n=1397  ROI  +3.70%  CI [-1.2%, +8.6%]
+   qconc LO [over] SCOR           n=2135  ROI  +1.97%  CI [-2.0%, +5.9%]
+   q4app HI [over] SCOR           n=2475  ROI  +0.92%  CI [-2.7%, +4.6%]
+   q4app T3HI [over] SCOR         n=1633  ROI  +0.57%  CI [-3.9%, +5.1%]
+   qconc T3LO [over] ALL          n=2260  ROI  -0.18%  CI [-4.0%, +3.7%]
+   qconc T3LO [under] ALL         n=2260  ROI -14.06%  CI [-17.9%, -10.2%]
+   q4app T3HI [under] SCOR        n=1633  ROI -14.63%  CI [-19.1%, -10.1%]
+   q4app HI [under] SCOR          n=2475  ROI -14.71%  CI [-18.4%, -11.0%]
+   qconc LO [under] SCOR          n=2135  ROI -15.75%  CI [-19.7%, -11.8%]
+   qconc T3LO [under] SCOR        n=1397  ROI -17.59%  CI [-22.5%, -12.7%]
+
+Quintile gradient, OVER side, scoring markets (pts/pra/pr/pa):
+   h1share     -3.6%(814)   -3.7%(864)   -4.3%(832)   +4.2%(919)   -8.6%(863)
+   q4share    -10.6%(843)   +2.0%(829)   +6.1%(832)   -4.3%(918)   -8.3%(870)
+   qconc       +8.4%(792)   -0.5%(884)   -5.7%(866)   -9.0%(850)   -7.7%(900)
+   qconc_r     -0.5%(844)   -2.1%(839)   -4.9%(863)   -1.3%(881)   -6.7%(865)
+   q4app      -12.9%(801)   -2.6%(890)   -3.8%(676)   +3.5%(1025)   -1.9%(900)
+
+wrote tim_grid.json

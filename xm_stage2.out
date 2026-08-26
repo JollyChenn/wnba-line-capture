@@ -1,0 +1,48 @@
+horizon gate=tip-6h anchor=tip-12h : n=7103
+horizon gate=tip-2h anchor=tip-8h  : n=7280
+
+====================================================================================
+(b) LEAD / LAG SIGNIFICANCE - Pinnacle game total vs 1xbet prop board, game-block null
+====================================================================================
+pair                                    rho      n   perm p
+tot[9->3] vs p_over[6->1]            +0.298     77   0.0115
+tot[9->3] vs p_over[9->3]            +0.181     77   0.1209
+tot[12->6] vs p_over[6->1]           +0.166     77   0.1344
+tot[18->12] vs p_over[18->12]        +0.120     77   0.2999
+tot[18->12] vs p_over[6->1]          -0.093     77   0.4218
+tot[12->6] vs p_over[18->12]         -0.089     77   0.4323
+  (16 pairs tested -> Bonferroni threshold p<0.0031 ; game-block shuffle of the total move)
+
+====================================================================================
+(c)+(d) STAGE-2 GRID - drift channel, Model S interaction, and the propagation bet
+        re-run at a LATER decision point (gate = tip-2h) in case the lag is short
+====================================================================================
+STAGE-2 GRID DECLARED: 23 cells, min n = 60
+STAGE-2 NOISE CEILING: p50 +2.89%  p95 +10.89%  max +25.82%   -> anything <= +10.89% is NOT a finding
+
+cell                                             n     ROI%   95% CI
+S:drift_short&notraised&modelSmkts:Over        328     4.83   [ -6.02,+15.57] 
+S:drift_short&modelS_mkts:Over                 516     4.76   [ -3.56,+13.86] 
+S:herPTSprice_short->othermkt:Over             620     1.45   [-10.47,+12.50] 
+S:drift_long&line_unmoved:Over                 593     1.21   [ -8.01, +9.88] 
+S:totUP&price_short:Over                       186    -0.63   [-16.07,+14.92] 
+L2:drift_short:Over                            892    -1.27   [ -8.17, +5.73] 
+S:herPTSprice_long->othermkt:Over              601    -1.41   [-13.00, +9.53] 
+S:drift_short&notraised:Over                   650    -1.47   [-10.37, +6.74] 
+S:drift_short&line_unmoved:Over                629    -2.36   [-11.30, +6.26] 
+L2:totUP&line_unmoved:Over                    1047    -2.86   [-11.34, +5.94] 
+S:notraised&modelSmkts(control):Over          2070    -2.94   [ -8.73, +2.88] 
+L2:totDN&line_unmoved:Under                   1547    -4.68   [-12.71, +3.26] 
+S:totUP&price_not_short:Over                  1104    -5.70   [-14.33, +3.07] 
+S:drift_flat&line_unmoved:Under               4554    -5.82   [ -9.91, -2.03] 
+S:totDN&price_not_long:Under                  1841    -5.92   [-13.86, +0.83] 
+S:drift_flat&line_unmoved:Over                4554    -8.35   [-12.21, -4.48] 
+L2:totDN&line_unmoved:Over                    1547    -8.93   [-16.46, -1.03] 
+L2:drift_long:Under                            930   -10.54   [-16.86, -4.10] 
+S:drift_short&line_unmoved:Under               629   -11.73   [-20.31, -2.36] 
+L2:totUP&line_unmoved:Under                   1047   -12.03   [-21.23, -3.04] 
+S:herPTSprice_long->othermkt:Under             601   -13.46   [-26.29, -2.58] 
+S:drift_long&line_unmoved:Under                593   -14.37   [-22.73, -6.00] 
+S:herPTSprice_short->othermkt:Under            620   -15.56   [-27.40, -3.41] 
+
+CONTRAST  drift-short Overs minus drift-flat Overs = +7.79 pp  (n=964 vs 4695)  perm p=0.0470

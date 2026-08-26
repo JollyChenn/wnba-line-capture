@@ -1,0 +1,111 @@
+====================================================================================================
+C2  SHARP GAP  --  bet toward Pinnacle when 1xbet's player line differs by >= 1 pt
+====================================================================================================
+  COVERAGE FIRST. A sharp line exists for 588 of 7227 board quotes (8.1%), 104 games.
+  by month: 202606 n=27  202607 n=153  202608 n=408
+  pinn_board.csv (a real board sweep) only exists from 2026-08-21. Everything before that
+  is the pinn column of bets_log.csv, i.e. ONLY players the engine had already flagged.
+  So the pre-August-21 half of C2's sample is conditioned on the engine's own attention.
+
+  |gap| >= 1.0, bet toward Pinnacle:  n=148  games=71  W 89 (60.1%)  ROI +7.8%  CI[-7.9%, +24.3%]
+     over side   n=41   ROI +22.5%
+     under side  n=107  ROI +2.1%
+
+  (c) THRESHOLD PERTURBATION on the gap
+     |gap| >= 0.5  n=243  games=76  ROI    +8.0%  wr 59.7%
+     |gap| >= 1.0  n=148  games=71  ROI    +7.8%  wr 60.1%
+     |gap| >= 1.5  n=23   games=20  ROI   +18.8%  wr 65.2%
+     |gap| >= 2.0  n=18   games=15  ROI   +23.0%  wr 66.7%
+
+  MECHANISM (Law 6): does the gap predict RAW PRODUCTION, i.e. does Pinnacle's line beat
+  1xbet's at forecasting the box score? statistic = (actual - 1xbet line) vs gap.
+     rho(gap, actual - 1xbet line) = +0.1229  player-block perm p = 0.0085   n=588
+     on |gap|>=1 rows: mean |actual - 1xbet line| = 5.439   mean |actual - Pinnacle line| = 5.003
+     -> Pinnacle is MORE accurate than 1xbet on exactly the rows the rule bets
+     ROI permutation (gap reshuffled within player, direction follows the shuffled gap): p = 0.0173
+
+  (a) CHRONOLOGICAL WALK-FORWARD by game
+     fold 1  20260624..20260722  n=33   ROI   +30.7%  wr 72.7%
+     fold 2  20260722..20260811  n=46   ROI   +13.8%  wr 63.0%
+     fold 3  20260811..20260825  n=69   ROI    -7.3%  wr 52.2%
+     by month: 202606 n=8 ROI +66.2%  202607 n=39 ROI +9.5%  202608 n=101 ROI +2.5%
+     TIMING SENSITIVITY: the same rule with the sharp line read 12h out instead of 6h:
+       12h read: n=86   ROI -5.4%   (6h read: n=148 ROI +7.8%)
+
+  (d) EXECUTION STRESS
+     slip 0c  ROI    +7.8%
+     slip 1c  ROI    +7.2%
+     slip 2c  ROI    +6.6%
+     slip 3c  ROI    +6.0%
+     slippage to zero: 12.9 cents
+     10% missed entries: mean ROI +7.7%  sd 2.4 pp
+     25% missed entries: mean ROI +7.7%  sd 4.2 pp
+     EXECUTION CAVEAT: the rule needs a Pinnacle prop line <=10h stale AND a two-sided 1xbet
+     quote at the same line, within a 6h window. That combination existed on 8.1% of quotes.
+  (e) BANKROLL flat 1u: final +11.48u  max DD 11.6u  longest losing streak 5
+
+====================================================================================================
+C3  GAME-TOTAL GRADIENT  --  higher Pinnacle total -> better player overs
+====================================================================================================
+  n=2926 quotes over 50 games (gamelines.csv starts 2026-07-11, so June is absent)
+  MECHANISM (Law 6) on raw production, not ROI:
+     rho(game total, standardised beat) = +0.0149   GAME-block label permutation p = 0.3037
+     does the total forecast the score at all? rho(total, realised total) = +0.4795  n=50 games
+
+  ROI by total tercile (over side, whole board):
+     low  (<173.2)   n=918   games=19  over-rate 50.7%  ROI   -5.3%  CI[-14.4%, +4.0%]
+     mid             n=923   games=19  over-rate 50.9%  ROI   -4.5%  CI[-14.3%, +4.8%]
+     high (>=181.0)  n=1085  games=19  over-rate 50.0%  ROI   -6.8%  CI[-14.7%, +0.6%]
+     the best cell here is -4.5% against a DECLARED Grid-G noise ceiling of p95 = +10.9%
+
+  (c) BOUNDARY PERTURBATION (does the gradient survive moving the cut?)
+     top 50% of totals (>= 177.2)  n=1628  ROI   -3.7%  over-rate 51.5%
+     top 40% of totals (>= 179.2)  n=1337  ROI   -6.3%  over-rate 50.3%
+     top 30% of totals (>= 182.2)  n=989   ROI   -6.2%  over-rate 50.4%
+     top 25% of totals (>= 183.0)  n=889   ROI   -7.8%  over-rate 49.6%
+     top 19% of totals (>= 184.7)  n=542   ROI  -11.1%  over-rate 48.0%
+
+  (a) WALK-FORWARD by game, top-tercile overs
+     fold 1  n=391  ROI    -5.0%  over-rate 50.6%
+     fold 2  n=340  ROI    +3.0%  over-rate 55.0%
+     fold 3  n=354  ROI   -18.2%  over-rate 44.4%
+
+  (d) EXECUTION: is the best total cell even above break-even?
+     slip 0c  top-tercile over ROI -6.8%
+     slip 1c  top-tercile over ROI -7.3%
+     slip 2c  top-tercile over ROI -7.8%
+     slip 3c  top-tercile over ROI -8.3%
+
+====================================================================================================
+C4  VOLATILITY GRADIENT  --  high-variance players' overs underperform
+====================================================================================================
+  n=7194 quotes, 132 games, 639 player-market blocks
+  MECHANISM (Law 6) on raw production: rho(relvol, standardised beat) = -0.0305
+     player-market label permutation WITHIN market, one-sided negative: p = 0.0147
+
+  Over-side ROI by relvol tercile:
+     low vol   n=3017  over-rate 51.3%  overROI   -4.5% CI[-9.8%,+0.5%]   underROI   -9.4%
+     mid vol   n=2321  over-rate 51.6%  overROI   -3.6% CI[-9.1%,+1.9%]   underROI  -10.4%
+     high vol  n=1856  over-rate 48.2%  overROI   -9.6% CI[-15.1%,-4.1%]   underROI   -4.8%
+     NOTE the direction: high-vol OVERS do lose (-9.6%) but so does the whole board (-5.5%).
+     The only tradable version is the UNDER on high-vol players: -4.8%, which is BELOW break-even.
+
+  (c) BOUNDARY PERTURBATION
+     top 50% relvol  n=3015  overROI   -8.0%  underROI   -6.4%
+     top 40% relvol  n=2304  overROI   -8.7%  underROI   -5.5%
+     top 33% relvol  n=1856  overROI   -9.6%  underROI   -4.8%
+     top 25% relvol  n=1457  overROI   -9.5%  underROI   -5.0%
+     top 20% relvol  n=1209  overROI   -9.5%  underROI   -5.2%
+
+  (a) WALK-FORWARD by game, top-tercile relvol
+     fold 1  n=575  overROI   -17.6%  underROI    +3.4%
+     fold 2  n=610  overROI    -5.0%  underROI    -9.5%
+     fold 3  n=671  overROI    -7.0%  underROI    -7.5%
+
+  CONFOUND: relvol = sd / line, so a low line mechanically inflates it.
+     line < 10  mean relvol 0.517 | high-vol n=1257 overROI  -11.7% | low-vol n=525  overROI  -17.0%
+     10-16      mean relvol 0.445 | high-vol n=354  overROI  -11.1% | low-vol n=678  overROI   -6.0%
+     16-22      mean relvol 0.398 | high-vol n=213  overROI   +0.6% | low-vol n=850  overROI   -1.5%
+     22+        mean relvol 0.298 | high-vol n=32   overROI  +20.9% | low-vol n=964  overROI   +0.6%
+     using RAW sd instead of sd/line (removes the line-size confound):
+     rho(raw sd, standardised beat) = +0.0269   p = 0.5107

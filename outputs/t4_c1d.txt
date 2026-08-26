@@ -1,0 +1,18 @@
+====================================================================================================
+C1d  WITHIN-PLAYER TIMING TEST  (between-player quality differenced out by construction)
+====================================================================================================
+  gate PASS (mv<=0)  blocks=80    signal n=137  ROI  +14.8%  |  same players, quiet n=720   ROI   +4.9%
+                     within-block diff   +9.9 pp | null mean +8.3 pp sd 8.1 pp -> p = 0.4263
+  gate FAIL (mv>=1)  blocks=59    signal n=81   ROI   -7.3%  |  same players, quiet n=301   ROI  +11.4%
+                     within-block diff  -18.7 pp | null mean -0.9 pp sd 11.5 pp -> p = 0.9385
+  all rows           blocks=99    signal n=218  ROI   +6.6%  |  same players, quiet n=1391  ROI   +4.8%
+                     within-block diff   +1.8 pp | null mean +6.4 pp sd 6.3 pp -> p = 0.7670
+
+  SAME TEST, but on RAW PRODUCTION rather than ROI (Law 6). Statistic = mean of
+  (actual - line)/player_sd, so the book's price cannot create the result.
+     signal nights mean z +0.191  |  her other gate-pass nights +0.213  |  diff -0.023  p = 0.8705
+
+  WALK-FORWARD on the within-player timing effect (3 chronological game folds):
+     fold 1  20260626..20260713  signal n=29  ROI  +41.2%  quiet n=213  ROI   +3.9%  diff  +37.3 pp
+     fold 2  20260715..20260805  signal n=58  ROI  +27.3%  quiet n=245  ROI   +8.3%  diff  +19.0 pp
+     fold 3  20260807..20260825  signal n=50  ROI  -14.9%  quiet n=262  ROI   +2.5%  diff  -17.5 pp

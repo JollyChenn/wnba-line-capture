@@ -1,0 +1,321 @@
+########## t2_build ##########
+games in schedule: 290
+live_lines rows: 56843
+games with any live row: 40
+unmatched sample: [('Atlanta Dream|Seattle Storm NOGAME', 2941), ('Portland Fire|Indiana Fever NOGAME', 2941), ('Washington Mystics|Dallas Wings NOGAME', 2941), ('Phoenix Mercury|Connecticut Sun NOGAME', 1054), ('Toronto Tempo|Atlanta Dream NOGAME', 901), ('Chicago Sky|Los Angeles Sparks NOGAME', 901)]
+teams-field order home-first: 40 away-first: 0
+games with in-window (0-150m) rows: 27
+total in-window obs: 24645
+per-game obs counts: [2090, 1826, 1645, 1512, 1432, 1365, 1344, 1108, 1096, 1047, 1028, 1025, 1008, 996, 933, 905, 895, 525, 525, 525, 420, 420, 420, 173, 136, 123, 123]
+in-window type/alt: {('moneyline', '0'): 1131, ('team_total', '0'): 2454, ('spread', '0'): 1256, ('spread', '1'): 7066, ('total', '0'): 1256, ('total', '1'): 7066, ('team_total', '1'): 4416}
+games with any pre-tip rows: 4 of 27
+pre-tip counts: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 85, 153, 833, 1564]
+in-window games with final score: 27
+########## t2_refresh ##########
+GENUINE PAYLOAD REFRESH INTERVAL (min), all matched games, full payload:
+  n=133  p10 7.53  p25 13.83  median 15.12  p75 15.18  p90 16.50  max 74.27
+  share of intervals in [13,17] min: 66.2%
+  share < 5 min: 6.0%
+
+EFFECTIVE IN-PLAY SAMPLE after collapsing stale repeats:
+  distinct in-window quote refreshes: 130 across 27 games (median 5.0 per game)
+  per-game refresh counts: [9, 8, 8, 7, 7, 7, 6, 6, 6, 6, 6, 5, 5, 5, 5, 4, 4, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2]
+  nominal rows were 24,645 -> 89.6% of the in-play file is duplicated stale quotes
+########## t2_stale ##########
+DISTINCT MAIN-LINE VALUES PER GAME  (elapsed-min ranges at which each value was quoted)
+20260715  GS@IND         span   9.1- 69.4 min  distinct: moneyline:5 total:5 spread:5
+        ML: -151,129 @9-12 | 135,-181 @18-32 | -116,-105 @33-47 | 143,-175 @48-62 | 278,-362 @63-69
+20260716  POR@WSH        span  48.4-121.4 min  distinct: moneyline:5 total:6 spread:6
+        ML: 782,-1289 @48-55 | 448,-636 @56-70 | 307,-471 @71-85 | 1222,-3654 @86-100 | 976,-2498 @101-115
+20260717  ATL@TOR        span  17.8- 41.9 min  distinct: moneyline:3 total:3 spread:3
+        ML: 374,-609 @18-19 | 457,-798 @20-34 | 209,-295 @36-42
+20260717  SEA@IND        span  17.8- 41.9 min  distinct: moneyline:3 total:3 spread:3
+        ML: -361,247 @18-19 | -673,404 @20-34 | -3198,1506 @36-42
+20260717  LA@CHI         span  17.8- 41.9 min  distinct: moneyline:3 total:3 spread:3
+        ML: -115,-115 @18-19 | -125,-106 @20-34 | -491,317 @36-42
+20260718  NY@IND         span   4.0- 14.1 min  distinct: moneyline:2 total:2 spread:2
+        ML: 101,-117 @4-10 | 218,-275 @14-14
+20260718  POR@MIN        span   4.0- 14.1 min  distinct: moneyline:2 total:2 spread:2
+        ML: -792,586 @4-10 | -1491,705 @14-14
+20260719  CON@PHX        span  46.0- 76.3 min  distinct: moneyline:3 total:3 spread:3
+        ML: -158,130 @46-51 | -573,357 @52-66 | -579,414 @68-76
+20260720  LV@TOR         span  16.4- 75.6 min  distinct: moneyline:3 total:4 spread:4
+        ML: 282,-424 @16-30 | 412,-693 @31-45 | 712,-1516 @47-60
+20260720  NY@DAL         span  16.4- 75.6 min  distinct: moneyline:4 total:4 spread:4
+        ML: 181,-224 @16-30 | 123,-164 @31-45 | 127,-170 @47-60 | 196,-245 @62-76
+20260722  CHI@NY         span  54.1-130.3 min  distinct: moneyline:6 total:6 spread:6
+        ML: -125,103 @54-55 | -298,234 @57-71 | -228,167 @72-86 | -198,147 @87-101 | 189,-236 @104-115 | 224,-320 @116-130
+20260722  LV@WSH         span  24.1-105.4 min  distinct: moneyline:7 total:7 spread:7
+        ML: 182,-226 @24-25 | 143,-192 @27-41 | -109,-121 @42-56 | 139,-170 @57-71 | 134,-180 @74-85 | 425,-597 @86-100 | 674,-1396 @102-105
+20260722  CON@IND        span   0.5- 75.4 min  distinct: moneyline:3 total:6 spread:5
+        ML: -524,409 @0-11 | -684,408 @12-26 | -717,423 @27-41
+20260728  CON@WSH        span  19.8-101.5 min  distinct: moneyline:6 total:6 spread:6
+        ML: -251,200 @20-30 | -178,133 @31-45 | -209,154 @46-61 | -205,166 @62-76 | -542,342 @77-90 | -1963,841 @91-102
+20260728  TOR@MIN        span   1.2- 71.5 min  distinct: moneyline:3 total:5 spread:5
+        ML: -1348,916 @1-15 | -1620,744 @16-31 | -1566,728 @32-46
+20260729  ATL@DAL        span   8.8- 69.2 min  distinct: moneyline:5 total:5 spread:5
+        ML: 104,-125 @9-9 | -122,-108 @10-24 | -130,-102 @25-39 | -132,109 @40-54 | -215,174 @55-69
+20260730  MIN@TOR        span   4.4-121.5 min  distinct: moneyline:5 total:8 spread:8
+        ML: 540,-721 @4-16 | 269,-399 @17-31 | 411,-690 @32-46 | 701,-1481 @47-61 | 925,-1615 @62-76
+20260730  CON@CHI        span   4.4-136.7 min  distinct: moneyline:9 total:9 spread:9
+        ML: -236,197 @4-16 | -139,105 @17-31 | 111,-135 @32-46 | 199,-279 @47-61 | 151,-185 @62-76 | -106,-125 @78-91 | 188,-261 @93-106 | -243,176 @108-122 | -2186,899 @123-137
+20260730  NY@LV          span   0.3-116.1 min  distinct: moneyline:8 total:8 spread:8
+        ML: -184,156 @0-2 | -186,157 @3-17 | -168,126 @18-32 | -234,170 @33-47 | -221,178 @48-62 | -421,317 @63-77 | -945,516 @93-107 | -139,105 @109-116
+20260731  DAL@WSH        span  22.6-113.2 min  distinct: moneyline:7 total:7 spread:7
+        ML: 111,-148 @23-25 | -158,130 @28-40 | -141,107 @41-55 | -115,-105 @57-70 | -173,130 @72-86 | -173,141 @87-101 | -171,128 @102-113
+20260731  SEA@ATL        span  22.6-113.2 min  distinct: moneyline:7 total:7 spread:7
+        ML: -762,442 @23-25 | -2654,1012 @28-40 | -3121,1115 @41-55 | -4183,1319 @57-70 | -3787,1690 @72-86 | -2498,1268 @87-101 | -2886,1065 @102-113
+20260802  CON@DAL        span  49.2- 79.4 min  distinct: moneyline:3 total:3 spread:3
+        ML: -1862,813 @49-58 | -2086,1115 @59-73 | -2594,1302 @74-79
+20260803  SEA@NY         span  59.2-127.5 min  distinct: moneyline:4 total:5 spread:5
+        ML: -572,411 @59-67 | -801,459 @68-82 | -1057,672 @83-97 | -3500,1602 @98-112
+20260803  LV@ATL         span  59.2-130.0 min  distinct: moneyline:4 total:6 spread:6
+        ML: 109,-132 @59-67 | 271,-402 @68-82 | 516,-757 @83-97 | 1032,-2741 @98-112
+20260803  PHX@CHI        span   1.1- 10.0 min  distinct: moneyline:2 total:2 spread:2
+        ML: 110,-129 @1-7 | 113,-132 @9-10
+20260809  GS@LA          span  19.8- 50.0 min  distinct: moneyline:3 total:3 spread:3
+        ML: 262,-387 @20-21 | 694,-1457 @22-36 | 741,-1611 @37-50
+20260811  NY@IND         span   4.9- 18.8 min  distinct: moneyline:2 total:2 spread:2
+        ML: -140,119 @5-9 | -213,172 @14-19
+
+HOLD TIME AT ONE QUOTED VALUE (minutes of game time a main line stayed frozen):
+  moneyline  n=117  median  13.8  mean  10.9  max  14.1
+  total      n=130  median  13.8  mean  10.9  max  14.1
+  spread     n=129  median  13.8  mean  11.0  max  29.3
+########## t2_ab_real ##########
+====================================================================================================
+TESTS A/B/D AT TRUE RESOLUTION - one step = one ~15-min quote refresh
+GRID DECLARED: 5 series x 3 statistics (lag-1 autocorr of steps; reversion|step|>=1.5sd; reversion|step|>=2sd)
+             = 15 cells.  Independent unit = GAME.  Statistic pooled over steps, CI by game bootstrap.
+NULL: within-game random circular shift of the step sequence (preserves each game's step distribution).
+====================================================================================================
+  ml_p      games=23  refresh-steps= 86  consecutive-step PAIRS= 63
+  sp_line   games=23  refresh-steps= 99  consecutive-step PAIRS= 76
+  tot_line  games=23  refresh-steps= 99  consecutive-step PAIRS= 76
+  tth_line  games=23  refresh-steps= 96  consecutive-step PAIRS= 73
+  tta_line  games=23  refresh-steps= 96  consecutive-step PAIRS= 73
+
+NOISE CEILING (2000 game-block circular-shift permutations, family-wise over the 15-cell grid):
+  best-cell |lag-1 autocorr| : p50 0.134  p95 CEILING 0.183  max 0.243
+  best-cell |reversion (sd)| : p50 0.791  p95 CEILING 0.996  max 1.212
+  Nothing below these is a finding.
+
+A - MOMENTUM / AUTOCORRELATION OF ~15-MIN PRICE STEPS   (+ = momentum, - = reversion)
+series           r 95% CI (game boot)      pairs  games  ceiling verdict
+ml_p        +0.099  [-0.054, +0.228]          63     23    0.183 under ceiling
+sp_line     +0.145  [-0.067, +0.324]          76     23    0.183 under ceiling
+tot_line    -0.177  [-0.335, -0.002]          76     23    0.183 under ceiling
+tth_line    -0.113  [-0.352, +0.104]          73     23    0.183 under ceiling
+tta_line    -0.098  [-0.293, +0.158]          73     23    0.183 under ceiling
+
+B - MEAN REVERSION AFTER A LARGE STEP (large = >= k x that game's own step sd)
+series       k    revert 95% CI (game boot)          n  games  ceiling verdict
+ml_p       1.5    -0.766  [-1.452, -0.086]          11     10    0.996 under ceiling
+ml_p       2.0   (n=5 too small)
+sp_line    1.5    -0.819  [-1.354, -0.274]          16     13    0.996 under ceiling
+sp_line    2.0   (n=8 too small)
+tot_line   1.5    -0.050  [-0.589, +0.394]          17     15    0.996 under ceiling
+tot_line   2.0   (n=6 too small)
+tth_line   1.5    -0.046  [-0.516, +0.448]          17     14    0.996 under ceiling
+tth_line   2.0   (n=7 too small)
+tta_line   1.5    -0.718  [-1.510, +0.318]          16     11    0.996 under ceiling
+tta_line   2.0   (n=7 too small)
+########## t2_anchor ##########
+anchors built for 27 of 27 in-play games
+anchor age before tip (hours): median 0.76  min 0.21  max 3.69
+  NOTE: this is the last PRE-GAME capture, not a true closing line. Ages >3h are stale anchors.
+  games with anchor within 3h of tip: 26
+
+observations (game x refresh) with anchor+result: 130 over 27 games
+
+====================================================================================================
+C1 - SHRINKAGE TEST.  predictor P(lam) = lam*LIVE + (1-lam)*ANCHOR ; target = FINAL
+  lam=1 -> trust live line fully.  lam<1 best -> live line OVER-REACTS -> fade extreme live deviations.
+  GRID DECLARED: 2 markets (total, spread) x 5 elapsed bands x lam in 0..1.4 step .05
+  Independent unit = GAME. CI by game bootstrap.
+====================================================================================================
+
+TOTAL  (spread target = home margin; live spread sign-flipped to a margin forecast)
+  band(min)      n games rmse@lam1 rmse@lam0  best_lam 95% CI on best_lam      
+  0-30          42    21    17.591    19.266      1.30 [0.55, 1.40]            
+  30-60         39    22    13.520    20.291      1.40 [1.10, 1.40]            
+  60-90         26    17    13.129    19.313      1.00 [0.60, 1.40]            
+  90-150        18    10     7.605    17.361      1.05 [0.70, 1.20]            
+  0-150        125    26    14.324    19.343      1.20 [0.85, 1.40]            
+
+SPREAD  (spread target = home margin; live spread sign-flipped to a margin forecast)
+  band(min)      n games rmse@lam1 rmse@lam0  best_lam 95% CI on best_lam      
+  0-30          42    21    11.892    11.369      0.00 [0.00, 1.30]            
+  30-60         40    23     9.677    12.567      1.25 [0.50, 1.40]            
+  60-90         28    18     8.074    13.978      1.40 [1.05, 1.40]            
+  90-150        20    11     5.208    15.433      1.05 [0.50, 1.20]            
+  0-150        130    27     9.629    13.003      1.15 [0.65, 1.35]            
+########## t2_bet ##########
+========================================================================================================
+GRID DECLARED BEFORE RESULTS: 2 markets x 2 directions (fade-to-anchor / follow-the-move)
+   x 3 deviation thresholds x 3 elapsed bands = 36 cells.
+   Bets priced at the SAME refresh the signal is read (law 5). Real two-sided quotes (law 4).
+   NULL: permute FINAL RESULTS across the 27 games (game-block; the label lives at game level).
+========================================================================================================
+
+NOISE CEILING (1500 game-block result permutations, family-wise over the grid):
+  best-cell |ROI| : p50 +82.6%   p95 CEILING +100.0%   max +100.0%
+  With only 27 games, ANY cell under 100.0% ROI is indistinguishable from noise.
+
+mkt  dir      thr band         n   gms     hit%    ROI_q ROI_mild  ROI_mod verdict
+sp   fade       9 45-90       11     5    18.2%   -65.8%   -66.7%   -67.6% under ceiling
+sp   fade       6 45-90       19     9    21.1%   -60.5%   -61.6%   -62.6% under ceiling
+sp   follow     9 45-90       11     5    81.8%   +54.7%   +50.4%   +46.3% under ceiling
+sp   follow     6 45-90       19     9    78.9%   +49.2%   +45.1%   +39.2% under ceiling
+sp   fade       9 0-150       24     9    33.3%   -37.4%   -39.1%   -40.7% under ceiling
+sp   fade       6 0-150       36    12    33.3%   -37.3%   -39.0%   -40.6% under ceiling
+sp   fade       3 45-90       30    14    33.3%   -36.9%   -38.6%   -46.3% under ceiling
+tot  fade       4 0-150       85    22    34.1%   -36.0%   -37.7%   -45.2% under ceiling
+tot  fade       4 45-90       41    16    34.1%   -35.4%   -37.2%   -45.0% under ceiling
+tot  follow    12 45-90       17    11    35.3%   -33.3%   -35.1%   -36.8% under ceiling
+tot  fade       8 0-45        16    11    37.5%   -30.0%   -31.9%   -41.1% under ceiling
+tot  fade       8 0-150       59    18    37.3%   -29.8%   -31.7%   -39.6% under ceiling
+tot  fade       4 0-45        28    16    39.3%   -27.0%   -29.0%   -39.0% under ceiling
+sp   follow     3 45-90       30    14    66.7%   +25.9%   +22.4%   +13.2% under ceiling
+sp   follow     9 0-150       24     9    66.7%   +25.8%   +22.3%   +19.0% under ceiling
+sp   follow     6 0-150       36    12    66.7%   +25.7%   +22.3%   +17.3% under ceiling
+tot  follow     4 45-90       41    16    65.9%   +24.5%   +21.0%   +17.8% under ceiling
+tot  follow     4 0-150       85    22    65.9%   +24.4%   +21.0%   +17.0% under ceiling
+tot  fade       8 45-90       32    16    40.6%   -23.2%   -25.3%   -34.4% under ceiling
+tot  fade      12 45-90       17    11    64.7%   +22.8%   +19.4%    +7.7% under ceiling
+sp   follow     3 0-45        23    14    43.5%   -18.5%   -20.8%   -22.9% under ceiling
+tot  follow     8 0-150       59    18    62.7%   +18.4%   +15.2%   +10.9% under ceiling
+tot  follow     8 0-45        16    11    62.5%   +17.6%   +14.3%    +6.7% under ceiling
+tot  fade      12 0-45         9     8    44.4%   -17.0%   -19.2%   -33.6% under ceiling
+tot  follow    12 0-150       33    17    45.5%   -14.3%   -16.6%   -22.0% under ceiling
+tot  follow     4 0-45        28    16    60.7%   +14.2%   +11.1%    +5.4% under ceiling
+sp   fade       3 0-150       70    22    45.7%   -13.9%   -16.2%   -24.0% under ceiling
+tot  follow     8 45-90       32    16    59.4%   +12.3%    +9.2%    +6.3% under ceiling
+sp   fade       3 0-45        23    14    56.5%    +6.4%    +3.5%    +0.7% under ceiling
+tot  follow    12 0-45         9     8    55.6%    +4.4%    +1.6%   -11.4% under ceiling
+tot  fade      12 0-150       33    17    54.5%    +3.0%    +0.1%   -10.6% under ceiling
+sp   follow     3 0-150       70    22    54.3%    +2.2%    -0.6%    -5.8% under ceiling
+
+cells above ceiling: 0 / 32
+########## t2_slope ##########
+====================================================================================================
+IS THE LIVE LINE UNBIASED?   FINAL = a + b * LIVE.   b=1 => unbiased.  b>1 => line UNDER-reacts.
+Independent unit = GAME; CI by game bootstrap. 27 games max.
+====================================================================================================
+market   band          n games        b 95% CI (game boot)           R2
+TOTAL    0-45         59    21    1.165  [0.576, 1.577]           0.387
+TOTAL    45-90        51    19    1.319  [0.837, 1.617]           0.704
+TOTAL    90-150       20    11    1.055  [0.545, 1.191]           0.849
+TOTAL    0-150       130    27    1.243  [0.840, 1.453]           0.605
+SPREAD   0-45         59    21    1.124  [0.497, 1.802]           0.433
+SPREAD   45-90        51    19    1.294  [0.883, 1.588]           0.764
+SPREAD   90-150       20    11    1.065  [0.503, 1.188]           0.882
+SPREAD   0-150       130    27    1.168  [0.716, 1.460]           0.633
+
+====================================================================================================
+MECHANISM CHECK (law 6): is b>1 a real market bias, or an artifact of the 15-min STALE feed?
+If the quote we see is simply LAGGED, then b must be far above 1 where the line moved a lot at the
+NEXT refresh, and ~1 where the next refresh did not move. A real bias would not care.
+====================================================================================================
+market   next-refresh move      n games        b 95% CI (game boot)    
+TOTAL    small (<=median)      52    22    1.115  [0.396, 1.511]
+TOTAL    large (> median)      51    21    1.458  [0.991, 1.808]
+   median |next-refresh move| = 3.00 pts
+SPREAD   small (<=median)      59    25    1.135  [0.689, 1.652]
+SPREAD   large (> median)      44    21    1.474  [0.979, 1.734]
+   median |next-refresh move| = 2.50 pts
+########## t2_vol_exec ##########
+====================================================================================================
+E - VOLATILITY TERM STRUCTURE BY ELAPSED MINUTES SINCE TIP
+  CAVEAT: elapsed wall-clock is only a PROXY for game time (timeouts, reviews, halftime,
+  broadcast breaks). A WNBA game runs ~110 wall-clock min for 40 game-min, so a 15-min
+  elapsed bucket is ~5-6 game-min and the mapping drifts game to game.
+  SECOND CAVEAT: one step = one ~15-min FEED REFRESH, so this is refresh-to-refresh
+  volatility, NOT true market volatility. Absolute levels are not interpretable.
+====================================================================================================
+series     band     steps games mean|move|  sd(move)
+TOTAL      0-30        21    18     5.167     6.878
+TOTAL      30-60       34    21     4.853     5.876
+TOTAL      60-90       28    18     3.625     5.146
+TOTAL      90-150      20    11     4.075     5.618
+SPREAD     0-30        21    18     2.357     3.208
+SPREAD     30-60       34    21     2.941     3.561
+SPREAD     60-90       28    18     2.214     2.740
+SPREAD     90-150      20    11     3.700     4.400
+ML prob    0-30        21    18     0.066     0.088
+ML prob    30-60       31    20     0.078     0.097
+ML prob    60-90       24    15     0.072     0.094
+ML prob    90-150      14    10     0.129     0.171
+
+  Directional read: total-line and spread-line step size does NOT rise or fall monotonically
+  with elapsed time in this sample; every band's CI overlaps every other. n per band = 10-22 games.
+
+====================================================================================================
+EXECUTION REALISM (brief 33) - CAN ANY OF THIS BE TRADED?
+====================================================================================================
+
+1. QUOTE PERSISTENCE across one ~15-min refresh (upper bound on a fill you can still get):
+   tot_line  unchanged   7/103 =   6.8%   median |move| when it moves = 3.50
+   sp_line   unchanged  12/103 =  11.7%   median |move| when it moves = 2.50
+   ml_p      unchanged   0/ 90 =   0.0%   median |move| when it moves = 0.07
+
+2. MISSED-ENTRY RATE. Every quote in this file is guaranteed to be superseded within ~15 min,
+   and its age at the moment it is written is unknown. A bettor reading the file acts on a quote
+   whose expected age is ~7.5 min (half the refresh interval). Under a linear-decay assumption the
+   implied missed-entry rate is 1 - persistence:
+     tot_line  missed-entry floor  93.2%
+     sp_line   missed-entry floor  88.3%
+     ml_p      missed-entry floor 100.0%
+   is willing to hold the number for the whole window, which no in-play book does.)
+
+3. HOLD/OVERROUND actually quoted in-play by this book:
+     moneyline 5.86%  spread 6.94%  total 6.96%  team_total 6.88%  (median two-way overround)
+     => breakeven on a near-even in-play two-way market is 51.7-53.5%, NOT 50%.
+     Any strategy must first find >3.4 pts of edge just to reach breakeven.
+
+4. SINGLE BOOK. xbet_gamelines.csv has 0 in-play rows, so no cross-book comparison and no
+     independent fair-value reference exists in-play. Every in-play number is self-referential.
+
+5. VERDICT ON EXECUTABILITY: no quote in live_lines.csv can be shown to have been executable.
+     EVERY in-play ROI in this report is therefore an OPTIMISTIC UPPER BOUND.
+
+====================================================================================================
+POWER - WHAT n WOULD ACTUALLY BE NEEDED
+====================================================================================================
+  Present: 27 independent games; 130 distinct in-play quote refreshes; 63-76 consecutive-step pairs.
+
+  (a) SETTLEMENT EDGE (does a live signal beat the price?).  Bets inside one game share one final
+      score, so the effective independent unit is the GAME, not the bet.  For near-even two-way
+      prices (sd of a 1u result ~= 1.0), detecting a true +5%% ROI at 80%% power / 5%% two-sided:
+        true edge +10% ROI  ->     785 independent games needed  (have 27, i.e. 3.4% of the way)
+        true edge +5% ROI  ->    3140 independent games needed  (have 27, i.e. 0.9% of the way)
+        true edge +3% ROI  ->    8724 independent games needed  (have 27, i.e. 0.3% of the way)
+      Capture rate in this file is 27 in-play games out of 290 scheduled (9.3%). At that rate a
+      +5% test needs ~33763 scheduled games = ~116 full WNBA seasons.
+
+  (b) MICROSTRUCTURE (autocorrelation of price steps). Detecting r=0.10 at 80%% power needs ~782 pairs.
+      At the CURRENT 15-min refresh: ~2.8 pairs per game -> ~279 games.
+      At a 30-SECOND refresh: ~200 steps per game -> ~4 games would do it.
+      => the binding constraint on Track 2 is the FEED CADENCE, not the number of games.
+         Fixing the poller buys ~50x more statistical power than another whole season of games.
+########## t2_predmkt ##########
+====================================================================================================
+D - TWO DIFFERENT EDGES, TESTED SEPARATELY
+  (1) PREDICTS THE MARKET : does state at refresh k forecast the price move at k+1?
+  (2) PREDICTS THE RESULT : does it forecast the settlement? (done above - slope + ROI tests)
+  GRID DECLARED: 2 markets x 3 predictors (anchor deviation, last step, elapsed) = 6 cells.
+  NULL: within-game circular shift of the next-move series.  Independent unit = GAME.
+====================================================================================================
+
+NOISE CEILING (2000 game-block shifts, family-wise over 6 cells): p50 0.328  p95 CEILING 0.458  max 0.597
+
+market    predictor at refresh k        r      n  games  ceiling verdict
+tot_line  deviation from anchor    +0.131     99     26    0.458 under ceiling
+tot_line  last refresh step        -0.186     73     22    0.458 under ceiling
+tot_line  elapsed minutes          -0.154     99     26    0.458 under ceiling
+sp_line   deviation from anchor    +0.096    103     27    0.458 under ceiling
+sp_line   last refresh step        +0.145     76     23    0.458 under ceiling
+sp_line   elapsed minutes          -0.181    103     27    0.458 under ceiling
+
+RESULT: no predictor of the NEXT price move clears the ceiling. The market-prediction edge
+        (brief 32) is absent at the only horizon this feed can see (~15 min).

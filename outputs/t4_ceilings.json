@@ -1,0 +1,15 @@
+{
+ "gridU_p95": 0.5733548387096774,
+ "gridU_med": 0.419,
+ "gridU_cells": 226,
+ "gridU_n": 290,
+ "gridG_p95": 0.10912598425196855,
+ "gridG_med": 0.03968932038834954,
+ "gridG_n": 2926,
+ "gridP_p95": 0.128656,
+ "gridP_med": 0.05451505016722409,
+ "gridP_n": 7194,
+ "gridU_cellcount": 336,
+ "gridG_cellcount": 48,
+ "gridP_cellcount": 96
+}

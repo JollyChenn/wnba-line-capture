@@ -2502,3 +2502,30 @@ pick_date,game_id,player,team,opp,market,anchor,signals,fair_p,fair_odds,proj,sd
 2026-08-25,401857177,Isabelle Harrison,Toronto Tempo,Seattle Storm,pra_over,17.5,hot+expand+leaky,0.62,1.61,21.0,11.55
 2026-08-25,401857177,Dominique Malonga,Seattle Storm,Toronto Tempo,pts_under,17.5,steady,0.563,1.78,16.5,6.55
 2026-08-25,401857177,Awa Fam,Seattle Storm,Toronto Tempo,pts_under,8.5,ftdrought,0.589,1.7,7.0,6.55
+2026-08-26,401857176,Tiffany Hayes,Golden State Valkyries,Connecticut Sun,pts_under,11.5,steady,0.563,1.78,10.9,3.75
+2026-08-26,401857176,Kennedy Burke,Connecticut Sun,Golden State Valkyries,pts_under,10.5,steady,0.563,1.78,9.8,4.28
+2026-08-26,401857176,Veronica Burton,Golden State Valkyries,Connecticut Sun,pts_under,13.5,steady,0.563,1.78,12.9,3.96
+2026-08-26,401857176,Janelle Salaun,Golden State Valkyries,Connecticut Sun,pts_under,12.5,steady,0.563,1.78,11.7,5.17
+2026-08-26,401857177,Isabelle Harrison,Toronto Tempo,Seattle Storm,pra_over,17.5,hot+expand+leaky,0.62,1.61,21.0,11.55
+2026-08-26,401857177,Dominique Malonga,Seattle Storm,Toronto Tempo,pts_under,17.5,steady,0.563,1.78,16.5,6.55
+2026-08-26,401857177,Awa Fam,Seattle Storm,Toronto Tempo,pts_under,8.5,ftdrought,0.589,1.7,7.0,6.55
+2026-08-26,401857178,Jonquel Jones,New York Liberty,Golden State Valkyries,pra_under,29.5,cold+stingy,0.621,1.61,26.8,8.65
+2026-08-26,401857178,Tiffany Hayes,Golden State Valkyries,New York Liberty,pts_under,11.5,steady,0.563,1.78,10.9,3.75
+2026-08-26,401857178,Breanna Stewart,New York Liberty,Golden State Valkyries,pts_under,20.5,steady,0.563,1.78,19.5,6.24
+2026-08-26,401857178,Rebecca Allen,New York Liberty,Golden State Valkyries,pts_under,11.5,ftdrought,0.589,1.7,10.5,4.58
+2026-08-26,401857178,Sabrina Ionescu,New York Liberty,Golden State Valkyries,pts_under,17.5,steady,0.563,1.78,16.5,6.57
+2026-08-26,401857178,Veronica Burton,Golden State Valkyries,New York Liberty,pts_under,13.5,steady,0.563,1.78,12.9,3.96
+2026-08-26,401857178,Janelle Salaun,Golden State Valkyries,New York Liberty,pts_under,12.5,steady,0.563,1.78,11.7,5.17
+2026-08-26,401857179,Kelsey Plum,Phoenix Mercury,Washington Mystics,pts_under,17.5,declining+cold+stingy,0.7,1.43,11.9,10.72
+2026-08-26,401857179,Kelsey Plum,Phoenix Mercury,Washington Mystics,pr_under,20.5,declining+cold+stingy,0.59,1.69,18.1,10.75
+2026-08-26,401857179,Kelsey Plum,Phoenix Mercury,Washington Mystics,pa_under,22.5,declining+cold+stingy,0.61,1.64,19.0,12.41
+2026-08-26,401857179,Kelsey Plum,Phoenix Mercury,Washington Mystics,ra_under,6.5,declining+cold,0.61,1.64,5.3,4.25
+2026-08-26,401857179,Kelsey Plum,Phoenix Mercury,Washington Mystics,pra_under,26.5,declining+cold+stingy,0.66,1.52,21.3,12.58
+2026-08-26,401857179,Kelsey Plum,Phoenix Mercury,Washington Mystics,ast_under,3.5,declining+cold,0.58,1.72,2.8,3.23
+2026-08-26,401857179,DeWanna Bonner,Phoenix Mercury,Washington Mystics,pts_under,11.5,steady,0.563,1.78,10.5,6.12
+2026-08-26,401857179,Alyssa Thomas,Phoenix Mercury,Washington Mystics,pts_under,16.5,steady,0.563,1.78,15.8,4.59
+2026-08-26,401857179,Kahleah Copper,Phoenix Mercury,Washington Mystics,pts_under,18.5,steady,0.563,1.78,17.3,7.84
+2026-08-26,401857179,Michaela Onyenwere,Washington Mystics,Phoenix Mercury,pts_under,8.5,ftdrought,0.589,1.7,7.3,5.27
+2026-08-26,401857179,Shakira Austin,Washington Mystics,Phoenix Mercury,pts_under,19.5,steady,0.563,1.78,18.5,6.34
+2026-08-26,401857179,Sonia Citron,Washington Mystics,Phoenix Mercury,pts_under,15.5,steady,0.563,1.78,14.9,3.51
+2026-08-26,401857179,Kiki Iriafen,Washington Mystics,Phoenix Mercury,pts_under,16.5,steady,0.563,1.78,15.7,4.83

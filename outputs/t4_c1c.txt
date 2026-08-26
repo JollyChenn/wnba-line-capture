@@ -1,0 +1,31 @@
+====================================================================================================
+C1c  IS IT A PLAYER EFFECT?  chronologically clean 'signal has fired on her before'
+====================================================================================================
+  gate-PASS rows, signal HAS fired on this player-market in an EARLIER game:
+     n=530   games=101  ROI +1.0%  CI[-7.6%, +9.3%]  over-rate 54.9%
+  gate-PASS rows, it never has:
+     n=1566  games=127  ROI -2.3%  CI[-8.2%, +3.4%]  over-rate 52.9%
+  inside the 'has fired before' set:  signal TONIGHT n=71   ROI +14.5%   |  quiet night n=459  ROI -1.1%
+  -> the night-specific increment is +15.6 pp; the between-player split is +3.2 pp
+
+  CONFOUND CHECK: 'signal has fired before' is heavily correlated with volume and role.
+     mean prior games   fired-before 29.8  vs never 23.8
+     mean line          fired-before 21.5  vs never 16.0
+     mean minutes       fired-before 30.2  vs never 28.2
+     mean (recent mean - line)  fired-before +1.48  vs never +0.52
+
+  Does the split survive matching on line size? (line is the crudest proxy for role)
+     line  0-10.0   fired n=19   ROI  -23.1% | never n=252  ROI   -7.4%   (thin)
+     line 10-16.0   fired n=70   ROI   +2.7% | never n=621  ROI   -1.0%
+     line 16-22.0   fired n=192  ROI   -2.6% | never n=410  ROI   -5.3%
+     line 22-99.0   fired n=249  ROI   +5.0% | never n=283  ROI   +4.0%
+
+  WALK-FORWARD on the player split (3 chronological game folds):
+     fold 1  fired n=37   ROI  +26.3%  |  never n=565  ROI   -5.8%
+     fold 2  fired n=185  ROI   -4.7%  |  never n=549  ROI   +2.0%
+     fold 3  fired n=308  ROI   +1.3%  |  never n=452  ROI   -3.1%
+
+  PERMUTATION at the label's level: 'has fired before' is a player-market attribute that
+  turns on at a point in time. Null = reassign the whole fired/never label across
+  player-market blocks within the same market, preserving how many blocks carry it.
+     real +3.2 pp | null mean +0.6 pp sd 4.0 pp p95 +7.1 pp -> p = 0.2483

@@ -1,0 +1,39 @@
+====================================================================================================
+C3 FOLLOW-UP: the original claim was rho +0.074, p=0.0165. Which specification gives that?
+====================================================================================================
+   over_won (0/1)               rho +0.0201   GAME-block label perm p (two-sided) = 0.4552
+   actual - line                rho +0.0628   GAME-block label perm p (two-sided) = 0.0450
+   (actual-line)/player sd      rho +0.0627   GAME-block label perm p (two-sided) = 0.0370
+   over PnL at board price      rho +0.0474   GAME-block label perm p (two-sided) = 0.2143
+   actual (raw production)      rho +0.0819   GAME-block label perm p (two-sided) = 0.0003
+   A quote-level shuffle instead of a GAME-block one (what would produce a small p wrongly):
+      over_won, QUOTE-level shuffle: rho +0.0201  p = 0.2602   <-- 2926 fake independent units
+      the game-block version of the same statistic is p = 1.0000. 50 games is the real n.
+      -> game-block p = 0.4585
+   ALSO: only 50 distinct games carry a Pinnacle total. That is the independent n for C3.
+
+====================================================================================================
+C2 FOLLOW-UP: coverage split, direction split, and independence from the Model S signal
+====================================================================================================
+  source split (pinn_board.csv board sweep exists only from 2026-08-21):
+     <= 2026-08-20 (bets_log pinn only, engine-selected players) n=103  games=61  ROI  +20.1% CI[+3%,+35%]
+     >= 2026-08-21 (real Pinnacle board sweep)                  n=45   games=10  ROI  -20.4% CI[-51%,+12%]
+  direction split:
+     toward Pinnacle = OVER   n=41   ROI  +22.5%  hit 68.3%  CI[-5%,+49%]
+     toward Pinnacle = UNDER  n=107  ROI   +2.1%  hit 57.0%  CI[-15%,+20%]
+     the project's claim was '+13.6%% over / +12.4%% under, both directions pay about the same'.
+  by market group (a gap of 1 point means very different things at line 4.5 and line 24.5):
+     pts                  n=118  ROI  +12.6%  hit 62.7%
+     combos pra/pr/pa/ra  n=25   ROI   +6.7%  hit 60.0%
+     reb/ast              n=5    ROI -100.0%  (thin)
+  gap normalised by line size (|gap|/line >= 5%%), the scale-free version:
+     n=121  ROI   +5.0%  hit 58.7%
+  overlap with Model S: of the 148 |gap|>=1 bets, 23 are on a player-market the signal fired on tonight
+     with those removed: n=125  ROI  +10.3%  hit 61.6%
+
+  C2 NOISE CEILING. Declared grid: 4 gap thresholds x 3 sharp-read horizons x 3 direction
+  rules x 4 market groups = 144 cells, min n = 40. Null = reshuffle the gap inside player
+  blocks (the label lives on the player's quote), 3000 draws.
+     best REAL cell: +22.5%  ((1.0, 'sharp', 'over only', ('pts', 'pra', 'pr', 'pa', 'reb', 'ast', 'ra')))
+     null best-of-grid: median -900.0%  p95 -900.0%  max -8.5%  -> C2 CLEARS the ceiling
+     the LIVE cell (|gap|>=1, 6h, toward, all markets) = +7.8% n=148, versus p95 -900.0%

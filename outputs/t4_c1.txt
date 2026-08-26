@@ -1,0 +1,63 @@
+====================================================================================================
+C1  GATE 3 / MODEL S STALENESS  --  book has not raised her line >= 0.5 since her previous game
+====================================================================================================
+  entry = last two-sided board quote at or before tip-1h, over side, one position per player-slate
+  MODEL S      n=119  games=75  W-L 74-45 (62.2%)  ROI +14.9%  95%CI[-2.9%, +32.2%]  perm p=0.7306
+  REJECT group n=72  ROI -6.5%   (the contrast the claim rests on: +21.4 pp)
+  breakeven win rate at mean odds 1.849 = 54.1%
+  starred-minus-raised contrast +20.7 pp   player-block perm p=0.0375
+
+  (a) CHRONOLOGICAL WALK-FORWARD, split by GAME
+      fold 1  20260626..20260719  n=40   games=25  ROI   +20.2%  wr 65.0%
+      fold 2  20260719..20260807  n=38   games=25  ROI   +36.4%  wr 73.7%
+      fold 3  20260807..20260825  n=41   games=25  ROI   -10.1%  wr 48.8%
+      per-month:
+        202606  n=2    ROI   +86.5%  wr 100.0%
+        202607  n=60   ROI   +20.1%  wr 65.0%
+        202608  n=57   ROI    +6.9%  wr 57.9%
+      per half-month:
+        202606B n=2    ROI   +86.5%  CI[+nan%,+nan%]
+        202607A n=25   ROI   +19.0%  CI[-26%,+56%]
+        202607B n=35   ROI   +20.9%  CI[-5%,+47%]
+        202608A n=36   ROI   +12.6%  CI[-18%,+42%]
+        202608B n=21   ROI    -2.9%  CI[-53%,+47%]
+
+  (c) ROBUSTNESS
+      threshold perturbation on the gate (line - prev_line <):
+        mv < -0.5  n=65   ROI   +24.3%
+        mv < 0.0   n=65   ROI   +24.3%
+        mv < 0.5   n=119  ROI   +14.9%
+        mv < 1.0   n=119  ROI   +14.9%
+        mv < 1.5   n=161  ROI    +9.6%
+        mv < 2.0   n=161  ROI    +9.6%
+        mv < 99    n=183  ROI    +6.4%
+      leave-one-team-out (team of the bet player):
+        worst 3: NY +11.2%  POR +12.8%  DAL +13.1%
+        best  3: CHI +16.4%  CON +16.9%  LA +19.0%
+        spread of LOTO ROI 7.8 pp  (drop any one team and ROI moves inside this band)
+      leave-one-player-out (49 players):
+        worst 3: mcbride +12.6%  stewart +13.0%  bueckers +13.2%
+        best  3: hamby +16.9%  onyenwere +16.9%  cardoso +17.4%
+        removing the single best player takes ROI to +12.6%; 49/49 single-player deletions leave it positive
+        top-5 players carry 30/119 bets (25%)
+
+  (d) EXECUTION STRESS
+        slip 0c   n=119  ROI   +14.9%
+        slip 1c   n=119  ROI   +14.3%
+        slip 2c   n=119  ROI   +13.7%
+        slip 3c   n=119  ROI   +13.0%
+        slippage that takes C1 to zero: 24.0 cents of decimal odds
+        10% missed entries (random): mean ROI +15.0%  sd 2.8 pp
+        25% missed entries (random): mean ROI +14.9%  sd 4.8 pp
+        SAME RULE PRICED AT DIFFERENT INSTANTS (all gated and graded at that same instant):
+          open quote   n=132  ROI   +15.8%
+          tip-6h quote n=125  ROI   +13.0%
+          tip-1h quote n=119  ROI   +14.9%
+
+  (e) BANKROLL
+        flat 1u: final +17.74u  max drawdown 9.0u  longest losing streak 6
+        full Kelly f=0.145 at OOS win rate 60.8%
+        kelly1/4  stake 3.6% of bank  final 178.5u from 100u  max DD 29.0%
+        kelly1/8  stake 1.8% of bank  final 135.8u from 100u  max DD 15.4%
+        risk of a 50u drawdown on a 100u bank, flat 1u, game-clustered resample: 0.0%
+        risk of ruin (bank <= 0): 0.0%

@@ -1,0 +1,38 @@
+====================================================================================================
+C1b  THE GATE AS A BOARD-WIDE GRADIENT  (n=6606 quotes, 127 games, 106 players)
+====================================================================================================
+  Law 6 mechanism check, on RAW PRODUCTION not on ROI:
+     Spearman-ish: mean standardised beat (actual-line)/sd by line move
+        mv -4  n=37    over-rate 59.5%  mean z +0.140
+        mv -3  n=101   over-rate 50.5%  mean z +0.204
+        mv -2  n=313   over-rate 53.0%  mean z +0.127
+        mv -1  n=1233  over-rate 54.3%  mean z +0.164
+        mv +0  n=3036  over-rate 50.4%  mean z +0.113
+        mv +1  n=1343  over-rate 48.7%  mean z +0.007
+        mv +2  n=338   over-rate 48.5%  mean z -0.046
+        mv +3  n=113   over-rate 46.9%  mean z +0.184
+        mv +4  n=44    over-rate 59.1%  mean z +0.238
+     rho(line move, standardised beat) = -0.0390   player-block permutation p (one-sided, negative) = 0.0007
+     same, permuted inside GAME blocks: p = 0.0013
+
+  BUT the gate alone does not clear the price. Over-side ROI by line move on the whole board:
+     cut (mv<=-1)      n=1706  ROI   -2.6%  CI[-8.4%, +3.1%]
+     flat (mv==0)      n=3036  ROI   -5.3%  CI[-10.1%, -0.8%]
+     raised (mv>=1)    n=1864  ROI   -7.1%  CI[-13.9%, -0.6%]
+     gate PASS (mv<=0) n=4742  ROI   -4.4%  CI[-8.6%, -0.3%]
+
+  DECOMPOSITION of Model S -- 2x2, gate x signal, on the same board, same instant:
+                                     n    over%      ROI
+     no signal, gate FAIL         1017    49.4%    -7.0%
+     no signal, gate PASS         1954    52.8%    -2.6%
+     signal,    gate FAIL           81    50.6%    -5.1%
+     signal,    gate PASS          137    62.0%   +14.8%
+     -> gate main effect (no-signal rows, 2971 quotes): +4.4 pp of ROI
+
+  IS THE SIGNAL ITSELF WORTH ANYTHING? restrict to gate-PASS rows and compare signal vs not.
+     signal    n=137   ROI +14.8%
+     no signal n=1954  ROI -2.6%
+     signal-minus-nosignal inside gate-PASS = +17.4 pp   perm p (player-market block) = 0.4289
+
+  A ONE-SAMPLE TEST ON MODEL S ITSELF (game-clustered bootstrap, is ROI > 0?):
+     Model S n=119 games=75 ROI +14.9%  bootstrap P(ROI<=0) = 0.0468  (this is the honest one-sided p)
