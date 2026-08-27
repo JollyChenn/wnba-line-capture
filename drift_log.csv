@@ -13862,3 +13862,30 @@ logged_utc,date,player,market,side,line,src,open_odds,now_odds,move_pct,verdict,
 2026-08-27T14:14:18Z,2026-08-27,Dearica Hamby,pra,Under,22.5,model,1.87,1.87,0.0,BET (steady),ok 85%,,,,20,2.7,2026-08-27T14:13:12Z
 2026-08-27T14:14:18Z,2026-08-27,Bridget Carleton,pra,Over,21.5,overshoot,1.833,1.833,0.0,BET (steady),ok 85%,,,,20,2.7,2026-08-27T14:13:12Z
 2026-08-27T14:14:18Z,2026-08-27,Jonquel Jones,pra,Over,25.5,flip,1.8,1.8,0.0,BET (steady),ok 85%,,,,7,0.9,2026-08-27T14:13:12Z
+2026-08-27T14:45:37Z,2026-08-27,Breanna Stewart,pts,Under,20.5,newunder,1.88,1.95,3.7,SKIP-drift,WAIT 70%,,Over,1.75,56,7.7,2026-08-27T14:44:53Z
+2026-08-27T14:45:37Z,2026-08-27,Veronica Burton,pts,Under,13.5,newunder,1.79,1.85,3.4,SKIP-drift,WAIT 70%,,Over,1.85,56,7.7,2026-08-27T14:44:53Z
+2026-08-27T14:45:37Z,2026-08-27,Michaela Onyenwere,pts,Under,8.5,newunder,1.71,1.85,8.2,SKIP-drift,WAIT 70%,,Over,1.85,56,7.7,2026-08-27T14:44:53Z
+2026-08-27T14:45:37Z,2026-08-27,Shakira Austin,pts,Over,17.5,flip_paper,1.87,1.95,4.3,SKIP-drift,WAIT 70%,,Under,1.75,56,7.7,2026-08-27T14:44:53Z
+2026-08-27T14:45:37Z,2026-08-27,Sonia Citron,pts,Under,16.5,newunder,1.909,1.85,-3.1,BET (money agrees),BET NOW 93%,17.5->16.5,,,52,7.0,2026-08-27T14:44:53Z
+2026-08-27T14:45:37Z,2026-08-27,Saniya Rivers,pra,Over,11.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,57,7.7,2026-08-27T14:44:53Z
+2026-08-27T14:45:37Z,2026-08-27,Diamond Miller,pra,Over,15.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,57,7.7,2026-08-27T14:44:53Z
+2026-08-27T14:45:37Z,2026-08-27,Aaliyah Edwards,pra,Over,17.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,57,7.7,2026-08-27T14:44:53Z
+2026-08-27T14:45:37Z,2026-08-27,Kiki Rice,pra,Over,21.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,57,7.7,2026-08-27T14:44:53Z
+2026-08-27T14:45:37Z,2026-08-27,Laura Juskaite,pra,Over,20.5,cascade,2.0,2.0,0.0,BET (steady),ok 85%,,,,55,7.7,2026-08-27T14:44:53Z
+2026-08-27T14:45:37Z,2026-08-27,Jackie Young,pts,Over,19.5,flip_paper,1.76,1.769,0.5,BET (steady),ok 85%,,,,55,7.7,2026-08-27T14:44:53Z
+2026-08-27T14:45:37Z,2026-08-27,Kelsey Mitchell,pr,Over,28.5,overshoot,1.83,1.83,0.0,BET (steady),ok 85%,,,,55,7.7,2026-08-27T14:44:53Z
+2026-08-27T14:45:37Z,2026-08-27,Carla Leite,pr,Under,18.5,model,1.91,2.0,4.7,SKIP-drift,WAIT 70%,,Over,1.73,54,7.4,2026-08-27T14:44:53Z
+2026-08-27T14:45:37Z,2026-08-27,Angel Reese,pts,Under,18.5,newunder,1.82,1.84,1.1,SKIP-drift,WAIT 70%,,Over,1.86,54,7.4,2026-08-27T14:44:53Z
+2026-08-27T14:45:37Z,2026-08-27,Allisha Gray,pts,Under,19.5,newunder,1.8,1.8,0.0,BET (steady),ok 85%,,,,54,7.4,2026-08-27T14:44:53Z
+2026-08-27T14:45:37Z,2026-08-27,Jordin Canada,pts,Under,11.5,newunder,1.82,1.76,-3.3,BET (money agrees),BET NOW 93%,,,,54,7.4,2026-08-27T14:44:53Z
+2026-08-27T14:45:37Z,2026-08-27,Megan DiLeo,pts,Under,14.5,newunder,1.79,1.79,0.0,BET (steady),ok 85%,,,,54,7.4,2026-08-27T14:44:53Z
+2026-08-27T14:45:37Z,2026-08-27,Emily Engstler,pts,Under,10.5,newunder,1.75,1.75,0.0,BET (steady),ok 85%,,,,54,7.4,2026-08-27T14:44:53Z
+2026-08-27T14:45:37Z,2026-08-27,Caitlin Clark,pts,Under,23.5,newunder,1.79,1.8,0.6,BET (steady),ok 85%,,,,52,7.4,2026-08-27T14:44:53Z
+2026-08-27T14:45:37Z,2026-08-27,Chelsea Gray,pts,Under,10.5,newunder,1.93,1.952,1.1,SKIP-drift,WAIT 70%,,Over,1.8,52,7.4,2026-08-27T14:44:53Z
+2026-08-27T14:45:37Z,2026-08-27,Nneka Ogwumike,pts,Under,15.5,newunder,1.83,1.833,0.2,BET (steady),ok 85%,,,,52,7.4,2026-08-27T14:44:53Z
+2026-08-27T14:45:37Z,2026-08-27,Sabrina Ionescu,pts,Under,17.5,newunder,1.85,1.85,0.0,BET (steady),ok 85%,,,,47,6.4,2026-08-27T14:44:53Z
+2026-08-27T14:45:37Z,2026-08-27,Janelle Salaun,pts,Under,12.5,newunder,2.0,2.0,0.0,BET (steady),ok 85%,,,,47,6.4,2026-08-27T14:44:53Z
+2026-08-27T14:45:37Z,2026-08-27,Kiki Iriafen,pa,Over,16.5,overshoot,1.73,1.833,6.0,SKIP-drift,WAIT 70%,,Under,1.909,41,5.5,2026-08-27T14:44:53Z
+2026-08-27T14:45:37Z,2026-08-27,Dearica Hamby,pra,Under,22.5,model,1.87,1.87,0.0,BET (steady),ok 85%,,,,24,3.2,2026-08-27T14:44:53Z
+2026-08-27T14:45:37Z,2026-08-27,Bridget Carleton,pra,Over,21.5,overshoot,1.833,1.833,0.0,BET (steady),ok 85%,,,,24,3.2,2026-08-27T14:44:53Z
+2026-08-27T14:45:37Z,2026-08-27,Jonquel Jones,pra,Over,25.5,flip,1.8,1.8,0.0,BET (steady),ok 85%,,,,11,1.4,2026-08-27T14:44:53Z
