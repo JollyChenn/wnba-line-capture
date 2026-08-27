@@ -252,3 +252,5 @@ logged_utc,date,player,market,side,line,price,orig_src,orig_move
 2026-08-27T09:31:26Z,2026-08-27,Shakira Austin,pts,Under,17.5,1.75,flip_paper,0.0428
 2026-08-27T09:31:26Z,2026-08-27,Kiki Iriafen,pa,Under,16.5,1.909,overshoot,0.0595
 2026-08-27T12:40:32Z,2026-08-27,Chelsea Gray,pts,Over,10.5,1.8,newunder,0.0114
+2026-08-27T13:11:04Z,2026-08-27,Carla Leite,pr,Over,18.5,1.73,model,0.0471
+2026-08-27T13:11:04Z,2026-08-27,Angel Reese,pts,Over,18.5,1.86,newunder,0.011
