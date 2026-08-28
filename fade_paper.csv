@@ -270,3 +270,6 @@ logged_utc,date,player,market,side,line,price,orig_src,orig_move
 2026-08-28T10:53:01Z,2026-08-28,Jackie Young,pr,Under,25.5,1.8,overshoot,0.0437
 2026-08-28T11:26:13Z,2026-08-28,Kelsey Mitchell,pr,Under,27.5,1.8,overshoot,0.0437
 2026-08-28T11:54:35Z,2026-08-28,Ariel Atkins,pra,Under,12.5,1.73,cascade,0.0471
+2026-08-28T12:28:04Z,2026-08-28,Cameron Brink,pra,Under,17.5,1.73,cascade,0.0471
+2026-08-28T12:28:04Z,2026-08-28,Sydney Taylor,pts,Over,12.5,1.88,model,0.0282
+2026-08-28T12:28:04Z,2026-08-28,Kamilla Cardoso,pts,Over,16.5,1.89,newunder,0.0111
