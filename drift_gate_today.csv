@@ -1,33 +1,38 @@
 date,player,market,side,line,src,open_odds,now_odds,move_pct,verdict,confidence,line_moved,fade_side,fade_price,captures,span_h,last_utc
-2026-08-27,Sonia Citron,pts,Under,16.5,newunder,1.909,1.85,-3.1,BET (money agrees),BET NOW 93%,17.5->16.5,,,122,16.2,2026-08-27T23:57:57Z
-2026-08-27,Laura Juskaite,pra,Over,20.5,cascade,2.0,1.952,-2.4,BET (money agrees),bet now 81%,,,,125,17.0,2026-08-27T23:57:57Z
-2026-08-27,Jordin Canada,pts,Under,11.5,newunder,1.82,1.8,-1.1,BET (money agrees),bet now 81%,,,,123,16.6,2026-08-27T23:57:57Z
+2026-08-27,Sonia Citron,pts,Under,16.5,newunder,1.909,1.85,-3.1,BET (money agrees),BET NOW 93%,17.5->16.5,,,126,16.8,2026-08-28T00:30:05Z
+2026-08-27,Laura Juskaite,pra,Over,20.5,cascade,2.0,1.952,-2.4,BET (money agrees),bet now 81%,,,,129,17.5,2026-08-28T00:30:05Z
+2026-08-27,Jordin Canada,pts,Under,11.5,newunder,1.82,1.8,-1.1,BET (money agrees),bet now 81%,,,,127,17.1,2026-08-28T00:30:05Z
 2026-08-27,Dearica Hamby,pts,Under,13.5,model,1.95,1.92,-1.5,BET (money agrees),bet now 81%,,,,28,4.1,2026-08-27T11:26:52Z
 2026-08-27,Alyssa Thomas,pts,Over,14.5,flip_paper,1.88,1.88,0.0,BET (steady),ok 85%,,,,8,2.1,2026-08-27T09:03:38Z
 2026-08-27,Kahleah Copper,pts,Under,19.5,newunder,1.88,1.87,-0.5,BET (steady),bet now 81%,,,,15,2.1,2026-08-27T09:03:38Z
 2026-08-27,Kiki Iriafen,pts,Over,14.5,flip_paper,1.8,1.8,0.0,BET (steady),ok 85%,,,,15,2.1,2026-08-27T09:03:38Z
-2026-08-27,Saniya Rivers,pra,Over,11.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,127,17.0,2026-08-27T23:57:57Z
-2026-08-27,Diamond Miller,pra,Over,15.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,127,17.0,2026-08-27T23:57:57Z
-2026-08-27,Aaliyah Edwards,pra,Over,17.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,127,17.0,2026-08-27T23:57:57Z
-2026-08-27,Kiki Rice,pra,Over,21.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,127,17.0,2026-08-27T23:57:57Z
-2026-08-27,Jackie Young,pts,Over,19.5,flip_paper,1.76,1.769,0.5,BET (steady),ok 85%,,,,125,17.0,2026-08-27T23:57:57Z
-2026-08-27,Carla Leite,pr,Under,18.5,model,1.91,1.909,-0.1,BET (steady),ok 85%,,,,124,16.6,2026-08-27T23:57:57Z
-2026-08-27,Angel Reese,pts,Under,18.5,newunder,1.82,1.833,0.7,BET (steady),ok 85%,,,,124,16.6,2026-08-27T23:57:57Z
-2026-08-27,Megan DiLeo,pts,Under,14.5,newunder,1.79,1.8,0.6,BET (steady),ok 85%,,,,124,16.6,2026-08-27T23:57:57Z
+2026-08-27,Saniya Rivers,pra,Over,11.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,131,17.5,2026-08-28T00:30:05Z
+2026-08-27,Diamond Miller,pra,Over,15.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,131,17.5,2026-08-28T00:30:05Z
+2026-08-27,Aaliyah Edwards,pra,Over,17.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,131,17.5,2026-08-28T00:30:05Z
+2026-08-27,Kiki Rice,pra,Over,21.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,131,17.5,2026-08-28T00:30:05Z
+2026-08-27,Jackie Young,pts,Over,20.5,flip_paper,1.8,1.8,0.0,BET (steady),ok 85%,19.5->20.5,,,2,0.1,2026-08-28T00:30:05Z
+2026-08-27,Carla Leite,pr,Under,18.5,model,1.91,1.91,0.0,BET (steady),ok 85%,,,,128,17.1,2026-08-28T00:30:05Z
+2026-08-27,Angel Reese,pts,Under,18.5,newunder,1.82,1.833,0.7,BET (steady),ok 85%,,,,128,17.1,2026-08-28T00:30:05Z
+2026-08-27,Megan DiLeo,pts,Under,14.5,newunder,1.79,1.8,0.6,BET (steady),ok 85%,,,,128,17.1,2026-08-28T00:30:05Z
 2026-08-27,Caitlin Clark,pts,Under,23.5,newunder,1.79,1.8,0.6,BET (steady),ok 85%,,,,100,13.7,2026-08-27T21:02:06Z
-2026-08-27,Nneka Ogwumike,pts,Under,15.5,newunder,1.83,1.833,0.2,BET (steady),ok 85%,,,,121,16.6,2026-08-27T23:57:57Z
+2026-08-27,Chelsea Gray,pts,Under,12.5,newunder,1.89,1.89,0.0,BET (steady),ok 85%,10.5->12.5,,,2,0.1,2026-08-28T00:30:05Z
+2026-08-27,Nneka Ogwumike,pts,Under,15.5,newunder,1.83,1.833,0.2,BET (steady),ok 85%,,,,125,17.1,2026-08-28T00:30:05Z
 2026-08-27,Sabrina Ionescu,pts,Under,17.5,newunder,1.85,1.85,0.0,BET (steady),ok 85%,,,,115,15.4,2026-08-27T23:42:26Z
 2026-08-27,Janelle Salaun,pts,Under,12.5,newunder,2.0,2.0,0.0,BET (steady),ok 85%,,,,115,15.4,2026-08-27T23:42:26Z
-2026-08-27,Dearica Hamby,pra,Under,22.5,model,1.87,1.87,0.0,BET (steady),ok 85%,,,,93,12.4,2026-08-27T23:57:57Z
-2026-08-27,Bridget Carleton,pra,Over,21.5,overshoot,1.833,1.833,0.0,BET (steady),ok 85%,,,,86,12.4,2026-08-27T23:57:57Z
+2026-08-27,Dearica Hamby,pra,Under,22.5,model,1.87,1.87,0.0,BET (steady),ok 85%,,,,97,12.9,2026-08-28T00:30:05Z
+2026-08-27,Bridget Carleton,pra,Over,21.5,overshoot,1.833,1.833,0.0,BET (steady),ok 85%,,,,90,12.9,2026-08-28T00:30:05Z
 2026-08-27,Jonquel Jones,pra,Over,26.5,flip,1.952,1.952,0.0,BET (steady),ok 85%,25.5->26.5,,,66,8.7,2026-08-27T23:42:26Z
-2026-08-27,Aliyah Boston,pts,Under,16.5,newunder,1.952,1.952,0.0,BET (steady),ok 85%,,,,20,2.6,2026-08-27T23:57:57Z
+2026-08-27,Aliyah Boston,pts,Under,16.5,newunder,1.952,1.952,0.0,BET (steady),ok 85%,,,,24,3.1,2026-08-28T00:30:05Z
+2026-08-27,Rae Burrell,pts,Over,14.5,flip_paper,1.8,1.8,0.0,BET (steady),ok 85%,,,,3,0.3,2026-08-28T00:30:05Z
+2026-08-27,Nneka Ogwumike,pra,Over,25.5,cascade,1.87,1.87,0.0,BET (steady),ok 85%,,,,2,0.1,2026-08-28T00:30:05Z
+2026-08-27,Dearica Hamby,pra,Over,22.5,cascade,1.87,1.87,0.0,BET (steady),ok 85%,,,,2,0.1,2026-08-28T00:30:05Z
+2026-08-27,Cameron Brink,pra,Over,17.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,2,0.1,2026-08-28T00:30:05Z
+2026-08-27,Ariel Atkins,pra,Over,12.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,2,0.1,2026-08-28T00:30:05Z
 2026-08-27,Breanna Stewart,pts,Under,20.5,newunder,1.88,1.95,3.7,SKIP-drift,WAIT 70%,,Over,1.75,124,16.7,2026-08-27T23:42:26Z
 2026-08-27,Veronica Burton,pts,Under,13.5,newunder,1.79,1.85,3.4,SKIP-drift,WAIT 70%,,Over,1.85,124,16.7,2026-08-27T23:42:26Z
-2026-08-27,Michaela Onyenwere,pts,Under,8.5,newunder,1.71,1.85,8.2,SKIP-drift,WAIT 70%,,Over,1.85,126,17.0,2026-08-27T23:57:57Z
-2026-08-27,Shakira Austin,pts,Over,17.5,flip_paper,1.87,1.95,4.3,SKIP-drift,WAIT 70%,,Under,1.75,126,17.0,2026-08-27T23:57:57Z
-2026-08-27,Kelsey Mitchell,pr,Over,27.5,overshoot,1.8,1.83,1.7,SKIP-drift,WAIT 70%,28.5->27.5,Under,1.83,23,2.9,2026-08-27T23:57:57Z
-2026-08-27,Allisha Gray,pts,Under,19.5,newunder,1.8,1.833,1.8,SKIP-drift,WAIT 70%,,Over,1.909,124,16.6,2026-08-27T23:57:57Z
-2026-08-27,Emily Engstler,pts,Under,10.5,newunder,1.75,1.769,1.1,SKIP-drift,WAIT 70%,,Over,2.0,124,16.6,2026-08-27T23:57:57Z
-2026-08-27,Chelsea Gray,pts,Under,10.5,newunder,1.93,1.952,1.1,SKIP-drift,WAIT 70%,,Over,1.8,122,16.6,2026-08-27T23:57:57Z
-2026-08-27,Kiki Iriafen,pa,Over,16.5,overshoot,1.73,1.833,6.0,SKIP-drift,WAIT 70%,,Under,1.909,111,14.7,2026-08-27T23:57:57Z
+2026-08-27,Michaela Onyenwere,pts,Under,8.5,newunder,1.71,1.85,8.2,SKIP-drift,WAIT 70%,,Over,1.85,130,17.5,2026-08-28T00:30:05Z
+2026-08-27,Shakira Austin,pts,Over,17.5,flip_paper,1.87,1.95,4.3,SKIP-drift,WAIT 70%,,Under,1.75,130,17.5,2026-08-28T00:30:05Z
+2026-08-27,Kelsey Mitchell,pr,Over,27.5,overshoot,1.8,1.83,1.7,SKIP-drift,WAIT 70%,28.5->27.5,Under,1.83,27,3.5,2026-08-28T00:30:05Z
+2026-08-27,Allisha Gray,pts,Under,19.5,newunder,1.8,1.833,1.8,SKIP-drift,WAIT 70%,,Over,1.909,128,17.1,2026-08-28T00:30:05Z
+2026-08-27,Emily Engstler,pts,Under,10.5,newunder,1.75,1.769,1.1,SKIP-drift,WAIT 70%,,Over,2.0,128,17.1,2026-08-28T00:30:05Z
+2026-08-27,Kiki Iriafen,pa,Over,16.5,overshoot,1.73,1.8,4.0,SKIP-drift,WAIT 70%,,Under,1.952,115,15.3,2026-08-28T00:30:05Z
