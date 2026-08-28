@@ -274,3 +274,5 @@ logged_utc,date,player,market,side,line,price,orig_src,orig_move
 2026-08-28T12:28:04Z,2026-08-28,Sydney Taylor,pts,Over,12.5,1.88,model,0.0282
 2026-08-28T12:28:04Z,2026-08-28,Kamilla Cardoso,pts,Over,16.5,1.89,newunder,0.0111
 2026-08-28T14:04:15Z,2026-08-28,Rhyne Howard,pr,Under,21.5,1.91,overshoot,0.0405
+2026-08-28T20:08:06Z,2026-08-28,Angel Reese,pra,Under,34.5,1.91,hotover,0.0405
+2026-08-28T20:08:06Z,2026-08-28,Sydney Taylor,pts,Over,13.5,1.8,model,0.027
