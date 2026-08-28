@@ -264,3 +264,6 @@ logged_utc,date,player,market,side,line,price,orig_src,orig_move
 2026-08-28T04:10:29Z,2026-08-27,Cameron Brink,pra,Under,17.5,1.8,cascade,0.0914
 2026-08-28T04:42:19Z,2026-08-27,Sonia Citron,pts,Over,17.5,1.92,newunder,0.0287
 2026-08-28T07:47:39Z,2026-08-28,Emily Engstler,pts,Over,10.5,1.85,newunder,0.0458
+2026-08-28T08:49:15Z,2026-08-28,Carla Leite,pr,Over,18.5,1.73,model,0.0477
+2026-08-28T08:49:15Z,2026-08-28,Aliyah Boston,pts,Over,16.5,1.75,newunder,0.0156
+2026-08-28T08:49:15Z,2026-08-28,Nneka Ogwumike,pts,Over,15.5,1.75,newunder,0.0894
