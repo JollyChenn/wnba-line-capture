@@ -15572,3 +15572,20 @@ logged_utc,date,player,market,side,line,src,open_odds,now_odds,move_pct,verdict,
 2026-08-28T23:46:27Z,2026-08-28,Azura Stevens,pts,Under,10.5,newunder,1.97,1.92,-2.5,BET (money agrees),bet now 81%,,,,52,12.5,2026-08-28T23:46:18Z
 2026-08-28T23:46:27Z,2026-08-28,Kamilla Cardoso,pts,Under,15.5,newunder,1.81,1.85,2.2,SKIP-drift,WAIT 70%,16.5->15.5,Over,1.85,18,2.2,2026-08-28T23:46:18Z
 2026-08-28T23:46:27Z,2026-08-28,Sabrina Ionescu,pts,Under,16.5,newunder,1.81,1.8,-0.6,BET (steady),bet now 81%,,,,40,5.2,2026-08-28T23:46:18Z
+2026-08-29T00:18:19Z,2026-08-28,Chelsea Gray,pts,Under,12.5,newunder,1.89,1.85,-2.1,BET (money agrees),bet now 81%,,,,127,17.3,2026-08-29T00:18:10Z
+2026-08-29T00:18:19Z,2026-08-28,Nneka Ogwumike,pts,Under,15.5,newunder,1.79,1.95,8.9,SKIP-drift,WAIT 70%,,Over,1.75,119,17.3,2026-08-29T00:18:10Z
+2026-08-29T00:18:19Z,2026-08-28,Rae Burrell,pts,Over,15.5,flip_paper,2.0,1.9,-5.0,BET (money agrees),BET NOW 93%,14.5->15.5,,,116,15.7,2026-08-29T00:18:10Z
+2026-08-29T00:18:19Z,2026-08-28,Shakira Austin,pts,Under,17.5,newunder,1.95,1.95,0.0,BET (steady),ok 85%,18.5->17.5,,,116,15.7,2026-08-29T00:18:10Z
+2026-08-29T00:18:19Z,2026-08-28,Sonia Citron,pts,Under,16.5,newunder,1.95,1.95,0.0,BET (steady),ok 85%,17.5->16.5,,,116,15.7,2026-08-29T00:18:10Z
+2026-08-29T00:18:19Z,2026-08-28,Nneka Ogwumike,pra,Over,25.5,cascade,1.87,1.83,-2.1,BET (money agrees),bet now 81%,,,,127,17.3,2026-08-29T00:18:10Z
+2026-08-29T00:18:19Z,2026-08-28,Dearica Hamby,pra,Over,21.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,22.5->21.5,,,101,13.5,2026-08-29T00:18:10Z
+2026-08-29T00:18:19Z,2026-08-28,Cameron Brink,pra,Over,16.5,cascade,1.8,1.8,0.0,BET (steady),ok 85%,17.5->16.5,,,53,7.0,2026-08-29T00:18:10Z
+2026-08-29T00:18:19Z,2026-08-28,Ariel Atkins,pra,Over,12.5,cascade,1.91,1.8,-5.8,BET (money agrees),BET NOW 93%,,,,128,17.3,2026-08-29T00:18:10Z
+2026-08-29T00:18:19Z,2026-08-28,Kiki Rice,pra,Over,21.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,128,17.3,2026-08-29T00:18:10Z
+2026-08-29T00:18:19Z,2026-08-28,Laura Juskaite,pra,Over,19.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,20.5->19.5,,,95,16.3,2026-08-29T00:18:10Z
+2026-08-29T00:18:19Z,2026-08-28,Dearica Hamby,pts,Under,14.5,model,1.73,1.73,0.0,BET (steady),ok 85%,,,,100,13.4,2026-08-29T00:18:10Z
+2026-08-29T00:18:19Z,2026-08-28,Breanna Stewart,pts,Under,19.5,newunder,2.0,1.93,-3.5,BET (money agrees),BET NOW 93%,,,,97,13.2,2026-08-29T00:18:10Z
+2026-08-29T00:18:19Z,2026-08-28,Sydney Taylor,pts,Under,12.5,model,1.77,1.88,6.2,SKIP-drift,WAIT 70%,,Over,1.88,72,13.0,2026-08-29T00:18:10Z
+2026-08-29T00:18:19Z,2026-08-28,Azura Stevens,pts,Under,10.5,newunder,1.97,1.92,-2.5,BET (money agrees),bet now 81%,,,,56,13.0,2026-08-29T00:18:10Z
+2026-08-29T00:18:19Z,2026-08-28,Kamilla Cardoso,pts,Under,15.5,newunder,1.81,1.85,2.2,SKIP-drift,WAIT 70%,16.5->15.5,Over,1.85,22,2.7,2026-08-29T00:18:10Z
+2026-08-29T00:18:19Z,2026-08-28,Sabrina Ionescu,pts,Under,16.5,newunder,1.81,1.8,-0.6,BET (steady),bet now 81%,,,,44,5.7,2026-08-29T00:18:10Z
