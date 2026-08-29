@@ -15731,3 +15731,15 @@ logged_utc,date,player,market,side,line,src,open_odds,now_odds,move_pct,verdict,
 2026-08-29T05:36:13Z,2026-08-28,Rae Burrell,pra,Over,22.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,9,1.1,2026-08-29T05:35:48Z
 2026-08-29T05:36:13Z,2026-08-28,Erica Wheeler,pra,Over,16.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,9,1.1,2026-08-29T05:35:48Z
 2026-08-29T05:36:13Z,2026-08-28,Rhyne Howard,pra,Over,23.5,overshoot,1.73,1.73,0.0,BET (steady),ok 85%,,,,3,0.3,2026-08-29T05:35:48Z
+2026-08-29T06:08:42Z,2026-08-28,Dearica Hamby,pra,Over,20.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,22.5->20.5,,,13,1.6,2026-08-29T06:08:08Z
+2026-08-29T06:08:42Z,2026-08-28,Cameron Brink,pra,Over,17.5,cascade,1.91,1.75,-8.4,BET (money agrees),BET NOW 93%,,,,112,23.1,2026-08-29T06:08:08Z
+2026-08-29T06:08:42Z,2026-08-28,Kiki Rice,pra,Over,20.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,21.5->20.5,,,17,2.1,2026-08-29T06:08:08Z
+2026-08-29T06:08:42Z,2026-08-28,Laura Juskaite,pra,Over,20.5,cascade,1.8,1.91,6.1,SKIP-drift,WAIT 70%,,Under,1.8,45,23.1,2026-08-29T06:08:08Z
+2026-08-29T06:08:42Z,2026-08-28,Breanna Stewart,pts,Under,19.5,newunder,2.0,1.96,-2.0,BET (money agrees),bet now 81%,,,,139,19.0,2026-08-29T06:08:08Z
+2026-08-29T06:08:42Z,2026-08-28,Sydney Taylor,pts,Under,13.5,model,1.85,1.83,-1.1,BET (money agrees),bet now 81%,12.5->13.5,,,43,12.1,2026-08-29T06:08:08Z
+2026-08-29T06:08:42Z,2026-08-28,Azura Stevens,pts,Under,10.5,newunder,1.97,1.93,-2.0,BET (money agrees),bet now 81%,,,,98,18.8,2026-08-29T06:08:08Z
+2026-08-29T06:08:42Z,2026-08-28,Kamilla Cardoso,pts,Under,15.5,newunder,1.81,1.89,4.4,SKIP-drift,WAIT 70%,16.5->15.5,Over,1.81,64,8.5,2026-08-29T06:08:08Z
+2026-08-29T06:08:42Z,2026-08-28,Sabrina Ionescu,pts,Under,16.5,newunder,1.81,1.8,-0.6,BET (steady),bet now 81%,,,,86,11.5,2026-08-29T06:08:08Z
+2026-08-29T06:08:42Z,2026-08-28,Rae Burrell,pra,Over,22.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,13,1.6,2026-08-29T06:08:08Z
+2026-08-29T06:08:42Z,2026-08-28,Erica Wheeler,pra,Over,16.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,13,1.6,2026-08-29T06:08:08Z
+2026-08-29T06:08:42Z,2026-08-28,Rhyne Howard,pra,Over,23.5,overshoot,1.73,1.73,0.0,BET (steady),ok 85%,,,,7,0.8,2026-08-29T06:08:08Z
