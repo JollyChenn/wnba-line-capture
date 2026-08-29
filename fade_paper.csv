@@ -279,3 +279,7 @@ logged_utc,date,player,market,side,line,price,orig_src,orig_move
 2026-08-28T21:41:56Z,2026-08-28,Kamilla Cardoso,pts,Over,15.5,1.85,newunder,0.0221
 2026-08-29T05:04:16Z,2026-08-28,Laura Juskaite,pra,Under,20.5,1.8,cascade,0.0611
 2026-08-29T07:41:21Z,2026-08-29,Sabrina Ionescu,pts,Over,16.5,1.83,newunder,0.0389
+2026-08-29T09:11:41Z,2026-08-29,Jordin Canada,pts,Over,10.5,2.0,newunder,0.0225
+2026-08-29T09:11:41Z,2026-08-29,Napheesa Collier,pts,Over,18.5,1.87,newunder,0.0163
+2026-08-29T09:11:41Z,2026-08-29,Rhyne Howard,pts,Under,17.5,1.8,flip_paper,0.0114
+2026-08-29T09:11:41Z,2026-08-29,Angel Reese,pts,Over,17.5,2.0,newunder,0.0109
