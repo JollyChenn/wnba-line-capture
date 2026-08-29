@@ -15660,3 +15660,14 @@ logged_utc,date,player,market,side,line,src,open_odds,now_odds,move_pct,verdict,
 2026-08-29T02:23:52Z,2026-08-28,Azura Stevens,pts,Under,10.5,newunder,1.97,1.92,-2.5,BET (money agrees),bet now 81%,,,,71,15.1,2026-08-29T02:23:43Z
 2026-08-29T02:23:52Z,2026-08-28,Kamilla Cardoso,pts,Under,15.5,newunder,1.81,1.85,2.2,SKIP-drift,WAIT 70%,16.5->15.5,Over,1.85,37,4.8,2026-08-29T02:23:43Z
 2026-08-29T02:23:52Z,2026-08-28,Sabrina Ionescu,pts,Under,16.5,newunder,1.81,1.8,-0.6,BET (steady),bet now 81%,,,,59,7.8,2026-08-29T02:23:43Z
+2026-08-29T02:54:20Z,2026-08-28,Nneka Ogwumike,pra,Over,24.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,25.5->24.5,,,10,16.1,2026-08-29T02:54:10Z
+2026-08-29T02:54:20Z,2026-08-28,Dearica Hamby,pra,Over,21.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,22.5->21.5,,,120,16.1,2026-08-29T02:54:10Z
+2026-08-29T02:54:20Z,2026-08-28,Cameron Brink,pra,Over,17.5,cascade,1.91,1.75,-8.4,BET (money agrees),BET NOW 93%,,,,88,19.9,2026-08-29T02:54:10Z
+2026-08-29T02:54:20Z,2026-08-28,Ariel Atkins,pra,Over,12.5,cascade,1.91,1.75,-8.4,BET (money agrees),BET NOW 93%,,,,147,19.9,2026-08-29T02:54:10Z
+2026-08-29T02:54:20Z,2026-08-28,Kiki Rice,pra,Over,21.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,,,,147,19.9,2026-08-29T02:54:10Z
+2026-08-29T02:54:20Z,2026-08-28,Laura Juskaite,pra,Over,19.5,cascade,1.75,1.75,0.0,BET (steady),ok 85%,20.5->19.5,,,114,18.9,2026-08-29T02:54:10Z
+2026-08-29T02:54:20Z,2026-08-28,Breanna Stewart,pts,Under,19.5,newunder,2.0,1.95,-2.5,BET (money agrees),bet now 81%,,,,116,15.8,2026-08-29T02:54:10Z
+2026-08-29T02:54:20Z,2026-08-28,Sydney Taylor,pts,Under,13.5,model,1.85,1.86,0.5,BET (steady),ok 85%,12.5->13.5,,,25,8.9,2026-08-29T02:54:10Z
+2026-08-29T02:54:20Z,2026-08-28,Azura Stevens,pts,Under,10.5,newunder,1.97,1.92,-2.5,BET (money agrees),bet now 81%,,,,75,15.6,2026-08-29T02:54:10Z
+2026-08-29T02:54:20Z,2026-08-28,Kamilla Cardoso,pts,Under,15.5,newunder,1.81,1.85,2.2,SKIP-drift,WAIT 70%,16.5->15.5,Over,1.85,41,5.3,2026-08-29T02:54:10Z
+2026-08-29T02:54:20Z,2026-08-28,Sabrina Ionescu,pts,Under,16.5,newunder,1.81,1.81,0.0,BET (steady),ok 85%,,,,63,8.3,2026-08-29T02:54:10Z
